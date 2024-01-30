@@ -17,36 +17,40 @@ const Onboarding = () => {
         locations={[0, 1]}
         colors={["#b7e4c0", "#2c372e"]}
       >
-        <Text style={[styles.huella, styles.huellaTypo]}>Huella</Text>
         <View style={styles.dejaTuHuellaEnElMundoMieParent}>
-          <Text style={[styles.dejaTuHuella, styles.huellaTypo]}>
-            Deja tu huella en el mundo mientras construyes tu legado
-          </Text>
-          <View style={styles.frameWrapper}>
-            <View style={styles.rectangleParent}>
-              <View style={styles.frameChild} />
-              <View style={[styles.frameItem, styles.frameLayout]} />
-              <View style={[styles.frameInner, styles.frameLayout]} />
+          <Text style={[styles.huella, styles.huellaTypo]}>Huella</Text>
+          <View style={{ justifyContent: "center", alignItems: "center" }}>
+            <Text style={[styles.dejaTuHuella, styles.huellaTypo]}>
+              Deja tu huella en el mundo mientras construyes tu legado
+            </Text>
+            <View style={styles.frameWrapper}>
+              <View style={styles.rectangleParent}>
+                <View style={styles.frameChild} />
+                <View style={[styles.frameItem, styles.frameLayout]} />
+                <View style={[styles.frameInner, styles.frameLayout]} />
+              </View>
             </View>
-          </View>
-          <View style={styles.progressButton}>
-            <View style={[styles.buttonfullcircle, styles.huellaParentFlexBox]}>
+            <View style={styles.progressButton}>
+              <View
+                style={[styles.buttonfullcircle, styles.huellaParentFlexBox]}
+              >
+                <Image
+                  style={styles.arrowRight}
+                  contentFit="cover"
+                  source={require("../assets/arrow--right.png")}
+                />
+              </View>
               <Image
-                style={styles.arrowRight}
+                style={[styles.progressButtonChild, styles.progressPosition]}
                 contentFit="cover"
-                source={require("../assets/arrow--right.png")}
+                source={require("../assets/ellipse-190.png")}
+              />
+              <Image
+                style={[styles.progressButtonItem, styles.progressPosition]}
+                contentFit="cover"
+                source={require("../assets/ellipse-192.png")}
               />
             </View>
-            <Image
-              style={[styles.progressButtonChild, styles.progressPosition]}
-              contentFit="cover"
-              source={require("../assets/ellipse-190.png")}
-            />
-            <Image
-              style={[styles.progressButtonItem, styles.progressPosition]}
-              contentFit="cover"
-              source={require("../assets/ellipse-192.png")}
-            />
           </View>
         </View>
       </LinearGradient>
@@ -62,7 +66,7 @@ const styles = StyleSheet.create({
   },
   huellaTypo: {
     fontFamily: FontFamily.lato,
-    lineHeight: 24,
+    lineHeight: 35,
   },
   frameLayout: {
     marginLeft: 7,
@@ -70,8 +74,8 @@ const styles = StyleSheet.create({
     borderRadius: Border.br_3xs,
   },
   progressPosition: {
-    maxHeight: "100%",
-    maxWidth: "100%",
+    // maxHeight: "100%",
+    // maxWidth: "100%",
     right: "0%",
     top: "0%",
     position: "absolute",
@@ -82,7 +86,7 @@ const styles = StyleSheet.create({
     zIndex: 0,
     overflow: "hidden",
     borderRadius: Border.br_31xl,
-    height: 926,
+    // height: 926,
   },
   huella: {
     fontSize: FontSize.size_13xl,
@@ -90,6 +94,7 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     color: Color.primario1,
     textAlign: "left",
+    top: 0,
   },
   dejaTuHuella: {
     fontSize: FontSize.size_7xl,
@@ -129,17 +134,18 @@ const styles = StyleSheet.create({
     height: "65.96%",
     width: "65.96%",
     top: "17.02%",
-    right: "17.02%",
-    bottom: "17.02%",
+    // right: "17.02%",
+    // bottom: "17.02%",
     left: "17.02%",
-    borderRadius: Border.br_65xl,
+    borderRadius: Border.br_31xl,
     backgroundColor: Color.negro,
-    paddingHorizontal: Padding.p_122xl,
-    paddingVertical: Padding.p_xl,
+    // paddingHorizontal: Padding.p_122xl,
+    // paddingVertical: Padding.p_xl,
     flexDirection: "row",
+    zIndex: 10,
   },
   progressButtonChild: {
-    height: "100%",
+    // height: "100%",
     bottom: "0%",
     left: "0%",
     opacity: 0.38,
@@ -157,14 +163,19 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   dejaTuHuellaEnElMundoMieParent: {
-    marginTop: 580,
+    // marginTop: 580,
+    flex: 1,
     alignItems: "center",
+    justifyContent: "space-between",
   },
   huellaParent: {
     marginLeft: -194,
+    paddingVertical: 50,
     top: 20,
+    bottom: 50,
     width: 388,
-    height: 886,
+    // height: "92%",
+
     backgroundColor: Color.linearBoton,
     zIndex: 1,
     left: "50%",
@@ -173,8 +184,9 @@ const styles = StyleSheet.create({
   onboarding3: {
     flex: 1,
     flexDirection: "row",
-    height: 926,
+    // height: 926,
     width: "100%",
+    top: 30,
   },
 });
 
