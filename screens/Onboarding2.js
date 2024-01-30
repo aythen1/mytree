@@ -1,51 +1,62 @@
 import * as React from "react";
 import { Image } from "expo-image";
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { FontFamily, Border, FontSize, Color, Padding } from "../GlobalStyles";
+import { useNavigation } from "@react-navigation/native";
 
 const Onboarding2 = () => {
+  const navigation = useNavigation();
   return (
-    <View style={styles.onboarding1}>
+    <View style={styles.onboarding3}>
       <Image
         style={styles.onboarding1Icon}
         contentFit="cover"
-        source={require("../assets/onboarding-11.png")}
+        source={require("../assets/onboarding-1.png")}
       />
       <LinearGradient
-        style={[styles.legadoParent, styles.legadoParentFlexBox]}
+        style={[styles.huellaParent, styles.huellaParentFlexBox]}
         locations={[0, 1]}
         colors={["#b7e4c0", "#2c372e"]}
       >
-        <Text style={[styles.legado, styles.legadoTypo]}>Legado</Text>
-        <View style={styles.juntaLaHistoriaDeTuFamiliParent}>
-          <Text style={[styles.juntaLaHistoria, styles.legadoTypo]}>
-            Junta la historia de tu familia y deja un legado para tus
-            descendientes
-          </Text>
-          <View style={styles.rectangleParent}>
-            <View style={[styles.frameChild, styles.frameLayout]} />
-            <View style={[styles.frameItem, styles.frameLayout]} />
-            <View style={[styles.frameItem, styles.frameLayout]} />
-          </View>
-          <View style={styles.progressButton}>
-            <View style={[styles.buttonfullcircle, styles.legadoParentFlexBox]}>
-              <Image
-                style={styles.arrowRight}
-                contentFit="cover"
-                source={require("../assets/arrow--right.png")}
-              />
+        <View style={styles.dejaTuHuellaEnElMundoMieParent}>
+          <Text style={[styles.huella, styles.huellaTypo]}>Legado</Text>
+          <View style={{ justifyContent: "center", alignItems: "center" }}>
+            <Text style={[styles.dejaTuHuella, styles.huellaTypo]}>
+              Junta la historia de tu familia y deja un legado para tus
+              descendientes
+            </Text>
+            <View style={styles.frameWrapper}>
+              <View style={styles.rectangleParent}>
+                <View style={styles.frameChild} />
+                <View style={[styles.frameItem, styles.frameLayout]} />
+                <View style={[styles.frameInner, styles.frameLayout]} />
+              </View>
             </View>
-            <Image
-              style={[styles.progressButtonChild, styles.progressPosition]}
-              contentFit="cover"
-              source={require("../assets/ellipse-190.png")}
-            />
-            <Image
-              style={[styles.progressButtonItem, styles.progressPosition]}
-              contentFit="cover"
-              source={require("../assets/ellipse-192.png")}
-            />
+            <Pressable
+              style={styles.progressButton}
+              onPress={() => navigation.navigate("Onboarding1")}
+            >
+              <View
+                style={[styles.buttonfullcircle, styles.huellaParentFlexBox]}
+              >
+                <Image
+                  style={styles.arrowRight}
+                  contentFit="cover"
+                  source={require("../assets/arrow--right.png")}
+                />
+              </View>
+              <Image
+                style={[styles.progressButtonChild, styles.progressPosition]}
+                contentFit="cover"
+                source={require("../assets/ellipse-190.png")}
+              />
+              <Image
+                style={[styles.progressButtonItem, styles.progressPosition]}
+                contentFit="cover"
+                source={require("../assets/ellipse-192.png")}
+              />
+            </Pressable>
           </View>
         </View>
       </LinearGradient>
@@ -54,22 +65,23 @@ const Onboarding2 = () => {
 };
 
 const styles = StyleSheet.create({
-  legadoParentFlexBox: {
+  huellaParentFlexBox: {
     justifyContent: "center",
     position: "absolute",
     alignItems: "center",
   },
-  legadoTypo: {
+  huellaTypo: {
     fontFamily: FontFamily.lato,
-    lineHeight: 24,
+    lineHeight: 35,
   },
   frameLayout: {
+    marginLeft: 7,
     height: 6,
     borderRadius: Border.br_3xs,
   },
   progressPosition: {
-    maxHeight: "100%",
-    maxWidth: "100%",
+    // maxHeight: "100%",
+    // maxWidth: "100%",
     right: "0%",
     top: "0%",
     position: "absolute",
@@ -80,16 +92,17 @@ const styles = StyleSheet.create({
     zIndex: 0,
     overflow: "hidden",
     borderRadius: Border.br_31xl,
-    height: 926,
+    // height: 926,
   },
-  legado: {
+  huella: {
     fontSize: FontSize.size_13xl,
     letterSpacing: 1.3,
     fontWeight: "700",
     color: Color.primario1,
     textAlign: "left",
+    top: 0,
   },
-  juntaLaHistoria: {
+  dejaTuHuella: {
     fontSize: FontSize.size_7xl,
     fontWeight: "500",
     color: Color.white,
@@ -97,15 +110,24 @@ const styles = StyleSheet.create({
     width: 311,
   },
   frameChild: {
-    backgroundColor: Color.white,
+    height: 6,
+    borderRadius: Border.br_3xs,
     width: 34,
+    backgroundColor: Color.white,
   },
   frameItem: {
-    backgroundColor: Color.colorGray_400,
     width: 8,
+    backgroundColor: Color.colorGray_400,
     marginLeft: 7,
   },
+  frameInner: {
+    backgroundColor: Color.colorGray_400,
+    width: 8,
+  },
   rectangleParent: {
+    flexDirection: "row",
+  },
+  frameWrapper: {
     marginTop: 30,
     flexDirection: "row",
   },
@@ -118,17 +140,18 @@ const styles = StyleSheet.create({
     height: "65.96%",
     width: "65.96%",
     top: "17.02%",
-    right: "17.02%",
-    bottom: "17.02%",
+    // right: "17.02%",
+    // bottom: "17.02%",
     left: "17.02%",
-    borderRadius: Border.br_65xl,
+    borderRadius: Border.br_31xl,
     backgroundColor: Color.negro,
-    paddingHorizontal: Padding.p_122xl,
-    paddingVertical: Padding.p_xl,
+    // paddingHorizontal: Padding.p_122xl,
+    // paddingVertical: Padding.p_xl,
     flexDirection: "row",
+    zIndex: 10,
   },
   progressButtonChild: {
-    height: "100%",
+    // height: "100%",
     bottom: "0%",
     left: "0%",
     opacity: 0.38,
@@ -145,25 +168,31 @@ const styles = StyleSheet.create({
     height: 94,
     marginTop: 30,
   },
-  juntaLaHistoriaDeTuFamiliParent: {
-    marginTop: 580,
+  dejaTuHuellaEnElMundoMieParent: {
+    // marginTop: 580,
+    flex: 1,
     alignItems: "center",
+    justifyContent: "space-between",
   },
-  legadoParent: {
+  huellaParent: {
     marginLeft: -194,
+    paddingVertical: 50,
     top: 20,
+    bottom: 50,
     width: 388,
-    height: 886,
+    // height: "92%",
+
     backgroundColor: Color.linearBoton,
     zIndex: 1,
     left: "50%",
     borderRadius: Border.br_31xl,
   },
-  onboarding1: {
+  onboarding3: {
     flex: 1,
     flexDirection: "row",
-    height: 926,
+    // height: 926,
     width: "100%",
+    top: 30,
   },
 });
 
