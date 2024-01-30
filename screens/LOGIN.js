@@ -84,7 +84,7 @@ const LOGIN = () => {
                 contentFit="cover"
                 source={require('../assets/frame-1.png')}
               />
-              <TextInput placeholder="••••••••" style={styles.input} />
+              <TextInput placeholder="••••••••" style={styles.input2} />
             </View>
           </View>
         </View>
@@ -304,6 +304,10 @@ const styles = StyleSheet.create({
     flex: 1
   },
   input: {
+    left: 10,
+    bottom: 3
+  },
+  input2: {
     left: 10
   },
   botContainer: {

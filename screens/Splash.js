@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { StyleSheet, View, Text, Pressable } from 'react-native'
+import { StyleSheet, View, Text, Pressable, ScrollView } from 'react-native'
 import { Image } from 'expo-image'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
@@ -9,7 +9,7 @@ const Splash = () => {
   const navigation = useNavigation()
 
   return (
-    <View style={styles.splash}>
+    <ScrollView style={styles.splash}>
       <View style={styles.splashChild} />
       <Image
         style={styles.splashItem}
@@ -88,15 +88,15 @@ generaciones`}</Text>
           </View>
         </View>
         <View style={styles.interactaConTusGeneracioneParent}>
-          <LinearGradient
-            style={[styles.button, styles.buttonSpaceBlock]}
+          <View
+            style={[styles.iniciarSesion, styles.buttonSpaceBlock]}
             locations={[0, 1]}
             colors={['#dee274', '#7ec18c']}
           >
             <Pressable onPress={() => navigation.navigate('LOGIN')}>
               <Text style={styles.signTypo}>INICIAR SESIÓN</Text>
             </Pressable>
-          </LinearGradient>
+          </View>
           <Text style={[styles.o, styles.oTypo]}>O</Text>
           <LinearGradient
             style={[styles.button1, styles.buttonLayout]}
@@ -112,7 +112,7 @@ generaciones`}</Text>
           </LinearGradient>
         </View>
       </View>
-    </View>
+    </ScrollView>
   )
 }
 
@@ -120,8 +120,7 @@ const styles = StyleSheet.create({
   splashLayout: {
     height: 824,
     width: 869,
-    left: -9,
-    position: 'absolute'
+    left: -9
   },
   splashChildLayout: {
     height: 347,
@@ -169,15 +168,16 @@ const styles = StyleSheet.create({
     letterSpacing: 0,
     fontSize: FontSize.size_sm,
     textAlign: 'center',
-    fontFamily: FontFamily.lato
+    fontFamily: FontFamily.lato,
+    color: Color.primario1
   },
   splashChild: {
     top: 0,
     left: 0,
     borderRadius: Border.br_5xl,
-    width: 428,
+    width: '100%',
     position: 'absolute',
-    height: 926,
+    height: '100%',
     backgroundColor: Color.white
   },
   splashItem: {
@@ -191,26 +191,31 @@ const styles = StyleSheet.create({
     top: 605
   },
   vectorIcon: {
-    top: 635
+    top: 635,
+    position: 'absolute'
   },
   splashChild1: {
-    top: 657
+    top: 657,
+    position: 'absolute'
   },
   splashChild2: {
     left: -65,
     top: -195,
     height: 347,
-    width: 231
+    width: 231,
+    zIndex: 100
   },
   splashChild3: {
     left: -46,
     top: -195,
     height: 347,
-    width: 231
+    width: 231,
+    zIndex: 100
   },
   splashChild4: {
     top: -207,
-    left: -84
+    left: -84,
+    zIndex: 100
   },
   splashChild5: {
     top: -124,
@@ -306,18 +311,24 @@ const styles = StyleSheet.create({
     marginTop: 20
   },
   image6Parent: {
-    top: 128,
-    left: 57,
+    top: 120,
+    left: 25,
     alignItems: 'center',
     position: 'absolute'
   },
   splash: {
     borderRadius: Border.br_21xl,
     flex: 1,
-    overflow: 'hidden',
-    height: 926,
+    height: '100%',
     width: '100%',
     backgroundColor: Color.white
+  },
+  iniciarSesion: {
+    borderColor: Color.primario1,
+    height: 52,
+    width: 222,
+    borderWidth: 1,
+    borderStyle: 'solid'
   }
 })
 

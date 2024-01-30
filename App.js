@@ -1,5 +1,4 @@
-const Stack = createNativeStackNavigator()
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import CambiarFotoDePerfil from './screens/CambiarFotoDePerfil'
 import Fecha from './screens/Fecha'
@@ -191,961 +190,968 @@ import REGISTRONOMBRE1 from './screens/REGISTRONOMBRE1'
 import Suscripciones from './screens/Suscripciones'
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { View, Text, Pressable, TouchableOpacity } from 'react-native'
+import { loadFonts } from './GlobalStyles'
+// import { View, Text, Pressable, TouchableOpacity } from 'react-native'
+
+const Stack = createNativeStackNavigator()
 
 const App = () => {
-  const [hideSplashScreen, setHideSplashScreen] = useState(true)
+  // const [hideSplashScreen, setHideSplashScreen] = useState(true)
+
+  useEffect(() => {
+    loadFonts()
+  }, [])
 
   return (
     <>
       <NavigationContainer>
-        {hideSplashScreen ? (
-          <Stack.Navigator
-            initialRouteName="Onboarding2"
-            screenOptions={{ headerShown: false }}
-          >
-            <Stack.Screen
-              name="CambiarFotoDePerfil"
-              component={CambiarFotoDePerfil}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Fecha"
-              component={Fecha}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="AadirAlbum"
-              component={AadirAlbum}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Tiempo"
-              component={Tiempo}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Album"
-              component={Album}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Etapas"
-              component={Etapas}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Privacidad"
-              component={Privacidad}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Cancion"
-              component={Cancion}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="SubeTusRecuerdos"
-              component={SubeTusRecuerdos}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="LOGIN"
-              component={LOGIN}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Onboarding"
-              component={Onboarding}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Onboarding1"
-              component={Onboarding1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="OpcionesFamiliar"
-              component={OpcionesFamiliar}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MiSalud"
-              component={MiSalud}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Descripcin"
-              component={Descripcin}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MiInformacinPersonal"
-              component={MiInformacinPersonal}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="PopupDiario"
-              component={PopupDiario}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="CreacinInfante"
-              component={CreacinInfante}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="AadirPregunta"
-              component={AadirPregunta}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="SexoInfante"
-              component={SexoInfante}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="RETOSMSVOTADOS"
-              component={RETOSMSVOTADOS}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Valorar"
-              component={Valorar}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="ETIQUETADO"
-              component={ETIQUETADO}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="AadirRecuerdo"
-              component={AadirRecuerdo}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="AadirRecuerdo1"
-              component={AadirRecuerdo1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Compartir"
-              component={Compartir}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="CrearLbum"
-              component={CrearLbum}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MisAlbumesFamiliares"
-              component={MisAlbumesFamiliares}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MUROINFORMACIN"
-              component={MUROINFORMACIN}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="SuscritoConExito"
-              component={SuscritoConExito}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="ENTRADACREADA"
-              component={ENTRADACREADA}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="ENTRADACREADA1"
-              component={ENTRADACREADA1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="CONFIRMARPARENTESCO"
-              component={CONFIRMARPARENTESCO}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="ENTRADACREADA2"
-              component={ENTRADACREADA2}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="ENTRADACREADA3"
-              component={ENTRADACREADA3}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="ConfirmarAsistencia"
-              component={ConfirmarAsistencia}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="ENTRADACREADA4"
-              component={ENTRADACREADA4}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Keyboard"
-              component={Keyboard}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Keyboard1"
-              component={Keyboard1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Lugar"
-              component={Lugar}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Lugar1"
-              component={Lugar1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Lugar2"
-              component={Lugar2}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Lugar3"
-              component={Lugar3}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Fecha1"
-              component={Fecha1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="FECHA2"
-              component={FECHA2}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="FECHA3"
-              component={FECHA3}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="FECHA4"
-              component={FECHA4}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Fecha5"
-              component={Fecha5}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="FECHA6"
-              component={FECHA6}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="AadirEtapa"
-              component={AadirEtapa}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="AadirAUnAlbum"
-              component={AadirAUnAlbum}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Cancion1"
-              component={Cancion1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="CrearAlbum"
-              component={CrearAlbum}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Organizador"
-              component={Organizador}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="RetosFamiliaresCumplido"
-              component={RetosFamiliaresCumplido}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="BusquedaRetoSemanal"
-              component={BusquedaRetoSemanal}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="RetosFamiliaresSinCumplir"
-              component={RetosFamiliaresSinCumplir}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="AccesoAContactos"
-              component={AccesoAContactos}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Situacin"
-              component={Situacin}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MensajePerzonalizado"
-              component={MensajePerzonalizado}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="TipoDeAlerta"
-              component={TipoDeAlerta}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Chat"
-              component={Chat}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="AADIRAADIRANCESTRO"
-              component={AADIRAADIRANCESTRO}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="AADIRAADIRINFANTE"
-              component={AADIRAADIRINFANTE}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="TarjetaDigital"
-              component={TarjetaDigital}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MUROALERTAS"
-              component={MUROALERTAS}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MUROALERTAS1"
-              component={MUROALERTAS1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MENSAJERA"
-              component={MENSAJERA}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Bsqueda"
-              component={Bsqueda}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MisFamiliares"
-              component={MisFamiliares}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MisFamiliares1"
-              component={MisFamiliares1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="BsquedaHashtags"
-              component={BsquedaHashtags}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="BsquedaEventos"
-              component={BsquedaEventos}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="BsquedaDiarios"
-              component={BsquedaDiarios}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="BsquedaPublicaciones"
-              component={BsquedaPublicaciones}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="BsquedaContactos"
-              component={BsquedaContactos}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Bsqueda1"
-              component={Bsqueda1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="BIO2Ancestro"
-              component={BIO2Ancestro}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="BIO2Infante"
-              component={BIO2Infante}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="PERFILIDANCESTRO"
-              component={PERFILIDANCESTRO}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="PERFILIDINFANTE"
-              component={PERFILIDINFANTE}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="PERFILCREARIDINFANTEANCE"
-              component={PERFILCREARIDINFANTEANCE}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Novedades"
-              component={Novedades}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Recompensas"
-              component={Recompensas}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="DiseoDeLaInvitacion"
-              component={DiseoDeLaInvitacion}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="DiseoTarjetaDigital"
-              component={DiseoTarjetaDigital}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="ENTRADACREADA5"
-              component={ENTRADACREADA5}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="AsistenciaActualizada"
-              component={AsistenciaActualizada}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="ENTRADACREADA6"
-              component={ENTRADACREADA6}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="ENTRADACREADA7"
-              component={ENTRADACREADA7}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="ENTRADACREADA8"
-              component={ENTRADACREADA8}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="ENTRADACREADA9"
-              component={ENTRADACREADA9}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="ENTRADACREADA10"
-              component={ENTRADACREADA10}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="QR"
-              component={QR}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="ENTRADACREADA11"
-              component={ENTRADACREADA11}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="ENTRADACREADA12"
-              component={ENTRADACREADA12}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="ValorarEvento"
-              component={ValorarEvento}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="RecopilacionDeRespuestas"
-              component={RecopilacionDeRespuestas}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="VistaPrevia"
-              component={VistaPrevia}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Invitacin"
-              component={Invitacin}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Padres"
-              component={Padres}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Humor"
-              component={Humor}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MIDIARIOPANTALLAPERSONAL"
-              component={MIDIARIOPANTALLAPERSONAL}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MENPRINCIPAL"
-              component={MENPRINCIPAL}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MIDIARIOEDICINVIDEO"
-              component={MIDIARIOEDICINVIDEO}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MIDIARIOEDICINVIDEO1"
-              component={MIDIARIOEDICINVIDEO1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MIDIARIOEDICINVIDEO2"
-              component={MIDIARIOEDICINVIDEO2}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MIDIARIOENTRADAVIDEO"
-              component={MIDIARIOENTRADAVIDEO}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Onboarding2"
-              component={Onboarding2}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MUROINFORMACIN1"
-              component={MUROINFORMACIN1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="FechaYHora"
-              component={FechaYHora}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="FormatoArbol"
-              component={FormatoArbol}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Para"
-              component={Para}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Privacidad1"
-              component={Privacidad1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="FormatoLista"
-              component={FormatoLista}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Etiquetar"
-              component={Etiquetar}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Invitados"
-              component={Invitados}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="FormaDeEnvo"
-              component={FormaDeEnvo}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="OpcionesTituloDelEvento"
-              component={OpcionesTituloDelEvento}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="CrearEvento"
-              component={CrearEvento}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="OpcionesAmigo"
-              component={OpcionesAmigo}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="BuscadorPersona"
-              component={BuscadorPersona}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Parentezco"
-              component={Parentezco}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="BOTONInvitarAmigos"
-              component={BOTONInvitarAmigos}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="BOTONInvitarAmigos1"
-              component={BOTONInvitarAmigos1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Aadir"
-              component={Aadir}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Aadir1"
-              component={Aadir1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="PERFILNOTIFICACIONES"
-              component={PERFILNOTIFICACIONES}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="PERFILAJUSTESVERIFICACIO"
-              component={PERFILAJUSTESVERIFICACIO}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="PERFILAJUSTESSUSCRIPCION"
-              component={PERFILAJUSTESSUSCRIPCION}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="PERFILAJUSTESSEGURIDAD"
-              component={PERFILAJUSTESSEGURIDAD}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="PERFILAJUSTESPRIVACIDAD"
-              component={PERFILAJUSTESPRIVACIDAD}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="PERFILAJUSTESPREVISUALIZ"
-              component={PERFILAJUSTESPREVISUALIZ}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="PERFILDELUSUARIOVISITADO"
-              component={PERFILDELUSUARIOVISITADO}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="CONDOLENCIAS"
-              component={CONDOLENCIAS}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Navigation"
-              component={Navigation}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="PERFILANCESTROAJUSTES"
-              component={PERFILANCESTROAJUSTES}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="PERFILANCESTROAJUSTES1"
-              component={PERFILANCESTROAJUSTES1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="PERFILINFANTEAJUSTES"
-              component={PERFILINFANTEAJUSTES}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="PERFILDELUSUARIOVISITADO1"
-              component={PERFILDELUSUARIOVISITADO1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="PERFILAJUSTESCONFIGURACI"
-              component={PERFILAJUSTESCONFIGURACI}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MISAMIGOS"
-              component={MISAMIGOS}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="PERFILAJUSTES"
-              component={PERFILAJUSTES}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="PERFILDELUSUARIOVISITADO2"
-              component={PERFILDELUSUARIOVISITADO2}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="PERFILMIINFO"
-              component={PERFILMIINFO}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="VotacionDeRetos"
-              component={VotacionDeRetos}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="RetosBienvenida"
-              component={RetosBienvenida}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="RetosBienvenida1"
-              component={RetosBienvenida1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MisAlbumes"
-              component={MisAlbumes}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MisAlbumes1"
-              component={MisAlbumes1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="SOLOYO"
-              component={SOLOYO}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Perfil"
-              component={Perfil}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Perfil1"
-              component={Perfil1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MIDIARIOENTRADATEXTOPL"
-              component={MIDIARIOENTRADATEXTOPL}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MIDIARIOENTRADATEXTOPL1"
-              component={MIDIARIOENTRADATEXTOPL1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MIDIARIOENTRADATEXTOPL2"
-              component={MIDIARIOENTRADATEXTOPL2}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MIDIARIOENTRADATEXTOPL3"
-              component={MIDIARIOENTRADATEXTOPL3}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MIDIARIOENTRADATEXTOPL4"
-              component={MIDIARIOENTRADATEXTOPL4}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MIDIARIOENTRADATEXTOPL5"
-              component={MIDIARIOENTRADATEXTOPL5}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MIDIARIOENTRADATEXTOPL6"
-              component={MIDIARIOENTRADATEXTOPL6}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MIDIARIOENTRADATEXTOPL7"
-              component={MIDIARIOENTRADATEXTOPL7}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MIDIARIOENTRADATEXTO"
-              component={MIDIARIOENTRADATEXTO}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="OpcionesZonaHoraria"
-              component={OpcionesZonaHoraria}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="OpcionesCaategora"
-              component={OpcionesCaategora}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="OpcionesFormatoFecha"
-              component={OpcionesFormatoFecha}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="OpcionesCulturas"
-              component={OpcionesCulturas}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="OpcionesInicioDeSemana"
-              component={OpcionesInicioDeSemana}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="OpcionesIdioma"
-              component={OpcionesIdioma}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="CALENDARIOAJUSTES"
-              component={CALENDARIOAJUSTES}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="CALENDARIOCREARFECHAESPEC"
-              component={CALENDARIOCREARFECHAESPEC}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="CALENDARIO"
-              component={CALENDARIO}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Success"
-              component={Success}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Splash"
-              component={Splash}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Keyboard2"
-              component={Keyboard2}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Keyboard3"
-              component={Keyboard3}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Keyboard4"
-              component={Keyboard4}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="REGISTROPOLTICASDEPRIVAC"
-              component={REGISTROPOLTICASDEPRIVAC}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="REGISTROTRMINOSYCONDICIO"
-              component={REGISTROTRMINOSYCONDICIO}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="REGISTROPRIVACIDAD"
-              component={REGISTROPRIVACIDAD}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="REGISTROTELFONO"
-              component={REGISTROTELFONO}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="REGISTROTELFONO1"
-              component={REGISTROTELFONO1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="REGISTROTELFONO2"
-              component={REGISTROTELFONO2}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="REGISTROTELFONO3"
-              component={REGISTROTELFONO3}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="REGISTROFECHADENACIMIENTO"
-              component={REGISTROFECHADENACIMIENTO}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="REGISTROFECHADENACIMIENTO1"
-              component={REGISTROFECHADENACIMIENTO1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="REGISTRONOMBRE"
-              component={REGISTRONOMBRE}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="REGISTRONOMBRE1"
-              component={REGISTRONOMBRE1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Suscripciones"
-              component={Suscripciones}
-              options={{ headerShown: false }}
-            />
-          </Stack.Navigator>
-        ) : null}
+        {/* {hideSplashScreen ? ( */}
+        <Stack.Navigator
+          initialRouteName="Onboarding2"
+          screenOptions={{ headerShown: false }}
+        >
+          <Stack.Screen
+            name="CambiarFotoDePerfil"
+            component={CambiarFotoDePerfil}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Fecha"
+            component={Fecha}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="AadirAlbum"
+            component={AadirAlbum}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Tiempo"
+            component={Tiempo}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Album"
+            component={Album}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Etapas"
+            component={Etapas}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Privacidad"
+            component={Privacidad}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Cancion"
+            component={Cancion}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="SubeTusRecuerdos"
+            component={SubeTusRecuerdos}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="LOGIN"
+            component={LOGIN}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Onboarding"
+            component={Onboarding}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Onboarding1"
+            component={Onboarding1}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="OpcionesFamiliar"
+            component={OpcionesFamiliar}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MiSalud"
+            component={MiSalud}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Descripcin"
+            component={Descripcin}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MiInformacinPersonal"
+            component={MiInformacinPersonal}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="PopupDiario"
+            component={PopupDiario}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="CreacinInfante"
+            component={CreacinInfante}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="AadirPregunta"
+            component={AadirPregunta}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="SexoInfante"
+            component={SexoInfante}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="RETOSMSVOTADOS"
+            component={RETOSMSVOTADOS}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Valorar"
+            component={Valorar}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ETIQUETADO"
+            component={ETIQUETADO}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="AadirRecuerdo"
+            component={AadirRecuerdo}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="AadirRecuerdo1"
+            component={AadirRecuerdo1}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Compartir"
+            component={Compartir}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="CrearLbum"
+            component={CrearLbum}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MisAlbumesFamiliares"
+            component={MisAlbumesFamiliares}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MUROINFORMACIN"
+            component={MUROINFORMACIN}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="SuscritoConExito"
+            component={SuscritoConExito}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ENTRADACREADA"
+            component={ENTRADACREADA}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ENTRADACREADA1"
+            component={ENTRADACREADA1}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="CONFIRMARPARENTESCO"
+            component={CONFIRMARPARENTESCO}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ENTRADACREADA2"
+            component={ENTRADACREADA2}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ENTRADACREADA3"
+            component={ENTRADACREADA3}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ConfirmarAsistencia"
+            component={ConfirmarAsistencia}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ENTRADACREADA4"
+            component={ENTRADACREADA4}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Keyboard"
+            component={Keyboard}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Keyboard1"
+            component={Keyboard1}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Lugar"
+            component={Lugar}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Lugar1"
+            component={Lugar1}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Lugar2"
+            component={Lugar2}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Lugar3"
+            component={Lugar3}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Fecha1"
+            component={Fecha1}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="FECHA2"
+            component={FECHA2}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="FECHA3"
+            component={FECHA3}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="FECHA4"
+            component={FECHA4}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Fecha5"
+            component={Fecha5}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="FECHA6"
+            component={FECHA6}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="AadirEtapa"
+            component={AadirEtapa}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="AadirAUnAlbum"
+            component={AadirAUnAlbum}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Cancion1"
+            component={Cancion1}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="CrearAlbum"
+            component={CrearAlbum}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Organizador"
+            component={Organizador}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="RetosFamiliaresCumplido"
+            component={RetosFamiliaresCumplido}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="BusquedaRetoSemanal"
+            component={BusquedaRetoSemanal}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="RetosFamiliaresSinCumplir"
+            component={RetosFamiliaresSinCumplir}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="AccesoAContactos"
+            component={AccesoAContactos}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Situacin"
+            component={Situacin}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MensajePerzonalizado"
+            component={MensajePerzonalizado}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="TipoDeAlerta"
+            component={TipoDeAlerta}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Chat"
+            component={Chat}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="AADIRAADIRANCESTRO"
+            component={AADIRAADIRANCESTRO}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="AADIRAADIRINFANTE"
+            component={AADIRAADIRINFANTE}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="TarjetaDigital"
+            component={TarjetaDigital}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MUROALERTAS"
+            component={MUROALERTAS}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MUROALERTAS1"
+            component={MUROALERTAS1}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MENSAJERA"
+            component={MENSAJERA}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Bsqueda"
+            component={Bsqueda}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MisFamiliares"
+            component={MisFamiliares}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MisFamiliares1"
+            component={MisFamiliares1}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="BsquedaHashtags"
+            component={BsquedaHashtags}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="BsquedaEventos"
+            component={BsquedaEventos}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="BsquedaDiarios"
+            component={BsquedaDiarios}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="BsquedaPublicaciones"
+            component={BsquedaPublicaciones}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="BsquedaContactos"
+            component={BsquedaContactos}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Bsqueda1"
+            component={Bsqueda1}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="BIO2Ancestro"
+            component={BIO2Ancestro}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="BIO2Infante"
+            component={BIO2Infante}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="PERFILIDANCESTRO"
+            component={PERFILIDANCESTRO}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="PERFILIDINFANTE"
+            component={PERFILIDINFANTE}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="PERFILCREARIDINFANTEANCE"
+            component={PERFILCREARIDINFANTEANCE}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Novedades"
+            component={Novedades}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Recompensas"
+            component={Recompensas}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="DiseoDeLaInvitacion"
+            component={DiseoDeLaInvitacion}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="DiseoTarjetaDigital"
+            component={DiseoTarjetaDigital}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ENTRADACREADA5"
+            component={ENTRADACREADA5}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="AsistenciaActualizada"
+            component={AsistenciaActualizada}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ENTRADACREADA6"
+            component={ENTRADACREADA6}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ENTRADACREADA7"
+            component={ENTRADACREADA7}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ENTRADACREADA8"
+            component={ENTRADACREADA8}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ENTRADACREADA9"
+            component={ENTRADACREADA9}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ENTRADACREADA10"
+            component={ENTRADACREADA10}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="QR"
+            component={QR}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ENTRADACREADA11"
+            component={ENTRADACREADA11}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ENTRADACREADA12"
+            component={ENTRADACREADA12}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ValorarEvento"
+            component={ValorarEvento}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="RecopilacionDeRespuestas"
+            component={RecopilacionDeRespuestas}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="VistaPrevia"
+            component={VistaPrevia}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Invitacin"
+            component={Invitacin}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Padres"
+            component={Padres}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Humor"
+            component={Humor}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MIDIARIOPANTALLAPERSONAL"
+            component={MIDIARIOPANTALLAPERSONAL}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MENPRINCIPAL"
+            component={MENPRINCIPAL}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MIDIARIOEDICINVIDEO"
+            component={MIDIARIOEDICINVIDEO}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MIDIARIOEDICINVIDEO1"
+            component={MIDIARIOEDICINVIDEO1}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MIDIARIOEDICINVIDEO2"
+            component={MIDIARIOEDICINVIDEO2}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MIDIARIOENTRADAVIDEO"
+            component={MIDIARIOENTRADAVIDEO}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Onboarding2"
+            component={Onboarding2}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MUROINFORMACIN1"
+            component={MUROINFORMACIN1}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="FechaYHora"
+            component={FechaYHora}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="FormatoArbol"
+            component={FormatoArbol}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Para"
+            component={Para}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Privacidad1"
+            component={Privacidad1}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="FormatoLista"
+            component={FormatoLista}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Etiquetar"
+            component={Etiquetar}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Invitados"
+            component={Invitados}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="FormaDeEnvo"
+            component={FormaDeEnvo}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="OpcionesTituloDelEvento"
+            component={OpcionesTituloDelEvento}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="CrearEvento"
+            component={CrearEvento}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="OpcionesAmigo"
+            component={OpcionesAmigo}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="BuscadorPersona"
+            component={BuscadorPersona}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Parentezco"
+            component={Parentezco}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="BOTONInvitarAmigos"
+            component={BOTONInvitarAmigos}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="BOTONInvitarAmigos1"
+            component={BOTONInvitarAmigos1}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Aadir"
+            component={Aadir}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Aadir1"
+            component={Aadir1}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="PERFILNOTIFICACIONES"
+            component={PERFILNOTIFICACIONES}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="PERFILAJUSTESVERIFICACIO"
+            component={PERFILAJUSTESVERIFICACIO}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="PERFILAJUSTESSUSCRIPCION"
+            component={PERFILAJUSTESSUSCRIPCION}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="PERFILAJUSTESSEGURIDAD"
+            component={PERFILAJUSTESSEGURIDAD}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="PERFILAJUSTESPRIVACIDAD"
+            component={PERFILAJUSTESPRIVACIDAD}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="PERFILAJUSTESPREVISUALIZ"
+            component={PERFILAJUSTESPREVISUALIZ}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="PERFILDELUSUARIOVISITADO"
+            component={PERFILDELUSUARIOVISITADO}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="CONDOLENCIAS"
+            component={CONDOLENCIAS}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Navigation"
+            component={Navigation}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="PERFILANCESTROAJUSTES"
+            component={PERFILANCESTROAJUSTES}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="PERFILANCESTROAJUSTES1"
+            component={PERFILANCESTROAJUSTES1}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="PERFILINFANTEAJUSTES"
+            component={PERFILINFANTEAJUSTES}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="PERFILDELUSUARIOVISITADO1"
+            component={PERFILDELUSUARIOVISITADO1}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="PERFILAJUSTESCONFIGURACI"
+            component={PERFILAJUSTESCONFIGURACI}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MISAMIGOS"
+            component={MISAMIGOS}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="PERFILAJUSTES"
+            component={PERFILAJUSTES}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="PERFILDELUSUARIOVISITADO2"
+            component={PERFILDELUSUARIOVISITADO2}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="PERFILMIINFO"
+            component={PERFILMIINFO}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="VotacionDeRetos"
+            component={VotacionDeRetos}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="RetosBienvenida"
+            component={RetosBienvenida}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="RetosBienvenida1"
+            component={RetosBienvenida1}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MisAlbumes"
+            component={MisAlbumes}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MisAlbumes1"
+            component={MisAlbumes1}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="SOLOYO"
+            component={SOLOYO}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Perfil"
+            component={Perfil}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Perfil1"
+            component={Perfil1}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MIDIARIOENTRADATEXTOPL"
+            component={MIDIARIOENTRADATEXTOPL}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MIDIARIOENTRADATEXTOPL1"
+            component={MIDIARIOENTRADATEXTOPL1}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MIDIARIOENTRADATEXTOPL2"
+            component={MIDIARIOENTRADATEXTOPL2}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MIDIARIOENTRADATEXTOPL3"
+            component={MIDIARIOENTRADATEXTOPL3}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MIDIARIOENTRADATEXTOPL4"
+            component={MIDIARIOENTRADATEXTOPL4}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MIDIARIOENTRADATEXTOPL5"
+            component={MIDIARIOENTRADATEXTOPL5}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MIDIARIOENTRADATEXTOPL6"
+            component={MIDIARIOENTRADATEXTOPL6}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MIDIARIOENTRADATEXTOPL7"
+            component={MIDIARIOENTRADATEXTOPL7}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MIDIARIOENTRADATEXTO"
+            component={MIDIARIOENTRADATEXTO}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="OpcionesZonaHoraria"
+            component={OpcionesZonaHoraria}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="OpcionesCaategora"
+            component={OpcionesCaategora}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="OpcionesFormatoFecha"
+            component={OpcionesFormatoFecha}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="OpcionesCulturas"
+            component={OpcionesCulturas}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="OpcionesInicioDeSemana"
+            component={OpcionesInicioDeSemana}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="OpcionesIdioma"
+            component={OpcionesIdioma}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="CALENDARIOAJUSTES"
+            component={CALENDARIOAJUSTES}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="CALENDARIOCREARFECHAESPEC"
+            component={CALENDARIOCREARFECHAESPEC}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="CALENDARIO"
+            component={CALENDARIO}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Success"
+            component={Success}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Splash"
+            component={Splash}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Keyboard2"
+            component={Keyboard2}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Keyboard3"
+            component={Keyboard3}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Keyboard4"
+            component={Keyboard4}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="REGISTROPOLTICASDEPRIVAC"
+            component={REGISTROPOLTICASDEPRIVAC}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="REGISTROTRMINOSYCONDICIO"
+            component={REGISTROTRMINOSYCONDICIO}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="REGISTROPRIVACIDAD"
+            component={REGISTROPRIVACIDAD}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="REGISTROTELFONO"
+            component={REGISTROTELFONO}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="REGISTROTELFONO1"
+            component={REGISTROTELFONO1}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="REGISTROTELFONO2"
+            component={REGISTROTELFONO2}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="REGISTROTELFONO3"
+            component={REGISTROTELFONO3}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="REGISTROFECHADENACIMIENTO"
+            component={REGISTROFECHADENACIMIENTO}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="REGISTROFECHADENACIMIENTO1"
+            component={REGISTROFECHADENACIMIENTO1}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="REGISTRONOMBRE"
+            component={REGISTRONOMBRE}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="REGISTRONOMBRE1"
+            component={REGISTRONOMBRE1}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Suscripciones"
+            component={Suscripciones}
+            options={{ headerShown: false }}
+          />
+        </Stack.Navigator>
+        {/* ) : null} */}
       </NavigationContainer>
     </>
   )
