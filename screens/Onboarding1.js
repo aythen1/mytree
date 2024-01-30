@@ -1,52 +1,62 @@
 import * as React from "react";
 import { Image } from "expo-image";
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { FontFamily, Border, FontSize, Color, Padding } from "../GlobalStyles";
+import { useNavigation } from "@react-navigation/native";
 
 const Onboarding1 = () => {
+  const navigation = useNavigation();
+
   return (
-    <View style={styles.onboarding2}>
+    <View style={styles.onboarding3}>
       <Image
         style={styles.onboarding1Icon}
         contentFit="cover"
         source={require("../assets/onboarding-1.png")}
       />
       <LinearGradient
-        style={[styles.comparteParent, styles.comparteParentFlexBox]}
+        style={[styles.huellaParent, styles.huellaParentFlexBox]}
         locations={[0, 1]}
         colors={["#b7e4c0", "#2c372e"]}
       >
-        <Text style={[styles.comparte, styles.comparteTypo]}>Comparte</Text>
-        <View style={styles.unTesoroDeRecuerdosParaCoParent}>
-          <Text style={[styles.unTesoroDe, styles.comparteTypo]}>
-            Un tesoro de recuerdos para compartir con futuras generaciones
-          </Text>
-          <View style={styles.rectangleParent}>
-            <View style={styles.frameChild} />
-            <View style={[styles.frameItem, styles.frameLayout]} />
-            <View style={[styles.frameInner, styles.frameLayout]} />
-          </View>
-          <View style={styles.progressButton}>
-            <View
-              style={[styles.buttonfullcircle, styles.comparteParentFlexBox]}
-            >
-              <Image
-                style={styles.arrowRight}
-                contentFit="cover"
-                source={require("../assets/arrow--right.png")}
-              />
+        <View style={styles.dejaTuHuellaEnElMundoMieParent}>
+          <Text style={[styles.huella, styles.huellaTypo]}>Comparte</Text>
+          <View style={{ justifyContent: "center", alignItems: "center" }}>
+            <Text style={[styles.dejaTuHuella, styles.huellaTypo]}>
+              Un tesoro de recuerdos para compartir con futuras generaciones
+            </Text>
+            <View style={styles.frameWrapper}>
+              <View style={styles.rectangleParent}>
+                <View style={styles.frameChild} />
+                <View style={[styles.frameInner, styles.frameLayout]} />
+                <View style={[styles.frameItem, styles.frameLayout]} />
+              </View>
             </View>
-            <Image
-              style={[styles.progressButtonChild, styles.progressPosition]}
-              contentFit="cover"
-              source={require("../assets/ellipse-190.png")}
-            />
-            <Image
-              style={[styles.progressButtonItem, styles.progressPosition]}
-              contentFit="cover"
-              source={require("../assets/ellipse-192.png")}
-            />
+            <Pressable
+              style={styles.progressButton}
+              onPress={() => navigation.navigate("Onboarding")}
+            >
+              <View
+                style={[styles.buttonfullcircle, styles.huellaParentFlexBox]}
+              >
+                <Image
+                  style={styles.arrowRight}
+                  contentFit="cover"
+                  source={require("../assets/arrow--right.png")}
+                />
+              </View>
+              <Image
+                style={[styles.progressButtonChild, styles.progressPosition]}
+                contentFit="cover"
+                source={require("../assets/ellipse-190.png")}
+              />
+              <Image
+                style={[styles.progressButtonItem, styles.progressPosition]}
+                contentFit="cover"
+                source={require("../assets/ellipse-192.png")}
+              />
+            </Pressable>
           </View>
         </View>
       </LinearGradient>
@@ -55,14 +65,14 @@ const Onboarding1 = () => {
 };
 
 const styles = StyleSheet.create({
-  comparteParentFlexBox: {
+  huellaParentFlexBox: {
     justifyContent: "center",
     position: "absolute",
     alignItems: "center",
   },
-  comparteTypo: {
+  huellaTypo: {
     fontFamily: FontFamily.lato,
-    lineHeight: 24,
+    lineHeight: 35,
   },
   frameLayout: {
     marginLeft: 7,
@@ -70,8 +80,8 @@ const styles = StyleSheet.create({
     borderRadius: Border.br_3xs,
   },
   progressPosition: {
-    maxHeight: "100%",
-    maxWidth: "100%",
+    // maxHeight: "100%",
+    // maxWidth: "100%",
     right: "0%",
     top: "0%",
     position: "absolute",
@@ -82,16 +92,17 @@ const styles = StyleSheet.create({
     zIndex: 0,
     overflow: "hidden",
     borderRadius: Border.br_31xl,
-    height: 926,
+    // height: 926,
   },
-  comparte: {
+  huella: {
     fontSize: FontSize.size_13xl,
     letterSpacing: 1.3,
     fontWeight: "700",
     color: Color.primario1,
     textAlign: "left",
+    top: 0,
   },
-  unTesoroDe: {
+  dejaTuHuella: {
     fontSize: FontSize.size_7xl,
     fontWeight: "500",
     color: Color.white,
@@ -105,15 +116,18 @@ const styles = StyleSheet.create({
     backgroundColor: Color.colorGray_400,
   },
   frameItem: {
-    backgroundColor: Color.white,
-    width: 34,
-  },
-  frameInner: {
     width: 8,
     backgroundColor: Color.colorGray_400,
     marginLeft: 7,
   },
+  frameInner: {
+    backgroundColor: Color.white,
+    width: 34,
+  },
   rectangleParent: {
+    flexDirection: "row",
+  },
+  frameWrapper: {
     marginTop: 30,
     flexDirection: "row",
   },
@@ -126,17 +140,18 @@ const styles = StyleSheet.create({
     height: "65.96%",
     width: "65.96%",
     top: "17.02%",
-    right: "17.02%",
-    bottom: "17.02%",
+    // right: "17.02%",
+    // bottom: "17.02%",
     left: "17.02%",
-    borderRadius: Border.br_65xl,
+    borderRadius: Border.br_31xl,
     backgroundColor: Color.negro,
-    paddingHorizontal: Padding.p_122xl,
-    paddingVertical: Padding.p_xl,
+    // paddingHorizontal: Padding.p_122xl,
+    // paddingVertical: Padding.p_xl,
     flexDirection: "row",
+    zIndex: 10,
   },
   progressButtonChild: {
-    height: "100%",
+    // height: "100%",
     bottom: "0%",
     left: "0%",
     opacity: 0.38,
@@ -153,25 +168,31 @@ const styles = StyleSheet.create({
     height: 94,
     marginTop: 30,
   },
-  unTesoroDeRecuerdosParaCoParent: {
-    marginTop: 580,
+  dejaTuHuellaEnElMundoMieParent: {
+    // marginTop: 580,
+    flex: 1,
     alignItems: "center",
+    justifyContent: "space-between",
   },
-  comparteParent: {
+  huellaParent: {
     marginLeft: -194,
+    paddingVertical: 50,
     top: 20,
+    bottom: 50,
     width: 388,
-    height: 886,
+    // height: "92%",
+
     backgroundColor: Color.linearBoton,
     zIndex: 1,
     left: "50%",
     borderRadius: Border.br_31xl,
   },
-  onboarding2: {
+  onboarding3: {
     flex: 1,
     flexDirection: "row",
-    height: 926,
+    // height: 926,
     width: "100%",
+    top: 30,
   },
 });
 
