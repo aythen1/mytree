@@ -1,36 +1,36 @@
-import * as React from "react";
-import { Image } from "expo-image";
-import { StyleSheet, View, Pressable, Text, Linking } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
-import { useNavigation } from "@react-navigation/native";
-import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
+import * as React from 'react'
+import { Image } from 'expo-image'
+import { StyleSheet, View, Pressable, Text } from 'react-native'
+import { LinearGradient } from 'expo-linear-gradient'
+import { useNavigation } from '@react-navigation/native'
+import { Color, FontFamily, FontSize, Border } from '../GlobalStyles'
 
 const REGISTROPOLTICASDEPRIVAC = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation()
 
   return (
     <View style={styles.registroPolticasDePrivac}>
       <Image
         style={styles.vectorIcon}
         contentFit="cover"
-        source={require("../assets/vector71.png")}
+        source={require('../assets/vector71.png')}
       />
       <View style={[styles.frameParent, styles.framePosition]}>
         <View style={styles.frameChildLayout}>
           <LinearGradient
             style={[styles.frameChild, styles.frameChildLayout]}
             locations={[0, 1]}
-            colors={["#7ec18c", "#dee274"]}
+            colors={['#7ec18c', '#dee274']}
           />
           <View style={styles.rectangleGroup}>
             <Pressable
               style={styles.frameItem}
-              onPress={() => navigation.navigate("REGISTROTELFONO")}
+              onPress={() => navigation.navigate('REGISTROTELFONO')}
             />
             <Image
               style={styles.backButtonIcon}
               contentFit="cover"
-              source={require("../assets/back-button1.png")}
+              source={require('../assets/back-button1.png')}
             />
           </View>
           <Text style={styles.registrate}>¡REGISTRATE!</Text>
@@ -117,66 +117,66 @@ Para cumplir con la ley o responder a solicitudes legales, como una orden judici
           </View>
           <View style={styles.labelledParent}>
             <Pressable
-              onPress={() => navigation.navigate("REGISTROPRIVACIDAD")}
+              onPress={() => navigation.navigate('REGISTROPRIVACIDAD')}
             >
-              <Text
-                style={[styles.volver, styles.volverTypo]}
-              >{`< Volver `}</Text>
+              <Text style={[styles.volver, styles.volverTypo]}>
+                {'< Volver '}
+              </Text>
             </Pressable>
             <Pressable
               style={styles.labelled1}
-              onPress={() => navigation.navigate("Success")}
+              onPress={() => navigation.navigate('Success')}
             >
-              <Text style={styles.volverTypo}>{`Continuar >`}</Text>
+              <Text style={styles.volverTypo}>{'Continuar >'}</Text>
             </Pressable>
           </View>
         </View>
       </View>
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   framePosition: {
     left: 0,
     top: 0,
-    position: "absolute",
+    position: 'absolute'
   },
   frameChildLayout: {
     height: 243,
-    width: 428,
+    width: 428
   },
   volverTypo: {
     color: Color.primario1,
     lineHeight: 41,
-    textAlign: "left",
+    textAlign: 'left',
     fontFamily: FontFamily.lato,
-    fontWeight: "900",
-    fontSize: FontSize.size_5xl,
+    fontWeight: '900',
+    fontSize: FontSize.size_5xl
   },
   vectorIcon: {
-    height: "37.33%",
-    width: "77.1%",
-    top: "-5.98%",
-    right: "0%",
-    bottom: "68.65%",
-    left: "22.9%",
-    maxWidth: "100%",
-    maxHeight: "100%",
+    height: '37.33%',
+    width: '77.1%',
+    top: '-5.98%',
+    right: '0%',
+    bottom: '68.65%',
+    left: '22.9%',
+    maxWidth: '100%',
+    maxHeight: '100%',
     opacity: 0.2,
-    position: "absolute",
-    overflow: "hidden",
+    position: 'absolute',
+    overflow: 'hidden'
   },
   frameChild: {
     backgroundColor: Color.linearBoton,
     left: 0,
     top: 0,
-    position: "absolute",
+    position: 'absolute'
   },
   frameItem: {
     width: 29,
     height: 28,
-    zIndex: 0,
+    zIndex: 0
   },
   backButtonIcon: {
     top: 14,
@@ -184,78 +184,75 @@ const styles = StyleSheet.create({
     width: 18,
     height: 0,
     zIndex: 1,
-    position: "absolute",
+    position: 'absolute'
   },
   rectangleGroup: {
     top: 26,
     left: 15,
-    position: "absolute",
+    position: 'absolute'
   },
   registrate: {
     top: 111,
     left: 137,
     lineHeight: 24,
     color: Color.white,
-    textAlign: "center",
+    textAlign: 'center',
     transform: [
       {
-        rotate: "-0.55deg",
-      },
+        rotate: '-0.55deg'
+      }
     ],
     fontFamily: FontFamily.lato,
-    fontWeight: "900",
+    fontWeight: '900',
     fontSize: FontSize.size_5xl,
-    position: "absolute",
+    position: 'absolute'
   },
   polticaDePrivacidad: {
-    fontWeight: "700",
-    fontFamily: FontFamily.lato,
+    fontWeight: '700',
+    fontFamily: FontFamily.lato
   },
   ltimaActualizacin2310202: {
-    fontWeight: "500",
-    fontFamily: FontFamily.lato,
-  },
-  wwwmytreecom1: {
-    textDecoration: "underline",
+    fontWeight: '500',
+    fontFamily: FontFamily.lato
   },
   polticaDePrivacidadContainer: {
     fontSize: FontSize.size_base,
     lineHeight: 27,
     color: Color.negro,
     width: 323,
-    textAlign: "left",
+    textAlign: 'left'
   },
   polticaDePrivacidadLtimaWrapper: {
     width: 388,
     height: 571,
-    alignItems: "center",
-    overflow: "hidden",
+    alignItems: 'center',
+    overflow: 'hidden'
   },
   volver: {
-    width: 107,
+    width: 107
   },
   labelled1: {
-    marginLeft: 134,
+    marginLeft: 134
   },
   labelledParent: {
-    flexDirection: "row",
-    marginTop: 18,
+    flexDirection: 'row',
+    marginTop: 18
   },
   frameGroup: {
     marginTop: 20,
-    alignItems: "center",
+    alignItems: 'center'
   },
   frameParent: {
-    alignItems: "center",
+    alignItems: 'center'
   },
   registroPolticasDePrivac: {
     borderRadius: Border.br_31xl,
     backgroundColor: Color.white,
     flex: 1,
-    width: "100%",
+    width: '100%',
     height: 926,
-    overflow: "hidden",
-  },
-});
+    overflow: 'hidden'
+  }
+})
 
-export default REGISTROPOLTICASDEPRIVAC;
+export default REGISTROPOLTICASDEPRIVAC
