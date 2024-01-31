@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { StyleSheet, View, Pressable, Text, Image } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
-// import { useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native'
 import { Color, FontFamily, FontSize, Border } from '../GlobalStyles'
 import { Path, Svg } from 'react-native-svg'
 import NameRegister from '../components/NameRegister'
@@ -11,20 +11,25 @@ import CheckRegister from '../components/CheckRegister'
 import AcceptRegister from '../components/AcceptRegister'
 
 const Register = () => {
-  // const navigation = useNavigation()
+  const navigation = useNavigation()
   const [nextField, setNextField] = useState(1)
 
   const next = () => {
-    setNextField((prev) => {
-      return prev < 5 ? prev + 1 : prev
-    })
+    if (nextField < 5) {
+      setNextField((prev) => prev + 1)
+    } else {
+      navigation.navigate('Splash')
+    }
   }
 
   const previous = () => {
-    setNextField((prev) => {
-      return prev > 1 ? prev - 1 : prev
-    })
+    if (nextField > 1) {
+      setNextField((prev) => prev - 1)
+    } else {
+      navigation.navigate('Splash')
+    }
   }
+
   return (
     <View style={styles.registroNombre}>
       <Image
@@ -40,28 +45,15 @@ const Register = () => {
         >
           <View style={[styles.rectangleGroup, styles.groupIconPosition]}>
             <Pressable
-              // style={styles.frameItem}
               style={{
                 height: 50,
                 width: 50,
-                // backgroundColor: 'red',
                 justifyContent: 'center',
                 alignItems: 'center'
               }}
               onPress={() => previous()}
             >
-              {/* <Text
-                style={{
-                  fontSize: 40,
-                  fontWeight: '900',
-                  color: 'white',
-                  width: 30
-                }}
-              >
-                ←
-              </Text> */}
               <Image
-                // style={[styles.backButtonIcon, styles.groupIconPosition]}
                 contentFit="cover"
                 source={require('../assets/Back Button.png')}
               />
