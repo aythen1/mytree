@@ -191,6 +191,7 @@ import Suscripciones from './screens/Suscripciones'
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { loadFonts } from './GlobalStyles'
+import Register from './screens/Register'
 // import { View, Text, Pressable, TouchableOpacity } from 'react-native'
 
 const Stack = createNativeStackNavigator()
@@ -1141,8 +1142,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="REGISTRONOMBRE1"
-            component={REGISTRONOMBRE1}
+            name="Register"
+            component={Register}
             options={{ headerShown: false }}
           />
           <Stack.Screen

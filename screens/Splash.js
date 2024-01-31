@@ -105,7 +105,7 @@ generaciones`}</Text>
           >
             <Pressable
               style={[styles.pressable, styles.buttonSpaceBlock]}
-              onPress={() => navigation.navigate('REGISTRONOMBRE1')}
+              onPress={() => navigation.navigate('Register')}
             >
               <Text style={[styles.signIn1, styles.signTypo]}>REGISTRARSE</Text>
             </Pressable>
@@ -311,10 +311,10 @@ const styles = StyleSheet.create({
     marginTop: 20
   },
   image6Parent: {
-    top: 120,
-    left: 25,
-    alignItems: 'center',
-    position: 'absolute'
+    top: '-50%',
+    // left: 60,
+    alignItems: 'center'
+    // position: 'absolute'
   },
   splash: {
     borderRadius: Border.br_21xl,

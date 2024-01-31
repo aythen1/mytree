@@ -1,22 +1,22 @@
-import React, { useState, useCallback } from "react";
-import { Image } from "expo-image";
-import { StyleSheet, View, Pressable, Text, Modal } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
-import { useNavigation } from "@react-navigation/native";
-import Keyboard2 from "../components/Keyboard2";
-import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
+import React, { useState, useCallback } from 'react'
+import { Image } from 'expo-image'
+import { StyleSheet, View, Pressable, Text, Modal } from 'react-native'
+import { LinearGradient } from 'expo-linear-gradient'
+import { useNavigation } from '@react-navigation/native'
+import Keyboard2 from '../components/Keyboard2'
+import { Color, FontFamily, FontSize, Border } from '../GlobalStyles'
 
 const REGISTROFECHADENACIMIENTO1 = () => {
-  const navigation = useNavigation();
-  const [frameContainer11Visible, setFrameContainer11Visible] = useState(false);
+  const navigation = useNavigation()
+  const [frameContainer11Visible, setFrameContainer11Visible] = useState(false)
 
   const openFrameContainer11 = useCallback(() => {
-    setFrameContainer11Visible(true);
-  }, []);
+    setFrameContainer11Visible(true)
+  }, [])
 
   const closeFrameContainer11 = useCallback(() => {
-    setFrameContainer11Visible(false);
-  }, []);
+    setFrameContainer11Visible(false)
+  }, [])
 
   return (
     <>
@@ -24,24 +24,24 @@ const REGISTROFECHADENACIMIENTO1 = () => {
         <Image
           style={[styles.vectorIcon, styles.iconLayout]}
           contentFit="cover"
-          source={require("../assets/vector71.png")}
+          source={require('../assets/vector71.png')}
         />
         <View style={[styles.frameParent, styles.framePosition]}>
           <View style={styles.frameChildLayout}>
             <LinearGradient
               style={[styles.frameChild, styles.frameChildLayout]}
               locations={[0, 1]}
-              colors={["#7ec18c", "#dee274"]}
+              colors={['#7ec18c', '#dee274']}
             />
             <View style={styles.rectangleGroup}>
               <Pressable
                 style={styles.frameItem}
-                onPress={() => navigation.navigate("REGISTRONOMBRE")}
+                onPress={() => navigation.navigate('REGISTRONOMBRE')}
               />
               <Image
                 style={[styles.backButtonIcon, styles.iconPosition]}
                 contentFit="cover"
-                source={require("../assets/back-button1.png")}
+                source={require('../assets/back-button1.png')}
               />
             </View>
             <View style={styles.registrateParent}>
@@ -61,7 +61,7 @@ const REGISTROFECHADENACIMIENTO1 = () => {
                 <Image
                   style={styles.frameInner}
                   contentFit="cover"
-                  source={require("../assets/line-711.png")}
+                  source={require('../assets/line-711.png')}
                 />
                 <View style={styles.lineView} />
                 <View
@@ -70,12 +70,12 @@ const REGISTROFECHADENACIMIENTO1 = () => {
                   <Image
                     style={styles.ellipseIcon}
                     contentFit="cover"
-                    source={require("../assets/ellipse-71581.png")}
+                    source={require('../assets/ellipse-71581.png')}
                   />
                   <Image
                     style={[styles.groupIcon, styles.iconPosition]}
                     contentFit="cover"
-                    source={require("../assets/group-11712750031.png")}
+                    source={require('../assets/group-11712750031.png')}
                   />
                 </View>
                 <View
@@ -84,41 +84,41 @@ const REGISTROFECHADENACIMIENTO1 = () => {
                   <Image
                     style={styles.ellipseIcon}
                     contentFit="cover"
-                    source={require("../assets/ellipse-71581.png")}
+                    source={require('../assets/ellipse-71581.png')}
                   />
                   <Image
                     style={[styles.vectorIcon1, styles.iconPosition]}
                     contentFit="cover"
-                    source={require("../assets/vector77.png")}
+                    source={require('../assets/vector77.png')}
                   />
                 </View>
                 <View
                   style={[
                     styles.ellipseContainer,
-                    styles.ellipseParentShadowBox,
+                    styles.ellipseParentShadowBox
                   ]}
                 >
                   <Image
                     style={styles.ellipseIcon}
                     contentFit="cover"
-                    source={require("../assets/ellipse-71581.png")}
+                    source={require('../assets/ellipse-71581.png')}
                   />
                   <Image
                     style={[styles.vectorIcon2, styles.iconPosition]}
                     contentFit="cover"
-                    source={require("../assets/vector76.png")}
+                    source={require('../assets/vector76.png')}
                   />
                 </View>
                 <View style={[styles.frameView, styles.ellipseParentShadowBox]}>
                   <Image
                     style={styles.ellipseIcon}
                     contentFit="cover"
-                    source={require("../assets/ellipse-7158.png")}
+                    source={require('../assets/ellipse-7158.png')}
                   />
                   <Image
                     style={[styles.vectorIcon3, styles.vectorIcon3Layout]}
                     contentFit="cover"
-                    source={require("../assets/vector74.png")}
+                    source={require('../assets/vector74.png')}
                   />
                 </View>
                 <View
@@ -127,12 +127,12 @@ const REGISTROFECHADENACIMIENTO1 = () => {
                   <Image
                     style={styles.ellipseIcon}
                     contentFit="cover"
-                    source={require("../assets/ellipse-7158.png")}
+                    source={require('../assets/ellipse-7158.png')}
                   />
                   <Image
                     style={[styles.vectorIcon4, styles.iconPosition]}
                     contentFit="cover"
-                    source={require("../assets/vector78.png")}
+                    source={require('../assets/vector78.png')}
                   />
                 </View>
               </View>
@@ -147,7 +147,7 @@ const REGISTROFECHADENACIMIENTO1 = () => {
                   <View
                     style={[
                       styles.baseBackground,
-                      styles.ellipseParentShadowBox,
+                      styles.ellipseParentShadowBox
                     ]}
                   />
                   <View style={[styles.frameParent1, styles.iconPosition]}>
@@ -155,7 +155,7 @@ const REGISTROFECHADENACIMIENTO1 = () => {
                       <Image
                         style={styles.vectorIcon5}
                         contentFit="cover"
-                        source={require("../assets/vector79.png")}
+                        source={require('../assets/vector79.png')}
                       />
                       <Text style={[styles.placeholder, styles.labelledTypo]}>
                         20/12/1988
@@ -164,10 +164,10 @@ const REGISTROFECHADENACIMIENTO1 = () => {
                     <Image
                       style={[
                         styles.iconsErrorCircle,
-                        styles.vectorIcon3Layout,
+                        styles.vectorIcon3Layout
                       ]}
                       contentFit="cover"
-                      source={require("../assets/icons--error-circle.png")}
+                      source={require('../assets/icons--error-circle.png')}
                     />
                   </View>
                 </Pressable>
@@ -190,112 +190,112 @@ const REGISTROFECHADENACIMIENTO1 = () => {
         </View>
       </Modal>
     </>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   iconLayout: {
-    maxHeight: "100%",
-    maxWidth: "100%",
-    overflow: "hidden",
+    maxHeight: '100%',
+    maxWidth: '100%',
+    overflow: 'hidden'
   },
   framePosition: {
     top: 0,
     left: 0,
-    position: "absolute",
+    position: 'absolute'
   },
   frameChildLayout: {
     height: 243,
-    width: 428,
+    width: 428
   },
   iconPosition: {
     zIndex: 1,
-    position: "absolute",
+    position: 'absolute'
   },
   registrateTypo: {
-    textAlign: "center",
+    textAlign: 'center',
     color: Color.white,
-    fontFamily: FontFamily.lato,
+    fontFamily: FontFamily.lato
   },
   ellipseParentShadowBox: {
     shadowOpacity: 1,
     shadowOffset: {
       width: 0,
-      height: 0,
+      height: 0
     },
-    shadowColor: "rgba(244, 105, 76, 0.15)",
+    shadowColor: 'rgba(244, 105, 76, 0.15)'
   },
   vectorIcon3Layout: {
     width: 24,
-    height: 24,
+    height: 24
   },
   labelledTypo: {
-    textAlign: "left",
-    fontFamily: FontFamily.lato,
+    textAlign: 'left',
+    fontFamily: FontFamily.lato
   },
   vectorIcon: {
-    height: "37.33%",
-    width: "77.1%",
-    top: "-5.98%",
-    right: "0%",
-    bottom: "68.65%",
-    left: "22.9%",
+    height: '37.33%',
+    width: '77.1%',
+    top: '-5.98%',
+    right: '0%',
+    bottom: '68.65%',
+    left: '22.9%',
     opacity: 0.2,
-    position: "absolute",
+    position: 'absolute'
   },
   frameChild: {
     backgroundColor: Color.linearBoton,
     left: 0,
     top: 0,
-    position: "absolute",
+    position: 'absolute'
   },
   frameItem: {
     width: 29,
     height: 28,
-    zIndex: 0,
+    zIndex: 0
   },
   backButtonIcon: {
     top: 14,
     left: 5,
     width: 18,
-    height: 0,
+    height: 0
   },
   rectangleGroup: {
     top: 26,
     left: 15,
-    position: "absolute",
+    position: 'absolute'
   },
   registrate: {
     lineHeight: 24,
     transform: [
       {
-        rotate: "-0.55deg",
-      },
+        rotate: '-0.55deg'
+      }
     ],
-    fontWeight: "900",
+    fontWeight: '900',
     fontSize: FontSize.size_5xl,
-    textAlign: "center",
+    textAlign: 'center',
     color: Color.white,
-    fontFamily: FontFamily.lato,
+    fontFamily: FontFamily.lato
   },
   laVerdaderaRiqueza: {
     fontSize: FontSize.size_lg,
-    fontWeight: "500",
+    fontWeight: '500',
     width: 377,
-    marginTop: 10,
+    marginTop: 10
   },
   registrateParent: {
     top: 109,
     left: 26,
-    alignItems: "center",
-    position: "absolute",
+    alignItems: 'center',
+    position: 'absolute'
   },
   frameInner: {
     top: 20,
     left: 30,
     width: 328,
     height: 1,
-    position: "absolute",
+    position: 'absolute'
   },
   lineView: {
     top: 19,
@@ -304,153 +304,153 @@ const styles = StyleSheet.create({
     width: 57,
     height: 3,
     borderColor: Color.primario1,
-    borderStyle: "solid",
-    position: "absolute",
+    borderStyle: 'solid',
+    position: 'absolute'
   },
   ellipseIcon: {
     width: 40,
     height: 40,
-    zIndex: 0,
+    zIndex: 0
   },
   groupIcon: {
-    height: "60%",
-    width: "40%",
-    top: "20%",
-    right: "30%",
-    bottom: "20%",
-    left: "30%",
-    maxHeight: "100%",
-    maxWidth: "100%",
-    overflow: "hidden",
+    height: '60%',
+    width: '40%',
+    top: '20%',
+    right: '30%',
+    bottom: '20%',
+    left: '30%',
+    maxHeight: '100%',
+    maxWidth: '100%',
+    overflow: 'hidden'
   },
   ellipseParent: {
     left: 178,
-    flexDirection: "row",
+    flexDirection: 'row',
     elevation: 25,
     shadowRadius: 25,
     shadowOpacity: 1,
     shadowOffset: {
       width: 0,
-      height: 0,
+      height: 0
     },
-    shadowColor: "rgba(244, 105, 76, 0.15)",
+    shadowColor: 'rgba(244, 105, 76, 0.15)',
     top: 0,
-    position: "absolute",
+    position: 'absolute'
   },
   vectorIcon1: {
-    height: "42.5%",
-    width: "60%",
-    top: "30%",
-    right: "20%",
-    bottom: "27.5%",
-    left: "20%",
-    maxHeight: "100%",
-    maxWidth: "100%",
-    overflow: "hidden",
+    height: '42.5%',
+    width: '60%',
+    top: '30%',
+    right: '20%',
+    bottom: '27.5%',
+    left: '20%',
+    maxHeight: '100%',
+    maxWidth: '100%',
+    overflow: 'hidden'
   },
   ellipseGroup: {
     left: 267,
-    flexDirection: "row",
+    flexDirection: 'row',
     elevation: 25,
     shadowRadius: 25,
     shadowOpacity: 1,
     shadowOffset: {
       width: 0,
-      height: 0,
+      height: 0
     },
-    shadowColor: "rgba(244, 105, 76, 0.15)",
+    shadowColor: 'rgba(244, 105, 76, 0.15)',
     top: 0,
-    position: "absolute",
+    position: 'absolute'
   },
   vectorIcon2: {
-    height: "50%",
-    width: "45%",
-    top: "25%",
-    right: "27.5%",
-    bottom: "25%",
-    left: "27.5%",
-    maxHeight: "100%",
-    maxWidth: "100%",
-    overflow: "hidden",
+    height: '50%',
+    width: '45%',
+    top: '25%',
+    right: '27.5%',
+    bottom: '25%',
+    left: '27.5%',
+    maxHeight: '100%',
+    maxWidth: '100%',
+    overflow: 'hidden'
   },
   ellipseContainer: {
     left: 356,
-    flexDirection: "row",
+    flexDirection: 'row',
     elevation: 25,
     shadowRadius: 25,
     shadowOpacity: 1,
     shadowOffset: {
       width: 0,
-      height: 0,
+      height: 0
     },
-    shadowColor: "rgba(244, 105, 76, 0.15)",
+    shadowColor: 'rgba(244, 105, 76, 0.15)',
     top: 0,
-    position: "absolute",
+    position: 'absolute'
   },
   vectorIcon3: {
     top: 8,
     left: 8,
     height: 24,
     zIndex: 1,
-    position: "absolute",
+    position: 'absolute'
   },
   frameView: {
-    flexDirection: "row",
+    flexDirection: 'row',
     elevation: 25,
     shadowRadius: 25,
     shadowOpacity: 1,
     shadowOffset: {
       width: 0,
-      height: 0,
+      height: 0
     },
-    shadowColor: "rgba(244, 105, 76, 0.15)",
+    shadowColor: 'rgba(244, 105, 76, 0.15)',
     top: 0,
-    position: "absolute",
-    left: 0,
+    position: 'absolute',
+    left: 0
   },
   vectorIcon4: {
     top: 9,
     left: 9,
     height: 22,
-    width: 22,
+    width: 22
   },
   ellipseParent1: {
     left: 89,
-    flexDirection: "row",
+    flexDirection: 'row',
     elevation: 25,
     shadowRadius: 25,
     shadowOpacity: 1,
     shadowOffset: {
       width: 0,
-      height: 0,
+      height: 0
     },
-    shadowColor: "rgba(244, 105, 76, 0.15)",
+    shadowColor: 'rgba(244, 105, 76, 0.15)',
     top: 0,
-    position: "absolute",
+    position: 'absolute'
   },
   lineParent: {
     width: 396,
-    height: 40,
+    height: 40
   },
   labelled: {
     color: Color.negro,
     lineHeight: 41,
-    textAlign: "left",
-    fontWeight: "900",
-    fontSize: FontSize.size_5xl,
+    textAlign: 'left',
+    fontWeight: '900',
+    fontSize: FontSize.size_5xl
   },
   frameContainer11Overlay: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "rgba(113, 113, 113, 0.3)",
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(113, 113, 113, 0.3)'
   },
   frameContainer11Bg: {
-    position: "absolute",
-    width: "100%",
-    height: "100%",
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
     left: 0,
-    top: 0,
+    top: 0
   },
   baseBackground: {
     borderRadius: Border.br_5xs,
@@ -462,79 +462,79 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowOffset: {
       width: 0,
-      height: 0,
+      height: 0
     },
-    shadowColor: "rgba(244, 105, 76, 0.15)",
+    shadowColor: 'rgba(244, 105, 76, 0.15)',
     borderColor: Color.primario1,
-    borderStyle: "solid",
+    borderStyle: 'solid',
     zIndex: 0,
-    backgroundColor: Color.white,
+    backgroundColor: Color.white
   },
   vectorIcon5: {
     height: 23,
-    width: 22,
+    width: 22
   },
   placeholder: {
     fontSize: FontSize.size_base,
     lineHeight: 24,
     color: Color.grisGeneral,
-    display: "flex",
+    display: 'flex',
     width: 211,
     marginLeft: 16,
     height: 24,
-    alignItems: "center",
+    alignItems: 'center'
   },
   vectorParent: {
     width: 251,
-    flexDirection: "row",
+    flexDirection: 'row'
   },
   iconsErrorCircle: {
-    height: 24,
+    height: 24
   },
   frameParent1: {
     top: 13,
     left: 16,
     width: 286,
-    justifyContent: "space-between",
-    flexDirection: "row",
+    justifyContent: 'space-between',
+    flexDirection: 'row'
   },
   baseBackgroundParent: {
     borderRadius: Border.br_3xs,
-    marginTop: 20,
+    marginTop: 20
   },
   labelledParent: {
     marginTop: 104,
-    alignItems: "center",
+    alignItems: 'center'
   },
   frameContainer: {
-    alignItems: "center",
+    alignItems: 'center'
   },
   labelled1: {
     color: Color.primario1,
     marginTop: 337,
     lineHeight: 41,
-    textAlign: "left",
-    fontWeight: "900",
-    fontSize: FontSize.size_5xl,
+    textAlign: 'left',
+    fontWeight: '900',
+    fontSize: FontSize.size_5xl
   },
   frameGroup: {
     marginTop: 20,
-    alignItems: "center",
+    alignItems: 'center'
   },
   frameParent: {
-    alignItems: "center",
+    alignItems: 'center',
     left: 0,
     height: 926,
-    top: 0,
+    top: 0
   },
   registroFechaDeNacimiento: {
     borderRadius: Border.br_31xl,
     flex: 1,
-    width: "100%",
-    overflow: "hidden",
+    width: '100%',
+    overflow: 'hidden',
     backgroundColor: Color.white,
-    height: 926,
-  },
-});
+    height: 926
+  }
+})
 
-export default REGISTROFECHADENACIMIENTO1;
+export default REGISTROFECHADENACIMIENTO1
