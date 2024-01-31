@@ -109,7 +109,7 @@ import MIDIARIOEDICINVIDEO1 from './screens/MIDIARIOEDICINVIDEO1'
 import MIDIARIOEDICINVIDEO2 from './screens/MIDIARIOEDICINVIDEO2'
 import MIDIARIOENTRADAVIDEO from './screens/MIDIARIOENTRADAVIDEO'
 import Onboarding2 from './screens/Onboarding2'
-import MUROINFORMACIN1 from './screens/MUROINFORMACIN1'
+import Muro from './screens/Muro'
 import FechaYHora from './components/FechaYHora'
 import FormatoArbol from './components/FormatoArbol'
 import Para from './components/Para'
@@ -757,8 +757,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="MUROINFORMACIN1"
-            component={MUROINFORMACIN1}
+            name="Muro"
+            component={Muro}
             options={{ headerShown: false }}
           />
           <Stack.Screen

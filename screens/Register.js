@@ -18,7 +18,7 @@ const Register = () => {
     if (nextField < 5) {
       setNextField((prev) => prev + 1)
     } else {
-      navigation.navigate('Splash')
+      navigation.navigate('Muro')
     }
   }
 
@@ -192,42 +192,13 @@ const Register = () => {
             ></View>
           </View>
 
-          <View style={{ top: -50 }}>
+          <View style={{ top: 150 }}>
             {nextField === 1 && <NameRegister />}
             {nextField === 2 && <FechaRegister />}
             {nextField === 3 && <NumberPhoneRegister />}
             {nextField === 4 && <CheckRegister />}
             {nextField === 5 && <AcceptRegister />}
           </View>
-
-          {/* <View style={styles.labelledParent}>
-            <Text style={[styles.labelled, styles.labelledTypo]}>
-              Nombre Completo
-            </Text>
-            <View style={styles.baseBackgroundParent}>
-              <View
-                style={[styles.baseBackground, styles.ellipseParentShadowBox]}
-              />
-              <View style={[styles.frameParent1, styles.groupIconPosition]}>
-                <View style={styles.vectorParent}>
-                  <Image
-                    style={[styles.vectorIcon5, styles.vectorIconLayout]}
-                    contentFit="cover"
-                    source={require('../assets/vector81.png')}
-                  />
-                  <TextInput
-                    style={[styles.placeholder, styles.labelledTypo]}
-                    placeholder="Nombre"
-                  ></TextInput>
-                </View>
-                <Image
-                  style={[styles.vectorIcon5, styles.vectorIconLayout]}
-                  contentFit="cover"
-                  source={require('../assets/icons--error-circle.png')}
-                />
-              </View>
-            </View>
-          </View> */}
           <Pressable style={styles.labelled1} onPress={() => next()}>
             <Text style={[styles.continuar, styles.labelledTypo]}>
               {'Continuar >'}
@@ -533,7 +504,7 @@ const styles = StyleSheet.create({
   },
   labelled1: {
     alignSelf: 'center',
-    top: 30,
+    top: 280,
     zIndex: 10
   },
   frameContainer: {

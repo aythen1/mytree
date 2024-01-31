@@ -12,31 +12,25 @@ const NameRegister = () => {
   }
 
   return (
-    <View style={styles.labelledParent}>
+    <View>
       <Text style={[styles.labelled, styles.labelledTypo]}>
         Nombre Completo
       </Text>
       <View style={styles.baseBackgroundParent}>
-        <View style={[styles.baseBackground, styles.ellipseParentShadowBox]} />
-        <View style={styles.frameParent1}>
-          <View style={styles.vectorParent}>
-            <Image
-              style={[styles.vectorIcon5, styles.vectorIconLayout]}
-              contentFit="cover"
-              source={require('../assets/vector81.png')}
-            />
-            <TextInput
-              style={styles.placeholder}
-              placeholder="Nombre"
-              onChangeText={handleNombreChange}
-              value={name}
-            ></TextInput>
-          </View>
-          {/* <Image
+        {/* <View style={[styles.baseBackground, styles.ellipseParentShadowBox]} /> */}
+
+        <View style={styles.vectorParent}>
+          <Image
             style={[styles.vectorIcon5, styles.vectorIconLayout]}
             contentFit="cover"
-            source={require('../assets/icons--error-circle.png')}
-          /> */}
+            source={require('../assets/vector81.png')}
+          />
+          <TextInput
+            style={styles.placeholder}
+            placeholder="Nombre"
+            onChangeText={handleNombreChange}
+            value={name}
+          ></TextInput>
         </View>
       </View>
     </View>
@@ -115,7 +109,7 @@ const styles = StyleSheet.create({
   },
   frameGroup: {
     marginTop: 10,
-    height: '66%',
+    height: '100%',
     justifyContent: 'space-between',
     width: '100%',
     paddingHorizontal: 15
