@@ -2,7 +2,7 @@ import * as Font from 'expo-font'
 
 export const loadFonts = async () => {
   await Font.loadAsync({
-    'Lato-Font': require('./assets/fonts/Lato-Regular.ttf')
+    'Lato-Font': require('./assets/fonts/Lato.ttf')
   })
 }
 

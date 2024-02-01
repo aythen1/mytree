@@ -1,15 +1,15 @@
-import * as React from "react";
-import { StyleSheet, View, Text, Pressable } from "react-native";
-import { Image } from "expo-image";
-import { LinearGradient } from "expo-linear-gradient";
-import { useNavigation } from "@react-navigation/native";
-import { FontFamily, Color, Padding, Border, FontSize } from "../GlobalStyles";
+import * as React from 'react'
+import { StyleSheet, View, Text, Pressable, ScrollView } from 'react-native'
+import { Image } from 'expo-image'
+import { LinearGradient } from 'expo-linear-gradient'
+import { useNavigation } from '@react-navigation/native'
+import { FontFamily, Color, Padding, Border, FontSize } from '../GlobalStyles'
 
 const PERFILMIINFO = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation()
 
   return (
-    <View style={styles.perfilMiInfo}>
+    <ScrollView style={styles.perfilMiInfo}>
       <View style={[styles.perfilMiInfoChild, styles.misLbumesPosition]} />
       <View style={styles.frameParent}>
         <View style={styles.frameGroup}>
@@ -20,24 +20,24 @@ const PERFILMIINFO = () => {
                   <Image
                     style={styles.image6Icon}
                     contentFit="cover"
-                    source={require("../assets/image-6.png")}
+                    source={require('../assets/image-6.png')}
                   />
                   <View style={[styles.vectorParent, styles.parentFlexBox]}>
                     <Image
                       style={styles.vectorIcon}
                       contentFit="cover"
-                      source={require("../assets/vector51.png")}
+                      source={require('../assets/vector51.png')}
                     />
                     <Pressable
                       style={styles.iconly}
                       onPress={() =>
-                        navigation.navigate("PERFILNOTIFICACIONES")
+                        navigation.navigate('PERFILNOTIFICACIONES')
                       }
                     >
                       <Image
                         style={styles.notificationIcon}
                         contentFit="cover"
-                        source={require("../assets/notification6.png")}
+                        source={require('../assets/notification6.png')}
                       />
                       <View
                         style={[styles.ellipseParent, styles.groupChildLayout]}
@@ -45,19 +45,19 @@ const PERFILMIINFO = () => {
                         <Image
                           style={[styles.groupChild, styles.groupChildLayout]}
                           contentFit="cover"
-                          source={require("../assets/ellipse-2264.png")}
+                          source={require('../assets/ellipse-2264.png')}
                         />
                         <Text style={[styles.text, styles.textTypo]}>1</Text>
                       </View>
                     </Pressable>
                     <Pressable
                       style={styles.iconly}
-                      onPress={() => navigation.navigate("PERFILAJUSTES")}
+                      onPress={() => navigation.navigate('PERFILAJUSTES')}
                     >
                       <Image
                         style={styles.icon}
                         contentFit="cover"
-                        source={require("../assets/iconlylightoutlinesetting7.png")}
+                        source={require('../assets/iconlylightoutlinesetting7.png')}
                       />
                     </Pressable>
                   </View>
@@ -65,31 +65,31 @@ const PERFILMIINFO = () => {
                 <Image
                   style={[styles.ionmenuIcon, styles.iconLayout]}
                   contentFit="cover"
-                  source={require("../assets/ionmenu.png")}
+                  source={require('../assets/ionmenu.png')}
                 />
               </View>
               <View style={styles.groupParent}>
                 <Pressable
                   style={styles.wrapperLayout}
                   onPress={() =>
-                    navigation.navigate("PERFILDELUSUARIOVISITADO2")
+                    navigation.navigate('PERFILDELUSUARIOVISITADO2')
                   }
                 >
                   <Image
                     style={styles.icon}
                     contentFit="cover"
-                    source={require("../assets/group-11712766771.png")}
+                    source={require('../assets/group-11712766771.png')}
                   />
                 </Pressable>
                 <Image
                   style={styles.frameChild}
                   contentFit="cover"
-                  source={require("../assets/group-11712766781.png")}
+                  source={require('../assets/group-11712766781.png')}
                 />
                 <Image
                   style={[styles.frameItem, styles.wrapperLayout]}
                   contentFit="cover"
-                  source={require("../assets/group-11712766771.png")}
+                  source={require('../assets/group-11712766771.png')}
                 />
               </View>
             </View>
@@ -105,7 +105,7 @@ const PERFILMIINFO = () => {
               <LinearGradient
                 style={[styles.button, styles.parentFlexBox]}
                 locations={[0, 1]}
-                colors={["#dee274", "#7ec18c"]}
+                colors={['#dee274', '#7ec18c']}
               >
                 <Text style={styles.signIn}>Salud</Text>
               </LinearGradient>
@@ -114,7 +114,7 @@ const PERFILMIINFO = () => {
           <View style={styles.tabsBar}>
             <Pressable
               style={[styles.tabs, styles.tabsFlexBox]}
-              onPress={() => navigation.navigate("Perfil1")}
+              onPress={() => navigation.navigate('Perfil1')}
             >
               <Text style={[styles.miLegado, styles.miInfoLayout]}>
                 Mi Legado
@@ -122,7 +122,7 @@ const PERFILMIINFO = () => {
             </Pressable>
             <Pressable
               style={[styles.misLbumesWrapper, styles.tabs1Border]}
-              onPress={() => navigation.navigate("MisAlbumes1")}
+              onPress={() => navigation.navigate('MisAlbumes1')}
             >
               <Text style={[styles.misLbumes, styles.miInfoLayout]}>
                 Mis álbumes
@@ -141,28 +141,28 @@ const PERFILMIINFO = () => {
               <Image
                 style={[styles.skillIconsinstagram, styles.skillLayout]}
                 contentFit="cover"
-                source={require("../assets/skilliconsinstagram4.png")}
+                source={require('../assets/skilliconsinstagram4.png')}
               />
               <Image
                 style={[styles.skillIconslinkedin, styles.skillLayout]}
                 contentFit="cover"
-                source={require("../assets/skilliconslinkedin4.png")}
+                source={require('../assets/skilliconslinkedin4.png')}
               />
               <Image
                 style={[styles.logostiktokIcon, styles.iconLayout]}
                 contentFit="cover"
-                source={require("../assets/logostiktokicon3.png")}
+                source={require('../assets/logostiktokicon3.png')}
               />
               <Image
                 style={[styles.skillIconslinkedin, styles.skillLayout]}
                 contentFit="cover"
-                source={require("../assets/deviconfacebook4.png")}
+                source={require('../assets/deviconfacebook4.png')}
               />
             </View>
             <View style={styles.frameParent5}>
               <Pressable
                 style={styles.frameContainer}
-                onPress={() => navigation.navigate("MisFamiliares1")}
+                onPress={() => navigation.navigate('MisFamiliares1')}
               >
                 <Text style={[styles.familiares, styles.text1Typo]}>
                   Familiares
@@ -173,19 +173,19 @@ const PERFILMIINFO = () => {
                     <Image
                       style={styles.frameInner}
                       contentFit="cover"
-                      source={require("../assets/ellipse-7170.png")}
+                      source={require('../assets/ellipse-7170.png')}
                     />
                     <Image
                       style={styles.vectorIcon1}
                       contentFit="cover"
-                      source={require("../assets/vector9.png")}
+                      source={require('../assets/vector9.png')}
                     />
                   </View>
                 </View>
               </Pressable>
               <Pressable
                 style={styles.amigosParent}
-                onPress={() => navigation.navigate("MISAMIGOS")}
+                onPress={() => navigation.navigate('MISAMIGOS')}
               >
                 <Text style={[styles.familiares, styles.text1Typo]}>
                   Amigos
@@ -196,12 +196,12 @@ const PERFILMIINFO = () => {
                     <Image
                       style={styles.frameInner}
                       contentFit="cover"
-                      source={require("../assets/ellipse-7170.png")}
+                      source={require('../assets/ellipse-7170.png')}
                     />
                     <Image
                       style={styles.vectorIcon1}
                       contentFit="cover"
-                      source={require("../assets/vector9.png")}
+                      source={require('../assets/vector9.png')}
                     />
                   </View>
                 </View>
@@ -216,12 +216,12 @@ const PERFILMIINFO = () => {
                     <Image
                       style={styles.frameInner}
                       contentFit="cover"
-                      source={require("../assets/ellipse-7170.png")}
+                      source={require('../assets/ellipse-7170.png')}
                     />
                     <Image
                       style={styles.vectorIcon1}
                       contentFit="cover"
-                      source={require("../assets/vector9.png")}
+                      source={require('../assets/vector9.png')}
                     />
                   </View>
                 </View>
@@ -235,12 +235,12 @@ const PERFILMIINFO = () => {
               </Text>
               <Pressable
                 style={styles.lock}
-                onPress={() => navigation.navigate("SOLOYO")}
+                onPress={() => navigation.navigate('SOLOYO')}
               >
                 <Image
                   style={styles.icon}
                   contentFit="cover"
-                  source={require("../assets/lock1.png")}
+                  source={require('../assets/lock1.png')}
                 />
               </Pressable>
             </View>
@@ -299,12 +299,12 @@ const PERFILMIINFO = () => {
                 </Text>
                 <Pressable
                   style={styles.lock1}
-                  onPress={() => navigation.navigate("Descripcin")}
+                  onPress={() => navigation.navigate('Descripcin')}
                 >
                   <Image
                     style={styles.icon}
                     contentFit="cover"
-                    source={require("../assets/lock2.png")}
+                    source={require('../assets/lock2.png')}
                   />
                 </Pressable>
               </View>
@@ -321,7 +321,7 @@ const PERFILMIINFO = () => {
                   <Image
                     style={styles.vectorIcon4}
                     contentFit="cover"
-                    source={require("../assets/vector52.png")}
+                    source={require('../assets/vector52.png')}
                   />
                 </View>
               </View>
@@ -333,12 +333,12 @@ const PERFILMIINFO = () => {
                 </Text>
                 <Pressable
                   style={styles.lock2}
-                  onPress={() => navigation.navigate("MiSalud")}
+                  onPress={() => navigation.navigate('MiSalud')}
                 >
                   <Image
                     style={styles.icon}
                     contentFit="cover"
-                    source={require("../assets/lock3.png")}
+                    source={require('../assets/lock3.png')}
                   />
                 </Pressable>
               </View>
@@ -348,16 +348,16 @@ const PERFILMIINFO = () => {
                     <Text
                       style={[styles.hoyMeSientoContainer, styles.quEsLoTypo]}
                     >
-                      <Text
-                        style={[styles.hoyMeSiento, styles.miInfoTypo]}
-                      >{`Hoy me siento... `}</Text>
+                      <Text style={[styles.hoyMeSiento, styles.miInfoTypo]}>
+                        {'Hoy me siento... '}
+                      </Text>
                       <Text style={styles.conGripe}>Con gripe</Text>
                     </Text>
                   </View>
                   <Image
                     style={styles.combinedShapeIcon}
                     contentFit="cover"
-                    source={require("../assets/combinedshape.png")}
+                    source={require('../assets/combinedshape.png')}
                   />
                 </View>
               </View>
@@ -370,7 +370,7 @@ const PERFILMIINFO = () => {
                 <Image
                   style={styles.lock2}
                   contentFit="cover"
-                  source={require("../assets/lock3.png")}
+                  source={require('../assets/lock3.png')}
                 />
               </View>
               <View style={styles.frameWrapper4}>
@@ -384,7 +384,7 @@ const PERFILMIINFO = () => {
                   <Image
                     style={styles.combinedShapeIcon}
                     contentFit="cover"
-                    source={require("../assets/combinedshape1.png")}
+                    source={require('../assets/combinedshape1.png')}
                   />
                 </View>
               </View>
@@ -395,138 +395,133 @@ const PERFILMIINFO = () => {
       <Image
         style={[styles.navigationIcon, styles.misLbumesPosition]}
         contentFit="cover"
-        source={require("../assets/navigation29.png")}
+        source={require('../assets/navigation29.png')}
       />
-    </View>
-  );
-};
+    </ScrollView>
+  )
+}
 
 const styles = StyleSheet.create({
   misLbumesPosition: {
-    left: "50%",
-    position: "absolute",
+    left: '50%'
   },
   parentFlexBox: {
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   groupChildLayout: {
     height: 16,
     width: 16,
-    position: "absolute",
+    position: 'absolute'
   },
   textTypo: {
-    textAlign: "right",
-    fontWeight: "800",
+    textAlign: 'right',
+    fontWeight: '800'
   },
   iconLayout: {
     width: 26,
-    overflow: "hidden",
+    overflow: 'hidden'
   },
   wrapperLayout: {
     height: 50,
-    width: 50,
+    width: 50
   },
   miInfoTypo: {
-    fontWeight: "700",
-    fontFamily: FontFamily.lato,
+    fontWeight: '700',
+    fontFamily: FontFamily.lato
   },
   miLegadoTypo: {
     color: Color.gris,
-    textAlign: "center",
-    fontFamily: FontFamily.lato,
+    textAlign: 'center',
+    fontFamily: FontFamily.lato
   },
   tabsFlexBox: {
     paddingVertical: Padding.p_3xs,
     paddingHorizontal: Padding.p_9xs,
     borderRadius: Border.br_7xs,
-    justifyContent: "center",
-    flexDirection: "row",
-    alignItems: "center",
+    justifyContent: 'center',
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   miInfoLayout: {
     lineHeight: 19,
     letterSpacing: 0,
-    fontSize: FontSize.size_base,
+    fontSize: FontSize.size_base
   },
   tabs1Border: {
     borderColor: Color.secundario,
-    borderStyle: "solid",
+    borderStyle: 'solid',
     top: 0,
-    position: "absolute",
+    position: 'absolute'
   },
   tabsPosition: {
     height: 1,
     borderTopWidth: 1,
     top: 39,
     borderColor: Color.secundario,
-    borderStyle: "solid",
-    position: "absolute",
+    borderStyle: 'solid',
+    position: 'absolute'
   },
   skillLayout: {
     width: 30,
     height: 30,
-    overflow: "hidden",
+    overflow: 'hidden'
   },
   text1Typo: {
     color: Color.primary,
     fontSize: FontSize.size_base,
-    fontFamily: FontFamily.lato,
+    fontFamily: FontFamily.lato
   },
   frameWrapperFlexBox: {
-    justifyContent: "flex-end",
-    flexDirection: "row",
-    alignItems: "center",
+    justifyContent: 'flex-end',
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   quEsLoTypo1: {
-    fontWeight: "500",
-    fontFamily: FontFamily.lato,
+    fontWeight: '500',
+    fontFamily: FontFamily.lato
   },
   quEsLoTypo: {
     lineHeight: 17,
     fontSize: FontSize.size_sm,
-    textAlign: "left",
+    textAlign: 'left',
     letterSpacing: 0,
-    color: Color.negro,
+    color: Color.negro
   },
   perfilMiInfoChild: {
-    marginLeft: -215,
-    shadowColor: "rgba(0, 0, 0, 0.15)",
+    shadowColor: 'rgba(0, 0, 0, 0.15)',
     shadowOffset: {
       width: 0,
-      height: 5,
+      height: 5
     },
     shadowRadius: 25,
     elevation: 25,
     shadowOpacity: 1,
-    height: 379,
-    width: 428,
-    top: 0,
-    backgroundColor: Color.white,
+    width: '100%',
+    backgroundColor: Color.white
   },
   image6Icon: {
     width: 87,
-    height: 55,
+    height: 55
   },
   vectorIcon: {
     height: 24,
-    width: 24,
+    width: 24
   },
   notificationIcon: {
-    height: "83.33%",
-    width: "70.83%",
-    top: "8.33%",
-    right: "14.58%",
-    bottom: "8.33%",
-    left: "14.58%",
-    maxWidth: "100%",
-    maxHeight: "100%",
-    position: "absolute",
-    overflow: "hidden",
+    height: '83.33%',
+    width: '70.83%',
+    top: '8.33%',
+    right: '14.58%',
+    bottom: '8.33%',
+    left: '14.58%',
+    maxWidth: '100%',
+    maxHeight: '100%',
+    overflow: 'hidden'
   },
   groupChild: {
     left: 0,
-    top: 0,
+    top: 0
   },
   text: {
     top: 1,
@@ -535,72 +530,72 @@ const styles = StyleSheet.create({
     letterSpacing: 0.2,
     fontFamily: FontFamily.nunitoSans,
     color: Color.white,
-    position: "absolute",
+    position: 'absolute'
   },
   ellipseParent: {
     top: -6,
-    left: 13,
+    left: 13
   },
   iconly: {
     marginLeft: 20,
     height: 24,
-    width: 24,
+    width: 24
   },
   icon: {
-    height: "100%",
-    width: "100%",
+    height: '100%',
+    width: '100%'
   },
   vectorParent: {
     marginLeft: 189,
-    flexDirection: "row",
+    flexDirection: 'row'
   },
   image6Parent: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   ionmenuIcon: {
     height: 20,
-    marginTop: 10,
+    marginTop: 10
   },
   frameChild: {
     width: 120,
     height: 120,
-    marginLeft: 64,
+    marginLeft: 64
   },
   frameItem: {
-    marginLeft: 64,
+    marginLeft: 64
   },
   groupParent: {
     marginTop: 20,
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   frameView: {
-    alignItems: "center",
+    alignItems: 'center'
   },
   brunoPham: {
     fontSize: FontSize.size_xl,
-    textAlign: "center",
+    textAlign: 'center',
     color: Color.negro,
     fontFamily: FontFamily.lato,
     lineHeight: 24,
-    fontWeight: "700",
+    fontWeight: '700'
   },
   daNangVietnam: {
     marginTop: 5,
-    fontWeight: "300",
+    fontWeight: '300',
     letterSpacing: 0,
     fontSize: FontSize.size_base,
     color: Color.gris,
-    lineHeight: 24,
+    lineHeight: 24
   },
   signIn: {
     fontSize: FontSize.size_xs,
     lineHeight: 18,
     letterSpacing: 0,
-    textAlign: "center",
+    textAlign: 'center',
     fontFamily: FontFamily.lato,
-    color: Color.white,
+    color: Color.white
   },
   button: {
     borderRadius: Border.br_11xl,
@@ -611,50 +606,49 @@ const styles = StyleSheet.create({
     paddingBottom: Padding.p_5xs,
     backgroundColor: Color.linearBoton,
     marginLeft: 52,
-    flexDirection: "row",
+    flexDirection: 'row'
   },
   frameParent2: {
     marginTop: 20,
-    flexDirection: "row",
-    alignItems: "flex-end",
+    flexDirection: 'row',
+    alignItems: 'flex-end'
   },
   frameContainer: {
-    alignItems: "flex-end",
+    alignItems: 'flex-end'
   },
   miLegado: {
     width: 110,
     color: Color.gris,
-    textAlign: "center",
-    fontFamily: FontFamily.lato,
+    textAlign: 'center',
+    fontFamily: FontFamily.lato
   },
   tabs: {
     width: 142,
     left: 0,
-    top: 0,
-    position: "absolute",
+    top: 0
   },
   misLbumes: {
     marginTop: -9.5,
     marginLeft: -43,
-    top: "50%",
+    top: '50%',
     color: Color.gris,
-    textAlign: "center",
+    textAlign: 'center',
     fontFamily: FontFamily.lato,
-    left: "50%",
-    position: "absolute",
+    left: '50%',
+    position: 'absolute'
   },
   misLbumesWrapper: {
     left: 142,
     borderBottomWidth: 1,
     height: 39,
     width: 142,
-    overflow: "hidden",
+    overflow: 'hidden'
   },
   miInfo: {
-    textAlign: "center",
+    textAlign: 'center',
     fontFamily: FontFamily.lato,
-    fontWeight: "700",
-    color: Color.white,
+    fontWeight: '700',
+    color: Color.white
   },
   tabs1: {
     left: 284,
@@ -664,53 +658,54 @@ const styles = StyleSheet.create({
     paddingVertical: Padding.p_3xs,
     paddingHorizontal: Padding.p_9xs,
     borderRadius: Border.br_7xs,
-    justifyContent: "center",
-    flexDirection: "row",
-    alignItems: "center",
+    justifyContent: 'center',
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   tabsBarChild: {
     width: 148,
-    left: 0,
+    left: 0
   },
   tabsBarItem: {
     left: 279,
-    width: 150,
+    width: 150
   },
   tabsBar: {
     height: 40,
     marginTop: 20,
     width: 428,
-    backgroundColor: Color.white,
+    backgroundColor: Color.white
   },
   frameGroup: {
-    height: 381,
+    height: '50%',
+    width: '100%',
     paddingBottom: Padding.p_xl,
-    alignItems: "center",
-    backgroundColor: Color.white,
+    alignItems: 'center',
+    backgroundColor: Color.white
   },
   skillIconsinstagram: {
-    height: 30,
+    height: 30
   },
   skillIconslinkedin: {
     height: 30,
-    marginLeft: 20,
+    marginLeft: 20
   },
   logostiktokIcon: {
     height: 30,
-    marginLeft: 20,
+    marginLeft: 20
   },
   familiares: {
-    textAlign: "left",
+    textAlign: 'left'
   },
   text1: {
     letterSpacing: 0.3,
-    textAlign: "right",
-    fontWeight: "800",
+    textAlign: 'right',
+    fontWeight: '800'
   },
   frameInner: {
     width: 35,
     height: 35,
-    zIndex: 0,
+    zIndex: 0
   },
   vectorIcon1: {
     top: 6,
@@ -718,200 +713,190 @@ const styles = StyleSheet.create({
     zIndex: 1,
     height: 24,
     width: 24,
-    position: "absolute",
+    position: 'absolute'
   },
   ellipseGroup: {
     marginLeft: 16,
-    flexDirection: "row",
+    flexDirection: 'row'
   },
   parent: {
     marginTop: 3,
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   amigosParent: {
     marginLeft: 51,
-    alignItems: "flex-end",
+    alignItems: 'flex-end'
   },
   logros: {
-    display: "flex",
+    display: 'flex',
     width: 154,
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
+    textAlign: 'center',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   frameParent5: {
     marginTop: 20,
-    flexDirection: "row",
+    flexDirection: 'row'
   },
   miInformacinPersonal: {
     fontSize: FontSize.size_5xl,
     width: 266,
-    textAlign: "left",
+    textAlign: 'left',
     color: Color.negro,
-    fontFamily: FontFamily.lato,
+    fontFamily: FontFamily.lato
   },
   lock: {
     marginLeft: 90,
     height: 30,
-    width: 24,
+    width: 24
   },
   miInformacinPersonalParent: {
-    flexDirection: "row",
+    flexDirection: 'row',
     left: 0,
-    top: 0,
-    position: "absolute",
+    top: 0
   },
   nombreYApellidos: {
-    textAlign: "left",
+    textAlign: 'left',
     lineHeight: 19,
     letterSpacing: 0,
     fontSize: FontSize.size_base,
-    color: Color.negro,
+    color: Color.negro
   },
   brunoPham1: {
     color: Color.grisGeneral,
-    textAlign: "left",
+    textAlign: 'left',
     lineHeight: 19,
     letterSpacing: 0,
     fontSize: FontSize.size_base,
-    marginTop: 10,
+    marginTop: 10
   },
   nombreYApellidosParent: {
-    width: 347,
+    width: 347
   },
   frameWrapper: {
     top: 50,
-    left: 0,
-    position: "absolute",
+    left: 0
   },
   frameWrapper1: {
     top: 118,
-    left: 0,
-    position: "absolute",
+    left: 0
   },
   frameWrapper2: {
     top: 186,
-    left: 0,
-    position: "absolute",
+    left: 0
   },
   redesSocialesParent: {
-    width: 187,
+    width: 187
   },
   listaDeDeseosParent: {
     width: 181,
-    marginLeft: 20,
+    marginLeft: 20
   },
   frameParent7: {
     top: 254,
     width: 388,
-    flexDirection: "row",
-    left: 0,
-    position: "absolute",
+    flexDirection: 'row',
+    left: 0
   },
   lock1: {
     height: 12,
     marginLeft: 90,
-    width: 24,
+    width: 24
   },
   descripcinParent: {
-    flexDirection: "row",
+    flexDirection: 'row'
   },
   quEsLo: {
-    fontWeight: "500",
-    fontFamily: FontFamily.lato,
+    fontWeight: '500',
+    fontFamily: FontFamily.lato
   },
   compartirConMi: {
-    fontWeight: "300",
+    fontWeight: '300',
     fontFamily: FontFamily.lato,
-    marginTop: 10,
+    marginTop: 10
   },
   vectorIcon4: {
     width: 15,
     height: 15,
-    marginLeft: 20,
+    marginLeft: 20
   },
   frameWrapper3: {
     height: 64,
-    marginTop: 20,
+    marginTop: 20
   },
   frameParent8: {
     top: 322,
     height: 113,
     width: 388,
-    left: 0,
-    position: "absolute",
+    left: 0
   },
   lock2: {
     width: 12,
     marginLeft: 90,
-    height: 24,
+    height: 24
   },
   hoyMeSiento: {
-    fontFamily: FontFamily.lato,
+    fontFamily: FontFamily.lato
   },
   conGripe: {
-    fontWeight: "300",
-    fontFamily: FontFamily.lato,
+    fontWeight: '300',
+    fontFamily: FontFamily.lato
   },
   hoyMeSientoContainer: {
-    width: 347,
+    width: 347
   },
   hoyMeSientoConGripeWrapper: {
-    width: 334,
+    width: 334
   },
   combinedShapeIcon: {
     width: 25,
     height: 25,
-    marginLeft: 20,
+    marginLeft: 20
   },
   frameWrapper4: {
     height: 82,
-    marginTop: 20,
+    marginTop: 20
   },
   frameParent10: {
     top: 455,
-    left: 0,
-    position: "absolute",
+    left: 0
   },
   espacioDndeLos: {
     width: 347,
-    fontWeight: "300",
-    fontFamily: FontFamily.lato,
+    fontWeight: '300',
+    fontFamily: FontFamily.lato
   },
   frameParent12: {
-    top: 606,
-    left: 0,
-    position: "absolute",
+    left: 0
   },
   frameParent6: {
     height: 322,
-    marginTop: 24,
-    width: 388,
+
+    width: 388
   },
   frameParent3: {
     padding: Padding.p_xl,
-    marginTop: 2,
+    marginTop: 2
   },
   frameParent: {
     left: 0,
-    top: 0,
-    position: "absolute",
+    top: 0
   },
   navigationIcon: {
     marginLeft: -214,
     bottom: 0,
     height: 105,
-    width: 428,
+    width: 428
   },
   perfilMiInfo: {
     borderRadius: Border.br_31xl,
     flex: 1,
-    height: 926,
-    overflow: "hidden",
-    width: "100%",
-    backgroundColor: Color.white,
-  },
-});
+    height: '100%',
+    overflow: 'hidden',
+    width: '100%',
+    backgroundColor: Color.white
+  }
+})
 
-export default PERFILMIINFO;
+export default PERFILMIINFO

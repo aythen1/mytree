@@ -1,5 +1,14 @@
 import React, { useState } from 'react'
-import { StyleSheet, View, Text, Pressable, Modal } from 'react-native'
+import { useDispatch, useSelector } from 'react-redux'
+import {
+  StyleSheet,
+  View,
+  Text,
+  Pressable,
+  Modal,
+  TouchableWithoutFeedback
+} from 'react-native'
+import { setPanel } from '../redux/slices/panel.slices'
 import { Image } from 'expo-image'
 // import { LinearGradient } from 'expo-linear-gradient'
 import { Border, Padding, FontFamily, FontSize, Color } from '../GlobalStyles'
@@ -8,14 +17,23 @@ import Post from '../components/Post'
 import Stories from '../components/Stories'
 import RetosModal from './RetosModal'
 import VotacionDeRetos from './VotacionDeRetos'
+import MENPRINCIPAL from '../components/MENPRINCIPAL'
 
 const Muro = () => {
+  const dispatch = useDispatch()
+
+  const { showPanel } = useSelector((state) => state.panel)
   // const navigation = useNavigation()
   const [showModalRetos, setShowModalRetos] = useState(false)
   const [showRetos, setShowRetos] = useState(false)
+  const [menuVisible, setMenuVisible] = useState(false)
 
   const handleShowRetos = () => {
     setShowModalRetos(!showModalRetos)
+  }
+
+  const handleMenu = () => {
+    setMenuVisible(!menuVisible)
   }
 
   return (
@@ -66,9 +84,31 @@ const Muro = () => {
       {showRetos ? <VotacionDeRetos /> : <Post />}
       {/* </ScrollView> */}
 
-      <View style={[styles.button, styles.buttonPosition]}>
+      {/* <View style={[styles.button, styles.buttonPosition]}>
         <Text style={[styles.text, styles.textTypo]}>50%</Text>
-      </View>
+      </View> */}
+      <Pressable
+        style={[styles.menuIcon, styles.menuPosition]}
+        onPress={() => dispatch(setPanel(!menuVisible))}
+      >
+        <Image
+          style={[styles.icon, styles.iconLayout]}
+          contentFit="cover"
+          source={require('../assets/ionmenu1.png')}
+        />
+      </Pressable>
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={showPanel}
+        onRequestClose={() => dispatch(setPanel(false))}
+      >
+        <TouchableWithoutFeedback onPress={handleMenu}>
+          <View style={{ flex: 1, backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+            <MENPRINCIPAL setMenuVisible={setMenuVisible} />
+          </View>
+        </TouchableWithoutFeedback>
+      </Modal>
     </View>
   )
 }
@@ -118,11 +158,11 @@ const styles = StyleSheet.create({
     width: 24,
     height: 24
   },
-  textTypo: {
-    textAlign: 'left',
-    fontFamily: FontFamily.lato,
-    position: 'absolute'
-  },
+  // textTypo: {
+  //   textAlign: 'left',
+  //   fontFamily: FontFamily.lato,
+  //   position: 'absolute'
+  // },
   iconlyboldchatLayout: {
     height: 40,
     width: 40
@@ -253,17 +293,17 @@ const styles = StyleSheet.create({
     left: 0,
     position: 'absolute'
   },
-  text: {
-    marginTop: -8,
-    marginLeft: -14,
-    fontSize: FontSize.size_sm,
-    lineHeight: 17,
-    fontWeight: '500',
-    textAlign: 'left',
-    letterSpacing: 0,
-    left: '50%',
-    top: '50%'
-  },
+  // text: {
+  //   marginTop: -8,
+  //   marginLeft: -14,
+  //   fontSize: FontSize.size_sm,
+  //   lineHeight: 17,
+  //   fontWeight: '500',
+  //   textAlign: 'left',
+  //   letterSpacing: 0,
+  //   left: '50%',
+  //   top: '50%'
+  // },
   modalOverlay: {
     // flex: 1,
     top: 100,
@@ -271,13 +311,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
-  button: {
-    borderRadius: Border.br_7xs,
-    width: 62,
-    height: 24,
-    backgroundColor: Color.mytreeClarito,
-    left: 20
-  },
+  // button: {
+  //   borderRadius: Border.br_7xs,
+  //   width: 62,
+  //   height: 24,
+  //   backgroundColor: Color.mytreeClarito,
+  //   left: 20
+  // },
   muroInformacin: {
     borderRadius: Border.br_31xl,
     backgroundColor: Color.white,
@@ -285,6 +325,22 @@ const styles = StyleSheet.create({
     width: '100%'
     // height: 964,
     // overflow: 'hidden'
+  },
+  icon: {
+    overflow: 'hidden'
+  },
+  iconLayout: {
+    height: '100%',
+    width: '100%'
+  },
+  menuIcon: {
+    width: 26,
+    height: 20
+  },
+  menuPosition: {
+    top: 36,
+    position: 'absolute',
+    left: 10
   }
 })
 
