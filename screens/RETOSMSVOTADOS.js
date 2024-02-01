@@ -4,9 +4,19 @@ import { Image } from 'expo-image'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
 import { Color, Border, FontSize, FontFamily, Padding } from '../GlobalStyles'
+import { useSelector } from 'react-redux'
 
 const RETOSMSVOTADOS = () => {
   const navigation = useNavigation()
+
+  const { mostVoted } = useSelector((state) => state.challengers)
+
+  const sortedMostVoted = [...mostVoted].sort((a, b) => b.like - a.like) // Ordena el array en orden descendente por cantidad de likes
+
+  const topThreeMostVoted = sortedMostVoted.slice(0, 3) // Toma los primeros tres elementos del array
+  const remainingMostVoted = sortedMostVoted.slice(3)
+
+  console.log(remainingMostVoted)
 
   return (
     <LinearGradient
@@ -28,6 +38,62 @@ const RETOSMSVOTADOS = () => {
             <Text style={styles.retosMsVotados1}>Retos más votados</Text>
           </View>
           <View style={styles.frameContainer}>
+            {/* {topThreeMostVoted.map((top, i) => (
+              <View key={top.nameFamiliar} style={styles.groupContainer}>
+                <View style={styles.groupLayout}>
+                  <View style={[styles.starGroup, styles.groupLayout]}>
+                    {i === 0 && (
+                      <Image
+                        style={styles.groupChild}
+                        contentFit="cover"
+                        source={require('../assets/star-8.png')}
+                      />
+                    )}
+                    {i === 1 && (
+                      <Image
+                        style={styles.groupInner}
+                        contentFit="cover"
+                        source={require('../assets/star-5.png')}
+                      />
+                    )}
+                    {i === 2 && (
+                      <Image
+                        style={styles.groupChild}
+                        contentFit="cover"
+                        source={require('../assets/star-8.png')}
+                      />
+                    )}
+
+                    <View style={[styles.star, styles.starLayout]}>
+                      <Image
+                        style={[styles.starChild, styles.starLayout]}
+                        contentFit="cover"
+                        source={require('../assets/star-61.png')}
+                      />
+                      <Text style={[styles.text2, styles.textTypo2]}>
+                        {i + 1}
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+                <View style={styles.andrewBGroup}>
+                  <Text style={[styles.andrewB1, styles.andrewTypo]}>
+                    {top.nameFamiliar}
+                  </Text>
+                  <View style={[styles.vectorGroup, styles.parentFlexBox]}>
+                    <Image
+                      style={styles.vectorIcon1}
+                      contentFit="cover"
+                      source={require('../assets/vector5.png')}
+                    />
+                    <Text style={[styles.text1, styles.textTypo1]}>
+                      {top.like}
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            ))} */}
+
             <View style={styles.groupParent}>
               <View style={styles.starParent}>
                 <Image
@@ -41,11 +107,6 @@ const RETOSMSVOTADOS = () => {
                   source={require('../assets/star-6.png')}
                 />
                 <Text style={[styles.text, styles.textTypo2]}>2</Text>
-                <Image
-                  style={styles.vectorIcon}
-                  contentFit="cover"
-                  source={require('../assets/vector2.png')}
-                />
               </View>
               <View>
                 <Text style={styles.andrewTypo}>Andrew B.</Text>
@@ -76,11 +137,6 @@ const RETOSMSVOTADOS = () => {
                     <Text style={[styles.text2, styles.textTypo2]}>1</Text>
                   </View>
                 </View>
-                <Image
-                  style={[styles.vectorIcon2, styles.frameParentPosition]}
-                  contentFit="cover"
-                  source={require('../assets/vector4.png')}
-                />
               </View>
               <View style={styles.andrewBGroup}>
                 <Text style={[styles.andrewB1, styles.andrewTypo]}>
@@ -109,11 +165,6 @@ const RETOSMSVOTADOS = () => {
                   source={require('../assets/star-62.png')}
                 />
                 <Text style={[styles.text, styles.textTypo2]}>3</Text>
-                <Image
-                  style={styles.vectorIcon}
-                  contentFit="cover"
-                  source={require('../assets/vector2.png')}
-                />
               </View>
               <View>
                 <Text style={[styles.bradT, styles.andrewTypo]}>Brad T.</Text>
