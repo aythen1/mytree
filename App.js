@@ -192,6 +192,8 @@ import Suscripciones from './screens/Suscripciones'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { loadFonts } from './GlobalStyles'
 import Register from './screens/Register'
+import { Provider } from 'react-redux'
+import { store } from './redux/store'
 // import { View, Text, Pressable, TouchableOpacity } from 'react-native'
 
 const Stack = createNativeStackNavigator()
@@ -204,7 +206,7 @@ const App = () => {
   }, [])
 
   return (
-    <>
+    <Provider store={store}>
       <NavigationContainer>
         {/* {hideSplashScreen ? ( */}
         <Stack.Navigator
@@ -1154,7 +1156,7 @@ const App = () => {
         </Stack.Navigator>
         {/* ) : null} */}
       </NavigationContainer>
-    </>
+    </Provider>
   )
 }
 export default App
