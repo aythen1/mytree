@@ -1,5 +1,5 @@
-import * as React from 'react'
-import { StyleSheet, View, Text, Pressable } from 'react-native'
+import React from 'react'
+import { StyleSheet, View, Text, Pressable, ScrollView } from 'react-native'
 import { Image } from 'expo-image'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
@@ -9,7 +9,7 @@ const Splash = () => {
   const navigation = useNavigation()
 
   return (
-    <View>
+    <ScrollView style={styles.splash}>
       <View style={styles.splashChild} />
       <Image
         style={styles.splashItem}
@@ -105,14 +105,14 @@ generaciones`}</Text>
           >
             <Pressable
               style={[styles.pressable, styles.buttonSpaceBlock]}
-              onPress={() => navigation.navigate('Register')}
+              onPress={() => navigation.navigate('REGISTRONOMBRE1')}
             >
               <Text style={[styles.signIn1, styles.signTypo]}>REGISTRARSE</Text>
             </Pressable>
           </LinearGradient>
         </View>
       </View>
-    </View>
+    </ScrollView>
   )
 }
 
@@ -311,10 +311,10 @@ const styles = StyleSheet.create({
     marginTop: 20
   },
   image6Parent: {
-    top: '-50%',
-    // left: 60,
-    alignItems: 'center'
-    // position: 'absolute'
+    top: 120,
+    left: 28,
+    alignItems: 'center',
+    position: 'absolute'
   },
   splash: {
     borderRadius: Border.br_21xl,

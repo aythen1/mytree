@@ -106,7 +106,7 @@ const LOGIN = () => {
           locations={[0, 1]}
           colors={['#dee274', '#7ec18c']}
         >
-          <Pressable onPress={() => navigation.navigate('MUROINFORMACIN')}>
+          <Pressable onPress={() => navigation.navigate('Muro')}>
             <Text style={[styles.signIn, styles.signInLayout]}>Ingresar</Text>
           </Pressable>
         </LinearGradient>
