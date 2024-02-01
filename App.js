@@ -145,9 +145,9 @@ import MISAMIGOS from './screens/MISAMIGOS'
 import PERFILAJUSTES from './screens/PERFILAJUSTES'
 import PERFILDELUSUARIOVISITADO2 from './screens/PERFILDELUSUARIOVISITADO2'
 import PERFILMIINFO from './screens/PERFILMIINFO'
-import VotacionDeRetos from './screens/VotacionDeRetos'
+// import VotacionDeRetos from './screens/VotacionDeRetos'
 import RetosBienvenida from './screens/RetosBienvenida'
-import RetosBienvenida1 from './screens/RetosBienvenida1'
+// import RetosModal from './screens/RetosModal'
 import MisAlbumes from './screens/MisAlbumes'
 import MisAlbumes1 from './screens/MisAlbumes1'
 import SOLOYO from './screens/SOLOYO'
@@ -186,7 +186,7 @@ import REGISTROTELFONO3 from './screens/REGISTROTELFONO3'
 import REGISTROFECHADENACIMIENTO from './screens/REGISTROFECHADENACIMIENTO'
 import REGISTROFECHADENACIMIENTO1 from './screens/REGISTROFECHADENACIMIENTO1'
 import REGISTRONOMBRE from './screens/REGISTRONOMBRE'
-import REGISTRONOMBRE1 from './screens/REGISTRONOMBRE1'
+// import REGISTRONOMBRE1 from './screens/REGISTRONOMBRE1'
 import Suscripciones from './screens/Suscripciones'
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
@@ -936,21 +936,21 @@ const App = () => {
             component={PERFILMIINFO}
             options={{ headerShown: false }}
           />
-          <Stack.Screen
+          {/* <Stack.Screen
             name="VotacionDeRetos"
             component={VotacionDeRetos}
             options={{ headerShown: false }}
-          />
+          /> */}
           <Stack.Screen
             name="RetosBienvenida"
             component={RetosBienvenida}
             options={{ headerShown: false }}
           />
-          <Stack.Screen
-            name="RetosBienvenida1"
-            component={RetosBienvenida1}
+          {/* <Stack.Screen
+            name="Retos"
+            component={RetosModal}
             options={{ headerShown: false }}
-          />
+          /> */}
           <Stack.Screen
             name="MisAlbumes"
             component={MisAlbumes}

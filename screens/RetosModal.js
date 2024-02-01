@@ -1,63 +1,17 @@
-import * as React from 'react'
+import React from 'react'
 import { Image } from 'expo-image'
-import { StyleSheet, Pressable, View, Text } from 'react-native'
+import { StyleSheet, Pressable, View, Text, ScrollView } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
 import { Padding, FontSize, Color, FontFamily, Border } from '../GlobalStyles'
 
-const RetosBienvenida1 = () => {
+const RetosModal = () => {
   const navigation = useNavigation()
 
   return (
-    <View style={styles.retosBienvenida}>
-      <View style={[styles.frameParent, styles.frameParentPosition]}>
-        <View style={styles.frameGroup}>
-          <View style={styles.pressableFlexBox}>
-            <Pressable
-              style={styles.messageLayout}
-              onPress={() => navigation.navigate('MENSAJERA')}
-            >
-              <Image
-                style={styles.icon}
-                contentFit="cover"
-                source={require('../assets/message3.png')}
-              />
-            </Pressable>
-            <Pressable
-              style={[styles.iconlylightOutlinecalendar, styles.messageLayout]}
-              onPress={() => navigation.navigate('CALENDARIO')}
-            >
-              <Image
-                style={styles.icon}
-                contentFit="cover"
-                source={require('../assets/iconlylightoutlinecalendar6.png')}
-              />
-            </Pressable>
-            <Pressable
-              style={[styles.iconlylightOutlinecalendar, styles.messageLayout]}
-              onPress={() => navigation.navigate('PERFILAJUSTES')}
-            >
-              <Image
-                style={styles.icon}
-                contentFit="cover"
-                source={require('../assets/iconlylightoutlinesetting1.png')}
-              />
-            </Pressable>
-          </View>
-          <View style={styles.parentSpaceBlock}>
-            <Pressable
-              style={[styles.tabs, styles.tabsFlexBox]}
-              onPress={() => navigation.navigate('MUROINFORMACIN')}
-            >
-              <Text style={[styles.trending, styles.popularLayout]}>
-                Familia
-              </Text>
-            </Pressable>
-            <View style={[styles.popularWrapper, styles.tabsFlexBox]}>
-              <Text style={[styles.popular, styles.popularTypo]}>Retos</Text>
-            </View>
-          </View>
-        </View>
+    <ScrollView style={styles.retosBienvenida}>
+      <View style={styles.frameParent}>
+        <View style={styles.frameGroup}></View>
         <View style={styles.parentSpaceBlock}>
           <LinearGradient
             style={[styles.frameChild, styles.pressableBg]}
@@ -117,15 +71,15 @@ Desliza hacia la derecha el que más te guste o hacia la izquierda si no te conv
         contentFit="cover"
         source={require('../assets/navigation34.png')}
       />
-    </View>
+    </ScrollView>
   )
 }
 
 const styles = StyleSheet.create({
   frameParentPosition: {
-    left: 0,
+    // left: 0
     // width: 428,
-    position: 'absolute'
+    // position: 'absolute'
   },
   messageLayout: {
     height: 24,
@@ -162,7 +116,7 @@ const styles = StyleSheet.create({
   },
   parentSpaceBlock: {
     width: '100%',
-    marginTop: 20,
+    marginTop: 0,
     flexDirection: 'row'
   },
   icon: {
@@ -309,12 +263,11 @@ const styles = StyleSheet.create({
   },
   retosBienvenida: {
     borderRadius: Border.br_31xl,
-    height: 926,
+    // height: 926,
     overflow: 'hidden',
     width: '100%',
-    flex: 1,
-    backgroundColor: Color.white
+    flex: 1
   }
 })
 
-export default RetosBienvenida1
+export default RetosModal
