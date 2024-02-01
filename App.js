@@ -65,7 +65,7 @@ import Chat from './screens/Chat'
 import AADIRAADIRANCESTRO from './screens/AADIRAADIRANCESTRO'
 import AADIRAADIRINFANTE from './screens/AADIRAADIRINFANTE'
 import TarjetaDigital from './screens/TarjetaDigital'
-import MUROALERTAS from './screens/MUROALERTAS'
+// import MUROALERTAS from './screens/CrearReto'
 import MUROALERTAS1 from './screens/MUROALERTAS1'
 import MENSAJERA from './screens/MENSAJERA'
 import Bsqueda from './screens/Bsqueda'
@@ -192,7 +192,9 @@ import Suscripciones from './screens/Suscripciones'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { loadFonts } from './GlobalStyles'
 import Register from './screens/Register'
-// import { View, Text, Pressable, TouchableOpacity } from 'react-native'
+import { Provider } from 'react-redux'
+import { store } from './redux/store'
+import CrearReto from './screens/CrearReto'
 
 const Stack = createNativeStackNavigator()
 
@@ -204,7 +206,7 @@ const App = () => {
   }, [])
 
   return (
-    <>
+    <Provider store={store}>
       <NavigationContainer>
         {/* {hideSplashScreen ? ( */}
         <Stack.Navigator
@@ -537,8 +539,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="MUROALERTAS"
-            component={MUROALERTAS}
+            name="CrearReto"
+            component={CrearReto}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -1154,7 +1156,7 @@ const App = () => {
         </Stack.Navigator>
         {/* ) : null} */}
       </NavigationContainer>
-    </>
+    </Provider>
   )
 }
 export default App

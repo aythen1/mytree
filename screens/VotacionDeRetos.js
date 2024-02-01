@@ -59,7 +59,7 @@ const VotacionDeRetos = () => {
               <View style={styles.buttonParent}>
                 <Pressable
                   style={[styles.button, styles.buttonFlexBox]}
-                  onPress={() => navigation.navigate('MUROALERTAS')}
+                  onPress={() => navigation.navigate('CrearReto')}
                 >
                   <Text style={styles.signTypo}>Crear Reto</Text>
                 </Pressable>
