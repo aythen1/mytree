@@ -97,7 +97,8 @@ const VotacionDeRetos = () => {
 const styles = StyleSheet.create({
   imageSlideSpaceBlock: {
     paddingHorizontal: 0,
-    backgroundColor: Color.white
+    backgroundColor: Color.backgroundPrimaryBackground,
+    marginBottom: 60
   },
   messageLayout: {
     height: 24,
@@ -145,7 +146,8 @@ const styles = StyleSheet.create({
   tabsFlexBox: {
     justifyContent: 'center',
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: Color.backgroundPrimaryBackground
   },
   imageLayout: {
     height: 290,

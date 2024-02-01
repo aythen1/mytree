@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { StyleSheet, View, Text, Pressable, ScrollView } from 'react-native'
+import { StyleSheet, View, Text, Pressable } from 'react-native'
 import { Image } from 'expo-image'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
@@ -9,7 +9,7 @@ const Splash = () => {
   const navigation = useNavigation()
 
   return (
-    <ScrollView style={styles.splash}>
+    <View>
       <View style={styles.splashChild} />
       <Image
         style={styles.splashItem}
@@ -112,7 +112,7 @@ generaciones`}</Text>
           </LinearGradient>
         </View>
       </View>
-    </ScrollView>
+    </View>
   )
 }
 

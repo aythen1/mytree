@@ -3,15 +3,16 @@ import { StyleSheet, View, Text, Pressable, Modal } from 'react-native'
 import { Image } from 'expo-image'
 // import { LinearGradient } from 'expo-linear-gradient'
 import { Border, Padding, FontFamily, FontSize, Color } from '../GlobalStyles'
-import { useNavigation } from '@react-navigation/native'
+// import { useNavigation } from '@react-navigation/native'
 import Post from '../components/Post'
 import Stories from '../components/Stories'
 import RetosModal from './RetosModal'
 import VotacionDeRetos from './VotacionDeRetos'
 
 const Muro = () => {
-  const navigation = useNavigation()
+  // const navigation = useNavigation()
   const [showModalRetos, setShowModalRetos] = useState(false)
+  const [showRetos, setShowRetos] = useState(false)
 
   const handleShowRetos = () => {
     setShowModalRetos(!showModalRetos)
@@ -20,8 +21,10 @@ const Muro = () => {
   return (
     <View style={{ flex: 1 }}>
       <View style={styles.instanceParent}>
-        <View style={[styles.popularWrapper, styles.tabsFlexBox]}>
-          <Text style={[styles.popular, styles.popularTypo]}>Familia</Text>
+        <View style={[styles.tabs, styles.tabsFlexBox]}>
+          <Pressable onPress={() => setShowRetos(false)}>
+            <Text style={[styles.popular, styles.popularTypo]}>Familia</Text>
+          </Pressable>
         </View>
         <Pressable
           style={[styles.tabs, styles.tabsFlexBox]}
@@ -33,7 +36,10 @@ const Muro = () => {
 
       <Modal animationType="slide" transparent={true} visible={showModalRetos}>
         <View style={styles.modalOverlay}>
-          <RetosModal />
+          <RetosModal
+            setShowRetos={setShowRetos}
+            setShowModalRetos={setShowModalRetos}
+          />
         </View>
       </Modal>
 
@@ -55,9 +61,10 @@ const Muro = () => {
         />
       </View>
 
+      {/* <ScrollView style={{ flex: 1 }}> */}
       <Stories />
-      {/* <Post /> */}
-      <VotacionDeRetos />
+      {showRetos ? <VotacionDeRetos /> : <Post />}
+      {/* </ScrollView> */}
 
       <View style={[styles.button, styles.buttonPosition]}>
         <Text style={[styles.text, styles.textTypo]}>50%</Text>
@@ -151,7 +158,7 @@ const styles = StyleSheet.create({
   popularWrapper: {
     borderTopLeftRadius: Border.br_3xs,
     borderBottomLeftRadius: Border.br_3xs,
-    backgroundColor: Color.backgroundPrimaryBackground,
+    // backgroundColor: Color.backgroundPrimaryBackground,
     overflow: 'hidden'
   },
   trending: {
@@ -160,8 +167,8 @@ const styles = StyleSheet.create({
   },
   tabs: {
     borderTopRightRadius: Border.br_3xs,
-    borderBottomRightRadius: Border.br_3xs,
-    backgroundColor: Color.fAFAFA
+    borderBottomRightRadius: Border.br_3xs
+    // backgroundColor: colorBoton
   },
   instanceParent: {
     top: 80,

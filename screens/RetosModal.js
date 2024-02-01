@@ -5,7 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
 import { Padding, FontSize, Color, FontFamily, Border } from '../GlobalStyles'
 
-const RetosModal = () => {
+const RetosModal = ({ setShowModalRetos, setShowRetos }) => {
   const navigation = useNavigation()
 
   return (
@@ -56,7 +56,10 @@ Desliza hacia la derecha el que más te guste o hacia la izquierda si no te conv
             >
               <Pressable
                 style={[styles.pressable, styles.pressableBg]}
-                onPress={() => navigation.navigate('VotacionDeRetos')}
+                onPress={() => {
+                  setShowModalRetos(false)
+                  setShowRetos(true)
+                }}
               >
                 <Text style={[styles.signIn, styles.signInLayout]}>
                   CONTINUAR
@@ -264,7 +267,7 @@ const styles = StyleSheet.create({
   retosBienvenida: {
     borderRadius: Border.br_31xl,
     // height: 926,
-    overflow: 'hidden',
+    // overflow: 'hidden',
     width: '100%',
     flex: 1
   }
