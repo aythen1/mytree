@@ -9,169 +9,40 @@ const VotacionDeRetos = () => {
   const navigation = useNavigation()
 
   return (
-    <ScrollView style={[styles.votacionDeRetos, styles.imageSlideSpaceBlock]}>
+    <View style={[styles.votacionDeRetos, styles.imageSlideSpaceBlock]}>
       <View style={styles.frameParent}>
-        <View style={styles.frameParent}>
-          <View style={styles.frameContainer}>
-            <View style={styles.tabsFlexBox}>
-              <Pressable
-                style={styles.messageLayout}
-                onPress={() => navigation.navigate('MENSAJERA')}
-              >
-                <Image
-                  style={styles.icon}
-                  contentFit="cover"
-                  source={require('../assets/message3.png')}
-                />
-              </Pressable>
-              <Pressable
-                style={[
-                  styles.iconlylightOutlinecalendar,
-                  styles.messageLayout
-                ]}
-                onPress={() => navigation.navigate('CALENDARIO')}
-              >
-                <Image
-                  style={styles.icon}
-                  contentFit="cover"
-                  source={require('../assets/iconlylightoutlinecalendar6.png')}
-                />
-              </Pressable>
-              <Pressable
-                style={[
-                  styles.iconlylightOutlinecalendar,
-                  styles.messageLayout
-                ]}
-                onPress={() => navigation.navigate('PERFILAJUSTES')}
-              >
-                <Image
-                  style={styles.icon}
-                  contentFit="cover"
-                  source={require('../assets/iconlylightoutlinesetting1.png')}
-                />
-              </Pressable>
-            </View>
-            <View style={styles.tabsParent}>
-              <Pressable
-                style={[styles.tabs, styles.tabsSpaceBlock]}
-                onPress={() => navigation.navigate('MUROINFORMACIN')}
-              >
-                <Text style={[styles.trending, styles.popularTypo]}>
-                  Familia
-                </Text>
-              </Pressable>
-              <View style={[styles.popularWrapper, styles.imageFlexBox1]}>
-                <Text style={[styles.popular, styles.popularTypo]}>Retos</Text>
-              </View>
-            </View>
-          </View>
-          <View style={styles.stories}>
-            <ScrollView
-              style={{ flexDirection: 'row' }}
-              horizontal={true}
-              showsHorizontalScrollIndicator={false}
-            >
-              <View style={styles.youLayout}>
-                <Image
-                  style={[styles.aatarIcon, styles.aatarIconPosition]}
-                  contentFit="cover"
-                  source={require('../assets/aatar3.png')}
-                />
-                <View style={[styles.youWrapper, styles.aatarIconPosition]}>
-                  <Text style={[styles.you1, styles.you1Typo]}>You</Text>
-                </View>
-              </View>
-              <View style={[styles.benjamin, styles.youLayout]}>
-                <Image
-                  style={[styles.aatarIcon, styles.aatarIconPosition]}
-                  contentFit="cover"
-                  source={require('../assets/aatar4.png')}
-                />
-                <View style={[styles.youWrapper, styles.aatarIconPosition]}>
-                  <Text style={[styles.benjamin1, styles.you1Typo]}>
-                    Benjamin
-                  </Text>
-                </View>
-              </View>
-              <View style={[styles.benjamin, styles.youLayout]}>
-                <Image
-                  style={[styles.aatarIcon, styles.aatarIconPosition]}
-                  contentFit="cover"
-                  source={require('../assets/aatar5.png')}
-                />
-                <View style={[styles.youWrapper, styles.aatarIconPosition]}>
-                  <Text style={[styles.farita1, styles.you1Typo]}>Farita</Text>
-                </View>
-              </View>
-              <View style={[styles.benjamin, styles.youLayout]}>
-                <Image
-                  style={[styles.aatarIcon, styles.aatarIconPosition]}
-                  contentFit="cover"
-                  source={require('../assets/aatar5.png')}
-                />
-                <View style={[styles.youWrapper, styles.aatarIconPosition]}>
-                  <Text style={[styles.marie1, styles.you1Typo]}>Marie</Text>
-                </View>
-              </View>
-              <View style={[styles.benjamin, styles.youLayout]}>
-                <Image
-                  style={[styles.aatarIcon, styles.aatarIconPosition]}
-                  contentFit="cover"
-                  source={require('../assets/aatar4.png')}
-                />
-                <View style={[styles.youWrapper, styles.aatarIconPosition]}>
-                  <Text style={[styles.benjamin1, styles.you1Typo]}>
-                    Benjamin
-                  </Text>
-                </View>
-              </View>
-              <View style={[styles.benjamin, styles.youLayout]}>
-                <Image
-                  style={[styles.aatarIcon, styles.aatarIconPosition]}
-                  contentFit="cover"
-                  source={require('../assets/aatar5.png')}
-                />
-                <View style={[styles.youWrapper, styles.aatarIconPosition]}>
-                  <Text style={[styles.farita1, styles.you1Typo]}>Farita</Text>
-                </View>
-              </View>
-              <View style={[styles.benjamin, styles.youLayout]}>
-                <Image
-                  style={[styles.aatarIcon, styles.aatarIconPosition]}
-                  contentFit="cover"
-                  source={require('../assets/aatar5.png')}
-                />
-                <View style={[styles.youWrapper, styles.aatarIconPosition]}>
-                  <Text style={[styles.farita1, styles.you1Typo]}>Claire</Text>
-                </View>
-              </View>
-            </ScrollView>
-          </View>
-        </View>
         <View style={styles.imageSlideParent}>
           <View style={[styles.imageSlide, styles.tabsFlexBox]}>
             <View style={styles.tabsFlexBox}>
-              <View style={[styles.image, styles.imageLayout]}>
-                <Image
-                  style={styles.placeholderIcon}
-                  contentFit="cover"
-                  source={require('../assets/placeholder1.png')}
-                />
-              </View>
-              <View style={[styles.image1, styles.imageFlexBox]}>
-                <Image
-                  style={styles.placeholderIcon1}
-                  contentFit="cover"
-                  source={require('../assets/placeholder2.png')}
-                />
-              </View>
-              <View style={[styles.image2, styles.imageFlexBox]}>
-                <Image
-                  style={styles.placeholderIcon}
-                  contentFit="cover"
-                  source={require('../assets/placeholder1.png')}
-                />
-              </View>
+              <ScrollView
+                horizontal={true}
+                contentContainerStyle={{
+                  alignItems: 'center'
+                }}
+                showsHorizontalScrollIndicator={false}
+              >
+                <View style={[styles.image, styles.imageLayout]}>
+                  <Image
+                    style={styles.placeholderIcon}
+                    contentFit="cover"
+                    source={require('../assets/placeholder1.png')}
+                  />
+                </View>
+                <View style={[styles.image1, styles.imageFlexBox]}>
+                  <Image
+                    style={styles.placeholderIcon1}
+                    contentFit="cover"
+                    source={require('../assets/placeholder2.png')}
+                  />
+                </View>
+                <View style={[styles.image2, styles.imageFlexBox]}>
+                  <Image
+                    style={styles.placeholderIcon}
+                    contentFit="cover"
+                    source={require('../assets/placeholder1.png')}
+                  />
+                </View>
+              </ScrollView>
             </View>
           </View>
           <View style={styles.frameView}>
@@ -219,12 +90,7 @@ const VotacionDeRetos = () => {
           </View>
         </View>
       </View>
-      <Image
-        style={styles.navigationIcon}
-        contentFit="cover"
-        source={require('../assets/navigation32.png')}
-      />
-    </ScrollView>
+    </View>
   )
 }
 
@@ -478,9 +344,10 @@ const styles = StyleSheet.create({
     marginTop: -12
   },
   imageSlideParent: {
-    height: 613,
+    // height: 613,
     marginTop: 14,
     alignItems: 'center'
+    // backgroundColor: 'red'
   },
   navigationIcon: {
     height: 105,
@@ -488,13 +355,15 @@ const styles = StyleSheet.create({
   },
   votacionDeRetos: {
     borderRadius: Border.br_31xl,
-    height: 926,
+    // height: 926,
     paddingVertical: Padding.p_xl,
-    overflow: 'hidden',
+    // overflow: 'hidden',
     width: '100%',
-    flex: 1,
+    height: '100%',
+    // flex: 1,
     paddingHorizontal: 0,
-    backgroundColor: Color.white
+    backgroundColor: Color.white,
+    top: 139
   }
 })
 

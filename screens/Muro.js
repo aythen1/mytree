@@ -1,27 +1,41 @@
-import * as React from 'react'
-import { StyleSheet, View, Text, Pressable } from 'react-native'
+import React, { useState } from 'react'
+import { StyleSheet, View, Text, Pressable, Modal } from 'react-native'
 import { Image } from 'expo-image'
 // import { LinearGradient } from 'expo-linear-gradient'
 import { Border, Padding, FontFamily, FontSize, Color } from '../GlobalStyles'
 import { useNavigation } from '@react-navigation/native'
 import Post from '../components/Post'
 import Stories from '../components/Stories'
+import RetosModal from './RetosModal'
+import VotacionDeRetos from './VotacionDeRetos'
 
 const Muro = () => {
   const navigation = useNavigation()
+  const [showModalRetos, setShowModalRetos] = useState(false)
+
+  const handleShowRetos = () => {
+    setShowModalRetos(!showModalRetos)
+  }
+
   return (
-    <View style={styles.muroInformacin}>
+    <View style={{ flex: 1 }}>
       <View style={styles.instanceParent}>
         <View style={[styles.popularWrapper, styles.tabsFlexBox]}>
           <Text style={[styles.popular, styles.popularTypo]}>Familia</Text>
         </View>
         <Pressable
           style={[styles.tabs, styles.tabsFlexBox]}
-          onPress={() => navigation.navigate('RetosBienvenida1')}
+          onPress={handleShowRetos}
         >
           <Text style={[styles.trending, styles.popularTypo]}>Retos</Text>
         </Pressable>
       </View>
+
+      <Modal animationType="slide" transparent={true} visible={showModalRetos}>
+        <View style={styles.modalOverlay}>
+          <RetosModal />
+        </View>
+      </Modal>
 
       <View style={[styles.messageParent, styles.buttonPosition]}>
         <Image
@@ -40,25 +54,10 @@ const Muro = () => {
           source={require('../assets/iconlylightoutlinesetting5.png')}
         />
       </View>
+
       <Stories />
-      <Post />
-      <View style={styles.iconlyboldchatParent}>
-        <Image
-          style={styles.iconlyboldchatLayout}
-          contentFit="cover"
-          source={require('../assets/iconlyboldchat1.png')}
-        />
-        <Image
-          style={[styles.iconlyboldsend, styles.iconlyboldchatLayout]}
-          contentFit="cover"
-          source={require('../assets/iconlyboldsend1.png')}
-        />
-      </View>
-      <Image
-        style={styles.navigationIcon}
-        contentFit="cover"
-        source={require('../assets/navigation26.png')}
-      />
+      {/* <Post /> */}
+      <VotacionDeRetos />
 
       <View style={[styles.button, styles.buttonPosition]}>
         <Text style={[styles.text, styles.textTypo]}>50%</Text>
@@ -70,7 +69,7 @@ const Muro = () => {
 const styles = StyleSheet.create({
   childLayout: {
     borderRadius: Border.br_xl,
-    height: 732,
+    // height: 732,
     width: 388,
     position: 'absolute'
   },
@@ -134,7 +133,7 @@ const styles = StyleSheet.create({
     top: '50%'
   },
   rectangleParent: {
-    height: 732,
+    // height: 732,
     width: 388,
     left: 20,
     top: 139,
@@ -142,8 +141,8 @@ const styles = StyleSheet.create({
   },
   muroInformacinChild: {
     backgroundColor: Color.linearBoton,
-    left: 20,
-    top: 139,
+    // left: 20,
+    // top: 139,
     borderRadius: Border.br_xl
   },
   popular: {
@@ -234,11 +233,12 @@ const styles = StyleSheet.create({
   iconlyboldsend: {
     marginTop: 39
   },
-  iconlyboldchatParent: {
-    top: 595,
-    left: 348,
-    position: 'absolute'
-  },
+  // iconlyboldchatParent: {
+  //   top: 595,
+  //   left: 348,
+  //   position: 'absolute',
+  //   backgroundColor: 'red'
+  // },
   navigationIcon: {
     top: 857,
     width: 428,
@@ -257,6 +257,13 @@ const styles = StyleSheet.create({
     left: '50%',
     top: '50%'
   },
+  modalOverlay: {
+    // flex: 1,
+    top: 100,
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
   button: {
     borderRadius: Border.br_7xs,
     width: 62,
@@ -268,9 +275,9 @@ const styles = StyleSheet.create({
     borderRadius: Border.br_31xl,
     backgroundColor: Color.white,
     flex: 1,
-    width: '100%',
-    height: 964,
-    overflow: 'hidden'
+    width: '100%'
+    // height: 964,
+    // overflow: 'hidden'
   }
 })
 
