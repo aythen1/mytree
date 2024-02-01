@@ -29,7 +29,7 @@ const MENPRINCIPAL = () => {
               />
               <Pressable
                 style={styles.muro}
-                onPress={() => navigation.navigate('RetosBienvenida')}
+                onPress={() => navigation.navigate('Muro')}
               >
                 <Text style={styles.muro1Typo}>Muro</Text>
               </Pressable>
@@ -367,8 +367,10 @@ const styles = StyleSheet.create({
     zIndex: 100
   },
   menPrincipal: {
-    maxWidth: '100%',
-    maxHeight: '90%'
+    maxWidth: '80%',
+    maxHeight: '90%',
+    top: '5%',
+    left: '10%'
   }
 })
 

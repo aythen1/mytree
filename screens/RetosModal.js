@@ -2,11 +2,11 @@ import React from 'react'
 import { Image } from 'expo-image'
 import { StyleSheet, Pressable, View, Text, ScrollView } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
-import { useNavigation } from '@react-navigation/native'
+// import { useNavigation } from '@react-navigation/native'
 import { Padding, FontSize, Color, FontFamily, Border } from '../GlobalStyles'
 
 const RetosModal = ({ setShowModalRetos, setShowRetos }) => {
-  const navigation = useNavigation()
+  // const navigation = useNavigation()
 
   return (
     <ScrollView style={styles.retosBienvenida}>
