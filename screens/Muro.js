@@ -240,12 +240,6 @@ const styles = StyleSheet.create({
   iconlyboldsend: {
     marginTop: 39
   },
-  // iconlyboldchatParent: {
-  //   top: 595,
-  //   left: 348,
-  //   position: 'absolute',
-  //   backgroundColor: 'red'
-  // },
   navigationIcon: {
     top: 857,
     width: 428,

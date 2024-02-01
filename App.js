@@ -135,7 +135,7 @@ import PERFILAJUSTESPRIVACIDAD from './screens/PERFILAJUSTESPRIVACIDAD'
 import PERFILAJUSTESPREVISUALIZ from './screens/PERFILAJUSTESPREVISUALIZ'
 import PERFILDELUSUARIOVISITADO from './screens/PERFILDELUSUARIOVISITADO'
 import CONDOLENCIAS from './components/CONDOLENCIAS'
-import Navigation from './screens/Navigation'
+// import Navigation from './screens/Navigation'
 import PERFILANCESTROAJUSTES from './screens/PERFILANCESTROAJUSTES'
 import PERFILANCESTROAJUSTES1 from './screens/PERFILANCESTROAJUSTES1'
 import PERFILINFANTEAJUSTES from './screens/PERFILINFANTEAJUSTES'
@@ -195,6 +195,7 @@ import Register from './screens/Register'
 import { Provider } from 'react-redux'
 import { store } from './redux/store'
 import CrearReto from './screens/CrearReto'
+import FooterNavBar from './components/FooterNavBar'
 
 const Stack = createNativeStackNavigator()
 
@@ -213,6 +214,11 @@ const App = () => {
           initialRouteName="Onboarding2"
           screenOptions={{ headerShown: false }}
         >
+          <Stack.Screen
+            name="Navigation"
+            component={FooterNavBar}
+            options={{ headerShown: false }}
+          />
           <Stack.Screen
             name="CambiarFotoDePerfil"
             component={CambiarFotoDePerfil}
@@ -888,11 +894,11 @@ const App = () => {
             component={CONDOLENCIAS}
             options={{ headerShown: false }}
           />
-          <Stack.Screen
+          {/* <Stack.Screen
             name="Navigation"
             component={Navigation}
             options={{ headerShown: false }}
-          />
+          /> */}
           <Stack.Screen
             name="PERFILANCESTROAJUSTES"
             component={PERFILANCESTROAJUSTES}

@@ -11,9 +11,9 @@ const RETOSMSVOTADOS = () => {
 
   const { mostVoted } = useSelector((state) => state.challengers)
 
-  const sortedMostVoted = [...mostVoted].sort((a, b) => b.like - a.like) // Ordena el array en orden descendente por cantidad de likes
+  const sortedMostVoted = [...mostVoted].sort((a, b) => b.like - a.like)
 
-  const topThreeMostVoted = sortedMostVoted.slice(0, 3) // Toma los primeros tres elementos del array
+  const topThreeMostVoted = sortedMostVoted.slice(0, 3)
   const remainingMostVoted = sortedMostVoted.slice(3)
 
   console.log(remainingMostVoted)
@@ -38,8 +38,8 @@ const RETOSMSVOTADOS = () => {
             <Text style={styles.retosMsVotados1}>Retos más votados</Text>
           </View>
           <View style={styles.frameContainer}>
-            {/* {topThreeMostVoted.map((top, i) => (
-              <View key={top.nameFamiliar} style={styles.groupContainer}>
+            {topThreeMostVoted.map((top, i) => (
+              <View key={top.nameFamiliar} /* style={styles.groupContainer} */>
                 <View style={styles.groupLayout}>
                   <View style={[styles.starGroup, styles.groupLayout]}>
                     {i === 0 && (
@@ -64,16 +64,42 @@ const RETOSMSVOTADOS = () => {
                       />
                     )}
 
-                    <View style={[styles.star, styles.starLayout]}>
-                      <Image
-                        style={[styles.starChild, styles.starLayout]}
-                        contentFit="cover"
-                        source={require('../assets/star-61.png')}
-                      />
-                      <Text style={[styles.text2, styles.textTypo2]}>
-                        {i + 1}
-                      </Text>
-                    </View>
+                    {i === 1 && (
+                      <View style={styles.startop1}>
+                        <Image
+                          style={[styles.starLayout]}
+                          contentFit="cover"
+                          source={require('../assets/star-61.png')}
+                        />
+                        <Text style={[styles.text2, styles.textTypo2]}>
+                          {i === 1 ? '1' : i === 0 ? '2' : i === 2 ? '3' : ''}
+                        </Text>
+                      </View>
+                    )}
+                    {i === 2 && (
+                      <View style={styles.star}>
+                        <Image
+                          style={[styles.starLayout]}
+                          contentFit="cover"
+                          source={require('../assets/star-62.png')}
+                        />
+                        <Text style={[styles.text2, styles.textTypo2]}>
+                          {i === 1 ? '1' : i === 0 ? '2' : i === 2 ? '3' : ''}
+                        </Text>
+                      </View>
+                    )}
+                    {i === 0 && (
+                      <View style={styles.star}>
+                        <Image
+                          style={[styles.starLayout]}
+                          contentFit="cover"
+                          source={require('../assets/star-6.png')}
+                        />
+                        <Text style={[styles.text2, styles.textTypo2]}>
+                          {i === 1 ? '1' : i === 0 ? '2' : i === 2 ? '3' : ''}
+                        </Text>
+                      </View>
+                    )}
                   </View>
                 </View>
                 <View style={styles.andrewBGroup}>
@@ -92,92 +118,7 @@ const RETOSMSVOTADOS = () => {
                   </View>
                 </View>
               </View>
-            ))} */}
-
-            <View style={styles.groupParent}>
-              <View style={styles.starParent}>
-                <Image
-                  style={styles.groupChild}
-                  contentFit="cover"
-                  source={require('../assets/star-8.png')}
-                />
-                <Image
-                  style={[styles.groupItem, styles.starLayout]}
-                  contentFit="cover"
-                  source={require('../assets/star-6.png')}
-                />
-                <Text style={[styles.text, styles.textTypo2]}>2</Text>
-              </View>
-              <View>
-                <Text style={styles.andrewTypo}>Andrew B.</Text>
-                <View style={[styles.vectorParent, styles.parentFlexBox]}>
-                  <Image
-                    style={styles.vectorIcon1}
-                    contentFit="cover"
-                    source={require('../assets/vector3.png')}
-                  />
-                  <Text style={[styles.text1, styles.textTypo1]}>52</Text>
-                </View>
-              </View>
-            </View>
-            <View style={styles.groupContainer}>
-              <View style={styles.groupLayout}>
-                <View style={[styles.starGroup, styles.groupLayout]}>
-                  <Image
-                    style={styles.groupInner}
-                    contentFit="cover"
-                    source={require('../assets/star-5.png')}
-                  />
-                  <View style={[styles.star, styles.starLayout]}>
-                    <Image
-                      style={[styles.starChild, styles.starLayout]}
-                      contentFit="cover"
-                      source={require('../assets/star-61.png')}
-                    />
-                    <Text style={[styles.text2, styles.textTypo2]}>1</Text>
-                  </View>
-                </View>
-              </View>
-              <View style={styles.andrewBGroup}>
-                <Text style={[styles.andrewB1, styles.andrewTypo]}>
-                  Andrew B.
-                </Text>
-                <View style={[styles.vectorGroup, styles.parentFlexBox]}>
-                  <Image
-                    style={styles.vectorIcon1}
-                    contentFit="cover"
-                    source={require('../assets/vector5.png')}
-                  />
-                  <Text style={[styles.text1, styles.textTypo1]}>70</Text>
-                </View>
-              </View>
-            </View>
-            <View style={styles.frameView}>
-              <View style={styles.starParent}>
-                <Image
-                  style={styles.groupChild}
-                  contentFit="cover"
-                  source={require('../assets/star-8.png')}
-                />
-                <Image
-                  style={[styles.groupItem, styles.starLayout]}
-                  contentFit="cover"
-                  source={require('../assets/star-62.png')}
-                />
-                <Text style={[styles.text, styles.textTypo2]}>3</Text>
-              </View>
-              <View>
-                <Text style={[styles.bradT, styles.andrewTypo]}>Brad T.</Text>
-                <View style={[styles.vectorParent, styles.parentFlexBox]}>
-                  <Image
-                    style={styles.vectorIcon1}
-                    contentFit="cover"
-                    source={require('../assets/vector3.png')}
-                  />
-                  <Text style={[styles.text1, styles.textTypo1]}>40</Text>
-                </View>
-              </View>
-            </View>
+            ))}
           </View>
         </View>
 
@@ -215,7 +156,41 @@ const RETOSMSVOTADOS = () => {
           </View>
         </View>
         <View style={styles.rowParent}>
-          <View style={styles.rowLayout}>
+          {remainingMostVoted.map((top, i) => (
+            <View
+              key={top.nameFamiliar}
+              style={[styles.row1, styles.rowLayout]}
+            >
+              <View style={styles.rowChildShadowBox} />
+              <Text style={[styles.sarahG, styles.sarahTypo]}>
+                {top.nameFamiliar}
+              </Text>
+              <View style={styles.rowItem} />
+              <View style={styles.star1}>
+                <Image
+                  style={styles.starItem}
+                  contentFit="cover"
+                  source={require('../assets/star-63.png')}
+                />
+                <Text style={[styles.textTypo]}>{i + 4}</Text>
+              </View>
+              <View style={styles.vectorParent1}>
+                <Image
+                  style={styles.vectorIcon1}
+                  contentFit="cover"
+                  source={require('../assets/vector6.png')}
+                />
+                <Text style={[styles.text7, styles.textTypo1]}>{top.like}</Text>
+              </View>
+              <Image
+                style={styles.vectorIcon7}
+                contentFit="cover"
+                source={require('../assets/vector2.png')}
+              />
+            </View>
+          ))}
+
+          {/* <View style={styles.rowLayout}>
             <View style={styles.rowChildShadowBox} />
             <Text style={[styles.sarahG, styles.sarahTypo]}>Sarah G.</Text>
             <View style={styles.rowItem} />
@@ -396,14 +371,9 @@ const RETOSMSVOTADOS = () => {
               contentFit="cover"
               source={require('../assets/vector2.png')}
             />
-          </View>
+          </View> */}
         </View>
       </View>
-      <Image
-        style={styles.navigationIcon}
-        contentFit="cover"
-        source={require('../assets/navigation2.png')}
-      />
     </LinearGradient>
   )
 }
@@ -495,13 +465,13 @@ const styles = StyleSheet.create({
   textTypo: {
     lineHeight: 12,
     fontSize: FontSize.size_3xs,
-    marginTop: -6,
+    // marginTop: -6,
     fontWeight: '600',
-    textAlign: 'center',
+    // textAlign: 'center',
     color: Color.negro,
     fontFamily: FontFamily.lato,
-    left: '50%',
-    top: '50%',
+    left: '33%',
+    top: '33%',
     position: 'absolute'
   },
   rowLayout: {
@@ -513,7 +483,7 @@ const styles = StyleSheet.create({
     shadowColor: 'rgba(0, 0, 0, 0.5)',
     shadowRadius: 30,
     elevation: 30,
-    height: 624,
+    // height: 624,
     width: 388,
     left: 20,
     position: 'absolute'
@@ -598,7 +568,12 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   star: {
-    left: 35
+    left: 20,
+    top: -5
+  },
+  startop1: {
+    left: 35,
+    top: 0
   },
   starGroup: {
     top: 0,

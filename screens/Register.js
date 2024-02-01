@@ -192,7 +192,7 @@ const Register = () => {
             ></View>
           </View>
 
-          <View style={{ top: -50 }}>
+          <View>
             {nextField === 1 && <NameRegister />}
             {nextField === 2 && <FechaRegister />}
             {nextField === 3 && <NumberPhoneRegister />}
@@ -217,8 +217,8 @@ const styles = StyleSheet.create({
     overflow: 'hidden'
   },
   groupIconPosition: {
-    zIndex: 100,
-    position: 'absolute'
+    zIndex: 100
+    // position: 'absolute'
   },
   registrateTypo: {
     textAlign: 'center',
@@ -242,7 +242,7 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.lato
   },
   vectorIcon: {
-    height: '37.33%',
+    // height: '37.33%',
     width: '77.1%',
     top: '-5.98%',
     right: '0%',
@@ -298,7 +298,7 @@ const styles = StyleSheet.create({
     zIndex: 5
   },
   registrateParent: {
-    top: 100,
+    top: 30,
     // left: 52,
     // justifyContent: 'flex-start',
     // alignItems: 'flex-start',
