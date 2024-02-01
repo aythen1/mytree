@@ -192,7 +192,7 @@ const Register = () => {
             ></View>
           </View>
 
-          <View style={{ top: 150 }}>
+          <View style={{ top: -50 }}>
             {nextField === 1 && <NameRegister />}
             {nextField === 2 && <FechaRegister />}
             {nextField === 3 && <NumberPhoneRegister />}
@@ -504,7 +504,7 @@ const styles = StyleSheet.create({
   },
   labelled1: {
     alignSelf: 'center',
-    top: 280,
+    top: 0,
     zIndex: 10
   },
   frameContainer: {
