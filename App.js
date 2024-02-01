@@ -210,7 +210,7 @@ const App = () => {
       <NavigationContainer>
         {/* {hideSplashScreen ? ( */}
         <Stack.Navigator
-          initialRouteName="Onboarding2"
+          initialRouteName="Muro"
           screenOptions={{ headerShown: false }}
         >
           <Stack.Screen

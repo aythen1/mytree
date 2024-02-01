@@ -263,7 +263,7 @@ const MENPRINCIPAL = () => {
             />
             <Pressable
               style={styles.muro}
-              onPress={() => navigation.navigate('PERFILMIINFO')}
+              onPress={() => navigation.navigate('Perfil')}
             >
               <Text style={styles.muro1Typo}>Perfil</Text>
             </Pressable>

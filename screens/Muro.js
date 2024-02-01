@@ -1,4 +1,5 @@
-import React, { useState, useCallback, useRef } from 'react'
+import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import {
   StyleSheet,
   View,
@@ -7,6 +8,7 @@ import {
   Modal,
   TouchableWithoutFeedback
 } from 'react-native'
+import { setPanel } from '../redux/slices/panel.slices'
 import { Image } from 'expo-image'
 // import { LinearGradient } from 'expo-linear-gradient'
 import { Border, Padding, FontFamily, FontSize, Color } from '../GlobalStyles'
@@ -18,7 +20,9 @@ import VotacionDeRetos from './VotacionDeRetos'
 import MENPRINCIPAL from '../components/MENPRINCIPAL'
 
 const Muro = () => {
-  const modalRef = useRef()
+  const dispatch = useDispatch()
+
+  const { showPanel } = useSelector((state) => state.panel)
   // const navigation = useNavigation()
   const [showModalRetos, setShowModalRetos] = useState(false)
   const [showRetos, setShowRetos] = useState(false)
@@ -28,22 +32,9 @@ const Muro = () => {
     setShowModalRetos(!showModalRetos)
   }
 
-  const closeModal = useCallback(() => {
-    setMenuVisible(false)
-  }, [setMenuVisible])
-
-  const handleModalPress = useCallback(
-    (e) => {
-      if (e.target === modalRef.current) {
-        closeModal()
-      }
-    },
-    [closeModal]
-  )
-
-  const handleMenu = useCallback(() => {
+  const handleMenu = () => {
     setMenuVisible(!menuVisible)
-  }, [menuVisible, setMenuVisible])
+  }
 
   return (
     <View style={{ flex: 1 }}>
@@ -98,7 +89,7 @@ const Muro = () => {
       </View> */}
       <Pressable
         style={[styles.menuIcon, styles.menuPosition]}
-        onPress={handleMenu}
+        onPress={() => dispatch(setPanel(!menuVisible))}
       >
         <Image
           style={[styles.icon, styles.iconLayout]}
@@ -109,14 +100,11 @@ const Muro = () => {
       <Modal
         animationType="slide"
         transparent={true}
-        visible={menuVisible}
-        onRequestClose={closeModal}
+        visible={showPanel}
+        onRequestClose={() => dispatch(setPanel(false))}
       >
-        <TouchableWithoutFeedback onPress={handleModalPress}>
-          <View
-            ref={modalRef}
-            style={{ flex: 1, backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
-          >
+        <TouchableWithoutFeedback onPress={handleMenu}>
+          <View style={{ flex: 1, backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
             <MENPRINCIPAL setMenuVisible={setMenuVisible} />
           </View>
         </TouchableWithoutFeedback>
