@@ -58,7 +58,10 @@ const Aadir1 = () => {
         <View style={[styles.frameView, styles.frameFlexBox]}>
           <Pressable
             style={[styles.frameGroup, styles.groupParentFlexBox]}
-            onPress={() => navigation.navigate('PERFILCREARIDINFANTEANCE')}
+            onPress={() => {
+              dispatch(setPanelAddFooter(false))
+              navigation.navigate('PERFILCREARIDINFANTEANCE')
+            }}
           >
             <View style={styles.vectorWrapper}>
               <Image
