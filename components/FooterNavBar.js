@@ -13,8 +13,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setPanelAddFooter } from '../redux/slices/panel.slices'
 import { Color } from '../GlobalStyles'
 import { LinearGradient } from 'expo-linear-gradient'
+import { useNavigation } from '@react-navigation/native'
 
 const FooterNavBar = () => {
+  const navigation = useNavigation()
   const { panelAddFooter } = useSelector((state) => state.panel)
   const dispatch = useDispatch()
 
@@ -31,21 +33,20 @@ const FooterNavBar = () => {
           flexDirection: 'row',
           width: '100%',
           justifyContent: 'space-between',
-          // borderWidth: 2,
-          // borderStyle: 'solid',
-          // borderColor: '#7f77fe',
           alignItems: 'center',
           borderRadius: 5,
           backgroundColor: 'white'
         }}
       >
         <View style={{ flexDirection: 'row', marginLeft: 20 }}>
-          <Image
-            style={styles.IconlyLightHome}
-            source={{
-              uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/f4476xb8sqq-I1289%3A80990%3B1289%3A80434?alt=media&token=f316ebaa-468b-4b0f-9864-55db36fab398'
-            }}
-          />
+          <Pressable onPress={() => navigation.navigate('Muro')}>
+            <Image
+              style={styles.IconlyLightHome}
+              source={{
+                uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/f4476xb8sqq-I1289%3A80990%3B1289%3A80434?alt=media&token=f316ebaa-468b-4b0f-9864-55db36fab398'
+              }}
+            />
+          </Pressable>
           <Image
             style={styles.IconlyLightHomeLeft}
             source={{
