@@ -1,15 +1,25 @@
 import React from 'react'
-import { Image, Modal, Pressable, StyleSheet, View } from 'react-native'
+import {
+  Image,
+  Modal,
+  Pressable,
+  StyleSheet,
+  Text,
+  TouchableWithoutFeedback,
+  View
+} from 'react-native'
 import Aadir1 from './Aadir1'
 import { useDispatch, useSelector } from 'react-redux'
 import { setPanelAddFooter } from '../redux/slices/panel.slices'
+import { Color } from '../GlobalStyles'
+import { LinearGradient } from 'expo-linear-gradient'
 
 const FooterNavBar = () => {
   const { panelAddFooter } = useSelector((state) => state.panel)
   const dispatch = useDispatch()
 
   const showModalAdd = () => {
-    dispatch(setPanelAddFooter(true))
+    dispatch(setPanelAddFooter(!panelAddFooter))
   }
 
   return (
@@ -21,9 +31,9 @@ const FooterNavBar = () => {
           flexDirection: 'row',
           width: '100%',
           justifyContent: 'space-between',
-          borderWidth: 2,
-          borderStyle: 'solid',
-          borderColor: '#7f77fe',
+          // borderWidth: 2,
+          // borderStyle: 'solid',
+          // borderColor: '#7f77fe',
           alignItems: 'center',
           borderRadius: 5,
           backgroundColor: 'white'
@@ -62,33 +72,63 @@ const FooterNavBar = () => {
         {/* este sera el vector del medio */}
         <Pressable
           style={{
-            width: 50,
-            height: 50,
-            backgroundColor: 'green',
+            width: 60,
+            height: 60,
+            backgroundColor: Color.backgroundGreyBackground,
             position: 'absolute',
-            top: -25, // Ajusta según sea necesario para centrar verticalmente
+            top: -30, // Ajusta según sea necesario para centrar verticalmente
             left: '50%',
-            marginLeft: -25,
-            borderRadius: 25,
+            marginLeft: -30,
+            borderRadius: 30,
             alignItems: 'center',
             justifyContent: 'center'
           }}
           onPress={showModalAdd}
         >
-          <View
-            style={{
-              width: 30,
-              height: 30,
-              backgroundColor: 'white',
-              borderRadius: 15
-            }}
-          ></View>
+          <LinearGradient
+            style={styles.frameChild}
+            locations={[0, 1]}
+            colors={['#7ec18c', '#dee274']}
+          >
+            <View
+              style={{
+                width: 50,
+                height: 50,
+                // backgroundColor: 'green',
+                borderRadius: 25,
+                justifyContent: 'center',
+                alignItems: 'center',
+                zIndex: 10
+              }}
+            >
+              <Text
+                style={{
+                  borderRadius: 5,
+                  backgroundColor: 'white',
+                  width: 30,
+
+                  color: 'green',
+                  textAlign: 'center',
+
+                  fontSize: 20
+                }}
+              >
+                +
+              </Text>
+            </View>
+          </LinearGradient>
         </Pressable>
       </View>
 
       {panelAddFooter && (
         <Modal transparent={true} animationType="slide">
-          <Aadir1 />
+          {/* </Modal> */}
+
+          <TouchableWithoutFeedback onPress={showModalAdd}>
+            <View style={{ height: '100%' }}>
+              <Aadir1 />
+            </View>
+          </TouchableWithoutFeedback>
         </Modal>
       )}
     </>
@@ -100,6 +140,15 @@ const styles = StyleSheet.create({
     width: 24,
     height: 24
   },
+  frameChild: {
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 60,
+    zIndex: 0
+  },
+
   IconlyLightHomeLeft: {
     width: 24,
     height: 24,
