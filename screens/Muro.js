@@ -11,9 +11,7 @@ import {
 } from 'react-native'
 import { setPanel } from '../redux/slices/panel.slices'
 import { Image } from 'expo-image'
-// import { LinearGradient } from 'expo-linear-gradient'
 import { Border, Padding, FontFamily, FontSize, Color } from '../GlobalStyles'
-// import { useNavigation } from '@react-navigation/native'
 import Post from '../components/Post'
 import Stories from '../components/Stories'
 import RetosModal from './RetosModal'
@@ -100,9 +98,6 @@ const Muro = () => {
           {showRetos ? <VotacionDeRetos /> : <Post />}
         </View>
 
-        {/* <View style={[styles.button, styles.buttonPosition]}>
-        <Text style={[styles.text, styles.textTypo]}>50%</Text>
-      </View> */}
         <Pressable
           style={[styles.menuIcon, styles.menuPosition]}
           onPress={() => dispatch(setPanel(!menuVisible))}
@@ -175,11 +170,6 @@ const styles = StyleSheet.create({
     width: 24,
     height: 24
   },
-  // textTypo: {
-  //   textAlign: 'left',
-  //   fontFamily: FontFamily.lato,
-  //   position: 'absolute'
-  // },
   iconlyboldchatLayout: {
     height: 40,
     width: 40
@@ -197,7 +187,6 @@ const styles = StyleSheet.create({
     top: '50%'
   },
   rectangleParent: {
-    // height: 732,
     width: 388,
     left: 20,
     top: 139,
@@ -215,7 +204,6 @@ const styles = StyleSheet.create({
   popularWrapper: {
     borderTopLeftRadius: Border.br_3xs,
     borderBottomLeftRadius: Border.br_3xs,
-    // backgroundColor: Color.backgroundPrimaryBackground,
     overflow: 'hidden'
   },
   trending: {
@@ -225,7 +213,6 @@ const styles = StyleSheet.create({
   tabs: {
     borderTopRightRadius: Border.br_3xs,
     borderBottomRightRadius: Border.br_3xs
-    // backgroundColor: colorBoton
   },
   instanceParent: {
     top: 80,
@@ -304,38 +291,17 @@ const styles = StyleSheet.create({
     left: 0,
     position: 'absolute'
   },
-  // text: {
-  //   marginTop: -8,
-  //   marginLeft: -14,
-  //   fontSize: FontSize.size_sm,
-  //   lineHeight: 17,
-  //   fontWeight: '500',
-  //   textAlign: 'left',
-  //   letterSpacing: 0,
-  //   left: '50%',
-  //   top: '50%'
-  // },
   modalOverlay: {
-    // flex: 1,
     top: 100,
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center'
   },
-  // button: {
-  //   borderRadius: Border.br_7xs,
-  //   width: 62,
-  //   height: 24,
-  //   backgroundColor: Color.mytreeClarito,
-  //   left: 20
-  // },
   muroInformacin: {
     borderRadius: Border.br_31xl,
     backgroundColor: Color.white,
     flex: 1,
     width: '100%'
-    // height: 964,
-    // overflow: 'hidden'
   },
   icon: {
     overflow: 'hidden'

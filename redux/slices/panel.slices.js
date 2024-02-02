@@ -4,8 +4,7 @@ export const panelSlices = createSlice({
   name: 'panel',
   initialState: {
     showPanel: false,
-    panelAddFooter: false,
-    isFooter: false
+    panelAddFooter: false
   },
   reducers: {
     setPanel: (state, action) => {
@@ -14,13 +13,10 @@ export const panelSlices = createSlice({
 
     setPanelAddFooter: (state, action) => {
       state.panelAddFooter = action.payload
-    },
-    setIsFooterShow: (state, action) => {
-      state.isFooter = action.payload
     }
   }
 })
 
-export const { setPanelAddFooter, setIsFooterShow } = panelSlices.actions
+export const { setPanelAddFooter } = panelSlices.actions
 
 export default panelSlices.reducer

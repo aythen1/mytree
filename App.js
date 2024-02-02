@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import CambiarFotoDePerfil from './screens/CambiarFotoDePerfil'
 import Fecha from './screens/Fecha'
@@ -201,6 +201,9 @@ const Stack = createNativeStackNavigator()
 
 const App = () => {
   // const [hideSplashScreen, setHideSplashScreen] = useState(true)
+  const [isFooterShow, setIsFooterShow] = useState(null)
+
+  console.log('footer', isFooterShow)
 
   useEffect(() => {
     loadFonts()
@@ -212,7 +215,21 @@ const App = () => {
         {/* {hideSplashScreen ? ( */}
         <Stack.Navigator
           initialRouteName="Onboarding2"
-          screenOptions={{ headerShown: false }}
+          screenOptions={({ route }) => ({
+            headerShown: false,
+            footerShown: setIsFooterShow(
+              route.name !== 'Register' &&
+                route.name !== 'Splash' &&
+                route.name !== 'Onboarding' &&
+                route.name !== 'Onboarding1' &&
+                route.name !== 'Onboarding2' &&
+                route.name !== 'LOGIN'
+              // &&
+              //   route.name !== 'IniciarSesin' &&
+              //   route.name !== 'SignIn' &&
+              //   route.name !== 'Registrarse'
+            )
+          })}
         >
           {/* <Stack.Screen
             name="Navigation"
@@ -1160,7 +1177,7 @@ const App = () => {
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
-        <FooterNavBar />
+        {isFooterShow && <FooterNavBar />}
         {/* ) : null} */}
       </NavigationContainer>
     </Provider>

@@ -20,10 +20,10 @@ const Aadir1 = () => {
       <View style={styles.frameParent}>
         <Pressable
           style={[styles.frameWrapper, styles.frameWrapperFlexBox]}
-          onPress={
-            () => dispatch(setPanelAddFooter(false))
-            /* navigation.navigate('AadirRecuerdo1') */
-          }
+          onPress={() => {
+            dispatch(setPanelAddFooter(false))
+            navigation.navigate('AadirRecuerdo1')
+          }}
         >
           <View style={[styles.groupParent, styles.groupParentFlexBox]}>
             <Image
@@ -209,7 +209,7 @@ const styles = StyleSheet.create({
   aadir: {
     borderTopLeftRadius: Border.br_11xl,
     borderTopRightRadius: Border.br_11xl,
-    // width: 428,
+    width: '100%',
     // height: 321,
     padding: Padding.p_xl,
     maxWidth: '100%',

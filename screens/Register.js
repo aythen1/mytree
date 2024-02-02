@@ -9,19 +9,16 @@ import FechaRegister from '../components/FechaRegister'
 import NumberPhoneRegister from '../components/NumberPhoneRegister'
 import CheckRegister from '../components/CheckRegister'
 import AcceptRegister from '../components/AcceptRegister'
-import { useDispatch } from 'react-redux'
-import { setIsFooterShow } from '../redux/slices/panel.slices'
 
 const Register = () => {
   const navigation = useNavigation()
-  const dispatch = useDispatch()
+
   const [nextField, setNextField] = useState(1)
 
   const next = () => {
     if (nextField < 5) {
       setNextField((prev) => prev + 1)
     } else {
-      dispatch(setIsFooterShow(true))
       navigation.navigate('Muro')
     }
   }
