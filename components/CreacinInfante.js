@@ -1,12 +1,15 @@
-import * as React from "react";
-import { View, Text, StyleSheet, Pressable } from "react-native";
-import { Image } from "expo-image";
-import { LinearGradient } from "expo-linear-gradient";
-import { useNavigation } from "@react-navigation/native";
-import { FontFamily, Color, FontSize, Border } from "../GlobalStyles";
+import React, { useState } from 'react'
+import { View, Text, StyleSheet, Pressable } from 'react-native'
+import { LinearGradient } from 'expo-linear-gradient'
+import { useNavigation } from '@react-navigation/native'
+import { FontFamily, Color, FontSize, Border } from '../GlobalStyles'
+import Checkbox from 'expo-checkbox'
 
-const CreacinInfante = ({ onClose }) => {
-  const navigation = useNavigation();
+const CreacinInfante = () => {
+  const navigation = useNavigation()
+  const [isChecked, setChecked] = useState(false)
+  const [isChecked2, setChecked2] = useState(false)
+  const [isChecked3, setChecked3] = useState(false)
 
   return (
     <View style={[styles.creacinInfante, styles.vectorIconLayout]}>
@@ -21,16 +24,12 @@ const CreacinInfante = ({ onClose }) => {
           <View style={[styles.checkParent, styles.checkParentFlexBox]}>
             <View style={styles.check}>
               <View style={styles.checkChild} />
-              <Image
-                style={[styles.vectorIcon, styles.vectorIconLayout]}
-                contentFit="cover"
-                source={require("../assets/vector.png")}
-              />
+              <Checkbox value={isChecked} onValueChange={setChecked} />
             </View>
             <View
               style={[
                 styles.permitirQueMisFamiliaresYWrapper,
-                styles.checkParentFlexBox,
+                styles.checkParentFlexBox
               ]}
             >
               <Text style={[styles.permitirQueMis, styles.permitirTypo]}>
@@ -40,12 +39,12 @@ const CreacinInfante = ({ onClose }) => {
           </View>
           <View style={[styles.checkParent, styles.checkParentFlexBox]}>
             <View style={styles.check}>
-              <View style={styles.checkChild} />
+              <Checkbox value={isChecked2} onValueChange={setChecked2} />
             </View>
             <View
               style={[
                 styles.permitirQueMisFamiliaresYWrapper,
-                styles.checkParentFlexBox,
+                styles.checkParentFlexBox
               ]}
             >
               <Text style={[styles.permitirQueMis, styles.permitirTypo]}>
@@ -56,12 +55,13 @@ const CreacinInfante = ({ onClose }) => {
           </View>
           <View style={[styles.checkParent, styles.checkParentFlexBox]}>
             <View style={styles.check}>
-              <View style={styles.checkChild} />
+              {/* <View style={styles.checkChild} /> */}
+              <Checkbox value={isChecked3} onValueChange={setChecked3} />
             </View>
             <View
               style={[
                 styles.permitirQueMisFamiliaresYWrapper,
-                styles.checkParentFlexBox,
+                styles.checkParentFlexBox
               ]}
             >
               <Text style={[styles.permitirQueLas, styles.permitirTypo]}>
@@ -72,147 +72,144 @@ const CreacinInfante = ({ onClose }) => {
         </View>
       </View>
       <LinearGradient
-        style={[styles.button, styles.crearPosition]}
+        style={styles.button}
         locations={[0, 1]}
-        colors={["#dee274", "#7ec18c"]}
+        colors={['#dee274', '#7ec18c']}
       >
         <Pressable
           style={styles.pressable}
-          onPress={() => navigation.navigate("PERFILIDINFANTE")}
+          onPress={() => navigation.navigate('PERFILIDINFANTE')}
         >
-          <Text style={[styles.crear, styles.crearPosition]}>Crear</Text>
+          <Text style={styles.crear}>Crear</Text>
         </Pressable>
       </LinearGradient>
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   vectorIconLayout: {
-    maxHeight: "100%",
-    maxWidth: "100%",
+    maxHeight: '100%',
+    maxWidth: '100%'
   },
   hasFlexBox: {
-    alignItems: "center",
-    width: 388,
+    alignItems: 'center',
+    width: 388
   },
   crearTypo: {
-    textAlign: "center",
+    textAlign: 'center',
     fontFamily: FontFamily.lato,
-    letterSpacing: 0,
+    letterSpacing: 0
   },
   checkParentFlexBox: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   permitirTypo: {
     color: Color.gris,
-    textAlign: "left",
+    textAlign: 'left',
     lineHeight: 19,
     fontSize: FontSize.size_base,
     fontFamily: FontFamily.lato,
-    letterSpacing: 0,
+    letterSpacing: 0
   },
-  crearPosition: {
-    left: "50%",
-    position: "absolute",
-  },
+
   hasCreadoUn: {
     fontSize: FontSize.title2Regular_size,
     lineHeight: 33,
     color: Color.primario2,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    width: 388,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 388
   },
   opcionesDePrivacidad: {
-    fontWeight: "500",
+    fontWeight: '500',
     color: Color.negro,
-    textAlign: "left",
+    textAlign: 'left',
     lineHeight: 19,
     fontSize: FontSize.size_base,
     fontFamily: FontFamily.lato,
-    letterSpacing: 0,
+    letterSpacing: 0
   },
   checkChild: {
-    height: "105%",
-    width: "105%",
-    top: "-2.5%",
-    right: "-2.5%",
-    bottom: "-2.5%",
-    left: "-2.5%",
+    height: '105%',
+    width: '105%',
+    top: '-2.5%',
+    right: '-2.5%',
+    bottom: '-2.5%',
+    left: '-2.5%',
     borderRadius: 3,
-    borderStyle: "solid",
+    borderStyle: 'solid',
     borderColor: Color.colorGainsboro_100,
     borderWidth: 1,
-    position: "absolute",
-    backgroundColor: Color.white,
+    position: 'absolute',
+    backgroundColor: Color.white
   },
   vectorIcon: {
-    height: "34.5%",
-    width: "45%",
-    top: "35%",
-    right: "30%",
-    bottom: "30.5%",
-    left: "25%",
-    overflow: "hidden",
-    position: "absolute",
+    height: '34.5%',
+    width: '45%',
+    top: '35%',
+    right: '30%',
+    bottom: '30.5%',
+    left: '25%',
+    overflow: 'hidden',
+    position: 'absolute'
   },
   check: {
     width: 20,
-    height: 20,
+    height: 20
   },
   permitirQueMis: {
-    width: 314,
+    width: 314
   },
   permitirQueMisFamiliaresYWrapper: {
-    marginLeft: 20,
+    marginLeft: 20
   },
   checkParent: {
-    marginTop: 20,
+    marginTop: 20
   },
   permitirQueLas: {
-    width: 321,
+    width: 321
   },
   opcionesDePrivacidadParent: {
     marginTop: 20,
-    width: 388,
+    width: 388
   },
   hasCreadoUnNuevoIdDeInfaParent: {
     top: 20,
     left: 20,
-    position: "absolute",
+    position: 'absolute'
   },
   crear: {
     marginTop: -11,
     marginLeft: -17,
-    top: "50%",
+    top: '50%',
     fontSize: FontSize.size_sm,
     lineHeight: 21,
     color: Color.white,
-    textAlign: "center",
+    textAlign: 'center',
     fontFamily: FontFamily.lato,
-    letterSpacing: 0,
+    letterSpacing: 0
   },
   pressable: {
-    marginLeft: -194,
-    width: "100%",
-    height: "100%",
+    // marginLeft: -194,
+    width: '100%',
+    height: '100%',
     backgroundColor: Color.linearBoton,
-    borderRadius: Border.br_11xl,
+    borderRadius: Border.br_11xl
   },
   button: {
     top: 341,
     height: 52,
-    width: 388,
+    width: '100%'
   },
   creacinInfante: {
-    width: 428,
-    height: 413,
+    width: '100%',
+    height: '100%',
     backgroundColor: Color.white,
-    borderRadius: Border.br_11xl,
-  },
-});
+    borderRadius: Border.br_11xl
+  }
+})
 
-export default CreacinInfante;
+export default CreacinInfante
