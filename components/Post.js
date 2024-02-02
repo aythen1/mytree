@@ -20,7 +20,43 @@ const Post = () => {
           source={require('../assets/vector39.png')}
         />
 
-        <View style={{ position: 'absolute', bottom: 250, padding: 15 }}>
+        <View style={{ padding: 15, top: 340 }}>
+          <Text style={styles.camila}>Camila</Text>
+          <Text style={styles.yendoALa}>
+            Yendo a la casa de la tía Elisa! Los esperamos allá, familia!
+          </Text>
+        </View>
+      </LinearGradient>
+      <LinearGradient
+        style={styles.frameChild}
+        locations={[0.77, 1]}
+        colors={['rgba(183, 228, 192, 0.8)', 'rgba(41, 42, 43, 0.8)']}
+      >
+        <Image
+          style={[styles.vectorIcon, styles.vectorIconLayout]}
+          contentFit="cover"
+          source={require('../assets/vector39.png')}
+        />
+
+        <View style={{ padding: 15, top: 300 }}>
+          <Text style={styles.camila}>Camila</Text>
+          <Text style={styles.yendoALa}>
+            Yendo a la casa de la tía Elisa! Los esperamos allá, familia!
+          </Text>
+        </View>
+      </LinearGradient>
+      <LinearGradient
+        style={styles.frameChild}
+        locations={[0.77, 1]}
+        colors={['rgba(183, 228, 192, 0.8)', 'rgba(41, 42, 43, 0.8)']}
+      >
+        <Image
+          style={[styles.vectorIcon, styles.vectorIconLayout]}
+          contentFit="cover"
+          source={require('../assets/vector39.png')}
+        />
+
+        <View style={{ padding: 15, top: 300 }}>
           <Text style={styles.camila}>Camila</Text>
           <Text style={styles.yendoALa}>
             Yendo a la casa de la tía Elisa! Los esperamos allá, familia!
@@ -121,8 +157,9 @@ const styles = StyleSheet.create({
     backgroundColor: Color.mytreeClarito,
     left: 0,
     top: 15,
-    height: '100%',
-    position: 'relative'
+    height: 500,
+    marginBottom: 30
+    // position: 'relative'
   },
   vectorIcon: {
     marginTop: -29,
@@ -135,7 +172,8 @@ const styles = StyleSheet.create({
     height: '100%',
     // width: 388,
     // left: 20,
-    top: 139
+    top: 139,
+    marginBottom: 120
     // position: 'absolute'
   },
   muroInformacinChild: {

@@ -105,7 +105,7 @@ generaciones`}</Text>
           >
             <Pressable
               style={[styles.pressable, styles.buttonSpaceBlock]}
-              onPress={() => navigation.navigate('REGISTRONOMBRE1')}
+              onPress={() => navigation.navigate('Register')}
             >
               <Text style={[styles.signIn1, styles.signTypo]}>REGISTRARSE</Text>
             </Pressable>
