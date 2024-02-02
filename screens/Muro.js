@@ -6,7 +6,8 @@ import {
   Text,
   Pressable,
   Modal,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
+  ScrollView
 } from 'react-native'
 import { setPanel } from '../redux/slices/panel.slices'
 import { Image } from 'expo-image'
@@ -38,77 +39,93 @@ const Muro = () => {
 
   return (
     <View style={{ flex: 1 }}>
-      <View style={styles.instanceParent}>
-        <View style={[styles.tabs, styles.tabsFlexBox]}>
-          <Pressable onPress={() => setShowRetos(false)}>
-            <Text style={[styles.popular, styles.popularTypo]}>Familia</Text>
-          </Pressable>
+      <ScrollView>
+        <View style={{ minHeight: 1100 }}>
+          <View style={styles.instanceParent}>
+            <View>
+              <Pressable
+                style={[styles.tabs, styles.tabsFlexBox]}
+                onPress={() => {
+                  setShowRetos(false)
+                }}
+              >
+                <Text style={[styles.popular, styles.popularTypo]}>
+                  Familia
+                </Text>
+              </Pressable>
+            </View>
+            <Pressable
+              style={[styles.tabs, styles.tabsFlexBox]}
+              onPress={() => {
+                handleShowRetos()
+              }}
+            >
+              <Text style={[styles.trending, styles.popularTypo]}>Retos</Text>
+            </Pressable>
+          </View>
+
+          <Modal
+            animationType="slide"
+            transparent={true}
+            visible={showModalRetos}
+          >
+            <View style={styles.modalOverlay}>
+              <RetosModal
+                setShowRetos={setShowRetos}
+                setShowModalRetos={setShowModalRetos}
+              />
+            </View>
+          </Modal>
+
+          <View style={[styles.messageParent, styles.buttonPosition]}>
+            <Image
+              style={[styles.messageIcon, styles.messageIconLayout]}
+              contentFit="cover"
+              source={require('../assets/message1.png')}
+            />
+            <Image
+              style={[styles.iconlylightOutlineplus, styles.messageIconLayout]}
+              contentFit="cover"
+              source={require('../assets/iconlylightoutlineplus2.png')}
+            />
+            <Image
+              style={[styles.iconlylightOutlineplus, styles.messageIconLayout]}
+              contentFit="cover"
+              source={require('../assets/iconlylightoutlinesetting5.png')}
+            />
+          </View>
+
+          <Stories />
+
+          {showRetos ? <VotacionDeRetos /> : <Post />}
         </View>
-        <Pressable
-          style={[styles.tabs, styles.tabsFlexBox]}
-          onPress={handleShowRetos}
-        >
-          <Text style={[styles.trending, styles.popularTypo]}>Retos</Text>
-        </Pressable>
-      </View>
 
-      <Modal animationType="slide" transparent={true} visible={showModalRetos}>
-        <View style={styles.modalOverlay}>
-          <RetosModal
-            setShowRetos={setShowRetos}
-            setShowModalRetos={setShowModalRetos}
-          />
-        </View>
-      </Modal>
-
-      <View style={[styles.messageParent, styles.buttonPosition]}>
-        <Image
-          style={[styles.messageIcon, styles.messageIconLayout]}
-          contentFit="cover"
-          source={require('../assets/message1.png')}
-        />
-        <Image
-          style={[styles.iconlylightOutlineplus, styles.messageIconLayout]}
-          contentFit="cover"
-          source={require('../assets/iconlylightoutlineplus2.png')}
-        />
-        <Image
-          style={[styles.iconlylightOutlineplus, styles.messageIconLayout]}
-          contentFit="cover"
-          source={require('../assets/iconlylightoutlinesetting5.png')}
-        />
-      </View>
-
-      {/* <ScrollView style={{ flex: 1 }}> */}
-      <Stories />
-      {showRetos ? <VotacionDeRetos /> : <Post />}
-      {/* </ScrollView> */}
-
-      {/* <View style={[styles.button, styles.buttonPosition]}>
+        {/* <View style={[styles.button, styles.buttonPosition]}>
         <Text style={[styles.text, styles.textTypo]}>50%</Text>
       </View> */}
-      <Pressable
-        style={[styles.menuIcon, styles.menuPosition]}
-        onPress={() => dispatch(setPanel(!menuVisible))}
-      >
-        <Image
-          style={[styles.icon, styles.iconLayout]}
-          contentFit="cover"
-          source={require('../assets/ionmenu1.png')}
-        />
-      </Pressable>
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={showPanel}
-        onRequestClose={() => dispatch(setPanel(false))}
-      >
-        <TouchableWithoutFeedback onPress={handleMenu}>
-          <View style={{ flex: 1, backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
-            <MENPRINCIPAL setMenuVisible={setMenuVisible} />
-          </View>
-        </TouchableWithoutFeedback>
-      </Modal>
+        <Pressable
+          style={[styles.menuIcon, styles.menuPosition]}
+          onPress={() => dispatch(setPanel(!menuVisible))}
+        >
+          <Image
+            style={[styles.icon, styles.iconLayout]}
+            contentFit="cover"
+            source={require('../assets/ionmenu1.png')}
+          />
+        </Pressable>
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={showPanel}
+          onRequestClose={() => dispatch(setPanel(false))}
+        >
+          <TouchableWithoutFeedback onPress={handleMenu}>
+            <View style={{ flex: 1, backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+              <MENPRINCIPAL setMenuVisible={setMenuVisible} />
+            </View>
+          </TouchableWithoutFeedback>
+        </Modal>
+      </ScrollView>
     </View>
   )
 }

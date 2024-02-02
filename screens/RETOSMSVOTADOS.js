@@ -478,8 +478,8 @@ const styles = StyleSheet.create({
     position: 'absolute'
   },
   rowLayout: {
-    height: 56,
-    width: 348
+    height: 56
+    // width: 348
   },
   retosMsVotadosChild: {
     top: 281,
