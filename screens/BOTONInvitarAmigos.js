@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState } from 'react'
 import { Image } from 'expo-image'
 import {
   StyleSheet,
@@ -12,49 +12,49 @@ import {
 import { LinearGradient } from 'expo-linear-gradient'
 import Parentezco from '../components/Parentezco'
 import OpcionesAmigo from '../components/OpcionesAmigo'
-import ENTRADACREADA11 from '../components/ENTRADACREADA11'
-import QR from '../components/QR'
+// import ENTRADACREADA11 from '../components/ENTRADACREADA11'
+// import QR from '../components/QR'
 import { Color, Border, FontFamily, Padding, FontSize } from '../GlobalStyles'
 
 const BOTONInvitarAmigos = () => {
-  const [arrowDown2IconVisible, setArrowDown2IconVisible] = useState(false)
-  const [arrowDown2Icon1Visible, setArrowDown2Icon1Visible] = useState(false)
-  const [buttonContainerVisible, setButtonContainerVisible] = useState(false)
-  const [buttonContainer1Visible, setButtonContainer1Visible] = useState(false)
+  // const [arrowDown2IconVisible, setArrowDown2IconVisible] = useState(false)
+  // const [arrowDown2Icon1Visible, setArrowDown2Icon1Visible] = useState(false)
+  // const [buttonContainerVisible, setButtonContainerVisible] = useState(false)
+  // const [buttonContainer1Visible, setButtonContainer1Visible] = useState(false)
   const [optionsFriend, setOptionsFriend] = useState(false)
   const [optionsParentezco, setOptionsParentezco] = useState(false)
 
-  const openArrowDown2Icon = useCallback(() => {
-    setArrowDown2IconVisible(true)
-  }, [])
+  // const openArrowDown2Icon = useCallback(() => {
+  //   setArrowDown2IconVisible(true)
+  // }, [])
 
-  const closeArrowDown2Icon = useCallback(() => {
-    setArrowDown2IconVisible(false)
-  }, [])
+  // const closeArrowDown2Icon = useCallback(() => {
+  //   setArrowDown2IconVisible(false)
+  // }, [])
 
-  const openArrowDown2Icon1 = useCallback(() => {
-    setArrowDown2Icon1Visible(true)
-  }, [])
+  // const openArrowDown2Icon1 = useCallback(() => {
+  //   setArrowDown2Icon1Visible(true)
+  // }, [])
 
-  const closeArrowDown2Icon1 = useCallback(() => {
-    setArrowDown2Icon1Visible(false)
-  }, [])
+  // const closeArrowDown2Icon1 = useCallback(() => {
+  //   setArrowDown2Icon1Visible(false)
+  // }, [])
 
-  const openButtonContainer = useCallback(() => {
-    setButtonContainerVisible(true)
-  }, [])
+  // const openButtonContainer = useCallback(() => {
+  //   setButtonContainerVisible(true)
+  // }, [])
 
-  const closeButtonContainer = useCallback(() => {
-    setButtonContainerVisible(false)
-  }, [])
+  // const closeButtonContainer = useCallback(() => {
+  //   setButtonContainerVisible(false)
+  // }, [])
 
-  const openButtonContainer1 = useCallback(() => {
-    setButtonContainer1Visible(true)
-  }, [])
+  // const openButtonContainer1 = useCallback(() => {
+  //   setButtonContainer1Visible(true)
+  // }, [])
 
-  const closeButtonContainer1 = useCallback(() => {
-    setButtonContainer1Visible(false)
-  }, [])
+  // const closeButtonContainer1 = useCallback(() => {
+  //   setButtonContainer1Visible(false)
+  // }, [])
 
   return (
     <>
@@ -131,7 +131,7 @@ const BOTONInvitarAmigos = () => {
                 </View>
                 <Pressable
                   style={styles.arrowDown2}
-                  onPress={openArrowDown2Icon}
+                  // onPress={openArrowDown2Icon}
                 >
                   <Image
                     style={styles.icon}
@@ -174,7 +174,7 @@ const BOTONInvitarAmigos = () => {
                   </View>
                   <Pressable
                     style={styles.arrowDown2}
-                    onPress={openArrowDown2Icon1}
+                    // onPress={openArrowDown2Icon1}
                   >
                     <Image
                       style={styles.icon}
@@ -188,7 +188,7 @@ const BOTONInvitarAmigos = () => {
           </View>
           <Pressable
             style={[styles.button, styles.buttonFlexBox]}
-            onPress={openButtonContainer}
+            // onPress={openButtonContainer}
           >
             <Text style={styles.signTypo}>Enviar invitación</Text>
           </Pressable>
@@ -199,7 +199,7 @@ const BOTONInvitarAmigos = () => {
           >
             <Pressable
               style={[styles.pressable, styles.buttonFlexBox]}
-              onPress={openButtonContainer1}
+              // onPress={openButtonContainer1}
             >
               <Text style={[styles.signIn1, styles.signTypo]}>
                 Crear link de invitación
@@ -209,7 +209,7 @@ const BOTONInvitarAmigos = () => {
         </View>
       </View>
 
-      <Modal animationType="fade" transparent visible={arrowDown2IconVisible}>
+      {/* <Modal animationType="fade" transparent visible={arrowDown2IconVisible}>
         <View style={styles.arrowDown2IconOverlay}>
           <Pressable
             style={styles.arrowDown2IconBg}
@@ -217,7 +217,7 @@ const BOTONInvitarAmigos = () => {
           />
           <Parentezco onClose={closeArrowDown2Icon} />
         </View>
-      </Modal>
+      </Modal> */}
 
       {/* <Modal animationType="fade" transparent visible={arrowDown2Icon1Visible}>
         <View style={styles.arrowDown2Icon1Overlay}>
@@ -229,7 +229,7 @@ const BOTONInvitarAmigos = () => {
         </View>
       </Modal> */}
 
-      <Modal animationType="fade" transparent visible={buttonContainerVisible}>
+      {/* <Modal animationType="fade" transparent visible={buttonContainerVisible}>
         <View style={styles.buttonContainerOverlay}>
           <Pressable
             style={styles.buttonContainerBg}
@@ -237,9 +237,9 @@ const BOTONInvitarAmigos = () => {
           />
           <ENTRADACREADA11 onClose={closeButtonContainer} />
         </View>
-      </Modal>
+      </Modal> */}
 
-      <Modal animationType="fade" transparent visible={buttonContainer1Visible}>
+      {/* <Modal animationType="fade" transparent visible={buttonContainer1Visible}>
         <View style={styles.buttonContainer1Overlay}>
           <Pressable
             style={styles.buttonContainer1Bg}
@@ -247,7 +247,7 @@ const BOTONInvitarAmigos = () => {
           />
           <QR onClose={closeButtonContainer1} />
         </View>
-      </Modal>
+      </Modal> */}
     </>
   )
 }
