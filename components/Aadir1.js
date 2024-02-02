@@ -36,7 +36,10 @@ const Aadir1 = () => {
         </Pressable>
         <Pressable
           style={[styles.frameContainer, styles.frameFlexBox]}
-          onPress={() => navigation.navigate('BOTONInvitarAmigos1')}
+          onPress={() => {
+            dispatch(setPanelAddFooter(false))
+            navigation.navigate('BOTONInvitarAmigos')
+          }}
         >
           <View
             style={[
