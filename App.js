@@ -211,7 +211,7 @@ const App = () => {
       <NavigationContainer>
         {/* {hideSplashScreen ? ( */}
         <Stack.Navigator
-          initialRouteName="Perfil"
+          initialRouteName="Onboarding2"
           screenOptions={({ route }) => ({
             headerShown: false,
             footerShown: setIsFooterShow(

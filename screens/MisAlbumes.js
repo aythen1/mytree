@@ -220,66 +220,11 @@ const MisAlbumes = () => {
 
 const styles = StyleSheet.create({
   iconPosition: {
-    left: 20,
-    position: 'absolute'
+    left: 20
   },
   parentFlexBox: {
     justifyContent: 'space-between',
     flexDirection: 'row'
-  },
-  buttonFlexBox: {
-    justifyContent: 'center',
-    flexDirection: 'row',
-    alignItems: 'center',
-    position: 'absolute'
-  },
-  vectorIcon7Layout: {
-    width: 24,
-    height: 24
-  },
-  miInfoTypo: {
-    color: Color.gris,
-    letterSpacing: 0,
-    textAlign: 'center',
-    fontFamily: FontFamily.lato
-  },
-  misPosition: {
-    left: '50%',
-    position: 'absolute'
-  },
-  tabsFlexBox: {
-    paddingVertical: Padding.p_3xs,
-    paddingHorizontal: Padding.p_9xs,
-    borderRadius: Border.br_7xs,
-    justifyContent: 'center',
-    top: 0,
-    flexDirection: 'row',
-    alignItems: 'center',
-    position: 'absolute'
-  },
-  miInfoLayout: {
-    lineHeight: 19,
-    fontSize: FontSize.size_base
-  },
-  signInTypo: {
-    color: Color.white,
-    letterSpacing: 0,
-    textAlign: 'center',
-    fontFamily: FontFamily.lato
-  },
-  tabsPosition: {
-    height: 1,
-    borderTopWidth: 1,
-    borderColor: Color.backgroundPrimaryBackground,
-    borderStyle: 'solid',
-    top: 39,
-    position: 'absolute'
-  },
-  groupIconLayout: {
-    height: 50,
-    width: 50,
-    top: 139,
-    position: 'absolute'
   },
   tYYo: {
     fontWeight: '500',
@@ -351,7 +296,6 @@ const styles = StyleSheet.create({
     width: 428,
     left: 0,
     top: 0,
-    position: 'absolute',
     backgroundColor: Color.white
   },
   ionmenuIcon: {
@@ -380,8 +324,7 @@ const styles = StyleSheet.create({
     color: Color.negro,
     fontFamily: FontFamily.lato,
     lineHeight: 24,
-    fontSize: FontSize.size_xl,
-    position: 'absolute'
+    fontSize: FontSize.size_xl
   },
   daNangVietnam: {
     top: 274,
@@ -389,8 +332,7 @@ const styles = StyleSheet.create({
     fontWeight: '300',
     fontSize: FontSize.size_base,
     letterSpacing: 0,
-    lineHeight: 24,
-    position: 'absolute'
+    lineHeight: 24
   },
   miLegado: {
     width: 110,
@@ -410,7 +352,6 @@ const styles = StyleSheet.create({
     lineHeight: 19,
     fontSize: FontSize.size_base,
     left: '50%',
-    position: 'absolute',
     fontWeight: '700',
     color: Color.white
   },
@@ -421,7 +362,6 @@ const styles = StyleSheet.create({
     width: 142,
     borderRadius: Border.br_7xs,
     top: 0,
-    position: 'absolute',
     overflow: 'hidden'
   },
   miInfo: {
@@ -463,34 +403,6 @@ const styles = StyleSheet.create({
     paddingTop: Padding.p_6xs,
     paddingBottom: Padding.p_5xs,
     backgroundColor: Color.linearBoton
-  },
-  misAlbumesItem: {
-    height: '12.96%',
-    marginLeft: -60,
-    top: '11.23%',
-    bottom: '75.81%',
-    width: 120,
-    maxHeight: '100%'
-  },
-  misAlbumesInner: {
-    left: 40
-  },
-  groupIcon: {
-    left: 338
-  },
-  navigationIcon: {
-    top: 821,
-    height: 105,
-    width: 428,
-    left: 0,
-    position: 'absolute'
-  },
-  misAlbumes: {
-    borderRadius: Border.br_31xl,
-    flex: 1,
-    height: 926,
-    width: '100%',
-    backgroundColor: Color.white
   }
 })
 

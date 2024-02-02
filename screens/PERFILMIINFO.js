@@ -283,8 +283,7 @@ const styles = StyleSheet.create({
   },
   groupChildLayout: {
     height: 16,
-    width: 16,
-    position: 'absolute'
+    width: 16
   },
   textTypo: {
     textAlign: 'right',
@@ -323,16 +322,14 @@ const styles = StyleSheet.create({
   tabs1Border: {
     borderColor: Color.secundario,
     borderStyle: 'solid',
-    top: 0,
-    position: 'absolute'
+    top: 0
   },
   tabsPosition: {
     height: 1,
     borderTopWidth: 1,
     top: 39,
     borderColor: Color.secundario,
-    borderStyle: 'solid',
-    position: 'absolute'
+    borderStyle: 'solid'
   },
   skillLayout: {
     width: 30,
@@ -401,8 +398,7 @@ const styles = StyleSheet.create({
     fontSize: FontSize.size_3xs,
     letterSpacing: 0.2,
     fontFamily: FontFamily.nunitoSans,
-    color: Color.white,
-    position: 'absolute'
+    color: Color.white
   },
   ellipseParent: {
     top: -6,
@@ -506,8 +502,7 @@ const styles = StyleSheet.create({
     color: Color.gris,
     textAlign: 'center',
     fontFamily: FontFamily.lato,
-    left: '50%',
-    position: 'absolute'
+    left: '50%'
   },
   misLbumesWrapper: {
     left: 142,
@@ -584,8 +579,7 @@ const styles = StyleSheet.create({
     left: 6,
     zIndex: 1,
     height: 24,
-    width: 24,
-    position: 'absolute'
+    width: 24
   },
   ellipseGroup: {
     marginLeft: 16,
