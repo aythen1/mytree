@@ -1,75 +1,96 @@
-import * as React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { Image } from "expo-image";
-import { Color, FontFamily, FontSize, Border, Padding } from "../GlobalStyles";
+import React from 'react'
+import { View, Text, StyleSheet } from 'react-native'
 
-const Parentezco = ({ onClose }) => {
+import { Color, FontFamily, FontSize, Border, Padding } from '../GlobalStyles'
+
+const Parentezco = () => {
   return (
-    <View style={[styles.parentezco, styles.parentezcoLayout]}>
-      <View style={styles.familiarFlexBox}>
-        <Text style={[styles.familiar, styles.amigoTypo]}>{`Familiar `}</Text>
-        <Image
-          style={[styles.frameChild, styles.amigoFlexBox]}
-          contentFit="cover"
-          source={require("../assets/line-78.png")}
-        />
-        <Text style={[styles.amigo, styles.amigoFlexBox]}>Amigo</Text>
+    <View style={[styles.opcionesAmigo, styles.frameChildLayout]}>
+      <View style={styles.amigosFlexBox}>
+        <Text style={[styles.colegio, styles.aadirFlexBox]}>Familiar</Text>
+
+        <Text style={[styles.colegio, styles.aadirFlexBox]}>Amigo</Text>
+        <Text style={[styles.aadir, styles.aadirFlexBox]}>+ Añadir</Text>
       </View>
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
-  parentezcoLayout: {
-    maxHeight: "100%",
-    maxWidth: "100%",
-  },
-  amigoTypo: {
-    textAlign: "left",
-    color: Color.gris,
-    fontFamily: FontFamily.lato,
-    fontWeight: "500",
-    lineHeight: 19,
-    letterSpacing: 0,
-    fontSize: FontSize.size_base,
-  },
-  amigoFlexBox: {
-    marginTop: 20,
+  opcionesAmigo: {
     flex: 1,
-    alignSelf: "stretch",
-  },
-  familiar: {
-    flex: 1,
-    alignSelf: "stretch",
-  },
-  frameChild: {
-    overflow: "hidden",
-    width: "100%",
-    maxHeight: "100%",
-    maxWidth: "100%",
-  },
-  amigo: {
-    textAlign: "left",
-    color: Color.gris,
-    fontFamily: FontFamily.lato,
-    fontWeight: "500",
-    lineHeight: 19,
-    letterSpacing: 0,
-    fontSize: FontSize.size_base,
-  },
-  familiarFlexBox: {
-    flex: 1,
-    alignSelf: "stretch",
-  },
-  parentezco: {
     borderRadius: Border.br_11xl,
     backgroundColor: Color.white,
-    width: 428,
-    height: 413,
+    width: '100%',
+    height: 200,
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    // height: '100%',
     paddingHorizontal: Padding.p_xl,
     paddingTop: Padding.p_xl,
-    paddingBottom: 315,
+    paddingBottom: 79,
+    zIndex: 0
   },
-});
+  frameChildLayout: {
+    maxHeight: '100%',
+    maxWidth: '100%'
+  },
+  aadirTypo: {
+    textAlign: 'left',
+    fontFamily: FontFamily.lato,
+    fontWeight: '500',
+    lineHeight: 19,
+    letterSpacing: 0,
+    fontSize: FontSize.size_base
+  },
+  aadirFlexBox: {
+    marginTop: 20,
+    height: 30
+    // alignSelf: 'stretch'
+  },
+  amigosNtimos: {
+    color: Color.gris,
+    textAlign: 'left',
+    fontFamily: FontFamily.lato,
+    fontWeight: '500',
+    lineHeight: 19,
+    letterSpacing: 0,
+    fontSize: FontSize.size_base,
+    flex: 1,
+    alignSelf: 'stretch'
+  },
+  frameChild: {
+    overflow: 'hidden',
+    width: '100%',
+    maxHeight: '100%',
+    maxWidth: '100%'
+  },
+  colegio: {
+    // textAlign: 'left',
+    fontFamily: FontFamily.lato,
+    fontWeight: '500',
+    // lineHeight: 19,
+    fontSize: FontSize.size_base,
+    color: Color.gris,
+    borderBottomWidth: 1,
+    borderBottomColor: 'green'
+  },
+  aadir: {
+    color: Color.primario2,
+    textAlign: 'left',
+    fontFamily: FontFamily.lato,
+    fontWeight: '500',
+    lineHeight: 19,
+    letterSpacing: 0,
+    fontSize: FontSize.size_base,
+    marginTop: 20
+  },
+  amigosFlexBox: {
+    // flex: 1
+    // alignSelf: 'stretch'
+    marginTop: 10
+  }
+})
 
-export default Parentezco;
+export default Parentezco
