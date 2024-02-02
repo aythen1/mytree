@@ -214,11 +214,11 @@ const App = () => {
           initialRouteName="Onboarding2"
           screenOptions={{ headerShown: false }}
         >
-          <Stack.Screen
+          {/* <Stack.Screen
             name="Navigation"
             component={FooterNavBar}
             options={{ headerShown: false }}
-          />
+          /> */}
           <Stack.Screen
             name="CambiarFotoDePerfil"
             component={CambiarFotoDePerfil}
@@ -1160,6 +1160,7 @@ const App = () => {
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
+        <FooterNavBar />
         {/* ) : null} */}
       </NavigationContainer>
     </Provider>

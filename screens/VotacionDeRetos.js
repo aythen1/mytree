@@ -309,7 +309,8 @@ const styles = StyleSheet.create({
     paddingVertical: Padding.p_sm,
     paddingHorizontal: Padding.p_5xl,
     borderRadius: Border.br_11xl,
-    backgroundColor: Color.white
+    backgroundColor: Color.white,
+    height: 60
   },
   button1: {
     width: 184,
@@ -320,7 +321,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: Padding.p_5xl,
     borderRadius: Border.br_11xl,
     backgroundColor: Color.white,
-    marginLeft: 20
+    marginLeft: 20,
+    height: 60
   },
   buttonParent: {
     flexDirection: 'row'
@@ -337,7 +339,9 @@ const styles = StyleSheet.create({
   },
   button2: {
     marginTop: 15,
-    width: 388
+    borderRadius: 30,
+    height: 60
+    // width: 388
   },
   frameParent1: {
     marginTop: 15

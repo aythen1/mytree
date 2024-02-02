@@ -1,42 +1,53 @@
-import * as React from "react";
-import { View, StyleSheet, Text, Pressable } from "react-native";
-import { Image } from "expo-image";
-import { useNavigation } from "@react-navigation/native";
-import { FontSize, FontFamily, Color, Border, Padding } from "../GlobalStyles";
+import * as React from 'react'
+import { View, StyleSheet, Text, Pressable } from 'react-native'
+import { Image } from 'expo-image'
+import { useNavigation } from '@react-navigation/native'
+import { FontSize, FontFamily, Color, Border, Padding } from '../GlobalStyles'
+import { useDispatch } from 'react-redux'
+import { setPanelAddFooter } from '../redux/slices/panel.slices'
+import { LinearGradient } from 'expo-linear-gradient'
 
-const Aadir1 = ({ onClose }) => {
-  const navigation = useNavigation();
+const Aadir1 = () => {
+  const dispatch = useDispatch()
+  const navigation = useNavigation()
 
   return (
-    <View style={styles.aadir}>
+    <LinearGradient
+      style={styles.aadir}
+      locations={[0, 1]}
+      colors={['#dee274', '#7ec18c']}
+    >
       <View style={styles.frameParent}>
         <Pressable
           style={[styles.frameWrapper, styles.frameWrapperFlexBox]}
-          onPress={() => navigation.navigate("AadirRecuerdo1")}
+          onPress={
+            () => dispatch(setPanelAddFooter(false))
+            /* navigation.navigate('AadirRecuerdo1') */
+          }
         >
           <View style={[styles.groupParent, styles.groupParentFlexBox]}>
             <Image
               style={styles.iconLayout}
               contentFit="cover"
-              source={require("../assets/group-11712766891.png")}
+              source={require('../assets/group-11712766891.png')}
             />
             <Text style={styles.aadirRecuerdo}>Añadir recuerdo</Text>
           </View>
         </Pressable>
         <Pressable
           style={[styles.frameContainer, styles.frameFlexBox]}
-          onPress={() => navigation.navigate("BOTONInvitarAmigos1")}
+          onPress={() => navigation.navigate('BOTONInvitarAmigos1')}
         >
           <View
             style={[
               styles.iconlylightOutline3UserParent,
-              styles.groupParentFlexBox,
+              styles.groupParentFlexBox
             ]}
           >
             <Image
               style={styles.iconlylightOutline3User}
               contentFit="cover"
-              source={require("../assets/iconlylightoutline3user2.png")}
+              source={require('../assets/iconlylightoutline3user2.png')}
             />
             <Text style={styles.aadirRecuerdo}>Invitar familiar</Text>
           </View>
@@ -44,13 +55,13 @@ const Aadir1 = ({ onClose }) => {
         <View style={[styles.frameView, styles.frameFlexBox]}>
           <Pressable
             style={[styles.frameGroup, styles.groupParentFlexBox]}
-            onPress={() => navigation.navigate("PERFILCREARIDINFANTEANCE")}
+            onPress={() => navigation.navigate('PERFILCREARIDINFANTEANCE')}
           >
             <View style={styles.vectorWrapper}>
               <Image
                 style={[styles.vectorIcon, styles.vectorIconPosition]}
                 contentFit="cover"
-                source={require("../assets/vector45.png")}
+                source={require('../assets/vector45.png')}
               />
             </View>
             <Text style={styles.aadirRecuerdo}>Crear ID Infante/Ancestro</Text>
@@ -58,161 +69,154 @@ const Aadir1 = ({ onClose }) => {
         </View>
         <Pressable
           style={[styles.framePressable, styles.frameFlexBox]}
-          onPress={() => navigation.navigate("MIDIARIOPANTALLAPERSONAL")}
+          onPress={() => navigation.navigate('MIDIARIOPANTALLAPERSONAL')}
         >
-          <View style={[styles.documentParent, styles.groupParentFlexBox]}>
+          <View style={styles.groupParentFlexBox}>
             <Image
               style={[styles.documentIcon, styles.iconLayout]}
               contentFit="cover"
-              source={require("../assets/document5.png")}
+              source={require('../assets/document5.png')}
             />
             <Text style={styles.aadirRecuerdo}>Crear entrada al Diario</Text>
           </View>
         </Pressable>
         <Pressable
           style={[styles.frameWrapper1, styles.frameFlexBox]}
-          onPress={() => navigation.navigate("CrearEvento")}
+          onPress={() => navigation.navigate('CrearEvento')}
         >
-          <View
-            style={[
-              styles.iconlylightOutlinecalendarParent,
-              styles.groupParentFlexBox,
-            ]}
-          >
+          <View style={styles.groupParentFlexBox}>
             <Image
               style={styles.iconLayout}
               contentFit="cover"
-              source={require("../assets/iconlylightoutlinecalendar3.png")}
+              source={require('../assets/iconlylightoutlinecalendar3.png')}
             />
-            <Text style={styles.aadirRecuerdo}>{`Crear Evento Familiar `}</Text>
+            <Text style={styles.aadirRecuerdo}>Crear Evento Familiar</Text>
           </View>
         </Pressable>
         <Pressable
-          style={[styles.frameWrapper2, styles.vectorIconPosition]}
-          onPress={() => navigation.navigate("MUROALERTAS1")}
+          style={[styles.frameFlexBox]}
+          onPress={() => navigation.navigate('MUROALERTAS1')}
         >
-          <View style={[styles.notificationParent, styles.groupParentFlexBox]}>
+          <View style={styles.groupParentFlexBox}>
             <Image
               style={styles.notificationIcon}
               contentFit="cover"
-              source={require("../assets/notification5.png")}
+              source={require('../assets/notification5.png')}
             />
             <Text style={styles.aadirRecuerdo}>Crear Alerta Familiar</Text>
           </View>
         </Pressable>
       </View>
-    </View>
-  );
-};
+    </LinearGradient>
+  )
+}
 
 const styles = StyleSheet.create({
   frameWrapperFlexBox: {
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row'
   },
   groupParentFlexBox: {
-    alignItems: "center",
-    flexDirection: "row",
+    alignItems: 'center',
+    flexDirection: 'row'
   },
   frameFlexBox: {
     marginTop: 20,
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row'
   },
   vectorIconPosition: {
     left: 0,
-    position: "absolute",
+    position: 'absolute'
   },
   iconLayout: {
     height: 30,
-    width: 30,
+    width: 30
   },
   aadirRecuerdo: {
     fontSize: FontSize.size_base,
     letterSpacing: 0,
     lineHeight: 19,
-    fontWeight: "900",
+    fontWeight: '900',
     fontFamily: FontFamily.lato,
     color: Color.white,
-    textAlign: "justify",
+    textAlign: 'justify',
     marginLeft: 20,
-    flex: 1,
+    flex: 1
   },
   groupParent: {
-    width: 164,
+    width: 164
   },
   frameWrapper: {
-    zIndex: 0,
+    zIndex: 0
   },
   iconlylightOutline3User: {
     height: 27,
-    width: 30,
+    width: 30
   },
   iconlylightOutline3UserParent: {
-    width: 153,
+    width: 153
   },
   frameContainer: {
-    zIndex: 1,
+    zIndex: 1
   },
   vectorIcon: {
     top: 0,
     height: 30,
     width: 30,
-    zIndex: 0,
+    zIndex: 0
   },
   vectorWrapper: {
     width: 30,
-    flexDirection: "row",
+    flexDirection: 'row'
   },
   frameGroup: {
-    width: 234,
+    // width: 234
   },
   frameView: {
-    zIndex: 2,
+    zIndex: 2
   },
   documentIcon: {
-    overflow: "hidden",
-  },
-  documentParent: {
-    width: 210,
+    overflow: 'hidden'
   },
   framePressable: {
-    zIndex: 3,
+    zIndex: 3
   },
-  iconlylightOutlinecalendarParent: {
-    width: 201,
-  },
+
   frameWrapper1: {
-    zIndex: 4,
+    zIndex: 4
   },
   notificationIcon: {
     height: 35,
-    width: 30,
+    width: 30
   },
-  notificationParent: {
-    width: 195,
-  },
+
   frameWrapper2: {
     top: 247,
     zIndex: 5,
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row'
   },
   frameParent: {
-    alignSelf: "stretch",
+    // alignSelf: 'stretch',
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'flex-start'
   },
   aadir: {
-    borderRadius: Border.br_11xl,
-    width: 428,
-    height: 321,
+    borderTopLeftRadius: Border.br_11xl,
+    borderTopRightRadius: Border.br_11xl,
+    // width: 428,
+    // height: 321,
     padding: Padding.p_xl,
-    maxWidth: "100%",
-    maxHeight: "100%",
-  },
-});
+    maxWidth: '100%',
+    maxHeight: '100%',
+    position: 'absolute',
+    bottom: 0
+  }
+})
 
-export default Aadir1;
+export default Aadir1

@@ -40,7 +40,7 @@ const Muro = () => {
   return (
     <View style={{ flex: 1 }}>
       <ScrollView>
-        <View style={{ minHeight: 1100 }}>
+        <View style={{ minHeight: 900 }}>
           <View style={styles.instanceParent}>
             <View>
               <Pressable
