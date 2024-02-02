@@ -69,13 +69,15 @@ const styles = StyleSheet.create({
     position: 'relative'
   },
   checkedSymbolIcon: {
-    height: 110,
-    width: '34.48%',
-    overflow: 'hidden',
+    width: 50,
+    height: 50,
+    // height: 110,
+    // width: '34.48%',
+    // overflow: 'hidden',
     zIndex: 1,
     position: 'absolute',
-    top: 0,
-    left: 0,
+    top: 33,
+    left: 33,
     maxHeight: '100%',
     maxWidth: '100%'
   },

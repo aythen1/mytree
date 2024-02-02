@@ -38,7 +38,7 @@ export const storiesSlices = createSlice({
         image: require('../../assets/aatar1.png')
       }
     ],
-    story: 'hola gato'
+    story: {}
   },
   reducers: {}
 })
