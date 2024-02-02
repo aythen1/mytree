@@ -254,8 +254,8 @@ const BOTONInvitarAmigos = () => {
 
 const styles = StyleSheet.create({
   iconPosition: {
-    left: 20,
-    position: 'absolute'
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   fieldFlexBox: {
     backgroundColor: Color.fAFAFA,
@@ -450,7 +450,7 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderColor: Color.colorKhaki_100,
     borderWidth: 1,
-    width: 388,
+    // width: 388,
     marginTop: 19
   },
   buttonContainer1Overlay: {
@@ -474,16 +474,17 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   button1: {
-    width: 388,
+    // width: 388,
+    borderRadius: Border.br_11xl,
     marginTop: 19
   },
   invitarAJuanGutierrezParent: {
-    top: 221
+    top: 180
   },
   botonInvitarAmigos: {
     borderRadius: Border.br_31xl,
-    height: 926,
-    overflow: 'hidden',
+    // height: 926,
+    // overflow: 'hidden',
     width: '100%',
     flex: 1,
     backgroundColor: Color.white
