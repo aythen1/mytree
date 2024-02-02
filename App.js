@@ -149,10 +149,9 @@ import PERFILMIINFO from './screens/PERFILMIINFO'
 import RetosBienvenida from './screens/RetosBienvenida'
 // import RetosModal from './screens/RetosModal'
 import MisAlbumes from './screens/MisAlbumes'
-import MisAlbumes1 from './screens/MisAlbumes1'
 import SOLOYO from './screens/SOLOYO'
 import Perfil from './screens/Perfil'
-import Perfil1 from './screens/Perfil1'
+// import Perfil1 from './screens/MiLegado'
 import MIDIARIOENTRADATEXTOPL from './screens/MIDIARIOENTRADATEXTOPL'
 import MIDIARIOENTRADATEXTOPL1 from './screens/MIDIARIOENTRADATEXTOPL1'
 import MIDIARIOENTRADATEXTOPL2 from './screens/MIDIARIOENTRADATEXTOPL2'
@@ -202,8 +201,6 @@ const Stack = createNativeStackNavigator()
 const App = () => {
   // const [hideSplashScreen, setHideSplashScreen] = useState(true)
   const [isFooterShow, setIsFooterShow] = useState(null)
-
-  console.log('footer', isFooterShow)
 
   useEffect(() => {
     loadFonts()
@@ -982,11 +979,6 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="MisAlbumes1"
-            component={MisAlbumes1}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="SOLOYO"
             component={SOLOYO}
             options={{ headerShown: false }}
@@ -996,11 +988,11 @@ const App = () => {
             component={Perfil}
             options={{ headerShown: false }}
           />
-          <Stack.Screen
+          {/* <Stack.Screen
             name="Perfil1"
             component={Perfil1}
             options={{ headerShown: false }}
-          />
+          /> */}
           <Stack.Screen
             name="MIDIARIOENTRADATEXTOPL"
             component={MIDIARIOENTRADATEXTOPL}

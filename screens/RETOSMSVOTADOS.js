@@ -19,7 +19,7 @@ const RETOSMSVOTADOS = () => {
   const [one, two, three] = topThreeMostVoted
   const newTopThreeOrder = [two, one, three]
 
-  console.log(remainingMostVoted)
+  // console.log(remainingMostVoted)
 
   return (
     <LinearGradient

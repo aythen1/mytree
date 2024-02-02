@@ -17,6 +17,6 @@ export const panelSlices = createSlice({
   }
 })
 
-export const { setPanelAddFooter } = panelSlices.actions
+export const { setPanelAddFooter, setPanel } = panelSlices.actions
 
 export default panelSlices.reducer

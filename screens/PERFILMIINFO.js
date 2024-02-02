@@ -1,7 +1,7 @@
-import * as React from 'react'
+import React from 'react'
 import { StyleSheet, View, Text, Pressable, ScrollView } from 'react-native'
 import { Image } from 'expo-image'
-import { LinearGradient } from 'expo-linear-gradient'
+// import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
 import { FontFamily, Color, Padding, Border, FontSize } from '../GlobalStyles'
 
@@ -12,129 +12,6 @@ const PERFILMIINFO = () => {
     <ScrollView style={styles.perfilMiInfo}>
       <View style={[styles.perfilMiInfoChild, styles.misLbumesPosition]} />
       <View style={styles.frameParent}>
-        <View style={styles.frameGroup}>
-          <View style={styles.frameContainer}>
-            <View style={styles.frameView}>
-              <View>
-                <View style={styles.image6Parent}>
-                  <Image
-                    style={styles.image6Icon}
-                    contentFit="cover"
-                    source={require('../assets/image-6.png')}
-                  />
-                  <View style={[styles.vectorParent, styles.parentFlexBox]}>
-                    <Image
-                      style={styles.vectorIcon}
-                      contentFit="cover"
-                      source={require('../assets/vector51.png')}
-                    />
-                    <Pressable
-                      style={styles.iconly}
-                      onPress={() =>
-                        navigation.navigate('PERFILNOTIFICACIONES')
-                      }
-                    >
-                      <Image
-                        style={styles.notificationIcon}
-                        contentFit="cover"
-                        source={require('../assets/notification6.png')}
-                      />
-                      <View
-                        style={[styles.ellipseParent, styles.groupChildLayout]}
-                      >
-                        <Image
-                          style={[styles.groupChild, styles.groupChildLayout]}
-                          contentFit="cover"
-                          source={require('../assets/ellipse-2264.png')}
-                        />
-                        <Text style={[styles.text, styles.textTypo]}>1</Text>
-                      </View>
-                    </Pressable>
-                    <Pressable
-                      style={styles.iconly}
-                      onPress={() => navigation.navigate('PERFILAJUSTES')}
-                    >
-                      <Image
-                        style={styles.icon}
-                        contentFit="cover"
-                        source={require('../assets/iconlylightoutlinesetting7.png')}
-                      />
-                    </Pressable>
-                  </View>
-                </View>
-                <Image
-                  style={[styles.ionmenuIcon, styles.iconLayout]}
-                  contentFit="cover"
-                  source={require('../assets/ionmenu.png')}
-                />
-              </View>
-              <View style={styles.groupParent}>
-                <Pressable
-                  style={styles.wrapperLayout}
-                  onPress={() =>
-                    navigation.navigate('PERFILDELUSUARIOVISITADO2')
-                  }
-                >
-                  <Image
-                    style={styles.icon}
-                    contentFit="cover"
-                    source={require('../assets/group-11712766771.png')}
-                  />
-                </Pressable>
-                <Image
-                  style={styles.frameChild}
-                  contentFit="cover"
-                  source={require('../assets/group-11712766781.png')}
-                />
-                <Image
-                  style={[styles.frameItem, styles.wrapperLayout]}
-                  contentFit="cover"
-                  source={require('../assets/group-11712766771.png')}
-                />
-              </View>
-            </View>
-            <View style={styles.frameParent2}>
-              <View style={styles.frameView}>
-                <Text style={[styles.brunoPham, styles.miInfoTypo]}>
-                  Bruno Pham
-                </Text>
-                <Text style={[styles.daNangVietnam, styles.miLegadoTypo]}>
-                  Da Nang, Vietnam
-                </Text>
-              </View>
-              <LinearGradient
-                style={[styles.button, styles.parentFlexBox]}
-                locations={[0, 1]}
-                colors={['#dee274', '#7ec18c']}
-              >
-                <Text style={styles.signIn}>Salud</Text>
-              </LinearGradient>
-            </View>
-          </View>
-          <View style={styles.tabsBar}>
-            <Pressable
-              style={[styles.tabs, styles.tabsFlexBox]}
-              onPress={() => navigation.navigate('Perfil1')}
-            >
-              <Text style={[styles.miLegado, styles.miInfoLayout]}>
-                Mi Legado
-              </Text>
-            </Pressable>
-            <Pressable
-              style={[styles.misLbumesWrapper, styles.tabs1Border]}
-              onPress={() => navigation.navigate('MisAlbumes1')}
-            >
-              <Text style={[styles.misLbumes, styles.miInfoLayout]}>
-                Mis álbumes
-              </Text>
-            </Pressable>
-            <View style={[styles.tabs1, styles.tabs1Border]}>
-              <Text style={[styles.miInfo, styles.miInfoLayout]}>Mi info</Text>
-            </View>
-            <View style={[styles.tabsBarChild, styles.tabsPosition]} />
-            <View style={[styles.tabsBarItem, styles.tabsPosition]} />
-          </View>
-        </View>
         <View style={styles.frameParent3}>
           <View style={styles.frameView}>
             <View style={styles.image6Parent}>
@@ -392,11 +269,6 @@ const PERFILMIINFO = () => {
           </View>
         </View>
       </View>
-      <Image
-        style={[styles.navigationIcon, styles.misLbumesPosition]}
-        contentFit="cover"
-        source={require('../assets/navigation29.png')}
-      />
     </ScrollView>
   )
 }
@@ -411,8 +283,7 @@ const styles = StyleSheet.create({
   },
   groupChildLayout: {
     height: 16,
-    width: 16,
-    position: 'absolute'
+    width: 16
   },
   textTypo: {
     textAlign: 'right',
@@ -451,16 +322,14 @@ const styles = StyleSheet.create({
   tabs1Border: {
     borderColor: Color.secundario,
     borderStyle: 'solid',
-    top: 0,
-    position: 'absolute'
+    top: 0
   },
   tabsPosition: {
     height: 1,
     borderTopWidth: 1,
     top: 39,
     borderColor: Color.secundario,
-    borderStyle: 'solid',
-    position: 'absolute'
+    borderStyle: 'solid'
   },
   skillLayout: {
     width: 30,
@@ -529,8 +398,7 @@ const styles = StyleSheet.create({
     fontSize: FontSize.size_3xs,
     letterSpacing: 0.2,
     fontFamily: FontFamily.nunitoSans,
-    color: Color.white,
-    position: 'absolute'
+    color: Color.white
   },
   ellipseParent: {
     top: -6,
@@ -634,8 +502,7 @@ const styles = StyleSheet.create({
     color: Color.gris,
     textAlign: 'center',
     fontFamily: FontFamily.lato,
-    left: '50%',
-    position: 'absolute'
+    left: '50%'
   },
   misLbumesWrapper: {
     left: 142,
@@ -712,8 +579,7 @@ const styles = StyleSheet.create({
     left: 6,
     zIndex: 1,
     height: 24,
-    width: 24,
-    position: 'absolute'
+    width: 24
   },
   ellipseGroup: {
     marginLeft: 16,
