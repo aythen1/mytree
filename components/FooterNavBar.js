@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, View } from 'react-native'
 
 const FooterNavBar = () => {
   return (
@@ -13,7 +13,10 @@ const FooterNavBar = () => {
         borderWidth: 2,
         borderStyle: 'solid',
         borderColor: '#7f77fe',
-        alignItems: 'center'
+        alignItems: 'center',
+        borderRadius: 5,
+        backgroundColor: 'white',
+        padding: 15
       }}
     >
       <View style={{ flexDirection: 'row', marginLeft: 20 }}>
@@ -47,7 +50,29 @@ const FooterNavBar = () => {
       </View>
 
       {/* este sera el vector del medio */}
-      <View></View>
+      <View
+        style={{
+          width: 50,
+          height: 50,
+          backgroundColor: 'green',
+          position: 'absolute',
+          top: -25, // Ajusta según sea necesario para centrar verticalmente
+          left: '50%',
+          marginLeft: -25,
+          borderRadius: 25,
+          alignItems: 'center', // Centrar elementos secundarios horizontalmente
+          justifyContent: 'center' // Centrar elementos secundarios verticalmente
+        }}
+      >
+        <View
+          style={{
+            width: 30,
+            height: 30,
+            backgroundColor: 'white',
+            borderRadius: 15
+          }}
+        ></View>
+      </View>
     </View>
   )
 }

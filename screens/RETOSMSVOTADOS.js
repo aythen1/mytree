@@ -16,6 +16,9 @@ const RETOSMSVOTADOS = () => {
   const topThreeMostVoted = sortedMostVoted.slice(0, 3)
   const remainingMostVoted = sortedMostVoted.slice(3)
 
+  const [one, two, three] = topThreeMostVoted
+  const newTopThreeOrder = [two, one, three]
+
   console.log(remainingMostVoted)
 
   return (
@@ -38,7 +41,7 @@ const RETOSMSVOTADOS = () => {
             <Text style={styles.retosMsVotados1}>Retos más votados</Text>
           </View>
           <View style={styles.frameContainer}>
-            {topThreeMostVoted.map((top, i) => (
+            {newTopThreeOrder.map((top, i) => (
               <View key={top.nameFamiliar} /* style={styles.groupContainer} */>
                 <View style={styles.groupLayout}>
                   <View style={[styles.starGroup, styles.groupLayout]}>

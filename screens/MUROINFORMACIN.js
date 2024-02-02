@@ -15,6 +15,13 @@ import Aadir from '../components/Aadir'
 import Compartir from '../components/Compartir'
 import { Padding, FontFamily, FontSize, Color, Border } from '../GlobalStyles'
 
+/* REEMPLAZADO POR MURO.JS */
+/* REEMPLAZADO POR MURO.JS */
+/* REEMPLAZADO POR MURO.JS */
+/* REEMPLAZADO POR MURO.JS */
+/* REEMPLAZADO POR MURO.JS */
+/* REEMPLAZADO POR MURO.JS */
+
 const MUROINFORMACIN = () => {
   const [ionmenuIconVisible, setIonmenuIconVisible] = useState(false)
   const [iconlyBoldChatVisible, setIconlyBoldChatVisible] = useState(false)
