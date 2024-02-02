@@ -12,6 +12,7 @@ import AcceptRegister from '../components/AcceptRegister'
 
 const Register = () => {
   const navigation = useNavigation()
+
   const [nextField, setNextField] = useState(1)
 
   const next = () => {
