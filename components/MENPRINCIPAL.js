@@ -1,12 +1,15 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import { View, StyleSheet, Text, Pressable, ScrollView } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import { Image } from 'expo-image'
 import { useNavigation } from '@react-navigation/native'
 import { Color, FontFamily, FontSize, Border } from '../GlobalStyles'
+import { setPanel } from '../redux/slices/panel.slices'
 
 const MENPRINCIPAL = () => {
   const navigation = useNavigation()
+  const dispatch = useDispatch()
 
   return (
     <ScrollView style={styles.menPrincipal}>
@@ -29,7 +32,10 @@ const MENPRINCIPAL = () => {
               />
               <Pressable
                 style={styles.muro}
-                onPress={() => navigation.navigate('Muro')}
+                onPress={() => {
+                  navigation.navigate('Muro')
+                  dispatch(setPanel(false))
+                }}
               >
                 <Text style={styles.muro1Typo}>Muro</Text>
               </Pressable>
@@ -263,7 +269,10 @@ const MENPRINCIPAL = () => {
             />
             <Pressable
               style={styles.muro}
-              onPress={() => navigation.navigate('Perfil')}
+              onPress={() => {
+                navigation.navigate('Perfil')
+                dispatch(setPanel(false))
+              }}
             >
               <Text style={styles.muro1Typo}>Perfil</Text>
             </Pressable>

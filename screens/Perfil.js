@@ -1,21 +1,49 @@
-import * as React from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, View, Pressable, Text, ScrollView } from 'react-native'
 import { Image } from 'expo-image'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
 import { Color, FontFamily, Padding, Border, FontSize } from '../GlobalStyles'
+import { useDispatch, useSelector } from 'react-redux'
+import { setPanel } from '../redux/slices/panel.slices'
+import MiLegado from './MiLegado'
+import MisAlbumes from './MisAlbumes'
+import PERFILMIINFO from './PERFILMIINFO'
 
 const Perfil = () => {
   const navigation = useNavigation()
+  const dispatch = useDispatch()
+
+  const { showPanel } = useSelector((state) => state.panel)
+
+  const [selectedComponent, setSelectedComponent] = useState('MiLegado')
+
+  const renderSelectedComponent = () => {
+    switch (selectedComponent) {
+      case 'MiLegado':
+        return <MiLegado />
+      case 'MisAlbumes':
+        return <MisAlbumes />
+      case 'PERFILMIINFO':
+        return <PERFILMIINFO />
+      default:
+        return null
+    }
+  }
 
   return (
     <ScrollView style={styles.perfil}>
       <View style={styles.perfilChild} />
-      <Image
-        style={[styles.ionmenuIcon, styles.iconPosition]}
-        contentFit="cover"
-        source={require('../assets/ionmenu.png')}
-      />
+      <Pressable
+        onPress={() => dispatch(setPanel(!showPanel))}
+        style={styles.iconPosition}
+      >
+        <Image
+          style={styles.ionmenuIcon}
+          contentFit="cover"
+          source={require('../assets/ionmenu.png')}
+        />
+      </Pressable>
       <Image
         style={[styles.image6Icon, styles.iconPosition]}
         contentFit="cover"
@@ -64,14 +92,14 @@ const Perfil = () => {
       </Text>
       <View style={[styles.tabsBar, styles.tabsBarPosition]}>
         <Pressable
-          style={[styles.miLegadoWrapper, styles.tabsFlexBox]}
-          onPress={() => navigation.navigate('Perfil')}
+          style={[styles.miWrapper, styles.tabsFlexBox]}
+          onPress={() => setSelectedComponent('MiLegado')}
         >
           <Text style={[styles.miLegado, styles.signInTypo]}>Mi Legado</Text>
         </Pressable>
         <Pressable
           style={[styles.tabs, styles.tabsFlexBox]}
-          onPress={() => navigation.navigate('MisAlbumes1')}
+          onPress={() => setSelectedComponent('MisAlbumes')}
         >
           <Text style={[styles.misLbumes, styles.miInfoLayout]}>
             Mis álbumes
@@ -79,7 +107,7 @@ const Perfil = () => {
         </Pressable>
         <Pressable
           style={[styles.tabs1, styles.tabsFlexBox]}
-          onPress={() => navigation.navigate('PERFILMIINFO')}
+          onPress={() => setSelectedComponent('PERFILMIINFO')}
         >
           <Text style={[styles.miInfo, styles.miInfoLayout]}>Mi info</Text>
         </Pressable>
@@ -92,147 +120,8 @@ const Perfil = () => {
       >
         <Text style={[styles.signIn, styles.signInTypo]}>Salud</Text>
       </LinearGradient>
-      <View style={styles.frameParent}>
-        <View style={styles.frameGroup}>
-          <View
-            style={[styles.miBiografaActualParent, styles.groupParentFlexBox]}
-          >
-            <Text style={styles.miBiografaActual}>Mi biografía actual</Text>
-            <View style={[styles.vectorGroup, styles.groupParentFlexBox]}>
-              <Image
-                style={styles.vectorIcon1}
-                contentFit="cover"
-                source={require('../assets/vector53.png')}
-              />
-              <Image
-                style={styles.vectorIcon1}
-                contentFit="cover"
-                source={require('../assets/iconlyboldedit.png')}
-              />
-            </View>
-          </View>
-          <Image
-            style={styles.frameChild}
-            contentFit="cover"
-            source={require('../assets/line-78.png')}
-          />
-          <View style={[styles.maskGroupParent, styles.groupParentFlexBox]}>
-            <Image
-              style={styles.maskGroupIcon}
-              contentFit="cover"
-              source={require('../assets/mask-group18.png')}
-            />
-            <Image
-              style={styles.maskGroupIcon}
-              contentFit="cover"
-              source={require('../assets/mask-group19.png')}
-            />
-            <Image
-              style={styles.maskGroupIcon}
-              contentFit="cover"
-              source={require('../assets/mask-group20.png')}
-            />
-            <Image
-              style={styles.maskGroupIcon}
-              contentFit="cover"
-              source={require('../assets/mask-group21.png')}
-            />
-            <Image
-              style={styles.vectorIcon2}
-              contentFit="cover"
-              source={require('../assets/vector54.png')}
-            />
-          </View>
-        </View>
-        <View style={styles.frameContainer}>
-          <View
-            style={[styles.miBiografaActualParent, styles.groupParentFlexBox]}
-          >
-            <Text style={styles.miBiografaActual}>Mis recuerdos</Text>
-            <Image
-              style={styles.vectorIcon1}
-              contentFit="cover"
-              source={require('../assets/iconlyboldedit.png')}
-            />
-          </View>
-          <Image
-            style={styles.frameChild}
-            contentFit="cover"
-            source={require('../assets/line-78.png')}
-          />
-          <View style={[styles.maskGroupParent, styles.groupParentFlexBox]}>
-            <Image
-              style={styles.maskGroupIcon}
-              contentFit="cover"
-              source={require('../assets/farita3.png')}
-            />
-            <Image
-              style={styles.maskGroupIcon}
-              contentFit="cover"
-              source={require('../assets/marie.png')}
-            />
-            <Image
-              style={styles.maskGroupIcon}
-              contentFit="cover"
-              source={require('../assets/farita4.png')}
-            />
-            <Image
-              style={styles.maskGroupIcon}
-              contentFit="cover"
-              source={require('../assets/claire.png')}
-            />
-            <Image
-              style={styles.vectorIcon2}
-              contentFit="cover"
-              source={require('../assets/vector54.png')}
-            />
-          </View>
-        </View>
-        <View style={styles.frameContainer}>
-          <View
-            style={[styles.miBiografaActualParent, styles.groupParentFlexBox]}
-          >
-            <Text style={styles.miBiografaActual}>Mis etapas</Text>
-            <Image
-              style={styles.vectorIcon1}
-              contentFit="cover"
-              source={require('../assets/iconlyboldedit.png')}
-            />
-          </View>
-          <Image
-            style={styles.frameChild}
-            contentFit="cover"
-            source={require('../assets/line-78.png')}
-          />
-          <View style={[styles.maskGroupParent, styles.groupParentFlexBox]}>
-            <Image
-              style={styles.maskGroupIcon}
-              contentFit="cover"
-              source={require('../assets/farita3.png')}
-            />
-            <Image
-              style={styles.maskGroupIcon}
-              contentFit="cover"
-              source={require('../assets/marie.png')}
-            />
-            <Image
-              style={styles.maskGroupIcon}
-              contentFit="cover"
-              source={require('../assets/farita4.png')}
-            />
-            <Image
-              style={styles.maskGroupIcon}
-              contentFit="cover"
-              source={require('../assets/claire.png')}
-            />
-            <Image
-              style={styles.vectorIcon2}
-              contentFit="cover"
-              source={require('../assets/vector54.png')}
-            />
-          </View>
-        </View>
-      </View>
+
+      {renderSelectedComponent()}
     </ScrollView>
   )
 }
@@ -288,10 +177,10 @@ const styles = StyleSheet.create({
     lineHeight: 19,
     fontSize: FontSize.size_base
   },
-  groupParentFlexBox: {
-    justifyContent: 'space-between',
-    flexDirection: 'row'
-  },
+  // groupParentFlexBox: {
+  //   justifyContent: 'space-between',
+  //   flexDirection: 'row'
+  // },
   perfilChild: {
     shadowColor: 'rgba(0, 0, 0, 0.15)',
     shadowOffset: {
@@ -373,7 +262,7 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: Color.white
   },
-  miLegadoWrapper: {
+  miWrapper: {
     backgroundColor: Color.secundario,
     width: 120,
     paddingHorizontal: Padding.p_9xs,
@@ -437,67 +326,7 @@ const styles = StyleSheet.create({
     paddingBottom: Padding.p_5xs,
     backgroundColor: Color.linearBoton
   },
-  miBiografaActual: {
-    fontWeight: '500',
-    textAlign: 'left',
-    color: Color.negro,
-    fontFamily: FontFamily.lato,
-    lineHeight: 24,
-    fontSize: FontSize.size_xl
-  },
-  vectorIcon1: {
-    width: 20,
-    height: 20
-  },
-  vectorGroup: {
-    width: 59,
-    height: 24,
-    alignItems: 'center'
-  },
-  miBiografaActualParent: {
-    width: 388
-  },
-  frameChild: {
-    marginTop: 20,
-    width: 388,
-    maxHeight: '100%'
-  },
-  maskGroupIcon: {
-    width: 70,
-    height: 70
-  },
-  vectorIcon2: {
-    width: 30,
-    height: 30
-  },
-  maskGroupParent: {
-    width: 387,
-    marginTop: 20,
-    alignItems: 'center'
-  },
-  frameGroup: {
-    width: 388,
-    alignItems: 'center'
-  },
-  frameContainer: {
-    marginTop: 20,
-    width: 388,
-    alignItems: 'center'
-  },
-  frameParent: {
-    top: 399,
-    left: 19,
-    position: 'absolute'
-  },
-  navigationIcon: {
-    bottom: 0,
-    height: 105,
-    width: 428,
-    left: 0,
-    position: 'absolute'
-  },
   perfil: {
-    borderRadius: Border.br_31xl,
     flex: 1,
     height: '100%',
     width: '100%',

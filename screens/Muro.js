@@ -32,7 +32,7 @@ const Muro = () => {
   }
 
   const handleMenu = () => {
-    setMenuVisible(!menuVisible)
+    dispatch(setPanel(false))
   }
 
   return (
