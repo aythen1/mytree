@@ -244,7 +244,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: Padding.p_5xl,
     paddingVertical: Padding.p_sm,
     backgroundColor: Color.linearBoton,
-    marginTop: 269,
+    marginTop: 150,
     justifyContent: 'center',
     alignItems: 'center'
   },

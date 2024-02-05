@@ -1,7 +1,7 @@
-import * as React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
-import { Padding, Color, Border, FontSize, FontFamily } from "../GlobalStyles";
+import * as React from 'react'
+import { View, Text, StyleSheet } from 'react-native'
+import { LinearGradient } from 'expo-linear-gradient'
+import { Padding, Color, Border, FontSize, FontFamily } from '../GlobalStyles'
 
 const Cancion1 = ({ onClose }) => {
   return (
@@ -10,9 +10,11 @@ const Cancion1 = ({ onClose }) => {
       <LinearGradient
         style={styles.button}
         locations={[0, 1]}
-        colors={["#dee274", "#7ec18c"]}
+        colors={['#dee274', '#7ec18c']}
       >
-        <Text style={styles.signIn}>Guardar</Text>
+        <Text onPress={onClose} style={styles.signIn}>
+          Guardar
+        </Text>
       </LinearGradient>
       <View style={styles.field}>
         <Text style={styles.text}>#</Text>
@@ -51,8 +53,8 @@ const Cancion1 = ({ onClose }) => {
         Recomendados:
       </Text>
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   buttonFlexBox1: {
@@ -60,77 +62,77 @@ const styles = StyleSheet.create({
     paddingHorizontal: Padding.p_3xs,
     backgroundColor: Color.secundario,
     top: 133,
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
-    position: "absolute",
-    borderRadius: Border.br_11xl,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    position: 'absolute',
+    borderRadius: Border.br_11xl
   },
   recomendadosTypo: {
     lineHeight: 14,
     fontSize: FontSize.size_xs,
     letterSpacing: 0,
-    textAlign: "left",
+    textAlign: 'left',
     fontFamily: FontFamily.lato,
-    fontWeight: "500",
+    fontWeight: '500'
   },
   buttonFlexBox: {
     top: 166,
     paddingVertical: Padding.p_6xs,
     paddingHorizontal: Padding.p_3xs,
     backgroundColor: Color.secundario,
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
-    position: "absolute",
-    borderRadius: Border.br_11xl,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    position: 'absolute',
+    borderRadius: Border.br_11xl
   },
   aadirEvento: {
     top: 20,
     fontSize: FontSize.size_xl,
     color: Color.negro,
-    textAlign: "left",
+    textAlign: 'left',
     fontFamily: FontFamily.lato,
-    fontWeight: "500",
-    left: "50%",
+    fontWeight: '500',
+    left: '50%',
     marginLeft: -194,
-    position: "absolute",
+    position: 'absolute'
   },
   signIn: {
     flex: 1,
     letterSpacing: 1,
     lineHeight: 24,
     color: Color.white,
-    textAlign: "center",
+    textAlign: 'center',
     fontSize: FontSize.size_base,
-    fontFamily: FontFamily.lato,
+    fontFamily: FontFamily.lato
   },
   button: {
     top: 341,
     paddingHorizontal: Padding.p_5xl,
     paddingVertical: Padding.p_sm,
     backgroundColor: Color.linearBoton,
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
     width: 388,
-    left: "50%",
+    left: '50%',
     marginLeft: -194,
-    position: "absolute",
-    borderRadius: Border.br_11xl,
+    position: 'absolute',
+    borderRadius: Border.br_11xl
   },
   text: {
     marginTop: -9.5,
-    top: "50%",
+    top: '50%',
     lineHeight: 19,
     color: Color.gris,
     letterSpacing: 0,
     left: 20,
     fontSize: FontSize.size_base,
-    textAlign: "left",
+    textAlign: 'left',
     fontFamily: FontFamily.lato,
-    fontWeight: "500",
-    position: "absolute",
+    fontWeight: '500',
+    position: 'absolute'
   },
   field: {
     top: 64,
@@ -139,46 +141,46 @@ const styles = StyleSheet.create({
     height: 49,
     left: 20,
     width: 388,
-    position: "absolute",
-    overflow: "hidden",
+    position: 'absolute',
+    overflow: 'hidden'
   },
   miprimerabicicleta: {
-    color: Color.primario1,
+    color: Color.primario1
   },
   button1: {
-    left: 113,
+    left: 113
   },
   button2: {
-    left: 245,
+    left: 245
   },
   button3: {
-    left: 325,
+    left: 325
   },
   button4: {
-    left: 20,
+    left: 20
   },
   button5: {
-    left: 102,
+    left: 102
   },
   button6: {
-    left: 232,
+    left: 232
   },
   recomendados: {
     top: 140,
     color: Color.primary,
     left: 20,
-    position: "absolute",
-    fontSize: FontSize.size_xs,
+    position: 'absolute',
+    fontSize: FontSize.size_xs
   },
   cancion: {
     backgroundColor: Color.white,
     width: 428,
     height: 413,
-    maxWidth: "100%",
-    maxHeight: "100%",
-    overflow: "hidden",
-    borderRadius: Border.br_11xl,
-  },
-});
+    maxWidth: '100%',
+    maxHeight: '100%',
+    overflow: 'hidden',
+    borderRadius: Border.br_11xl
+  }
+})
 
-export default Cancion1;
+export default Cancion1
