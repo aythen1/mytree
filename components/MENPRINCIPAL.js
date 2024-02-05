@@ -379,7 +379,8 @@ const styles = StyleSheet.create({
     maxWidth: '80%',
     maxHeight: '90%',
     top: '5%',
-    left: '10%'
+    left: '10%',
+    paddingBottom: 50
   }
 })
 
