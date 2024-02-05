@@ -4,8 +4,9 @@ import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
 import { FontFamily, Color, FontSize, Border } from '../GlobalStyles'
 import Checkbox from 'expo-checkbox'
+import PropTypes from 'prop-types'
 
-const CreacinInfante = () => {
+const CreacinInfante = ({ onClose }) => {
   const navigation = useNavigation()
   const [isChecked, setChecked] = useState(false)
   const [isChecked2, setChecked2] = useState(false)
@@ -85,6 +86,10 @@ const CreacinInfante = () => {
       </LinearGradient>
     </View>
   )
+}
+
+CreacinInfante.propTypes = {
+  onClose: PropTypes.func
 }
 
 const styles = StyleSheet.create({

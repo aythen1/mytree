@@ -1,7 +1,8 @@
-import * as React from 'react'
+import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import { Padding, Color, Border, FontSize, FontFamily } from '../GlobalStyles'
+import PropTypes from 'prop-types'
 
 const Cancion1 = ({ onClose }) => {
   return (
@@ -54,6 +55,10 @@ const Cancion1 = ({ onClose }) => {
       </Text>
     </View>
   )
+}
+
+Cancion1.propTypes = {
+  onClose: PropTypes.func
 }
 
 const styles = StyleSheet.create({
