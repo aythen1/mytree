@@ -166,7 +166,7 @@ const MisAlbumes = () => {
         </View>
       </View>
 
-      <View style={styles.frameContainer}>
+      {/* <View style={styles.frameContainer}>
         <View
           style={[styles.miBiografaActualParent, styles.groupParentFlexBox]}
         >
@@ -209,7 +209,7 @@ const MisAlbumes = () => {
             source={require('../assets/vector54.png')}
           />
         </View>
-      </View>
+      </View> */}
     </View>
   )
 }

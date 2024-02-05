@@ -9,6 +9,7 @@ import { setPanel } from '../redux/slices/panel.slices'
 import MiLegado from './MiLegado'
 import MisAlbumes from './MisAlbumes'
 import PERFILMIINFO from './PERFILMIINFO'
+import SOLOYO from './SOLOYO'
 
 const Perfil = () => {
   const navigation = useNavigation()
@@ -25,7 +26,9 @@ const Perfil = () => {
       case 'MisAlbumes':
         return <MisAlbumes />
       case 'PERFILMIINFO':
-        return <PERFILMIINFO />
+        return <PERFILMIINFO setSelectedComponent={setSelectedComponent} />
+      case 'SOLOYO':
+        return <SOLOYO />
       default:
         return null
     }
@@ -110,7 +113,9 @@ const Perfil = () => {
         <Pressable
           style={[
             styles.tabs,
-            selectedComponent === 'MiLegado' && styles.miWrapper
+            (selectedComponent === 'MiLegado' ||
+              selectedComponent === 'SOLOYO') &&
+              styles.miWrapper
           ]}
           onPress={() => setSelectedComponent('MiLegado')}
         >
@@ -310,10 +315,8 @@ const styles = StyleSheet.create({
     fontSize: FontSize.size_base
   },
   tabsBar: {
-    height: '100%',
     width: '90%',
     backgroundColor: Color.white,
-    flex: 1,
     flexDirection: 'row',
     top: '25%'
   },
