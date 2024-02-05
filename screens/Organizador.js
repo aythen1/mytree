@@ -7,15 +7,20 @@ import {
   Pressable,
   Modal,
   TextInput,
-  ScrollView
+  ScrollView,
+  TouchableWithoutFeedback
 } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import Cancion1 from '../components/Cancion1'
 import Etiquetar from '../components/Etiquetar'
 import Lugar3 from '../components/Lugar3'
 import { FontSize, FontFamily, Color, Border, Padding } from '../GlobalStyles'
+import Checkbox from 'expo-checkbox'
+import ENTRADACREADA from '../components/ENTRADACREADA'
 
 const Organizador = () => {
+  const [ischecked, setIschecked] = useState(false)
+  const [submit, setSubmit] = useState(false)
   const [buttonContainer1Visible, setButtonContainer1Visible] = useState(false)
   const [frameContainer2Visible, setFrameContainer2Visible] = useState(false)
   const [frameContainer5Visible, setFrameContainer5Visible] = useState(false)
@@ -55,10 +60,10 @@ const Organizador = () => {
               source={require('../assets/image-6.png')}
             />
             <View style={styles.frameParent}>
-              <View>
+              <View style={{ width: '100%' }}>
                 <View style={styles.ionmenuParent}>
                   <Image
-                    style={[styles.ionmenuIcon, styles.iconPosition]}
+                    style={styles.ionmenuIcon}
                     contentFit="cover"
                     source={require('../assets/ionmenu2.png')}
                   />
@@ -71,22 +76,24 @@ const Organizador = () => {
                       style={[styles.describeLoQue, styles.eventoTypo]}
                       placeholder=" Describe lo que sientes..."
                     />
-                    <Text style={[styles.evento, styles.eventoTypo]}>
-                      Evento:
-                    </Text>
-                    <View style={[styles.button, styles.buttonPosition]}>
-                      <Text style={styles.aadirTypo}>
-                        #Mi primera bicicleta
+                    <View style={{ top: -20 }}>
+                      <Text style={[styles.evento, styles.eventoTypo]}>
+                        Evento:
                       </Text>
+                      <View style={[styles.button, styles.buttonPosition]}>
+                        <Text style={styles.aadirTypo}>
+                          #Mi primera bicicleta
+                        </Text>
+                      </View>
+                      <Pressable
+                        style={[styles.button1, styles.buttonPosition]}
+                        onPress={openButtonContainer1}
+                      >
+                        <Text style={[styles.aadir, styles.aadirPosition]}>
+                          Añadir #
+                        </Text>
+                      </Pressable>
                     </View>
-                    <Pressable
-                      style={[styles.button1, styles.buttonPosition]}
-                      onPress={openButtonContainer1}
-                    >
-                      <Text style={[styles.aadir, styles.aadirPosition]}>
-                        Añadir #
-                      </Text>
-                    </Pressable>
                   </View>
                   <View style={styles.fieldParent}>
                     <Image
@@ -222,10 +229,14 @@ const Organizador = () => {
                       <View style={[styles.checkParent, styles.button2FlexBox]}>
                         <View style={styles.check}>
                           <View style={styles.checkChild} />
-                          <Image
+                          {/* <Image
                             style={styles.vectorIcon1}
                             contentFit="cover"
                             source={require('../assets/vector.png')}
+                          /> */}
+                          <Checkbox
+                            value={ischecked}
+                            onValueChange={setIschecked}
                           />
                         </View>
                         <Text style={[styles.aadirAudio, styles.etiquetarTypo]}>
@@ -263,7 +274,9 @@ const Organizador = () => {
                 locations={[0, 1]}
                 colors={['#dee274', '#7ec18c']}
               >
-                <Text style={styles.signIn}>Subir</Text>
+                <Text onPress={() => setSubmit(true)} style={styles.signIn}>
+                  Subir
+                </Text>
               </LinearGradient>
             </View>
           </View>
@@ -299,27 +312,41 @@ const Organizador = () => {
           <Lugar3 onClose={closeFrameContainer5} />
         </View>
       </Modal>
+
+      <Modal animationType="fade" transparent={true} visible={submit}>
+        <TouchableWithoutFeedback onPress={() => setSubmit(false)}>
+          <View style={styles.modalOverlay}>
+            <View>
+              <ENTRADACREADA setPopupCreate={setSubmit} />
+            </View>
+          </View>
+        </TouchableWithoutFeedback>
+      </Modal>
     </>
   )
 }
 
 const styles = StyleSheet.create({
-  iconPosition: {
-    left: 0,
-    position: 'absolute'
-  },
   parentPosition: {
     top: 0,
-    left: 0,
-    position: 'absolute'
+    left: 0
+    // position: 'absolute'
+  },
+  modalOverlay: {
+    // flex: 1,
+    // top: -100,
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   eventoTypo: {
-    left: 20,
+    // left: 20,
     fontWeight: '500',
     fontSize: FontSize.size_lg,
     textAlign: 'left',
-    fontFamily: FontFamily.lato,
-    position: 'absolute'
+    fontFamily: FontFamily.lato
+    // position: 'absolute'
   },
   buttonPosition: {
     backgroundColor: Color.secundario,
@@ -362,11 +389,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row'
   },
-  navigationIcon: {
-    top: 821,
-    width: 428,
-    height: 105
-  },
+  // navigationIcon: {
+  //   top: 821,
+  //   width: 428,
+  //   height: 105
+  // },
   image6Icon: {
     width: 87,
     height: 55
@@ -378,30 +405,28 @@ const styles = StyleSheet.create({
     overflow: 'hidden'
   },
   subirRecuerdo: {
-    left: 109,
+    // left: 109,
     fontSize: FontSize.size_5xl,
     fontWeight: '700',
     textAlign: 'left',
     fontFamily: FontFamily.lato,
     color: Color.negro,
-    top: 0,
-    position: 'absolute'
+    top: 0
+    // position: 'absolute'
   },
   subir: {
-    top: 4,
-    left: 347,
     color: Color.primario1,
     fontWeight: '500',
     letterSpacing: 0,
     lineHeight: 22,
     fontSize: FontSize.size_lg,
-    textAlign: 'left',
-    fontFamily: FontFamily.lato,
-    position: 'absolute'
+    fontFamily: FontFamily.lato
   },
   ionmenuParent: {
     height: 29,
-    width: 388
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%'
   },
   describeLoQue: {
     top: 20,
@@ -409,19 +434,20 @@ const styles = StyleSheet.create({
   },
   evento: {
     top: 62,
-    color: Color.negro,
-    left: 20
+    color: Color.negro
+    // left: 20
   },
 
   button: {
-    left: 86,
-    width: 134
+    left: 86
+    // width: 134
   },
   buttonContainer1Overlay: {
-    flex: 1,
+    // flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'rgba(113, 113, 113, 0.3)'
+    backgroundColor: 'rgba(113, 113, 113, 0.3)',
+    height: '100%'
   },
   buttonContainer1Bg: {
     position: 'absolute',
@@ -448,12 +474,12 @@ const styles = StyleSheet.create({
   field: {
     borderRadius: Border.br_3xs,
     backgroundColor: Color.fAFAFA,
-    height: 97,
-    width: 388
+    height: 97
+    // width: 388
   },
   frameChild: {
-    maxHeight: '100%',
-    width: 388
+    maxHeight: '100%'
+    // width: 388
   },
   iconlybolddocument: {
     width: 22,
@@ -470,14 +496,15 @@ const styles = StyleSheet.create({
   },
   frameItem: {
     marginTop: 15,
-    maxHeight: '100%',
-    width: 388
+    maxHeight: '100%'
+    // width: 388
   },
   frameContainer2Overlay: {
-    flex: 1,
+    // flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'rgba(113, 113, 113, 0.3)'
+    backgroundColor: 'rgba(113, 113, 113, 0.3)',
+    height: '100%'
   },
   frameContainer2Bg: {
     position: 'absolute',
@@ -507,10 +534,11 @@ const styles = StyleSheet.create({
     fontSize: FontSize.size_base
   },
   frameContainer5Overlay: {
-    flex: 1,
+    // flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'rgba(113, 113, 113, 0.3)'
+    backgroundColor: 'rgba(113, 113, 113, 0.3)',
+    height: '100%'
   },
   frameContainer5Bg: {
     position: 'absolute',
@@ -541,11 +569,11 @@ const styles = StyleSheet.create({
     maxHeight: '100%'
   },
   frameContainer: {
-    width: 388
+    // width: 388
   },
   checkChild: {
     height: '105%',
-    width: '105%',
+    width: '100%',
     top: '-2.5%',
     right: '-2.5%',
     bottom: '-2.5%',
@@ -587,7 +615,7 @@ const styles = StyleSheet.create({
     fontSize: FontSize.size_lg
   },
   opcionesDePrivacidadWrapper: {
-    width: 359
+    width: '100%'
   },
   arrowDown2Icon1: {
     marginLeft: 20,
@@ -595,9 +623,9 @@ const styles = StyleSheet.create({
     height: 16
   },
   frameView: {
-    justifyContent: 'flex-end',
-    marginTop: 15,
-    width: 388
+    // justifyContent: 'flex-end',
+    marginTop: 15
+    // width: 388
   },
   fieldParent: {
     marginTop: 20
@@ -608,23 +636,22 @@ const styles = StyleSheet.create({
     color: Color.white,
     textAlign: 'center',
     fontSize: FontSize.size_base,
-    fontFamily: FontFamily.lato,
-    flex: 1
+    fontFamily: FontFamily.lato
+    // flex: 1
   },
   button2: {
-    paddingHorizontal: Padding.p_5xl,
+    // paddingHorizontal: Padding.p_5xl,
     paddingVertical: Padding.p_sm,
     backgroundColor: Color.linearBoton,
-    marginTop: 113,
+    marginTop: 60,
     borderRadius: Border.br_11xl,
     justifyContent: 'center',
-    width: 388
+    width: '100%'
   },
   frameParent: {
     height: 862,
-    paddingHorizontal: Padding.p_xl,
-    paddingVertical: 0,
-    marginTop: 6
+    width: '100%'
+    // marginTop: 6
   },
   image6Parent: {
     height: 926
@@ -634,8 +661,10 @@ const styles = StyleSheet.create({
     width: '100%',
     overflow: 'hidden',
     height: 926,
-    flex: 1,
-    backgroundColor: Color.white
+    // flex: 1,
+    backgroundColor: Color.white,
+    paddingHorizontal: 15
+    // top: 100
   }
 })
 

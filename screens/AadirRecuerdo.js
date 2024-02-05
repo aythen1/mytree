@@ -76,9 +76,7 @@ const AadirRecuerdo = () => {
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
               >
-                <View
-                  style={[styles.rectangleParent, styles.frameChildShadowBox]}
-                >
+                <View style={styles.rectangleParent}>
                   <LinearGradient
                     style={styles.frameChildLayout}
                     locations={[0, 1]}
@@ -86,7 +84,7 @@ const AadirRecuerdo = () => {
                   />
                   <Text style={[styles.normal, styles.edicinTypo]}>Normal</Text>
                 </View>
-                <View style={[styles.filtro1, styles.frameChildShadowBox]}>
+                <View style={styles.filtro1}>
                   <LinearGradient
                     style={styles.frameChildLayout}
                     locations={[0, 1]}
@@ -94,9 +92,7 @@ const AadirRecuerdo = () => {
                   />
                   <Text style={[styles.normal, styles.edicinTypo]}>Sepia</Text>
                 </View>
-                <View
-                  style={[styles.rectangleGroup, styles.frameChildShadowBox]}
-                >
+                <View style={styles.rectangleGroup}>
                   <LinearGradient
                     style={[styles.frameChild1, styles.frameChildLayout]}
                     locations={[0, 1]}
@@ -104,12 +100,7 @@ const AadirRecuerdo = () => {
                   />
                   <Text style={[styles.normal, styles.edicinTypo]}>Claro</Text>
                 </View>
-                <View
-                  style={[
-                    styles.rectangleContainer,
-                    styles.frameChildShadowBox
-                  ]}
-                >
+                <View style={styles.rectangleContainer}>
                   <LinearGradient
                     style={styles.frameChildLayout}
                     locations={[0, 1]}
@@ -117,9 +108,7 @@ const AadirRecuerdo = () => {
                   />
                   <Text style={[styles.normal, styles.edicinTypo]}>Oscuro</Text>
                 </View>
-                <View
-                  style={[styles.rectangleParent1, styles.frameChildShadowBox]}
-                >
+                <View style={styles.rectangleParent1}>
                   <LinearGradient
                     style={styles.frameChildLayout}
                     locations={[0, 1]}
@@ -129,9 +118,7 @@ const AadirRecuerdo = () => {
                     Contraste
                   </Text>
                 </View>
-                <View
-                  style={[styles.rectangleParent2, styles.frameChildShadowBox]}
-                >
+                <View style={styles.rectangleParent2}>
                   <LinearGradient
                     style={styles.frameChildLayout}
                     locations={[0, 1]}
@@ -140,12 +127,7 @@ const AadirRecuerdo = () => {
                   <Text style={[styles.normal, styles.edicinTypo]}>B&N</Text>
                 </View>
                 <View style={styles.frameParent2}>
-                  <View
-                    style={[
-                      styles.rectangleParent3,
-                      styles.frameChildShadowBox
-                    ]}
-                  >
+                  <View style={styles.rectangleParent3}>
                     <LinearGradient
                       style={styles.frameChildLayout}
                       locations={[0, 1]}
@@ -155,12 +137,7 @@ const AadirRecuerdo = () => {
                       Normal
                     </Text>
                   </View>
-                  <View
-                    style={[
-                      styles.rectangleParent4,
-                      styles.frameChildShadowBox
-                    ]}
-                  >
+                  <View style={styles.rectangleParent4}>
                     <LinearGradient
                       style={[styles.frameChild6, styles.frameChildLayout]}
                       locations={[0, 1]}
@@ -170,12 +147,7 @@ const AadirRecuerdo = () => {
                       Claro
                     </Text>
                   </View>
-                  <View
-                    style={[
-                      styles.rectangleParent5,
-                      styles.frameChildShadowBox
-                    ]}
-                  >
+                  <View style={styles.rectangleParent5}>
                     <LinearGradient
                       style={styles.frameChildLayout}
                       locations={[0, 1]}
@@ -185,12 +157,7 @@ const AadirRecuerdo = () => {
                       Oscuro
                     </Text>
                   </View>
-                  <View
-                    style={[
-                      styles.rectangleParent6,
-                      styles.frameChildShadowBox
-                    ]}
-                  >
+                  <View style={styles.rectangleParent6}>
                     <LinearGradient
                       style={styles.frameChildLayout}
                       locations={[0, 1]}
@@ -232,7 +199,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: FontFamily.lato
   },
-  frameChildShadowBox: {
+  frameChildLayout: {
+    backgroundColor: Color.linearBoton,
+    height: 70,
+    width: 70,
+    borderRadius: Border.br_3xs,
     shadowOpacity: 1,
     elevation: 4,
     shadowRadius: 4,
@@ -241,12 +212,6 @@ const styles = StyleSheet.create({
       height: 4
     },
     shadowColor: 'rgba(0, 0, 0, 0.25)'
-  },
-  frameChildLayout: {
-    backgroundColor: Color.linearBoton,
-    height: 70,
-    width: 70,
-    borderRadius: Border.br_3xs
   },
   navigationIcon: {
     // marginLeft: -214,
@@ -408,7 +373,9 @@ const styles = StyleSheet.create({
     // width: 428
   },
   frameContainer: {
-    marginTop: 20
+    marginTop: 20,
+    width: '100%',
+    paddingHorizontal: 15
   },
   frameParent: {
     marginTop: 6,
