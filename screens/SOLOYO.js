@@ -15,6 +15,13 @@ const MiLegado = () => {
           style={[styles.miBiografaActualParent, styles.groupParentFlexBox]}
         >
           <Text style={styles.miBiografaActual}>Sólo yo</Text>
+          <View style={styles.lockParent}>
+            <Image
+              style={styles.icon}
+              contentFit="cover"
+              source={require('../assets/lock1.png')}
+            />
+          </View>
           <View style={[styles.vectorGroup, styles.groupParentFlexBox]}>
             <Image
               style={styles.vectorIcon1}
@@ -198,6 +205,13 @@ const styles = StyleSheet.create({
   frameChild: {
     width: '100%',
     height: 5
+  },
+  icon: {
+    height: 24,
+    width: 19
+  },
+  lockParent: {
+    right: '300%'
   },
   maskGroupIcon: {
     width: 70,
