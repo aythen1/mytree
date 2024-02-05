@@ -122,7 +122,9 @@ const Perfil = () => {
           <Text
             style={
               (styles.miInfo,
-              selectedComponent === 'MiLegado' && styles.selectedText)
+              (selectedComponent === 'MiLegado' ||
+                selectedComponent === 'SOLOYO') &&
+                styles.selectedText)
             }
           >
             Mi Legado
