@@ -23,6 +23,8 @@ const PERFILINFANTEAJUSTES = () => {
   const [frameContainer11Visible, setFrameContainer11Visible] = useState(false)
   const [vectorIcon12Visible, setVectorIcon12Visible] = useState(false)
   const [frameContainer35Visible, setFrameContainer35Visible] = useState(false)
+  const [parents, setParents] = useState('Escoge una opcion')
+  const [sex, setSex] = useState('Escoge una opcion')
   const navigation = useNavigation()
 
   const openFrameContainer3 = useCallback(() => {
@@ -57,17 +59,17 @@ const PERFILINFANTEAJUSTES = () => {
     setFrameContainer11Visible(false)
   }, [])
 
-  const openVectorIcon12 = useCallback(() => {
-    setVectorIcon12Visible(true)
-  }, [])
+  // const openVectorIcon12 = useCallback(() => {
+  //   setVectorIcon12Visible(true)
+  // }, [])
 
   const closeVectorIcon12 = useCallback(() => {
     setVectorIcon12Visible(false)
   }, [])
 
-  const openFrameContainer35 = useCallback(() => {
-    setFrameContainer35Visible(true)
-  }, [])
+  // const openFrameContainer35 = useCallback(() => {
+  //   setFrameContainer35Visible(true)
+  // }, [])
 
   const closeFrameContainer35 = useCallback(() => {
     setFrameContainer35Visible(false)
@@ -77,15 +79,35 @@ const PERFILINFANTEAJUSTES = () => {
     <>
       <ScrollView style={{ flex: 1 }}>
         <View style={styles.perfilInfanteAjustes}>
-          <View style={[styles.perfilInfanteAjustesInner, styles.backPosition]}>
-            <View
-              style={[styles.nacimientoParent, styles.nacimientoParentPosition]}
+          <Image
+            style={styles.image6Icon}
+            contentFit="cover"
+            source={require('../assets/image-6.png')}
+          />
+          <View style={{ flexDirection: 'row' }}>
+            <Pressable
+              // style={[styles.back, styles.backPosition]}
+              onPress={() => navigation.navigate('PERFILIDINFANTE')}
             >
-              <Text style={[styles.nacimiento, styles.embarazoTypo]}>
-                Nacimiento
-              </Text>
-              <View style={[styles.frameParent, styles.frameParentFlexBox]}>
-                <View style={styles.ltimoPerodoNaturalParent}>
+              <Image
+                style={[styles.icon1, styles.iconLayout]}
+                contentFit="cover"
+                source={require('../assets/back5.png')}
+              />
+            </Pressable>
+            <Text style={styles.ajustesDelInfante}>Ajustes del infante</Text>
+          </View>
+
+          <View style={styles.nacimientoParent}>
+            <Text style={[styles.embarazoTypo, styles.section]}>
+              Nacimiento
+            </Text>
+            <View style={styles.frameParent}>
+              <Pressable
+                style={styles.frameParentFlexBox}
+                onPress={openFrameContainer3}
+              >
+                <View>
                   <Text
                     style={[styles.ltimoPerodoNatural, styles.embarazoTypo]}
                   >
@@ -98,43 +120,42 @@ const PERFILINFANTEAJUSTES = () => {
                   contentFit="cover"
                   source={require('../assets/vector47.png')}
                 />
+              </Pressable>
+            </View>
+
+            <Pressable
+              style={[styles.frameParent, styles.frameParentFlexBox]}
+              onPress={openFrameContainer3}
+            >
+              <View style={styles.ltimoPerodoNaturalParent}>
+                <Text style={[styles.ltimoPerodoNatural, styles.embarazoTypo]}>
+                  Fecha estimada
+                </Text>
+                <Text style={styles.das}>14 de enero de 2024</Text>
               </View>
-              <Pressable
-                style={[styles.frameParent, styles.frameParentFlexBox]}
-                onPress={openFrameContainer3}
-              >
-                <View style={styles.ltimoPerodoNaturalParent}>
-                  <Text
-                    style={[styles.ltimoPerodoNatural, styles.embarazoTypo]}
-                  >
-                    Fecha estimada
-                  </Text>
-                  <Text style={styles.das}>14 de enero de 2024</Text>
-                </View>
-                <Image
-                  style={styles.vectorIcon}
-                  contentFit="cover"
-                  source={require('../assets/vector47.png')}
-                />
-              </Pressable>
-              <Pressable
-                style={[styles.frameParent, styles.frameParentFlexBox]}
-                onPress={openFrameContainer5}
-              >
-                <View style={styles.ltimoPerodoNaturalParent}>
-                  <Text
-                    style={[styles.ltimoPerodoNatural, styles.embarazoTypo]}
-                  >
-                    Fecha y hora de nacimiento
-                  </Text>
-                  <Text style={styles.das}>14 de enero de 2024, 14:30hs</Text>
-                </View>
-                <Image
-                  style={styles.vectorIcon}
-                  contentFit="cover"
-                  source={require('../assets/vector47.png')}
-                />
-              </Pressable>
+              <Image
+                style={styles.vectorIcon}
+                contentFit="cover"
+                source={require('../assets/vector47.png')}
+              />
+            </Pressable>
+            <Pressable
+              style={[styles.frameParent, styles.frameParentFlexBox]}
+              onPress={openFrameContainer5}
+            >
+              <View style={styles.ltimoPerodoNaturalParent}>
+                <Text style={[styles.ltimoPerodoNatural, styles.embarazoTypo]}>
+                  Fecha y hora de nacimiento
+                </Text>
+                <Text style={styles.das}>14 de enero de 2024, 14:30hs</Text>
+              </View>
+              <Image
+                style={styles.vectorIcon}
+                contentFit="cover"
+                source={require('../assets/vector47.png')}
+              />
+            </Pressable>
+            <Pressable style={[styles.frameParent, styles.frameParentFlexBox]}>
               <View style={[styles.frameParent, styles.frameParentFlexBox]}>
                 <View style={styles.ltimoPerodoNaturalParent}>
                   <Text
@@ -149,241 +170,170 @@ const PERFILINFANTEAJUSTES = () => {
                   source={require('../assets/vector46.png')}
                 />
               </View>
-              <Image
-                style={[styles.frameChild, styles.frameLayout]}
-                contentFit="cover"
-                source={require('../assets/line-802.png')}
-              />
-              <Text style={[styles.embarazo, styles.embarazoTypo]}>
-                Embarazo
-              </Text>
-              <Pressable
-                style={[styles.frameParent, styles.frameParentFlexBox]}
-                onPress={openFrameContainer9}
-              >
-                <View style={styles.ltimoPerodoNaturalParent}>
-                  <Text
-                    style={[styles.ltimoPerodoNatural, styles.embarazoTypo]}
-                  >
-                    Padres
-                  </Text>
-                  <Text style={styles.das}>{`👫 `}</Text>
-                </View>
-                <Image
-                  style={styles.vectorIcon}
-                  contentFit="cover"
-                  source={require('../assets/vector47.png')}
-                />
-              </Pressable>
-              <Pressable
-                style={[styles.frameParent, styles.frameParentFlexBox]}
-                onPress={openFrameContainer11}
-              >
-                <View style={styles.ltimoPerodoNaturalParent}>
-                  <Text
-                    style={[styles.ltimoPerodoNatural, styles.embarazoTypo]}
-                  >
-                    Sexo
-                  </Text>
-                  <Text style={styles.das}>Hombre</Text>
-                </View>
-                <Image
-                  style={styles.vectorIcon}
-                  contentFit="cover"
-                  source={require('../assets/vector47.png')}
-                />
-              </Pressable>
-              <Image
-                style={[styles.frameItem, styles.frameLayout]}
-                contentFit="cover"
-                source={require('../assets/line-802.png')}
-              />
-              <Text style={[styles.embarazo, styles.embarazoTypo]}>
-                Información
-              </Text>
-              <View style={[styles.frameParent, styles.frameParentFlexBox]}>
-                <View style={styles.ltimoPerodoNaturalParent}>
-                  <Text style={[styles.bio, styles.bioTypo]}>Bio</Text>
-                  <Text style={[styles.holaSoyLucas, styles.hsTypo]}>
-                    Hola, soy Lucas, naci el 23 de agosto de 2023 de...
-                  </Text>
-                </View>
-                <Image
-                  style={styles.vectorIcon}
-                  contentFit="cover"
-                  source={require('../assets/vector47.png')}
-                />
-              </View>
-              <View style={[styles.frameParent, styles.frameParentFlexBox]}>
-                <View style={styles.ltimoPerodoNaturalParent}>
-                  <Text style={[styles.bio, styles.bioTypo]}>
-                    Actualmente tengo
-                  </Text>
-                  <Text style={[styles.holaSoyLucas, styles.hsTypo]}>
-                    12 meses
-                  </Text>
-                </View>
-                <Image
-                  style={styles.vectorIcon}
-                  contentFit="cover"
-                  source={require('../assets/vector47.png')}
-                />
-              </View>
-              <View style={[styles.frameParent4, styles.frameParentFlexBox]}>
-                <View style={styles.ltimoPerodoNaturalParent}>
-                  <Text style={[styles.bio, styles.bioTypo]}>Nací a las</Text>
-                  <Text style={[styles.hs, styles.hsTypo]}>14:30 hs</Text>
-                </View>
-                <Image
-                  style={styles.vectorIcon}
-                  contentFit="cover"
-                  source={require('../assets/vector47.png')}
-                />
-              </View>
-              <View style={[styles.frameParent4, styles.frameParentFlexBox]}>
-                <View style={styles.ltimoPerodoNaturalParent}>
-                  <Text style={styles.bioTypo}>Duermo...</Text>
-                  <Text style={[styles.hs, styles.hsTypo]}>
-                    Bien, pero nunc mattis. Mauris feugiat non ...
-                  </Text>
-                </View>
-                <Image
-                  style={styles.vectorIcon}
-                  contentFit="cover"
-                  source={require('../assets/vector47.png')}
-                />
-              </View>
-              <View style={[styles.frameParent4, styles.frameParentFlexBox]}>
-                <View style={styles.ltimoPerodoNaturalParent}>
-                  <Text style={styles.bioTypo}>Como...</Text>
-                  <Text style={[styles.hs, styles.hsTypo]}>
-                    rcu nunc mattis. Mauris feugiat non interdum...
-                  </Text>
-                </View>
-                <Image
-                  style={styles.vectorIcon}
-                  contentFit="cover"
-                  source={require('../assets/vector47.png')}
-                />
-              </View>
-              <View style={[styles.frameParent4, styles.frameParentFlexBox]}>
-                <View style={styles.ltimoPerodoNaturalParent}>
-                  <Text style={styles.bioTypo}>Mi comida favorita es...</Text>
-                  <Text style={[styles.hs, styles.hsTypo]}>
-                    rcu nunc mattis. Mauris feugiat non interdum...
-                  </Text>
-                </View>
-                <Image
-                  style={styles.vectorIcon}
-                  contentFit="cover"
-                  source={require('../assets/vector47.png')}
-                />
-              </View>
-              <Image
-                style={styles.frameInner}
-                contentFit="cover"
-                source={require('../assets/line-801.png')}
-              />
-              <View style={styles.formularioParent}>
-                <Text style={styles.embarazoTypo}>Formulario</Text>
-                <Pressable style={styles.vector} onPress={openVectorIcon12}>
-                  <Image
-                    style={styles.iconLayout}
-                    contentFit="cover"
-                    source={require('../assets/vector21.png')}
-                  />
-                </Pressable>
-              </View>
-              <View style={[styles.frameParent4, styles.frameParentFlexBox]}>
-                <View style={styles.ltimoPerodoNaturalParent}>
-                  <Text style={styles.bioTypo}>¿Cómo es mi personalidad?</Text>
-                  <Text style={[styles.hs, styles.hsTypo]}>
-                    rcu nunc mattis. Mauris feugiat non interdum...
-                  </Text>
-                </View>
-                <Image
-                  style={styles.vectorIcon}
-                  contentFit="cover"
-                  source={require('../assets/vector47.png')}
-                />
-              </View>
-              <View style={[styles.frameParent4, styles.frameParentFlexBox]}>
-                <View style={styles.ltimoPerodoNaturalParent}>
-                  <Text style={styles.bioTypo}>Vínculos familiares</Text>
-                  <Text style={[styles.hs, styles.hsTypo]}>
-                    rcu nunc mattis. Mauris feugiat non interdum...
-                  </Text>
-                </View>
-                <Image
-                  style={styles.vectorIcon}
-                  contentFit="cover"
-                  source={require('../assets/vector47.png')}
-                />
-              </View>
-              <View style={[styles.frameParent4, styles.frameParentFlexBox]}>
-                <View style={styles.ltimoPerodoNaturalParent}>
-                  <Text style={styles.bioTypo}>
-                    Expresiones y gestos característicos
-                  </Text>
-                  <Text style={[styles.hs, styles.hsTypo]}>
-                    rcu nunc mattis. Mauris feugiat non interdum...
-                  </Text>
-                </View>
-                <Image
-                  style={styles.vectorIcon}
-                  contentFit="cover"
-                  source={require('../assets/vector47.png')}
-                />
-              </View>
-              <View style={[styles.frameParent4, styles.frameParentFlexBox]}>
-                <View style={styles.ltimoPerodoNaturalParent}>
-                  <Text style={styles.bioTypo}>Pasatiempos y gustos</Text>
-                  <Text style={[styles.hs, styles.hsTypo]}>
-                    rcu nunc mattis. Mauris feugiat non interdum...
-                  </Text>
-                </View>
-                <Image
-                  style={styles.vectorIcon}
-                  contentFit="cover"
-                  source={require('../assets/vector47.png')}
-                />
-              </View>
-              <View style={[styles.frameParent4, styles.frameParentFlexBox]}>
-                <View style={styles.ltimoPerodoNaturalParent}>
-                  <Text style={styles.bioTypo}>Valores y saberes</Text>
-                  <Text style={[styles.hs, styles.hsTypo]}>
-                    rcu nunc mattis. Mauris feugiat non interdum...
-                  </Text>
-                </View>
-                <Image
-                  style={styles.vectorIcon}
-                  contentFit="cover"
-                  source={require('../assets/vector47.png')}
-                />
-              </View>
-              <Image
-                style={styles.frameInner}
-                contentFit="cover"
-                source={require('../assets/line-801.png')}
-              />
-              <Pressable
-                style={styles.vectorParent}
-                onPress={openFrameContainer35}
-              >
-                <Image
-                  style={styles.vectorIcon17}
-                  contentFit="cover"
-                  source={require('../assets/vector48.png')}
-                />
-                <Text
-                  style={[
-                    styles.interrumpirEmbarazo,
-                    styles.ajustesDelInfanteTypo
-                  ]}
-                >
-                  Interrumpir embarazo
+            </Pressable>
+
+            <View
+              style={{
+                borderWidth: 1,
+                borderColor: Color.grisClaro,
+                marginVertical: 20
+              }}
+            />
+
+            <Text style={[styles.embarazoTypo, styles.section]}>Embarazo</Text>
+
+            <Pressable
+              style={[styles.frameParent, styles.frameParentFlexBox]}
+              onPress={openFrameContainer9}
+            >
+              <View style={styles.ltimoPerodoNaturalParent}>
+                <Text style={[styles.ltimoPerodoNatural, styles.embarazoTypo]}>
+                  Padres
                 </Text>
-              </Pressable>
+                <Text style={styles.das}>{parents}</Text>
+              </View>
+              <Image
+                style={styles.vectorIcon}
+                contentFit="cover"
+                source={require('../assets/vector47.png')}
+              />
+            </Pressable>
+            <Pressable
+              style={[styles.frameParent, styles.frameParentFlexBox]}
+              onPress={openFrameContainer11}
+            >
+              <View style={styles.ltimoPerodoNaturalParent}>
+                <Text style={[styles.ltimoPerodoNatural, styles.embarazoTypo]}>
+                  Sexo
+                </Text>
+                <Text style={styles.das}>{sex}</Text>
+              </View>
+              <Image
+                style={styles.vectorIcon}
+                contentFit="cover"
+                source={require('../assets/vector47.png')}
+              />
+            </Pressable>
+            <Image
+              style={[styles.frameItem, styles.frameLayout]}
+              contentFit="cover"
+              source={require('../assets/line-802.png')}
+            />
+
+            <View
+              style={{
+                borderWidth: 1,
+                borderColor: Color.grisClaro,
+                marginVertical: 20
+              }}
+            />
+
+            <Text style={[styles.embarazoTypo, styles.section]}>
+              Información
+            </Text>
+            <View style={[styles.frameParent, styles.frameParentFlexBox]}>
+              <View style={styles.ltimoPerodoNaturalParent}>
+                <Text style={[styles.bio, styles.bioTypo]}>Bio</Text>
+                <Text style={[styles.holaSoyLucas, styles.hsTypo]}>
+                  Hola, soy Lucas, naci el 23 de agosto de 2023 de...
+                </Text>
+              </View>
+              <Image
+                style={styles.vectorIcon}
+                contentFit="cover"
+                source={require('../assets/vector47.png')}
+              />
+            </View>
+            <View style={[styles.frameParent, styles.frameParentFlexBox]}>
+              <View style={styles.ltimoPerodoNaturalParent}>
+                <Text style={[styles.bio, styles.bioTypo]}>
+                  Actualmente tengo
+                </Text>
+                <Text style={[styles.holaSoyLucas, styles.hsTypo]}>
+                  12 meses
+                </Text>
+              </View>
+              <Image
+                style={styles.vectorIcon}
+                contentFit="cover"
+                source={require('../assets/vector47.png')}
+              />
+            </View>
+            <View style={[styles.frameParent4, styles.frameParentFlexBox]}>
+              <View style={styles.ltimoPerodoNaturalParent}>
+                <Text style={[styles.bio, styles.bioTypo]}>Nací a las</Text>
+                <Text style={[styles.hs, styles.hsTypo]}>14:30 hs</Text>
+              </View>
+              <Image
+                style={styles.vectorIcon}
+                contentFit="cover"
+                source={require('../assets/vector47.png')}
+              />
+            </View>
+            <View style={[styles.frameParent4, styles.frameParentFlexBox]}>
+              <View style={styles.ltimoPerodoNaturalParent}>
+                <Text style={styles.bioTypo}>Duermo...</Text>
+                <Text style={[styles.hs, styles.hsTypo]}>
+                  Bien, pero nunc mattis. Mauris feugiat non ...
+                </Text>
+              </View>
+              <Image
+                style={styles.vectorIcon}
+                contentFit="cover"
+                source={require('../assets/vector47.png')}
+              />
+            </View>
+            <View style={[styles.frameParent4, styles.frameParentFlexBox]}>
+              <View style={styles.ltimoPerodoNaturalParent}>
+                <Text style={styles.bioTypo}>Como...</Text>
+                <Text style={[styles.hs, styles.hsTypo]}>
+                  rcu nunc mattis. Mauris feugiat non interdum...
+                </Text>
+              </View>
+              <Image
+                style={styles.vectorIcon}
+                contentFit="cover"
+                source={require('../assets/vector47.png')}
+              />
+            </View>
+            <View style={[styles.frameParent4, styles.frameParentFlexBox]}>
+              <View style={styles.ltimoPerodoNaturalParent}>
+                <Text style={styles.bioTypo}>Mi comida favorita es...</Text>
+                <Text style={[styles.hs, styles.hsTypo]}>
+                  rcu nunc mattis. Mauris feugiat non interdum...
+                </Text>
+              </View>
+              <Image
+                style={styles.vectorIcon}
+                contentFit="cover"
+                source={require('../assets/vector47.png')}
+              />
+            </View>
+            <View style={[styles.frameParent4, styles.frameParentFlexBox]}>
+              <View style={styles.ltimoPerodoNaturalParent}>
+                <Text style={styles.bioTypo}>Palabras favoritas...</Text>
+                <Text style={[styles.hs, styles.hsTypo]}>
+                  rcu nunc mattis. Mauris feugiat non interdum...
+                </Text>
+              </View>
+              <Image
+                style={styles.vectorIcon}
+                contentFit="cover"
+                source={require('../assets/vector47.png')}
+              />
+            </View>
+            <View style={[styles.frameParent4, styles.frameParentFlexBox]}>
+              <View style={styles.ltimoPerodoNaturalParent}>
+                <Text style={styles.bioTypo}>Canciones favoritas...</Text>
+                <Text style={[styles.hs, styles.hsTypo]}>
+                  rcu nunc mattis. Mauris feugiat non interdum...
+                </Text>
+              </View>
+              <Image
+                style={styles.vectorIcon}
+                contentFit="cover"
+                source={require('../assets/vector47.png')}
+              />
             </View>
           </View>
           <View
@@ -391,26 +341,6 @@ const PERFILINFANTEAJUSTES = () => {
               styles.perfilInfanteAjustesChild,
               styles.nacimientoParentPosition
             ]}
-          />
-          <Pressable
-            style={[styles.back, styles.backPosition]}
-            onPress={() => navigation.navigate('PERFILIDINFANTE')}
-          >
-            <Image
-              style={[styles.icon1, styles.iconLayout]}
-              contentFit="cover"
-              source={require('../assets/back5.png')}
-            />
-          </Pressable>
-          <Text
-            style={[styles.ajustesDelInfante, styles.ajustesDelInfanteTypo]}
-          >
-            Ajustes del infante
-          </Text>
-          <Image
-            style={[styles.image6Icon, styles.backPosition]}
-            contentFit="cover"
-            source={require('../assets/image-6.png')}
           />
         </View>
       </ScrollView>
@@ -441,17 +371,25 @@ const PERFILINFANTEAJUSTES = () => {
             style={styles.frameContainer9Bg}
             onPress={closeFrameContainer9}
           />
-          <Padres onClose={closeFrameContainer9} />
+          <Padres
+            setSex={setSex}
+            setParents={setParents}
+            onClose={closeFrameContainer9}
+          />
         </View>
       </Modal>
 
-      <Modal animationType="fade" transparent visible={frameContainer11Visible}>
+      <Modal
+        animationType="slide"
+        transparent
+        visible={frameContainer11Visible}
+      >
         <View style={styles.frameContainer11Overlay}>
           <Pressable
             style={styles.frameContainer11Bg}
             onPress={closeFrameContainer11}
           />
-          <SexoInfante onClose={closeFrameContainer11} />
+          <SexoInfante setSex={setSex} onClose={closeFrameContainer11} />
         </View>
       </Modal>
 
@@ -487,10 +425,6 @@ const styles = StyleSheet.create({
     left: 20,
     position: 'absolute'
   },
-  nacimientoParentPosition: {
-    // left: 0,
-    // position: 'absolute'
-  },
   embarazoTypo: {
     textAlign: 'left',
     fontFamily: FontFamily.lato,
@@ -499,10 +433,16 @@ const styles = StyleSheet.create({
     fontSize: FontSize.size_base,
     letterSpacing: 0
   },
+  section: {
+    color: Color.secundario
+  },
   frameParentFlexBox: {
-    justifyContent: 'flex-end',
+    // justifyContent: 'flex-end',
     marginTop: 20,
-    alignItems: 'center',
+    // paddingHorizontal: 30,
+    width: '100%',
+    justifyContent: 'space-between',
+    // alignItems: 'center',
     flexDirection: 'row'
   },
   frameLayout: {
@@ -528,18 +468,11 @@ const styles = StyleSheet.create({
     letterSpacing: 0,
     fontSize: FontSize.size_base
   },
-  ajustesDelInfanteTypo: {
-    fontWeight: '700',
-    textAlign: 'left',
-    fontFamily: FontFamily.lato
-  },
   iconLayout: {
-    height: '100%',
-    width: '100%'
+    height: 35,
+    width: 35
   },
-  nacimiento: {
-    alignSelf: 'stretch'
-  },
+
   ltimoPerodoNatural: {
     color: Color.negro,
     alignSelf: 'stretch'
@@ -552,20 +485,21 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     lineHeight: 19,
     letterSpacing: 0,
-    fontSize: FontSize.size_base,
-    alignSelf: 'stretch'
+    fontSize: FontSize.size_base
+    // alignSelf: 'stretch'
   },
   ltimoPerodoNaturalParent: {
-    width: 347
+    // width: '100%'
+    // height: '100%'
   },
   vectorIcon: {
     width: 21,
-    height: 21,
-    marginLeft: 20
+    height: 21
+    // marginLeft: 20
   },
   frameParent: {
-    marginTop: 20,
-    alignSelf: 'stretch'
+    marginTop: 20
+    // alignSelf: 'stretch'
   },
   frameContainer3Overlay: {
     flex: 1,
@@ -703,9 +637,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   nacimientoParent: {
-    top: 0
+    top: 30,
+    marginBottom: 60,
+    paddingHorizontal: 15,
     // height: 624,
-    // width: 388
+    width: '100%'
   },
   perfilInfanteAjustesInner: {
     top: 132,
@@ -735,12 +671,14 @@ const styles = StyleSheet.create({
     height: 24
   },
   ajustesDelInfante: {
-    top: 63,
-    left: 64,
+    // top: 63,
+    // left: 64,
+    marginLeft: 15,
     fontSize: FontSize.size_5xl,
     color: Color.negro,
     fontWeight: '700',
-    position: 'absolute'
+    fontFamily: FontFamily.lato
+    // position: 'absolute'
   },
   image6Icon: {
     top: 2,
@@ -752,7 +690,7 @@ const styles = StyleSheet.create({
     // flex: 1,
     // marginBottom: 80,
     // width: '100%',
-    height: 950,
+    // height: 2500,
     // overflow: 'hidden',
     backgroundColor: Color.white
   }

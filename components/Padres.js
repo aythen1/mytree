@@ -1,27 +1,81 @@
-import * as React from 'react'
+import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { FontSize, FontFamily, Color, Border, Padding } from '../GlobalStyles'
+import PropTypes from 'prop-types'
 
-const Padres = ({ onClose }) => {
+const Padres = ({ onClose, setParents }) => {
   return (
     <View style={styles.padres}>
       <View style={styles.quienesSonLosPadresParent}>
         <Text style={styles.quienesSonLos}>¿Quienes son los padres?</Text>
         <View style={styles.frameParent}>
           <View style={[styles.parent, styles.groupFlexBox]}>
-            <Text style={styles.text}>👫</Text>
-            <Text style={[styles.text]}>👭🏻</Text>
-            <Text style={[styles.text]}>{`👬 `}</Text>
+            <Text
+              onPress={() => {
+                onClose()
+                setParents('👫')
+              }}
+              style={styles.text}
+            >
+              👫
+            </Text>
+            <Text
+              onPress={() => {
+                onClose()
+                setParents('👭🏻')
+              }}
+              style={[styles.text]}
+            >
+              👭🏻
+            </Text>
+            <Text
+              onPress={() => {
+                onClose()
+                setParents('👬')
+              }}
+              style={[styles.text]}
+            >
+              👬
+            </Text>
           </View>
           <View style={[styles.parent1, styles.groupFlexBox]}>
-            <Text style={styles.text}>{`🫄  `}</Text>
-            <Text style={[styles.text]}>{`🫃  `}</Text>
-            <Text style={[styles.text]}>{`🤰  `}</Text>
+            <Text
+              onPress={() => {
+                onClose()
+                setParents('🫄')
+              }}
+              style={styles.text}
+            >
+              🫄
+            </Text>
+            <Text
+              onPress={() => {
+                onClose()
+                setParents('🫃')
+              }}
+              style={[styles.text]}
+            >
+              🫃
+            </Text>
+            <Text
+              onPress={() => {
+                onClose()
+                setParents('🤰')
+              }}
+              style={[styles.text]}
+            >
+              🤰
+            </Text>
           </View>
         </View>
       </View>
     </View>
   )
+}
+
+Padres.propTypes = {
+  onClose: PropTypes.func,
+  setParents: PropTypes.func
 }
 
 const styles = StyleSheet.create({
