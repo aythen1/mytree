@@ -17,67 +17,162 @@ const MENPRINCIPAL = () => {
         style={styles.menPrincipalChild}
         locations={[0, 1]}
         colors={['#e2e57a', '#7fc08b']}
-      />
-      <View style={styles.frameParent}>
-        <View>
+      >
+        <View style={styles.frameParent}>
           <View>
-            <View style={styles.parentFlexBox}>
-              <Image
+            <View>
+              <View style={styles.parentFlexBox}>
+                <Image
+                  style={[
+                    styles.icoutlineSpaceDashboardIcon,
+                    styles.frameChildLayout
+                  ]}
+                  contentFit="cover"
+                  source={require('../assets/icoutlinespacedashboard.png')}
+                />
+                <Pressable
+                  style={styles.muro}
+                  onPress={() => {
+                    navigation.navigate('Muro')
+                    dispatch(setPanel(false))
+                  }}
+                >
+                  <Text style={styles.muro1Typo}>Muro</Text>
+                </Pressable>
+              </View>
+              <View
                 style={[
-                  styles.icoutlineSpaceDashboardIcon,
-                  styles.frameChildLayout
+                  styles.iconlylightOutlinecalendarParent,
+                  styles.parentFlexBox
                 ]}
-                contentFit="cover"
-                source={require('../assets/icoutlinespacedashboard.png')}
-              />
-              <Pressable
-                style={styles.muro}
-                onPress={() => {
-                  navigation.navigate('Muro')
-                  dispatch(setPanel(false))
-                }}
               >
-                <Text style={styles.muro1Typo}>Muro</Text>
-              </Pressable>
-            </View>
-            <View
-              style={[
-                styles.iconlylightOutlinecalendarParent,
-                styles.parentFlexBox
-              ]}
-            >
-              <Image
-                style={styles.frameChildLayout}
-                contentFit="cover"
-                source={require('../assets/iconlylightoutlinecalendar2.png')}
-              />
-              <Pressable
-                style={styles.muro}
-                onPress={() => navigation.navigate('CALENDARIO')}
-              >
-                <Text style={styles.muro1Typo}>Mi Calendario</Text>
-              </Pressable>
-            </View>
-            <View
-              style={[
-                styles.iconlylightOutlinecalendarParent,
-                styles.parentFlexBox
-              ]}
-            >
-              <Image
+                <Image
+                  style={styles.frameChildLayout}
+                  contentFit="cover"
+                  source={require('../assets/iconlylightoutlinecalendar2.png')}
+                />
+                <Pressable
+                  style={styles.muro}
+                  onPress={() => navigation.navigate('CALENDARIO')}
+                >
+                  <Text style={styles.muro1Typo}>Mi Calendario</Text>
+                </Pressable>
+              </View>
+              <View
                 style={[
-                  styles.icoutlineSpaceDashboardIcon,
-                  styles.frameChildLayout
+                  styles.iconlylightOutlinecalendarParent,
+                  styles.parentFlexBox
                 ]}
-                contentFit="cover"
-                source={require('../assets/document4.png')}
-              />
-              <Pressable
-                style={styles.muro}
-                onPress={() => navigation.navigate('MIDIARIOPANTALLAPERSONAL')}
               >
-                <Text style={styles.muro1Typo}>Mi Diario</Text>
-              </Pressable>
+                <Image
+                  style={[
+                    styles.icoutlineSpaceDashboardIcon,
+                    styles.frameChildLayout
+                  ]}
+                  contentFit="cover"
+                  source={require('../assets/document4.png')}
+                />
+                <Pressable
+                  style={styles.muro}
+                  onPress={() =>
+                    navigation.navigate('MIDIARIOPANTALLAPERSONAL')
+                  }
+                >
+                  <Text style={styles.muro1Typo}>Mi Diario</Text>
+                </Pressable>
+              </View>
+              <View
+                style={[
+                  styles.iconlylightOutlinecalendarParent,
+                  styles.parentFlexBox
+                ]}
+              >
+                <Image
+                  style={styles.frameChildLayout}
+                  contentFit="cover"
+                  source={require('../assets/frame-1547754844.png')}
+                />
+                <Text style={[styles.miTree, styles.muro1Typo]}>Mi Tree</Text>
+              </View>
+              <View
+                style={[
+                  styles.iconlylightOutlinecalendarParent,
+                  styles.parentFlexBox
+                ]}
+              >
+                <Image
+                  style={[
+                    styles.icoutlineSpaceDashboardIcon,
+                    styles.frameChildLayout
+                  ]}
+                  contentFit="cover"
+                  source={require('../assets/phbooks.png')}
+                />
+                <Pressable
+                  style={styles.muro}
+                  onPress={() => navigation.navigate('MisAlbumesFamiliares')}
+                >
+                  <Text style={styles.muro1Typo}>Mi Álbum Familiar</Text>
+                </Pressable>
+              </View>
+              <View
+                style={[
+                  styles.iconlylightOutlinecalendarParent,
+                  styles.parentFlexBox
+                ]}
+              >
+                <Image
+                  style={[
+                    styles.icoutlineSpaceDashboardIcon,
+                    styles.frameChildLayout
+                  ]}
+                  contentFit="cover"
+                  source={require('../assets/streamlineinterfacecontentbookcontentbooksbookclose.png')}
+                />
+                <Pressable
+                  style={styles.muro}
+                  onPress={() => navigation.navigate('CrearLbum')}
+                >
+                  <Text style={styles.muro1Typo}>Mi Álbum del Armario</Text>
+                </Pressable>
+              </View>
+            </View>
+            <Image
+              style={styles.frameItem}
+              contentFit="cover"
+              source={require('../assets/line-74.png')}
+            />
+          </View>
+          <View style={styles.frameParent1}>
+            <View>
+              <View style={styles.parentFlexBox}>
+                <Image
+                  style={styles.frameChildLayout}
+                  contentFit="cover"
+                  source={require('../assets/group-1171276689.png')}
+                />
+                <Pressable
+                  style={styles.muro}
+                  onPress={() => navigation.navigate('Organizador')}
+                >
+                  <Text style={styles.muro1Typo}>Añadir Recuerdo</Text>
+                </Pressable>
+              </View>
+              <View
+                style={[
+                  styles.iconlylightOutlinecalendarParent,
+                  styles.parentFlexBox
+                ]}
+              >
+                <Image
+                  style={styles.iconlylightOutline3User}
+                  contentFit="cover"
+                  source={require('../assets/iconlylightoutline3user1.png')}
+                />
+                <Text style={[styles.miTree, styles.muro1Typo]}>
+                  Añadir Familiar
+                </Text>
+              </View>
             </View>
             <View
               style={[
@@ -90,125 +185,119 @@ const MENPRINCIPAL = () => {
                 contentFit="cover"
                 source={require('../assets/frame-1547754844.png')}
               />
-              <Text style={[styles.miTree, styles.muro1Typo]}>Mi Tree</Text>
-            </View>
-            <View
-              style={[
-                styles.iconlylightOutlinecalendarParent,
-                styles.parentFlexBox
-              ]}
-            >
-              <Image
-                style={[
-                  styles.icoutlineSpaceDashboardIcon,
-                  styles.frameChildLayout
-                ]}
-                contentFit="cover"
-                source={require('../assets/phbooks.png')}
-              />
               <Pressable
                 style={styles.muro}
-                onPress={() => navigation.navigate('MisAlbumesFamiliares')}
+                onPress={() => navigation.navigate('PERFILCREARIDINFANTEANCE')}
               >
-                <Text style={styles.muro1Typo}>Mi Álbum Familiar</Text>
+                <Text style={styles.muro1Typo}>Crear ID Infante/Ancestro</Text>
               </Pressable>
             </View>
-            <View
-              style={[
-                styles.iconlylightOutlinecalendarParent,
-                styles.parentFlexBox
-              ]}
-            >
-              <Image
-                style={[
-                  styles.icoutlineSpaceDashboardIcon,
-                  styles.frameChildLayout
-                ]}
-                contentFit="cover"
-                source={require('../assets/streamlineinterfacecontentbookcontentbooksbookclose.png')}
-              />
-              <Pressable
-                style={styles.muro}
-                onPress={() => navigation.navigate('CrearLbum')}
-              >
-                <Text style={styles.muro1Typo}>Mi Álbum del Armario</Text>
-              </Pressable>
-            </View>
-          </View>
-          <Image
-            style={styles.frameItem}
-            contentFit="cover"
-            source={require('../assets/line-74.png')}
-          />
-        </View>
-        <View style={styles.frameParent1}>
-          <View>
-            <View style={styles.parentFlexBox}>
-              <Image
-                style={styles.frameChildLayout}
-                contentFit="cover"
-                source={require('../assets/group-1171276689.png')}
-              />
-              <Pressable
-                style={styles.muro}
-                onPress={() => navigation.navigate('Organizador')}
-              >
-                <Text style={styles.muro1Typo}>Añadir Recuerdo</Text>
-              </Pressable>
-            </View>
-            <View
-              style={[
-                styles.iconlylightOutlinecalendarParent,
-                styles.parentFlexBox
-              ]}
-            >
-              <Image
-                style={styles.iconlylightOutline3User}
-                contentFit="cover"
-                source={require('../assets/iconlylightoutline3user1.png')}
-              />
-              <Text style={[styles.miTree, styles.muro1Typo]}>
-                Añadir Familiar
-              </Text>
-            </View>
-          </View>
-          <View
-            style={[
-              styles.iconlylightOutlinecalendarParent,
-              styles.parentFlexBox
-            ]}
-          >
             <Image
-              style={styles.frameChildLayout}
+              style={styles.frameItem}
               contentFit="cover"
-              source={require('../assets/frame-1547754844.png')}
+              source={require('../assets/line-74.png')}
             />
-            <Pressable
-              style={styles.muro}
-              onPress={() => navigation.navigate('PERFILCREARIDINFANTEANCE')}
-            >
-              <Text style={styles.muro1Typo}>Crear ID Infante/Ancestro</Text>
-            </Pressable>
           </View>
-          <Image
-            style={styles.frameItem}
-            contentFit="cover"
-            source={require('../assets/line-74.png')}
-          />
-        </View>
-        <View style={styles.frameParent1}>
-          <View>
+          <View style={styles.frameParent1}>
+            <View>
+              <View style={styles.parentFlexBox}>
+                <Image
+                  style={styles.iconlylightOutlinebookmark}
+                  contentFit="cover"
+                  source={require('../assets/iconlylightoutlinebookmark.png')}
+                />
+                <Pressable
+                  style={styles.muro}
+                  onPress={() => navigation.navigate('Novedades')}
+                >
+                  <Text style={styles.muro1Typo}>Novedades</Text>
+                </Pressable>
+              </View>
+              <View
+                style={[
+                  styles.iconlylightOutlinecalendarParent,
+                  styles.parentFlexBox
+                ]}
+              >
+                <Image
+                  style={styles.frameChildLayout}
+                  contentFit="cover"
+                  source={require('../assets/iconlylightoutlinebookmark1.png')}
+                />
+                <Pressable
+                  style={styles.muro}
+                  onPress={() => navigation.navigate('Recompensas')}
+                >
+                  <Text style={styles.muro1Typo}>Logros</Text>
+                </Pressable>
+              </View>
+              <View
+                style={[
+                  styles.iconlylightOutlinecalendarParent,
+                  styles.parentFlexBox
+                ]}
+              >
+                <Image
+                  style={[
+                    styles.icoutlineSpaceDashboardIcon,
+                    styles.frameChildLayout
+                  ]}
+                  contentFit="cover"
+                  source={require('../assets/search1.png')}
+                />
+                <Pressable
+                  style={styles.muro}
+                  onPress={() => navigation.navigate('Bsqueda1')}
+                >
+                  <Text style={styles.muro1Typo}>Búsqueda</Text>
+                </Pressable>
+              </View>
+            </View>
+            <Image
+              style={styles.frameItem}
+              contentFit="cover"
+              source={require('../assets/line-741.png')}
+            />
+          </View>
+          <View style={styles.frameParent1}>
             <View style={styles.parentFlexBox}>
               <Image
-                style={styles.iconlylightOutlinebookmark}
+                style={[
+                  styles.icoutlineSpaceDashboardIcon,
+                  styles.frameChildLayout
+                ]}
                 contentFit="cover"
-                source={require('../assets/iconlylightoutlinebookmark.png')}
+                source={require('../assets/profile.png')}
               />
               <Pressable
                 style={styles.muro}
-                onPress={() => navigation.navigate('Novedades')}
+                onPress={() => {
+                  navigation.navigate('Perfil')
+                  dispatch(setPanel(false))
+                }}
               >
-                <Text style={styles.muro1Typo}>Novedades</Text>
+                <Text style={styles.muro1Typo}>Perfil</Text>
+              </Pressable>
+            </View>
+            <View
+              style={[
+                styles.iconlylightOutlinecalendarParent,
+                styles.parentFlexBox
+              ]}
+            >
+              <Image
+                style={[
+                  styles.icoutlineSpaceDashboardIcon,
+                  styles.frameChildLayout
+                ]}
+                contentFit="cover"
+                source={require('../assets/setting.png')}
+              />
+              <Pressable
+                style={styles.muro}
+                onPress={() => navigation.navigate('PERFILAJUSTES')}
+              >
+                <Text style={styles.muro1Typo}>Ajustes</Text>
               </Pressable>
             </View>
             <View
@@ -220,99 +309,13 @@ const MENPRINCIPAL = () => {
               <Image
                 style={styles.frameChildLayout}
                 contentFit="cover"
-                source={require('../assets/iconlylightoutlinebookmark1.png')}
+                source={require('../assets/iconlylightoutlineinfosquare1.png')}
               />
-              <Pressable
-                style={styles.muro}
-                onPress={() => navigation.navigate('Recompensas')}
-              >
-                <Text style={styles.muro1Typo}>Logros</Text>
-              </Pressable>
-            </View>
-            <View
-              style={[
-                styles.iconlylightOutlinecalendarParent,
-                styles.parentFlexBox
-              ]}
-            >
-              <Image
-                style={[
-                  styles.icoutlineSpaceDashboardIcon,
-                  styles.frameChildLayout
-                ]}
-                contentFit="cover"
-                source={require('../assets/search1.png')}
-              />
-              <Pressable
-                style={styles.muro}
-                onPress={() => navigation.navigate('Bsqueda1')}
-              >
-                <Text style={styles.muro1Typo}>Búsqueda</Text>
-              </Pressable>
+              <Text style={[styles.miTree, styles.muro1Typo]}>Ayuda</Text>
             </View>
           </View>
-          <Image
-            style={styles.frameItem}
-            contentFit="cover"
-            source={require('../assets/line-741.png')}
-          />
         </View>
-        <View style={styles.frameParent1}>
-          <View style={styles.parentFlexBox}>
-            <Image
-              style={[
-                styles.icoutlineSpaceDashboardIcon,
-                styles.frameChildLayout
-              ]}
-              contentFit="cover"
-              source={require('../assets/profile.png')}
-            />
-            <Pressable
-              style={styles.muro}
-              onPress={() => {
-                navigation.navigate('Perfil')
-                dispatch(setPanel(false))
-              }}
-            >
-              <Text style={styles.muro1Typo}>Perfil</Text>
-            </Pressable>
-          </View>
-          <View
-            style={[
-              styles.iconlylightOutlinecalendarParent,
-              styles.parentFlexBox
-            ]}
-          >
-            <Image
-              style={[
-                styles.icoutlineSpaceDashboardIcon,
-                styles.frameChildLayout
-              ]}
-              contentFit="cover"
-              source={require('../assets/setting.png')}
-            />
-            <Pressable
-              style={styles.muro}
-              onPress={() => navigation.navigate('PERFILAJUSTES')}
-            >
-              <Text style={styles.muro1Typo}>Ajustes</Text>
-            </Pressable>
-          </View>
-          <View
-            style={[
-              styles.iconlylightOutlinecalendarParent,
-              styles.parentFlexBox
-            ]}
-          >
-            <Image
-              style={styles.frameChildLayout}
-              contentFit="cover"
-              source={require('../assets/iconlylightoutlineinfosquare1.png')}
-            />
-            <Text style={[styles.miTree, styles.muro1Typo]}>Ayuda</Text>
-          </View>
-        </View>
-      </View>
+      </LinearGradient>
     </ScrollView>
   )
 }
@@ -341,7 +344,7 @@ const styles = StyleSheet.create({
     backgroundColor: Color.linearBoton,
     height: '100%',
     zIndex: 0,
-    position: 'absolute'
+    paddingBottom: 50
   },
   muro: {
     marginLeft: 12
