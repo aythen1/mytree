@@ -35,7 +35,7 @@ const RetosBienvenida = () => {
             </Pressable>
             <Pressable
               style={[styles.iconlylightOutlinecalendar, styles.messageLayout]}
-              onPress={() => navigation.navigate('PERFILAJUSTES')}
+              onPress={() => navigation.navigate('PerfilAjustes')}
             >
               <Image
                 style={styles.icon}

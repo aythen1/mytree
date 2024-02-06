@@ -130,9 +130,9 @@ import Aadir1 from './components/Aadir1'
 import PERFILNOTIFICACIONES from './screens/PERFILNOTIFICACIONES'
 import PERFILAJUSTESVERIFICACIO from './screens/PERFILAJUSTESVERIFICACIO'
 import PERFILAJUSTESSUSCRIPCION from './screens/PERFILAJUSTESSUSCRIPCION'
-import PERFILAJUSTESSEGURIDAD from './screens/PERFILAJUSTESSEGURIDAD'
-import PERFILAJUSTESPRIVACIDAD from './screens/PERFILAJUSTESPRIVACIDAD'
-import PERFILAJUSTESPREVISUALIZ from './screens/PERFILAJUSTESPREVISUALIZ'
+import PerfilSeguridad from './screens/PerfilSeguridad'
+import PerfilPrivacidad from './screens/PerfilPrivacidad'
+import PerfilVisualizacionMyTree from './screens/PerfilVisualizacionMyTree'
 import PERFILDELUSUARIOVISITADO from './screens/PERFILDELUSUARIOVISITADO'
 import CONDOLENCIAS from './components/CONDOLENCIAS'
 // import Navigation from './screens/Navigation'
@@ -140,9 +140,9 @@ import PERFILANCESTROAJUSTES from './screens/PERFILANCESTROAJUSTES'
 import PERFILANCESTROAJUSTES1 from './screens/PERFILANCESTROAJUSTES1'
 import PERFILINFANTEAJUSTES from './screens/PERFILINFANTEAJUSTES'
 import PERFILDELUSUARIOVISITADO1 from './screens/PERFILDELUSUARIOVISITADO1'
-import PERFILAJUSTESCONFIGURACI from './screens/PERFILAJUSTESCONFIGURACI'
+import PerfilConfiguracion from './screens/PerfilConfiguracion'
 import MISAMIGOS from './screens/MISAMIGOS'
-import PERFILAJUSTES from './screens/PERFILAJUSTES'
+import PerfilAjustes from './screens/PerfilAjustes'
 import PERFILDELUSUARIOVISITADO2 from './screens/PERFILDELUSUARIOVISITADO2'
 import PERFILMIINFO from './screens/PERFILMIINFO'
 // import VotacionDeRetos from './screens/VotacionDeRetos'
@@ -884,18 +884,18 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="PERFILAJUSTESSEGURIDAD"
-            component={PERFILAJUSTESSEGURIDAD}
+            name="PerfilSeguridad"
+            component={PerfilSeguridad}
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="PERFILAJUSTESPRIVACIDAD"
-            component={PERFILAJUSTESPRIVACIDAD}
+            name="PerfilPrivacidad"
+            component={PerfilPrivacidad}
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="PERFILAJUSTESPREVISUALIZ"
-            component={PERFILAJUSTESPREVISUALIZ}
+            name="PerfilVisualizacionMyTree"
+            component={PerfilVisualizacionMyTree}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -934,8 +934,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="PERFILAJUSTESCONFIGURACI"
-            component={PERFILAJUSTESCONFIGURACI}
+            name="PerfilConfiguracion"
+            component={PerfilConfiguracion}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -944,8 +944,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="PERFILAJUSTES"
-            component={PERFILAJUSTES}
+            name="PerfilAjustes"
+            component={PerfilAjustes}
             options={{ headerShown: false }}
           />
           <Stack.Screen
