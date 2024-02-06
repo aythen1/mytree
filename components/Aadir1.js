@@ -75,7 +75,10 @@ const Aadir1 = () => {
         </View>
         <Pressable
           style={[styles.framePressable, styles.frameFlexBox]}
-          onPress={() => navigation.navigate('MIDIARIOPANTALLAPERSONAL')}
+          onPress={() => {
+            dispatch(setPanelAddFooter(false))
+            navigation.navigate('MIDIARIOPANTALLAPERSONAL')
+          }}
         >
           <View style={styles.groupParentFlexBox}>
             <Image

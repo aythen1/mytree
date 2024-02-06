@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react'
 import { Image } from 'expo-image'
 import { StyleSheet, View, Text, Pressable, Modal } from 'react-native'
-// import { LinearGradient } from 'expo-linear-gradient'
+import { LinearGradient } from 'expo-linear-gradient'
 import Fecha1 from '../components/Fecha1'
 import { useNavigation } from '@react-navigation/native'
 import { FontFamily, FontSize, Color, Padding, Border } from '../GlobalStyles'
@@ -53,7 +53,6 @@ const AADIRAADIRANCESTRO = () => {
               </Text>
               <Image
                 style={{ width: 24, height: 24 }}
-                // contentFit="cover"
                 source={require('../assets/iconlyboldfilter2.png')}
               />
             </View>
@@ -69,49 +68,19 @@ const AADIRAADIRANCESTRO = () => {
               <Text style={[styles.search, styles.searchTypo]}>12/3/2008</Text>
               <Image
                 style={{ width: 24, height: 24 }}
-                // contentFit="cover"
                 source={require('../assets/iconlylightoutlinecalendar.png')}
               />
             </View>
           </View>
 
-          {/* <View style={styles.fieldWithTitle1}>
-            <View style={styles.titleBase}>
-              <Text style={[styles.title, styles.titleTypo]}>
-                Fecha de defunción
-              </Text>
-            </View>
-            <View style={[styles.field, styles.fieldFlexBox]}>
-              <View style={styles.placeholderInput}>
-                <Text style={[styles.search, styles.searchTypo]}>
-                  12/3/2008
-                </Text>
-              </View>
-              <Pressable
-                style={[styles.iconlyboldfilter2, styles.backLayout]}
-                onPress={openIconlyLightOutlineCalendar}
-              >
-                <Image
-                  style={{ width: 24, height: 24 }}
-                  // contentFit="cover"
-                  source={require('../assets/iconlylightoutlinecalendar.png')}
-                />
-              </Pressable>
-            </View>
-          </View> */}
-
-          {/* <View style={styles.fieldWithTitle1}>
-            <View style={styles.titleBase}>
-              <Text style={[styles.title, styles.titleTypo]}>
-                Lugar de defunción
-              </Text>
-            </View>
-            <View style={[styles.field, styles.fieldFlexBox]}>
-              <View style={styles.placeholderInput}>
-                <Text style={[styles.search, styles.searchTypo]}>
-                  12/01/2024
-                </Text>
-              </View>
+          <View style={styles.titleBase}>
+            <Text style={[styles.title, styles.titleTypo]}>
+              Lugar de defunción
+            </Text>
+          </View>
+          <View style={[styles.field, styles.fieldFlexBox]}>
+            <View style={styles.placeholderInput}>
+              <Text style={[styles.search, styles.searchTypo]}>12/01/2024</Text>
             </View>
           </View>
 
@@ -128,112 +97,21 @@ const AADIRAADIRANCESTRO = () => {
                 </Text>
               </View>
             </View>
-          </View> */}
-        </View>
-        {/* <View style={[styles.image6Wrapper, styles.fieldFlexBox]}>
-          <Image
-            style={styles.image6Icon}
-            contentFit="cover"
-            source={require('../assets/image-6.png')}
-          />
-        </View>
-          <View style={styles.fieldWithTitle1}>
-            <View style={styles.titleBase}>
-              <Text style={[styles.title, styles.titleTypo]}>Sexo</Text>
-            </View>
-            <View style={[styles.field, styles.fieldFlexBox]}>
-              <View style={styles.placeholderInput}>
-                <Text style={[styles.search, styles.searchTypo]}>
-                  Fem o Masc
-                </Text>
-              </View>
-            </View>
           </View>
-          <View style={styles.fieldWithTitle1}>
-            <View style={styles.titleBase}>
-              <Text style={[styles.title, styles.titleTypo]}>
-                Fecha de defunción
-              </Text>
-            </View>
-            <View style={[styles.field, styles.fieldFlexBox]}>
-              <View style={styles.placeholderInput}>
-                <Text style={[styles.search, styles.searchTypo]}>
-                  12/3/2008
-                </Text>
-              </View>
-              <Pressable
-                style={[styles.iconlyboldfilter2, styles.backLayout]}
-                onPress={openIconlyLightOutlineCalendar}
-              >
-                <Image
-                  style={styles.iconLayout}
-                  contentFit="cover"
-                  source={require('../assets/iconlylightoutlinecalendar.png')}
-                />
-              </Pressable>
-            </View>
-          </View>
-          <View style={styles.fieldWithTitle1}>
-            <View style={styles.titleBase}>
-              <Text style={[styles.title, styles.titleTypo]}>
-                Lugar de defunción
-              </Text>
-            </View>
-            <View style={[styles.field, styles.fieldFlexBox]}>
-              <View style={styles.placeholderInput}>
-                <Text style={[styles.search, styles.searchTypo]}>
-                  12/01/2024
-                </Text>
-              </View>
-            </View>
-          </View>
-          <View style={styles.fieldWithTitle1}>
-            <View style={styles.titleBase}>
-              <Text style={[styles.title, styles.titleTypo]}>
-                Motivo de defunción
-              </Text>
-            </View>
-            <View style={[styles.field, styles.fieldFlexBox]}>
-              <View style={styles.placeholderInput}>
-                <Text style={[styles.search, styles.searchTypo]}>
-                  Muerte natural
-                </Text>
-              </View>
-            </View>
-          </View>
-        </View>
-        <LinearGradient
-          style={[styles.button, styles.parentPosition]}
-          locations={[0, 1]}
-          colors={['#dee274', '#7ec18c']}
-        >
-          <Pressable
-            style={[styles.pressable, styles.pressableFlexBox]}
-            onPress={() => navigation.navigate('PERFILIDANCESTRO')}
+
+          <LinearGradient
+            style={styles.button}
+            locations={[0, 1]}
+            colors={['#dee274', '#7ec18c']}
           >
-            <Text style={[styles.signIn, styles.searchTypo]}>Añadir</Text>
-          </Pressable>
-        </LinearGradient>
-        <View style={[styles.backParent, styles.pressableFlexBox]}>
-          <Pressable
-            style={styles.backLayout}
-            onPress={() => navigation.navigate('PERFILCREARIDINFANTEANCE')}
-          >
-            <Image
-              style={[styles.icon1, styles.iconLayout]}
-              contentFit="cover"
-              source={require('../assets/back.png')}
-            />
-          </Pressable>
-          <Text style={[styles.aadirAncestro, styles.titleTypo]}>
-            Añadir Ancestro
-          </Text>
+            <Pressable
+              style={[styles.pressable, styles.pressableFlexBox]}
+              onPress={() => navigation.navigate('PERFILIDANCESTRO')}
+            >
+              <Text style={[styles.signIn, styles.searchTypo]}>Añadir</Text>
+            </Pressable>
+          </LinearGradient>
         </View>
-        <Image
-          style={styles.navigationIcon}
-          contentFit="cover"
-          source={require('../assets/navigation12.png')}
-        /> */}
       </View>
 
       <Modal
@@ -257,14 +135,10 @@ const styles = StyleSheet.create({
   fieldFlexBox: {
     // alignItems: 'center',
     // flexDirection: 'row',
-    borderWidth: 1,
+    // borderWidth: 1,
     borderRadius: 50,
-    height: 70,
-    borderColor: 'green'
-  },
-  parentPosition: {
-    left: 20
-    // position: 'absolute'
+    height: 60
+    // borderColor: 'green'
   },
   titleTypo: {
     fontFamily: FontFamily.lato,
@@ -317,8 +191,8 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     letterSpacing: 0,
     width: '100%',
-    borderRadius: 15,
-    padding: 8
+    borderRadius: 15
+    // padding: 8
   },
   placeholderInput: {
     flexDirection: 'row',
@@ -369,8 +243,10 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   button: {
-    top: 744,
-    width: 388
+    // top: 744,
+    width: '100%',
+    borderRadius: 15,
+    marginTop: 80
   },
 
   aadirAncestro: {
