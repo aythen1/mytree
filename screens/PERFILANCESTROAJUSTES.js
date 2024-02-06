@@ -1,15 +1,92 @@
-import * as React from 'react'
+import React from 'react'
 import { Image } from 'expo-image'
-import { StyleSheet, View, Text, Pressable } from 'react-native'
+import { StyleSheet, View, Text, Pressable, ScrollView } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { Color, FontFamily, FontSize, Border } from '../GlobalStyles'
+import { useSelector } from 'react-redux'
 
 const PERFILANCESTROAJUSTES = () => {
+  const { condolences } = useSelector((state) => state.book)
   const navigation = useNavigation()
 
   return (
-    <View style={[styles.perfilAncestroAjustes, styles.iconLayout]}>
-      <View style={[styles.frameParent, styles.parentIconPosition]}>
+    <ScrollView style={{ flex: 1 }}>
+      <View style={[styles.perfilAncestroAjustes, styles.iconLayout]}>
+        <Image
+          style={[styles.image6Icon]}
+          contentFit="cover"
+          source={require('../assets/image-6.png')}
+        />
+        <View style={styles.backParent}>
+          <Pressable onPress={() => navigation.goBack()}>
+            <Image
+              style={[styles.icon]}
+              contentFit="cover"
+              source={require('../assets/back.png')}
+            />
+          </Pressable>
+          <Text style={[styles.libroDeCondolencias, styles.papFuisteUnTypo]}>
+            Libro de condolencias
+          </Text>
+
+          {/* <Image
+            style={[styles.navigationIcon, styles.iconPosition]}
+            contentFit="cover"
+            source={require('../assets/navigation31.png')}
+          /> */}
+        </View>
+        <Image
+          style={styles.maskGroupIcon}
+          contentFit="cover"
+          source={require('../assets/mask-group17.png')}
+        />
+        <Image
+          style={[styles.vectorIcon, styles.iconPosition]}
+          contentFit="cover"
+          source={require('../assets/vector23.png')}
+        />
+
+        {condolences.map((condolence) => (
+          <View key={condolence.message}>
+            <View style={styles.aatarWrapper}>
+              <Image
+                style={styles.aatarIcon}
+                contentFit="cover"
+                source={require('../assets/aatar8.png')}
+              />
+              <View style={styles.parent}>
+                <Text style={[styles.text, styles.textTypo]}>
+                  {condolence.day}
+                </Text>
+                <Text style={[styles.mayo2008, styles.textTypo]}>
+                  {condolence.month} {condolence.year}
+                </Text>
+              </View>
+            </View>
+            <Text style={[styles.papFuisteUn, styles.frameViewSpaceBlock]}>
+              {condolence.message}
+            </Text>
+          </View>
+        ))}
+
+        {/* 
+      <View style={styles.aatarWrapper}>
+        <Image
+          style={styles.aatarIcon}
+          contentFit="cover"
+          source={require('../assets/aatar8.png')}
+        />
+        <View style={styles.parent}>
+          <Text style={[styles.text, styles.textTypo]}>02</Text>
+          <Text style={[styles.mayo2008, styles.textTypo]}>mayo 2008</Text>
+        </View>
+      </View>
+      <Text style={[styles.papFuisteUn, styles.frameViewSpaceBlock]}>
+        Papá, fuiste un gran hombre, un gran esposo y sobre todo un gran padre.
+        Te echaré mucho de menos
+      </Text> */}
+
+        {/* <View style={[styles.frameParent, styles.parentIconPosition]}>
         <View style={styles.frameGroup}>
           <View style={styles.frameContainer}>
             <View style={styles.aatarWrapper}>
@@ -104,7 +181,7 @@ const PERFILANCESTROAJUSTES = () => {
         </Text>
       </View>
       <Image
-        style={[styles.image6Icon, styles.parentIconPosition]}
+        style={[styles.image6Icon]}
         contentFit="cover"
         source={require('../assets/image-6.png')}
       />
@@ -122,8 +199,9 @@ const PERFILANCESTROAJUSTES = () => {
         style={[styles.vectorIcon, styles.iconPosition]}
         contentFit="cover"
         source={require('../assets/vector23.png')}
-      />
-    </View>
+      /> */}
+      </View>
+    </ScrollView>
   )
 }
 
@@ -132,10 +210,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     width: '100%'
   },
-  parentIconPosition: {
-    left: 20,
-    position: 'absolute'
-  },
+
   textTypo: {
     textAlign: 'center',
     color: Color.negro,
@@ -147,7 +222,6 @@ const styles = StyleSheet.create({
     width: 388
   },
   papFuisteUnTypo: {
-    textAlign: 'left',
     color: Color.negro,
     fontFamily: FontFamily.lato
   },
@@ -160,7 +234,9 @@ const styles = StyleSheet.create({
     height: 36
   },
   aatarWrapper: {
-    alignItems: 'center'
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 50
   },
   text: {
     lineHeight: 36,
@@ -215,7 +291,8 @@ const styles = StyleSheet.create({
     backgroundColor: Color.white
   },
   icon: {
-    height: '100%'
+    width: 24,
+    height: 24
   },
   back: {
     width: 24,
@@ -227,8 +304,9 @@ const styles = StyleSheet.create({
     fontSize: FontSize.size_5xl
   },
   backParent: {
-    top: 64,
-    justifyContent: 'center',
+    width: '100%',
+    height: 40,
+    // justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row'
   },
@@ -244,21 +322,25 @@ const styles = StyleSheet.create({
     width: 428
   },
   maskGroupIcon: {
-    top: 133,
+    marginTop: 30,
+    // left: -350,
     height: 233,
-    width: 388
+    width: '100%'
   },
   vectorIcon: {
-    marginTop: -243,
-    marginLeft: -37.5,
-    top: '50%',
+    // marginTop: -243,
+    // marginLeft: -37.5,
+    // top: '50%',
     width: 75,
     height: 60
   },
   perfilAncestroAjustes: {
+    marginTop: 30,
+    paddingBottom: 20,
+    paddingHorizontal: 15,
     borderRadius: Border.br_31xl,
-    flex: 1,
-    height: 926,
+    // flex: 1,
+    // height: 926,
     backgroundColor: Color.white,
     width: '100%'
   }
