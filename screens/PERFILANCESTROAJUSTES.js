@@ -28,22 +28,11 @@ const PERFILANCESTROAJUSTES = () => {
           <Text style={[styles.libroDeCondolencias, styles.papFuisteUnTypo]}>
             Libro de condolencias
           </Text>
-
-          {/* <Image
-            style={[styles.navigationIcon, styles.iconPosition]}
-            contentFit="cover"
-            source={require('../assets/navigation31.png')}
-          /> */}
         </View>
         <Image
           style={styles.maskGroupIcon}
           contentFit="cover"
           source={require('../assets/mask-group17.png')}
-        />
-        <Image
-          style={[styles.vectorIcon, styles.iconPosition]}
-          contentFit="cover"
-          source={require('../assets/vector23.png')}
         />
 
         {condolences.map((condolence) => (
@@ -68,138 +57,6 @@ const PERFILANCESTROAJUSTES = () => {
             </Text>
           </View>
         ))}
-
-        {/* 
-      <View style={styles.aatarWrapper}>
-        <Image
-          style={styles.aatarIcon}
-          contentFit="cover"
-          source={require('../assets/aatar8.png')}
-        />
-        <View style={styles.parent}>
-          <Text style={[styles.text, styles.textTypo]}>02</Text>
-          <Text style={[styles.mayo2008, styles.textTypo]}>mayo 2008</Text>
-        </View>
-      </View>
-      <Text style={[styles.papFuisteUn, styles.frameViewSpaceBlock]}>
-        Papá, fuiste un gran hombre, un gran esposo y sobre todo un gran padre.
-        Te echaré mucho de menos
-      </Text> */}
-
-        {/* <View style={[styles.frameParent, styles.parentIconPosition]}>
-        <View style={styles.frameGroup}>
-          <View style={styles.frameContainer}>
-            <View style={styles.aatarWrapper}>
-              <Image
-                style={styles.aatarIcon}
-                contentFit="cover"
-                source={require('../assets/aatar8.png')}
-              />
-            </View>
-            <View style={styles.parent}>
-              <Text style={[styles.text, styles.textTypo]}>02</Text>
-              <Text style={[styles.mayo2008, styles.textTypo]}>mayo 2008</Text>
-            </View>
-          </View>
-          <Text style={[styles.papFuisteUn, styles.frameViewSpaceBlock]}>
-            Papá, fuiste un gran hombre, un gran esposo y sobre todo un gran
-            padre. Te echaré mucho de menos
-          </Text>
-        </View>
-        <View style={styles.frameViewSpaceBlock}>
-          <View style={styles.frameContainer}>
-            <View style={styles.aatarWrapper}>
-              <Image
-                style={styles.aatarIcon}
-                contentFit="cover"
-                source={require('../assets/aatar8.png')}
-              />
-            </View>
-            <View style={styles.parent}>
-              <Text style={[styles.text, styles.textTypo]}>02</Text>
-              <Text style={[styles.mayo2008, styles.textTypo]}>mayo 2008</Text>
-            </View>
-          </View>
-          <Text style={[styles.papFuisteUn, styles.frameViewSpaceBlock]}>
-            Papá, nunca olvidaré como me hiciste sentir, has sido un ejemplo
-            tanto para mi como para todos.
-          </Text>
-        </View>
-        <View style={styles.frameViewSpaceBlock}>
-          <View style={styles.frameContainer}>
-            <View style={styles.aatarWrapper}>
-              <Image
-                style={styles.aatarIcon}
-                contentFit="cover"
-                source={require('../assets/aatar8.png')}
-              />
-            </View>
-            <View style={styles.parent}>
-              <Text style={[styles.text, styles.textTypo]}>02</Text>
-              <Text style={[styles.mayo2008, styles.textTypo]}>mayo 2008</Text>
-            </View>
-          </View>
-          <Text style={[styles.papFuisteUn, styles.frameViewSpaceBlock]}>
-            Papá, nunca olvidaré como me hiciste sentir, has sido un ejemplo
-            tanto para mi como para todos.
-          </Text>
-        </View>
-        <View style={styles.frameViewSpaceBlock}>
-          <View style={styles.frameContainer}>
-            <View style={styles.aatarWrapper}>
-              <Image
-                style={styles.aatarIcon}
-                contentFit="cover"
-                source={require('../assets/aatar8.png')}
-              />
-            </View>
-            <View style={styles.parent}>
-              <Text style={[styles.text, styles.textTypo]}>02</Text>
-              <Text style={[styles.mayo2008, styles.textTypo]}>mayo 2008</Text>
-            </View>
-          </View>
-          <Text style={[styles.papFuisteUn, styles.frameViewSpaceBlock]}>
-            Abuelo, nunca olvidaré cómo me hacías comer acelgas… me recuerdan a
-            ti
-          </Text>
-        </View>
-      </View>
-      <View style={styles.perfilAncestroAjustesChild} />
-      <View style={[styles.backParent, styles.parentIconPosition]}>
-        <Pressable
-          style={styles.back}
-          onPress={() => navigation.navigate('PERFILIDANCESTRO')}
-        >
-          <Image
-            style={[styles.icon, styles.iconLayout]}
-            contentFit="cover"
-            source={require('../assets/back.png')}
-          />
-        </Pressable>
-        <Text style={[styles.libroDeCondolencias, styles.papFuisteUnTypo]}>
-          Libro de condolencias
-        </Text>
-      </View>
-      <Image
-        style={[styles.image6Icon]}
-        contentFit="cover"
-        source={require('../assets/image-6.png')}
-      />
-      <Image
-        style={[styles.navigationIcon, styles.iconPosition]}
-        contentFit="cover"
-        source={require('../assets/navigation31.png')}
-      />
-      <Image
-        style={[styles.maskGroupIcon, styles.parentIconPosition]}
-        contentFit="cover"
-        source={require('../assets/mask-group17.png')}
-      />
-      <Image
-        style={[styles.vectorIcon, styles.iconPosition]}
-        contentFit="cover"
-        source={require('../assets/vector23.png')}
-      /> */}
       </View>
     </ScrollView>
   )
