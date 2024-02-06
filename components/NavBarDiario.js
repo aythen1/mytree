@@ -1,80 +1,68 @@
-import * as React from 'react'
-import { StyleSheet, View, Text, Pressable } from 'react-native'
-import { LinearGradient } from 'expo-linear-gradient'
+import React from 'react'
+import { StyleSheet, View } from 'react-native'
+
 import { Image } from 'expo-image'
 import { useNavigation } from '@react-navigation/native'
 import { Color, FontFamily, Padding, Border, FontSize } from '../GlobalStyles'
-import NavBarDiario from '../components/NavBarDiario'
 
-const MIDIARIOENTRADATEXTOPL7 = () => {
+const NavBarDiario = () => {
   const navigation = useNavigation()
 
   return (
     <View style={styles.miDiarioEntradaTextoPl}>
-      <NavBarDiario />
-      <LinearGradient
-        style={[
-          styles.miDiarioEntradaTextoPlChild,
-          styles.navigationIconLayout
-        ]}
-        locations={[0, 1]}
-        colors={['rgba(221, 219, 246, 0.37)', 'rgba(245, 245, 247, 0)']}
-      />
-      <Pressable
-        style={[styles.frameParent, styles.image6IconPosition]}
-        onPress={() => navigation.navigate('MIDIARIOENTRADATEXTOPL1')}
-      >
-        <View style={[styles.parent, styles.parentFlexBox]}>
-          <Text style={[styles.text, styles.textTypo]}>07</Text>
-          <Text style={[styles.jul2023, styles.textTypo]}>jul. 2023</Text>
-          <Image
-            style={styles.iconlycurvedarrowDown2}
-            contentFit="cover"
-            source={require('../assets/iconlycurvedarrowdown2.png')}
-          />
-        </View>
-        <Text style={[styles.descubriendoElMundo, styles.hoyLoHeFlexBox]}>
-          Descubriendo el mundo
-        </Text>
-        <Text
-          style={[styles.hoyLoHe, styles.hoyLoHeFlexBox]}
-        >{`👫 Hoy lo he compartido con... 
-😊 Hoy me siento/nos sentimos...
-
-🌍 Lugar Explorado
-🌟 El momento más emocionante fue...
-😮 Lo que más nos impactó fue...
-🌞 El mejor momento del día fue...`}</Text>
-      </Pressable>
-      <Image
-        style={[styles.image6Icon, styles.image6IconPosition]}
-        contentFit="cover"
-        source={require('../assets/image-6.png')}
-      />
-      <View
-        style={[styles.iconlylightOutlinesearchParent, styles.parentFlexBox]}
-      >
-        <Image
-          style={styles.iconlylightOutlinesearch}
-          contentFit="cover"
-          source={require('../assets/iconlylightoutlinesearch5.png')}
-        />
-        <Image
-          style={[styles.documentIcon, styles.documentIconLayout]}
-          contentFit="cover"
-          source={require('../assets/document3.png')}
-        />
-        <Image
-          style={styles.documentIconLayout}
-          contentFit="cover"
-          source={require('../assets/iconlylightoutlinesetting1.png')}
-        />
-      </View>
       <Image
         style={[styles.navigationIcon, styles.navigationIconLayout]}
         contentFit="cover"
         source={require('../assets/navigation25.png')}
       />
+      <View style={[styles.frameGroup, styles.frameFlexBox]}>
+        <View style={[styles.vectorWrapper, styles.vectorFlexBox]}>
+          <Image
+            style={styles.vectorIcon}
+            contentFit="cover"
+            source={require('../assets/vector55.png')}
+          />
+        </View>
+        <View>
+          <View style={[styles.frameChild, styles.frameLayout]} />
+          <Image
+            style={[styles.vectorIcon1, styles.vectorIconPosition1]}
+            contentFit="cover"
+            source={require('../assets/vector61.png')}
+          />
+        </View>
+        <View>
+          <View style={[styles.frameChild, styles.frameLayout]} />
+          <Image
+            style={[styles.vectorIcon2, styles.vectorIconPosition]}
+            contentFit="cover"
+            source={require('../assets/vector57.png')}
+          />
+        </View>
+        <View style={styles.rectangleParent}>
+          <View style={styles.frameLayout} />
+          <Image
+            style={[styles.vectorIcon3, styles.vectorIconPosition]}
+            contentFit="cover"
+            source={require('../assets/vector58.png')}
+          />
+        </View>
+        <View style={[styles.vectorContainer, styles.vectorFlexBox]}>
+          <Image
+            style={styles.vectorIcon4}
+            contentFit="cover"
+            source={require('../assets/vector68.png')}
+          />
+        </View>
+        <View style={styles.rectangleParent}>
+          <View style={styles.frameLayout} />
+          <Image
+            style={[styles.vectorIcon5, styles.vectorIconPosition1]}
+            contentFit="cover"
+            source={require('../assets/vector63.png')}
+          />
+        </View>
+      </View>
     </View>
   )
 }
@@ -90,7 +78,8 @@ const styles = StyleSheet.create({
   },
   parentFlexBox: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    top: 100
   },
   textTypo: {
     textAlign: 'center',
@@ -279,10 +268,12 @@ const styles = StyleSheet.create({
     borderRadius: Border.br_31xl,
     backgroundColor: Color.white,
     width: '100%',
-    height: 926,
+    height: 40,
+
     overflow: 'hidden',
     flex: 1
+    // top: 100
   }
 })
 
-export default MIDIARIOENTRADATEXTOPL7
+export default NavBarDiario

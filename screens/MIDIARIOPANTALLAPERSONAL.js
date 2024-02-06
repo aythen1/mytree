@@ -31,177 +31,266 @@ const MIDIARIOPANTALLAPERSONAL = () => {
 
   return (
     <>
-      <View style={styles.miDiarioPantallaPersonal}>
-        <View style={{ marginTop: 10 }}>
-          <Image
-            style={styles.image6Icon}
-            contentFit="cover"
-            source={require('../assets/image-6.png')}
-          />
-          <View style={styles.iconlylightOutlinesearchParent}>
+      <ScrollView style={{ flex: 1 }}>
+        <View style={styles.miDiarioPantallaPersonal}>
+          <View style={{ marginTop: 10 }}>
             <Image
-              style={styles.iconlylightOutlinesearch}
+              style={styles.image6Icon}
               contentFit="cover"
-              source={require('../assets/iconlylightoutlinesearch5.png')}
+              source={require('../assets/image-6.png')}
             />
-            <Image
-              style={[styles.documentIcon, styles.documentIconLayout]}
-              contentFit="cover"
-              source={require('../assets/document3.png')}
-            />
-            <Image
-              style={styles.documentIconLayout}
-              contentFit="cover"
-              source={require('../assets/iconlylightoutlinesetting1.png')}
-            />
+            <View style={styles.iconlylightOutlinesearchParent}>
+              <Image
+                style={styles.iconlylightOutlinesearch}
+                contentFit="cover"
+                source={require('../assets/iconlylightoutlinesearch5.png')}
+              />
+              <Image
+                style={[styles.documentIcon, styles.documentIconLayout]}
+                contentFit="cover"
+                source={require('../assets/document3.png')}
+              />
+              <Image
+                style={styles.documentIconLayout}
+                contentFit="cover"
+                source={require('../assets/iconlylightoutlinesetting1.png')}
+              />
+            </View>
           </View>
-        </View>
 
-        <View style={styles.frameParent12}>
-          <View style={styles.ionmenuParent}>
-            <Image
-              style={[styles.ionmenuIcon, styles.ionmenuIconLayout]}
-              contentFit="cover"
-              source={require('../assets/ionmenu2.png')}
-            />
-            <Text style={[styles.miDiario, styles.textTypo]}>Mi Diario</Text>
-          </View>
-          <Pressable
-            style={styles.iconlylightOutlineinfoSqua}
-            onPress={openIconlyLightOutlineInfoSqua}
-          >
-            <Image
-              style={styles.icon}
-              contentFit="cover"
-              source={require('../assets/iconlylightoutlineinfosquare.png')}
-            />
-          </Pressable>
-        </View>
-
-        <View style={styles.ltimosDiariosFamiliaresPublParent}>
-          <Text style={[styles.ltimosDiariosFamiliares, styles.textTypo]}>
-            Últimos diarios familiares publicados
-          </Text>
-          <View style={styles.stories}>
-            <ScrollView
-              horizontal={true}
-              showsHorizontalScrollIndicator={false}
+          <View style={styles.frameParent12}>
+            <View style={styles.ionmenuParent}>
+              <Image
+                style={[styles.ionmenuIcon, styles.ionmenuIconLayout]}
+                contentFit="cover"
+                source={require('../assets/ionmenu2.png')}
+              />
+              <Text style={[styles.miDiario, styles.textTypo]}>Mi Diario</Text>
+            </View>
+            <Pressable
+              style={styles.iconlylightOutlineinfoSqua}
+              onPress={openIconlyLightOutlineInfoSqua}
             >
-              {diaries.map((diary) => (
-                <View key={diary.name} style={styles.faritaLayout}>
-                  <Pressable
-                    style={[styles.aatar, styles.aatarPosition]}
-                    onPress={() => navigation.navigate('MUROINFORMACIN1')}
-                  >
-                    <Image
-                      style={styles.icon}
-                      contentFit="cover"
-                      source={require('../assets/aatar4.png')}
-                    />
-                  </Pressable>
-                  <View
-                    style={[styles.benjaminWrapper, styles.ionmenuIconLayout]}
-                  >
-                    <Text style={[styles.benjamin1, styles.text1Typo]}>
-                      {diary.name}
-                    </Text>
+              <Image
+                style={styles.icon}
+                contentFit="cover"
+                source={require('../assets/iconlylightoutlineinfosquare.png')}
+              />
+            </Pressable>
+          </View>
+
+          <View style={styles.ltimosDiariosFamiliaresPublParent}>
+            <Text style={[styles.ltimosDiariosFamiliares, styles.textTypo]}>
+              Últimos diarios familiares publicados
+            </Text>
+            <View style={styles.stories}>
+              <ScrollView
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+              >
+                {diaries.map((diary) => (
+                  <View key={diary.name} style={styles.faritaLayout}>
+                    <Pressable
+                      style={[styles.aatar, styles.aatarPosition]}
+                      onPress={() => navigation.navigate('MUROINFORMACIN1')}
+                    >
+                      <Image
+                        style={styles.icon}
+                        contentFit="cover"
+                        source={require('../assets/aatar4.png')}
+                      />
+                    </Pressable>
+                    <View
+                      style={[styles.benjaminWrapper, styles.ionmenuIconLayout]}
+                    >
+                      <Text style={[styles.benjamin1, styles.text1Typo]}>
+                        {diary.name}
+                      </Text>
+                    </View>
                   </View>
+                ))}
+              </ScrollView>
+            </View>
+          </View>
+
+          <View style={styles.rectangleGroup}>
+            {/* <View style={[styles.frameItem, styles.frameChildLayout]} /> */}
+            <View style={[styles.frameContainer]}>
+              <View>
+                <View>
+                  <Text style={[styles.enBlancoO, styles.textTypo]}>
+                    Mi reflexión diaria
+                  </Text>
                 </View>
-              ))}
-            </ScrollView>
-          </View>
-        </View>
-
-        <View style={styles.rectangleGroup}>
-          {/* <View style={[styles.frameItem, styles.frameChildLayout]} /> */}
-          <View style={[styles.frameContainer]}>
-            <View>
-              <View>
-                <Text style={[styles.enBlancoO, styles.textTypo]}>
-                  Mi reflexión diaria
-                </Text>
               </View>
+              <Image
+                style={styles.vectorIcon}
+                contentFit="cover"
+                source={require('../assets/vector34.png')}
+              />
             </View>
+          </View>
+
+          <View style={styles.rectangleGroup2}>
+            <View style={[styles.frameContainer]}>
+              <View>
+                <View>
+                  <Text style={[styles.enBlancoO, styles.textTypo]}>
+                    Celebrando Logros
+                  </Text>
+                </View>
+              </View>
+              <Image
+                style={styles.vectorIcon1}
+                contentFit="cover"
+                source={require('../assets/vector35.png')}
+              />
+            </View>
+          </View>
+
+          <View style={styles.rectangleGroup3}>
+            <View style={[styles.frameContainer]}>
+              <View>
+                <View>
+                  <Text style={[styles.enBlancoO, styles.textTypo]}>
+                    Desafíos Superados
+                  </Text>
+                </View>
+              </View>
+              <Image
+                style={styles.vectorIcon}
+                contentFit="cover"
+                source={require('../assets/vector36.png')}
+              />
+            </View>
+          </View>
+
+          <View style={styles.rectangleGroup4}>
+            <View style={[styles.frameContainer]}>
+              <View>
+                <View>
+                  <Text style={[styles.enBlancoO, styles.textTypo]}>
+                    Risas y Anécdotas
+                  </Text>
+                </View>
+              </View>
+              <Image
+                style={styles.vectorIcon3}
+                contentFit="cover"
+                source={require('../assets/vector37.png')}
+              />
+            </View>
+          </View>
+
+          <Pressable
+            style={styles.rectangleGroup5}
+            onPress={() => navigation.navigate('MIDIARIOENTRADATEXTOPL7')}
+          >
+            <View style={[styles.frameContainer]}>
+              <View>
+                <View>
+                  <Text style={[styles.enBlancoO, styles.textTypo]}>
+                    Descubriendo el mundo
+                  </Text>
+                </View>
+              </View>
+              <Image
+                style={styles.vectorIcon4}
+                contentFit="cover"
+                source={require('../assets/vector38.png')}
+              />
+            </View>
+          </Pressable>
+
+          <View
+            style={{
+              borderWidth: 1,
+              borderColor: Color.grisClaro,
+              marginVertical: 20
+            }}
+          />
+
+          <View style={styles.ltimasEntradasParent}>
+            <Text style={[styles.ltimosDiariosFamiliares, styles.textTypo]}>
+              Últimas entradas
+            </Text>
             <Image
-              style={styles.vectorIcon}
+              style={styles.iconlyboldfilter2}
               contentFit="cover"
-              source={require('../assets/vector34.png')}
+              source={require('../assets/iconlyboldfilter21.png')}
             />
           </View>
-        </View>
 
-        <View style={styles.rectangleGroup2}>
-          <View style={[styles.frameContainer]}>
-            <View>
-              <View>
-                <Text style={[styles.enBlancoO, styles.textTypo]}>
-                  Celebrando Logros
-                </Text>
+          <Pressable
+            style={styles.frameParent5}
+            onPress={() => navigation.navigate('MIDIARIOENTRADATEXTOPL6')}
+          >
+            <View style={styles.frameParent6}>
+              <View style={styles.frameParent7}>
+                <View style={styles.aatarWrapper}>
+                  <Image
+                    style={styles.aatarIcon3}
+                    contentFit="cover"
+                    source={require('../assets/aatar7.png')}
+                  />
+                </View>
+                <View style={styles.parent}>
+                  <Text style={[styles.text1, styles.text1Typo]}>07</Text>
+                  <Text style={[styles.jul2023, styles.text1Typo]}>
+                    jul. 2023
+                  </Text>
+                </View>
               </View>
+              <Text style={styles.hoyHemosVisitado}>
+                Hoy hemos visitado en Tokio un restaurante que nos ha
+                encantado...
+              </Text>
             </View>
-            <Image
-              style={styles.vectorIcon1}
-              contentFit="cover"
-              source={require('../assets/vector35.png')}
-            />
-          </View>
-        </View>
-
-        <View style={styles.rectangleGroup3}>
-          <View style={[styles.frameContainer]}>
-            <View>
-              <View>
-                <Text style={[styles.enBlancoO, styles.textTypo]}>
-                  Desafíos Superados
-                </Text>
+            <View style={styles.frameParent8}>
+              <View style={styles.frameParent7}>
+                <View style={styles.aatarWrapper}>
+                  <Image
+                    style={styles.aatarIcon3}
+                    contentFit="cover"
+                    source={require('../assets/aatar7.png')}
+                  />
+                </View>
+                <View style={styles.parent}>
+                  <Text style={[styles.text1, styles.text1Typo]}>07</Text>
+                  <Text style={[styles.jul2023, styles.text1Typo]}>
+                    jul. 2023
+                  </Text>
+                </View>
               </View>
+              <Text style={styles.hoyHemosVisitado}>
+                Uriel y yo estamos muy contentos de empezar nuestro viaje a
+                Japón...
+              </Text>
             </View>
-            <Image
-              style={styles.vectorIcon}
-              contentFit="cover"
-              source={require('../assets/vector36.png')}
-            />
-          </View>
-        </View>
-
-        <View style={styles.rectangleGroup4}>
-          <View style={[styles.frameContainer]}>
-            <View>
-              <View>
-                <Text style={[styles.enBlancoO, styles.textTypo]}>
-                  Risas y Anécdotas
-                </Text>
+            <View style={styles.frameParent8}>
+              <View style={styles.frameParent7}>
+                <View style={styles.aatarWrapper}>
+                  <Image
+                    style={styles.aatarIcon3}
+                    contentFit="cover"
+                    source={require('../assets/aatar7.png')}
+                  />
+                </View>
+                <View style={styles.parent}>
+                  <Text style={[styles.text1, styles.text1Typo]}>07</Text>
+                  <Text style={[styles.jul2023, styles.text1Typo]}>
+                    jul. 2023
+                  </Text>
+                </View>
               </View>
+              <Text style={styles.hoyHemosVisitado}>
+                Uriel y yo estamos muy contentos de empezar nuestro viaje a
+                Japón...
+              </Text>
             </View>
-            <Image
-              style={styles.vectorIcon3}
-              contentFit="cover"
-              source={require('../assets/vector37.png')}
-            />
-          </View>
-        </View>
+          </Pressable>
 
-        <Pressable
-          style={styles.rectangleGroup5}
-          onPress={() => navigation.navigate('MIDIARIOENTRADATEXTOPL7')}
-        >
-          <View style={[styles.frameContainer]}>
-            <View>
-              <View>
-                <Text style={[styles.enBlancoO, styles.textTypo]}>
-                  Descubriendo el mundo
-                </Text>
-              </View>
-            </View>
-            <Image
-              style={styles.vectorIcon4}
-              contentFit="cover"
-              source={require('../assets/vector38.png')}
-            />
-          </View>
-        </Pressable>
-
-        {/* <View style={styles.frameParent}>
+          {/* <View style={styles.frameParent}>
           <View>
             <View style={[styles.frameChild, styles.frameChildLayout]} />
             <View style={styles.frameGroup}>
@@ -503,7 +592,8 @@ const MIDIARIOPANTALLAPERSONAL = () => {
           />
         </View>
         */}
-      </View>
+        </View>
+      </ScrollView>
 
       {/* <Modal
         animationType="fade"
@@ -840,31 +930,35 @@ const styles = StyleSheet.create({
     color: Color.negro,
     fontFamily: FontFamily.lato,
     alignItems: 'center',
-    width: 388
+    width: '100%'
   },
   frameParent6: {
-    width: 388
+    width: '100%'
   },
   frameParent8: {
     marginTop: 20,
     width: 388
   },
   frameParent5: {
-    top: 644,
-    height: 163,
-    left: 20,
-    position: 'absolute'
+    // top: 644,
+    height: 163
+    // left: 20,
+    // position: 'absolute'
   },
   iconlyboldfilter2: {
-    marginLeft: 213,
+    // marginLeft: 213,
     height: 24,
     width: 24
   },
   ltimasEntradasParent: {
-    top: 600,
+    paddingHorizontal: 15,
     flexDirection: 'row',
-    left: 20,
-    position: 'absolute'
+    alignItems: 'center',
+    justifyContent: 'space-between'
+    // top: 600,
+    // flexDirection: 'row',
+    // left: 20,
+    // position: 'absolute'
   },
   navigationIcon: {
     top: 822,
@@ -912,9 +1006,10 @@ const styles = StyleSheet.create({
   },
   miDiarioPantallaPersonal: {
     borderRadius: Border.br_31xl,
-    flex: 1,
-    height: 926,
-    overflow: 'hidden',
+    // flex: 1,
+    paddingBottom: 50,
+    height: 1200,
+    // overflow: 'hidden',
     width: '100%',
     backgroundColor: Color.white
   }
