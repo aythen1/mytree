@@ -1,11 +1,11 @@
-import * as React from 'react'
+import React from 'react'
 import { Image } from 'expo-image'
 import { StyleSheet, View, Pressable, Text, ScrollView } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
 import { FontSize, Color, FontFamily, Padding, Border } from '../GlobalStyles'
 
-const PERFILAJUSTES = () => {
+const PerfilAjustes = () => {
   const navigation = useNavigation()
 
   return (
@@ -18,7 +18,7 @@ const PERFILAJUSTES = () => {
         <View style={styles.frameParent}>
           <View style={styles.frameGroup}>
             <View>
-              <View style={styles.parentFlexBox}>
+              <View style={styles.parentIcons}>
                 <Image
                   style={styles.image6Icon}
                   contentFit="cover"
@@ -31,7 +31,7 @@ const PERFILAJUSTES = () => {
                     source={require('../assets/iconlylightoutlinecalendar5.png')}
                   />
                   <Image
-                    style={[styles.documentIcon, styles.documentIconLayout]}
+                    style={styles.documentIconLayout}
                     contentFit="cover"
                     source={require('../assets/document9.png')}
                   />
@@ -45,7 +45,7 @@ const PERFILAJUSTES = () => {
               <View style={[styles.backParent, styles.parentFlexBox]}>
                 <Pressable
                   style={styles.iconlylightOutlinecalendar}
-                  onPress={() => navigation.navigate('PERFILMIINFO')}
+                  onPress={() => navigation.navigate('Perfil')}
                 >
                   <Image
                     style={[styles.icon, styles.iconLayout1]}
@@ -56,6 +56,7 @@ const PERFILAJUSTES = () => {
                 <Text style={styles.ajustes}>Ajustes</Text>
               </View>
             </View>
+
             <View style={styles.frameView}>
               <View style={styles.parentFlexBox}>
                 <Image
@@ -70,9 +71,7 @@ const PERFILAJUSTES = () => {
               <View style={styles.frameParent2}>
                 <Pressable
                   style={styles.parentFlexBox}
-                  onPress={() =>
-                    navigation.navigate('PERFILAJUSTESCONFIGURACI')
-                  }
+                  onPress={() => navigation.navigate('PerfilConfiguracion')}
                 >
                   <View style={styles.settingParent}>
                     <Image
@@ -83,16 +82,16 @@ const PERFILAJUSTES = () => {
                     <Text style={[styles.configuracin, styles.mytreeTypo]}>
                       Configuración
                     </Text>
+                    <Image
+                      style={[styles.arrowDown2Icon, styles.arrowIconLayout]}
+                      contentFit="cover"
+                      source={require('../assets/arrowdown29.png')}
+                    />
                   </View>
-                  <Image
-                    style={[styles.arrowDown2Icon, styles.arrowIconLayout]}
-                    contentFit="cover"
-                    source={require('../assets/arrowdown29.png')}
-                  />
                 </Pressable>
                 <Pressable
                   style={[styles.frameParent3, styles.parentFlexBox]}
-                  onPress={() => navigation.navigate('PERFILAJUSTESSEGURIDAD')}
+                  onPress={() => navigation.navigate('PerfilSeguridad')}
                 >
                   <View style={styles.settingParent}>
                     <Image
@@ -103,16 +102,16 @@ const PERFILAJUSTES = () => {
                     <Text style={[styles.configuracin, styles.mytreeTypo]}>
                       Seguridad
                     </Text>
+                    <Image
+                      style={[styles.arrowDown2Icon, styles.arrowIconLayout]}
+                      contentFit="cover"
+                      source={require('../assets/arrowdown29.png')}
+                    />
                   </View>
-                  <Image
-                    style={[styles.arrowDown2Icon1, styles.arrowIconLayout]}
-                    contentFit="cover"
-                    source={require('../assets/arrowdown29.png')}
-                  />
                 </Pressable>
                 <Pressable
                   style={[styles.frameParent3, styles.parentFlexBox]}
-                  onPress={() => navigation.navigate('PERFILAJUSTESPRIVACIDAD')}
+                  onPress={() => navigation.navigate('PerfilPrivacidad')}
                 >
                   <View style={styles.settingParent}>
                     <Image
@@ -123,17 +122,17 @@ const PERFILAJUSTES = () => {
                     <Text style={[styles.configuracin, styles.mytreeTypo]}>
                       Privacidad
                     </Text>
+                    <Image
+                      style={[styles.arrowDown2Icon, styles.arrowIconLayout]}
+                      contentFit="cover"
+                      source={require('../assets/arrowdown29.png')}
+                    />
                   </View>
-                  <Image
-                    style={[styles.arrowDown2Icon2, styles.arrowIconLayout]}
-                    contentFit="cover"
-                    source={require('../assets/arrowdown29.png')}
-                  />
                 </Pressable>
                 <Pressable
                   style={[styles.frameParent3, styles.parentFlexBox]}
                   onPress={() =>
-                    navigation.navigate('PERFILAJUSTESPREVISUALIZ')
+                    navigation.navigate('PerfilVisualizacionMyTree')
                   }
                 >
                   <View style={styles.parentFlexBox}>
@@ -142,17 +141,15 @@ const PERFILAJUSTES = () => {
                       contentFit="cover"
                       source={require('../assets/show.png')}
                     />
-                    <Text
-                      style={[styles.visualizacinDeMytree, styles.mytreeTypo]}
-                    >
+                    <Text style={[styles.configuracin, styles.mytreeTypo]}>
                       Visualización de MyTree
                     </Text>
+                    <Image
+                      style={[styles.arrowDown2Icon, styles.arrowIconLayout]}
+                      contentFit="cover"
+                      source={require('../assets/arrowdown29.png')}
+                    />
                   </View>
-                  <Image
-                    style={[styles.arrowDown2Icon3, styles.arrowIconLayout]}
-                    contentFit="cover"
-                    source={require('../assets/arrowdown29.png')}
-                  />
                 </Pressable>
                 <Pressable
                   style={[styles.frameParent3, styles.parentFlexBox]}
@@ -164,15 +161,15 @@ const PERFILAJUSTES = () => {
                       contentFit="cover"
                       source={require('../assets/star.png')}
                     />
-                    <Text style={[styles.suscripciones, styles.mytreeTypo]}>
+                    <Text style={[styles.configuracin, styles.mytreeTypo]}>
                       Suscripciones
                     </Text>
+                    <Image
+                      style={[styles.arrowDown2Icon, styles.arrowIconLayout]}
+                      contentFit="cover"
+                      source={require('../assets/arrowdown29.png')}
+                    />
                   </View>
-                  <Image
-                    style={[styles.arrowDown2Icon4, styles.arrowIconLayout]}
-                    contentFit="cover"
-                    source={require('../assets/arrowdown29.png')}
-                  />
                 </Pressable>
                 <Pressable
                   style={[styles.frameParent3, styles.parentFlexBox]}
@@ -186,15 +183,15 @@ const PERFILAJUSTES = () => {
                       contentFit="cover"
                       source={require('../assets/tick-square.png')}
                     />
-                    <Text style={[styles.verificacinMytree, styles.mytreeTypo]}>
+                    <Text style={[styles.configuracin, styles.mytreeTypo]}>
                       Verificación MyTree
                     </Text>
+                    <Image
+                      style={[styles.arrowDown2Icon, styles.arrowIconLayout]}
+                      contentFit="cover"
+                      source={require('../assets/arrowdown29.png')}
+                    />
                   </View>
-                  <Image
-                    style={[styles.arrowDown2Icon5, styles.arrowIconLayout]}
-                    contentFit="cover"
-                    source={require('../assets/arrowdown29.png')}
-                  />
                 </Pressable>
               </View>
             </View>
@@ -264,6 +261,11 @@ const styles = StyleSheet.create({
     height: 24,
     width: 24
   },
+  parentIcons: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    top: '5%'
+  },
   parentFlexBox: {
     alignItems: 'center',
     flexDirection: 'row'
@@ -290,12 +292,6 @@ const styles = StyleSheet.create({
     borderRadius: Border.br_3xs,
     backgroundColor: 'rgba(255, 255, 255, 0.7)'
   },
-  navigationIcon: {
-    top: 821,
-    left: 0,
-    width: 428,
-    height: 105
-  },
   image6Icon: {
     width: 87,
     height: 55
@@ -304,13 +300,9 @@ const styles = StyleSheet.create({
     height: 24,
     width: 24
   },
-  documentIcon: {
-    overflow: 'hidden'
-  },
   iconlylightOutlinecalendarParent: {
-    width: 189,
-    justifyContent: 'flex-end',
-    marginLeft: 112,
+    width: '100%',
+    left: '35%',
     flexDirection: 'row'
   },
   icon: {
@@ -326,8 +318,7 @@ const styles = StyleSheet.create({
     fontWeight: '700'
   },
   backParent: {
-    marginTop: 20,
-    justifyContent: 'center'
+    marginTop: 30
   },
   frameChild: {
     width: 50,
@@ -349,63 +340,40 @@ const styles = StyleSheet.create({
     height: 20
   },
   configuracin: {
-    marginLeft: 15
+    marginLeft: 15,
+    width: '85%'
   },
   settingParent: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   arrowDown2Icon: {
-    marginLeft: 194,
     height: 16
+    // marginLeft: '40%'
   },
   shieldDoneIcon: {
-    width: 18,
-    height: 20,
-    overflow: 'hidden'
-  },
-  arrowDown2Icon1: {
-    marginLeft: 227,
-    height: 16
+    width: 20,
+    height: 22
   },
   frameParent3: {
     marginTop: 20
   },
   iconlyboldlock: {
-    width: 17,
-    height: 20
-  },
-  arrowDown2Icon2: {
-    marginLeft: 225,
-    height: 16
+    width: 20,
+    height: 23
   },
   showIcon: {
     height: 16
   },
-  visualizacinDeMytree: {
-    marginLeft: 14
-  },
-  arrowDown2Icon3: {
-    marginLeft: 117,
-    height: 16
-  },
   starIcon: {
-    width: 21,
-    height: 20,
-    overflow: 'hidden'
+    width: 20,
+    height: 19
   },
   suscripciones: {
     marginLeft: 11
   },
-  arrowDown2Icon4: {
-    marginLeft: 200,
-    height: 16
-  },
   verificacinMytree: {
     marginLeft: 16
-  },
-  arrowDown2Icon5: {
-    marginLeft: 148,
-    height: 16
   },
   frameParent2: {
     marginTop: 20
@@ -414,7 +382,8 @@ const styles = StyleSheet.create({
     padding: Padding.p_xl,
     backgroundColor: 'rgba(255, 255, 255, 0.7)',
     borderRadius: Border.br_3xs,
-    marginTop: 20
+    marginTop: 20,
+    width: '100%'
   },
   frameGroup: {
     justifyContent: 'center'
@@ -445,9 +414,9 @@ const styles = StyleSheet.create({
     paddingVertical: 0
   },
   perfilAjustes: {
-    borderRadius: Border.br_31xl,
-    backgroundColor: Color.linearBoton
+    backgroundColor: Color.linearBoton,
+    paddingBottom: 50
   }
 })
 
-export default PERFILAJUSTES
+export default PerfilAjustes

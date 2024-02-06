@@ -1,31 +1,31 @@
-import * as React from "react";
-import { Image } from "expo-image";
-import { StyleSheet, Pressable, Text, View } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
-import { useNavigation } from "@react-navigation/native";
-import { Color, FontFamily, FontSize, Padding, Border } from "../GlobalStyles";
+import React from 'react'
+import { Image } from 'expo-image'
+import { StyleSheet, Pressable, Text, View, ScrollView } from 'react-native'
+import { LinearGradient } from 'expo-linear-gradient'
+import { useNavigation } from '@react-navigation/native'
+import { Color, FontFamily, FontSize, Padding, Border } from '../GlobalStyles'
 
 const Suscripciones = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation()
 
   return (
-    <View style={[styles.suscripciones, styles.iconLayout]}>
+    <ScrollView style={[styles.suscripciones, styles.iconLayout]}>
       <View style={[styles.frameParent, styles.frameParentPosition]}>
         <View style={styles.image6Parent}>
           <Image
             style={styles.image6Icon}
             contentFit="cover"
-            source={require("../assets/image-6.png")}
+            source={require('../assets/image-6.png')}
           />
           <View style={[styles.backParent, styles.buttonFlexBox]}>
             <Pressable
               style={styles.back}
-              onPress={() => navigation.navigate("PERFILAJUSTES")}
+              onPress={() => navigation.navigate('PerfilAjustes')}
             >
               <Image
                 style={[styles.icon, styles.iconLayout]}
                 contentFit="cover"
-                source={require("../assets/back.png")}
+                source={require('../assets/back.png')}
               />
             </Pressable>
             <Text style={styles.suscripciones1}>Suscripciones</Text>
@@ -53,7 +53,7 @@ const Suscripciones = () => {
                 <LinearGradient
                   style={[styles.button, styles.buttonFlexBox]}
                   locations={[0, 1]}
-                  colors={["#dee274", "#7ec18c"]}
+                  colors={['#dee274', '#7ec18c']}
                 >
                   <Text style={styles.signIn}>Adquirir ahora</Text>
                 </LinearGradient>
@@ -64,7 +64,7 @@ const Suscripciones = () => {
                       <Image
                         style={styles.checkIcon}
                         contentFit="cover"
-                        source={require("../assets/check.png")}
+                        source={require('../assets/check.png')}
                       />
                       <Text style={styles.soportePrioritarioTypo}>
                         Soporte Prioritario
@@ -73,7 +73,7 @@ const Suscripciones = () => {
                     <Image
                       style={styles.infoIcon}
                       contentFit="cover"
-                      source={require("../assets/info.png")}
+                      source={require('../assets/info.png')}
                     />
                   </View>
                   <View style={[styles.frameContainer, styles.frameFlexBox]}>
@@ -81,7 +81,7 @@ const Suscripciones = () => {
                       <Image
                         style={styles.checkIcon}
                         contentFit="cover"
-                        source={require("../assets/check1.png")}
+                        source={require('../assets/check1.png')}
                       />
                       <Text style={styles.soportePrioritarioTypo}>
                         5 Fotos alta calidad en perfil
@@ -90,7 +90,7 @@ const Suscripciones = () => {
                     <Image
                       style={styles.infoIcon}
                       contentFit="cover"
-                      source={require("../assets/info.png")}
+                      source={require('../assets/info.png')}
                     />
                   </View>
                   <View style={[styles.frameContainer, styles.frameFlexBox]}>
@@ -98,7 +98,7 @@ const Suscripciones = () => {
                       <Image
                         style={styles.checkIcon}
                         contentFit="cover"
-                        source={require("../assets/check1.png")}
+                        source={require('../assets/check1.png')}
                       />
                       <Text style={styles.soportePrioritarioTypo}>
                         Copia de seguridad de datos
@@ -107,7 +107,7 @@ const Suscripciones = () => {
                     <Image
                       style={styles.infoIcon}
                       contentFit="cover"
-                      source={require("../assets/info.png")}
+                      source={require('../assets/info.png')}
                     />
                   </View>
                 </View>
@@ -133,7 +133,7 @@ const Suscripciones = () => {
                 <LinearGradient
                   style={[styles.button, styles.buttonFlexBox]}
                   locations={[0, 1]}
-                  colors={["#dee274", "#7ec18c"]}
+                  colors={['#dee274', '#7ec18c']}
                 >
                   <Text style={styles.signIn}>Adquirir ahora</Text>
                 </LinearGradient>
@@ -143,7 +143,7 @@ const Suscripciones = () => {
                     <Image
                       style={styles.checkIcon}
                       contentFit="cover"
-                      source={require("../assets/check1.png")}
+                      source={require('../assets/check1.png')}
                     />
                     <Text style={styles.soportePrioritarioTypo}>
                       Soporte Avanzado
@@ -152,7 +152,7 @@ const Suscripciones = () => {
                   <Image
                     style={styles.infoIcon}
                     contentFit="cover"
-                    source={require("../assets/info.png")}
+                    source={require('../assets/info.png')}
                   />
                 </View>
                 <View style={[styles.frameContainer, styles.frameFlexBox]}>
@@ -160,7 +160,7 @@ const Suscripciones = () => {
                     <Image
                       style={styles.checkIcon}
                       contentFit="cover"
-                      source={require("../assets/check1.png")}
+                      source={require('../assets/check1.png')}
                     />
                     <Text style={styles.soportePrioritarioTypo}>
                       Menos anuncios
@@ -169,7 +169,7 @@ const Suscripciones = () => {
                   <Image
                     style={styles.infoIcon}
                     contentFit="cover"
-                    source={require("../assets/info.png")}
+                    source={require('../assets/info.png')}
                   />
                 </View>
                 <View style={[styles.frameContainer, styles.frameFlexBox]}>
@@ -177,12 +177,12 @@ const Suscripciones = () => {
                     <Image
                       style={styles.checkIcon}
                       contentFit="cover"
-                      source={require("../assets/check2.png")}
+                      source={require('../assets/check2.png')}
                     />
                     <Text
                       style={[
                         styles.emojisExclusivosEn,
-                        styles.soportePrioritarioTypo,
+                        styles.soportePrioritarioTypo
                       ]}
                     >
                       Emojis exclusivos en toda la plataforma MyDiary,
@@ -192,7 +192,7 @@ const Suscripciones = () => {
                   <Image
                     style={styles.infoIcon}
                     contentFit="cover"
-                    source={require("../assets/info1.png")}
+                    source={require('../assets/info1.png')}
                   />
                 </View>
                 <View style={[styles.frameContainer, styles.frameFlexBox]}>
@@ -200,7 +200,7 @@ const Suscripciones = () => {
                     <Image
                       style={styles.checkIcon}
                       contentFit="cover"
-                      source={require("../assets/check1.png")}
+                      source={require('../assets/check1.png')}
                     />
                     <Text style={styles.soportePrioritarioTypo}>
                       Copia de seguridad de datos
@@ -209,7 +209,7 @@ const Suscripciones = () => {
                   <Image
                     style={styles.infoIcon}
                     contentFit="cover"
-                    source={require("../assets/info.png")}
+                    source={require('../assets/info.png')}
                   />
                 </View>
                 <View style={[styles.frameContainer, styles.frameFlexBox]}>
@@ -217,7 +217,7 @@ const Suscripciones = () => {
                     <Image
                       style={styles.checkIcon}
                       contentFit="cover"
-                      source={require("../assets/check1.png")}
+                      source={require('../assets/check1.png')}
                     />
                     <Text style={styles.soportePrioritarioTypo}>
                       Fotos y videos de alta calidad
@@ -226,7 +226,7 @@ const Suscripciones = () => {
                   <Image
                     style={styles.infoIcon}
                     contentFit="cover"
-                    source={require("../assets/info.png")}
+                    source={require('../assets/info.png')}
                   />
                 </View>
                 <View style={[styles.frameContainer, styles.frameFlexBox]}>
@@ -234,7 +234,7 @@ const Suscripciones = () => {
                     <Image
                       style={styles.checkIcon}
                       contentFit="cover"
-                      source={require("../assets/check1.png")}
+                      source={require('../assets/check1.png')}
                     />
                     <Text style={styles.soportePrioritarioTypo}>
                       Emojis y filtros exclusivos
@@ -243,7 +243,7 @@ const Suscripciones = () => {
                   <Image
                     style={styles.infoIcon}
                     contentFit="cover"
-                    source={require("../assets/info.png")}
+                    source={require('../assets/info.png')}
                   />
                 </View>
               </View>
@@ -266,7 +266,7 @@ const Suscripciones = () => {
                 <LinearGradient
                   style={[styles.button, styles.buttonFlexBox]}
                   locations={[0, 1]}
-                  colors={["#dee274", "#7ec18c"]}
+                  colors={['#dee274', '#7ec18c']}
                 >
                   <Text style={styles.signIn}>Adquirir ahora</Text>
                 </LinearGradient>
@@ -277,7 +277,7 @@ const Suscripciones = () => {
                       <Image
                         style={styles.checkIcon}
                         contentFit="cover"
-                        source={require("../assets/check1.png")}
+                        source={require('../assets/check1.png')}
                       />
                       <Text style={styles.soportePrioritarioTypo}>
                         Sin Anuncios
@@ -286,7 +286,7 @@ const Suscripciones = () => {
                     <Image
                       style={styles.infoIcon}
                       contentFit="cover"
-                      source={require("../assets/info.png")}
+                      source={require('../assets/info.png')}
                     />
                   </View>
                   <View style={[styles.frameContainer, styles.frameFlexBox]}>
@@ -294,7 +294,7 @@ const Suscripciones = () => {
                       <Image
                         style={styles.checkIcon}
                         contentFit="cover"
-                        source={require("../assets/check1.png")}
+                        source={require('../assets/check1.png')}
                       />
                       <Text style={styles.soportePrioritarioTypo}>
                         Soporte VIP
@@ -303,7 +303,7 @@ const Suscripciones = () => {
                     <Image
                       style={styles.infoIcon}
                       contentFit="cover"
-                      source={require("../assets/info.png")}
+                      source={require('../assets/info.png')}
                     />
                   </View>
                   <View style={[styles.frameContainer, styles.frameFlexBox]}>
@@ -311,7 +311,7 @@ const Suscripciones = () => {
                       <Image
                         style={styles.checkIcon}
                         contentFit="cover"
-                        source={require("../assets/check1.png")}
+                        source={require('../assets/check1.png')}
                       />
                       <Text style={styles.soportePrioritarioTypo}>
                         IA para mejorar tus fotos antiguas
@@ -320,7 +320,7 @@ const Suscripciones = () => {
                     <Image
                       style={styles.infoIcon}
                       contentFit="cover"
-                      source={require("../assets/info.png")}
+                      source={require('../assets/info.png')}
                     />
                   </View>
                   <View style={[styles.frameContainer, styles.frameFlexBox]}>
@@ -328,7 +328,7 @@ const Suscripciones = () => {
                       <Image
                         style={styles.checkIcon}
                         contentFit="cover"
-                        source={require("../assets/check1.png")}
+                        source={require('../assets/check1.png')}
                       />
                       <Text style={styles.soportePrioritarioTypo}>
                         Acceso Anticipado a Funciones Nuevas
@@ -337,7 +337,7 @@ const Suscripciones = () => {
                     <Image
                       style={styles.infoIcon}
                       contentFit="cover"
-                      source={require("../assets/info.png")}
+                      source={require('../assets/info.png')}
                     />
                   </View>
                   <View style={[styles.frameContainer, styles.frameFlexBox]}>
@@ -345,7 +345,7 @@ const Suscripciones = () => {
                       <Image
                         style={styles.checkIcon}
                         contentFit="cover"
-                        source={require("../assets/check1.png")}
+                        source={require('../assets/check1.png')}
                       />
                       <Text style={styles.soportePrioritarioTypo}>
                         Fotos y videos en alta calidad
@@ -354,7 +354,7 @@ const Suscripciones = () => {
                     <Image
                       style={styles.infoIcon}
                       contentFit="cover"
-                      source={require("../assets/info.png")}
+                      source={require('../assets/info.png')}
                     />
                   </View>
                   <View style={[styles.frameContainer, styles.frameFlexBox]}>
@@ -362,7 +362,7 @@ const Suscripciones = () => {
                       <Image
                         style={styles.checkIcon}
                         contentFit="cover"
-                        source={require("../assets/check1.png")}
+                        source={require('../assets/check1.png')}
                       />
                       <Text
                         style={styles.soportePrioritarioTypo}
@@ -372,7 +372,7 @@ en alta calidad`}</Text>
                     <Image
                       style={styles.infoIcon}
                       contentFit="cover"
-                      source={require("../assets/info.png")}
+                      source={require('../assets/info.png')}
                     />
                   </View>
                   <View style={[styles.frameContainer, styles.frameFlexBox]}>
@@ -380,7 +380,7 @@ en alta calidad`}</Text>
                       <Image
                         style={styles.checkIcon}
                         contentFit="cover"
-                        source={require("../assets/check1.png")}
+                        source={require('../assets/check1.png')}
                       />
                       <Text style={styles.soportePrioritarioTypo}>
                         Copia de seguridad de datos
@@ -389,7 +389,7 @@ en alta calidad`}</Text>
                     <Image
                       style={styles.infoIcon}
                       contentFit="cover"
-                      source={require("../assets/info.png")}
+                      source={require('../assets/info.png')}
                     />
                   </View>
                   <View style={[styles.frameContainer, styles.frameFlexBox]}>
@@ -397,7 +397,7 @@ en alta calidad`}</Text>
                       <Image
                         style={styles.checkIcon}
                         contentFit="cover"
-                        source={require("../assets/check1.png")}
+                        source={require('../assets/check1.png')}
                       />
                       <Text style={styles.soportePrioritarioTypo}>
                         Emojis y filtros exclusivos
@@ -406,7 +406,7 @@ en alta calidad`}</Text>
                     <Image
                       style={styles.infoIcon}
                       contentFit="cover"
-                      source={require("../assets/info.png")}
+                      source={require('../assets/info.png')}
                     />
                   </View>
                   <View style={[styles.frameContainer, styles.frameFlexBox]}>
@@ -414,7 +414,7 @@ en alta calidad`}</Text>
                       <Image
                         style={styles.checkIcon}
                         contentFit="cover"
-                        source={require("../assets/check1.png")}
+                        source={require('../assets/check1.png')}
                       />
                       <Text style={styles.soportePrioritarioTypo}>
                         Copia de Seguridad
@@ -423,7 +423,7 @@ en alta calidad`}</Text>
                     <Image
                       style={styles.infoIcon}
                       contentFit="cover"
-                      source={require("../assets/info.png")}
+                      source={require('../assets/info.png')}
                     />
                   </View>
                 </View>
@@ -435,87 +435,84 @@ en alta calidad`}</Text>
       <Image
         style={[styles.navigationIcon, styles.frameParentPosition]}
         contentFit="cover"
-        source={require("../assets/navigation40.png")}
+        source={require('../assets/navigation40.png')}
       />
-    </View>
-  );
-};
+    </ScrollView>
+  )
+}
 
 const styles = StyleSheet.create({
   iconLayout: {
-    width: "100%",
-    overflow: "hidden",
+    width: '100%',
+    overflow: 'hidden'
   },
-  frameParentPosition: {
-    left: 0,
-    position: "absolute",
-  },
+  frameParentPosition: {},
   buttonFlexBox: {
-    justifyContent: "center",
-    flexDirection: "row",
-    alignItems: "center",
+    justifyContent: 'center',
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   div2ShadowBox: {
     elevation: 25,
     shadowRadius: 25,
-    shadowColor: "rgba(221, 219, 246, 0.25)",
+    shadowColor: 'rgba(221, 219, 246, 0.25)',
     width: 388,
     shadowOpacity: 1,
     shadowOffset: {
       width: 0,
-      height: 4,
-    },
+      height: 4
+    }
   },
   frameFlexBox: {
-    justifyContent: "space-between",
-    alignSelf: "stretch",
-    flexDirection: "row",
+    justifyContent: 'space-between',
+    alignSelf: 'stretch',
+    flexDirection: 'row'
   },
   mesTypo: {
     color: Color.grisTextosWeb,
-    textAlign: "left",
-    fontFamily: FontFamily.lato,
+    textAlign: 'left',
+    fontFamily: FontFamily.lato
   },
   planTypo: {
     color: Color.grisGeneral,
     fontSize: FontSize.size_base,
-    textAlign: "left",
+    textAlign: 'left',
     fontFamily: FontFamily.lato,
-    fontWeight: "700",
+    fontWeight: '700'
   },
   soportePrioritarioTypo: {
     marginLeft: 8,
     letterSpacing: 1,
     fontSize: FontSize.size_base,
     color: Color.grisTextosWeb,
-    textAlign: "left",
-    fontFamily: FontFamily.lato,
+    textAlign: 'left',
+    fontFamily: FontFamily.lato
   },
   image6Icon: {
     width: 87,
-    height: 55,
+    height: 55
   },
   icon: {
-    height: "100%",
-    overflow: "hidden",
+    height: '100%',
+    overflow: 'hidden'
   },
   back: {
     width: 24,
-    height: 24,
+    height: 24
   },
   suscripciones1: {
     color: Color.negro,
     marginLeft: 20,
-    textAlign: "left",
+    textAlign: 'left',
     fontFamily: FontFamily.lato,
-    fontWeight: "700",
-    fontSize: FontSize.size_5xl,
+    fontWeight: '700',
+    fontSize: FontSize.size_5xl
   },
   backParent: {
-    marginTop: 20,
+    marginTop: 20
   },
   image6Parent: {
-    shadowColor: "rgba(0, 0, 0, 0.25)",
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
     shadowRadius: 4,
     elevation: 4,
     paddingHorizontal: Padding.p_xl,
@@ -524,35 +521,35 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowOffset: {
       width: 0,
-      height: 4,
+      height: 4
     },
-    backgroundColor: Color.white,
+    backgroundColor: Color.white
   },
   premium: {
-    fontWeight: "700",
+    fontWeight: '700',
     fontSize: FontSize.size_5xl,
-    color: Color.grisTextosWeb,
+    color: Color.grisTextosWeb
   },
   mes: {
-    fontSize: FontSize.size_lg,
+    fontSize: FontSize.size_lg
   },
   premiumParent: {
-    alignItems: "flex-end",
+    alignItems: 'flex-end'
   },
   content: {
-    alignSelf: "stretch",
+    alignSelf: 'stretch'
   },
   planEspecialPara: {
-    marginTop: 6,
+    marginTop: 6
   },
   signIn: {
     letterSpacing: 1,
     lineHeight: 24,
     color: Color.white,
-    textAlign: "center",
+    textAlign: 'center',
     fontSize: FontSize.size_base,
     fontFamily: FontFamily.lato,
-    flex: 1,
+    flex: 1
   },
   button: {
     borderRadius: Border.br_11xl,
@@ -560,85 +557,84 @@ const styles = StyleSheet.create({
     paddingHorizontal: Padding.p_5xl,
     paddingVertical: Padding.p_sm,
     backgroundColor: Color.linearBoton,
-    marginTop: 16,
+    marginTop: 16
   },
   divider: {
-    borderStyle: "solid",
+    borderStyle: 'solid',
     borderColor: Color.white,
     borderTopWidth: 1,
     height: 1,
     marginTop: 16,
-    alignSelf: "stretch",
+    alignSelf: 'stretch'
   },
   checkIcon: {
     width: 20,
     height: 20,
-    overflow: "hidden",
+    overflow: 'hidden'
   },
   checkParent: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   infoIcon: {
     width: 16,
     height: 16,
-    overflow: "hidden",
+    overflow: 'hidden'
   },
   frameGroup: {
-    alignItems: "center",
+    alignItems: 'center'
   },
   frameContainer: {
     marginTop: 16,
-    alignItems: "center",
+    alignItems: 'center'
   },
   content2: {
     marginTop: 16,
-    alignSelf: "stretch",
+    alignSelf: 'stretch'
   },
   card: {
     borderRadius: Border.br_3xs,
     padding: Padding.p_xl,
     width: 388,
-    backgroundColor: Color.white,
+    backgroundColor: Color.white
   },
   div2Cards: {
-    width: 388,
+    width: 388
   },
   emojisExclusivosEn: {
-    width: 304,
+    width: 304
   },
   div2Cards1: {
     width: 388,
-    marginTop: 20,
+    marginTop: 20
   },
   planEspecialPara2: {
-    marginTop: 8,
+    marginTop: 8
   },
   div2Cards2: {
     width: 388,
-    marginTop: 20,
+    marginTop: 20
   },
   div2CardsParent: {
     height: 714,
-    marginTop: 20,
+    marginTop: 20
   },
   frameParent: {
     top: 2,
-    alignItems: "center",
+    alignItems: 'center'
   },
   navigationIcon: {
     top: 821,
     height: 105,
-    width: 428,
+    width: 428
   },
   suscripciones: {
     borderRadius: Border.br_31xl,
-    height: 926,
-    overflow: "hidden",
+    overflow: 'hidden',
     flex: 1,
-    width: "100%",
-    backgroundColor: Color.white,
-  },
-});
+    paddingHorizontal: Padding.p_xl,
+    backgroundColor: Color.white
+  }
+})
 
-export default Suscripciones;
+export default Suscripciones

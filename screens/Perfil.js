@@ -54,7 +54,7 @@ const Perfil = () => {
         />
         <Pressable
           style={[styles.iconlylightOutlineplus, styles.vectorIconLayout]}
-          onPress={() => navigation.navigate('PERFILAJUSTES')}
+          onPress={() => navigation.navigate('PerfilAjustes')}
         >
           <Image
             style={styles.icon}

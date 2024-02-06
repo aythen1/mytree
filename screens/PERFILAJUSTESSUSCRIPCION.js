@@ -1,24 +1,24 @@
-import * as React from "react";
-import { Image } from "expo-image";
-import { StyleSheet, View, Pressable, Text } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
-import { useNavigation } from "@react-navigation/native";
-import { FontSize, FontFamily, Color, Padding, Border } from "../GlobalStyles";
+import * as React from 'react'
+import { Image } from 'expo-image'
+import { StyleSheet, View, Pressable, Text } from 'react-native'
+import { LinearGradient } from 'expo-linear-gradient'
+import { useNavigation } from '@react-navigation/native'
+import { FontSize, FontFamily, Color, Padding, Border } from '../GlobalStyles'
 
 const PERFILAJUSTESSUSCRIPCION = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation()
 
   return (
     <View style={[styles.perfilAjustesSuscripcion, styles.iconLayout]}>
       <Image
         style={styles.hugeIcon}
         contentFit="cover"
-        source={require("../assets/hugeicon.png")}
+        source={require('../assets/hugeicon.png')}
       />
       <Image
         style={[styles.navigationIcon, styles.frameParentPosition]}
         contentFit="cover"
-        source={require("../assets/navigation28.png")}
+        source={require('../assets/navigation28.png')}
       />
       <View style={[styles.frameParent, styles.frameParentPosition]}>
         <View style={styles.frameGroup}>
@@ -26,35 +26,35 @@ const PERFILAJUSTESSUSCRIPCION = () => {
             <Image
               style={styles.image6Icon}
               contentFit="cover"
-              source={require("../assets/image-6.png")}
+              source={require('../assets/image-6.png')}
             />
             <View style={styles.iconlylightOutlinecalendarParent}>
               <Image
                 style={styles.iconlylightOutlinecalendar}
                 contentFit="cover"
-                source={require("../assets/iconlylightoutlinecalendar4.png")}
+                source={require('../assets/iconlylightoutlinecalendar4.png')}
               />
               <Image
                 style={[styles.documentIcon, styles.documentIconLayout]}
                 contentFit="cover"
-                source={require("../assets/document6.png")}
+                source={require('../assets/document6.png')}
               />
               <Image
                 style={styles.documentIconLayout}
                 contentFit="cover"
-                source={require("../assets/iconlylightoutlinesetting6.png")}
+                source={require('../assets/iconlylightoutlinesetting6.png')}
               />
             </View>
           </View>
           <View style={styles.backParent}>
             <Pressable
               style={styles.iconlylightOutlinecalendar}
-              onPress={() => navigation.navigate("PERFILAJUSTES")}
+              onPress={() => navigation.navigate('PerfilAjustes')}
             >
               <Image
                 style={[styles.icon, styles.iconLayout]}
                 contentFit="cover"
-                source={require("../assets/back.png")}
+                source={require('../assets/back.png')}
               />
             </Pressable>
             <Text style={styles.suscripciones}>Suscripciones</Text>
@@ -65,14 +65,14 @@ const PERFILAJUSTESSUSCRIPCION = () => {
             <LinearGradient
               style={styles.frameChild}
               locations={[0, 1]}
-              colors={["#dee274", "#7ec18c"]}
+              colors={['#dee274', '#7ec18c']}
             />
             <Pressable
               style={[
                 styles.estsPagandoLaSuscripcinPWrapper,
-                styles.rectangleParentFlexBox,
+                styles.rectangleParentFlexBox
               ]}
-              onPress={() => navigation.navigate("Suscripciones")}
+              onPress={() => navigation.navigate('Suscripciones')}
             >
               <Text style={styles.estsPagandoLaContainer}>
                 <Text style={styles.estsPagandoLaSuscripcinP}>
@@ -92,7 +92,7 @@ const PERFILAJUSTESSUSCRIPCION = () => {
           <View style={styles.frameFlexBox}>
             <Pressable
               style={styles.historialDePagosWrapper}
-              onPress={() => navigation.navigate("Suscripciones")}
+              onPress={() => navigation.navigate('Suscripciones')}
             >
               <Text
                 style={[styles.historialDePagos, styles.historialDePagosTypo]}
@@ -103,7 +103,7 @@ const PERFILAJUSTESSUSCRIPCION = () => {
             <Image
               style={styles.arrowDown2Icon}
               contentFit="cover"
-              source={require("../assets/arrowdown28.png")}
+              source={require('../assets/arrowdown28.png')}
             />
           </View>
           <View style={[styles.frameParent1, styles.frameFlexBox]}>
@@ -111,7 +111,7 @@ const PERFILAJUSTESSUSCRIPCION = () => {
               <Text
                 style={[
                   styles.cancelarMiSuscripcin,
-                  styles.historialDePagosTypo,
+                  styles.historialDePagosTypo
                 ]}
               >
                 Cancelar mi suscripción
@@ -120,150 +120,150 @@ const PERFILAJUSTESSUSCRIPCION = () => {
             <Image
               style={styles.arrowDown2Icon}
               contentFit="cover"
-              source={require("../assets/arrowdown28.png")}
+              source={require('../assets/arrowdown28.png')}
             />
           </View>
         </View>
       </View>
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   iconLayout: {
-    width: "100%",
-    overflow: "hidden",
+    width: '100%',
+    overflow: 'hidden'
   },
   frameParentPosition: {
     left: 0,
-    position: "absolute",
+    position: 'absolute'
   },
   documentIconLayout: {
     marginLeft: 30,
     height: 24,
-    width: 24,
+    width: 24
   },
   rectangleParentFlexBox: {
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   historialDePagosTypo: {
     lineHeight: 19,
     fontSize: FontSize.size_base,
     letterSpacing: 0,
-    textAlign: "left",
-    fontFamily: FontFamily.lato,
+    textAlign: 'left',
+    fontFamily: FontFamily.lato
   },
   frameFlexBox: {
     width: 388,
     marginTop: 20,
-    alignItems: "center",
-    flexDirection: "row",
+    alignItems: 'center',
+    flexDirection: 'row'
   },
   hugeIcon: {
-    height: "2.59%",
-    width: "5.61%",
-    top: "65.55%",
-    right: "65.42%",
-    bottom: "31.86%",
-    left: "28.97%",
-    maxWidth: "100%",
-    maxHeight: "100%",
-    position: "absolute",
-    overflow: "hidden",
+    height: '2.59%',
+    width: '5.61%',
+    top: '65.55%',
+    right: '65.42%',
+    bottom: '31.86%',
+    left: '28.97%',
+    maxWidth: '100%',
+    maxHeight: '100%',
+    position: 'absolute',
+    overflow: 'hidden'
   },
   navigationIcon: {
     top: 821,
     width: 428,
-    height: 105,
+    height: 105
   },
   image6Icon: {
     width: 87,
-    height: 55,
+    height: 55
   },
   iconlylightOutlinecalendar: {
     height: 24,
-    width: 24,
+    width: 24
   },
   documentIcon: {
-    overflow: "hidden",
+    overflow: 'hidden'
   },
   iconlylightOutlinecalendarParent: {
     width: 189,
     marginLeft: 112,
-    justifyContent: "flex-end",
-    flexDirection: "row",
+    justifyContent: 'flex-end',
+    flexDirection: 'row'
   },
   image6Parent: {
-    alignItems: "center",
-    flexDirection: "row",
+    alignItems: 'center',
+    flexDirection: 'row'
   },
   icon: {
-    height: "100%",
-    overflow: "hidden",
+    height: '100%',
+    overflow: 'hidden'
   },
   suscripciones: {
     marginLeft: 20,
-    textAlign: "left",
+    textAlign: 'left',
     color: Color.negro,
     fontFamily: FontFamily.lato,
-    fontWeight: "700",
-    fontSize: FontSize.size_5xl,
+    fontWeight: '700',
+    fontSize: FontSize.size_5xl
   },
   backParent: {
     marginTop: 20,
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row'
   },
   frameGroup: {
-    shadowColor: "rgba(0, 0, 0, 0.25)",
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
     shadowOffset: {
       width: 0,
-      height: 4,
+      height: 4
     },
     shadowRadius: 4,
     elevation: 4,
     shadowOpacity: 1,
     paddingHorizontal: Padding.p_xl,
     paddingBottom: Padding.p_xl,
-    backgroundColor: Color.white,
+    backgroundColor: Color.white
   },
   frameChild: {
     borderRadius: Border.br_11xl,
     height: 151,
     backgroundColor: Color.linearBoton,
     zIndex: 0,
-    width: 387,
+    width: 387
   },
   estsPagandoLa: {
     color: Color.white,
-    fontWeight: "500",
-    fontFamily: FontFamily.lato,
+    fontWeight: '500',
+    fontFamily: FontFamily.lato
   },
   premium1: {
-    color: Color.primario2,
+    color: Color.primario2
   },
   blankLine: {
-    color: Color.primario1,
+    color: Color.primario1
   },
   premium: {
     fontFamily: FontFamily.lato,
-    fontWeight: "700",
+    fontWeight: '700'
   },
   estsPagandoLaSuscripcinP: {
-    fontSize: FontSize.size_5xl,
+    fontSize: FontSize.size_5xl
   },
   verMs: {
     fontFamily: FontFamily.inter,
     fontSize: FontSize.size_base,
     color: Color.white,
-    fontWeight: "700",
+    fontWeight: '700'
   },
   estsPagandoLaContainer: {
-    textAlign: "center",
+    textAlign: 'center',
     width: 358,
-    letterSpacing: 0,
+    letterSpacing: 0
   },
   estsPagandoLaSuscripcinPWrapper: {
     top: 20,
@@ -271,49 +271,49 @@ const styles = StyleSheet.create({
     width: 347,
     height: 111,
     zIndex: 1,
-    position: "absolute",
+    position: 'absolute'
   },
   rectangleParent: {
-    width: 387,
+    width: 387
   },
   historialDePagos: {
-    fontWeight: "500",
+    fontWeight: '500',
     lineHeight: 19,
-    color: Color.negro,
+    color: Color.negro
   },
   historialDePagosWrapper: {
-    width: 358,
+    width: 358
   },
   arrowDown2Icon: {
     width: 9,
     height: 16,
-    marginLeft: 20,
+    marginLeft: 20
   },
   cancelarMiSuscripcin: {
     lineHeight: 19,
-    fontWeight: "700",
+    fontWeight: '700'
   },
   cancelarMiSuscripcinWrapper: {
-    width: 359,
+    width: 359
   },
   frameParent1: {
-    justifyContent: "flex-end",
+    justifyContent: 'flex-end'
   },
   frameContainer: {
     padding: Padding.p_xl,
-    marginTop: 3,
+    marginTop: 3
   },
   frameParent: {
     top: 0,
-    height: 926,
+    height: 926
   },
   perfilAjustesSuscripcion: {
     borderRadius: Border.br_31xl,
     flex: 1,
-    overflow: "hidden",
+    overflow: 'hidden',
     height: 926,
-    backgroundColor: Color.white,
-  },
-});
+    backgroundColor: Color.white
+  }
+})
 
-export default PERFILAJUSTESSUSCRIPCION;
+export default PERFILAJUSTESSUSCRIPCION
