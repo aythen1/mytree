@@ -1,12 +1,12 @@
-import * as React from "react";
-import { Text, StyleSheet, View, Pressable } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
-import { Image } from "expo-image";
-import { useNavigation } from "@react-navigation/native";
-import { Padding, Border, FontSize, FontFamily, Color } from "../GlobalStyles";
+import * as React from 'react'
+import { Text, StyleSheet, View, Pressable } from 'react-native'
+import { LinearGradient } from 'expo-linear-gradient'
+import { Image } from 'expo-image'
+import { useNavigation } from '@react-navigation/native'
+import { Padding, Border, FontSize, FontFamily, Color } from '../GlobalStyles'
 
 const Valorar = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation()
 
   return (
     <View style={styles.valorar}>
@@ -19,13 +19,13 @@ const Valorar = () => {
       <LinearGradient
         style={[styles.button, styles.buttonPosition]}
         locations={[0, 1]}
-        colors={["#dee274", "#7ec18c"]}
+        colors={['#dee274', '#7ec18c']}
       >
         <Text style={[styles.signIn, styles.signTypo]}>Valorar</Text>
       </LinearGradient>
       <Pressable
         style={[styles.button1, styles.buttonPosition]}
-        onPress={() => navigation.navigate("PERFILAJUSTESVERIFICACIO")}
+        onPress={() => navigation.navigate('PerfilVerificacion')}
       >
         <Text style={styles.signTypo}>Más tarde</Text>
       </Pressable>
@@ -33,120 +33,120 @@ const Valorar = () => {
         <Image
           style={styles.starsIconLayout}
           contentFit="cover"
-          source={require("../assets/stars.png")}
+          source={require('../assets/stars.png')}
         />
         <Image
           style={[styles.starsIcon1, styles.starsIconLayout]}
           contentFit="cover"
-          source={require("../assets/stars.png")}
+          source={require('../assets/stars.png')}
         />
         <Image
           style={[styles.starsIcon1, styles.starsIconLayout]}
           contentFit="cover"
-          source={require("../assets/stars.png")}
+          source={require('../assets/stars.png')}
         />
         <Image
           style={[styles.starsIcon1, styles.starsIconLayout]}
           contentFit="cover"
-          source={require("../assets/stars1.png")}
+          source={require('../assets/stars1.png')}
         />
         <Image
           style={[styles.starsIcon1, styles.starsIconLayout]}
           contentFit="cover"
-          source={require("../assets/stars2.png")}
+          source={require('../assets/stars2.png')}
         />
       </View>
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   buttonPosition: {
     paddingBottom: Padding.p_5xs,
     paddingTop: Padding.p_6xs,
     paddingHorizontal: Padding.p_base,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     height: 52,
-    flexDirection: "row",
+    flexDirection: 'row',
     width: 388,
     left: 20,
-    position: "absolute",
-    borderRadius: Border.br_11xl,
+    position: 'absolute',
+    borderRadius: Border.br_11xl
   },
   signTypo: {
     lineHeight: 21,
     letterSpacing: 0,
     fontSize: FontSize.size_sm,
-    textAlign: "center",
-    fontFamily: FontFamily.lato,
+    textAlign: 'center',
+    fontFamily: FontFamily.lato
   },
   starsIconLayout: {
     height: 31,
     width: 33,
-    overflow: "hidden",
+    overflow: 'hidden'
   },
   enhorabuenaSloTe: {
     top: 20,
     color: Color.negro,
     width: 388,
-    textAlign: "center",
+    textAlign: 'center',
     fontFamily: FontFamily.lato,
-    fontWeight: "500",
+    fontWeight: '500',
     fontSize: FontSize.size_xl,
     left: 20,
-    position: "absolute",
+    position: 'absolute'
   },
   valoraLaAplicacin: {
     marginLeft: -144,
     top: 88,
     color: Color.gris,
-    textAlign: "left",
-    left: "50%",
+    textAlign: 'left',
+    left: '50%',
     fontFamily: FontFamily.lato,
-    fontWeight: "500",
+    fontWeight: '500',
     fontSize: FontSize.size_xl,
-    position: "absolute",
+    position: 'absolute'
   },
   signIn: {
-    color: Color.white,
+    color: Color.white
   },
   button: {
     top: 341,
-    backgroundColor: Color.linearBoton,
+    backgroundColor: Color.linearBoton
   },
   button1: {
     top: 269,
-    borderStyle: "solid",
+    borderStyle: 'solid',
     borderColor: Color.colorKhaki_100,
     borderWidth: 1,
     backgroundColor: Color.white,
     paddingBottom: Padding.p_5xs,
     paddingTop: Padding.p_6xs,
     paddingHorizontal: Padding.p_base,
-    justifyContent: "center",
-    alignItems: "center",
-    height: 52,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 52
   },
   starsIcon1: {
-    marginLeft: 20,
+    marginLeft: 20
   },
   starsParent: {
     marginLeft: -127,
     top: 132,
     width: 255,
-    flexDirection: "row",
-    left: "50%",
-    position: "absolute",
+    flexDirection: 'row',
+    left: '50%',
+    position: 'absolute'
   },
   valorar: {
     flex: 1,
-    width: "100%",
+    width: '100%',
     height: 413,
-    overflow: "hidden",
+    overflow: 'hidden',
     borderRadius: Border.br_11xl,
-    backgroundColor: Color.white,
-  },
-});
+    backgroundColor: Color.white
+  }
+})
 
-export default Valorar;
+export default Valorar

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Image } from 'expo-image'
 import {
   StyleSheet,
@@ -11,9 +11,12 @@ import {
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
 import { Color, FontFamily, Border, FontSize, Padding } from '../GlobalStyles'
+import Checkbox from 'expo-checkbox'
 
-const LOGIN = () => {
+const Login = () => {
   const navigation = useNavigation()
+
+  const [checked, setChecked] = useState(false)
 
   return (
     <ScrollView
@@ -90,9 +93,7 @@ const LOGIN = () => {
         </View>
         <View style={styles.frameView}>
           <View style={styles.checkParent}>
-            <View style={styles.check}>
-              <View style={[styles.checkChild, styles.checkChildBg]} />
-            </View>
+            <Checkbox value={checked} onValueChange={setChecked} />
             <Text style={[styles.labelled2, styles.labelled2Typo]}>
               Recordarme
             </Text>
@@ -315,4 +316,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default LOGIN
+export default Login
