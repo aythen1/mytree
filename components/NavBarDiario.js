@@ -1,78 +1,181 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Pressable, StyleSheet, View } from 'react-native'
 
 import { Image } from 'expo-image'
 import { useNavigation } from '@react-navigation/native'
 import { Color, FontFamily, Padding, Border, FontSize } from '../GlobalStyles'
+import NubeSVG from './svgs/NubeSVG'
+import LogrosSVG from './svgs/LogrosSVG'
+import { Path, Svg } from 'react-native-svg'
+import DesafiosSVG from './svgs/DesafiosSVG'
+import BurbujaAnecdotaSVG from './svgs/BurbujaAnecdotaSVG'
+import AvionSVG from './svgs/AviosSVG'
+import EditarSVG from './svgs/EditarSVG'
 
-const NavBarDiario = ({ setIsSection }) => {
+const NavBarDiario = ({ setIsSection, isSection }) => {
   const navigation = useNavigation()
+  const [clickColor, setClickColor] = useState('')
 
   return (
     <View style={styles.miDiarioEntradaTextoPl}>
-      {/* <Image
-        style={[styles.navigationIcon, styles.navigationIconLayout]}
-        contentFit="cover"
-        source={require('../assets/navigation25.png')}
-      /> */}
       <View style={[styles.frameGroup, styles.frameFlexBox]}>
-        <View style={[styles.vectorWrapper, styles.vectorFlexBox]}>
-          <Pressable
-            style={[styles.vectorWrapper, styles.vectorFlexBox]}
-            onPress={() => {
-              setIsSection('reflexion')
-              // alert('hola')
-              // navigation.navigate('MIDIARIOENTRADATEXTOPL5')
+        <Pressable
+          style={
+            ([styles.frameChild, styles.frameLayout],
+            {
+              backgroundColor:
+                clickColor === 'nube'
+                  ? Color.colorLavenderblush
+                  : Color.secundario,
+              padding: 5,
+              borderRadius: 4
+            })
+          }
+          onPress={() => {
+            setClickColor('nube')
+            setIsSection('reflexion')
+          }}
+        >
+          <NubeSVG onColor={'#FF5CE8'} clickColor={clickColor} />
+        </Pressable>
+        <Pressable
+          onPress={() => {
+            setClickColor('logros')
+            setIsSection('logros')
+          }}
+        >
+          <View
+            style={{
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              overflow: 'hidden',
+              backgroundColor:
+                clickColor === 'logros'
+                  ? Color.colorLavender_100
+                  : Color.secundario,
+              padding: 5,
+              borderRadius: 4,
+              zIndex: 0,
+              height: 40,
+              width: 40
             }}
-          >
-            <Image
-              style={styles.vectorIcon}
-              contentFit="cover"
-              source={require('../assets/vector55.png')}
-            />
-          </Pressable>
-        </View>
-        <View>
-          <View style={[styles.frameChild, styles.frameLayout]} />
-          <Image
-            style={[styles.vectorIcon1, styles.vectorIconPosition1]}
-            contentFit="cover"
-            source={require('../assets/vector61.png')}
           />
-        </View>
-        <View>
-          <View style={[styles.frameChild, styles.frameLayout]} />
-          <Image
-            style={[styles.vectorIcon2, styles.vectorIconPosition]}
-            contentFit="cover"
-            source={require('../assets/vector57.png')}
+          <LogrosSVG
+            styles={[styles.vectorIcon1, styles.vectorIconPosition1]}
+            onColor={'#6342E8'}
+            clickColor={clickColor}
           />
-        </View>
-        <View style={styles.rectangleParent}>
-          <View style={styles.frameLayout} />
-          <Image
-            style={[styles.vectorIcon3, styles.vectorIconPosition]}
-            contentFit="cover"
-            source={require('../assets/vector58.png')}
+        </Pressable>
+        <Pressable
+          onPress={() => {
+            setClickColor('desafios')
+            setIsSection('desafios')
+          }}
+        >
+          <View
+            style={{
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              overflow: 'hidden',
+              backgroundColor:
+                clickColor === 'desafios'
+                  ? Color.colorLightcyan
+                  : Color.secundario,
+              padding: 5,
+              borderRadius: 4,
+              zIndex: 0,
+              height: 40,
+              width: 40
+            }}
           />
-        </View>
-        <View style={[styles.vectorContainer, styles.vectorFlexBox]}>
-          <Pressable onPress={() => setIsSection('mundo')}>
-            <Image
-              style={styles.vectorIcon4}
-              contentFit="cover"
-              source={require('../assets/vector68.png')}
-            />
-          </Pressable>
-        </View>
-        <View style={styles.rectangleParent}>
-          <View style={styles.frameLayout} />
-          <Image
-            style={[styles.vectorIcon5, styles.vectorIconPosition1]}
-            contentFit="cover"
-            source={require('../assets/vector63.png')}
+          <DesafiosSVG
+            styles={[styles.vectorIcon2, styles.vectorIconPosition]}
+            onColor={'#53D5FF'}
+            clickColor={clickColor}
           />
-        </View>
+        </Pressable>
+        <Pressable
+          style={styles.rectangleParent}
+          onPress={() => {
+            setClickColor('risas')
+            setIsSection('risas')
+          }}
+        >
+          <View
+            style={{
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              overflow: 'hidden',
+              backgroundColor:
+                clickColor === 'risas'
+                  ? Color.colorHoneydew_200
+                  : Color.secundario,
+              padding: 5,
+              borderRadius: 4,
+              zIndex: 0,
+              height: 40,
+              width: 40
+            }}
+          />
+          <BurbujaAnecdotaSVG
+            styles={[styles.vectorIcon3, styles.vectorIconPosition]}
+            onColor={'#39FD9E'}
+            clickColor={clickColor}
+          />
+        </Pressable>
+        <Pressable
+          style={{
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            overflow: 'hidden',
+            backgroundColor:
+              clickColor === 'mundo' ? Color.colorOldlace : Color.secundario,
+            padding: 5,
+            borderRadius: 4,
+            zIndex: 0,
+            height: 40,
+            width: 40
+          }}
+          onPress={() => {
+            setClickColor('mundo')
+            setIsSection('mundo')
+          }}
+        >
+          <AvionSVG
+            styles={styles.vectorIcon4}
+            onColor={'#FFD02F'}
+            clickColor={clickColor}
+          />
+        </Pressable>
+        <Pressable
+          style={styles.rectangleParent}
+          onPress={() => {
+            setClickColor('personalizada')
+            setIsSection('personalizada')
+          }}
+        >
+          <View
+            style={{
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              overflow: 'hidden',
+              backgroundColor:
+                clickColor === 'personalizada'
+                  ? Color.colorAntiquewhite
+                  : Color.secundario,
+              padding: 5,
+              borderRadius: 4,
+              zIndex: 0,
+              height: 40,
+              width: 40
+            }}
+          />
+          <EditarSVG
+            styles={[styles.vectorIcon5, styles.vectorIconPosition1]}
+            onColor={'#FF9860'}
+            clickColor={clickColor}
+          />
+        </Pressable>
       </View>
     </View>
   )
@@ -246,7 +349,8 @@ const styles = StyleSheet.create({
   },
   vectorIcon4: {
     height: 18,
-    width: 26
+    width: 26,
+    top: 5
   },
   vectorContainer: {
     backgroundColor: Color.colorOldlace
