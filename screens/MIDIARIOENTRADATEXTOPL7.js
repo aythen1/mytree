@@ -1,17 +1,42 @@
-import * as React from 'react'
-import { StyleSheet, View, Text, Pressable } from 'react-native'
+import React, { useCallback, useState } from 'react'
+import { StyleSheet, View, Text, Pressable, Modal } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import { Image } from 'expo-image'
 import { useNavigation } from '@react-navigation/native'
 import { Color, FontFamily, Padding, Border, FontSize } from '../GlobalStyles'
 import NavBarDiario from '../components/NavBarDiario'
+import Humor from '../components/Humor'
+import ReflexionDiaria from '../components/ReflexionDiaria'
+import DescubriendoElMundo from '../components/DescubriendoElMundo'
 
 const MIDIARIOENTRADATEXTOPL7 = () => {
   const navigation = useNavigation()
+  const [showEdit, setShowEdit] = useState(false)
+  const [isSection, setIsSection] = useState('')
+
+  const [groupIcon1Visible, setGroupIcon1Visible] = useState(false)
+
+  const openGroupIcon1 = useCallback(() => {
+    setGroupIcon1Visible(true)
+  }, [])
+
+  const closeGroupIcon1 = useCallback(() => {
+    setGroupIcon1Visible(false)
+  }, [])
+
+  function renderSection(isSection) {
+    switch (isSection) {
+      case 'mundo':
+        return <DescubriendoElMundo />
+      case 'reflexion':
+        return <ReflexionDiaria />
+      default:
+        return <DescubriendoElMundo />
+    }
+  }
 
   return (
     <View style={styles.miDiarioEntradaTextoPl}>
-      <NavBarDiario />
       <LinearGradient
         style={[
           styles.miDiarioEntradaTextoPlChild,
@@ -20,32 +45,70 @@ const MIDIARIOENTRADATEXTOPL7 = () => {
         locations={[0, 1]}
         colors={['rgba(221, 219, 246, 0.37)', 'rgba(245, 245, 247, 0)']}
       />
+      <NavBarDiario setIsSection={setIsSection} />
+
       <Pressable
         style={[styles.frameParent, styles.image6IconPosition]}
-        onPress={() => navigation.navigate('MIDIARIOENTRADATEXTOPL1')}
+        onPress={() => {
+          setShowEdit(!showEdit)
+          // navigation.navigate('MIDIARIOENTRADATEXTOPL1')
+        }}
       >
-        <View style={[styles.parent, styles.parentFlexBox]}>
-          <Text style={[styles.text, styles.textTypo]}>07</Text>
-          <Text style={[styles.jul2023, styles.textTypo]}>jul. 2023</Text>
-          <Image
-            style={styles.iconlycurvedarrowDown2}
-            contentFit="cover"
-            source={require('../assets/iconlycurvedarrowdown2.png')}
-          />
-        </View>
-        <Text style={[styles.descubriendoElMundo, styles.hoyLoHeFlexBox]}>
-          Descubriendo el mundo
-        </Text>
-        <Text
-          style={[styles.hoyLoHe, styles.hoyLoHeFlexBox]}
-        >{`👫 Hoy lo he compartido con... 
-😊 Hoy me siento/nos sentimos...
+        {showEdit && (
+          <View style={styles.groupParent}>
+            <Pressable
+              style={styles.wrapper}
+              onPress={() => setShowEdit(false)}
+            >
+              <Image
+                style={styles.icon}
+                contentFit="cover"
+                source={require('../assets/group-68463.png')}
+              />
+            </Pressable>
+            <View style={styles.groupFlexBox}>
+              <Pressable style={styles.wrapper} onPress={openGroupIcon1}>
+                <Image
+                  style={styles.icon}
+                  contentFit="cover"
+                  source={require('../assets/group2.png')}
+                />
+              </Pressable>
+              <LinearGradient
+                style={styles.container}
+                locations={[0, 1]}
+                colors={['#dee274', '#7ec18c']}
+              >
+                <Pressable
+                  style={[styles.pressable]}
+                  // onPress={openFrameContainer}
+                >
+                  <Text style={[styles.signIn, styles.ttTypo]}>Guardar</Text>
+                </Pressable>
+              </LinearGradient>
+            </View>
+          </View>
+        )}
+        {!showEdit && (
+          <Pressable
+            style={{ flexDirection: 'row', alignItems: 'center' }}
+            onPress={() => setShowEdit(!showEdit)}
+          >
+            <Text style={[styles.text, styles.textTypo]}>07</Text>
+            <Text style={[styles.jul2023, styles.textTypo]}>jul. 2023</Text>
+            <Image
+              style={styles.iconlycurvedarrowDown2}
+              contentFit="cover"
+              source={require('../assets/iconlycurvedarrowdown2.png')}
+            />
+          </Pressable>
+        )}
 
-🌍 Lugar Explorado
-🌟 El momento más emocionante fue...
-😮 Lo que más nos impactó fue...
-🌞 El mejor momento del día fue...`}</Text>
+        {/* renderizado de secciones */}
+        {renderSection(isSection)}
+        {/* -------------------- */}
       </Pressable>
+
       <Image
         style={[styles.image6Icon, styles.image6IconPosition]}
         contentFit="cover"
@@ -75,14 +138,62 @@ const MIDIARIOENTRADATEXTOPL7 = () => {
         contentFit="cover"
         source={require('../assets/navigation25.png')}
       />
+
+      <Modal animationType="fade" transparent visible={groupIcon1Visible}>
+        <View style={styles.groupIcon1Overlay}>
+          <Pressable style={styles.groupIcon1Bg} onPress={closeGroupIcon1} />
+          <Humor onClose={closeGroupIcon1} />
+        </View>
+      </Modal>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   navigationIconLayout: {
-    width: 428,
     position: 'absolute'
+  },
+  groupParent: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 5,
+    alignItems: 'center'
+    // backgroundColor: 'red'
+  },
+  groupFlexBox: {
+    // width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row'
+  },
+  pressable: {
+    borderRadius: Border.br_11xl,
+    paddingHorizontal: Padding.p_base,
+    paddingTop: Padding.p_6xs,
+    paddingBottom: Padding.p_5xs,
+    backgroundColor: Color.linearBoton
+  },
+  wrapper: {
+    height: 24,
+    width: 24
+  },
+  icon: {
+    height: '100%',
+    width: '100%'
+  },
+  container: {
+    marginLeft: 20
+  },
+  signIn: {
+    fontSize: FontSize.size_sm,
+    lineHeight: 21,
+    textAlign: 'center'
+  },
+  ttTypo: {
+    color: Color.white,
+    textAlign: 'center',
+    fontFamily: FontFamily.lato,
+    letterSpacing: 0
   },
   image6IconPosition: {
     left: 20,

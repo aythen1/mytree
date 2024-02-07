@@ -1,81 +1,105 @@
-import * as React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { FontSize, FontFamily, Color, Border, Padding } from "../GlobalStyles";
+import React from 'react'
+import { View, Text, StyleSheet } from 'react-native'
+import { FontSize, FontFamily, Color, Border, Padding } from '../GlobalStyles'
 
 const Humor = ({ onClose }) => {
   return (
     <View style={styles.humor}>
       <Text style={styles.cmoEstTu}>¿Cómo está tu día?</Text>
       <View style={styles.parent}>
-        <Text style={styles.text}>{`😳 `}</Text>
-        <Text style={[styles.text1, styles.textTypo]}>{`😊 `}</Text>
-        <Text style={[styles.text1, styles.textTypo]}>{`😄 `}</Text>
-        <Text style={[styles.text1, styles.textTypo]}>{`🥰 `}</Text>
-        <Text style={[styles.text1, styles.textTypo]}>{`😉 `}</Text>
-        <Text style={[styles.text5, styles.textTypo]}>{`😞 `}</Text>
-        <Text style={[styles.text5, styles.textTypo]}>{`😢 `}</Text>
-        <Text style={[styles.text1, styles.textTypo]}>{`😠 `}</Text>
-        <Text style={[styles.text1, styles.textTypo]}>{`😮‍💨 `}</Text>
-        <Text style={[styles.text5, styles.textTypo]}>{`🫤 `}</Text>
+        <View style={styles.sections}>
+          <Text onPress={() => onClose()} style={styles.textTypo}>
+            😳
+          </Text>
+          <Text onPress={() => onClose()} style={styles.textTypo}>
+            😊
+          </Text>
+          <Text onPress={() => onClose()} style={styles.textTypo}>
+            😄
+          </Text>
+          <Text onPress={() => onClose()} style={styles.textTypo}>
+            🥰
+          </Text>
+          <Text onPress={() => onClose()} style={styles.textTypo}>
+            😉
+          </Text>
+        </View>
+
+        <View style={styles.sections}>
+          <Text onPress={() => onClose()} style={styles.textTypo}>
+            😞
+          </Text>
+          <Text onPress={() => onClose()} style={styles.textTypo}>
+            😢
+          </Text>
+          <Text onPress={() => onClose()} style={styles.textTypo}>
+            😠
+          </Text>
+          <Text onPress={() => onClose()} style={styles.textTypo}>
+            😮‍💨
+          </Text>
+          <Text onPress={() => onClose()} style={styles.textTypo}>
+            🫤
+          </Text>
+        </View>
       </View>
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   textTypo: {
-    marginLeft: 20,
-    textAlign: "left",
-    lineHeight: 59,
-    fontSize: FontSize.size_30xl,
+    marginLeft: 25,
+    marginTop: 10,
+    // textAlign: 'left',
+    // lineHeight: 59,
+    fontSize: 30,
     fontFamily: FontFamily.lato,
-    fontWeight: "500",
-    letterSpacing: 0,
+    fontWeight: '500',
+    letterSpacing: 0
+  },
+  sections: {
+    flexDirection: 'row'
   },
   cmoEstTu: {
     fontSize: FontSize.size_xl,
     lineHeight: 24,
-    textAlign: "center",
-    width: 164,
+    textAlign: 'center',
+    // width: 164,
     color: Color.negro,
     fontFamily: FontFamily.lato,
-    fontWeight: "500",
-    letterSpacing: 0,
+    fontWeight: '500',
+    letterSpacing: 0
   },
   text: {
-    textAlign: "left",
+    textAlign: 'left',
     lineHeight: 59,
     fontSize: FontSize.size_30xl,
     color: Color.negro,
     fontFamily: FontFamily.lato,
-    fontWeight: "500",
-    letterSpacing: 0,
+    fontWeight: '500',
+    letterSpacing: 0
   },
   text1: {
-    color: Color.negro,
+    color: Color.negro
   },
   text5: {
     color: Color.white,
+    right: 45
   },
   parent: {
-    width: 388,
-    height: 166,
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "center",
-    marginTop: 20,
-    alignItems: "center",
+    // width: '100%',
+    marginTop: 20
   },
   humor: {
     borderRadius: Border.br_11xl,
     backgroundColor: Color.white,
-    width: 428,
-    height: 413,
-    padding: Padding.p_xl,
-    maxWidth: "100%",
-    maxHeight: "100%",
-    alignItems: "center",
-  },
-});
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 200,
+    padding: Padding.p_xl
+  }
+})
 
-export default Humor;
+export default Humor

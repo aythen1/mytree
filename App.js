@@ -158,9 +158,9 @@ import MIDIARIOENTRADATEXTOPL2 from './screens/MIDIARIOENTRADATEXTOPL2'
 import MIDIARIOENTRADATEXTOPL3 from './screens/MIDIARIOENTRADATEXTOPL3'
 import MIDIARIOENTRADATEXTOPL4 from './screens/MIDIARIOENTRADATEXTOPL4'
 import MIDIARIOENTRADATEXTOPL5 from './screens/MIDIARIOENTRADATEXTOPL5'
-import MIDIARIOENTRADATEXTOPL6 from './screens/MIDIARIOENTRADATEXTOPL6'
+// import MIDIARIOENTRADATEXTOPL6 from './screens/MIDIARIOENTRADATEXTOPL6'
 import MIDIARIOENTRADATEXTOPL7 from './screens/MIDIARIOENTRADATEXTOPL7'
-import MIDIARIOENTRADATEXTO from './screens/MIDIARIOENTRADATEXTO'
+// import MIDIARIOENTRADATEXTO from './screens/Paper'
 import OpcionesZonaHoraria from './components/OpcionesZonaHoraria'
 import OpcionesCaategora from './components/OpcionesCaategora'
 import OpcionesFormatoFecha from './components/OpcionesFormatoFecha'
@@ -195,6 +195,8 @@ import { Provider } from 'react-redux'
 import { store } from './redux/store'
 import CrearReto from './screens/CrearReto'
 import FooterNavBar from './components/FooterNavBar'
+import Papers from './screens/Papers'
+import Paper from './screens/Paper'
 
 const Stack = createNativeStackNavigator()
 
@@ -1024,8 +1026,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="MIDIARIOENTRADATEXTOPL6"
-            component={MIDIARIOENTRADATEXTOPL6}
+            name="Papers"
+            component={Papers}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -1034,8 +1036,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="MIDIARIOENTRADATEXTO"
-            component={MIDIARIOENTRADATEXTO}
+            name="Paper"
+            component={Paper}
             options={{ headerShown: false }}
           />
           <Stack.Screen
