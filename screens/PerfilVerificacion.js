@@ -1,27 +1,20 @@
-import * as React from 'react'
+import React, { useState } from 'react'
 import { Image } from 'expo-image'
-import { StyleSheet, View, Pressable, Text } from 'react-native'
+import { StyleSheet, View, Pressable, Text, ScrollView } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-import { FontSize, FontFamily, Color, Padding, Border } from '../GlobalStyles'
+import { FontSize, FontFamily, Color, Padding } from '../GlobalStyles'
+import Checkbox from 'expo-checkbox'
 
-const PERFILAJUSTESVERIFICACIO = () => {
+const PerfilVerificacion = () => {
   const navigation = useNavigation()
 
+  const [isChecked, setChecked] = useState(false)
+
   return (
-    <View style={[styles.perfilAjustesVerificacio, styles.iconLayout1]}>
-      <Image
-        style={[styles.hugeIcon, styles.iconLayout]}
-        contentFit="cover"
-        source={require('../assets/hugeicon.png')}
-      />
-      <Image
-        style={styles.navigationIcon}
-        contentFit="cover"
-        source={require('../assets/navigation28.png')}
-      />
-      <View style={[styles.frameParent, styles.frameParentPosition]}>
+    <ScrollView style={[styles.perfilAjustesVerificacio, styles.iconLayout1]}>
+      <View style={styles.frameParent}>
         <View style={styles.frameGroup}>
-          <View style={styles.image6Parent}>
+          <View style={styles.parentIcons}>
             <Image
               style={styles.image6Icon}
               contentFit="cover"
@@ -29,12 +22,12 @@ const PERFILAJUSTESVERIFICACIO = () => {
             />
             <View style={styles.iconlylightOutlinecalendarParent}>
               <Image
-                style={styles.userIconLayout}
+                style={styles.iconlylightOutlinecalendar}
                 contentFit="cover"
                 source={require('../assets/iconlylightoutlinecalendar4.png')}
               />
               <Image
-                style={[styles.documentIcon, styles.documentIconLayout]}
+                style={styles.documentIconLayout}
                 contentFit="cover"
                 source={require('../assets/document7.png')}
               />
@@ -65,13 +58,15 @@ const PERFILAJUSTESVERIFICACIO = () => {
           <Text style={styles.tienes7Das}>
             ¡Tienes 7 días para conseguir tu cuenta verificada!
           </Text>
-          <View style={styles.lineasParent}>
+          <View style={styles.lineParent}>
             <Image
               style={styles.lineasIcon}
               contentFit="cover"
               source={require('../assets/lineas.png')}
             />
-            <View style={[styles.ellipseParent, styles.parentFlexBox]}>
+          </View>
+          <View style={styles.lineasParent}>
+            <View style={[styles.ellipseParent]}>
               <Image
                 style={styles.frameChild}
                 contentFit="cover"
@@ -119,7 +114,7 @@ const PERFILAJUSTESVERIFICACIO = () => {
               />
               <Text style={[styles.text, styles.textPosition]}>6</Text>
             </View>
-            <View style={[styles.ellipseParent3, styles.parentFlexBox]}>
+            <View style={[styles.ellipseParent3]}>
               <Image
                 style={styles.frameChild}
                 contentFit="cover"
@@ -132,14 +127,7 @@ const PERFILAJUSTESVERIFICACIO = () => {
             <Text style={styles.tienes7Das}>Pasos a seguir</Text>
             <View style={styles.pasosASeguirParent}>
               <View style={styles.image6Parent}>
-                <View style={[styles.check, styles.checkLayout]}>
-                  <View style={styles.checkChild} />
-                  <Image
-                    style={[styles.vectorIcon, styles.iconLayout]}
-                    contentFit="cover"
-                    source={require('../assets/vector.png')}
-                  />
-                </View>
+                <Checkbox value={isChecked} onValueChange={setChecked} />
                 <View style={styles.userParent}>
                   <Image
                     style={[styles.userIcon, styles.userIconLayout]}
@@ -151,19 +139,14 @@ const PERFILAJUSTESVERIFICACIO = () => {
                       styles.familiaresYoAmigos,
                       styles.crearUnaEntradaTypo
                     ]}
-                  >{`15 familiares y/o amigos 
-Añadiendo parentesco o grupo de amistad`}</Text>
+                  >
+                    15 familiares y/o amigos Añadiendo parentesco o grupo de
+                    amistad
+                  </Text>
                 </View>
               </View>
               <View style={styles.checkGroup}>
-                <View style={[styles.check, styles.checkLayout]}>
-                  <View style={styles.checkChild} />
-                  <Image
-                    style={[styles.vectorIcon, styles.iconLayout]}
-                    contentFit="cover"
-                    source={require('../assets/vector.png')}
-                  />
-                </View>
+                <Checkbox value={isChecked} onValueChange={setChecked} />
                 <View style={styles.userParent}>
                   <Image
                     style={[styles.imageIcon, styles.checkLayout]}
@@ -181,14 +164,7 @@ Añadiendo parentesco o grupo de amistad`}</Text>
                 </View>
               </View>
               <View style={styles.checkGroup}>
-                <View style={[styles.check, styles.checkLayout]}>
-                  <View style={styles.checkChild} />
-                  <Image
-                    style={[styles.vectorIcon, styles.iconLayout]}
-                    contentFit="cover"
-                    source={require('../assets/vector.png')}
-                  />
-                </View>
+                <Checkbox value={isChecked} onValueChange={setChecked} />
                 <View style={styles.userParent}>
                   <Image
                     style={[styles.imageIcon, styles.checkLayout]}
@@ -206,14 +182,7 @@ Añadiendo parentesco o grupo de amistad`}</Text>
                 </View>
               </View>
               <View style={styles.checkGroup}>
-                <View style={[styles.check, styles.checkLayout]}>
-                  <View style={styles.checkChild} />
-                  <Image
-                    style={[styles.vectorIcon, styles.iconLayout]}
-                    contentFit="cover"
-                    source={require('../assets/vector.png')}
-                  />
-                </View>
+                <Checkbox value={isChecked} onValueChange={setChecked} />
                 <View style={styles.userParent}>
                   <Image
                     style={[styles.imageIcon, styles.checkLayout]}
@@ -231,14 +200,7 @@ Añadiendo parentesco o grupo de amistad`}</Text>
                 </View>
               </View>
               <View style={styles.checkGroup}>
-                <View style={[styles.check, styles.checkLayout]}>
-                  <View style={styles.checkChild} />
-                  <Image
-                    style={[styles.vectorIcon, styles.iconLayout]}
-                    contentFit="cover"
-                    source={require('../assets/vector.png')}
-                  />
-                </View>
+                <Checkbox value={isChecked} onValueChange={setChecked} />
                 <View style={styles.userParent}>
                   <Image
                     style={[styles.imageIcon, styles.checkLayout]}
@@ -256,14 +218,7 @@ Añadiendo parentesco o grupo de amistad`}</Text>
                 </View>
               </View>
               <View style={styles.checkGroup}>
-                <View style={[styles.check, styles.checkLayout]}>
-                  <View style={styles.checkChild} />
-                  <Image
-                    style={[styles.vectorIcon, styles.iconLayout]}
-                    contentFit="cover"
-                    source={require('../assets/vector.png')}
-                  />
-                </View>
+                <Checkbox value={isChecked} onValueChange={setChecked} />
                 <Image
                   style={styles.documentIcon1}
                   contentFit="cover"
@@ -276,9 +231,7 @@ Añadiendo parentesco o grupo de amistad`}</Text>
                 </View>
               </View>
               <View style={styles.checkGroup}>
-                <View style={[styles.check, styles.checkLayout]}>
-                  <View style={styles.checkChild} />
-                </View>
+                <Checkbox value={isChecked} onValueChange={setChecked} />
                 <View style={styles.userParent}>
                   <Image
                     style={[styles.imageIcon, styles.checkLayout]}
@@ -299,24 +252,13 @@ Añadiendo parentesco o grupo de amistad`}</Text>
           </View>
         </View>
       </View>
-    </View>
+    </ScrollView>
   )
 }
 
 const styles = StyleSheet.create({
   iconLayout1: {
-    width: '100%',
     overflow: 'hidden'
-  },
-  iconLayout: {
-    maxHeight: '100%',
-    maxWidth: '100%',
-    position: 'absolute',
-    overflow: 'hidden'
-  },
-  frameParentPosition: {
-    top: 0,
-    position: 'absolute'
   },
   documentIconLayout: {
     marginLeft: 30,
@@ -328,16 +270,15 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   textPosition: {
-    zIndex: 1,
+    zIndex: 2,
     fontWeight: '500',
     lineHeight: 14,
     fontSize: FontSize.size_xs,
-    left: 9,
-    top: 5,
     letterSpacing: 0,
     textAlign: 'left',
     fontFamily: FontFamily.lato,
-    position: 'absolute'
+    bottom: 20,
+    left: 9
   },
   checkLayout: {
     width: 20,
@@ -348,7 +289,6 @@ const styles = StyleSheet.create({
     width: 24
   },
   crearUnaEntradaTypo: {
-    width: 308,
     textAlign: 'justify',
     color: Color.gris,
     fontWeight: '500',
@@ -357,32 +297,15 @@ const styles = StyleSheet.create({
     letterSpacing: 0,
     fontFamily: FontFamily.lato
   },
-  hugeIcon: {
-    height: '2.59%',
-    width: '5.61%',
-    top: '65.55%',
-    right: '65.42%',
-    bottom: '31.86%',
-    left: '28.97%'
-  },
-  navigationIcon: {
-    top: 821,
-    width: 428,
-    height: 105,
-    left: 0,
-    position: 'absolute'
-  },
   image6Icon: {
+    top: 3,
+    left: 10,
     width: 87,
     height: 55
   },
-  documentIcon: {
-    overflow: 'hidden'
-  },
   iconlylightOutlinecalendarParent: {
-    width: 189,
-    justifyContent: 'flex-end',
-    marginLeft: 112,
+    width: '100%',
+    left: '35%',
     flexDirection: 'row'
   },
   image6Parent: {
@@ -429,83 +352,26 @@ const styles = StyleSheet.create({
   lineasIcon: {
     marginTop: -1.5,
     top: '50%',
-    left: 18,
     width: 242,
-    height: 3,
-    position: 'absolute'
+    height: 3
   },
   frameChild: {
     width: 25,
-    zIndex: 0,
     height: 25
   },
   text: {
     color: Color.white
   },
-  ellipseParent: {
-    flexDirection: 'row',
-    top: 0,
-    position: 'absolute',
-    left: 0
-  },
-  ellipseGroup: {
-    left: 40,
-    flexDirection: 'row'
-  },
-  ellipseContainer: {
-    left: 80,
-    flexDirection: 'row'
-  },
-  frameView: {
-    left: 120,
-    flexDirection: 'row'
-  },
-  ellipseParent1: {
-    left: 160,
-    flexDirection: 'row'
-  },
-  ellipseParent2: {
-    left: 200,
-    flexDirection: 'row'
-  },
   text6: {
     color: Color.grisGeneral
   },
-  ellipseParent3: {
-    left: 240,
-    flexDirection: 'row',
-    top: 0,
-    position: 'absolute'
-  },
   lineasParent: {
-    width: 265,
     height: 25,
-    marginTop: 20
-  },
-  checkChild: {
-    height: '105%',
-    width: '105%',
-    top: '-2.5%',
-    right: '-2.5%',
-    bottom: '-2.5%',
-    left: '-2.5%',
-    borderRadius: 3,
-    borderStyle: 'solid',
-    borderColor: Color.colorGainsboro_100,
-    borderWidth: 1,
+    top: '18%',
+    flexDirection: 'row',
+    zIndex: 1,
     position: 'absolute',
-    backgroundColor: Color.white
-  },
-  vectorIcon: {
-    height: '34.5%',
-    width: '45%',
-    top: '35%',
-    right: '30%',
-    bottom: '30.5%',
-    left: '25%'
-  },
-  check: {
-    height: 20
+    gap: 8
   },
   userIcon: {
     overflow: 'hidden'
@@ -543,16 +409,25 @@ const styles = StyleSheet.create({
   },
   frameParent: {
     alignItems: 'center',
-    left: 0,
-    height: 926
+    paddingBottom: 50,
+    paddingHorizontal: Padding.p_xl
   },
   perfilAjustesVerificacio: {
-    borderRadius: Border.br_31xl,
     flex: 1,
-    overflow: 'hidden',
-    height: 926,
     backgroundColor: Color.white
+  },
+  parentIcons: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    top: '5%'
+  },
+  iconlylightOutlinecalendar: {
+    height: 24,
+    width: 24
+  },
+  lineParent: {
+    marginTop: 20
   }
 })
 
-export default PERFILAJUSTESVERIFICACIO
+export default PerfilVerificacion

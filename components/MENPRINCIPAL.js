@@ -94,7 +94,7 @@ const MENPRINCIPAL = () => {
                 />
                 <Text style={[styles.miTree, styles.muro1Typo]}>Mi Tree</Text>
               </View>
-              <View
+              {/* <View
                 style={[
                   styles.iconlylightOutlinecalendarParent,
                   styles.parentFlexBox
@@ -114,7 +114,7 @@ const MENPRINCIPAL = () => {
                 >
                   <Text style={styles.muro1Typo}>Mi Álbum Familiar</Text>
                 </Pressable>
-              </View>
+              </View> */}
               <View
                 style={[
                   styles.iconlylightOutlinecalendarParent,
@@ -247,7 +247,10 @@ const MENPRINCIPAL = () => {
                 />
                 <Pressable
                   style={styles.muro}
-                  onPress={() => navigation.navigate('Bsqueda1')}
+                  onPress={() => {
+                    navigation.navigate('Busqueda')
+                    dispatch(setPanel(false))
+                  }}
                 >
                   <Text style={styles.muro1Typo}>Búsqueda</Text>
                 </Pressable>

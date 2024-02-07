@@ -1,5 +1,5 @@
-import * as React from 'react'
-import { Text, StyleSheet, View, Pressable } from 'react-native'
+import React from 'react'
+import { Text, StyleSheet, View, Pressable, ScrollView } from 'react-native'
 import { Image } from 'expo-image'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
@@ -9,7 +9,7 @@ const MisAlbumesFamiliares = () => {
   const navigation = useNavigation()
 
   return (
-    <View style={styles.misAlbumesFamiliares}>
+    <ScrollView style={styles.misAlbumesFamiliares}>
       <View style={styles.frameParent}>
         <View style={styles.parentLayout}>
           <Text style={[styles.lbumFamiliar2023, styles.nuestraTypo]}>
@@ -132,93 +132,7 @@ const MisAlbumesFamiliares = () => {
           <View style={[styles.frameChild1, styles.maskGroupFlexBox]} />
         </View>
       </View>
-      <View style={[styles.misAlbumesFamiliaresChild, styles.tabsBarLayout]} />
-      <Image
-        style={[styles.ionmenuIcon, styles.iconPosition]}
-        contentFit="cover"
-        source={require('../assets/ionmenu.png')}
-      />
-      <Image
-        style={[styles.image6Icon, styles.iconPosition]}
-        contentFit="cover"
-        source={require('../assets/image-6.png')}
-      />
-      <View style={[styles.vectorParent, styles.buttonFlexBox]}>
-        <Image
-          style={styles.vectorIconLayout}
-          contentFit="cover"
-          source={require('../assets/vector9.png')}
-        />
-        <Image
-          style={[styles.iconlylightOutlineplus, styles.vectorIconLayout]}
-          contentFit="cover"
-          source={require('../assets/iconlylightoutlineplus1.png')}
-        />
-        <Pressable
-          style={[styles.iconlylightOutlineplus, styles.vectorIconLayout]}
-          onPress={() => navigation.navigate('PerfilAjustes')}
-        >
-          <Image
-            style={styles.icon}
-            contentFit="cover"
-            source={require('../assets/iconlylightoutlinesetting1.png')}
-          />
-        </Pressable>
-      </View>
-      <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>Bruno Pham</Text>
-      <Text style={[styles.daNangVietnam, styles.miInfoTypo]}>
-        Da Nang, Vietnam
-      </Text>
-      <View style={[styles.tabsBar, styles.tabsBarLayout]}>
-        <Pressable
-          style={[styles.tabs, styles.tabsFlexBox]}
-          onPress={() => navigation.navigate('Perfil1')}
-        >
-          <Text style={[styles.miLegado, styles.miInfoLayout]}>Mi Legado</Text>
-        </Pressable>
-        <Pressable
-          style={styles.misLbumesWrapper}
-          onPress={() => navigation.navigate('MisAlbumes1')}
-        >
-          <Text style={[styles.misLbumes, styles.signInTypo]}>Mis álbumes</Text>
-        </Pressable>
-        <Pressable
-          style={[styles.tabs1, styles.tabsFlexBox]}
-          onPress={() => navigation.navigate('PERFILMIINFO')}
-        >
-          <Text style={[styles.miInfo, styles.miInfoLayout]}>Mi info</Text>
-        </Pressable>
-        <View style={[styles.tabsBarChild, styles.tabsPosition]} />
-        <View style={[styles.tabsBarItem, styles.tabsPosition]} />
-      </View>
-      <LinearGradient
-        style={[styles.button, styles.buttonFlexBox]}
-        locations={[0, 1]}
-        colors={['#e2e57a', '#7fc08b']}
-      >
-        <Text style={[styles.signIn, styles.signInTypo]}>Salud</Text>
-      </LinearGradient>
-      <Image
-        style={[styles.misAlbumesFamiliaresItem, styles.frameChildPosition]}
-        contentFit="cover"
-        source={require('../assets/group-1171276683.png')}
-      />
-      <Image
-        style={[styles.misAlbumesFamiliaresInner, styles.groupIconLayout]}
-        contentFit="cover"
-        source={require('../assets/group-1171276684.png')}
-      />
-      <Image
-        style={[styles.groupIcon, styles.groupIconLayout]}
-        contentFit="cover"
-        source={require('../assets/group-1171276684.png')}
-      />
-      <Image
-        style={[styles.navigationIcon, styles.tabsBarLayout]}
-        contentFit="cover"
-        source={require('../assets/navigation5.png')}
-      />
-    </View>
+    </ScrollView>
   )
 }
 
@@ -232,19 +146,16 @@ const styles = StyleSheet.create({
   },
   frameChildPosition: {
     maxHeight: '100%',
-    left: '50%',
-    position: 'absolute'
+    left: '50%'
   },
   iconlyboldeditLayout: {
     maxWidth: '100%',
     top: '0%',
     maxHeight: '100%',
-    position: 'absolute',
     overflow: 'hidden'
   },
   maskGroupFlexBox: {
-    flexDirection: 'row',
-    position: 'absolute'
+    flexDirection: 'row'
   },
   maskGroupLayout: {
     height: 140,
@@ -261,35 +172,29 @@ const styles = StyleSheet.create({
     left: 1,
     textAlign: 'center',
     fontFamily: FontFamily.lato,
-    fontWeight: '500',
-    position: 'absolute'
+    fontWeight: '500'
   },
   frameViewPosition: {
     left: 1,
-    flexDirection: 'row',
-    position: 'absolute'
+    flexDirection: 'row'
   },
   tabsBarLayout: {
-    width: 428,
-    position: 'absolute'
+    width: 428
   },
   iconPosition: {
-    left: 20,
-    position: 'absolute'
+    left: 20
   },
   buttonFlexBox: {
     justifyContent: 'center',
     flexDirection: 'row',
-    alignItems: 'center',
-    position: 'absolute'
+    alignItems: 'center'
   },
   vectorIconLayout: {
     height: 24,
     width: 24
   },
   brunoPhamTypo: {
-    fontWeight: '700',
-    position: 'absolute'
+    fontWeight: '700'
   },
   miInfoTypo: {
     letterSpacing: 0,
@@ -304,8 +209,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row',
     top: 0,
-    alignItems: 'center',
-    position: 'absolute'
+    alignItems: 'center'
   },
   miInfoLayout: {
     lineHeight: 19,
@@ -322,14 +226,12 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderColor: Color.backgroundPrimaryBackground,
     borderStyle: 'solid',
-    top: 39,
-    position: 'absolute'
+    top: 39
   },
   groupIconLayout: {
     height: 50,
     width: 50,
-    top: 139,
-    position: 'absolute'
+    top: 139
   },
   lbumFamiliar2023: {
     left: 114,
@@ -337,9 +239,7 @@ const styles = StyleSheet.create({
     color: Color.negro,
     fontFamily: FontFamily.lato,
     lineHeight: 24,
-    fontSize: FontSize.size_xl,
-    top: 0,
-    position: 'absolute'
+    fontSize: FontSize.size_xl
   },
   frameChild: {
     marginLeft: -203,
@@ -367,9 +267,7 @@ const styles = StyleSheet.create({
     color: Color.negro,
     fontFamily: FontFamily.lato,
     lineHeight: 24,
-    fontSize: FontSize.size_xl,
-    top: 0,
-    position: 'absolute'
+    fontSize: FontSize.size_xl
   },
   maskGroupGroup: {
     left: 0,
@@ -384,9 +282,7 @@ const styles = StyleSheet.create({
     color: Color.negro,
     fontFamily: FontFamily.lato,
     lineHeight: 24,
-    fontSize: FontSize.size_xl,
-    top: 0,
-    position: 'absolute'
+    fontSize: FontSize.size_xl
   },
   hace10Aos: {
     top: 44
@@ -421,8 +317,7 @@ const styles = StyleSheet.create({
     top: 400,
     left: 10,
     height: 546,
-    alignItems: 'center',
-    position: 'absolute'
+    alignItems: 'center'
   },
   misAlbumesFamiliaresChild: {
     shadowColor: 'rgba(0, 0, 0, 0.15)',
@@ -477,8 +372,7 @@ const styles = StyleSheet.create({
     fontWeight: '300',
     fontSize: FontSize.size_base,
     letterSpacing: 0,
-    lineHeight: 24,
-    position: 'absolute'
+    lineHeight: 24
   },
   miLegado: {
     width: 110,
@@ -498,7 +392,6 @@ const styles = StyleSheet.create({
     lineHeight: 19,
     fontSize: FontSize.size_base,
     fontWeight: '700',
-    position: 'absolute',
     left: '50%'
   },
   misLbumesWrapper: {
@@ -508,7 +401,6 @@ const styles = StyleSheet.create({
     width: 142,
     borderRadius: Border.br_7xs,
     top: 0,
-    position: 'absolute',
     overflow: 'hidden'
   },
   miInfo: {

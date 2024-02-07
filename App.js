@@ -9,7 +9,7 @@ import Etapas from './screens/Etapas'
 import Privacidad from './screens/Privacidad'
 import Cancion from './screens/Cancion'
 import SubeTusRecuerdos from './screens/SubeTusRecuerdos'
-import LOGIN from './screens/LOGIN'
+import Login from './screens/Login'
 import Onboarding from './screens/Onboarding'
 import Onboarding1 from './screens/Onboarding1'
 import OpcionesFamiliar from './components/OpcionesFamiliar'
@@ -73,10 +73,10 @@ import MisFamiliares from './screens/MisFamiliares'
 import MisFamiliares1 from './screens/MisFamiliares1'
 import BsquedaHashtags from './screens/BsquedaHashtags'
 import BsquedaEventos from './screens/BsquedaEventos'
-import BsquedaDiarios from './screens/BsquedaDiarios'
-import BsquedaPublicaciones from './screens/BsquedaPublicaciones'
-import BsquedaContactos from './screens/BsquedaContactos'
-import Bsqueda1 from './screens/Bsqueda1'
+import BusquedaDiarios from './screens/BusquedaDiarios'
+import BusquedaPublicaciones from './screens/BusquedaPublicaciones'
+import BusquedaContactos from './screens/BusquedaContactos'
+import Busqueda from './screens/Busqueda'
 import BIO2Ancestro from './screens/BIO2Ancestro'
 import BIO2Infante from './screens/BIO2Infante'
 import PERFILIDANCESTRO from './screens/PERFILIDANCESTRO'
@@ -128,7 +128,7 @@ import BOTONInvitarAmigos1 from './screens/BOTONInvitarAmigos1'
 import Aadir from './components/Aadir'
 import Aadir1 from './components/Aadir1'
 import PERFILNOTIFICACIONES from './screens/PERFILNOTIFICACIONES'
-import PERFILAJUSTESVERIFICACIO from './screens/PERFILAJUSTESVERIFICACIO'
+import PerfilVerificacion from './screens/PerfilVerificacion'
 import PERFILAJUSTESSUSCRIPCION from './screens/PERFILAJUSTESSUSCRIPCION'
 import PerfilSeguridad from './screens/PerfilSeguridad'
 import PerfilPrivacidad from './screens/PerfilPrivacidad'
@@ -220,7 +220,7 @@ const App = () => {
                 route.name !== 'Onboarding' &&
                 route.name !== 'Onboarding1' &&
                 route.name !== 'Onboarding2' &&
-                route.name !== 'LOGIN'
+                route.name !== 'Login'
               // &&
               //   route.name !== 'IniciarSesin' &&
               //   route.name !== 'SignIn' &&
@@ -279,8 +279,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="LOGIN"
-            component={LOGIN}
+            name="Login"
+            component={Login}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -599,23 +599,23 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="BsquedaDiarios"
-            component={BsquedaDiarios}
+            name="BusquedaDiarios"
+            component={BusquedaDiarios}
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="BsquedaPublicaciones"
-            component={BsquedaPublicaciones}
+            name="BusquedaPublicaciones"
+            component={BusquedaPublicaciones}
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="BsquedaContactos"
-            component={BsquedaContactos}
+            name="BusquedaContactos"
+            component={BusquedaContactos}
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="Bsqueda1"
-            component={Bsqueda1}
+            name="Busqueda"
+            component={Busqueda}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -874,8 +874,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="PERFILAJUSTESVERIFICACIO"
-            component={PERFILAJUSTESVERIFICACIO}
+            name="PerfilVerificacion"
+            component={PerfilVerificacion}
             options={{ headerShown: false }}
           />
           <Stack.Screen

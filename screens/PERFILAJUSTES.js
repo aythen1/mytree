@@ -173,9 +173,7 @@ const PerfilAjustes = () => {
                 </Pressable>
                 <Pressable
                   style={[styles.frameParent3, styles.parentFlexBox]}
-                  onPress={() =>
-                    navigation.navigate('PERFILAJUSTESVERIFICACIO')
-                  }
+                  onPress={() => navigation.navigate('PerfilVerificacion')}
                 >
                   <View style={styles.parentFlexBox}>
                     <Image
@@ -228,7 +226,10 @@ const PerfilAjustes = () => {
               </Text>
             </View>
           </View>
-          <View style={styles.frameWrapper}>
+          <Pressable
+            style={styles.frameWrapper}
+            onPress={() => navigation.navigate('Splash')}
+          >
             <View style={[styles.logoutParent, styles.parentLayout]}>
               <Image
                 style={styles.starIcon}
@@ -239,7 +240,7 @@ const PerfilAjustes = () => {
                 Cerrar sesión
               </Text>
             </View>
-          </View>
+          </Pressable>
         </View>
       </LinearGradient>
     </ScrollView>

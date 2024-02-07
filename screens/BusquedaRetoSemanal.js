@@ -1,12 +1,12 @@
-import * as React from "react";
-import { StyleSheet, View, Pressable, Text } from "react-native";
-import { Image } from "expo-image";
-import { LinearGradient } from "expo-linear-gradient";
-import { useNavigation } from "@react-navigation/native";
-import { FontSize, Color, FontFamily, Border } from "../GlobalStyles";
+import * as React from 'react'
+import { StyleSheet, View, Pressable, Text } from 'react-native'
+import { Image } from 'expo-image'
+import { LinearGradient } from 'expo-linear-gradient'
+import { useNavigation } from '@react-navigation/native'
+import { FontSize, Color, FontFamily, Border } from '../GlobalStyles'
 
 const BusquedaRetoSemanal = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation()
 
   return (
     <View style={[styles.busquedaRetoSemanal, styles.iconLayout]}>
@@ -16,17 +16,17 @@ const BusquedaRetoSemanal = () => {
       <Image
         style={[styles.image6Icon, styles.parentPosition]}
         contentFit="cover"
-        source={require("../assets/image-6.png")}
+        source={require('../assets/image-6.png')}
       />
       <View style={[styles.backParent, styles.backParentFlexBox]}>
         <Pressable
           style={styles.back}
-          onPress={() => navigation.navigate("Bsqueda1")}
+          onPress={() => navigation.navigate('Busqueda')}
         >
           <Image
             style={[styles.icon, styles.iconLayout]}
             contentFit="cover"
-            source={require("../assets/back.png")}
+            source={require('../assets/back.png')}
           />
         </Pressable>
         <Text style={styles.retoSemanal}>Reto semanal</Text>
@@ -36,7 +36,7 @@ const BusquedaRetoSemanal = () => {
           <LinearGradient
             style={styles.frameChild}
             locations={[0, 1]}
-            colors={["#7ec18c", "#dee274"]}
+            colors={['#7ec18c', '#dee274']}
           />
           <View style={[styles.retoActualSemanalParent, styles.parentPosition]}>
             <Text style={styles.retoActualSemanal}>Reto actual semanal</Text>
@@ -56,7 +56,7 @@ const BusquedaRetoSemanal = () => {
           <Image
             style={styles.arrowDown2Icon}
             contentFit="cover"
-            source={require("../assets/arrowdown23.png")}
+            source={require('../assets/arrowdown23.png')}
           />
         </View>
         <View style={styles.quTalTePareceEsteRetoParent}>
@@ -67,27 +67,27 @@ const BusquedaRetoSemanal = () => {
             <Image
               style={styles.starsIconLayout}
               contentFit="cover"
-              source={require("../assets/stars3.png")}
+              source={require('../assets/stars3.png')}
             />
             <Image
               style={[styles.starsIcon1, styles.starsIconLayout]}
               contentFit="cover"
-              source={require("../assets/stars3.png")}
+              source={require('../assets/stars3.png')}
             />
             <Image
               style={[styles.starsIcon1, styles.starsIconLayout]}
               contentFit="cover"
-              source={require("../assets/stars3.png")}
+              source={require('../assets/stars3.png')}
             />
             <Image
               style={[styles.starsIcon1, styles.starsIconLayout]}
               contentFit="cover"
-              source={require("../assets/stars4.png")}
+              source={require('../assets/stars4.png')}
             />
             <Image
               style={[styles.starsIcon1, styles.starsIconLayout]}
               contentFit="cover"
-              source={require("../assets/stars5.png")}
+              source={require('../assets/stars5.png')}
             />
           </View>
         </View>
@@ -95,95 +95,95 @@ const BusquedaRetoSemanal = () => {
       <Image
         style={[styles.navigationIcon, styles.navigationIconPosition]}
         contentFit="cover"
-        source={require("../assets/navigation10.png")}
+        source={require('../assets/navigation10.png')}
       />
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   iconLayout: {
-    overflow: "hidden",
-    width: "100%",
+    overflow: 'hidden',
+    width: '100%'
   },
   navigationIconPosition: {
     width: 428,
     left: 0,
-    position: "absolute",
+    position: 'absolute'
   },
   parentPosition: {
     left: 20,
-    position: "absolute",
+    position: 'absolute'
   },
   backParentFlexBox: {
-    alignItems: "center",
-    flexDirection: "row",
+    alignItems: 'center',
+    flexDirection: 'row'
   },
   quTalTeTypo: {
     letterSpacing: 0,
     fontSize: FontSize.size_lg,
-    textAlign: "left",
+    textAlign: 'left',
     color: Color.negro,
-    fontFamily: FontFamily.lato,
+    fontFamily: FontFamily.lato
   },
   starsIconLayout: {
     height: 31,
     width: 33,
-    overflow: "hidden",
+    overflow: 'hidden'
   },
   busquedaRetoSemanalChild: {
     top: 0,
-    shadowColor: "rgba(0, 0, 0, 0.15)",
+    shadowColor: 'rgba(0, 0, 0, 0.15)',
     shadowOffset: {
       width: 0,
-      height: 5,
+      height: 5
     },
     shadowRadius: 25,
     elevation: 25,
     shadowOpacity: 1,
     height: 126,
-    backgroundColor: Color.white,
+    backgroundColor: Color.white
   },
   image6Icon: {
     top: 3,
     width: 87,
-    height: 55,
+    height: 55
   },
   icon: {
-    height: "100%",
+    height: '100%'
   },
   back: {
     width: 24,
-    height: 24,
+    height: 24
   },
   retoSemanal: {
     fontSize: FontSize.size_5xl,
     marginLeft: 20,
-    textAlign: "left",
+    textAlign: 'left',
     color: Color.negro,
     fontFamily: FontFamily.lato,
-    fontWeight: "700",
+    fontWeight: '700'
   },
   backParent: {
     top: 78,
-    justifyContent: "center",
+    justifyContent: 'center',
     left: 20,
-    position: "absolute",
+    position: 'absolute'
   },
   frameChild: {
     borderRadius: Border.br_3xs,
     backgroundColor: Color.linearBoton,
     zIndex: 0,
     width: 388,
-    height: 194,
+    height: 194
   },
   retoActualSemanal: {
     fontSize: FontSize.size_xl,
     lineHeight: 24,
-    textAlign: "right",
+    textAlign: 'right',
     color: Color.white,
     fontFamily: FontFamily.lato,
-    fontWeight: "700",
+    fontWeight: '700'
   },
   enLugarDe: {
     width: 348,
@@ -191,59 +191,59 @@ const styles = StyleSheet.create({
     lineHeight: 22,
     fontSize: FontSize.size_lg,
     color: Color.white,
-    textAlign: "left",
-    fontFamily: FontFamily.lato,
+    textAlign: 'left',
+    fontFamily: FontFamily.lato
   },
   retoActualSemanalParent: {
     top: 20,
-    zIndex: 1,
+    zIndex: 1
   },
   rectangleParent: {
-    height: 194,
+    height: 194
   },
   invitarAMs: {
-    fontWeight: "500",
-    lineHeight: 22,
+    fontWeight: '500',
+    lineHeight: 22
   },
   invitarAMsFamiliaresAEstWrapper: {
-    width: 359,
+    width: 359
   },
   arrowDown2Icon: {
     width: 9,
     height: 16,
-    marginLeft: 20,
+    marginLeft: 20
   },
   frameGroup: {
-    justifyContent: "flex-end",
+    justifyContent: 'flex-end',
     marginTop: 20,
-    width: 388,
+    width: 388
   },
   quTalTe: {
-    lineHeight: 27,
+    lineHeight: 27
   },
   starsIcon1: {
-    marginLeft: 20,
+    marginLeft: 20
   },
   starsParent: {
     marginTop: 20,
-    flexDirection: "row",
+    flexDirection: 'row'
   },
   quTalTePareceEsteRetoParent: {
-    marginTop: 20,
+    marginTop: 20
   },
   frameParent: {
-    top: 146,
+    top: 146
   },
   navigationIcon: {
     top: 821,
-    height: 105,
+    height: 105
   },
   busquedaRetoSemanal: {
     borderRadius: Border.br_31xl,
     flex: 1,
     height: 926,
-    backgroundColor: Color.white,
-  },
-});
+    backgroundColor: Color.white
+  }
+})
 
-export default BusquedaRetoSemanal;
+export default BusquedaRetoSemanal

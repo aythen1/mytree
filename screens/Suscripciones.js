@@ -490,7 +490,9 @@ const styles = StyleSheet.create({
   },
   image6Icon: {
     width: 87,
-    height: 55
+    height: 55,
+    left: '6%',
+    top: '13%'
   },
   icon: {
     height: '100%',
@@ -621,7 +623,8 @@ const styles = StyleSheet.create({
   },
   frameParent: {
     top: 2,
-    alignItems: 'center'
+    alignItems: 'center',
+    paddingBottom: 650
   },
   navigationIcon: {
     top: 821,
@@ -629,10 +632,8 @@ const styles = StyleSheet.create({
     width: 428
   },
   suscripciones: {
-    borderRadius: Border.br_31xl,
     overflow: 'hidden',
     flex: 1,
-    paddingHorizontal: Padding.p_xl,
     backgroundColor: Color.white
   }
 })
