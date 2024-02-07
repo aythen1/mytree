@@ -8,6 +8,10 @@ import NavBarDiario from '../components/NavBarDiario'
 import Humor from '../components/Humor'
 import ReflexionDiaria from '../components/ReflexionDiaria'
 import DescubriendoElMundo from '../components/DescubriendoElMundo'
+import CalebrandoLogros from '../components/CelebrandoLogros'
+import DesafiosSuperados from '../components/DesafiosSuperados'
+import RisaAnecdotas from '../components/RisaAnecdotas'
+import Personalizada from '../components/Personalizada'
 
 const MIDIARIOENTRADATEXTOPL7 = () => {
   const navigation = useNavigation()
@@ -30,6 +34,14 @@ const MIDIARIOENTRADATEXTOPL7 = () => {
         return <DescubriendoElMundo />
       case 'reflexion':
         return <ReflexionDiaria />
+      case 'logros':
+        return <CalebrandoLogros />
+      case 'desafios':
+        return <DesafiosSuperados />
+      case 'risas':
+        return <RisaAnecdotas />
+      case 'personalizada':
+        return <Personalizada />
       default:
         return <DescubriendoElMundo />
     }
