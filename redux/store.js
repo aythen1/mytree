@@ -4,8 +4,9 @@ import challengersSlices from './slices/challengers.slices'
 import panelSlices from './slices/panel.slices'
 import memoriesSlices from './slices/memories.slices'
 import infantSlices from './slices/infant.slices'
-import condolenceBookSlices from './slices/condolenceBook,slices'
+import condolenceBookSlices from './slices/condolenceBook.slices'
 import familySlices from './slices/family.slices'
+import newspapersPublishedSlices from './slices/newspapersPublished.slices'
 
 export const store = configureStore({
   reducer: {
@@ -15,6 +16,7 @@ export const store = configureStore({
     memories: memoriesSlices,
     infants: infantSlices,
     book: condolenceBookSlices,
-    family: familySlices
+    family: familySlices,
+    papers: newspapersPublishedSlices
   }
 })
