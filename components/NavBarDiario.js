@@ -1,27 +1,36 @@
 import React from 'react'
-import { StyleSheet, View } from 'react-native'
+import { Pressable, StyleSheet, View } from 'react-native'
 
 import { Image } from 'expo-image'
 import { useNavigation } from '@react-navigation/native'
 import { Color, FontFamily, Padding, Border, FontSize } from '../GlobalStyles'
 
-const NavBarDiario = () => {
+const NavBarDiario = ({ setIsSection }) => {
   const navigation = useNavigation()
 
   return (
     <View style={styles.miDiarioEntradaTextoPl}>
-      <Image
+      {/* <Image
         style={[styles.navigationIcon, styles.navigationIconLayout]}
         contentFit="cover"
         source={require('../assets/navigation25.png')}
-      />
+      /> */}
       <View style={[styles.frameGroup, styles.frameFlexBox]}>
         <View style={[styles.vectorWrapper, styles.vectorFlexBox]}>
-          <Image
-            style={styles.vectorIcon}
-            contentFit="cover"
-            source={require('../assets/vector55.png')}
-          />
+          <Pressable
+            style={[styles.vectorWrapper, styles.vectorFlexBox]}
+            onPress={() => {
+              setIsSection('reflexion')
+              // alert('hola')
+              // navigation.navigate('MIDIARIOENTRADATEXTOPL5')
+            }}
+          >
+            <Image
+              style={styles.vectorIcon}
+              contentFit="cover"
+              source={require('../assets/vector55.png')}
+            />
+          </Pressable>
         </View>
         <View>
           <View style={[styles.frameChild, styles.frameLayout]} />
@@ -48,11 +57,13 @@ const NavBarDiario = () => {
           />
         </View>
         <View style={[styles.vectorContainer, styles.vectorFlexBox]}>
-          <Image
-            style={styles.vectorIcon4}
-            contentFit="cover"
-            source={require('../assets/vector68.png')}
-          />
+          <Pressable onPress={() => setIsSection('mundo')}>
+            <Image
+              style={styles.vectorIcon4}
+              contentFit="cover"
+              source={require('../assets/vector68.png')}
+            />
+          </Pressable>
         </View>
         <View style={styles.rectangleParent}>
           <View style={styles.frameLayout} />
@@ -268,7 +279,7 @@ const styles = StyleSheet.create({
     borderRadius: Border.br_31xl,
     backgroundColor: Color.white,
     width: '100%',
-    height: 40,
+    height: 60,
 
     overflow: 'hidden',
     flex: 1
