@@ -12,20 +12,25 @@ import BurbujaAnecdotaSVG from './svgs/BurbujaAnecdotaSVG'
 import AvionSVG from './svgs/AviosSVG'
 import EditarSVG from './svgs/EditarSVG'
 
-const NavBarDiario = ({ setIsSection }) => {
+const NavBarDiario = ({ setIsSection, isSection }) => {
   const navigation = useNavigation()
   const [clickColor, setClickColor] = useState('')
 
   return (
     <View style={styles.miDiarioEntradaTextoPl}>
-      {/* <Image
-        style={[styles.navigationIcon, styles.navigationIconLayout]}
-        contentFit="cover"
-        source={require('../assets/navigation25.png')}
-      /> */}
       <View style={[styles.frameGroup, styles.frameFlexBox]}>
         <Pressable
-          style={[styles.frameChild, styles.frameLayout]}
+          style={
+            ([styles.frameChild, styles.frameLayout],
+            {
+              backgroundColor:
+                clickColor === 'nube'
+                  ? Color.colorLavenderblush
+                  : Color.secundario,
+              padding: 5,
+              borderRadius: 4
+            })
+          }
           onPress={() => {
             setClickColor('nube')
             setIsSection('reflexion')
@@ -39,7 +44,22 @@ const NavBarDiario = ({ setIsSection }) => {
             setIsSection('logros')
           }}
         >
-          <View style={[styles.frameChild, styles.frameLayout]} />
+          <View
+            style={{
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              overflow: 'hidden',
+              backgroundColor:
+                clickColor === 'logros'
+                  ? Color.colorLavender_100
+                  : Color.secundario,
+              padding: 5,
+              borderRadius: 4,
+              zIndex: 0,
+              height: 40,
+              width: 40
+            }}
+          />
           <LogrosSVG
             styles={[styles.vectorIcon1, styles.vectorIconPosition1]}
             onColor={'#6342E8'}
@@ -52,7 +72,22 @@ const NavBarDiario = ({ setIsSection }) => {
             setIsSection('desafios')
           }}
         >
-          <View style={[styles.frameChild, styles.frameLayout]} />
+          <View
+            style={{
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              overflow: 'hidden',
+              backgroundColor:
+                clickColor === 'desafios'
+                  ? Color.colorLightcyan
+                  : Color.secundario,
+              padding: 5,
+              borderRadius: 4,
+              zIndex: 0,
+              height: 40,
+              width: 40
+            }}
+          />
           <DesafiosSVG
             styles={[styles.vectorIcon2, styles.vectorIconPosition]}
             onColor={'#53D5FF'}
@@ -66,7 +101,22 @@ const NavBarDiario = ({ setIsSection }) => {
             setIsSection('risas')
           }}
         >
-          <View style={styles.frameLayout} />
+          <View
+            style={{
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              overflow: 'hidden',
+              backgroundColor:
+                clickColor === 'risas'
+                  ? Color.colorHoneydew_200
+                  : Color.secundario,
+              padding: 5,
+              borderRadius: 4,
+              zIndex: 0,
+              height: 40,
+              width: 40
+            }}
+          />
           <BurbujaAnecdotaSVG
             styles={[styles.vectorIcon3, styles.vectorIconPosition]}
             onColor={'#39FD9E'}
@@ -74,7 +124,18 @@ const NavBarDiario = ({ setIsSection }) => {
           />
         </Pressable>
         <Pressable
-          style={[styles.frameChild, styles.frameLayout]}
+          style={{
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            overflow: 'hidden',
+            backgroundColor:
+              clickColor === 'mundo' ? Color.colorOldlace : Color.secundario,
+            padding: 5,
+            borderRadius: 4,
+            zIndex: 0,
+            height: 40,
+            width: 40
+          }}
           onPress={() => {
             setClickColor('mundo')
             setIsSection('mundo')
@@ -93,7 +154,22 @@ const NavBarDiario = ({ setIsSection }) => {
             setIsSection('personalizada')
           }}
         >
-          <View style={styles.frameLayout} />
+          <View
+            style={{
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              overflow: 'hidden',
+              backgroundColor:
+                clickColor === 'personalizada'
+                  ? Color.colorAntiquewhite
+                  : Color.secundario,
+              padding: 5,
+              borderRadius: 4,
+              zIndex: 0,
+              height: 40,
+              width: 40
+            }}
+          />
           <EditarSVG
             styles={[styles.vectorIcon5, styles.vectorIconPosition1]}
             onColor={'#FF9860'}

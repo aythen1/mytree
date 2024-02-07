@@ -57,7 +57,7 @@ const MIDIARIOENTRADATEXTOPL7 = () => {
         locations={[0, 1]}
         colors={['rgba(221, 219, 246, 0.37)', 'rgba(245, 245, 247, 0)']}
       />
-      <NavBarDiario setIsSection={setIsSection} />
+      <NavBarDiario setIsSection={setIsSection} isSection={isSection} />
 
       <Pressable
         style={[styles.frameParent, styles.image6IconPosition]}
