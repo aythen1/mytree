@@ -98,11 +98,11 @@ const CrearEvento = () => {
   return (
     <>
       <ScrollView style={{ flex: 1 }}>
-        <View style={[styles.crearEvento, styles.icon6Layout]}>
+        <View style={[styles.crearEvento]}>
           <View style={[styles.crearEventoInner, styles.frameParentLayout]}>
             <View style={[styles.frameParent, styles.frameParentPosition]}>
               <View style={styles.fieldWithTitleParent}>
-                <View>
+                <View style={styles.fieldWithTitle1}>
                   <View style={styles.titleBase}>
                     <Text style={[styles.title, styles.titleTypo]}>
                       Titulo del evento
@@ -424,7 +424,7 @@ const styles = StyleSheet.create({
   },
   frameParentLayout: {
     height: 785,
-    width: 427
+    width: '100%'
   },
   frameParentPosition: {
     top: 0,
@@ -504,6 +504,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'rgba(113, 113, 113, 0.3)'
+    // position: 'absolute',
+    // bottom: 0
   },
   arrowDown2IconBg: {
     position: 'absolute',
@@ -523,7 +525,7 @@ const styles = StyleSheet.create({
   },
   field: {
     borderRadius: Border.br_3xs,
-    backgroundColor: Color.fAFAFA,
+    backgroundColor: Color.white,
     paddingVertical: Padding.p_smi,
     width: 388
   },
@@ -541,7 +543,9 @@ const styles = StyleSheet.create({
     top: 0
   },
   fieldWithTitle1: {
-    marginTop: 20
+    marginTop: 20,
+    width: '100%',
+    backgroundColor: Color.fAFAFA
   },
   arrowDown2Icon2Overlay: {
     flex: 1,
@@ -637,11 +641,11 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     marginTop: 20,
     flexDirection: 'row',
-    width: 388,
+    width: '100%',
     alignItems: 'center'
   },
   fieldWithTitleParent: {
-    height: 736
+    // height: 736,
   },
   signIn: {
     lineHeight: 21,
@@ -692,7 +696,8 @@ const styles = StyleSheet.create({
   },
   button1: {
     height: 52,
-    marginLeft: 20
+    marginLeft: 20,
+    borderRadius: Border.br_11xl
   },
   buttonBar: {
     paddingVertical: Padding.p_3xs,
@@ -727,7 +732,8 @@ const styles = StyleSheet.create({
   },
   button2: {
     marginTop: 8,
-    width: 388
+    width: 388,
+    borderRadius: Border.br_11xl
   },
   frameChild: {
     padding: Padding.p_3xs,
@@ -736,11 +742,10 @@ const styles = StyleSheet.create({
     backgroundColor: Color.white
   },
   frameParent: {
-    marginLeft: -213.5,
-    left: '50%',
     alignItems: 'center',
     height: 785,
-    width: 427
+    width: '100%',
+    paddingHorizontal: 20
   },
   crearEventoInner: {
     top: 147,
@@ -757,7 +762,7 @@ const styles = StyleSheet.create({
     elevation: 25,
     shadowOpacity: 1,
     height: 127,
-    width: 428,
+    width: '100%',
     left: 0,
     backgroundColor: Color.white
   },
@@ -797,7 +802,8 @@ const styles = StyleSheet.create({
   },
   crearEvento: {
     borderRadius: Border.br_31xl,
-    height: 1300,
+    marginTop: 15,
+    height: 1100,
     flex: 1,
     paddingBottom: 80,
     backgroundColor: Color.white
