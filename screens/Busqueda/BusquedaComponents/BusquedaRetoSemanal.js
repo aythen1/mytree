@@ -3,7 +3,7 @@ import { StyleSheet, View, Pressable, Text } from 'react-native'
 import { Image } from 'expo-image'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
-import { FontSize, Color, FontFamily, Border } from '../GlobalStyles'
+import { FontSize, Color, FontFamily, Border } from '../../../GlobalStyles'
 
 const BusquedaRetoSemanal = () => {
   const navigation = useNavigation()
@@ -16,7 +16,7 @@ const BusquedaRetoSemanal = () => {
       <Image
         style={[styles.image6Icon, styles.parentPosition]}
         contentFit="cover"
-        source={require('../assets/image-6.png')}
+        source={require('../../../../assets/image-6.png')}
       />
       <View style={[styles.backParent, styles.backParentFlexBox]}>
         <Pressable
@@ -26,7 +26,7 @@ const BusquedaRetoSemanal = () => {
           <Image
             style={[styles.icon, styles.iconLayout]}
             contentFit="cover"
-            source={require('../assets/back.png')}
+            source={require('../../../assets/back.png')}
           />
         </Pressable>
         <Text style={styles.retoSemanal}>Reto semanal</Text>
@@ -56,7 +56,7 @@ const BusquedaRetoSemanal = () => {
           <Image
             style={styles.arrowDown2Icon}
             contentFit="cover"
-            source={require('../assets/arrowdown23.png')}
+            source={require('../../../assets/arrowdown23.png')}
           />
         </View>
         <View style={styles.quTalTePareceEsteRetoParent}>
@@ -67,27 +67,27 @@ const BusquedaRetoSemanal = () => {
             <Image
               style={styles.starsIconLayout}
               contentFit="cover"
-              source={require('../assets/stars3.png')}
+              source={require('../../../assets/stars3.png')}
             />
             <Image
               style={[styles.starsIcon1, styles.starsIconLayout]}
               contentFit="cover"
-              source={require('../assets/stars3.png')}
+              source={require('../../../assets/stars3.png')}
             />
             <Image
               style={[styles.starsIcon1, styles.starsIconLayout]}
               contentFit="cover"
-              source={require('../assets/stars3.png')}
+              source={require('../../../assets/stars3.png')}
             />
             <Image
               style={[styles.starsIcon1, styles.starsIconLayout]}
               contentFit="cover"
-              source={require('../assets/stars4.png')}
+              source={require('../../../assets/stars4.png')}
             />
             <Image
               style={[styles.starsIcon1, styles.starsIconLayout]}
               contentFit="cover"
-              source={require('../assets/stars5.png')}
+              source={require('../../../assets/stars5.png')}
             />
           </View>
         </View>
@@ -95,7 +95,7 @@ const BusquedaRetoSemanal = () => {
       <Image
         style={[styles.navigationIcon, styles.navigationIconPosition]}
         contentFit="cover"
-        source={require('../assets/navigation10.png')}
+        source={require('../../../assets/navigation10.png')}
       />
     </View>
   )

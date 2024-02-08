@@ -1,12 +1,27 @@
 import React, { useState } from 'react'
 import { Image } from 'expo-image'
-import { StyleSheet, View, Pressable, Text, ScrollView } from 'react-native'
+import {
+  StyleSheet,
+  View,
+  Pressable,
+  Text,
+  ScrollView,
+  TextInput
+} from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-import { Padding, Border, FontSize, FontFamily, Color } from '../GlobalStyles'
-import BusquedaRetos from './BusquedaRetos'
-import BusquedaContactos from './BusquedaContactos'
-import BusquedaPublicaciones from './BusquedaPublicaciones'
-import BusquedaDiarios from './BusquedaDiarios'
+import {
+  Padding,
+  Border,
+  FontSize,
+  FontFamily,
+  Color
+} from '../../GlobalStyles'
+import BusquedaRetos from './BusquedaComponents/BusquedaRetos'
+import BusquedaContactos from './BusquedaComponents/BusquedaContactos'
+import BusquedaPublicaciones from './BusquedaComponents/BusquedaPublicaciones'
+import BusquedaDiarios from './BusquedaComponents/BusquedaDiarios'
+import BusquedaHashtags from './BusquedaComponents/BusquedaHashtags'
+import BusquedaEventos from './BusquedaComponents/BusquedaEventos'
 
 const Busqueda = () => {
   const navigation = useNavigation()
@@ -23,6 +38,10 @@ const Busqueda = () => {
         return <BusquedaPublicaciones />
       case 'BusquedaDiarios':
         return <BusquedaDiarios />
+      case 'BusquedaHashtags':
+        return <BusquedaHashtags />
+      case 'BusquedaEventos':
+        return <BusquedaEventos />
       default:
         return null
     }
@@ -34,7 +53,7 @@ const Busqueda = () => {
         <Image
           style={styles.image6Icon}
           contentFit="cover"
-          source={require('../assets/image-6.png')}
+          source={require('../../assets/image-6.png')}
         />
         <View style={styles.backParent}>
           <Pressable
@@ -44,7 +63,7 @@ const Busqueda = () => {
             <Image
               style={styles.icon}
               contentFit="cover"
-              source={require('../assets/back.png')}
+              source={require('../../assets/back.png')}
             />
           </Pressable>
           <Text style={[styles.bsqueda1, styles.bsqueda1Typo]}>Búsqueda</Text>
@@ -54,17 +73,21 @@ const Busqueda = () => {
             <Image
               style={styles.iconlylightOutlinesearch}
               contentFit="cover"
-              source={require('../assets/iconlylightoutlinesearch4.png')}
+              source={require('../../assets/iconlylightoutlinesearch4.png')}
             />
             <View style={styles.placeholderInput}>
-              <Text style={styles.search}>{`Search `}</Text>
+              <TextInput
+                style={styles.search}
+                placeholder="Search"
+                placeholderTextColor={Color.textPlaceholder}
+              />
             </View>
           </View>
           <View style={styles.iconlylightsendCopyWrapper}>
             <Image
               style={styles.back}
               contentFit="cover"
-              source={require('../assets/iconlylightsend-copy1.png')}
+              source={require('../../assets/iconlylightsend-copy1.png')}
             />
           </View>
         </View>
@@ -97,13 +120,13 @@ const Busqueda = () => {
           </Pressable>
           <Pressable
             style={[styles.contactosWrapper, styles.tabsFlexBox]}
-            onPress={() => navigation.navigate('BsquedaHashtags')}
+            onPress={() => setSelectedComponent('BusquedaHashtags')}
           >
             <Text style={[styles.contactos, styles.retosTypo]}>Hashtags</Text>
           </Pressable>
           <Pressable
             style={[styles.contactosWrapper, styles.tabsFlexBox]}
-            onPress={() => navigation.navigate('BsquedaEventos')}
+            onPress={() => setSelectedComponent('BusquedaEventos')}
           >
             <Text style={[styles.contactos, styles.retosTypo]}>Eventos</Text>
           </Pressable>

@@ -108,7 +108,7 @@ Sigue explorando y siéntete libre de compartir tu contenido. ¡Te ayudamos a cr
             >
               <Pressable
                 style={[styles.pressable, styles.pressableBg]}
-                onPress={() => navigation.navigate('MUROINFORMACIN')}
+                onPress={() => navigation.navigate('Muro')}
               >
                 <Text style={styles.signIn}>CONTINUAR</Text>
               </Pressable>

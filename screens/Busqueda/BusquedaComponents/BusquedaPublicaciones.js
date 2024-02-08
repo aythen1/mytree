@@ -1,7 +1,7 @@
 import React from 'react'
 import { Image } from 'expo-image'
 import { StyleSheet, View, Text, ScrollView } from 'react-native'
-import { FontSize, FontFamily, Color } from '../GlobalStyles'
+import { FontSize, FontFamily, Color } from '../../../GlobalStyles'
 
 const BusquedaPublicaciones = () => {
   return (
@@ -10,7 +10,7 @@ const BusquedaPublicaciones = () => {
         <Image
           style={styles.image2Icon}
           contentFit="cover"
-          source={require('../assets/image-2.png')}
+          source={require('../../../assets/image-2.png')}
         />
         <Text style={[styles.subeTusRecuerdos, styles.retosTypo]}>
           Sube tus recuerdos y mantente al día de todos tus seres queridos, ¡no

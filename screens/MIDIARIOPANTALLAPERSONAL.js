@@ -3,11 +3,16 @@ import { StyleSheet, View, Text, Pressable, ScrollView } from 'react-native'
 import { Image } from 'expo-image'
 import { useNavigation } from '@react-navigation/native'
 import { Border, FontFamily, Color, FontSize } from '../GlobalStyles'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { setPanel } from '../redux/slices/panel.slices'
 import Papers from './Papers'
 
 const MIDIARIOPANTALLAPERSONAL = () => {
+  const dispatch = useDispatch()
+
+  const { showPanel } = useSelector((state) => state.panel)
   const { diaries } = useSelector((state) => state.family)
+
   const [paper, setPaper] = useState(false)
   const navigation = useNavigation()
   const [
@@ -54,11 +59,13 @@ const MIDIARIOPANTALLAPERSONAL = () => {
 
           <View style={styles.frameParent12}>
             <View style={styles.ionmenuParent}>
-              <Image
-                style={[styles.ionmenuIcon, styles.ionmenuIconLayout]}
-                contentFit="cover"
-                source={require('../assets/ionmenu2.png')}
-              />
+              <Pressable onPress={() => dispatch(setPanel(!showPanel))}>
+                <Image
+                  style={[styles.ionmenuIcon, styles.ionmenuIconLayout]}
+                  contentFit="cover"
+                  source={require('../assets/ionmenu2.png')}
+                />
+              </Pressable>
               <Text style={[styles.miDiario, styles.textTypo]}>Mi Diario</Text>
             </View>
             <Pressable
@@ -623,7 +630,7 @@ const styles = StyleSheet.create({
     // position: 'absolute'
   },
   miDiarioPantallaPersonal: {
-    borderRadius: Border.br_31xl,
+    // borderRadius: Border.br_31xl,
     // flex: 1,
     paddingBottom: 50,
     height: 1200,

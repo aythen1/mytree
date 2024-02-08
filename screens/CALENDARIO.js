@@ -1,21 +1,21 @@
-import React, { useState, useCallback } from "react";
-import { StyleSheet, View, Text, Pressable, Modal } from "react-native";
-import { Image } from "expo-image";
-import MENPRINCIPAL from "../components/MENPRINCIPAL";
-import { useNavigation } from "@react-navigation/native";
-import { Border, Color, FontFamily, FontSize, Padding } from "../GlobalStyles";
+import React, { useState, useCallback } from 'react'
+import { StyleSheet, View, Text, Pressable, Modal } from 'react-native'
+import { Image } from 'expo-image'
+import MenuPrincipal from '../components/MenuPrincipal'
+import { useNavigation } from '@react-navigation/native'
+import { Border, Color, FontFamily, FontSize, Padding } from '../GlobalStyles'
 
 const CALENDARIO = () => {
-  const [ionmenuIconVisible, setIonmenuIconVisible] = useState(false);
-  const navigation = useNavigation();
+  const [ionmenuIconVisible, setIonmenuIconVisible] = useState(false)
+  const navigation = useNavigation()
 
   const openIonmenuIcon = useCallback(() => {
-    setIonmenuIconVisible(true);
-  }, []);
+    setIonmenuIconVisible(true)
+  }, [])
 
   const closeIonmenuIcon = useCallback(() => {
-    setIonmenuIconVisible(false);
-  }, []);
+    setIonmenuIconVisible(false)
+  }, [])
 
   return (
     <>
@@ -26,14 +26,14 @@ const CALENDARIO = () => {
         <Image
           style={[styles.image6Icon, styles.image6IconPosition]}
           contentFit="cover"
-          source={require("../assets/image-6.png")}
+          source={require('../assets/image-6.png')}
         />
         <View style={styles.parent}>
           <Text style={[styles.text, styles.textTypo]}>2023</Text>
           <Image
             style={[styles.iconlyboldfilter2, styles.iconlyboldfilterLayout]}
             contentFit="cover"
-            source={require("../assets/iconlyboldfilter21.png")}
+            source={require('../assets/iconlyboldfilter21.png')}
           />
         </View>
         <View style={[styles.calendario3Inner, styles.image6IconPosition]}>
@@ -42,26 +42,26 @@ const CALENDARIO = () => {
               <Image
                 style={[styles.icon, styles.iconLayout]}
                 contentFit="cover"
-                source={require("../assets/ionmenu.png")}
+                source={require('../assets/ionmenu.png')}
               />
             </Pressable>
             <View style={styles.iconlylightOutlinesearchParent}>
               <Image
                 style={styles.iconlylightOutlinesearch}
                 contentFit="cover"
-                source={require("../assets/iconlylightoutlinesearch8.png")}
+                source={require('../assets/iconlylightoutlinesearch8.png')}
               />
               <Pressable
                 style={[
                   styles.iconlyboldfilter2,
-                  styles.iconlyboldfilterLayout,
+                  styles.iconlyboldfilterLayout
                 ]}
-                onPress={() => navigation.navigate("CrearEvento")}
+                onPress={() => navigation.navigate('CrearEvento')}
               >
                 <Image
                   style={styles.iconLayout}
                   contentFit="cover"
-                  source={require("../assets/iconlylightoutlinecalendar6.png")}
+                  source={require('../assets/iconlylightoutlinecalendar6.png')}
                 />
               </Pressable>
             </View>
@@ -74,19 +74,19 @@ const CALENDARIO = () => {
               <Image
                 style={[
                   styles.iconlyboldfilter21,
-                  styles.iconlyboldfilterLayout,
+                  styles.iconlyboldfilterLayout
                 ]}
                 contentFit="cover"
-                source={require("../assets/iconlyboldfilter21.png")}
+                source={require('../assets/iconlyboldfilter21.png')}
               />
               <Pressable
                 style={styles.iconlyboldplus}
-                onPress={() => navigation.navigate("CALENDARIOCREARFECHAESPEC")}
+                onPress={() => navigation.navigate('CALENDARIOCREARFECHAESPEC')}
               >
                 <Image
                   style={styles.iconLayout}
                   contentFit="cover"
-                  source={require("../assets/iconlyboldplus.png")}
+                  source={require('../assets/iconlyboldplus.png')}
                 />
               </Pressable>
             </View>
@@ -97,19 +97,19 @@ const CALENDARIO = () => {
                 <Image
                   style={styles.unsplashilip77sbmoeIcon}
                   contentFit="cover"
-                  source={require("../assets/unsplashilip77sbmoe.png")}
+                  source={require('../assets/unsplashilip77sbmoe.png')}
                 />
                 <Image
                   style={[styles.vectorIcon, styles.vectorIconPosition]}
                   contentFit="cover"
-                  source={require("../assets/vector15.png")}
+                  source={require('../assets/vector15.png')}
                 />
               </View>
               <View style={styles.marieCumple28AosWrapper}>
                 <Text
                   style={[
                     styles.marieCumple28Container,
-                    styles.marieContainerTypo,
+                    styles.marieContainerTypo
                   ]}
                 >
                   <Text style={styles.textTypo}>{`Marie `}</Text>
@@ -123,19 +123,19 @@ const CALENDARIO = () => {
                   <Image
                     style={styles.unsplashilip77sbmoeIcon}
                     contentFit="cover"
-                    source={require("../assets/unsplashilip77sbmoe1.png")}
+                    source={require('../assets/unsplashilip77sbmoe1.png')}
                   />
                   <Image
                     style={[styles.vectorIcon, styles.vectorIconPosition]}
                     contentFit="cover"
-                    source={require("../assets/vector69.png")}
+                    source={require('../assets/vector69.png')}
                   />
                 </View>
                 <View style={styles.brunoHaSubidoUnVideoDiariWrapper}>
                   <Text
                     style={[
                       styles.brunoHaSubidoContainer,
-                      styles.marieContainerTypo,
+                      styles.marieContainerTypo
                     ]}
                   >
                     <Text style={styles.textTypo}>{`Bruno `}</Text>
@@ -148,25 +148,25 @@ const CALENDARIO = () => {
             </View>
             <Pressable
               style={[styles.framePressable, styles.frameFlexBox]}
-              onPress={() => navigation.navigate("Invitacin")}
+              onPress={() => navigation.navigate('Invitacin')}
             >
               <View style={styles.unsplashilip77sbmoeParent}>
                 <Image
                   style={styles.unsplashilip77sbmoeIcon}
                   contentFit="cover"
-                  source={require("../assets/unsplashilip77sbmoe.png")}
+                  source={require('../assets/unsplashilip77sbmoe.png')}
                 />
                 <Image
                   style={[styles.vectorIcon, styles.vectorIconPosition]}
                   contentFit="cover"
-                  source={require("../assets/vector15.png")}
+                  source={require('../assets/vector15.png')}
                 />
               </View>
               <View style={styles.marieCumple28AosWrapper}>
                 <Text
                   style={[
                     styles.marieHaOrganizadoContainer,
-                    styles.marieContainerTypo,
+                    styles.marieContainerTypo
                   ]}
                 >
                   <Text style={styles.textTypo}>{`Marie `}</Text>
@@ -181,19 +181,19 @@ const CALENDARIO = () => {
                 <Image
                   style={styles.unsplashilip77sbmoeIcon}
                   contentFit="cover"
-                  source={require("../assets/unsplashilip77sbmoe.png")}
+                  source={require('../assets/unsplashilip77sbmoe.png')}
                 />
                 <Image
                   style={[styles.vectorIcon, styles.vectorIconPosition]}
                   contentFit="cover"
-                  source={require("../assets/vector15.png")}
+                  source={require('../assets/vector15.png')}
                 />
               </View>
               <View style={styles.marieCumple28AosWrapper}>
                 <Text
                   style={[
                     styles.marieCumple28Container,
-                    styles.marieContainerTypo,
+                    styles.marieContainerTypo
                   ]}
                 >
                   <Text style={styles.textTypo}>{`Marie `}</Text>
@@ -207,19 +207,19 @@ const CALENDARIO = () => {
                   <Image
                     style={styles.unsplashilip77sbmoeIcon}
                     contentFit="cover"
-                    source={require("../assets/unsplashilip77sbmoe1.png")}
+                    source={require('../assets/unsplashilip77sbmoe1.png')}
                   />
                   <Image
                     style={[styles.vectorIcon, styles.vectorIconPosition]}
                     contentFit="cover"
-                    source={require("../assets/vector69.png")}
+                    source={require('../assets/vector69.png')}
                   />
                 </View>
                 <View style={styles.brunoHaSubidoUnVideoDiariWrapper}>
                   <Text
                     style={[
                       styles.brunoHaSubidoContainer,
-                      styles.marieContainerTypo,
+                      styles.marieContainerTypo
                     ]}
                   >
                     <Text style={styles.textTypo}>{`Bruno `}</Text>
@@ -232,18 +232,18 @@ const CALENDARIO = () => {
             </View>
             <Pressable
               style={[styles.framePressable, styles.frameFlexBox]}
-              onPress={() => navigation.navigate("Invitacin")}
+              onPress={() => navigation.navigate('Invitacin')}
             >
               <View style={styles.unsplashilip77sbmoeParent}>
                 <Image
                   style={styles.unsplashilip77sbmoeIcon}
                   contentFit="cover"
-                  source={require("../assets/unsplashilip77sbmoe.png")}
+                  source={require('../assets/unsplashilip77sbmoe.png')}
                 />
                 <Image
                   style={[styles.vectorIcon, styles.vectorIconPosition]}
                   contentFit="cover"
-                  source={require("../assets/vector15.png")}
+                  source={require('../assets/vector15.png')}
                 />
               </View>
               <View style={styles.marieCumple28AosWrapper}>
@@ -266,10 +266,10 @@ const CALENDARIO = () => {
                 <Image
                   style={[
                     styles.iconlyboldfilter21,
-                    styles.iconlyboldfilterLayout,
+                    styles.iconlyboldfilterLayout
                   ]}
                   contentFit="cover"
-                  source={require("../assets/icon1.png")}
+                  source={require('../assets/icon1.png')}
                 />
               </View>
               <View style={styles.month1}>
@@ -280,10 +280,10 @@ const CALENDARIO = () => {
                 <Image
                   style={[
                     styles.iconlyboldfilter21,
-                    styles.iconlyboldfilterLayout,
+                    styles.iconlyboldfilterLayout
                   ]}
                   contentFit="cover"
-                  source={require("../assets/icon.png")}
+                  source={require('../assets/icon.png')}
                 />
               </View>
             </View>
@@ -422,7 +422,7 @@ const CALENDARIO = () => {
                 <Image
                   style={styles.eventoGraduacionIcon}
                   contentFit="cover"
-                  source={require("../assets/evento-graduacion.png")}
+                  source={require('../assets/evento-graduacion.png')}
                 />
               </View>
             </View>
@@ -504,7 +504,7 @@ const CALENDARIO = () => {
                 <Image
                   style={styles.eventoCasamientoIcon}
                   contentFit="cover"
-                  source={require("../assets/evento-casamiento.png")}
+                  source={require('../assets/evento-casamiento.png')}
                 />
               </View>
             </View>
@@ -543,16 +543,16 @@ const CALENDARIO = () => {
         <Image
           style={[styles.navigationIcon, styles.ionmenuParentPosition]}
           contentFit="cover"
-          source={require("../assets/navigation39.png")}
+          source={require('../assets/navigation39.png')}
         />
         <Pressable
           style={styles.iconlylightOutlinesetting}
-          onPress={() => navigation.navigate("CALENDARIOAJUSTES")}
+          onPress={() => navigation.navigate('CALENDARIOAJUSTES')}
         >
           <Image
             style={[styles.icon5, styles.iconLayout]}
             contentFit="cover"
-            source={require("../assets/iconlylightoutlinesetting1.png")}
+            source={require('../assets/iconlylightoutlinesetting1.png')}
           />
         </Pressable>
       </View>
@@ -560,391 +560,391 @@ const CALENDARIO = () => {
       <Modal animationType="fade" transparent visible={ionmenuIconVisible}>
         <View style={styles.ionmenuIconOverlay}>
           <Pressable style={styles.ionmenuIconBg} onPress={closeIonmenuIcon} />
-          <MENPRINCIPAL onClose={closeIonmenuIcon} />
+          <MenuPrincipal onClose={closeIonmenuIcon} />
         </View>
       </Modal>
     </>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   calendario3ChildLayout: {
     borderRadius: Border.br_3xs,
     width: 428,
-    backgroundColor: Color.white,
+    backgroundColor: Color.white
   },
   image6IconPosition: {
     left: 20,
-    position: "absolute",
+    position: 'absolute'
   },
   textTypo: {
     color: Color.primario1,
     fontFamily: FontFamily.lato,
-    fontWeight: "700",
+    fontWeight: '700'
   },
   iconlyboldfilterLayout: {
     width: 24,
-    height: 24,
+    height: 24
   },
   ionmenuParentPosition: {
     left: 0,
-    position: "absolute",
+    position: 'absolute'
   },
   iconLayout: {
-    height: "100%",
-    width: "100%",
+    height: '100%',
+    width: '100%'
   },
   vectorIconPosition: {
-    top: "50%",
-    left: "50%",
-    position: "absolute",
+    top: '50%',
+    left: '50%',
+    position: 'absolute'
   },
   marieContainerTypo: {
-    textAlign: "justify",
+    textAlign: 'justify',
     lineHeight: 22,
-    fontSize: FontSize.size_lg,
+    fontSize: FontSize.size_lg
   },
   frameFlexBox: {
     marginTop: 20,
-    alignItems: "center",
-    flexDirection: "row",
+    alignItems: 'center',
+    flexDirection: 'row'
   },
   yearTypo: {
     lineHeight: 21,
     letterSpacing: -0.3,
     fontSize: FontSize.size_base,
     color: Color.calendarDark,
-    fontFamily: FontFamily.lato,
+    fontFamily: FontFamily.lato
   },
   arrowLayout: {
     padding: Padding.p_xs,
     height: 48,
     width: 48,
     borderRadius: Border.br_81xl,
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
-    overflow: "hidden",
-    backgroundColor: Color.white,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    overflow: 'hidden',
+    backgroundColor: Color.white
   },
   weekSpaceBlock: {
     marginTop: 16,
-    alignSelf: "stretch",
+    alignSelf: 'stretch'
   },
   monTypo: {
-    textAlign: "center",
-    fontWeight: "500",
-    textTransform: "uppercase",
+    textAlign: 'center',
+    fontWeight: '500',
+    textTransform: 'uppercase',
     fontSize: FontSize.size_3xs,
     color: Color.calendarDark,
     fontFamily: FontFamily.lato,
-    flex: 1,
+    flex: 1
   },
   backgroundPosition: {
-    left: "0%",
-    bottom: "0%",
-    right: "0%",
-    top: "0%",
-    height: "100%",
-    position: "absolute",
-    width: "100%",
+    left: '0%',
+    bottom: '0%',
+    right: '0%',
+    top: '0%',
+    height: '100%',
+    position: 'absolute',
+    width: '100%'
   },
   dateTypo: {
-    fontWeight: "600",
+    fontWeight: '600',
     fontSize: FontSize.footnote_size,
     color: Color.calendarDark,
-    textAlign: "left",
-    fontFamily: FontFamily.lato,
+    textAlign: 'left',
+    fontFamily: FontFamily.lato
   },
   dateTypo1: {
     fontSize: FontSize.footnote_size,
     zIndex: 1,
-    textAlign: "left",
+    textAlign: 'left',
     fontFamily: FontFamily.lato,
-    fontWeight: "700",
+    fontWeight: '700'
   },
   dayBorder: {
     borderBottomWidth: 1,
     borderRightWidth: 1,
     borderColor: Color.secundario,
-    borderStyle: "solid",
-    alignSelf: "stretch",
-    overflow: "hidden",
-    flex: 1,
+    borderStyle: 'solid',
+    alignSelf: 'stretch',
+    overflow: 'hidden',
+    flex: 1
   },
   calendario3Child: {
     top: 490,
     height: 442,
     width: 428,
     left: 0,
-    position: "absolute",
+    position: 'absolute'
   },
   image6Icon: {
     top: 3,
     width: 87,
-    height: 55,
+    height: 55
   },
   text: {
     fontSize: FontSize.size_13xl,
-    textAlign: "left",
+    textAlign: 'left'
   },
   iconlyboldfilter2: {
     marginLeft: 20,
-    height: 24,
+    height: 24
   },
   parent: {
     marginLeft: -59,
     top: 78,
-    alignItems: "center",
-    flexDirection: "row",
-    left: "50%",
-    position: "absolute",
+    alignItems: 'center',
+    flexDirection: 'row',
+    left: '50%',
+    position: 'absolute'
   },
   ionmenuIconOverlay: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "rgba(113, 113, 113, 0.3)",
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(113, 113, 113, 0.3)'
   },
   ionmenuIconBg: {
-    position: "absolute",
-    width: "100%",
-    height: "100%",
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
     left: 0,
-    top: 0,
+    top: 0
   },
   icon: {
-    overflow: "hidden",
+    overflow: 'hidden'
   },
   ionmenu: {
     width: 26,
-    height: 20,
+    height: 20
   },
   iconlylightOutlinesearch: {
     width: 20,
-    height: 20,
+    height: 20
   },
   iconlylightOutlinesearchParent: {
     marginLeft: 10,
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row'
   },
   ionmenuParent: {
     top: 0,
-    alignItems: "center",
-    flexDirection: "row",
+    alignItems: 'center',
+    flexDirection: 'row'
   },
   calendario3Inner: {
     top: 85,
     width: 100,
-    height: 24,
+    height: 24
   },
   upcoming: {
     fontSize: FontSize.size_xl,
-    textAlign: "left",
+    textAlign: 'left'
   },
   iconlyboldfilter21: {
-    height: 24,
+    height: 24
   },
   iconlyboldplus: {
     width: 25,
     height: 25,
-    marginLeft: 20,
+    marginLeft: 20
   },
   iconlyboldfilter2Parent: {
     marginLeft: 68,
-    flexDirection: "row",
+    flexDirection: 'row'
   },
   upcomingParent: {
-    justifyContent: "flex-end",
-    alignSelf: "stretch",
-    flexDirection: "row",
+    justifyContent: 'flex-end',
+    alignSelf: 'stretch',
+    flexDirection: 'row'
   },
   unsplashilip77sbmoeIcon: {
     width: 44,
     height: 44,
-    zIndex: 0,
+    zIndex: 0
   },
   vectorIcon: {
     marginTop: -8,
     marginLeft: -10,
     zIndex: 1,
     height: 15,
-    width: 20,
+    width: 20
   },
   unsplashilip77sbmoeParent: {
-    flexDirection: "row",
+    flexDirection: 'row'
   },
   cumple28Aos: {
     color: Color.negro,
-    fontFamily: FontFamily.lato,
+    fontFamily: FontFamily.lato
   },
   marieCumple28Container: {
-    width: 181,
+    width: 181
   },
   marieCumple28AosWrapper: {
     width: 159,
-    marginLeft: 16,
+    marginLeft: 16
   },
   frameContainer: {
     width: 388,
-    alignItems: "center",
-    flexDirection: "row",
+    alignItems: 'center',
+    flexDirection: 'row'
   },
   brunoHaSubidoContainer: {
-    width: 258,
+    width: 258
   },
   brunoHaSubidoUnVideoDiariWrapper: {
     width: 210,
-    marginLeft: 16,
+    marginLeft: 16
   },
   frameView: {
     height: 45,
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row'
   },
   frameWrapper: {
-    width: 388,
+    width: 388
   },
   marieHaOrganizadoContainer: {
-    width: 318,
+    width: 318
   },
   framePressable: {
-    alignSelf: "stretch",
-    overflow: "hidden",
+    alignSelf: 'stretch',
+    overflow: 'hidden'
   },
   frameGroup: {
     marginTop: 19,
-    alignSelf: "stretch",
+    alignSelf: 'stretch'
   },
   frameParent: {
     top: 488,
-    alignItems: "flex-end",
+    alignItems: 'flex-end'
   },
   month2: {
-    textAlign: "right",
+    textAlign: 'right',
     color: Color.calendarDark,
-    fontWeight: "700",
+    fontWeight: '700',
     letterSpacing: -0.3,
-    fontSize: FontSize.size_base,
+    fontSize: FontSize.size_base
   },
   year: {
     marginLeft: 4,
     color: Color.calendarDark,
-    textAlign: "left",
+    textAlign: 'left'
   },
   month1: {
     marginLeft: 16,
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
-    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    flex: 1
   },
   arrowButton1: {
-    marginLeft: 16,
+    marginLeft: 16
   },
   month: {
-    alignSelf: "stretch",
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
+    alignSelf: 'stretch',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row'
   },
   separator: {
     backgroundColor: Color.secundario,
-    height: 1,
+    height: 1
   },
   tue: {
-    marginLeft: 3,
+    marginLeft: 3
   },
   week: {
     opacity: 0.5,
-    flexDirection: "row",
+    flexDirection: 'row'
   },
   header: {
     paddingBottom: Padding.p_base,
-    alignSelf: "stretch",
+    alignSelf: 'stretch'
   },
   background: {
-    zIndex: 0,
+    zIndex: 0
   },
   day: {
     padding: Padding.p_5xs,
-    alignSelf: "stretch",
-    justifyContent: "center",
-    alignItems: "center",
-    overflow: "hidden",
-    flex: 1,
+    alignSelf: 'stretch',
+    justifyContent: 'center',
+    alignItems: 'center',
+    overflow: 'hidden',
+    flex: 1
   },
   date: {
     opacity: 0.1,
-    zIndex: 1,
+    zIndex: 1
   },
   row: {
-    alignSelf: "stretch",
-    flexDirection: "row",
-    flex: 1,
+    alignSelf: 'stretch',
+    flexDirection: 'row',
+    flex: 1
   },
   date5: {
-    zIndex: 1,
+    zIndex: 1
   },
   dayStates10: {
     borderColor: Color.colorGray_600,
     borderWidth: 2,
-    borderStyle: "solid",
-    alignSelf: "stretch",
-    overflow: "hidden",
-    flex: 1,
+    borderStyle: 'solid',
+    alignSelf: 'stretch',
+    overflow: 'hidden',
+    flex: 1
   },
   background20: {
     backgroundColor: Color.primary,
     opacity: 0,
-    zIndex: 1,
+    zIndex: 1
   },
   date14: {
     zIndex: 2,
-    alignSelf: "stretch",
+    alignSelf: 'stretch'
   },
   eventoGraduacionIcon: {
     width: 18,
     zIndex: 3,
-    height: 15,
+    height: 15
   },
   day19: {
-    justifyContent: "space-between",
+    justifyContent: 'space-between',
     paddingHorizontal: Padding.p_7xs,
     paddingVertical: Padding.p_9xs,
-    alignSelf: "stretch",
-    alignItems: "flex-end",
-    overflow: "hidden",
-    flex: 1,
+    alignSelf: 'stretch',
+    alignItems: 'flex-end',
+    overflow: 'hidden',
+    flex: 1
   },
   background24: {
     zIndex: 0,
     backgroundColor: Color.white,
-    left: "0%",
-    bottom: "0%",
-    right: "0%",
-    top: "0%",
+    left: '0%',
+    bottom: '0%',
+    right: '0%',
+    top: '0%'
   },
   date18: {
-    color: Color.calendarDark,
+    color: Color.calendarDark
   },
   background28: {
     backgroundColor: Color.primario1,
-    zIndex: 0,
+    zIndex: 0
   },
   date22: {
-    color: Color.white,
+    color: Color.white
   },
   eventoCasamientoIcon: {
     width: 14,
     height: 16,
-    zIndex: 3,
+    zIndex: 3
   },
   dayStates29: {
-    justifyContent: "center",
+    justifyContent: 'center'
   },
   calendarSelectChangeSize: {
     marginTop: -327,
@@ -952,38 +952,38 @@ const styles = StyleSheet.create({
     height: 337,
     paddingHorizontal: Padding.p_mini,
     paddingVertical: 0,
-    alignItems: "center",
+    alignItems: 'center',
     width: 428,
     borderRadius: Border.br_3xs,
-    backgroundColor: Color.white,
+    backgroundColor: Color.white
   },
   navigationIcon: {
     top: 821,
     height: 105,
-    width: 428,
+    width: 428
   },
   icon5: {
-    maxWidth: "100%",
-    maxHeight: "100%",
-    overflow: "hidden",
+    maxWidth: '100%',
+    maxHeight: '100%',
+    overflow: 'hidden'
   },
   iconlylightOutlinesetting: {
-    left: "89.72%",
-    top: "2.16%",
-    right: "4.67%",
-    bottom: "95.25%",
-    width: "5.61%",
-    height: "2.59%",
-    position: "absolute",
+    left: '89.72%',
+    top: '2.16%',
+    right: '4.67%',
+    bottom: '95.25%',
+    width: '5.61%',
+    height: '2.59%',
+    position: 'absolute'
   },
   calendario3: {
     borderRadius: Border.br_31xl,
     height: 926,
-    overflow: "hidden",
-    width: "100%",
+    overflow: 'hidden',
+    width: '100%',
     flex: 1,
-    backgroundColor: Color.white,
-  },
-});
+    backgroundColor: Color.white
+  }
+})
 
-export default CALENDARIO;
+export default CALENDARIO

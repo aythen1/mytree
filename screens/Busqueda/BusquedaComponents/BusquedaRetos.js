@@ -2,7 +2,13 @@ import React from 'react'
 import { StyleSheet, View, Pressable, Text, ScrollView } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
-import { Padding, Border, FontSize, FontFamily, Color } from '../GlobalStyles'
+import {
+  Padding,
+  Border,
+  FontSize,
+  FontFamily,
+  Color
+} from '../../../GlobalStyles'
 
 function BusquedaRetos() {
   const navigation = useNavigation()
