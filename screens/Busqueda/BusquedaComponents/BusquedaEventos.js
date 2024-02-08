@@ -1,19 +1,20 @@
 import React from 'react'
 import { Image } from 'expo-image'
 import { StyleSheet, View, Text, ScrollView } from 'react-native'
-import { FontSize, FontFamily, Color } from '../GlobalStyles'
+import { FontSize, FontFamily, Color } from '../../../GlobalStyles'
 
-const BusquedaPublicaciones = () => {
+const BusquedaEventos = () => {
   return (
     <ScrollView style={styles.bsquedaPublicaciones}>
       <View style={styles.image2Parent}>
         <Image
           style={styles.image2Icon}
           contentFit="cover"
-          source={require('../assets/paper.png')}
+          source={require('../../../assets/vector19.png')}
         />
         <Text style={[styles.subeTusRecuerdos, styles.retosTypo]}>
-          Informa tu día a día a tu familia y comparte momentos inolvidables
+          Tu agenda personal te espera. Visualiza los eventos y vive cada
+          momento al máximo
         </Text>
       </View>
     </ScrollView>
@@ -47,4 +48,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default BusquedaPublicaciones
+export default BusquedaEventos

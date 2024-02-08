@@ -23,7 +23,7 @@ const PERFILCREARIDINFANTEANCE = () => {
       <View style={[styles.backParent, styles.parentFlexBox]}>
         <Pressable
           style={styles.backLayout}
-          onPress={() => navigation.navigate('MUROINFORMACIN')}
+          onPress={() => navigation.navigate('Muro')}
         >
           <Image
             style={[styles.icon, styles.iconLayout]}

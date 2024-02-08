@@ -9,7 +9,7 @@ import Etapas from './screens/Etapas'
 import Privacidad from './screens/Privacidad'
 import Cancion from './screens/Cancion'
 import SubeTusRecuerdos from './screens/SubeTusRecuerdos'
-import LOGIN from './screens/LOGIN'
+import Login from './screens/Login'
 import Onboarding from './screens/Onboarding'
 import Onboarding1 from './screens/Onboarding1'
 import OpcionesFamiliar from './components/OpcionesFamiliar'
@@ -28,7 +28,6 @@ import AadirRecuerdo1 from './screens/AadirRecuerdo1'
 import Compartir from './components/Compartir'
 import CrearLbum from './screens/CrearLbum'
 import MisAlbumesFamiliares from './screens/MisAlbumesFamiliares'
-import MUROINFORMACIN from './screens/MUROINFORMACIN'
 import SuscritoConExito from './screens/SuscritoConExito'
 import ENTRADACREADA from './components/ENTRADACREADA'
 import ENTRADACREADA1 from './components/ENTRADACREADA1'
@@ -55,7 +54,7 @@ import Cancion1 from './components/Cancion1'
 import CrearAlbum from './screens/CrearAlbum'
 import Organizador from './screens/Organizador'
 import RetosFamiliaresCumplido from './screens/RetosFamiliaresCumplido'
-import BusquedaRetoSemanal from './screens/BusquedaRetoSemanal'
+// import BusquedaRetoSemanal from './screens/BusquedaRetoSemanal'
 import RetosFamiliaresSinCumplir from './screens/RetosFamiliaresSinCumplir'
 import AccesoAContactos from './screens/AccesoAContactos'
 import Situacin from './screens/Situacin'
@@ -71,12 +70,7 @@ import MENSAJERA from './screens/MENSAJERA'
 import Bsqueda from './screens/Bsqueda'
 import MisFamiliares from './screens/MisFamiliares'
 import MisFamiliares1 from './screens/MisFamiliares1'
-import BsquedaHashtags from './screens/BsquedaHashtags'
-import BsquedaEventos from './screens/BsquedaEventos'
-import BusquedaDiarios from './screens/BusquedaDiarios'
-import BusquedaPublicaciones from './screens/BusquedaPublicaciones'
-import BusquedaContactos from './screens/BusquedaContactos'
-import Busqueda from './screens/Busqueda'
+import Busqueda from './screens/Busqueda/Busqueda'
 import BIO2Ancestro from './screens/BIO2Ancestro'
 import BIO2Infante from './screens/BIO2Infante'
 import PERFILIDANCESTRO from './screens/PERFILIDANCESTRO'
@@ -103,7 +97,7 @@ import Invitacin from './screens/Invitacin'
 import Padres from './components/Padres'
 import Humor from './components/Humor'
 import MIDIARIOPANTALLAPERSONAL from './screens/MIDIARIOPANTALLAPERSONAL'
-import MENPRINCIPAL from './components/MENPRINCIPAL'
+// import MenuPrincipal from './components/MenuPrincipal'
 import MIDIARIOEDICINVIDEO from './screens/MIDIARIOEDICINVIDEO'
 import MIDIARIOEDICINVIDEO1 from './screens/MIDIARIOEDICINVIDEO1'
 import MIDIARIOEDICINVIDEO2 from './screens/MIDIARIOEDICINVIDEO2'
@@ -142,7 +136,7 @@ import PERFILINFANTEAJUSTES from './screens/PERFILINFANTEAJUSTES'
 import PERFILDELUSUARIOVISITADO1 from './screens/PERFILDELUSUARIOVISITADO1'
 import PerfilConfiguracion from './screens/PerfilConfiguracion'
 import MISAMIGOS from './screens/MISAMIGOS'
-import PERFILAJUSTES from './screens/PERFILAJUSTES'
+import PerfilAjustes from './screens/PerfilAjustes'
 import PERFILDELUSUARIOVISITADO2 from './screens/PERFILDELUSUARIOVISITADO2'
 import PERFILMIINFO from './screens/PERFILMIINFO'
 // import VotacionDeRetos from './screens/VotacionDeRetos'
@@ -283,7 +277,7 @@ const App = () => {
           />
           <Stack.Screen
             name="Login"
-            component={LOGIN}
+            component={Login}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -374,11 +368,6 @@ const App = () => {
           <Stack.Screen
             name="MisAlbumesFamiliares"
             component={MisAlbumesFamiliares}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="MUROINFORMACIN"
-            component={MUROINFORMACIN}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -511,11 +500,11 @@ const App = () => {
             component={RetosFamiliaresCumplido}
             options={{ headerShown: false }}
           />
-          <Stack.Screen
+          {/* <Stack.Screen
             name="BusquedaRetoSemanal"
             component={BusquedaRetoSemanal}
             options={{ headerShown: false }}
-          />
+          /> */}
           <Stack.Screen
             name="RetosFamiliaresSinCumplir"
             component={RetosFamiliaresSinCumplir}
@@ -589,36 +578,6 @@ const App = () => {
           <Stack.Screen
             name="MisFamiliares1"
             component={MisFamiliares1}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="BsquedaHashtags"
-            component={BsquedaHashtags}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="BsquedaEventos"
-            component={BsquedaEventos}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="BusquedaDiarios"
-            component={BusquedaDiarios}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="BusquedaPublicaciones"
-            component={BusquedaPublicaciones}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="BusquedaContactos"
-            component={BusquedaContactos}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="FiltroEdicion"
-            component={FiltroEdicion}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -756,11 +715,11 @@ const App = () => {
             component={MIDIARIOPANTALLAPERSONAL}
             options={{ headerShown: false }}
           />
-          <Stack.Screen
-            name="MENPRINCIPAL"
-            component={MENPRINCIPAL}
+          {/* <Stack.Screen
+            name="MenuPrincipal"
+            component={MenuPrincipal}
             options={{ headerShown: false }}
-          />
+          /> */}
           <Stack.Screen
             name="MIDIARIOEDICINVIDEO"
             component={MIDIARIOEDICINVIDEO}
@@ -952,8 +911,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="PERFILAJUSTES"
-            component={PERFILAJUSTES}
+            name="PerfilAjustes"
+            component={PerfilAjustes}
             options={{ headerShown: false }}
           />
           <Stack.Screen
