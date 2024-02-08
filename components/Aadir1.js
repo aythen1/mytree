@@ -91,7 +91,10 @@ const Aadir1 = () => {
         </Pressable>
         <Pressable
           style={[styles.frameWrapper1, styles.frameFlexBox]}
-          onPress={() => navigation.navigate('CrearEvento')}
+          onPress={() => {
+            dispatch(setPanelAddFooter(false))
+            navigation.navigate('CrearEvento')
+          }}
         >
           <View style={styles.groupParentFlexBox}>
             <Image
@@ -104,7 +107,10 @@ const Aadir1 = () => {
         </Pressable>
         <Pressable
           style={[styles.frameFlexBox]}
-          onPress={() => navigation.navigate('MUROALERTAS1')}
+          onPress={() => {
+            dispatch(setPanelAddFooter(false))
+            navigation.navigate('MUROALERTAS1')
+          }}
         >
           <View style={styles.groupParentFlexBox}>
             <Image
