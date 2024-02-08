@@ -16,7 +16,7 @@ import Post from '../components/Post'
 import Stories from '../components/Stories'
 import RetosModal from './RetosModal'
 import VotacionDeRetos from './VotacionDeRetos'
-import MENPRINCIPAL from '../components/MENPRINCIPAL'
+import MenuPrincipal from '../components/MenuPrincipal'
 
 const Muro = () => {
   const dispatch = useDispatch()
@@ -116,7 +116,7 @@ const Muro = () => {
         >
           <TouchableWithoutFeedback onPress={handleMenu}>
             <View style={{ flex: 1, backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
-              <MENPRINCIPAL setMenuVisible={setMenuVisible} />
+              <MenuPrincipal setMenuVisible={setMenuVisible} />
             </View>
           </TouchableWithoutFeedback>
         </Modal>

@@ -1,243 +1,201 @@
-import * as React from "react";
-import { Image } from "expo-image";
-import { StyleSheet, Text, View, Pressable } from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import { Padding, Border, FontSize, Color, FontFamily } from "../GlobalStyles";
+import React from 'react'
+import { Image } from 'expo-image'
+import { StyleSheet, Text, View, Pressable, ScrollView } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+import { Padding, Border, FontSize, Color, FontFamily } from '../GlobalStyles'
 
 const Novedades = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation()
 
   return (
-    <View style={[styles.novedades, styles.iconLayout]}>
-      <Image
-        style={[styles.navigationIcon, styles.navigationIconPosition]}
-        contentFit="cover"
-        source={require("../assets/navigation10.png")}
-      />
-      <View style={[styles.notificationParent, styles.parentPosition]}>
-        <View style={[styles.notification, styles.notificationLayout]}>
-          <View style={styles.notificationInner}>
-            <View style={styles.frameParent}>
-              <View style={styles.yaSeEmpiezaARespirarLWrapper}>
-                <Text style={styles.yaSeEmpieza}>
-                  Ya se empieza a respirar ... la Navidad!!! - 01/12/2023
-                </Text>
-              </View>
-              <Text
-                style={[styles.deseasFelicitarEstas, styles.votaLosRetosTypo]}
-              >{`¿Deseas felicitar estas fiestas a todos tus familiares y amigos? Desde MyTree te lo ponemos fácil, crea una Tarjeta Digital y te la personalizamos.
+    <ScrollView style={styles.novedades}>
+      <View style={styles.parentPosition}>
+        <View style={styles.rectangleParent}>
+          <Image
+            style={styles.image6Icon}
+            contentFit="cover"
+            source={require('../assets/image-6.png')}
+          />
+          <View style={styles.backParent}>
+            <Pressable
+              style={styles.back}
+              onPress={() => navigation.navigate('Muro')}
+            >
+              <Image
+                style={styles.icon}
+                contentFit="cover"
+                source={require('../assets/back5.png')}
+              />
+            </Pressable>
+            <Text style={styles.novedades1}>Novedades</Text>
+          </View>
+        </View>
 
-Que tu gente sepa que te acuerdas de ellos!!`}</Text>
-            </View>
-          </View>
-        </View>
-        <View style={[styles.notification1, styles.notificationLayout]}>
-          <View style={styles.notificationInner}>
-            <View style={styles.frameParent}>
-              <View style={styles.yaSeEmpiezaARespirarLWrapper}>
-                <Text style={styles.nuevoRetoFamiliar}>
-                  Nuevo Reto Familiar - 08-11-2023
+        <View style={styles.bottomContainer}>
+          <View style={[styles.notification, styles.notificationLayout]}>
+            <View style={styles.notificationInner}>
+              <View style={styles.frameParent}>
+                <View style={styles.yaSeEmpiezaARespirarLWrapper}>
+                  <Text style={styles.yaSeEmpieza}>
+                    Ya se empieza a respirar ... la Navidad!!! - 01/12/2023
+                  </Text>
+                </View>
+                <Text
+                  style={[styles.deseasFelicitarEstas, styles.votaLosRetosTypo]}
+                >
+                  ¿Deseas felicitar estas fiestas a todos tus familiares y
+                  amigos? Desde MyTree te lo ponemos fácil, crea una Tarjeta
+                  Digital y te la personalizamos. Que tu gente sepa que te
+                  acuerdas de ellos!
                 </Text>
               </View>
-              <Text style={[styles.votaLosRetos, styles.votaLosRetosTypo]}>
-                Vota los Retos Familiares que más te guste y reta a tus
-                familiares
-              </Text>
             </View>
           </View>
-        </View>
-        <View style={[styles.notification1, styles.notificationLayout]}>
-          <View style={styles.notificationInner}>
-            <View style={styles.frameParent}>
-              <View style={styles.yaSeEmpiezaARespirarLWrapper}>
-                <Text style={styles.quTeTraemos}>
-                  ¿Qué te traemos en la nueva actualización? - 01-11-2023
+          <View style={[styles.notification1, styles.notificationLayout]}>
+            <View style={styles.notificationInner}>
+              <View style={styles.frameParent}>
+                <View style={styles.yaSeEmpiezaARespirarLWrapper}>
+                  <Text style={styles.nuevoRetoFamiliar}>
+                    Nuevo Reto Familiar - 08-11-2023
+                  </Text>
+                </View>
+                <Text style={[styles.votaLosRetos, styles.votaLosRetosTypo]}>
+                  Vota los Retos Familiares que más te guste y reta a tus
+                  familiares
                 </Text>
               </View>
-              <Text style={[styles.votaLosRetos, styles.votaLosRetosTypo]}>
-                Ahora, con MyTree podrás participar en los Retos Familiares. Haz
-                click en el botón + y seleccioná “Acceder a Retos Familiares”, y
-                empieza a divertirte con tu familia!!!!
-              </Text>
+            </View>
+          </View>
+          <View style={[styles.notification1, styles.notificationLayout]}>
+            <View style={styles.notificationInner}>
+              <View style={styles.frameParent}>
+                <View style={styles.yaSeEmpiezaARespirarLWrapper}>
+                  <Text style={styles.quTeTraemos}>
+                    ¿Qué te traemos en la nueva actualización? - 01-11-2023
+                  </Text>
+                </View>
+                <Text style={[styles.votaLosRetos, styles.votaLosRetosTypo]}>
+                  Ahora, con MyTree podrás participar en los Retos Familiares.
+                  Haz click en el botón + y seleccioná “Acceder a Retos
+                  Familiares”, y empieza a divertirte con tu familia!!!!
+                </Text>
+              </View>
             </View>
           </View>
         </View>
-        <View style={styles.frameChild} />
       </View>
-      <View style={[styles.rectangleParent, styles.navigationIconPosition]}>
-        <View style={styles.frameItem} />
-        <Image
-          style={[styles.image6Icon, styles.parentPosition]}
-          contentFit="cover"
-          source={require("../assets/image-6.png")}
-        />
-        <View style={[styles.backParent, styles.parentPosition]}>
-          <Pressable
-            style={styles.back}
-            onPress={() => navigation.navigate("MUROINFORMACIN")}
-          >
-            <Image
-              style={[styles.icon, styles.iconLayout]}
-              contentFit="cover"
-              source={require("../assets/back5.png")}
-            />
-          </Pressable>
-          <Text style={styles.novedades1}>Novedades</Text>
-        </View>
-      </View>
-    </View>
-  );
-};
+    </ScrollView>
+  )
+}
 
 const styles = StyleSheet.create({
-  iconLayout: {
-    overflow: "hidden",
-    width: "100%",
-  },
-  navigationIconPosition: {
-    left: 0,
-    position: "absolute",
-  },
   parentPosition: {
-    left: 20,
-    position: "absolute",
+    padding: Padding.p_xl
   },
   notificationLayout: {
     padding: Padding.p_xl,
-    width: 388,
     borderRadius: Border.br_3xs,
-    flexDirection: "row",
+    flexDirection: 'row'
   },
   votaLosRetosTypo: {
-    width: 348,
-    fontWeight: "300",
+    fontWeight: '300',
     lineHeight: 19,
     fontSize: FontSize.size_base,
     color: Color.black1,
     fontFamily: FontFamily.lato,
-    letterSpacing: 0,
-  },
-  navigationIcon: {
-    top: 821,
-    height: 105,
-    width: 428,
+    letterSpacing: 0
   },
   yaSeEmpieza: {
     height: 38,
-    textAlign: "left",
+    textAlign: 'left',
     color: Color.black1,
     fontFamily: FontFamily.lato,
-    fontWeight: "700",
+    fontWeight: '700',
     lineHeight: 22,
     letterSpacing: 0,
     fontSize: FontSize.size_lg,
-    alignSelf: "stretch",
+    alignSelf: 'stretch'
   },
   yaSeEmpiezaARespirarLWrapper: {
-    alignSelf: "stretch",
+    alignSelf: 'stretch'
   },
   deseasFelicitarEstas: {
     marginTop: 18,
-    textAlign: "left",
+    textAlign: 'left'
   },
   frameParent: {
-    flex: 1,
+    flex: 1
   },
   notificationInner: {
-    flexDirection: "row",
-    flex: 1,
+    flexDirection: 'row',
+    flex: 1
   },
   notification: {
-    backgroundColor: Color.secundario,
+    backgroundColor: Color.secundario
   },
   nuevoRetoFamiliar: {
-    textAlign: "left",
+    textAlign: 'left',
     color: Color.black1,
     lineHeight: 22,
     letterSpacing: 0,
     fontSize: FontSize.size_lg,
     fontFamily: FontFamily.lato,
-    fontWeight: "700",
-    alignSelf: "stretch",
+    fontWeight: '700',
+    alignSelf: 'stretch'
   },
   votaLosRetos: {
-    textAlign: "justify",
-    marginTop: 10,
+    textAlign: 'justify',
+    marginTop: 10
   },
   notification1: {
     backgroundColor: Color.fAFAFA,
-    marginTop: 10,
+    marginTop: 10
   },
   quTeTraemos: {
     lineHeight: 19,
     fontSize: FontSize.size_base,
     height: 38,
-    textAlign: "left",
+    textAlign: 'left',
     color: Color.black1,
     fontFamily: FontFamily.lato,
-    fontWeight: "700",
+    fontWeight: '700',
     letterSpacing: 0,
-    alignSelf: "stretch",
-  },
-  frameChild: {
-    marginTop: 10,
-    backgroundColor: Color.white,
-  },
-  notificationParent: {
-    top: 147,
-    height: 495,
-  },
-  frameItem: {
-    shadowColor: "rgba(0, 0, 0, 0.15)",
-    shadowOffset: {
-      width: 0,
-      height: 5,
-    },
-    shadowRadius: 25,
-    elevation: 25,
-    shadowOpacity: 1,
-    height: 126,
-    zIndex: 0,
-    width: 428,
-    backgroundColor: Color.white,
+    alignSelf: 'stretch'
   },
   image6Icon: {
     top: 2,
     width: 87,
     height: 55,
-    zIndex: 1,
+    zIndex: 1
   },
   icon: {
-    height: "100%",
+    height: '100%'
   },
   back: {
     width: 24,
-    height: 24,
+    height: 24
   },
   novedades1: {
     fontSize: FontSize.size_5xl,
     color: Color.negro,
-    marginLeft: 20,
-    textAlign: "left",
+    textAlign: 'left',
     fontFamily: FontFamily.lato,
-    fontWeight: "700",
+    fontWeight: '700'
   },
   backParent: {
-    top: 77,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    gap: 20,
     zIndex: 2,
-    flexDirection: "row",
-  },
-  rectangleParent: {
-    top: 1,
+    flexDirection: 'row',
+    top: '2%'
   },
   novedades: {
-    borderRadius: Border.br_31xl,
-    height: 926,
     flex: 1,
-    backgroundColor: Color.white,
+    backgroundColor: Color.white
   },
-});
+  bottomContainer: {
+    top: '5%'
+  }
+})
 
-export default Novedades;
+export default Novedades

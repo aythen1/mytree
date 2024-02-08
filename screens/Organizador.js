@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Image } from 'expo-image'
 import {
   StyleSheet,
@@ -17,8 +18,13 @@ import Lugar3 from '../components/Lugar3'
 import { FontSize, FontFamily, Color, Border, Padding } from '../GlobalStyles'
 import Checkbox from 'expo-checkbox'
 import ENTRADACREADA from '../components/ENTRADACREADA'
+import { setPanel } from '../redux/slices/panel.slices'
 
 const Organizador = () => {
+  const dispatch = useDispatch()
+
+  const { showPanel } = useSelector((state) => state.panel)
+
   const [ischecked, setIschecked] = useState(false)
   const [submit, setSubmit] = useState(false)
   const [buttonContainer1Visible, setButtonContainer1Visible] = useState(false)
@@ -62,11 +68,13 @@ const Organizador = () => {
             <View style={styles.frameParent}>
               <View style={{ width: '100%' }}>
                 <View style={styles.ionmenuParent}>
-                  <Image
-                    style={styles.ionmenuIcon}
-                    contentFit="cover"
-                    source={require('../assets/ionmenu2.png')}
-                  />
+                  <Pressable onPress={() => dispatch(setPanel(!showPanel))}>
+                    <Image
+                      style={styles.ionmenuIcon}
+                      contentFit="cover"
+                      source={require('../assets/ionmenu2.png')}
+                    />
+                  </Pressable>
                   <Text style={styles.subirRecuerdo}>Subir recuerdo</Text>
                   <Text style={styles.subir}>Subir</Text>
                 </View>
@@ -657,7 +665,6 @@ const styles = StyleSheet.create({
     height: 926
   },
   organizador: {
-    borderRadius: Border.br_31xl,
     width: '100%',
     overflow: 'hidden',
     height: 926,

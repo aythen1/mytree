@@ -1,7 +1,7 @@
 import React from 'react'
 import { Image } from 'expo-image'
 import { StyleSheet, View, ScrollView, Text } from 'react-native'
-import { FontFamily, FontSize, Color } from '../GlobalStyles'
+import { FontFamily, FontSize, Color } from '../../../GlobalStyles'
 
 const BusquedaContactos = () => {
   return (
@@ -20,7 +20,7 @@ const BusquedaContactos = () => {
                 <Image
                   style={styles.frameItem}
                   contentFit="cover"
-                  source={require('../assets/frame-1547754875.png')}
+                  source={require('../../../assets/frame-1547754875.png')}
                 />
                 <Text style={[styles.brunoPham, styles.retosLayout]}>
                   Bruno Pham
@@ -30,7 +30,7 @@ const BusquedaContactos = () => {
                 <Image
                   style={styles.frameItem}
                   contentFit="cover"
-                  source={require('../assets/frame-1547754875.png')}
+                  source={require('../../../assets/frame-1547754875.png')}
                 />
                 <Text style={[styles.brunoPham, styles.retosLayout]}>
                   Bruno Pham
@@ -40,7 +40,7 @@ const BusquedaContactos = () => {
                 <Image
                   style={styles.frameItem}
                   contentFit="cover"
-                  source={require('../assets/frame-1547754875.png')}
+                  source={require('../../../assets/frame-1547754875.png')}
                 />
                 <Text style={[styles.brunoPham, styles.retosLayout]}>
                   Bruno Pham
@@ -60,7 +60,7 @@ const BusquedaContactos = () => {
                 <Image
                   style={styles.frameItem}
                   contentFit="cover"
-                  source={require('../assets/frame-1547754875.png')}
+                  source={require('../../../assets/frame-1547754875.png')}
                 />
                 <Text style={[styles.brunoPham, styles.retosLayout]}>
                   Bruno Pham
@@ -70,7 +70,7 @@ const BusquedaContactos = () => {
                 <Image
                   style={styles.frameItem}
                   contentFit="cover"
-                  source={require('../assets/frame-1547754875.png')}
+                  source={require('../../../assets/frame-1547754875.png')}
                 />
                 <Text style={[styles.brunoPham, styles.retosLayout]}>
                   Bruno Pham
@@ -84,7 +84,7 @@ const BusquedaContactos = () => {
           <Image
             style={styles.userIcon}
             contentFit="cover"
-            source={require('../assets/3-user1.png')}
+            source={require('../../../assets/3-user1.png')}
           />
           <Text style={[styles.invitaATu, styles.retosTypo]}>
             Invita a tu familia y tu familia elegida, y mantén una conexión
@@ -171,7 +171,8 @@ const styles = StyleSheet.create({
   userParent: {
     marginTop: 30,
     alignItems: 'center',
-    width: '80%'
+    width: '80%',
+    right: '5%'
   },
   frameParent: {
     left: 18,

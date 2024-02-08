@@ -7,7 +7,7 @@ import { useNavigation } from '@react-navigation/native'
 import { Color, FontFamily, FontSize, Border } from '../GlobalStyles'
 import { setPanel } from '../redux/slices/panel.slices'
 
-const MENPRINCIPAL = () => {
+const MenuPrincipal = () => {
   const navigation = useNavigation()
   const dispatch = useDispatch()
 
@@ -74,9 +74,10 @@ const MENPRINCIPAL = () => {
                 />
                 <Pressable
                   style={styles.muro}
-                  onPress={() =>
+                  onPress={() => {
                     navigation.navigate('MIDIARIOPANTALLAPERSONAL')
-                  }
+                    dispatch(setPanel(false))
+                  }}
                 >
                   <Text style={styles.muro1Typo}>Mi Diario</Text>
                 </Pressable>
@@ -153,7 +154,10 @@ const MENPRINCIPAL = () => {
                 />
                 <Pressable
                   style={styles.muro}
-                  onPress={() => navigation.navigate('Organizador')}
+                  onPress={() => {
+                    navigation.navigate('Organizador')
+                    dispatch(setPanel(false))
+                  }}
                 >
                   <Text style={styles.muro1Typo}>Añadir Recuerdo</Text>
                 </Pressable>
@@ -208,7 +212,10 @@ const MENPRINCIPAL = () => {
                 />
                 <Pressable
                   style={styles.muro}
-                  onPress={() => navigation.navigate('Novedades')}
+                  onPress={() => {
+                    navigation.navigate('Novedades')
+                    dispatch(setPanel(false))
+                  }}
                 >
                   <Text style={styles.muro1Typo}>Novedades</Text>
                 </Pressable>
@@ -226,7 +233,10 @@ const MENPRINCIPAL = () => {
                 />
                 <Pressable
                   style={styles.muro}
-                  onPress={() => navigation.navigate('Recompensas')}
+                  onPress={() => {
+                    navigation.navigate('Recompensas')
+                    dispatch(setPanel(false))
+                  }}
                 >
                   <Text style={styles.muro1Typo}>Logros</Text>
                 </Pressable>
@@ -389,4 +399,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default MENPRINCIPAL
+export default MenuPrincipal
