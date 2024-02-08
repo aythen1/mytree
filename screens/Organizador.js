@@ -665,7 +665,6 @@ const styles = StyleSheet.create({
     height: 926
   },
   organizador: {
-    borderRadius: Border.br_31xl,
     width: '100%',
     overflow: 'hidden',
     height: 926,

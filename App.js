@@ -9,7 +9,7 @@ import Etapas from './screens/Etapas'
 import Privacidad from './screens/Privacidad'
 import Cancion from './screens/Cancion'
 import SubeTusRecuerdos from './screens/SubeTusRecuerdos'
-import LOGIN from './screens/LOGIN'
+import Login from './screens/Login'
 import Onboarding from './screens/Onboarding'
 import Onboarding1 from './screens/Onboarding1'
 import OpcionesFamiliar from './components/OpcionesFamiliar'
@@ -136,7 +136,7 @@ import PERFILINFANTEAJUSTES from './screens/PERFILINFANTEAJUSTES'
 import PERFILDELUSUARIOVISITADO1 from './screens/PERFILDELUSUARIOVISITADO1'
 import PerfilConfiguracion from './screens/PerfilConfiguracion'
 import MISAMIGOS from './screens/MISAMIGOS'
-import PERFILAJUSTES from './screens/PERFILAJUSTES'
+import PerfilAjustes from './screens/PerfilAjustes'
 import PERFILDELUSUARIOVISITADO2 from './screens/PERFILDELUSUARIOVISITADO2'
 import PERFILMIINFO from './screens/PERFILMIINFO'
 // import VotacionDeRetos from './screens/VotacionDeRetos'
@@ -277,7 +277,7 @@ const App = () => {
           />
           <Stack.Screen
             name="Login"
-            component={LOGIN}
+            component={Login}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -911,8 +911,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="PERFILAJUSTES"
-            component={PERFILAJUSTES}
+            name="PerfilAjustes"
+            component={PerfilAjustes}
             options={{ headerShown: false }}
           />
           <Stack.Screen
