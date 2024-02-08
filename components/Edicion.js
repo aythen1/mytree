@@ -1,58 +1,34 @@
 import * as React from 'react'
 import { Image } from 'expo-image'
-import { StyleSheet, Pressable, Text, View } from 'react-native'
+import { StyleSheet, Pressable, View, Text, ScrollView } from 'react-native'
+import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
-import { Color, FontSize, FontFamily, Border } from '../GlobalStyles'
+import { FontFamily, Color, Border, FontSize } from '../GlobalStyles'
 
-const MIDIARIOEDICINVIDEO1 = () => {
+const Edicion = () => {
   const navigation = useNavigation()
 
   return (
     <View style={[styles.miDiarioEdicinVideo, styles.iconLayout1]}>
-      <View style={[styles.frameParent, styles.parentFlexBox1]}>
-        <View style={[styles.backParent, styles.parentFlexBox]}>
-          <Pressable
-            style={styles.backLayout}
-            onPress={() => navigation.navigate('MIDIARIOEDICINVIDEO2')}
-          >
-            <Image
-              style={[styles.icon, styles.iconLayout1]}
-              contentFit="cover"
-              source={require('../assets/back6.png')}
-            />
-          </Pressable>
-          <Text style={[styles.editarVideo, styles.edicinClr]}>
-            Editar video
-          </Text>
-        </View>
-        <Pressable
-          style={[styles.back1, styles.backLayout]}
-          onPress={() => navigation.navigate('MIDIARIOEDICINVIDEO')}
-        >
-          <Image
-            style={[styles.icon, styles.iconLayout1]}
-            contentFit="cover"
-            source={require('../assets/back7.png')}
-          />
-        </Pressable>
+      <View style={styles.parentFlexBox1}>
+        <Image
+          style={[styles.reverseRightIcon, styles.reverseIconLayout]}
+          contentFit="cover"
+          source={require('../assets/reverseleft.png')}
+        />
+        <Image
+          style={[styles.reverseRightIcon, styles.reverseIconLayout]}
+          contentFit="cover"
+          source={require('../assets/reverseright.png')}
+        />
+        <Image
+          style={[styles.refreshCcw02Icon, styles.reverseIconLayout]}
+          contentFit="cover"
+          source={require('../assets/refreshccw02.png')}
+        />
       </View>
-      <Image
-        style={[
-          styles.clarityresizeUpLineIcon,
-          styles.containerIconoParentPosition
-        ]}
-        contentFit="cover"
-        source={require('../assets/clarityresizeupline.png')}
-      />
-      <Pressable
-        style={[styles.filtro, styles.filtroPosition]}
-        onPress={() => navigation.navigate('FiltroEdicion')}
-      >
-        <Text style={[styles.filtro1, styles.edicinTypo]}>FILTRO</Text>
-      </Pressable>
-      <Text style={[styles.edicin, styles.edicinTypo]}>EDICIÓN</Text>
-      <View style={[styles.miDiarioEdicinVideoChild, styles.iconPosition]} />
-      <View style={[styles.containerIconoParent, styles.parentFlexBox]}>
+
+      <View style={styles.parentFlexBox}>
         <Image
           style={styles.containerIcono}
           contentFit="cover"
@@ -94,31 +70,6 @@ const MIDIARIOEDICINVIDEO1 = () => {
           source={require('../assets/icon7.png')}
         />
       </View>
-      <View style={[styles.reverseLeftParent, styles.parentFlexBox1]}>
-        <Image
-          style={[styles.reverseLeftIcon, styles.reverseIconLayout]}
-          contentFit="cover"
-          source={require('../assets/reverseleft.png')}
-        />
-        <Image
-          style={[styles.reverseRightIcon, styles.reverseIconLayout]}
-          contentFit="cover"
-          source={require('../assets/reverseright.png')}
-        />
-        <Image
-          style={[styles.refreshCcw02Icon, styles.reverseIconLayout]}
-          contentFit="cover"
-          source={require('../assets/refreshccw02.png')}
-        />
-      </View>
-      <View style={[styles.rectangleParent, styles.frameItemLayout]}>
-        <View style={[styles.frameItem, styles.frameItemLayout]} />
-        <Image
-          style={[styles.vectorIcon, styles.iconPosition]}
-          contentFit="cover"
-          source={require('../assets/vector39.png')}
-        />
-      </View>
     </View>
   )
 }
@@ -130,7 +81,9 @@ const styles = StyleSheet.create({
   },
   parentFlexBox1: {
     flexDirection: 'row',
-    position: 'absolute'
+    marginBottom: 15,
+    width: '100%'
+    // position: 'absolute'
   },
   parentFlexBox: {
     alignItems: 'center',
@@ -145,8 +98,8 @@ const styles = StyleSheet.create({
     width: 30
   },
   containerIconoParentPosition: {
-    position: 'absolute',
-    left: 20
+    // position: 'absolute',
+    // left: 20
   },
   filtroPosition: {
     top: 627,
@@ -262,12 +215,7 @@ const styles = StyleSheet.create({
     height: 21,
     marginLeft: 23
   },
-  containerIconoParent: {
-    top: 738,
-    left: 20,
-    position: 'absolute'
-  },
-  reverseLeftIcon: {
+  rseLeftIcon: {
     width: 24,
     height: 25
   },
@@ -280,10 +228,7 @@ const styles = StyleSheet.create({
     width: 27,
     marginLeft: 23
   },
-  reverseLeftParent: {
-    top: 693,
-    left: 20
-  },
+
   frameItem: {
     backgroundColor: Color.secundario,
     zIndex: 0
@@ -309,7 +254,7 @@ const styles = StyleSheet.create({
     height: 105
   },
   miDiarioEdicinVideo: {
-    borderRadius: Border.br_31xl,
+    // borderRadius: Border.br_31xl,
     backgroundColor: Color.white,
     flex: 1,
     height: 926,
@@ -317,4 +262,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default MIDIARIOEDICINVIDEO1
+export default Edicion

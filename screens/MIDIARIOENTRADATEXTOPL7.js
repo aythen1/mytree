@@ -12,6 +12,7 @@ import CalebrandoLogros from '../components/CelebrandoLogros'
 import DesafiosSuperados from '../components/DesafiosSuperados'
 import RisaAnecdotas from '../components/RisaAnecdotas'
 import Personalizada from '../components/Personalizada'
+import NavMedia from '../components/NavMedia'
 
 const MIDIARIOENTRADATEXTOPL7 = () => {
   const navigation = useNavigation()
@@ -120,6 +121,8 @@ const MIDIARIOENTRADATEXTOPL7 = () => {
         {renderSection(isSection)}
         {/* -------------------- */}
       </Pressable>
+
+      <NavMedia />
 
       <Image
         style={[styles.image6Icon, styles.image6IconPosition]}

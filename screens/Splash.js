@@ -10,106 +10,110 @@ const Splash = () => {
 
   return (
     <ScrollView style={styles.splash}>
-      <View style={styles.splashChild} />
-      <Image
-        style={styles.splashItem}
-        contentFit="cover"
-        source={require('../assets/vector-1.png')}
-      />
-      <Image
-        style={[styles.splashInner, styles.splashLayout]}
-        contentFit="cover"
-        source={require('../assets/vector-3.png')}
-      />
-      <Image
-        style={[styles.vectorIcon, styles.splashLayout]}
-        contentFit="cover"
-        source={require('../assets/vector-8.png')}
-      />
-      <Image
-        style={[styles.splashChild1, styles.splashLayout]}
-        contentFit="cover"
-        source={require('../assets/vector-9.png')}
-      />
-      <Image
-        style={[styles.splashChild2, styles.splashChildLayout]}
-        contentFit="cover"
-        source={require('../assets/vector-5.png')}
-      />
-      <Image
-        style={[styles.splashChild3, styles.splashChildLayout]}
-        contentFit="cover"
-        source={require('../assets/vector-6.png')}
-      />
-      <Image
-        style={[styles.splashChild4, styles.splashChildLayout]}
-        contentFit="cover"
-        source={require('../assets/vector-7.png')}
-      />
-      <Image
-        style={styles.splashChild5}
-        contentFit="cover"
-        source={require('../assets/vector-2.png')}
-      />
-      {/* <Text style={styles.mytree}>MyTree</Text> */}
-      <View style={styles.image6Parent}>
+      <View>
+        <View style={styles.splashChild} />
         <Image
-          style={styles.image6Icon}
+          style={styles.splashItem}
           contentFit="cover"
-          source={require('../assets/image-61.png')}
+          source={require('../assets/vector-1.png')}
         />
-        <View style={styles.interactaConTusGeneracioneParent}>
-          <Text style={styles.interactaConTus}>{`Interactúa con tus
+        <Image
+          style={[styles.splashInner, styles.splashLayout]}
+          contentFit="cover"
+          source={require('../assets/vector-3.png')}
+        />
+        <Image
+          style={[styles.vectorIcon, styles.splashLayout]}
+          contentFit="cover"
+          source={require('../assets/vector-8.png')}
+        />
+        <Image
+          style={[styles.splashChild1, styles.splashLayout]}
+          contentFit="cover"
+          source={require('../assets/vector-9.png')}
+        />
+        <Image
+          style={[styles.splashChild2, styles.splashChildLayout]}
+          contentFit="cover"
+          source={require('../assets/vector-5.png')}
+        />
+        <Image
+          style={[styles.splashChild3, styles.splashChildLayout]}
+          contentFit="cover"
+          source={require('../assets/vector-6.png')}
+        />
+        <Image
+          style={[styles.splashChild4, styles.splashChildLayout]}
+          contentFit="cover"
+          source={require('../assets/vector-7.png')}
+        />
+        <Image
+          style={styles.splashChild5}
+          contentFit="cover"
+          source={require('../assets/vector-2.png')}
+        />
+        {/* <Text style={styles.mytree}>MyTree</Text> */}
+        <View style={styles.image6Parent}>
+          <Image
+            style={styles.image6Icon}
+            contentFit="cover"
+            source={require('../assets/image-61.png')}
+          />
+          <View>
+            <Text style={styles.interactaConTus}>{`Interactúa con tus
 generaciones`}</Text>
-          <Text
-            style={[styles.tuHistoriaComienza, styles.oTypo]}
-          >{`Tu historia comienza aquí, dejando una huella en el corazón de tu familia
+            <Text
+              style={[styles.tuHistoriaComienza, styles.oTypo]}
+            >{`Tu historia comienza aquí, dejando una huella en el corazón de tu familia
 `}</Text>
-        </View>
-        <View style={styles.frameParent}>
-          <View style={[styles.rectangleParent, styles.frameChildLayout]}>
-            <View style={[styles.frameChild, styles.buttonBorder]} />
-            <Image
-              style={[
-                styles.fontistofacebookIcon,
-                styles.devicongooglePosition
-              ]}
-              contentFit="cover"
-              source={require('../assets/fontistofacebook.png')}
-            />
           </View>
-          <View style={[styles.rectangleParent, styles.frameChildLayout]}>
-            <View style={[styles.frameChild, styles.buttonBorder]} />
-            <Image
-              style={[styles.devicongoogle, styles.devicongooglePosition]}
-              contentFit="cover"
-              source={require('../assets/devicongoogle.png')}
-            />
+          <View style={styles.frameParent}>
+            <View style={[styles.rectangleParent, styles.frameChildLayout]}>
+              <View style={[styles.frameChild, styles.buttonBorder]} />
+              <Image
+                style={[
+                  styles.fontistofacebookIcon,
+                  styles.devicongooglePosition
+                ]}
+                contentFit="cover"
+                source={require('../assets/fontistofacebook.png')}
+              />
+            </View>
+            <View style={[styles.rectangleParent, styles.frameChildLayout]}>
+              <View style={[styles.frameChild, styles.buttonBorder]} />
+              <Image
+                style={[styles.devicongoogle, styles.devicongooglePosition]}
+                contentFit="cover"
+                source={require('../assets/devicongoogle.png')}
+              />
+            </View>
           </View>
-        </View>
-        <View style={styles.interactaConTusGeneracioneParent}>
-          <View
-            style={[styles.iniciarSesion, styles.buttonSpaceBlock]}
-            locations={[0, 1]}
-            colors={['#dee274', '#7ec18c']}
-          >
-            <Pressable onPress={() => navigation.navigate('Login')}>
-              <Text style={styles.signTypo}>INICIAR SESIÓN</Text>
-            </Pressable>
-          </View>
-          <Text style={[styles.o, styles.oTypo]}>O</Text>
-          <LinearGradient
-            style={[styles.button1, styles.buttonLayout]}
-            locations={[0, 1]}
-            colors={['#dee274', '#7ec18c']}
-          >
-            <Pressable
-              style={[styles.pressable, styles.buttonSpaceBlock]}
-              onPress={() => navigation.navigate('Register')}
+          <View style={{ top: 60 }}>
+            <View
+              style={[styles.iniciarSesion, styles.buttonSpaceBlock]}
+              locations={[0, 1]}
+              colors={['#dee274', '#7ec18c']}
             >
-              <Text style={[styles.signIn1, styles.signTypo]}>REGISTRARSE</Text>
-            </Pressable>
-          </LinearGradient>
+              <Pressable onPress={() => navigation.navigate('Login')}>
+                <Text style={styles.signTypo}>INICIAR SESIÓN</Text>
+              </Pressable>
+            </View>
+            <Text style={[styles.o, styles.oTypo]}>O</Text>
+            <LinearGradient
+              style={[styles.button1, styles.buttonLayout]}
+              locations={[0, 1]}
+              colors={['#dee274', '#7ec18c']}
+            >
+              <Pressable
+                style={[styles.pressable, styles.buttonSpaceBlock]}
+                onPress={() => navigation.navigate('Register')}
+              >
+                <Text style={[styles.signIn1, styles.signTypo]}>
+                  REGISTRARSE
+                </Text>
+              </Pressable>
+            </LinearGradient>
+          </View>
         </View>
       </View>
     </ScrollView>
@@ -129,7 +133,7 @@ const styles = StyleSheet.create({
   },
   oTypo: {
     fontSize: FontSize.size_sm,
-    marginTop: 20,
+    // marginTop: 20,
     textAlign: 'center',
     color: Color.negro,
     fontFamily: FontFamily.lato,
@@ -176,7 +180,7 @@ const styles = StyleSheet.create({
     left: 0,
     borderRadius: Border.br_5xl,
     width: '100%',
-    position: 'absolute',
+    // position: 'absolute',
     height: '100%',
     backgroundColor: Color.white
   },
@@ -249,13 +253,10 @@ const styles = StyleSheet.create({
     fontWeight: '500'
   },
   tuHistoriaComienza: {
-    width: 315,
-    marginTop: 20
+    width: 315
+    // marginTop: 120
   },
-  interactaConTusGeneracioneParent: {
-    marginTop: 25,
-    alignItems: 'center'
-  },
+
   frameChild: {
     borderRadius: Border.br_31xl,
     borderColor: Color.primario2,
@@ -279,10 +280,11 @@ const styles = StyleSheet.create({
     height: 18
   },
   frameParent: {
-    width: 85,
+    width: 100,
+    height: 10,
     justifyContent: 'space-between',
     flexDirection: 'row',
-    marginTop: 25
+    marginTop: 60
   },
   button: {
     borderColor: Color.primario1,
@@ -308,11 +310,15 @@ const styles = StyleSheet.create({
     borderRadius: Border.br_11xl
   },
   button1: {
-    marginTop: 20
+    marginTop: 20,
+    borderRadius: Border.br_11xl
   },
   image6Parent: {
-    top: 120,
-    left: 28,
+    // width: '100%',
+    height: 80,
+    top: '5%',
+    left: '50%',
+    right: '50%',
     alignItems: 'center',
     position: 'absolute'
   },
