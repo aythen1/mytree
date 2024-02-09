@@ -9,7 +9,7 @@ const Stories = () => {
   // console.log(stories)
 
   return (
-    <View style={{ top: 140 }}>
+    <View style={{ top: 140, width: '100%', justifyContent: 'center' }}>
       <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         {stories.map((story) => (
           <View key={story.name} style={styles.youLayout}>
