@@ -6,7 +6,8 @@ import {
   Pressable,
   Text,
   Modal,
-  ScrollView
+  ScrollView,
+  TouchableWithoutFeedback
 } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
@@ -16,6 +17,7 @@ import Lugar2 from '../components/Lugar2'
 import FECHA6 from '../components/FECHA6'
 // import ENTRADACREADA10 from '../components/ENTRADACREADA10'
 import { FontFamily, Padding, FontSize, Color, Border } from '../GlobalStyles'
+import ENTRADACREADA from '../components/ENTRADACREADA'
 
 const MUROALERTAS1 = () => {
   const [fieldContainerVisible, setFieldContainerVisible] = useState(false)
@@ -24,6 +26,7 @@ const MUROALERTAS1 = () => {
   const navigation = useNavigation()
   const [buttonContainer1Visible, setButtonContainer1Visible] = useState(false)
   const [buttonContainer2Visible, setButtonContainer2Visible] = useState(false)
+  const [modalCreate, setModalCreate] = useState(false)
 
   const openFieldContainer = useCallback(() => {
     setFieldContainerVisible(true)
@@ -64,6 +67,10 @@ const MUROALERTAS1 = () => {
   const closeButtonContainer2 = useCallback(() => {
     setButtonContainer2Visible(false)
   }, [])
+
+  const onCloseModalCreate = () => {
+    setModalCreate(false)
+  }
 
   return (
     <>
@@ -245,11 +252,32 @@ const MUROALERTAS1 = () => {
               >
                 <Pressable
                   style={[styles.pressable1, styles.pressableFlexBox]}
-                  onPress={openButtonContainer2}
+                  onPress={() => setModalCreate(true)}
                 >
                   <Text style={[styles.signIn2, styles.signTypo]}>Enviar</Text>
                 </Pressable>
               </LinearGradient>
+              {modalCreate && (
+                <Modal
+                  animationType="fade"
+                  transparent={true}
+                  visible={modalCreate}
+                >
+                  <TouchableWithoutFeedback
+                    onPress={() => onCloseModalCreate()}
+                  >
+                    <View style={styles.modalOverlay}>
+                      <View>
+                        <ENTRADACREADA
+                          onClose={onCloseModalCreate}
+                          message={'Guardado!'}
+                          isNavigate={'MENSAJERA'}
+                        />
+                      </View>
+                    </View>
+                  </TouchableWithoutFeedback>
+                </Modal>
+              )}
             </View>
           </View>
         </View>
@@ -312,6 +340,12 @@ const styles = StyleSheet.create({
   iconLayout: {
     overflow: 'hidden',
     width: '100%'
+  },
+  modalOverlay: {
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   titleTypo: {
     letterSpacing: 0,
