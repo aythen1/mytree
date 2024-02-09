@@ -14,10 +14,5 @@
   },
   "submit": {
     "production": {}
-  },
-  "expo": {
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    }
   }
 }

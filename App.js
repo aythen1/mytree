@@ -9,7 +9,7 @@ import Etapas from './screens/Etapas'
 import Privacidad from './screens/Privacidad'
 import Cancion from './screens/Cancion'
 import SubeTusRecuerdos from './screens/SubeTusRecuerdos'
-import Login from './screens/Login'
+import LOGIN from './screens/LOGIN'
 import Onboarding from './screens/Onboarding'
 import Onboarding1 from './screens/Onboarding1'
 import OpcionesFamiliar from './components/OpcionesFamiliar'
@@ -136,7 +136,7 @@ import PERFILINFANTEAJUSTES from './screens/PERFILINFANTEAJUSTES'
 import PERFILDELUSUARIOVISITADO1 from './screens/PERFILDELUSUARIOVISITADO1'
 import PerfilConfiguracion from './screens/PerfilConfiguracion'
 import MISAMIGOS from './screens/MISAMIGOS'
-import PerfilAjustes from './screens/PerfilAjustes'
+import PERFILAJUSTES from './screens/PERFILAJUSTES'
 import PERFILDELUSUARIOVISITADO2 from './screens/PERFILDELUSUARIOVISITADO2'
 import PERFILMIINFO from './screens/PERFILMIINFO'
 // import VotacionDeRetos from './screens/VotacionDeRetos'
@@ -217,7 +217,7 @@ const App = () => {
                 route.name !== 'Onboarding' &&
                 route.name !== 'Onboarding1' &&
                 route.name !== 'Onboarding2' &&
-                route.name !== 'Login'
+                route.name !== 'LOGIN'
               // &&
               //   route.name !== 'IniciarSesin' &&
               //   route.name !== 'SignIn' &&
@@ -276,8 +276,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="Login"
-            component={Login}
+            name="LOGIN"
+            component={LOGIN}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -338,6 +338,11 @@ const App = () => {
           <Stack.Screen
             name="Valorar"
             component={Valorar}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="FiltroEdicion"
+            component={FiltroEdicion}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -911,8 +916,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="PerfilAjustes"
-            component={PerfilAjustes}
+            name="PERFILAJUSTES"
+            component={PERFILAJUSTES}
             options={{ headerShown: false }}
           />
           <Stack.Screen
