@@ -1,5 +1,12 @@
 import React, { useCallback, useState } from 'react'
-import { StyleSheet, View, Text, Pressable, Modal } from 'react-native'
+import {
+  StyleSheet,
+  View,
+  Text,
+  Pressable,
+  Modal,
+  TouchableWithoutFeedback
+} from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import { Image } from 'expo-image'
 import { useNavigation } from '@react-navigation/native'
@@ -13,11 +20,13 @@ import DesafiosSuperados from '../components/DesafiosSuperados'
 import RisaAnecdotas from '../components/RisaAnecdotas'
 import Personalizada from '../components/Personalizada'
 import NavMedia from '../components/NavMedia'
+import ENTRADACREADA from '../components/ENTRADACREADA'
 
 const MIDIARIOENTRADATEXTOPL7 = () => {
   const navigation = useNavigation()
   const [showEdit, setShowEdit] = useState(false)
   const [isSection, setIsSection] = useState('')
+  const [modalCreate, setModalCreate] = useState(false)
 
   const [groupIcon1Visible, setGroupIcon1Visible] = useState(false)
 
@@ -46,6 +55,10 @@ const MIDIARIOENTRADATEXTOPL7 = () => {
       default:
         return <DescubriendoElMundo />
     }
+  }
+
+  const onCloseModalCreate = () => {
+    setModalCreate(false)
   }
 
   return (
@@ -94,7 +107,7 @@ const MIDIARIOENTRADATEXTOPL7 = () => {
               >
                 <Pressable
                   style={[styles.pressable]}
-                  // onPress={openFrameContainer}
+                  onPress={() => setModalCreate(true)}
                 >
                   <Text style={[styles.signIn, styles.ttTypo]}>Guardar</Text>
                 </Pressable>
@@ -102,6 +115,23 @@ const MIDIARIOENTRADATEXTOPL7 = () => {
             </View>
           </View>
         )}
+
+        {modalCreate && (
+          <Modal animationType="fade" transparent={true} visible={modalCreate}>
+            <TouchableWithoutFeedback onPress={() => setModalCreate(false)}>
+              <View style={styles.modalOverlay}>
+                <View>
+                  <ENTRADACREADA
+                    onClose={onCloseModalCreate}
+                    message={'Entrada Creada'}
+                    isNavigate={'MIDIARIOPANTALLAPERSONAL'}
+                  />
+                </View>
+              </View>
+            </TouchableWithoutFeedback>
+          </Modal>
+        )}
+
         {!showEdit && (
           <Pressable
             style={{ flexDirection: 'row', alignItems: 'center' }}
@@ -167,6 +197,12 @@ const MIDIARIOENTRADATEXTOPL7 = () => {
 const styles = StyleSheet.create({
   navigationIconLayout: {
     position: 'absolute'
+  },
+  modalOverlay: {
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   groupParent: {
     flexDirection: 'row',

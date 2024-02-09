@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Image } from 'expo-image'
 import { StyleSheet, Pressable, View, Text, ScrollView } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 // import { useNavigation } from '@react-navigation/native'
 import { Padding, FontSize, Color, FontFamily, Border } from '../GlobalStyles'
+import Checkbox from 'expo-checkbox'
 
 const RetosModal = ({ setShowModalRetos, setShowRetos }) => {
+  const [isCheck, setIsCheck] = useState(false)
   // const navigation = useNavigation()
 
   return (
@@ -17,17 +19,17 @@ const RetosModal = ({ setShowModalRetos, setShowRetos }) => {
             style={[styles.frameChild, styles.pressableBg]}
             locations={[0, 0.26, 0.57, 0.82]}
             colors={['#7ec18c', '#d0dd78', '#dce175', '#fff']}
-          />
-          <View style={styles.frameContainer}>
-            <View style={styles.frameView}>
-              <View style={styles.bienvenidALosRetosFamiliaWrapper}>
-                <Text style={[styles.bienvenidALos, styles.popularTypo]}>
-                  Bienvenid@ a los Retos Familiares
-                </Text>
-              </View>
-              <Text
-                style={[styles.aquEncontrarsLos, styles.signInLayout]}
-              >{`Aquí encontrarás los retos familiares que puedes proponer a tu familia, para poder seguir estando en contacto con ell@s.
+          >
+            <View style={styles.frameContainer}>
+              <View style={styles.frameView}>
+                <View style={styles.bienvenidALosRetosFamiliaWrapper}>
+                  <Text style={[styles.bienvenidALos, styles.popularTypo]}>
+                    Bienvenid@ a los Retos Familiares
+                  </Text>
+                </View>
+                <Text
+                  style={[styles.aquEncontrarsLos, styles.signInLayout]}
+                >{`Aquí encontrarás los retos familiares que puedes proponer a tu familia, para poder seguir estando en contacto con ell@s.
 
 A continuación verás los retos propuestos, tanto por nosotros como por otros usuarios para hacer en familia.
 
@@ -35,38 +37,40 @@ Los retos más votados, se lanzarán la próxima semana a todos los usuarios de 
 
 Desliza hacia la derecha el que más te guste o hacia la izquierda si no te convence
 `}</Text>
-              <View style={[styles.checkParent, styles.parentSpaceBlock]}>
-                <View style={styles.check}>
-                  <View style={styles.checkChild} />
-                  <Image
-                    style={styles.vectorIcon}
-                    contentFit="cover"
-                    source={require('../assets/vector.png')}
-                  />
-                </View>
-                <View style={styles.noVolverAMostrarWrapper}>
-                  <Text style={styles.noVolverA}>No volver a mostrar</Text>
+                <View style={[styles.checkParent, styles.parentSpaceBlock]}>
+                  <View style={styles.check}>
+                    {/* <View style={styles.checkChild} /> */}
+                    {/* <Image
+                      style={styles.vectorIcon}
+                      contentFit="cover"
+                      source={require('../assets/vector.png')}
+                    /> */}
+                    <Checkbox value={isCheck} onValueChange={setIsCheck} />
+                  </View>
+                  <View style={styles.noVolverAMostrarWrapper}>
+                    <Text style={styles.noVolverA}>No volver a mostrar</Text>
+                  </View>
                 </View>
               </View>
-            </View>
-            <LinearGradient
-              style={styles.button}
-              locations={[0, 1]}
-              colors={['#dee274', '#7ec18c']}
-            >
-              <Pressable
-                style={[styles.pressable, styles.pressableBg]}
-                onPress={() => {
-                  setShowModalRetos(false)
-                  setShowRetos(true)
-                }}
+              <LinearGradient
+                style={styles.button}
+                locations={[0, 1]}
+                colors={['#dee274', '#7ec18c']}
               >
-                <Text style={[styles.signIn, styles.signInLayout]}>
-                  CONTINUAR
-                </Text>
-              </Pressable>
-            </LinearGradient>
-          </View>
+                <Pressable
+                  style={[styles.pressable, styles.pressableBg]}
+                  onPress={() => {
+                    setShowModalRetos(false)
+                    setShowRetos(true)
+                  }}
+                >
+                  <Text style={[styles.signIn, styles.signInLayout]}>
+                    CONTINUAR
+                  </Text>
+                </Pressable>
+              </LinearGradient>
+            </View>
+          </LinearGradient>
         </View>
       </View>
       <Image
@@ -245,15 +249,20 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   button: {
-    marginTop: 141,
-    alignSelf: 'center',
-    left: -10
+    marginTop: 100,
+    width: '100%',
+    borderRadius: 50
+    // alignSelf: 'center'
+    // left: -10
   },
   frameContainer: {
+    paddingHorizontal: 10,
     top: 20,
-    left: 20,
-    zIndex: 1,
-    position: 'absolute'
+    justifyContent: 'center',
+    alignItems: 'center',
+    // left: 20,
+    zIndex: 1
+    // position: 'absolute'
   },
   frameParent: {
     top: 0,

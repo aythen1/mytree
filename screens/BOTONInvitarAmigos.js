@@ -12,14 +12,15 @@ import {
 import { LinearGradient } from 'expo-linear-gradient'
 import Parentezco from '../components/Parentezco'
 import OpcionesAmigo from '../components/OpcionesAmigo'
-import ENTRADACREADA11 from '../components/ENTRADACREADA11'
+// import ENTRADACREADA11 from '../components/ENTRADACREADA11'
 import { Color, Border, FontFamily, Padding, FontSize } from '../GlobalStyles'
 import QR from '../components/QR'
+import ENTRADACREADA from '../components/ENTRADACREADA'
 
 const BOTONInvitarAmigos = () => {
+  const [send, setSend] = useState(false)
   const [arrowDown2IconVisible, setArrowDown2IconVisible] = useState(false)
   const [arrowDown2Icon1Visible, setArrowDown2Icon1Visible] = useState(false)
-  const [buttonContainerVisible, setButtonContainerVisible] = useState(false)
   const [buttonContainer1Visible, setButtonContainer1Visible] = useState(false)
   const [optionsFriend, setOptionsFriend] = useState(false)
   const [optionsParentezco, setOptionsParentezco] = useState(false)
@@ -40,14 +41,6 @@ const BOTONInvitarAmigos = () => {
     setArrowDown2Icon1Visible(false)
   }, [])
 
-  const openButtonContainer = useCallback(() => {
-    setButtonContainerVisible(true)
-  }, [])
-
-  const closeButtonContainer = useCallback(() => {
-    setButtonContainerVisible(false)
-  }, [])
-
   const openButtonContainer1 = useCallback(() => {
     setButtonContainer1Visible(true)
   }, [])
@@ -55,6 +48,10 @@ const BOTONInvitarAmigos = () => {
   const closeButtonContainer1 = useCallback(() => {
     setButtonContainer1Visible(false)
   }, [])
+
+  const oncloseModalSend = () => {
+    setSend(false)
+  }
 
   return (
     <>
@@ -103,7 +100,7 @@ const BOTONInvitarAmigos = () => {
             Invitar a Juan Gutierrez
           </Text>
           <View style={styles.fieldWithTitle}>
-            <View>
+            <Pressable onPress={() => setOptionsFriend(!optionsFriend)}>
               <View style={([styles.titleBase], { zIndex: 50 })}>
                 <Text style={styles.title}>Relación</Text>
                 <Modal
@@ -122,12 +119,7 @@ const BOTONInvitarAmigos = () => {
               </View>
               <View style={[styles.field, styles.fieldFlexBox]}>
                 <View style={styles.placeholderInput1}>
-                  <Text
-                    style={styles.search1}
-                    onPress={() => setOptionsFriend(!optionsFriend)}
-                  >
-                    Amigos Intimos
-                  </Text>
+                  <Text style={styles.search1}>Amigos Intimos</Text>
                 </View>
                 <Pressable
                   style={styles.arrowDown2}
@@ -140,9 +132,14 @@ const BOTONInvitarAmigos = () => {
                   />
                 </Pressable>
               </View>
-            </View>
+            </Pressable>
           </View>
-          <View style={styles.fieldWithTitle}>
+          <Pressable
+            style={styles.fieldWithTitle}
+            onPress={() => {
+              setOptionsParentezco(!optionsParentezco)
+            }}
+          >
             <View>
               <View>
                 <View style={styles.titleBase}>
@@ -170,19 +167,9 @@ const BOTONInvitarAmigos = () => {
                 </View>
                 <View style={[styles.field, styles.fieldFlexBox]}>
                   <View style={styles.placeholderInput1}>
-                    <Text
-                      onPress={() => {
-                        setOptionsParentezco(!optionsParentezco)
-                      }}
-                      style={styles.search1}
-                    >
-                      Familiar
-                    </Text>
+                    <Text style={styles.search1}>Familiar</Text>
                   </View>
-                  <Pressable
-                    style={styles.arrowDown2}
-                    // onPress={openArrowDown2Icon1}
-                  >
+                  <Pressable style={styles.arrowDown2}>
                     <Image
                       style={styles.icon}
                       contentFit="cover"
@@ -192,13 +179,44 @@ const BOTONInvitarAmigos = () => {
                 </View>
               </View>
             </View>
-          </View>
+          </Pressable>
           <Pressable
             style={[styles.button, styles.buttonFlexBox]}
-            // onPress={openButtonContainer}
+            onPress={() => setSend(true)}
           >
             <Text style={styles.signTypo}>Enviar invitación</Text>
           </Pressable>
+
+          {send && (
+            <Modal animationType="fade" transparent={true} visible={send}>
+              <TouchableWithoutFeedback onPress={() => setSend(false)}>
+                <View style={styles.modalOverlay}>
+                  <View>
+                    <ENTRADACREADA
+                      onClose={oncloseModalSend}
+                      message={'Añadido con éxito'}
+                      isNavigate={'BOTONInvitarAmigos1'}
+                    />
+                  </View>
+                </View>
+              </TouchableWithoutFeedback>
+            </Modal>
+          )}
+
+          {/* <Modal
+            animationType="fade"
+            transparent
+            visible={buttonContainerVisible}
+          >
+            <View style={styles.buttonContainerOverlay}>
+              <Pressable
+                style={styles.buttonContainerBg}
+                onPress={closeButtonContainer}
+              />
+              <ENTRADACREADA11 onClose={closeButtonContainer} />
+            </View>
+          </Modal> */}
+
           <LinearGradient
             style={styles.button1}
             locations={[0, 1]}
@@ -236,16 +254,6 @@ const BOTONInvitarAmigos = () => {
         </View>
       </Modal>
 
-      <Modal animationType="fade" transparent visible={buttonContainerVisible}>
-        <View style={styles.buttonContainerOverlay}>
-          <Pressable
-            style={styles.buttonContainerBg}
-            onPress={closeButtonContainer}
-          />
-          <ENTRADACREADA11 onClose={closeButtonContainer} />
-        </View>
-      </Modal>
-
       <Modal animationType="fade" transparent visible={buttonContainer1Visible}>
         <View style={styles.buttonContainer1Overlay}>
           <Pressable
@@ -261,6 +269,12 @@ const BOTONInvitarAmigos = () => {
 
 const styles = StyleSheet.create({
   iconPosition: {
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  modalOverlay: {
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
     justifyContent: 'center',
     alignItems: 'center'
   },

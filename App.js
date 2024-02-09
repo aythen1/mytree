@@ -9,7 +9,7 @@ import Etapas from './screens/Etapas'
 import Privacidad from './screens/Privacidad'
 import Cancion from './screens/Cancion'
 import SubeTusRecuerdos from './screens/SubeTusRecuerdos'
-import Login from './screens/Login'
+import LOGIN from './screens/LOGIN'
 import Onboarding from './screens/Onboarding'
 import Onboarding1 from './screens/Onboarding1'
 import OpcionesFamiliar from './components/OpcionesFamiliar'
@@ -29,13 +29,8 @@ import Compartir from './components/Compartir'
 import CrearLbum from './screens/CrearLbum'
 import MisAlbumesFamiliares from './screens/MisAlbumesFamiliares'
 import SuscritoConExito from './screens/SuscritoConExito'
-import ENTRADACREADA from './components/ENTRADACREADA'
-import ENTRADACREADA1 from './components/ENTRADACREADA1'
 import CONFIRMARPARENTESCO from './components/CONFIRMARPARENTESCO'
-import ENTRADACREADA2 from './screens/ENTRADACREADA2'
-import ENTRADACREADA3 from './screens/ENTRADACREADA3'
 import ConfirmarAsistencia from './components/ConfirmarAsistencia'
-import ENTRADACREADA4 from './components/ENTRADACREADA4'
 import Keyboard from './components/Keyboard'
 import Keyboard1 from './components/Keyboard1'
 import Lugar from './components/Lugar'
@@ -54,7 +49,6 @@ import Cancion1 from './components/Cancion1'
 import CrearAlbum from './screens/CrearAlbum'
 import Organizador from './screens/Organizador'
 import RetosFamiliaresCumplido from './screens/RetosFamiliaresCumplido'
-// import BusquedaRetoSemanal from './screens/BusquedaRetoSemanal'
 import RetosFamiliaresSinCumplir from './screens/RetosFamiliaresSinCumplir'
 import AccesoAContactos from './screens/AccesoAContactos'
 import Situacin from './screens/Situacin'
@@ -64,7 +58,6 @@ import Chat from './screens/Chat'
 import AADIRAADIRANCESTRO from './screens/AADIRAADIRANCESTRO'
 import AADIRAADIRINFANTE from './screens/AADIRAADIRINFANTE'
 import TarjetaDigital from './screens/TarjetaDigital'
-// import MUROALERTAS from './screens/CrearReto'
 import MUROALERTAS1 from './screens/MUROALERTAS1'
 import MENSAJERA from './screens/MENSAJERA'
 import Bsqueda from './screens/Bsqueda'
@@ -80,16 +73,8 @@ import Novedades from './screens/Novedades'
 import Recompensas from './screens/Recompensas'
 import DiseoDeLaInvitacion from './components/DiseoDeLaInvitacion'
 import DiseoTarjetaDigital from './components/DiseoTarjetaDigital'
-import ENTRADACREADA5 from './screens/ENTRADACREADA5'
 import AsistenciaActualizada from './components/AsistenciaActualizada'
-import ENTRADACREADA6 from './screens/ENTRADACREADA6'
-import ENTRADACREADA7 from './screens/ENTRADACREADA7'
-import ENTRADACREADA8 from './components/ENTRADACREADA8'
-import ENTRADACREADA9 from './screens/ENTRADACREADA9'
-import ENTRADACREADA10 from './components/ENTRADACREADA10'
 import QR from './components/QR'
-import ENTRADACREADA11 from './components/ENTRADACREADA11'
-import ENTRADACREADA12 from './components/ENTRADACREADA12'
 import ValorarEvento from './components/ValorarEvento'
 import RecopilacionDeRespuestas from './screens/RecopilacionDeRespuestas'
 import VistaPrevia from './components/VistaPrevia'
@@ -97,7 +82,6 @@ import Invitacin from './screens/Invitacin'
 import Padres from './components/Padres'
 import Humor from './components/Humor'
 import MIDIARIOPANTALLAPERSONAL from './screens/MIDIARIOPANTALLAPERSONAL'
-// import MenuPrincipal from './components/MenuPrincipal'
 import MIDIARIOEDICINVIDEO from './screens/MIDIARIOEDICINVIDEO'
 import MIDIARIOEDICINVIDEO1 from './screens/MIDIARIOEDICINVIDEO1'
 import MIDIARIOEDICINVIDEO2 from './screens/MIDIARIOEDICINVIDEO2'
@@ -129,32 +113,26 @@ import PerfilPrivacidad from './screens/PerfilPrivacidad'
 import PerfilVisualizacionMyTree from './screens/PerfilVisualizacionMyTree'
 import PERFILDELUSUARIOVISITADO from './screens/PERFILDELUSUARIOVISITADO'
 import CONDOLENCIAS from './components/CONDOLENCIAS'
-// import Navigation from './screens/Navigation'
 import PERFILANCESTROAJUSTES from './screens/PERFILANCESTROAJUSTES'
 import PERFILANCESTROAJUSTES1 from './screens/PERFILANCESTROAJUSTES1'
 import PERFILINFANTEAJUSTES from './screens/PERFILINFANTEAJUSTES'
 import PERFILDELUSUARIOVISITADO1 from './screens/PERFILDELUSUARIOVISITADO1'
 import PerfilConfiguracion from './screens/PerfilConfiguracion'
 import MISAMIGOS from './screens/MISAMIGOS'
-import PerfilAjustes from './screens/PerfilAjustes'
+import PERFILAJUSTES from './screens/PERFILAJUSTES'
 import PERFILDELUSUARIOVISITADO2 from './screens/PERFILDELUSUARIOVISITADO2'
 import PERFILMIINFO from './screens/PERFILMIINFO'
-// import VotacionDeRetos from './screens/VotacionDeRetos'
 import RetosBienvenida from './screens/RetosBienvenida'
-// import RetosModal from './screens/RetosModal'
 import MisAlbumes from './screens/MisAlbumes'
 import SOLOYO from './screens/SOLOYO'
 import Perfil from './screens/Perfil'
-// import Perfil1 from './screens/MiLegado'
 import MIDIARIOENTRADATEXTOPL from './screens/MIDIARIOENTRADATEXTOPL'
 import MIDIARIOENTRADATEXTOPL1 from './screens/MIDIARIOENTRADATEXTOPL1'
 import MIDIARIOENTRADATEXTOPL2 from './screens/MIDIARIOENTRADATEXTOPL2'
 import MIDIARIOENTRADATEXTOPL3 from './screens/MIDIARIOENTRADATEXTOPL3'
 import MIDIARIOENTRADATEXTOPL4 from './screens/MIDIARIOENTRADATEXTOPL4'
 import MIDIARIOENTRADATEXTOPL5 from './screens/MIDIARIOENTRADATEXTOPL5'
-// import MIDIARIOENTRADATEXTOPL6 from './screens/MIDIARIOENTRADATEXTOPL6'
 import MIDIARIOENTRADATEXTOPL7 from './screens/MIDIARIOENTRADATEXTOPL7'
-// import MIDIARIOENTRADATEXTO from './screens/Paper'
 import OpcionesZonaHoraria from './components/OpcionesZonaHoraria'
 import OpcionesCaategora from './components/OpcionesCaategora'
 import OpcionesFormatoFecha from './components/OpcionesFormatoFecha'
@@ -179,7 +157,6 @@ import REGISTROTELFONO3 from './screens/REGISTROTELFONO3'
 import REGISTROFECHADENACIMIENTO from './screens/REGISTROFECHADENACIMIENTO'
 import REGISTROFECHADENACIMIENTO1 from './screens/REGISTROFECHADENACIMIENTO1'
 import REGISTRONOMBRE from './screens/REGISTRONOMBRE'
-// import REGISTRONOMBRE1 from './screens/REGISTRONOMBRE1'
 import Suscripciones from './screens/Suscripciones'
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
@@ -217,19 +194,10 @@ const App = () => {
                 route.name !== 'Onboarding' &&
                 route.name !== 'Onboarding1' &&
                 route.name !== 'Onboarding2' &&
-                route.name !== 'Login'
-              // &&
-              //   route.name !== 'IniciarSesin' &&
-              //   route.name !== 'SignIn' &&
-              //   route.name !== 'Registrarse'
+                route.name !== 'LOGIN'
             )
           })}
         >
-          {/* <Stack.Screen
-            name="Navigation"
-            component={FooterNavBar}
-            options={{ headerShown: false }}
-          /> */}
           <Stack.Screen
             name="CambiarFotoDePerfil"
             component={CambiarFotoDePerfil}
@@ -276,8 +244,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="Login"
-            component={Login}
+            name="LOGIN"
+            component={LOGIN}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -341,6 +309,11 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
+            name="FiltroEdicion"
+            component={FiltroEdicion}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
             name="ETIQUETADO"
             component={ETIQUETADO}
             options={{ headerShown: false }}
@@ -376,28 +349,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="ENTRADACREADA"
-            component={ENTRADACREADA}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="ENTRADACREADA1"
-            component={ENTRADACREADA1}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="CONFIRMARPARENTESCO"
             component={CONFIRMARPARENTESCO}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="ENTRADACREADA2"
-            component={ENTRADACREADA2}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="ENTRADACREADA3"
-            component={ENTRADACREADA3}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -405,11 +358,7 @@ const App = () => {
             component={ConfirmarAsistencia}
             options={{ headerShown: false }}
           />
-          <Stack.Screen
-            name="ENTRADACREADA4"
-            component={ENTRADACREADA4}
-            options={{ headerShown: false }}
-          />
+
           <Stack.Screen
             name="Keyboard"
             component={Keyboard}
@@ -500,11 +449,6 @@ const App = () => {
             component={RetosFamiliaresCumplido}
             options={{ headerShown: false }}
           />
-          {/* <Stack.Screen
-            name="BusquedaRetoSemanal"
-            component={BusquedaRetoSemanal}
-            options={{ headerShown: false }}
-          /> */}
           <Stack.Screen
             name="RetosFamiliaresSinCumplir"
             component={RetosFamiliaresSinCumplir}
@@ -631,53 +575,14 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="ENTRADACREADA5"
-            component={ENTRADACREADA5}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="AsistenciaActualizada"
             component={AsistenciaActualizada}
             options={{ headerShown: false }}
           />
-          <Stack.Screen
-            name="ENTRADACREADA6"
-            component={ENTRADACREADA6}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="ENTRADACREADA7"
-            component={ENTRADACREADA7}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="ENTRADACREADA8"
-            component={ENTRADACREADA8}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="ENTRADACREADA9"
-            component={ENTRADACREADA9}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="ENTRADACREADA10"
-            component={ENTRADACREADA10}
-            options={{ headerShown: false }}
-          />
+
           <Stack.Screen
             name="QR"
             component={QR}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="ENTRADACREADA11"
-            component={ENTRADACREADA11}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="ENTRADACREADA12"
-            component={ENTRADACREADA12}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -911,8 +816,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="PerfilAjustes"
-            component={PerfilAjustes}
+            name="PERFILAJUSTES"
+            component={PERFILAJUSTES}
             options={{ headerShown: false }}
           />
           <Stack.Screen
