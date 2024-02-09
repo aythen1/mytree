@@ -1,630 +1,439 @@
-import React, { useState, useCallback } from "react";
-import { Text, StyleSheet, View, Pressable, Modal } from "react-native";
-import { Image } from "expo-image";
-import { LinearGradient } from "expo-linear-gradient";
-import OpcionesIdioma from "../components/OpcionesIdioma";
-import OpcionesFormatoFecha from "../components/OpcionesFormatoFecha";
-import OpcionesZonaHoraria from "../components/OpcionesZonaHoraria";
-import OpcionesInicioDeSemana from "../components/OpcionesInicioDeSemana";
-import OpcionesCulturas from "../components/OpcionesCulturas";
-import { useNavigation } from "@react-navigation/native";
-import { FontFamily, Color, FontSize, Border, Padding } from "../GlobalStyles";
+import React, { useState } from 'react'
+import {
+  Text,
+  StyleSheet,
+  View,
+  Pressable,
+  ScrollView,
+  Modal,
+  TouchableWithoutFeedback
+} from 'react-native'
+import { Image } from 'expo-image'
+import { LinearGradient } from 'expo-linear-gradient'
+import { useNavigation } from '@react-navigation/native'
+import { FontFamily, Color, FontSize, Border, Padding } from '../GlobalStyles'
+import ENTRADACREADA from '../components/ENTRADACREADA'
 
-const CALENDARIOAJUSTES = () => {
-  const [vectorIconVisible, setVectorIconVisible] = useState(false);
-  const [vectorIcon2Visible, setVectorIcon2Visible] = useState(false);
-  const [vectorIcon3Visible, setVectorIcon3Visible] = useState(false);
-  const [vectorIcon4Visible, setVectorIcon4Visible] = useState(false);
-  const [vectorIcon5Visible, setVectorIcon5Visible] = useState(false);
-  const navigation = useNavigation();
+const PerfilConfiguracion = () => {
+  const navigation = useNavigation()
 
-  const openVectorIcon = useCallback(() => {
-    setVectorIconVisible(true);
-  }, []);
+  const [modalCreate, setModalCreate] = useState(false)
 
-  const closeVectorIcon = useCallback(() => {
-    setVectorIconVisible(false);
-  }, []);
-
-  const openVectorIcon2 = useCallback(() => {
-    setVectorIcon2Visible(true);
-  }, []);
-
-  const closeVectorIcon2 = useCallback(() => {
-    setVectorIcon2Visible(false);
-  }, []);
-
-  const openVectorIcon3 = useCallback(() => {
-    setVectorIcon3Visible(true);
-  }, []);
-
-  const closeVectorIcon3 = useCallback(() => {
-    setVectorIcon3Visible(false);
-  }, []);
-
-  const openVectorIcon4 = useCallback(() => {
-    setVectorIcon4Visible(true);
-  }, []);
-
-  const closeVectorIcon4 = useCallback(() => {
-    setVectorIcon4Visible(false);
-  }, []);
-
-  const openVectorIcon5 = useCallback(() => {
-    setVectorIcon5Visible(true);
-  }, []);
-
-  const closeVectorIcon5 = useCallback(() => {
-    setVectorIcon5Visible(false);
-  }, []);
+  const onCloseModalCreate = () => {
+    setModalCreate(false)
+  }
 
   return (
-    <>
-      <View style={styles.calendarioAjustes}>
-        <View style={[styles.frameParent, styles.parentPosition]}>
-          <View style={[styles.frameGroup, styles.frameParentFlexBox]}>
-            <View style={styles.idiomaParent}>
-              <Text style={[styles.idioma, styles.idiomaTypo]}>Idioma</Text>
-              <Text style={[styles.espaol, styles.idiomaTypo]}>Español</Text>
-            </View>
-            <Pressable style={styles.vector} onPress={openVectorIcon}>
+    <ScrollView style={styles.frameParent}>
+      <View style={styles.viewContainer}>
+        <View>
+          <View style={styles.parentIcons}>
+            <Image
+              style={styles.image6Icon}
+              contentFit="cover"
+              source={require('../assets/image-6.png')}
+            />
+            <View style={styles.iconlylightOutlinecalendarParent}>
               <Image
-                style={styles.iconLayout}
+                style={styles.iconlylightOutlinecalendar}
                 contentFit="cover"
-                source={require("../assets/vector47.png")}
+                source={require('../assets/iconlylightoutlinecalendar5.png')}
+              />
+              <Image
+                style={styles.documentIconLayout}
+                contentFit="cover"
+                source={require('../assets/document9.png')}
+              />
+              <Image
+                style={styles.documentIconLayout}
+                contentFit="cover"
+                source={require('../assets/iconlylightoutlinesetting7.png')}
+              />
+            </View>
+          </View>
+          <View style={[styles.backParent, styles.parentFlexBox]}>
+            <Pressable
+              style={styles.iconlylightOutlinecalendar}
+              onPress={() => navigation.navigate('CALENDARIO')}
+            >
+              <Image
+                style={[styles.icon, styles.iconLayout1]}
+                contentFit="cover"
+                source={require('../assets/back.png')}
               />
             </Pressable>
+            <Text style={styles.ajustes}>Ajustes del calendario</Text>
           </View>
-          <View style={[styles.frameContainer, styles.frameParentFlexBox]}>
-            <View style={styles.idiomaParent}>
-              <Text style={[styles.idioma, styles.idiomaTypo]}>Región</Text>
-              <Text style={[styles.espaol, styles.idiomaTypo]}>España</Text>
+        </View>
+
+        <View style={styles.centralContainer}>
+          <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
+            <View style={styles.nombreCompletoParent}>
+              <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
+                Idioma
+              </Text>
+              <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>
+                Español
+              </Text>
             </View>
             <Image
-              style={styles.vector}
+              style={[styles.vectorIcon1, styles.vectorIconLayout]}
               contentFit="cover"
-              source={require("../assets/vector47.png")}
+              source={require('../assets/vector47.png')}
             />
           </View>
-          <View style={[styles.frameView, styles.frameParentFlexBox]}>
-            <View style={styles.idiomaParent}>
-              <Text style={[styles.idioma, styles.idiomaTypo]}>
-                Formato de Fecha y Hora
+          <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
+            <View style={styles.nombreCompletoParent}>
+              <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
+                Región
               </Text>
-              <Text style={[styles.espaol, styles.idiomaTypo]}>
-                MM/dd/aaaa hh:mm:ss tt
+              <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>
+                España
               </Text>
             </View>
-            <Pressable style={styles.vector} onPress={openVectorIcon2}>
-              <Image
-                style={styles.iconLayout}
-                contentFit="cover"
-                source={require("../assets/vector47.png")}
-              />
-            </Pressable>
+            <Image
+              style={[styles.vectorIcon1, styles.vectorIconLayout]}
+              contentFit="cover"
+              source={require('../assets/vector47.png')}
+            />
+          </View>
+          <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
+            <View style={styles.nombreCompletoParent}>
+              <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
+                Formato de fecha
+              </Text>
+              <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>
+                MM/DD/AAAA
+              </Text>
+            </View>
+            <Image
+              style={[styles.vectorIcon1, styles.vectorIconLayout]}
+              contentFit="cover"
+              source={require('../assets/vector47.png')}
+            />
+          </View>
+          <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
+            <View style={styles.nombreCompletoParent}>
+              <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
+                Formato de hora
+              </Text>
+              <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>
+                HH:MM:SS: TT
+              </Text>
+            </View>
+            <Image
+              style={[styles.vectorIcon1, styles.vectorIconLayout]}
+              contentFit="cover"
+              source={require('../assets/vector47.png')}
+            />
           </View>
           <Image
-            style={[styles.frameChild, styles.frameChildLayout]}
+            style={styles.frameChild}
             contentFit="cover"
-            source={require("../assets/line-78.png")}
+            source={require('../assets/line-802.png')}
           />
-          <View style={[styles.frameParent1, styles.frameParentFlexBox]}>
-            <View style={styles.idiomaParent}>
-              <Text style={[styles.idioma, styles.idiomaTypo]}>
+          <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
+            <View style={styles.nombreCompletoParent}>
+              <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
                 Zona horaria
               </Text>
-              <Text style={[styles.espaol, styles.idiomaTypo]}>GMT +1</Text>
+              <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>
+                GMT +1
+              </Text>
             </View>
-            <Pressable style={styles.vector} onPress={openVectorIcon3}>
-              <Image
-                style={styles.iconLayout}
-                contentFit="cover"
-                source={require("../assets/vector47.png")}
-              />
-            </Pressable>
+            <Image
+              style={[styles.vectorIcon1, styles.vectorIconLayout]}
+              contentFit="cover"
+              source={require('../assets/vector47.png')}
+            />
           </View>
-          <View style={[styles.frameParent2, styles.frameParentFlexBox]}>
-            <View style={styles.idiomaParent}>
-              <Text style={[styles.idioma, styles.idiomaTypo]}>
+          <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
+            <View style={styles.nombreCompletoParent}>
+              <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
                 Inicio de semana
               </Text>
-              <Text style={[styles.espaol, styles.idiomaTypo]}>Domingo</Text>
+              <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>
+                Domingo
+              </Text>
             </View>
-            <Pressable style={styles.vector} onPress={openVectorIcon4}>
-              <Image
-                style={styles.iconLayout}
-                contentFit="cover"
-                source={require("../assets/vector47.png")}
-              />
-            </Pressable>
+            <Image
+              style={[styles.vectorIcon1, styles.vectorIconLayout]}
+              contentFit="cover"
+              source={require('../assets/vector47.png')}
+            />
           </View>
           <Image
-            style={[styles.frameItem, styles.frameChildLayout]}
+            style={styles.frameChild}
             contentFit="cover"
-            source={require("../assets/line-78.png")}
+            source={require('../assets/line-802.png')}
           />
-          <View style={[styles.frameParent3, styles.frameParentFlexBox]}>
-            <View style={styles.idiomaParent}>
-              <Text style={[styles.idioma, styles.idiomaTypo]}>Cultura</Text>
-              <Text style={[styles.espaol, styles.idiomaTypo]}>
+          <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
+            <View style={styles.nombreCompletoParent}>
+              <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
+                Cultura
+              </Text>
+              <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>
                 Anglosajona
               </Text>
             </View>
-            <Pressable style={styles.vector} onPress={openVectorIcon5}>
-              <Image
-                style={styles.iconLayout}
-                contentFit="cover"
-                source={require("../assets/vector47.png")}
-              />
-            </Pressable>
+            <Image
+              style={[styles.vectorIcon1, styles.vectorIconLayout]}
+              contentFit="cover"
+              source={require('../assets/vector47.png')}
+            />
           </View>
           <Image
-            style={[styles.frameInner, styles.frameChildLayout]}
+            style={styles.frameChild}
             contentFit="cover"
-            source={require("../assets/line-78.png")}
+            source={require('../assets/line-802.png')}
           />
-          <View style={[styles.frameParent4, styles.frameParentFlexBox]}>
-            <View style={styles.idiomaParent}>
-              <Text style={[styles.idioma, styles.idiomaTypo]}>
+          <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
+            <View style={styles.nombreCompletoParent}>
+              <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
                 Color de fondo
               </Text>
-              <Text style={[styles.espaol, styles.idiomaTypo]}>
+              <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>
                 Por defecto
               </Text>
             </View>
             <Image
-              style={styles.vector}
+              style={[styles.vectorIcon1, styles.vectorIconLayout]}
               contentFit="cover"
-              source={require("../assets/vector47.png")}
+              source={require('../assets/vector47.png')}
             />
           </View>
           <Image
-            style={[styles.lineIcon, styles.frameChildLayout]}
+            style={styles.frameChild}
             contentFit="cover"
-            source={require("../assets/line-78.png")}
+            source={require('../assets/line-802.png')}
           />
-          <View style={[styles.frameParent5, styles.frameParentFlexBox]}>
-            <View style={styles.idiomaParent}>
-              <Text style={[styles.idioma, styles.idiomaTypo]}>
+          <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
+            <View style={styles.nombreCompletoParent}>
+              <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
                 Añadir calendario laboral según población
               </Text>
-              <Text style={[styles.espaol, styles.idiomaTypo]}>
+              <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>
                 Desactivado
               </Text>
             </View>
             <Image
-              style={styles.vector}
+              style={[styles.vectorIcon1, styles.vectorIconLayout]}
               contentFit="cover"
-              source={require("../assets/vector47.png")}
+              source={require('../assets/vector47.png')}
             />
           </View>
           <Image
-            style={[styles.frameChild1, styles.frameChildLayout]}
+            style={styles.frameChild}
             contentFit="cover"
-            source={require("../assets/line-78.png")}
+            source={require('../assets/line-802.png')}
           />
-          <View style={[styles.frameParent6, styles.frameParentFlexBox]}>
-            <View style={styles.idiomaParent}>
-              <Text style={[styles.idioma, styles.idiomaTypo]}>
+          <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
+            <View style={styles.nombreCompletoParent}>
+              <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
                 Notificación con dos semanas previas
               </Text>
-              <Text style={[styles.espaol, styles.idiomaTypo]}>
+              <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>
                 Desactivado
               </Text>
             </View>
             <Image
-              style={styles.vector}
+              style={[styles.vectorIcon1, styles.vectorIconLayout]}
               contentFit="cover"
-              source={require("../assets/vector47.png")}
+              source={require('../assets/vector47.png')}
             />
           </View>
-          <LinearGradient
-            style={[styles.button, styles.frameChildPosition]}
-            locations={[0, 1]}
-            colors={["#dee274", "#7ec18c"]}
-          >
-            <Pressable
-              style={[styles.pressable, styles.frameChildFlexBox]}
-              onPress={() => navigation.navigate("CALENDARIO")}
-            >
-              <Text style={styles.signIn}>Guardar</Text>
-            </Pressable>
-          </LinearGradient>
-          <View style={[styles.frameChild2, styles.frameChildFlexBox]} />
-          <View style={[styles.frameChild3, styles.frameChildFlexBox]} />
         </View>
-        <View
-          style={[styles.calendarioAjustesChild, styles.navigationIconPosition]}
-        />
-        <View style={[styles.backParent, styles.frameChildFlexBox]}>
-          <Pressable
-            style={styles.back}
-            onPress={() => navigation.navigate("CALENDARIO")}
-          >
-            <Image
-              style={[styles.icon5, styles.iconLayout]}
-              contentFit="cover"
-              source={require("../assets/back.png")}
-            />
-          </Pressable>
-          <Text style={[styles.ajustesDelCalendario, styles.idiomaTypo]}>
-            Ajustes del calendario
-          </Text>
-        </View>
-        <Image
-          style={[styles.image6Icon, styles.parentPosition]}
-          contentFit="cover"
-          source={require("../assets/image-6.png")}
-        />
-        <View
-          style={[
-            styles.iconlylightOutlinecalendarParent,
-            styles.frameParentFlexBox,
-          ]}
+        <LinearGradient
+          style={styles.button}
+          locations={[0, 1]}
+          colors={['#dee274', '#7ec18c']}
         >
-          <Image
-            style={styles.back}
-            contentFit="cover"
-            source={require("../assets/iconlylightoutlinecalendar6.png")}
-          />
-          <Image
-            style={[styles.documentIcon, styles.documentIconLayout]}
-            contentFit="cover"
-            source={require("../assets/document13.png")}
-          />
-          <Image
-            style={styles.documentIconLayout}
-            contentFit="cover"
-            source={require("../assets/iconlylightoutlinesetting1.png")}
-          />
-        </View>
-        <Image
-          style={[styles.navigationIcon, styles.navigationIconPosition]}
-          contentFit="cover"
-          source={require("../assets/navigation37.png")}
-        />
+          <Pressable
+            style={[styles.pressable, styles.pressableFlexBox]}
+            onPress={() => setModalCreate(true)}
+          >
+            <Text style={styles.signIn}>Guardar</Text>
+          </Pressable>
+        </LinearGradient>
+
+        {modalCreate && (
+          <Modal animationType="fade" transparent={true} visible={modalCreate}>
+            <TouchableWithoutFeedback onPress={() => setModalCreate(false)}>
+              <View style={styles.modalOverlay}>
+                <View>
+                  <ENTRADACREADA
+                    onClose={onCloseModalCreate}
+                    message={'Guardado!'}
+                  />
+                </View>
+              </View>
+            </TouchableWithoutFeedback>
+          </Modal>
+        )}
       </View>
-
-      <Modal animationType="fade" transparent visible={vectorIconVisible}>
-        <View style={styles.vectorIconOverlay}>
-          <Pressable style={styles.vectorIconBg} onPress={closeVectorIcon} />
-          <OpcionesIdioma onClose={closeVectorIcon} />
-        </View>
-      </Modal>
-
-      <Modal animationType="fade" transparent visible={vectorIcon2Visible}>
-        <View style={styles.vectorIcon2Overlay}>
-          <Pressable style={styles.vectorIcon2Bg} onPress={closeVectorIcon2} />
-          <OpcionesFormatoFecha onClose={closeVectorIcon2} />
-        </View>
-      </Modal>
-
-      <Modal animationType="fade" transparent visible={vectorIcon3Visible}>
-        <View style={styles.vectorIcon3Overlay}>
-          <Pressable style={styles.vectorIcon3Bg} onPress={closeVectorIcon3} />
-          <OpcionesZonaHoraria onClose={closeVectorIcon3} />
-        </View>
-      </Modal>
-
-      <Modal animationType="fade" transparent visible={vectorIcon4Visible}>
-        <View style={styles.vectorIcon4Overlay}>
-          <Pressable style={styles.vectorIcon4Bg} onPress={closeVectorIcon4} />
-          <OpcionesInicioDeSemana onClose={closeVectorIcon4} />
-        </View>
-      </Modal>
-
-      <Modal animationType="fade" transparent visible={vectorIcon5Visible}>
-        <View style={styles.vectorIcon5Overlay}>
-          <Pressable style={styles.vectorIcon5Bg} onPress={closeVectorIcon5} />
-          <OpcionesCulturas onClose={closeVectorIcon5} />
-        </View>
-      </Modal>
-    </>
-  );
-};
+    </ScrollView>
+  )
+}
 
 const styles = StyleSheet.create({
-  parentPosition: {
-    left: 20,
-    position: "absolute",
+  frameParent: {
+    height: '100%',
+    width: '100%',
+    flex: 1,
+    backgroundColor: Color.white
   },
-  frameParentFlexBox: {
-    justifyContent: "flex-end",
-    flexDirection: "row",
-    position: "absolute",
+  viewContainer: {
+    paddingHorizontal: Padding.p_xl,
+    paddingBottom: 60
   },
-  idiomaTypo: {
-    textAlign: "left",
-    fontFamily: FontFamily.lato,
+  parentFlexBox: {
+    flexDirection: 'row',
+    alignItems: 'center'
   },
-  frameChildLayout: {
-    maxHeight: "100%",
-    left: 0,
-    width: 388,
-    position: "absolute",
+  brunoPhamTypo: {
+    textAlign: 'left',
+    fontFamily: FontFamily.lato
   },
-  frameChildPosition: {
-    left: 0,
-    position: "absolute",
+  vectorIconLayout: {
+    height: 21,
+    width: 21
   },
-  frameChildFlexBox: {
-    justifyContent: "center",
-    alignItems: "center",
+  frameContainerFlexBox: {
+    flexDirection: 'row'
   },
-  navigationIconPosition: {
-    width: 428,
-    left: 0,
-    position: "absolute",
+  pressableFlexBox: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row'
   },
-  iconLayout: {
-    height: "100%",
-    width: "100%",
-  },
-  documentIconLayout: {
-    marginLeft: 30,
-    height: 24,
-    width: 24,
-  },
-  idioma: {
+  cambiarFotoDe: {
     color: Color.negro,
-    textAlign: "left",
-    fontWeight: "500",
-    lineHeight: 19,
+    textAlign: 'left',
+    fontWeight: '600',
     letterSpacing: 0,
-    fontSize: FontSize.size_base,
-    alignSelf: "stretch",
+    lineHeight: 19,
+    fontSize: FontSize.size_base
   },
-  espaol: {
+  brunoPham: {
     color: Color.grisGeneral,
     marginTop: 10,
-    fontWeight: "500",
-    lineHeight: 19,
+    fontWeight: '500',
     letterSpacing: 0,
-    fontSize: FontSize.size_base,
-    alignSelf: "stretch",
+    lineHeight: 19,
+    fontSize: FontSize.size_base
   },
-  idiomaParent: {
-    width: 347,
+  nombreCompletoParent: {
+    width: '80%'
   },
-  vectorIconOverlay: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "rgba(113, 113, 113, 0.3)",
-  },
-  vectorIconBg: {
-    position: "absolute",
-    width: "100%",
-    height: "100%",
-    left: 0,
-    top: 0,
-  },
-  vector: {
-    width: 21,
-    height: 21,
-    marginLeft: 20,
-  },
-  frameGroup: {
-    alignItems: "center",
-    justifyContent: "flex-end",
-    left: 0,
-    top: 0,
+  vectorIcon1: {
+    marginLeft: 20
   },
   frameContainer: {
-    top: 68,
-    alignItems: "center",
-    justifyContent: "flex-end",
-    left: 0,
-  },
-  vectorIcon2Overlay: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "rgba(113, 113, 113, 0.3)",
-  },
-  vectorIcon2Bg: {
-    position: "absolute",
-    width: "100%",
-    height: "100%",
-    left: 0,
-    top: 0,
-  },
-  frameView: {
-    top: 136,
-    alignItems: "center",
-    justifyContent: "flex-end",
-    left: 0,
+    marginTop: 20,
+    alignItems: 'center'
   },
   frameChild: {
-    top: 204,
+    height: '0.5%',
+    width: 388,
+    marginTop: 20
   },
-  vectorIcon3Overlay: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "rgba(113, 113, 113, 0.3)",
+  deleteIcon: {
+    width: 18,
+    height: 20,
+    overflow: 'hidden'
   },
-  vectorIcon3Bg: {
-    position: "absolute",
-    width: "100%",
-    height: "100%",
-    left: 0,
-    top: 0,
+  eliminarDatos: {
+    fontSize: FontSize.size_lg,
+    lineHeight: 22,
+    marginLeft: 15,
+    color: Color.negro,
+    textAlign: 'left',
+    fontWeight: '500',
+    letterSpacing: 0
   },
-  frameParent1: {
-    top: 224,
-    alignItems: "center",
-    justifyContent: "flex-end",
-    left: 0,
-  },
-  vectorIcon4Overlay: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "rgba(113, 113, 113, 0.3)",
-  },
-  vectorIcon4Bg: {
-    position: "absolute",
-    width: "100%",
-    height: "100%",
-    left: 0,
-    top: 0,
-  },
-  frameParent2: {
-    top: 292,
-    alignItems: "center",
-    justifyContent: "flex-end",
-    left: 0,
-  },
-  frameItem: {
-    top: 360,
-  },
-  vectorIcon5Overlay: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "rgba(113, 113, 113, 0.3)",
-  },
-  vectorIcon5Bg: {
-    position: "absolute",
-    width: "100%",
-    height: "100%",
-    left: 0,
-    top: 0,
-  },
-  frameParent3: {
-    top: 380,
-    alignItems: "center",
-    justifyContent: "flex-end",
-    left: 0,
-  },
-  frameInner: {
-    top: 448,
-  },
-  frameParent4: {
-    top: 468,
-    alignItems: "center",
-    justifyContent: "flex-end",
-    left: 0,
-  },
-  lineIcon: {
-    top: 536,
-  },
-  frameParent5: {
-    top: 556,
-    alignItems: "center",
-    justifyContent: "flex-end",
-    left: 0,
-  },
-  frameChild1: {
-    top: 624,
-  },
-  frameParent6: {
-    top: 644,
-    alignItems: "center",
-    justifyContent: "flex-end",
-    left: 0,
+  deleteParent: {
+    marginTop: 38,
+    alignItems: 'center'
   },
   signIn: {
     letterSpacing: 1,
     lineHeight: 24,
     color: Color.white,
-    textAlign: "center",
+    textAlign: 'center',
     fontFamily: FontFamily.lato,
     fontSize: FontSize.size_base,
-    flex: 1,
+    flex: 1
   },
   pressable: {
     borderRadius: Border.br_11xl,
     paddingHorizontal: Padding.p_5xl,
     paddingVertical: Padding.p_sm,
-    backgroundColor: Color.linearBoton,
-    flexDirection: "row",
-    justifyContent: "center",
-    width: "100%",
+    backgroundColor: Color.linearBoton
   },
   button: {
-    top: 712,
-    width: 388,
+    marginTop: 38,
+    borderRadius: Border.br_11xl
   },
-  frameChild2: {
-    top: 784,
-    left: 0,
-    position: "absolute",
-    backgroundColor: Color.white,
-  },
-  frameChild3: {
-    top: 836,
-    left: 0,
-    position: "absolute",
-    backgroundColor: Color.white,
-  },
-  frameParent: {
-    top: 133,
-    height: 782,
-    width: 388,
-  },
-  calendarioAjustesChild: {
-    shadowColor: "rgba(0, 0, 0, 0.15)",
-    shadowOffset: {
-      width: 0,
-      height: 5,
-    },
-    shadowRadius: 25,
-    elevation: 25,
-    shadowOpacity: 1,
-    height: 113,
-    top: 0,
-    backgroundColor: Color.white,
-  },
-  icon5: {
-    overflow: "hidden",
-  },
-  back: {
-    height: 24,
-    width: 24,
-  },
-  ajustesDelCalendario: {
-    fontSize: FontSize.size_5xl,
-    fontWeight: "700",
-    width: 241,
-    marginLeft: 20,
-    color: Color.negro,
-    textAlign: "left",
-  },
-  backParent: {
-    top: 64,
-    flexDirection: "row",
-    justifyContent: "center",
-    left: 20,
-    position: "absolute",
+  icon: {
+    height: '100%',
+    overflow: 'hidden',
+    width: '100%'
   },
   image6Icon: {
     top: 3,
     width: 87,
-    height: 55,
+    height: 55
   },
   documentIcon: {
-    overflow: "hidden",
+    overflow: 'hidden'
+  },
+  parentIcons: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    top: '5%'
   },
   iconlylightOutlinecalendarParent: {
-    top: 20,
-    left: 219,
-    width: 189,
-    alignItems: "flex-end",
+    width: '100%',
+    left: '35%',
+    flexDirection: 'row'
   },
-  navigationIcon: {
-    top: 821,
-    height: 105,
+  iconlylightOutlinecalendar: {
+    height: 24,
+    width: 24
   },
-  calendarioAjustes: {
-    borderRadius: Border.br_31xl,
-    height: 926,
-    overflow: "hidden",
-    width: "100%",
-    flex: 1,
-    backgroundColor: Color.white,
+  documentIconLayout: {
+    marginLeft: 30,
+    height: 24,
+    width: 24
   },
-});
+  backParent: {
+    marginTop: 30
+  },
+  icon: {
+    height: '100%',
+    overflow: 'hidden'
+  },
+  iconLayout1: {
+    width: '100%',
+    overflow: 'hidden'
+  },
+  ajustes: {
+    fontSize: FontSize.size_5xl,
+    marginLeft: 20,
+    textAlign: 'left',
+    color: Color.negro,
+    fontFamily: FontFamily.lato,
+    fontWeight: '700'
+  },
+  centralContainer: {
+    left: '3%'
+  },
+  modalOverlay: {
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+})
 
-export default CALENDARIOAJUSTES;
+export default PerfilConfiguracion
