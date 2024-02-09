@@ -1,10 +1,11 @@
 import React from 'react'
 import { Image } from 'expo-image'
-import { StyleSheet, Pressable, View, Text } from 'react-native'
+import { StyleSheet, Pressable, View, Text, TextInput } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
 import { FontFamily, Padding, Color, Border, FontSize } from '../GlobalStyles'
 import MessagesFromContact from '../components/MessagesFromContact'
+import Search from '../components/Search'
 
 const Chat = () => {
   const navigation = useNavigation()
@@ -67,18 +68,15 @@ const Chat = () => {
         }}
       />
 
-      <Text style={[styles.hoy]}>Hoy</Text>
-
-      <MessagesFromContact />
-
-      {/* <View style={[styles.chatChild, styles.chatChildPosition]} />
       <View style={[styles.rectangleParent, styles.parentFlexBox]}>
-        <View style={styles.frameChild} />
+        {/* <View  /> */}
+        <TextInput style={styles.frameChild} />
         <LinearGradient
           style={[styles.button, styles.parentFlexBox]}
           locations={[0, 1]}
           colors={['#dee274', '#7ec18c']}
         >
+          {/* <TextInput /> */}
           <Image
             style={styles.sendIcon}
             contentFit="cover"
@@ -86,6 +84,13 @@ const Chat = () => {
           />
         </LinearGradient>
       </View>
+
+      <Text style={[styles.hoy]}>Hoy</Text>
+
+      <MessagesFromContact />
+
+      {/* <View style={[styles.chatChild, styles.chatChildPosition]} />
+      
       <View style={styles.frameContainer}>
         <View
           style={[styles.holaPrimaCmoEstsSiiWrapper, styles.wrapperPosition]}
@@ -308,9 +313,10 @@ const styles = StyleSheet.create({
     marginLeft: 20
   },
   rectangleParent: {
-    top: 749,
-    left: 20,
-    position: 'absolute'
+    // top: 600,
+    // left: 20,
+    position: 'absolute',
+    bottom: 20
   },
   holaPrimaCmoContainer: {
     color: Color.negro,

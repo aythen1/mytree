@@ -1,7 +1,6 @@
 import React from 'react'
 import { StyleSheet, View, Text, Pressable, ScrollView } from 'react-native'
 import { Image } from 'expo-image'
-import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
 import { Color, FontFamily, FontSize, Padding, Border } from '../GlobalStyles'
 import { useDispatch, useSelector } from 'react-redux'
