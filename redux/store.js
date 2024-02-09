@@ -7,6 +7,7 @@ import infantSlices from './slices/infant.slices'
 import condolenceBookSlices from './slices/condolenceBook.slices'
 import familySlices from './slices/family.slices'
 import newspapersPublishedSlices from './slices/newspapersPublished.slices'
+import chatsSlices from './slices/chats.slices'
 
 export const store = configureStore({
   reducer: {
@@ -17,6 +18,7 @@ export const store = configureStore({
     infants: infantSlices,
     book: condolenceBookSlices,
     family: familySlices,
-    papers: newspapersPublishedSlices
+    papers: newspapersPublishedSlices,
+    chats: chatsSlices
   }
 })

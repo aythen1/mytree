@@ -49,10 +49,6 @@ const ENTRADACREADA = ({ onClose, message, isNavigate }) => {
   )
 }
 
-ENTRADACREADA.propTypes = {
-  setPopupCreate: PropTypes.func.isRequired
-}
-
 const styles = StyleSheet.create({
   aceptarTypo: {
     textAlign: 'center',
