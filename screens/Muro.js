@@ -24,6 +24,7 @@ const Muro = () => {
   const { showPanel } = useSelector((state) => state.panel)
   // const navigation = useNavigation()
   const [showModalRetos, setShowModalRetos] = useState(false)
+  const [colorClick, setColorClick] = useState(true)
   const [showRetos, setShowRetos] = useState(false)
   const [menuVisible, setMenuVisible] = useState(false)
 
@@ -38,16 +39,28 @@ const Muro = () => {
   return (
     <View style={{ flex: 1 }}>
       <ScrollView>
-        <View style={{ minHeight: 900 }}>
+        <View style={{ minHeight: 900, paddingBottom: 100 }}>
           <View style={styles.instanceParent}>
             <View>
               <Pressable
                 style={[styles.tabs, styles.tabsFlexBox]}
                 onPress={() => {
+                  setColorClick(true)
                   setShowRetos(false)
                 }}
               >
-                <Text style={[styles.popular, styles.popularTypo]}>
+                <Text
+                  style={{
+                    fontWeight: colorClick ? '700' : '300',
+                    width: 110,
+                    textAlign: 'center',
+                    fontFamily: FontFamily.lato,
+                    lineHeight: 19,
+                    letterSpacing: 0,
+                    fontSize: FontSize.size_base,
+                    color: !colorClick ? Color.textPlaceholder : Color.black1
+                  }}
+                >
                   Familia
                 </Text>
               </Pressable>
@@ -55,10 +68,24 @@ const Muro = () => {
             <Pressable
               style={[styles.tabs, styles.tabsFlexBox]}
               onPress={() => {
+                setColorClick(false)
                 handleShowRetos()
               }}
             >
-              <Text style={[styles.trending, styles.popularTypo]}>Retos</Text>
+              <Text
+                style={{
+                  fontWeight: !colorClick ? '700' : '300',
+                  width: 110,
+                  textAlign: 'center',
+                  fontFamily: FontFamily.lato,
+                  lineHeight: 19,
+                  letterSpacing: 0,
+                  fontSize: FontSize.size_base,
+                  color: colorClick ? Color.textPlaceholder : Color.black1
+                }}
+              >
+                Retos
+              </Text>
             </Pressable>
           </View>
 
@@ -144,14 +171,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row'
   },
-  popularTypo: {
-    width: 110,
-    textAlign: 'center',
-    fontFamily: FontFamily.lato,
-    lineHeight: 19,
-    letterSpacing: 0,
-    fontSize: FontSize.size_base
-  },
+
   itemLayout: {
     height: 53,
     width: 53,
@@ -198,17 +218,11 @@ const styles = StyleSheet.create({
     // top: 139,
     borderRadius: Border.br_xl
   },
-  popular: {
-    fontWeight: '700'
-  },
+
   popularWrapper: {
     borderTopLeftRadius: Border.br_3xs,
     borderBottomLeftRadius: Border.br_3xs,
     overflow: 'hidden'
-  },
-  trending: {
-    fontWeight: '300',
-    color: Color.textPlaceholder
   },
   tabs: {
     borderTopRightRadius: Border.br_3xs,
@@ -217,8 +231,10 @@ const styles = StyleSheet.create({
   instanceParent: {
     top: 80,
     flexDirection: 'row',
-    left: 20,
-    position: 'absolute'
+    width: '100%',
+    justifyContent: 'center'
+    // left: 20,
+    // position: 'absolute'
   },
   groupChild: {
     top: -2,

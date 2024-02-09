@@ -1,62 +1,62 @@
-import React, { useState, useCallback } from "react";
-import { Image } from "expo-image";
-import { StyleSheet, View, Pressable, Text, Modal } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
-import { useNavigation } from "@react-navigation/native";
-import DiseoTarjetaDigital from "../components/DiseoTarjetaDigital";
-import MensajePerzonalizado from "../components/MensajePerzonalizado";
-import Para from "../components/Para";
-import VistaPrevia from "../components/VistaPrevia";
-import ENTRADACREADA8 from "../components/ENTRADACREADA8";
-import { FontFamily, Padding, FontSize, Color, Border } from "../GlobalStyles";
+import React, { useState, useCallback } from 'react'
+import { Image } from 'expo-image'
+import { StyleSheet, View, Pressable, Text, Modal } from 'react-native'
+import { LinearGradient } from 'expo-linear-gradient'
+import { useNavigation } from '@react-navigation/native'
+import DiseoTarjetaDigital from '../components/DiseoTarjetaDigital'
+import MensajePerzonalizado from '../components/MensajePerzonalizado'
+import Para from '../components/Para'
+import VistaPrevia from '../components/VistaPrevia'
+// import ENTRADACREADA8 from "../components/ENTRADACREADA8";
+import { FontFamily, Padding, FontSize, Color, Border } from '../GlobalStyles'
 
 const TarjetaDigital = () => {
-  const [fieldContainerVisible, setFieldContainerVisible] = useState(false);
-  const [arrowDown2IconVisible, setArrowDown2IconVisible] = useState(false);
-  const [fieldContainer3Visible, setFieldContainer3Visible] = useState(false);
-  const navigation = useNavigation();
-  const [buttonContainer1Visible, setButtonContainer1Visible] = useState(false);
-  const [buttonContainer2Visible, setButtonContainer2Visible] = useState(false);
+  const [fieldContainerVisible, setFieldContainerVisible] = useState(false)
+  const [arrowDown2IconVisible, setArrowDown2IconVisible] = useState(false)
+  const [fieldContainer3Visible, setFieldContainer3Visible] = useState(false)
+  const navigation = useNavigation()
+  const [buttonContainer1Visible, setButtonContainer1Visible] = useState(false)
+  const [buttonContainer2Visible, setButtonContainer2Visible] = useState(false)
 
   const openFieldContainer = useCallback(() => {
-    setFieldContainerVisible(true);
-  }, []);
+    setFieldContainerVisible(true)
+  }, [])
 
   const closeFieldContainer = useCallback(() => {
-    setFieldContainerVisible(false);
-  }, []);
+    setFieldContainerVisible(false)
+  }, [])
 
   const openArrowDown2Icon = useCallback(() => {
-    setArrowDown2IconVisible(true);
-  }, []);
+    setArrowDown2IconVisible(true)
+  }, [])
 
   const closeArrowDown2Icon = useCallback(() => {
-    setArrowDown2IconVisible(false);
-  }, []);
+    setArrowDown2IconVisible(false)
+  }, [])
 
   const openFieldContainer3 = useCallback(() => {
-    setFieldContainer3Visible(true);
-  }, []);
+    setFieldContainer3Visible(true)
+  }, [])
 
   const closeFieldContainer3 = useCallback(() => {
-    setFieldContainer3Visible(false);
-  }, []);
+    setFieldContainer3Visible(false)
+  }, [])
 
   const openButtonContainer1 = useCallback(() => {
-    setButtonContainer1Visible(true);
-  }, []);
+    setButtonContainer1Visible(true)
+  }, [])
 
   const closeButtonContainer1 = useCallback(() => {
-    setButtonContainer1Visible(false);
-  }, []);
+    setButtonContainer1Visible(false)
+  }, [])
 
   const openButtonContainer2 = useCallback(() => {
-    setButtonContainer2Visible(true);
-  }, []);
+    setButtonContainer2Visible(true)
+  }, [])
 
   const closeButtonContainer2 = useCallback(() => {
-    setButtonContainer2Visible(false);
-  }, []);
+    setButtonContainer2Visible(false)
+  }, [])
 
   return (
     <>
@@ -65,25 +65,25 @@ const TarjetaDigital = () => {
           <Image
             style={styles.image6Icon}
             contentFit="cover"
-            source={require("../assets/image-6.png")}
+            source={require('../assets/image-6.png')}
           />
         </View>
         <Image
           style={[styles.navigationIcon, styles.frameParentPosition]}
           contentFit="cover"
-          source={require("../assets/navigation11.png")}
+          source={require('../assets/navigation11.png')}
         />
         <View style={[styles.frameParent, styles.frameParentPosition]}>
           <View style={styles.frameGroup}>
             <View style={styles.backParent}>
               <Pressable
                 style={styles.backLayout}
-                onPress={() => navigation.navigate("MENSAJERA")}
+                onPress={() => navigation.navigate('MENSAJERA')}
               >
                 <Image
                   style={[styles.icon, styles.iconLayout]}
                   contentFit="cover"
-                  source={require("../assets/back.png")}
+                  source={require('../assets/back.png')}
                 />
               </Pressable>
               <Text style={styles.tarjetaDigital1}>Tarjeta digital</Text>
@@ -106,7 +106,7 @@ const TarjetaDigital = () => {
                     <Image
                       style={[styles.iconlyboldfilter2, styles.backLayout]}
                       contentFit="cover"
-                      source={require("../assets/iconlyboldfilter21.png")}
+                      source={require('../assets/iconlyboldfilter21.png')}
                     />
                   </Pressable>
                 </View>
@@ -129,7 +129,7 @@ const TarjetaDigital = () => {
                       <Image
                         style={styles.icon1}
                         contentFit="cover"
-                        source={require("../assets/arrowdown24.png")}
+                        source={require('../assets/arrowdown24.png')}
                       />
                     </Pressable>
                   </View>
@@ -150,7 +150,7 @@ const TarjetaDigital = () => {
                   <Image
                     style={styles.iconlyboldupload}
                     contentFit="cover"
-                    source={require("../assets/iconlyboldupload.png")}
+                    source={require('../assets/iconlyboldupload.png')}
                   />
                 </View>
               </View>
@@ -170,7 +170,7 @@ const TarjetaDigital = () => {
                   <Image
                     style={[styles.iconlyboldfilter2, styles.backLayout]}
                     contentFit="cover"
-                    source={require("../assets/iconlyboldfilter21.png")}
+                    source={require('../assets/iconlyboldfilter21.png')}
                   />
                 </Pressable>
               </View>
@@ -187,7 +187,7 @@ const TarjetaDigital = () => {
                   <Image
                     style={[styles.iconlyboldfilter2, styles.backLayout]}
                     contentFit="cover"
-                    source={require("../assets/iconlyboldfilter21.png")}
+                    source={require('../assets/iconlyboldfilter21.png')}
                   />
                 </View>
               </View>
@@ -197,14 +197,14 @@ const TarjetaDigital = () => {
             <View style={[styles.buttonBar, styles.fieldFlexBox]}>
               <Pressable
                 style={[styles.button, styles.buttonSpaceBlock]}
-                onPress={() => navigation.navigate("MENSAJERA")}
+                onPress={() => navigation.navigate('MENSAJERA')}
               >
                 <Text style={styles.signIn}>Cancelar</Text>
               </Pressable>
               <LinearGradient
                 style={styles.button1}
                 locations={[0, 1]}
-                colors={["#dee274", "#7ec18c"]}
+                colors={['#dee274', '#7ec18c']}
               >
                 <Pressable
                   style={[styles.pressable, styles.pressableFlexBox]}
@@ -219,7 +219,7 @@ const TarjetaDigital = () => {
             <LinearGradient
               style={styles.button2}
               locations={[0, 1]}
-              colors={["#dee274", "#7ec18c"]}
+              colors={['#dee274', '#7ec18c']}
             >
               <Pressable
                 style={[styles.pressable1, styles.pressableFlexBox]}
@@ -272,7 +272,7 @@ const TarjetaDigital = () => {
         </View>
       </Modal>
 
-      <Modal animationType="fade" transparent visible={buttonContainer2Visible}>
+      {/* <Modal animationType="fade" transparent visible={buttonContainer2Visible}>
         <View style={styles.buttonContainer2Overlay}>
           <Pressable
             style={styles.buttonContainer2Bg}
@@ -280,192 +280,192 @@ const TarjetaDigital = () => {
           />
           <ENTRADACREADA8 onClose={closeButtonContainer2} />
         </View>
-      </Modal>
+      </Modal> */}
     </>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   iconLayout: {
-    overflow: "hidden",
-    width: "100%",
+    overflow: 'hidden',
+    width: '100%'
   },
   frameParentPosition: {
     left: 0,
-    position: "absolute",
+    position: 'absolute'
   },
   titleTypo: {
     letterSpacing: 0,
-    textAlign: "left",
-    fontFamily: FontFamily.lato,
+    textAlign: 'left',
+    fontFamily: FontFamily.lato
   },
   fieldFlexBox: {
     paddingHorizontal: Padding.p_xl,
-    alignItems: "center",
-    flexDirection: "row",
+    alignItems: 'center',
+    flexDirection: 'row'
   },
   searchLayout: {
     lineHeight: 24,
-    fontSize: FontSize.size_base,
+    fontSize: FontSize.size_base
   },
   backLayout: {
     height: 24,
-    width: 24,
+    width: 24
   },
   buttonSpaceBlock: {
     paddingBottom: Padding.p_5xs,
     paddingTop: Padding.p_6xs,
     paddingHorizontal: Padding.p_base,
-    flex: 1,
+    flex: 1
   },
   pressableFlexBox: {
     backgroundColor: Color.linearBoton,
     borderRadius: Border.br_11xl,
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row'
   },
   signTypo: {
     color: Color.white,
-    textAlign: "center",
-    fontFamily: FontFamily.lato,
+    textAlign: 'center',
+    fontFamily: FontFamily.lato
   },
   image6Icon: {
     width: 87,
-    height: 55,
+    height: 55
   },
   image6Wrapper: {
     top: 3,
     left: 20,
-    alignItems: "center",
-    flexDirection: "row",
-    position: "absolute",
+    alignItems: 'center',
+    flexDirection: 'row',
+    position: 'absolute'
   },
   navigationIcon: {
     top: 821,
     height: 105,
-    width: 428,
+    width: 428
   },
   icon: {
-    height: "100%",
+    height: '100%'
   },
   tarjetaDigital1: {
     fontSize: FontSize.size_5xl,
-    fontWeight: "700",
+    fontWeight: '700',
     color: Color.negro,
     marginLeft: 20,
-    textAlign: "left",
-    fontFamily: FontFamily.lato,
+    textAlign: 'left',
+    fontFamily: FontFamily.lato
   },
   backParent: {
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row'
   },
   title: {
     lineHeight: 19,
-    fontWeight: "500",
+    fontWeight: '500',
     color: Color.textTextPrimary,
     fontSize: FontSize.size_base,
-    letterSpacing: 0,
+    letterSpacing: 0
   },
   titleBase: {
     paddingBottom: Padding.p_7xs,
     width: 388,
-    flexDirection: "row",
+    flexDirection: 'row'
   },
   fieldContainerOverlay: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "rgba(113, 113, 113, 0.3)",
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(113, 113, 113, 0.3)'
   },
   fieldContainerBg: {
-    position: "absolute",
-    width: "100%",
-    height: "100%",
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
     left: 0,
-    top: 0,
+    top: 0
   },
   search: {
     color: Color.textPlaceholder,
     letterSpacing: 0,
-    textAlign: "left",
-    fontFamily: FontFamily.lato,
+    textAlign: 'left',
+    fontFamily: FontFamily.lato
   },
   placeholderInput: {
-    flexDirection: "row",
-    flex: 1,
+    flexDirection: 'row',
+    flex: 1
   },
   iconlyboldfilter2: {
-    marginLeft: 24,
+    marginLeft: 24
   },
   field: {
     borderRadius: Border.br_3xs,
     backgroundColor: Color.fAFAFA,
     paddingVertical: Padding.p_smi,
-    width: 388,
+    width: 388
   },
   arrowDown2IconOverlay: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "rgba(113, 113, 113, 0.3)",
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(113, 113, 113, 0.3)'
   },
   arrowDown2IconBg: {
-    position: "absolute",
-    width: "100%",
-    height: "100%",
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
     left: 0,
-    top: 0,
+    top: 0
   },
   icon1: {
-    height: "100%",
-    width: "100%",
+    height: '100%',
+    width: '100%'
   },
   arrowDown2: {
     height: 12,
     marginLeft: 24,
-    width: 24,
+    width: 24
   },
   fieldWithTitle1: {
-    marginTop: 20,
+    marginTop: 20
   },
   iconlyboldupload: {
     width: 21,
     height: 21,
-    marginLeft: 24,
+    marginLeft: 24
   },
   fieldContainer3Overlay: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "rgba(113, 113, 113, 0.3)",
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(113, 113, 113, 0.3)'
   },
   fieldContainer3Bg: {
-    position: "absolute",
-    width: "100%",
-    height: "100%",
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
     left: 0,
-    top: 0,
+    top: 0
   },
   frameContainer: {
-    alignSelf: "stretch",
+    alignSelf: 'stretch',
     marginTop: 20,
-    flex: 1,
+    flex: 1
   },
   frameGroup: {
-    height: 504,
+    height: 504
   },
   signIn: {
-    textAlign: "center",
+    textAlign: 'center',
     lineHeight: 21,
     fontSize: FontSize.size_sm,
     letterSpacing: 0,
-    fontFamily: FontFamily.lato,
+    fontFamily: FontFamily.lato
   },
   button: {
-    borderStyle: "solid",
+    borderStyle: 'solid',
     borderColor: Color.colorKhaki_100,
     borderWidth: 1,
     height: 52,
@@ -473,89 +473,89 @@ const styles = StyleSheet.create({
     paddingBottom: Padding.p_5xs,
     paddingTop: Padding.p_6xs,
     paddingHorizontal: Padding.p_base,
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
-    backgroundColor: Color.white,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    backgroundColor: Color.white
   },
   buttonContainer1Overlay: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "rgba(113, 113, 113, 0.3)",
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(113, 113, 113, 0.3)'
   },
   buttonContainer1Bg: {
-    position: "absolute",
-    width: "100%",
-    height: "100%",
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
     left: 0,
-    top: 0,
+    top: 0
   },
   signIn1: {
     lineHeight: 21,
     fontSize: FontSize.size_sm,
     color: Color.white,
-    letterSpacing: 0,
+    letterSpacing: 0
   },
   pressable: {
     paddingBottom: Padding.p_5xs,
     paddingTop: Padding.p_6xs,
     paddingHorizontal: Padding.p_base,
     flex: 1,
-    height: "100%",
+    height: '100%'
   },
   button1: {
     height: 52,
-    marginLeft: 20,
+    marginLeft: 20
   },
   buttonBar: {
     paddingVertical: Padding.p_3xs,
-    justifyContent: "center",
+    justifyContent: 'center',
     width: 428,
-    backgroundColor: Color.white,
+    backgroundColor: Color.white
   },
   buttonContainer2Overlay: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "rgba(113, 113, 113, 0.3)",
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(113, 113, 113, 0.3)'
   },
   buttonContainer2Bg: {
-    position: "absolute",
-    width: "100%",
-    height: "100%",
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
     left: 0,
-    top: 0,
+    top: 0
   },
   signIn2: {
     letterSpacing: 1,
     lineHeight: 24,
     fontSize: FontSize.size_base,
-    flex: 1,
+    flex: 1
   },
   pressable1: {
     paddingHorizontal: Padding.p_5xl,
     paddingVertical: Padding.p_sm,
-    width: "100%",
+    width: '100%'
   },
   button2: {
     marginTop: 10,
-    width: 388,
+    width: 388
   },
   buttonBarParent: {
     marginTop: 80,
-    alignItems: "center",
+    alignItems: 'center'
   },
   frameParent: {
     top: 78,
-    alignItems: "center",
+    alignItems: 'center'
   },
   tarjetaDigital: {
     borderRadius: Border.br_31xl,
     height: 926,
     flex: 1,
-    backgroundColor: Color.white,
-  },
-});
+    backgroundColor: Color.white
+  }
+})
 
-export default TarjetaDigital;
+export default TarjetaDigital
