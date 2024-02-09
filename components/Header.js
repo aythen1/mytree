@@ -1,36 +1,63 @@
 import React from 'react'
-import { StyleSheet, View, Text, TextInput } from 'react-native'
-import { LinearGradient } from 'expo-linear-gradient'
+import { StyleSheet, View, Text } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { Color, FontFamily, FontSize, Padding, Border } from '../GlobalStyles'
 import { Image } from 'expo-image'
 
-const Search = () => {
+const Header = () => {
   const navigation = useNavigation()
 
   return (
-    <View style={styles.header}>
-      <View style={styles.searchBar}>
-        <Image
-          style={styles.iconlylightOutlinesearch}
-          contentFit="cover"
-          source={require('../assets/iconlylightoutlinesearch3.png')}
-        />
-        <View style={styles.placeholderInput}>
-          <TextInput
-            style={[styles.search, styles.searchClr]}
-            placeholder="Search"
+    <>
+      <Image
+        style={[styles.image6Icon, styles.textPosition]}
+        contentFit="cover"
+        source={require('../assets/image-6.png')}
+      />
+      <View style={styles.iconlylightOutline3UserParent}>
+        <Pressable
+          style={styles.iconlylightOutline3User}
+          onPress={() => navigation.navigate('TarjetaDigital')}
+        >
+          <Image
+            style={styles.iconLayout}
+            contentFit="cover"
+            source={require('../assets/iconlylightoutline3user.png')}
           />
-        </View>
-      </View>
-      <View style={styles.iconlylightsendCopyWrapper}>
+        </Pressable>
+        <Pressable
+          style={styles.notification}
+          onPress={() => navigation.navigate('MUROALERTAS1')}
+        >
+          <Image
+            style={styles.iconLayout}
+            contentFit="cover"
+            source={require('../assets/notification2.png')}
+          />
+        </Pressable>
+        <Pressable
+          style={[
+            styles.iconlylightOutlinecalendar,
+            styles.iconlylightsendCopyLayout
+          ]}
+          onPress={() => navigation.navigate('CrearEvento')}
+        >
+          <Image
+            style={styles.iconLayout}
+            contentFit="cover"
+            source={require('../assets/iconlylightoutlinecalendar1.png')}
+          />
+        </Pressable>
         <Image
-          style={styles.iconlylightsendCopyLayout}
+          style={[
+            styles.iconlylightOutlinecalendar,
+            styles.iconlylightsendCopyLayout
+          ]}
           contentFit="cover"
-          source={require('../assets/iconlylightsend-copy1.png')}
+          source={require('../assets/iconlylightoutlinesetting2.png')}
         />
       </View>
-    </View>
+    </>
   )
 }
 
@@ -385,14 +412,14 @@ const styles = StyleSheet.create({
   },
   placeholderInput: {
     marginLeft: 6,
-    flexDirection: 'row'
-    // flex: 1
+    flexDirection: 'row',
+    flex: 1
   },
   searchBar: {
     backgroundColor: Color.fAFAFA,
     width: 341,
     paddingHorizontal: Padding.p_sm,
-    paddingVertical: 15,
+    paddingVertical: Padding.p_5xs,
     alignItems: 'center',
     flexDirection: 'row',
     borderRadius: Border.br_3xs
@@ -405,10 +432,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   header: {
-    // paddingHorizontal: Padding.p_xl,
+    paddingHorizontal: Padding.p_xl,
     paddingVertical: Padding.p_xs,
     marginTop: 8,
-    width: '100%',
+    width: 428,
     alignItems: 'center',
     flexDirection: 'row',
     backgroundColor: Color.white
@@ -456,4 +483,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default Search
+export default Header
