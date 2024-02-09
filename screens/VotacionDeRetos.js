@@ -302,7 +302,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   button: {
-    width: 184,
+    width: 160,
     borderWidth: 1.5,
     borderColor: Color.colorKhaki_100,
     borderStyle: 'solid',
@@ -313,7 +313,7 @@ const styles = StyleSheet.create({
     height: 60
   },
   button1: {
-    width: 184,
+    width: 204,
     borderWidth: 1.5,
     borderColor: Color.colorKhaki_100,
     borderStyle: 'solid',

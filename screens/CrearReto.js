@@ -19,6 +19,10 @@ const CrearReto = () => {
 
   const [popupCreate, setPopupCreate] = useState(false)
 
+  const onCloseModalCreate = () => {
+    setPopupCreate(false)
+  }
+
   return (
     <View style={[styles.muroAlertas, styles.iconLayout]}>
       <Image
@@ -97,10 +101,14 @@ const CrearReto = () => {
               transparent={true}
               visible={popupCreate}
             >
-              <TouchableWithoutFeedback onPress={() => setPopupCreate(false)}>
+              <TouchableWithoutFeedback onPress={() => onCloseModalCreate()}>
                 <View style={styles.modalOverlay}>
                   <View>
-                    <ENTRADACREADA setPopupCreate={setPopupCreate} />
+                    <ENTRADACREADA
+                      onClose={onCloseModalCreate}
+                      message={'Creado con exito'}
+                      isNavigate={'Muro'}
+                    />
                   </View>
                 </View>
               </TouchableWithoutFeedback>

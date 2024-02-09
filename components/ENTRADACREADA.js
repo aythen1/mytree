@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { View, StyleSheet, Text, Pressable } from 'react-native'
 import { Image } from 'expo-image'
 import { LinearGradient } from 'expo-linear-gradient'
@@ -6,12 +6,12 @@ import { useNavigation } from '@react-navigation/native'
 import { FontFamily, FontSize, Color, Border } from '../GlobalStyles'
 import PropTypes from 'prop-types'
 
-const ENTRADACREADA = ({ setPopupCreate }) => {
+const ENTRADACREADA = ({ onClose, message, isNavigate }) => {
   const navigation = useNavigation()
 
   return (
     <View style={styles.entradaCreada}>
-      <View style={[styles.frameParent, styles.aceptarPosition]}>
+      <View style={styles.frameParent}>
         <View style={styles.ellipseParent}>
           <Image
             style={styles.ellipseIcon}
@@ -25,7 +25,7 @@ const ENTRADACREADA = ({ setPopupCreate }) => {
           />
         </View>
         <Text style={[styles.cambiosGuardados, styles.aceptarTypo]}>
-          Creado con exito
+          {message}
         </Text>
         <LinearGradient
           style={styles.button}
@@ -35,8 +35,8 @@ const ENTRADACREADA = ({ setPopupCreate }) => {
           <Pressable
             style={styles.pressable}
             onPress={() => {
-              navigation.navigate('Muro')
-              setPopupCreate(false)
+              navigation.navigate(isNavigate)
+              onClose()
             }}
           >
             <Text style={[styles.aceptar, styles.aceptarTypo]}>Aceptar</Text>
@@ -52,10 +52,6 @@ ENTRADACREADA.propTypes = {
 }
 
 const styles = StyleSheet.create({
-  aceptarPosition: {
-    left: '50%',
-    position: 'absolute'
-  },
   aceptarTypo: {
     textAlign: 'center',
     fontFamily: FontFamily.lato,
@@ -65,15 +61,11 @@ const styles = StyleSheet.create({
     width: 116,
     height: 116,
     opacity: 0.4,
-    zIndex: 0,
-    position: 'relative'
+    zIndex: 0
   },
   checkedSymbolIcon: {
     width: 50,
     height: 50,
-    // height: 110,
-    // width: '34.48%',
-    // overflow: 'hidden',
     zIndex: 1,
     position: 'absolute',
     top: 33,
@@ -93,37 +85,35 @@ const styles = StyleSheet.create({
   aceptar: {
     marginTop: -11,
     marginLeft: -24,
-    top: '50%',
     fontSize: FontSize.size_sm,
     lineHeight: 21,
-    color: Color.white,
-    left: '50%',
-    position: 'absolute'
+    color: Color.white
   },
   pressable: {
     width: '100%',
     height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: Color.linearBoton,
     borderRadius: Border.br_11xl
   },
   button: {
     width: 388,
+    borderRadius: 50,
     height: 52,
     marginTop: 20
   },
   frameParent: {
-    marginLeft: -193.5,
     top: 20,
     alignItems: 'center'
   },
   entradaCreada: {
     backgroundColor: Color.white,
-    width: 428,
+    width: '100%',
     height: 279,
     maxHeight: '100%',
     maxWidth: '100%',
-    borderRadius: Border.br_11xl,
-    alignItems: 'center'
+    borderRadius: Border.br_11xl
   }
 })
 
