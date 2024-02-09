@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, Pressable, ScrollView } from 'react-native'
 import { Image } from 'expo-image'
 // import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
-import { FontFamily, Color, Border, FontSize } from '../GlobalStyles'
+import { FontFamily, Color, Border, FontSize } from '../../GlobalStyles'
 
 const PERFILMIINFO = ({ setSelectedComponent }) => {
   const navigation = useNavigation()
@@ -15,22 +15,22 @@ const PERFILMIINFO = ({ setSelectedComponent }) => {
           <Image
             style={[styles.skillIconsinstagram, styles.skillLayout]}
             contentFit="cover"
-            source={require('../assets/skilliconsinstagram4.png')}
+            source={require('../../assets/skilliconsinstagram4.png')}
           />
           <Image
             style={[styles.skillIconslinkedin, styles.skillLayout]}
             contentFit="cover"
-            source={require('../assets/skilliconslinkedin4.png')}
+            source={require('../../assets/skilliconslinkedin4.png')}
           />
           <Image
             style={[styles.logostiktokIcon, styles.iconLayout]}
             contentFit="cover"
-            source={require('../assets/logostiktokicon3.png')}
+            source={require('../../assets/logostiktokicon3.png')}
           />
           <Image
             style={[styles.skillIconslinkedin, styles.skillLayout]}
             contentFit="cover"
-            source={require('../assets/deviconfacebook4.png')}
+            source={require('../../assets/deviconfacebook4.png')}
           />
         </View>
 
@@ -48,12 +48,12 @@ const PERFILMIINFO = ({ setSelectedComponent }) => {
                 <Image
                   style={styles.frameInner}
                   contentFit="cover"
-                  source={require('../assets/ellipse-7170.png')}
+                  source={require('../../assets/ellipse-7170.png')}
                 />
                 <Image
                   style={styles.vectorIcon1}
                   contentFit="cover"
-                  source={require('../assets/vector9.png')}
+                  source={require('../../assets/vector9.png')}
                 />
               </View>
             </View>
@@ -69,12 +69,12 @@ const PERFILMIINFO = ({ setSelectedComponent }) => {
                 <Image
                   style={styles.frameInner}
                   contentFit="cover"
-                  source={require('../assets/ellipse-7170.png')}
+                  source={require('../../assets/ellipse-7170.png')}
                 />
                 <Image
                   style={styles.vectorIcon1}
                   contentFit="cover"
-                  source={require('../assets/vector9.png')}
+                  source={require('../../assets/vector9.png')}
                 />
               </View>
             </View>
@@ -87,12 +87,12 @@ const PERFILMIINFO = ({ setSelectedComponent }) => {
                 <Image
                   style={styles.frameInner}
                   contentFit="cover"
-                  source={require('../assets/ellipse-7170.png')}
+                  source={require('../../assets/ellipse-7170.png')}
                 />
                 <Image
                   style={styles.vectorIcon1}
                   contentFit="cover"
-                  source={require('../assets/vector9.png')}
+                  source={require('../../assets/vector9.png')}
                 />
               </View>
             </View>
@@ -112,7 +112,7 @@ const PERFILMIINFO = ({ setSelectedComponent }) => {
             <Image
               style={styles.icon}
               contentFit="cover"
-              source={require('../assets/lock1.png')}
+              source={require('../../assets/lock1.png')}
             />
           </Pressable>
         </View>
@@ -181,7 +181,7 @@ const PERFILMIINFO = ({ setSelectedComponent }) => {
               <Image
                 style={styles.icon}
                 contentFit="cover"
-                source={require('../assets/lock2.png')}
+                source={require('../../assets/lock2.png')}
               />
             </Pressable>
           </View>
@@ -198,7 +198,7 @@ const PERFILMIINFO = ({ setSelectedComponent }) => {
               <Image
                 style={styles.vectorIcon4}
                 contentFit="cover"
-                source={require('../assets/vector52.png')}
+                source={require('../../assets/vector52.png')}
               />
             </View>
           </View>
@@ -215,7 +215,7 @@ const PERFILMIINFO = ({ setSelectedComponent }) => {
               <Image
                 style={styles.icon}
                 contentFit="cover"
-                source={require('../assets/lock3.png')}
+                source={require('../../assets/lock3.png')}
               />
             </Pressable>
           </View>
@@ -232,7 +232,7 @@ const PERFILMIINFO = ({ setSelectedComponent }) => {
               <Image
                 style={styles.combinedShapeIcon}
                 contentFit="cover"
-                source={require('../assets/combinedshape.png')}
+                source={require('../../assets/combinedshape.png')}
               />
             </View>
           </View>
@@ -245,7 +245,7 @@ const PERFILMIINFO = ({ setSelectedComponent }) => {
             <Image
               style={styles.lock2}
               contentFit="cover"
-              source={require('../assets/lock3.png')}
+              source={require('../../assets/lock3.png')}
             />
           </View>
           <View style={styles.frameWrapper4}>
@@ -259,7 +259,7 @@ const PERFILMIINFO = ({ setSelectedComponent }) => {
               <Image
                 style={styles.combinedShapeIcon}
                 contentFit="cover"
-                source={require('../assets/combinedshape1.png')}
+                source={require('../../assets/combinedshape1.png')}
               />
             </View>
           </View>

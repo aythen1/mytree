@@ -3,9 +3,15 @@ import { StyleSheet, View, Pressable, Text, ScrollView } from 'react-native'
 import { Image } from 'expo-image'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
-import { Color, FontFamily, Padding, Border, FontSize } from '../GlobalStyles'
+import {
+  Color,
+  FontFamily,
+  Padding,
+  Border,
+  FontSize
+} from '../../GlobalStyles'
 import { useDispatch, useSelector } from 'react-redux'
-import { setPanel } from '../redux/slices/panel.slices'
+import { setPanel } from '../../redux/slices/panel.slices'
 import MiLegado from './MiLegado'
 import MisAlbumes from './MisAlbumes'
 import PERFILMIINFO from './PERFILMIINFO'
@@ -40,17 +46,17 @@ const Perfil = () => {
         <Image
           style={[styles.image6Icon, styles.ionmenu]}
           contentFit="cover"
-          source={require('../assets/image-6.png')}
+          source={require('../../assets/image-6.png')}
         />
         <Image
           style={[styles.vectorIcon, styles.vectorIconLayout]}
           contentFit="cover"
-          source={require('../assets/vector9.png')}
+          source={require('../../assets/vector9.png')}
         />
         <Image
           style={[styles.iconlylightOutlineplus, styles.vectorIconLayout]}
           contentFit="cover"
-          source={require('../assets/iconlylightoutlineplus1.png')}
+          source={require('../../assets/iconlylightoutlineplus1.png')}
         />
         <Pressable
           style={[styles.iconlylightOutlineplus, styles.vectorIconLayout]}
@@ -59,7 +65,7 @@ const Perfil = () => {
           <Image
             style={styles.icon}
             contentFit="cover"
-            source={require('../assets/iconlylightoutlinesetting1.png')}
+            source={require('../../assets/iconlylightoutlinesetting1.png')}
           />
         </Pressable>
       </View>
@@ -71,7 +77,7 @@ const Perfil = () => {
         <Image
           style={styles.ionmenuIcon}
           contentFit="cover"
-          source={require('../assets/ionmenu.png')}
+          source={require('../../assets/ionmenu.png')}
         />
       </Pressable>
 
@@ -79,17 +85,17 @@ const Perfil = () => {
         <Image
           style={styles.groupIconLayout}
           contentFit="cover"
-          source={require('../assets/group-11712766771.png')}
+          source={require('../../assets/group-11712766771.png')}
         />
         <Image
           style={styles.perfilItem}
           contentFit="cover"
-          source={require('../assets/group-1171276683.png')}
+          source={require('../../assets/group-1171276683.png')}
         />
         <Image
           style={styles.groupIconLayout}
           contentFit="cover"
-          source={require('../assets/group-11712766771.png')}
+          source={require('../../assets/group-11712766771.png')}
         />
       </View>
 
@@ -162,7 +168,6 @@ const Perfil = () => {
             Mi información
           </Text>
         </Pressable>
-        {/* <View style={styles.tabsBarChild} /> */}
       </View>
 
       {renderSelectedComponent()}

@@ -9,7 +9,7 @@ import Etapas from './screens/Etapas'
 import Privacidad from './screens/Privacidad'
 import Cancion from './screens/Cancion'
 import SubeTusRecuerdos from './screens/SubeTusRecuerdos'
-import LOGIN from './screens/LOGIN'
+import Login from './screens/Login'
 import Onboarding from './screens/Onboarding'
 import Onboarding1 from './screens/Onboarding1'
 import OpcionesFamiliar from './components/OpcionesFamiliar'
@@ -106,26 +106,26 @@ import BOTONInvitarAmigos1 from './screens/BOTONInvitarAmigos1'
 import Aadir from './components/Aadir'
 import Aadir1 from './components/Aadir1'
 import PERFILNOTIFICACIONES from './screens/PERFILNOTIFICACIONES'
-import PerfilVerificacion from './screens/PerfilVerificacion'
+import PerfilVerificacion from './screens/Perfil/Ajustes/PerfilVerificacion'
 import PERFILAJUSTESSUSCRIPCION from './screens/PERFILAJUSTESSUSCRIPCION'
-import PerfilSeguridad from './screens/PerfilSeguridad'
-import PerfilPrivacidad from './screens/PerfilPrivacidad'
-import PerfilVisualizacionMyTree from './screens/PerfilVisualizacionMyTree'
+import PerfilSeguridad from './screens/Perfil/Ajustes/PerfilSeguridad'
+import PerfilPrivacidad from './screens/Perfil/Ajustes/PerfilPrivacidad'
+import PerfilVisualizacionMyTree from './screens/Perfil/Ajustes/PerfilVisualizacionMyTree'
 import PERFILDELUSUARIOVISITADO from './screens/PERFILDELUSUARIOVISITADO'
 import CONDOLENCIAS from './components/CONDOLENCIAS'
 import PERFILANCESTROAJUSTES from './screens/PERFILANCESTROAJUSTES'
 import PERFILANCESTROAJUSTES1 from './screens/PERFILANCESTROAJUSTES1'
 import PERFILINFANTEAJUSTES from './screens/PERFILINFANTEAJUSTES'
 import PERFILDELUSUARIOVISITADO1 from './screens/PERFILDELUSUARIOVISITADO1'
-import PerfilConfiguracion from './screens/PerfilConfiguracion'
+import PerfilConfiguracion from './screens/Perfil/Ajustes/PerfilConfiguracion'
 import MISAMIGOS from './screens/MISAMIGOS'
-import PERFILAJUSTES from './screens/PERFILAJUSTES'
+import PerfilAjustes from './screens/Perfil/Ajustes/PerfilAjustes'
 import PERFILDELUSUARIOVISITADO2 from './screens/PERFILDELUSUARIOVISITADO2'
-import PERFILMIINFO from './screens/PERFILMIINFO'
+import PERFILMIINFO from './screens/Perfil/PERFILMIINFO'
 import RetosBienvenida from './screens/RetosBienvenida'
-import MisAlbumes from './screens/MisAlbumes'
-import SOLOYO from './screens/SOLOYO'
-import Perfil from './screens/Perfil'
+import MisAlbumes from './screens/Perfil/MisAlbumes'
+import SOLOYO from './screens/Perfil/SOLOYO'
+import Perfil from './screens/Perfil/Perfil'
 import MIDIARIOENTRADATEXTOPL from './screens/MIDIARIOENTRADATEXTOPL'
 import MIDIARIOENTRADATEXTOPL1 from './screens/MIDIARIOENTRADATEXTOPL1'
 import MIDIARIOENTRADATEXTOPL2 from './screens/MIDIARIOENTRADATEXTOPL2'
@@ -157,7 +157,7 @@ import REGISTROTELFONO3 from './screens/REGISTROTELFONO3'
 import REGISTROFECHADENACIMIENTO from './screens/REGISTROFECHADENACIMIENTO'
 import REGISTROFECHADENACIMIENTO1 from './screens/REGISTROFECHADENACIMIENTO1'
 import REGISTRONOMBRE from './screens/REGISTRONOMBRE'
-import Suscripciones from './screens/Suscripciones'
+import Suscripciones from './screens/Perfil/Ajustes/Suscripciones'
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { loadFonts } from './GlobalStyles'
@@ -173,7 +173,6 @@ import FiltroEdicion from './components/FiltroEdicion'
 const Stack = createNativeStackNavigator()
 
 const App = () => {
-  // const [hideSplashScreen, setHideSplashScreen] = useState(true)
   const [isFooterShow, setIsFooterShow] = useState(null)
 
   useEffect(() => {
@@ -183,7 +182,6 @@ const App = () => {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        {/* {hideSplashScreen ? ( */}
         <Stack.Navigator
           initialRouteName="Onboarding2"
           screenOptions={({ route }) => ({
@@ -194,7 +192,7 @@ const App = () => {
                 route.name !== 'Onboarding' &&
                 route.name !== 'Onboarding1' &&
                 route.name !== 'Onboarding2' &&
-                route.name !== 'LOGIN'
+                route.name !== 'Login'
             )
           })}
         >
@@ -244,8 +242,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="LOGIN"
-            component={LOGIN}
+            name="Login"
+            component={Login}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -620,11 +618,6 @@ const App = () => {
             component={MIDIARIOPANTALLAPERSONAL}
             options={{ headerShown: false }}
           />
-          {/* <Stack.Screen
-            name="MenuPrincipal"
-            component={MenuPrincipal}
-            options={{ headerShown: false }}
-          /> */}
           <Stack.Screen
             name="MIDIARIOEDICINVIDEO"
             component={MIDIARIOEDICINVIDEO}
@@ -780,11 +773,6 @@ const App = () => {
             component={CONDOLENCIAS}
             options={{ headerShown: false }}
           />
-          {/* <Stack.Screen
-            name="Navigation"
-            component={Navigation}
-            options={{ headerShown: false }}
-          /> */}
           <Stack.Screen
             name="PERFILANCESTROAJUSTES"
             component={PERFILANCESTROAJUSTES}
@@ -816,8 +804,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="PERFILAJUSTES"
-            component={PERFILAJUSTES}
+            name="PerfilAjustes"
+            component={PerfilAjustes}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -830,21 +818,11 @@ const App = () => {
             component={PERFILMIINFO}
             options={{ headerShown: false }}
           />
-          {/* <Stack.Screen
-            name="VotacionDeRetos"
-            component={VotacionDeRetos}
-            options={{ headerShown: false }}
-          /> */}
           <Stack.Screen
             name="RetosBienvenida"
             component={RetosBienvenida}
             options={{ headerShown: false }}
           />
-          {/* <Stack.Screen
-            name="Retos"
-            component={RetosModal}
-            options={{ headerShown: false }}
-          /> */}
           <Stack.Screen
             name="MisAlbumes"
             component={MisAlbumes}
@@ -860,11 +838,6 @@ const App = () => {
             component={Perfil}
             options={{ headerShown: false }}
           />
-          {/* <Stack.Screen
-            name="Perfil1"
-            component={Perfil1}
-            options={{ headerShown: false }}
-          /> */}
           <Stack.Screen
             name="MIDIARIOENTRADATEXTOPL"
             component={MIDIARIOENTRADATEXTOPL}
@@ -1042,7 +1015,6 @@ const App = () => {
           />
         </Stack.Navigator>
         {isFooterShow && <FooterNavBar />}
-        {/* ) : null} */}
       </NavigationContainer>
     </Provider>
   )

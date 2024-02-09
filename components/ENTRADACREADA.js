@@ -35,7 +35,9 @@ const ENTRADACREADA = ({ onClose, message, isNavigate }) => {
           <Pressable
             style={styles.pressable}
             onPress={() => {
-              navigation.navigate(isNavigate)
+              if (isNavigate) {
+                navigation.navigate(isNavigate)
+              }
               onClose()
             }}
           >

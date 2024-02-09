@@ -3,7 +3,7 @@ import { Text, StyleSheet, View } from 'react-native'
 import { Image } from 'expo-image'
 // import { LinearGradient } from 'expo-linear-gradient'
 // import { useNavigation } from '@react-navigation/native'
-import { Color, FontSize, FontFamily } from '../GlobalStyles'
+import { Color, FontSize, FontFamily } from '../../GlobalStyles'
 
 const MiLegado = () => {
   // const navigation = useNavigation()
@@ -19,52 +19,52 @@ const MiLegado = () => {
             <Image
               style={styles.icon}
               contentFit="cover"
-              source={require('../assets/lock1.png')}
+              source={require('../../assets/lock1.png')}
             />
           </View>
           <View style={[styles.vectorGroup, styles.groupParentFlexBox]}>
             <Image
               style={styles.vectorIcon1}
               contentFit="cover"
-              source={require('../assets/vector53.png')}
+              source={require('../../assets/vector53.png')}
             />
             <Image
               style={styles.vectorIcon1}
               contentFit="cover"
-              source={require('../assets/iconlyboldedit.png')}
+              source={require('../../assets/iconlyboldedit.png')}
             />
           </View>
         </View>
         <Image
           style={styles.frameChild}
           contentFit="cover"
-          source={require('../assets/line-78.png')}
+          source={require('../../assets/line-78.png')}
         />
         <View style={[styles.maskGroupParent, styles.groupParentFlexBox]}>
           <Image
             style={styles.maskGroupIcon}
             contentFit="cover"
-            source={require('../assets/mask-group18.png')}
+            source={require('../../assets/mask-group18.png')}
           />
           <Image
             style={styles.maskGroupIcon}
             contentFit="cover"
-            source={require('../assets/mask-group19.png')}
+            source={require('../../assets/mask-group19.png')}
           />
           <Image
             style={styles.maskGroupIcon}
             contentFit="cover"
-            source={require('../assets/mask-group20.png')}
+            source={require('../../assets/mask-group20.png')}
           />
           <Image
             style={styles.maskGroupIcon}
             contentFit="cover"
-            source={require('../assets/mask-group21.png')}
+            source={require('../../assets/mask-group21.png')}
           />
           <Image
             style={styles.vectorIcon2}
             contentFit="cover"
-            source={require('../assets/vector54.png')}
+            source={require('../../assets/vector54.png')}
           />
         </View>
       </View>
@@ -78,45 +78,45 @@ const MiLegado = () => {
             <Image
               style={styles.vectorIcon1}
               contentFit="cover"
-              source={require('../assets/vector53.png')}
+              source={require('../../assets/vector53.png')}
             />
             <Image
               style={styles.vectorIcon1}
               contentFit="cover"
-              source={require('../assets/iconlyboldedit.png')}
+              source={require('../../assets/iconlyboldedit.png')}
             />
           </View>
         </View>
         <Image
           style={styles.frameChild}
           contentFit="cover"
-          source={require('../assets/line-78.png')}
+          source={require('../../assets/line-78.png')}
         />
         <View style={[styles.maskGroupParent, styles.groupParentFlexBox]}>
           <Image
             style={styles.maskGroupIcon}
             contentFit="cover"
-            source={require('../assets/farita3.png')}
+            source={require('../../assets/farita3.png')}
           />
           <Image
             style={styles.maskGroupIcon}
             contentFit="cover"
-            source={require('../assets/marie.png')}
+            source={require('../../assets/marie.png')}
           />
           <Image
             style={styles.maskGroupIcon}
             contentFit="cover"
-            source={require('../assets/farita4.png')}
+            source={require('../../assets/farita4.png')}
           />
           <Image
             style={styles.maskGroupIcon}
             contentFit="cover"
-            source={require('../assets/claire.png')}
+            source={require('../../assets/claire.png')}
           />
           <Image
             style={styles.vectorIcon2}
             contentFit="cover"
-            source={require('../assets/vector54.png')}
+            source={require('../../assets/vector54.png')}
           />
         </View>
       </View>
@@ -130,45 +130,45 @@ const MiLegado = () => {
             <Image
               style={styles.vectorIcon1}
               contentFit="cover"
-              source={require('../assets/vector53.png')}
+              source={require('../../assets/vector53.png')}
             />
             <Image
               style={styles.vectorIcon1}
               contentFit="cover"
-              source={require('../assets/iconlyboldedit.png')}
+              source={require('../../assets/iconlyboldedit.png')}
             />
           </View>
         </View>
         <Image
           style={styles.frameChild}
           contentFit="cover"
-          source={require('../assets/line-78.png')}
+          source={require('../../assets/line-78.png')}
         />
         <View style={[styles.maskGroupParent, styles.groupParentFlexBox]}>
           <Image
             style={styles.maskGroupIcon}
             contentFit="cover"
-            source={require('../assets/farita3.png')}
+            source={require('../../assets/farita3.png')}
           />
           <Image
             style={styles.maskGroupIcon}
             contentFit="cover"
-            source={require('../assets/marie.png')}
+            source={require('../../assets/marie.png')}
           />
           <Image
             style={styles.maskGroupIcon}
             contentFit="cover"
-            source={require('../assets/farita4.png')}
+            source={require('../../assets/farita4.png')}
           />
           <Image
             style={styles.maskGroupIcon}
             contentFit="cover"
-            source={require('../assets/claire.png')}
+            source={require('../../assets/claire.png')}
           />
           <Image
             style={styles.vectorIcon2}
             contentFit="cover"
-            source={require('../assets/vector54.png')}
+            source={require('../../assets/vector54.png')}
           />
         </View>
       </View>
