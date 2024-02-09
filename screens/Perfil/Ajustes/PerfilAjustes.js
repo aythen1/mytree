@@ -3,7 +3,13 @@ import { Image } from 'expo-image'
 import { StyleSheet, View, Pressable, Text, ScrollView } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
-import { FontSize, Color, FontFamily, Padding, Border } from '../GlobalStyles'
+import {
+  FontSize,
+  Color,
+  FontFamily,
+  Padding,
+  Border
+} from '../../../GlobalStyles'
 
 const PerfilAjustes = () => {
   const navigation = useNavigation()
@@ -22,23 +28,23 @@ const PerfilAjustes = () => {
                 <Image
                   style={styles.image6Icon}
                   contentFit="cover"
-                  source={require('../assets/image-6.png')}
+                  source={require('../../../assets/image-6.png')}
                 />
                 <View style={styles.iconlylightOutlinecalendarParent}>
                   <Image
                     style={styles.iconlylightOutlinecalendar}
                     contentFit="cover"
-                    source={require('../assets/iconlylightoutlinecalendar5.png')}
+                    source={require('../../../assets/iconlylightoutlinecalendar5.png')}
                   />
                   <Image
                     style={styles.documentIconLayout}
                     contentFit="cover"
-                    source={require('../assets/document9.png')}
+                    source={require('../../../assets/document9.png')}
                   />
                   <Image
                     style={styles.documentIconLayout}
                     contentFit="cover"
-                    source={require('../assets/iconlylightoutlinesetting7.png')}
+                    source={require('../../../assets/iconlylightoutlinesetting7.png')}
                   />
                 </View>
               </View>
@@ -50,7 +56,7 @@ const PerfilAjustes = () => {
                   <Image
                     style={[styles.icon, styles.iconLayout1]}
                     contentFit="cover"
-                    source={require('../assets/back.png')}
+                    source={require('../../../assets/back.png')}
                   />
                 </Pressable>
                 <Text style={styles.ajustes}>Ajustes</Text>
@@ -62,7 +68,7 @@ const PerfilAjustes = () => {
                 <Image
                   style={styles.frameChild}
                   contentFit="cover"
-                  source={require('../assets/frame-15477548756.png')}
+                  source={require('../../../assets/frame-15477548756.png')}
                 />
                 <View style={styles.brunoPhamWrapper}>
                   <Text style={styles.brunoPham}>Bruno Pham</Text>
@@ -77,7 +83,7 @@ const PerfilAjustes = () => {
                     <Image
                       style={[styles.settingIcon, styles.iconLayout]}
                       contentFit="cover"
-                      source={require('../assets/setting1.png')}
+                      source={require('../../../assets/setting1.png')}
                     />
                     <Text style={[styles.configuracin, styles.mytreeTypo]}>
                       Configuración
@@ -85,7 +91,7 @@ const PerfilAjustes = () => {
                     <Image
                       style={[styles.arrowDown2Icon, styles.arrowIconLayout]}
                       contentFit="cover"
-                      source={require('../assets/arrowdown29.png')}
+                      source={require('../../../assets/arrowdown29.png')}
                     />
                   </View>
                 </Pressable>
@@ -97,7 +103,7 @@ const PerfilAjustes = () => {
                     <Image
                       style={styles.shieldDoneIcon}
                       contentFit="cover"
-                      source={require('../assets/shield-done.png')}
+                      source={require('../../../assets/shield-done.png')}
                     />
                     <Text style={[styles.configuracin, styles.mytreeTypo]}>
                       Seguridad
@@ -105,7 +111,7 @@ const PerfilAjustes = () => {
                     <Image
                       style={[styles.arrowDown2Icon, styles.arrowIconLayout]}
                       contentFit="cover"
-                      source={require('../assets/arrowdown29.png')}
+                      source={require('../../../assets/arrowdown29.png')}
                     />
                   </View>
                 </Pressable>
@@ -117,7 +123,7 @@ const PerfilAjustes = () => {
                     <Image
                       style={styles.iconlyboldlock}
                       contentFit="cover"
-                      source={require('../assets/iconlyboldlock.png')}
+                      source={require('../../../assets/iconlyboldlock.png')}
                     />
                     <Text style={[styles.configuracin, styles.mytreeTypo]}>
                       Privacidad
@@ -125,7 +131,7 @@ const PerfilAjustes = () => {
                     <Image
                       style={[styles.arrowDown2Icon, styles.arrowIconLayout]}
                       contentFit="cover"
-                      source={require('../assets/arrowdown29.png')}
+                      source={require('../../../assets/arrowdown29.png')}
                     />
                   </View>
                 </Pressable>
@@ -139,7 +145,7 @@ const PerfilAjustes = () => {
                     <Image
                       style={[styles.showIcon, styles.iconLayout]}
                       contentFit="cover"
-                      source={require('../assets/show.png')}
+                      source={require('../../../assets/show.png')}
                     />
                     <Text style={[styles.configuracin, styles.mytreeTypo]}>
                       Visualización de MyTree
@@ -147,7 +153,7 @@ const PerfilAjustes = () => {
                     <Image
                       style={[styles.arrowDown2Icon, styles.arrowIconLayout]}
                       contentFit="cover"
-                      source={require('../assets/arrowdown29.png')}
+                      source={require('../../../assets/arrowdown29.png')}
                     />
                   </View>
                 </Pressable>
@@ -159,7 +165,7 @@ const PerfilAjustes = () => {
                     <Image
                       style={styles.starIcon}
                       contentFit="cover"
-                      source={require('../assets/star.png')}
+                      source={require('../../../assets/star.png')}
                     />
                     <Text style={[styles.configuracin, styles.mytreeTypo]}>
                       Suscripciones
@@ -167,7 +173,7 @@ const PerfilAjustes = () => {
                     <Image
                       style={[styles.arrowDown2Icon, styles.arrowIconLayout]}
                       contentFit="cover"
-                      source={require('../assets/arrowdown29.png')}
+                      source={require('../../../assets/arrowdown29.png')}
                     />
                   </View>
                 </Pressable>
@@ -179,7 +185,7 @@ const PerfilAjustes = () => {
                     <Image
                       style={[styles.settingIcon, styles.iconLayout]}
                       contentFit="cover"
-                      source={require('../assets/tick-square.png')}
+                      source={require('../../../assets/tick-square.png')}
                     />
                     <Text style={[styles.configuracin, styles.mytreeTypo]}>
                       Verificación MyTree
@@ -187,7 +193,7 @@ const PerfilAjustes = () => {
                     <Image
                       style={[styles.arrowDown2Icon, styles.arrowIconLayout]}
                       contentFit="cover"
-                      source={require('../assets/arrowdown29.png')}
+                      source={require('../../../assets/arrowdown29.png')}
                     />
                   </View>
                 </Pressable>
@@ -199,7 +205,7 @@ const PerfilAjustes = () => {
               <Image
                 style={styles.shieldDoneIcon}
                 contentFit="cover"
-                source={require('../assets/document8.png')}
+                source={require('../../../assets/document8.png')}
               />
               <Text style={[styles.configuracin, styles.mytreeTypo]}>
                 Términos y condiciones
@@ -209,7 +215,7 @@ const PerfilAjustes = () => {
               <Image
                 style={[styles.settingIcon, styles.iconLayout]}
                 contentFit="cover"
-                source={require('../assets/category.png')}
+                source={require('../../../assets/category.png')}
               />
               <Text style={[styles.polticaDePrivacidad, styles.mytreeTypo]}>
                 Política de Privacidad
@@ -219,7 +225,7 @@ const PerfilAjustes = () => {
               <Image
                 style={[styles.settingIcon, styles.iconLayout]}
                 contentFit="cover"
-                source={require('../assets/call1.png')}
+                source={require('../../../assets/call1.png')}
               />
               <Text style={[styles.polticaDePrivacidad, styles.mytreeTypo]}>
                 Contacta con MyTree
@@ -234,7 +240,7 @@ const PerfilAjustes = () => {
               <Image
                 style={styles.starIcon}
                 contentFit="cover"
-                source={require('../assets/logout.png')}
+                source={require('../../../assets/logout.png')}
               />
               <Text style={[styles.suscripciones, styles.mytreeTypo]}>
                 Cerrar sesión

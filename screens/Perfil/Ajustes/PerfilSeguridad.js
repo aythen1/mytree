@@ -1,12 +1,33 @@
-import React from 'react'
-import { Text, StyleSheet, View, Pressable, ScrollView } from 'react-native'
+import React, { useState } from 'react'
+import {
+  Text,
+  StyleSheet,
+  View,
+  Pressable,
+  ScrollView,
+  Modal,
+  TouchableWithoutFeedback
+} from 'react-native'
 import { Image } from 'expo-image'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
-import { FontFamily, Color, FontSize, Border, Padding } from '../GlobalStyles'
+import {
+  FontFamily,
+  Color,
+  FontSize,
+  Border,
+  Padding
+} from '../../../GlobalStyles'
+import ENTRADACREADA from '../../../components/ENTRADACREADA'
 
 const PerfilConfiguracion = () => {
   const navigation = useNavigation()
+
+  const [modalCreate, setModalCreate] = useState(false)
+
+  const onCloseModalCreate = () => {
+    setModalCreate(false)
+  }
 
   return (
     <ScrollView style={styles.frameParent}>
@@ -16,23 +37,23 @@ const PerfilConfiguracion = () => {
             <Image
               style={styles.image6Icon}
               contentFit="cover"
-              source={require('../assets/image-6.png')}
+              source={require('../../../assets/image-6.png')}
             />
             <View style={styles.iconlylightOutlinecalendarParent}>
               <Image
                 style={styles.iconlylightOutlinecalendar}
                 contentFit="cover"
-                source={require('../assets/iconlylightoutlinecalendar5.png')}
+                source={require('../../../assets/iconlylightoutlinecalendar5.png')}
               />
               <Image
                 style={styles.documentIconLayout}
                 contentFit="cover"
-                source={require('../assets/document9.png')}
+                source={require('../../../assets/document9.png')}
               />
               <Image
                 style={styles.documentIconLayout}
                 contentFit="cover"
-                source={require('../assets/iconlylightoutlinesetting7.png')}
+                source={require('../../../assets/iconlylightoutlinesetting7.png')}
               />
             </View>
           </View>
@@ -44,7 +65,7 @@ const PerfilConfiguracion = () => {
               <Image
                 style={[styles.icon, styles.iconLayout1]}
                 contentFit="cover"
-                source={require('../assets/back.png')}
+                source={require('../../../assets/back.png')}
               />
             </Pressable>
             <Text style={styles.ajustes}>Seguridad</Text>
@@ -64,7 +85,7 @@ const PerfilConfiguracion = () => {
             <Image
               style={[styles.vectorIcon1, styles.vectorIconLayout]}
               contentFit="cover"
-              source={require('../assets/vector47.png')}
+              source={require('../../../assets/vector47.png')}
             />
           </View>
           <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
@@ -79,7 +100,7 @@ const PerfilConfiguracion = () => {
             <Image
               style={[styles.vectorIcon1, styles.vectorIconLayout]}
               contentFit="cover"
-              source={require('../assets/vector47.png')}
+              source={require('../../../assets/vector47.png')}
             />
           </View>
           <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
@@ -94,7 +115,7 @@ const PerfilConfiguracion = () => {
             <Image
               style={[styles.vectorIcon1, styles.vectorIconLayout]}
               contentFit="cover"
-              source={require('../assets/vector47.png')}
+              source={require('../../../assets/vector47.png')}
             />
           </View>
           <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
@@ -109,7 +130,7 @@ const PerfilConfiguracion = () => {
             <Image
               style={[styles.vectorIcon1, styles.vectorIconLayout]}
               contentFit="cover"
-              source={require('../assets/vector47.png')}
+              source={require('../../../assets/vector47.png')}
             />
           </View>
           <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
@@ -124,7 +145,7 @@ const PerfilConfiguracion = () => {
             <Image
               style={[styles.vectorIcon1, styles.vectorIconLayout]}
               contentFit="cover"
-              source={require('../assets/vector47.png')}
+              source={require('../../../assets/vector47.png')}
             />
           </View>
         </View>
@@ -133,10 +154,28 @@ const PerfilConfiguracion = () => {
           locations={[0, 1]}
           colors={['#dee274', '#7ec18c']}
         >
-          <Pressable style={[styles.pressable, styles.pressableFlexBox]}>
+          <Pressable
+            style={[styles.pressable, styles.pressableFlexBox]}
+            onPress={() => setModalCreate(true)}
+          >
             <Text style={styles.signIn}>Guardar</Text>
           </Pressable>
         </LinearGradient>
+
+        {modalCreate && (
+          <Modal animationType="fade" transparent={true} visible={modalCreate}>
+            <TouchableWithoutFeedback onPress={() => setModalCreate(false)}>
+              <View style={styles.modalOverlay}>
+                <View>
+                  <ENTRADACREADA
+                    onClose={onCloseModalCreate}
+                    message={'Guardado!'}
+                  />
+                </View>
+              </View>
+            </TouchableWithoutFeedback>
+          </Modal>
+        )}
       </View>
     </ScrollView>
   )
@@ -294,6 +333,12 @@ const styles = StyleSheet.create({
   },
   centralContainer: {
     left: '3%'
+  },
+  modalOverlay: {
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 })
 

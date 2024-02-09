@@ -53,7 +53,10 @@ const MenuPrincipal = () => {
                 />
                 <Pressable
                   style={styles.muro}
-                  onPress={() => navigation.navigate('CALENDARIO')}
+                  onPress={() => {
+                    navigation.navigate('CALENDARIO')
+                    dispatch(setPanel(false))
+                  }}
                 >
                   <Text style={styles.muro1Typo}>Mi Calendario</Text>
                 </Pressable>

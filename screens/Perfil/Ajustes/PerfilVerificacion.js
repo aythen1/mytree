@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Image } from 'expo-image'
 import { StyleSheet, View, Pressable, Text, ScrollView } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-import { FontSize, FontFamily, Color, Padding } from '../GlobalStyles'
+import { FontSize, FontFamily, Color, Padding } from '../../../GlobalStyles'
 import Checkbox from 'expo-checkbox'
 
 const PerfilVerificacion = () => {
@@ -18,23 +18,23 @@ const PerfilVerificacion = () => {
             <Image
               style={styles.image6Icon}
               contentFit="cover"
-              source={require('../assets/image-6.png')}
+              source={require('../../../assets/image-6.png')}
             />
             <View style={styles.iconlylightOutlinecalendarParent}>
               <Image
                 style={styles.iconlylightOutlinecalendar}
                 contentFit="cover"
-                source={require('../assets/iconlylightoutlinecalendar4.png')}
+                source={require('../../../assets/iconlylightoutlinecalendar4.png')}
               />
               <Image
                 style={styles.documentIconLayout}
                 contentFit="cover"
-                source={require('../assets/document7.png')}
+                source={require('../../../assets/document7.png')}
               />
               <Image
                 style={styles.documentIconLayout}
                 contentFit="cover"
-                source={require('../assets/iconlylightoutlinesetting6.png')}
+                source={require('../../../assets/iconlylightoutlinesetting6.png')}
               />
             </View>
           </View>
@@ -46,7 +46,7 @@ const PerfilVerificacion = () => {
               <Image
                 style={[styles.icon, styles.iconLayout1]}
                 contentFit="cover"
-                source={require('../assets/back.png')}
+                source={require('../../../assets/back.png')}
               />
             </Pressable>
             <Text style={styles.verificacinMytree}>Verificación MyTree</Text>
@@ -62,7 +62,7 @@ const PerfilVerificacion = () => {
             <Image
               style={styles.lineasIcon}
               contentFit="cover"
-              source={require('../assets/lineas.png')}
+              source={require('../../../assets/lineas.png')}
             />
           </View>
           <View style={styles.lineasParent}>
@@ -70,7 +70,7 @@ const PerfilVerificacion = () => {
               <Image
                 style={styles.frameChild}
                 contentFit="cover"
-                source={require('../assets/ellipse-7156.png')}
+                source={require('../../../assets/ellipse-7156.png')}
               />
               <Text style={[styles.text, styles.textPosition]}>1</Text>
             </View>
@@ -78,7 +78,7 @@ const PerfilVerificacion = () => {
               <Image
                 style={styles.frameChild}
                 contentFit="cover"
-                source={require('../assets/ellipse-7156.png')}
+                source={require('../../../assets/ellipse-7156.png')}
               />
               <Text style={[styles.text, styles.textPosition]}>2</Text>
             </View>
@@ -86,7 +86,7 @@ const PerfilVerificacion = () => {
               <Image
                 style={styles.frameChild}
                 contentFit="cover"
-                source={require('../assets/ellipse-7156.png')}
+                source={require('../../../assets/ellipse-7156.png')}
               />
               <Text style={[styles.text, styles.textPosition]}>3</Text>
             </View>
@@ -94,7 +94,7 @@ const PerfilVerificacion = () => {
               <Image
                 style={styles.frameChild}
                 contentFit="cover"
-                source={require('../assets/ellipse-7156.png')}
+                source={require('../../../assets/ellipse-7156.png')}
               />
               <Text style={[styles.text, styles.textPosition]}>4</Text>
             </View>
@@ -102,7 +102,7 @@ const PerfilVerificacion = () => {
               <Image
                 style={styles.frameChild}
                 contentFit="cover"
-                source={require('../assets/ellipse-7156.png')}
+                source={require('../../../assets/ellipse-7156.png')}
               />
               <Text style={[styles.text, styles.textPosition]}>5</Text>
             </View>
@@ -110,7 +110,7 @@ const PerfilVerificacion = () => {
               <Image
                 style={styles.frameChild}
                 contentFit="cover"
-                source={require('../assets/ellipse-7156.png')}
+                source={require('../../../assets/ellipse-7156.png')}
               />
               <Text style={[styles.text, styles.textPosition]}>6</Text>
             </View>
@@ -118,7 +118,7 @@ const PerfilVerificacion = () => {
               <Image
                 style={styles.frameChild}
                 contentFit="cover"
-                source={require('../assets/ellipse-7162.png')}
+                source={require('../../../assets/ellipse-7162.png')}
               />
               <Text style={[styles.text6, styles.textPosition]}>7</Text>
             </View>
@@ -132,7 +132,7 @@ const PerfilVerificacion = () => {
                   <Image
                     style={[styles.userIcon, styles.userIconLayout]}
                     contentFit="cover"
-                    source={require('../assets/3-user.png')}
+                    source={require('../../../assets/3-user.png')}
                   />
                   <Text
                     style={[
@@ -151,7 +151,7 @@ const PerfilVerificacion = () => {
                   <Image
                     style={[styles.imageIcon, styles.checkLayout]}
                     contentFit="cover"
-                    source={require('../assets/image4.png')}
+                    source={require('../../../assets/image4.png')}
                   />
                   <Text
                     style={[
@@ -169,7 +169,7 @@ const PerfilVerificacion = () => {
                   <Image
                     style={[styles.imageIcon, styles.checkLayout]}
                     contentFit="cover"
-                    source={require('../assets/image4.png')}
+                    source={require('../../../assets/image4.png')}
                   />
                   <Text
                     style={[
@@ -187,7 +187,7 @@ const PerfilVerificacion = () => {
                   <Image
                     style={[styles.imageIcon, styles.checkLayout]}
                     contentFit="cover"
-                    source={require('../assets/image4.png')}
+                    source={require('../../../assets/image4.png')}
                   />
                   <Text
                     style={[
@@ -205,7 +205,7 @@ const PerfilVerificacion = () => {
                   <Image
                     style={[styles.imageIcon, styles.checkLayout]}
                     contentFit="cover"
-                    source={require('../assets/image4.png')}
+                    source={require('../../../assets/image4.png')}
                   />
                   <Text
                     style={[
@@ -222,7 +222,7 @@ const PerfilVerificacion = () => {
                 <Image
                   style={styles.documentIcon1}
                   contentFit="cover"
-                  source={require('../assets/document8.png')}
+                  source={require('../../../assets/document8.png')}
                 />
                 <View style={styles.userParent}>
                   <Text style={styles.crearUnaEntradaTypo}>
@@ -236,7 +236,7 @@ const PerfilVerificacion = () => {
                   <Image
                     style={[styles.imageIcon, styles.checkLayout]}
                     contentFit="cover"
-                    source={require('../assets/image4.png')}
+                    source={require('../../../assets/image4.png')}
                   />
                   <Text
                     style={[
@@ -266,7 +266,6 @@ const styles = StyleSheet.create({
     width: 24
   },
   parentFlexBox: {
-    justifyContent: 'center',
     alignItems: 'center'
   },
   textPosition: {
@@ -326,7 +325,8 @@ const styles = StyleSheet.create({
   },
   backParent: {
     marginTop: 20,
-    flexDirection: 'row'
+    flexDirection: 'row',
+    marginLeft: 20
   },
   frameGroup: {
     shadowColor: 'rgba(0, 0, 0, 0.25)',

@@ -1,12 +1,33 @@
-import React from 'react'
-import { Text, StyleSheet, View, Pressable, ScrollView } from 'react-native'
+import React, { useState } from 'react'
+import {
+  Text,
+  StyleSheet,
+  View,
+  Pressable,
+  ScrollView,
+  Modal,
+  TouchableWithoutFeedback
+} from 'react-native'
 import { Image } from 'expo-image'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
-import { FontFamily, Color, FontSize, Border, Padding } from '../GlobalStyles'
+import {
+  FontFamily,
+  Color,
+  FontSize,
+  Border,
+  Padding
+} from '../../../GlobalStyles'
+import ENTRADACREADA from '../../../components/ENTRADACREADA'
 
-const PerfilVisualizacionMyTree = () => {
+const PerfilConfiguracion = () => {
   const navigation = useNavigation()
+
+  const [modalCreate, setModalCreate] = useState(false)
+
+  const onCloseModalCreate = () => {
+    setModalCreate(false)
+  }
 
   return (
     <ScrollView style={styles.frameParent}>
@@ -16,23 +37,23 @@ const PerfilVisualizacionMyTree = () => {
             <Image
               style={styles.image6Icon}
               contentFit="cover"
-              source={require('../assets/image-6.png')}
+              source={require('../../../assets/image-6.png')}
             />
             <View style={styles.iconlylightOutlinecalendarParent}>
               <Image
                 style={styles.iconlylightOutlinecalendar}
                 contentFit="cover"
-                source={require('../assets/iconlylightoutlinecalendar5.png')}
+                source={require('../../../assets/iconlylightoutlinecalendar5.png')}
               />
               <Image
                 style={styles.documentIconLayout}
                 contentFit="cover"
-                source={require('../assets/document9.png')}
+                source={require('../../../assets/document9.png')}
               />
               <Image
                 style={styles.documentIconLayout}
                 contentFit="cover"
-                source={require('../assets/iconlylightoutlinesetting7.png')}
+                source={require('../../../assets/iconlylightoutlinesetting7.png')}
               />
             </View>
           </View>
@@ -44,143 +65,204 @@ const PerfilVisualizacionMyTree = () => {
               <Image
                 style={[styles.icon, styles.iconLayout1]}
                 contentFit="cover"
-                source={require('../assets/back.png')}
+                source={require('../../../assets/back.png')}
               />
             </Pressable>
-            <Text style={styles.ajustes}>Visualización de MyTree</Text>
+            <Text style={styles.ajustes}>Configuración</Text>
           </View>
         </View>
 
         <View style={styles.centralContainer}>
           <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
             <View style={styles.nombreCompletoParent}>
-              <Text style={[styles.titulo, styles.brunoPhamTypo]}>
-                Personalización del muro
-              </Text>
-            </View>
-          </View>
-          <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
-            <View style={styles.nombreCompletoParent}>
               <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
-                Color
+                Cambiar foto de perfil
               </Text>
-              <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>Rojo</Text>
             </View>
             <Image
               style={[styles.vectorIcon1, styles.vectorIconLayout]}
               contentFit="cover"
-              source={require('../assets/vector47.png')}
+              source={require('../../../assets/vector47.png')}
             />
           </View>
           <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
             <View style={styles.nombreCompletoParent}>
               <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
-                Mostrar videos de
+                Nombre completo
               </Text>
               <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>
-                Todos
+                Bruno Pham
               </Text>
             </View>
             <Image
               style={[styles.vectorIcon1, styles.vectorIconLayout]}
               contentFit="cover"
-              source={require('../assets/vector47.png')}
+              source={require('../../../assets/vector47.png')}
+            />
+          </View>
+          <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
+            <View style={styles.nombreCompletoParent}>
+              <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
+                Fecha de nacimiento
+              </Text>
+              <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>
+                02/12/1997
+              </Text>
+            </View>
+            <Image
+              style={[styles.vectorIcon1, styles.vectorIconLayout]}
+              contentFit="cover"
+              source={require('../../../assets/vector47.png')}
+            />
+          </View>
+          <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
+            <View style={styles.nombreCompletoParent}>
+              <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
+                Ubicación
+              </Text>
+              <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>
+                Da Nang, Vietnam
+              </Text>
+            </View>
+            <Image
+              style={[styles.vectorIcon1, styles.vectorIconLayout]}
+              contentFit="cover"
+              source={require('../../../assets/vector47.png')}
             />
           </View>
           <Image
             style={styles.frameChild}
             contentFit="cover"
-            source={require('../assets/line-802.png')}
+            source={require('../../../assets/line-802.png')}
           />
           <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
             <View style={styles.nombreCompletoParent}>
-              <Text style={[styles.titulo, styles.brunoPhamTypo]}>
-                Personalización del calendario
-              </Text>
-            </View>
-          </View>
-          <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
-            <View style={styles.nombreCompletoParent}>
               <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
-                Calendario
+                Madre
               </Text>
               <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>
-                Gregoriano
+                Mary Jane
               </Text>
             </View>
             <Image
               style={[styles.vectorIcon1, styles.vectorIconLayout]}
               contentFit="cover"
-              source={require('../assets/vector47.png')}
+              source={require('../../../assets/vector47.png')}
             />
           </View>
           <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
             <View style={styles.nombreCompletoParent}>
               <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
-                Tema
+                Padre
               </Text>
               <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>
-                Otoño
+                Peter Parker
               </Text>
             </View>
             <Image
               style={[styles.vectorIcon1, styles.vectorIconLayout]}
               contentFit="cover"
-              source={require('../assets/vector47.png')}
+              source={require('../../../assets/vector47.png')}
             />
           </View>
           <Image
             style={styles.frameChild}
             contentFit="cover"
-            source={require('../assets/line-802.png')}
+            source={require('../../../assets/line-802.png')}
           />
           <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
             <View style={styles.nombreCompletoParent}>
-              <Text style={[styles.titulo, styles.brunoPhamTypo]}>
-                Personalización del diario
-              </Text>
-            </View>
-          </View>
-          <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
-            <View style={styles.nombreCompletoParent}>
               <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
-                Color definido
+                Hermanos
               </Text>
               <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>
-                Alegre
+                Ninguno
               </Text>
             </View>
             <Image
               style={[styles.vectorIcon1, styles.vectorIconLayout]}
               contentFit="cover"
-              source={require('../assets/vector47.png')}
+              source={require('../../../assets/vector47.png')}
             />
           </View>
+          <Image
+            style={styles.frameChild}
+            contentFit="cover"
+            source={require('../../../assets/line-802.png')}
+          />
           <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
             <View style={styles.nombreCompletoParent}>
               <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
-                Mostrar mis notas
+                Estado Civíl
               </Text>
               <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>
-                Solo yo
+                Casado con Pirita García
               </Text>
             </View>
             <Image
               style={[styles.vectorIcon1, styles.vectorIconLayout]}
               contentFit="cover"
-              source={require('../assets/vector47.png')}
+              source={require('../../../assets/vector47.png')}
             />
+          </View>
+          <Image
+            style={styles.frameChild}
+            contentFit="cover"
+            source={require('../../../assets/line-802.png')}
+          />
+          <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
+            <View style={styles.nombreCompletoParent}>
+              <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
+                Añadir al perfil la familia de la pareja
+              </Text>
+              <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>
+                Desactivado
+              </Text>
+            </View>
+            <Image
+              style={[styles.vectorIcon1, styles.vectorIconLayout]}
+              contentFit="cover"
+              source={require('../../../assets/vector47.png')}
+            />
+          </View>
+          <View style={[styles.deleteParent, styles.parentFlexBox]}>
+            <Image
+              style={styles.deleteIcon}
+              contentFit="cover"
+              source={require('../../../assets/delete2.png')}
+            />
+            <Text style={[styles.eliminarDatos, styles.brunoPhamTypo]}>
+              Eliminar datos
+            </Text>
           </View>
         </View>
-        {/* <LinearGradient
+        <LinearGradient
           style={styles.button}
           locations={[0, 1]}
           colors={['#dee274', '#7ec18c']}
         >
-          <Pressable style={[styles.pressable, styles.pressableFlexBox]}>
+          <Pressable
+            style={[styles.pressable, styles.pressableFlexBox]}
+            onPress={() => setModalCreate(true)}
+          >
             <Text style={styles.signIn}>Guardar</Text>
           </Pressable>
-        </LinearGradient> */}
+        </LinearGradient>
+
+        {modalCreate && (
+          <Modal animationType="fade" transparent={true} visible={modalCreate}>
+            <TouchableWithoutFeedback onPress={() => setModalCreate(false)}>
+              <View style={styles.modalOverlay}>
+                <View>
+                  <ENTRADACREADA
+                    onClose={onCloseModalCreate}
+                    message={'Guardado!'}
+                  />
+                </View>
+              </View>
+            </TouchableWithoutFeedback>
+          </Modal>
+        )}
       </View>
     </ScrollView>
   )
@@ -216,14 +298,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row'
-  },
-  titulo: {
-    color: Color.primario1,
-    textAlign: 'left',
-    fontWeight: '500',
-    letterSpacing: 0,
-    lineHeight: 19,
-    fontSize: FontSize.size_base
   },
   cambiarFotoDe: {
     color: Color.negro,
@@ -346,7 +420,13 @@ const styles = StyleSheet.create({
   },
   centralContainer: {
     left: '3%'
+  },
+  modalOverlay: {
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 })
 
-export default PerfilVisualizacionMyTree
+export default PerfilConfiguracion

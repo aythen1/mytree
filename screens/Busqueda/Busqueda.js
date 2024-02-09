@@ -91,44 +91,127 @@ const Busqueda = () => {
             />
           </View>
         </View>
+
         <ScrollView style={styles.tabsParent} horizontal={true}>
           <Pressable
-            style={[styles.tabs, styles.tabsFlexBox]}
+            style={[
+              selectedComponent === 'BusquedaRetos'
+                ? styles.tabs
+                : styles.contactosWrapper,
+              styles.tabsFlexBox
+            ]}
             onPress={() => setSelectedComponent('BusquedaRetos')}
           >
-            <Text style={[styles.retos, styles.retosTypo]}>Retos</Text>
+            <Text
+              style={[
+                selectedComponent === 'BusquedaRetos'
+                  ? styles.retos
+                  : styles.contactos,
+                styles.retosTypo
+              ]}
+            >
+              Retos
+            </Text>
           </Pressable>
           <Pressable
-            style={[styles.contactosWrapper, styles.tabsFlexBox]}
+            style={[
+              selectedComponent === 'BusquedaContactos'
+                ? styles.tabs
+                : styles.contactosWrapper,
+              styles.tabsFlexBox
+            ]}
             onPress={() => setSelectedComponent('BusquedaContactos')}
           >
-            <Text style={[styles.contactos, styles.retosTypo]}>Contactos</Text>
+            <Text
+              style={[
+                selectedComponent === 'BusquedaContactos'
+                  ? styles.retos
+                  : styles.contactos,
+                styles.retosTypo
+              ]}
+            >
+              Contactos
+            </Text>
           </Pressable>
           <Pressable
-            style={[styles.contactosWrapper, styles.tabsFlexBox]}
+            style={[
+              selectedComponent === 'BusquedaPublicaciones'
+                ? styles.tabs
+                : styles.contactosWrapper,
+              styles.tabsFlexBox
+            ]}
             onPress={() => setSelectedComponent('BusquedaPublicaciones')}
           >
-            <Text style={[styles.contactos, styles.retosTypo]}>
+            <Text
+              style={[
+                selectedComponent === 'BusquedaPublicaciones'
+                  ? styles.retos
+                  : styles.contactos,
+                styles.retosTypo
+              ]}
+            >
               Publicaciones
             </Text>
           </Pressable>
           <Pressable
-            style={[styles.contactosWrapper, styles.tabsFlexBox]}
+            style={[
+              selectedComponent === 'BusquedaDiarios'
+                ? styles.tabs
+                : styles.contactosWrapper,
+              styles.tabsFlexBox
+            ]}
             onPress={() => setSelectedComponent('BusquedaDiarios')}
           >
-            <Text style={[styles.contactos, styles.retosTypo]}>Diarios</Text>
+            <Text
+              style={[
+                selectedComponent === 'BusquedaDiarios'
+                  ? styles.retos
+                  : styles.contactos,
+                styles.retosTypo
+              ]}
+            >
+              Diarios
+            </Text>
           </Pressable>
           <Pressable
-            style={[styles.contactosWrapper, styles.tabsFlexBox]}
+            style={[
+              selectedComponent === 'BusquedaHashtags'
+                ? styles.tabs
+                : styles.contactosWrapper,
+              styles.tabsFlexBox
+            ]}
             onPress={() => setSelectedComponent('BusquedaHashtags')}
           >
-            <Text style={[styles.contactos, styles.retosTypo]}>Hashtags</Text>
+            <Text
+              style={[
+                selectedComponent === 'BusquedaHashtags'
+                  ? styles.retos
+                  : styles.contactos,
+                styles.retosTypo
+              ]}
+            >
+              Hashtags
+            </Text>
           </Pressable>
           <Pressable
-            style={[styles.contactosWrapper, styles.tabsFlexBox]}
+            style={[
+              selectedComponent === 'BusquedaEventos'
+                ? styles.tabs
+                : styles.contactosWrapper,
+              styles.tabsFlexBox
+            ]}
             onPress={() => setSelectedComponent('BusquedaEventos')}
           >
-            <Text style={[styles.contactos, styles.retosTypo]}>Eventos</Text>
+            <Text
+              style={[
+                selectedComponent === 'BusquedaEventos'
+                  ? styles.retos
+                  : styles.contactos,
+                styles.retosTypo
+              ]}
+            >
+              Eventos
+            </Text>
           </Pressable>
         </ScrollView>
 
@@ -158,12 +241,6 @@ const styles = StyleSheet.create({
     letterSpacing: 0,
     fontFamily: FontFamily.lato
   },
-  // pressableBg: {
-  //   backgroundColor: Color.linearBoton,
-  //   padding: Padding.p_xl,
-  //   borderRadius: Border.br_3xs,
-  //   flexDirection: 'row'
-  // },
   retoSemanalClr: {
     color: Color.white,
     letterSpacing: 0,
@@ -259,56 +336,17 @@ const styles = StyleSheet.create({
     backgroundColor: Color.secundario,
     width: 114
   },
+  contactosWrapper: {
+    width: 114,
+    overflow: 'hidden'
+  },
   contactos: {
     color: Color.grisGeneral
-  },
-  contactosWrapper: {
-    width: 123,
-    overflow: 'hidden'
   },
   tabsParent: {
     top: '20%',
     flexDirection: 'row'
   },
-  // retoSemanal: {
-  //   fontSize: FontSize.size_lg,
-  //   lineHeight: 22,
-  //   alignSelf: 'stretch',
-  //   textAlign: 'left',
-  //   fontWeight: '700'
-  // },
-  // retoSemanal08112023Wrapper: {
-  //   alignSelf: 'stretch'
-  // },
-  // descubreCulEs: {
-  //   fontWeight: '300',
-  //   textAlign: 'justify',
-  //   width: 348,
-  //   marginTop: 10,
-  //   lineHeight: 19,
-  //   fontSize: FontSize.size_base,
-  //   color: Color.white
-  // },
-  // frameParent: {
-  //   flex: 1
-  // },
-  // notificationInner: {
-  //   flexDirection: 'row',
-  //   flex: 1
-  // },
-  // pressable: {
-  //   width: '100%'
-  // },
-  // notification: {
-  //   width: 388
-  // },
-  // notification1: {
-  //   marginTop: 20,
-  //   width: 388
-  // },
-  // notificationParent: {
-  //   top: 258
-  // },
   bsqueda: {
     width: '100%',
     flex: 1,
