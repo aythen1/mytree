@@ -14,7 +14,7 @@ import Para from '../components/Para'
 import TipoDeAlerta from '../components/TipoDeAlerta'
 import Lugar2 from '../components/Lugar2'
 import FECHA6 from '../components/FECHA6'
-import ENTRADACREADA10 from '../components/ENTRADACREADA10'
+// import ENTRADACREADA10 from '../components/ENTRADACREADA10'
 import { FontFamily, Padding, FontSize, Color, Border } from '../GlobalStyles'
 
 const MUROALERTAS1 = () => {
@@ -295,7 +295,7 @@ const MUROALERTAS1 = () => {
         </View>
       </Modal>
 
-      <Modal animationType="fade" transparent visible={buttonContainer2Visible}>
+      {/* <Modal animationType="fade" transparent visible={buttonContainer2Visible}>
         <View style={styles.buttonContainer2Overlay}>
           <Pressable
             style={styles.buttonContainer2Bg}
@@ -303,7 +303,7 @@ const MUROALERTAS1 = () => {
           />
           <ENTRADACREADA10 onClose={closeButtonContainer2} />
         </View>
-      </Modal>
+      </Modal> */}
     </>
   )
 }

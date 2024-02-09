@@ -4,7 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient'
 import { Image } from 'expo-image'
 import { useNavigation } from '@react-navigation/native'
 import Humor from '../components/Humor'
-import ENTRADACREADA12 from '../components/ENTRADACREADA12'
+// import ENTRADACREADA12 from '../components/ENTRADACREADA12'
 import Fecha5 from '../components/Fecha5'
 import { Color, FontFamily, FontSize, Padding, Border } from '../GlobalStyles'
 
@@ -248,7 +248,7 @@ const MIDIARIOENTRADATEXTOPL1 = () => {
         </View>
       </View>
 
-      <Modal animationType="fade" transparent visible={frameContainerVisible}>
+      {/* <Modal animationType="fade" transparent visible={frameContainerVisible}>
         <View style={styles.frameContainerOverlay}>
           <Pressable
             style={styles.frameContainerBg}
@@ -256,7 +256,7 @@ const MIDIARIOENTRADATEXTOPL1 = () => {
           />
           <ENTRADACREADA12 onClose={closeFrameContainer} />
         </View>
-      </Modal>
+      </Modal> */}
 
       <Modal
         animationType="slide"

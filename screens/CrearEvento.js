@@ -5,7 +5,8 @@ import {
   View,
   Pressable,
   Modal,
-  ScrollView
+  ScrollView,
+  TouchableWithoutFeedback
 } from 'react-native'
 import { Image } from 'expo-image'
 import { LinearGradient } from 'expo-linear-gradient'
@@ -17,10 +18,12 @@ import FormaDeEnvo from '../components/FormaDeEnvo'
 import Invitados from '../components/Invitados'
 import { useNavigation } from '@react-navigation/native'
 import FECHA2 from '../components/FECHA2'
-import ENTRADACREADA4 from '../components/ENTRADACREADA4'
+// import ENTRADACREADA4 from '../components/ENTRADACREADA4'
 import { FontFamily, Padding, FontSize, Color, Border } from '../GlobalStyles'
+import ENTRADACREADA from '../components/ENTRADACREADA'
 
 const CrearEvento = () => {
+  const [modalCreate, setModalCreate] = useState(false)
   const [arrowDown2IconVisible, setArrowDown2IconVisible] = useState(false)
   const [arrowDown2Icon1Visible, setArrowDown2Icon1Visible] = useState(false)
   const [arrowDown2Icon2Visible, setArrowDown2Icon2Visible] = useState(false)
@@ -94,6 +97,10 @@ const CrearEvento = () => {
   const closeButtonContainer2 = useCallback(() => {
     setButtonContainer2Visible(false)
   }, [])
+
+  const onCloseModalCreate = () => {
+    setModalCreate(false)
+  }
 
   return (
     <>
@@ -298,11 +305,12 @@ const CrearEvento = () => {
               >
                 <Pressable
                   style={[styles.pressable1, styles.pressableFlexBox]}
-                  onPress={openButtonContainer2}
+                  onPress={() => setModalCreate(true)}
                 >
                   <Text style={[styles.signIn2, styles.signTypo]}>Enviar</Text>
                 </Pressable>
               </LinearGradient>
+
               <View style={styles.frameChild} />
             </View>
           </View>
@@ -333,6 +341,22 @@ const CrearEvento = () => {
           </View>
         </View>
       </ScrollView>
+
+      {modalCreate && (
+        <Modal animationType="fade" transparent={true} visible={modalCreate}>
+          <TouchableWithoutFeedback onPress={() => setModalCreate(false)}>
+            <View style={styles.modalOverlay}>
+              <View>
+                <ENTRADACREADA
+                  onClose={onCloseModalCreate}
+                  message={'Guardado!'}
+                  isNavigate={'CALENDARIO'}
+                />
+              </View>
+            </View>
+          </TouchableWithoutFeedback>
+        </Modal>
+      )}
 
       <Modal animationType="fade" transparent visible={arrowDown2IconVisible}>
         <View style={styles.arrowDown2IconOverlay}>
@@ -404,7 +428,7 @@ const CrearEvento = () => {
         </View>
       </Modal>
 
-      <Modal animationType="fade" transparent visible={buttonContainer2Visible}>
+      {/* <Modal animationType="fade" transparent visible={buttonContainer2Visible}>
         <View style={styles.buttonContainer2Overlay}>
           <Pressable
             style={styles.buttonContainer2Bg}
@@ -412,7 +436,7 @@ const CrearEvento = () => {
           />
           <ENTRADACREADA4 onClose={closeButtonContainer2} />
         </View>
-      </Modal>
+      </Modal> */}
     </>
   )
 }
@@ -421,6 +445,12 @@ const styles = StyleSheet.create({
   icon6Layout: {
     overflow: 'hidden',
     width: '100%'
+  },
+  modalOverlay: {
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   frameParentLayout: {
     height: 785,

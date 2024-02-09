@@ -1,22 +1,22 @@
-import React, { useState, useCallback } from "react";
-import { View, Text, StyleSheet, Pressable, Modal } from "react-native";
-import { Image } from "expo-image";
-import { LinearGradient } from "expo-linear-gradient";
-import { useNavigation } from "@react-navigation/native";
-import ENTRADACREADA8 from "./ENTRADACREADA8";
-import { Color, FontSize, FontFamily, Border, Padding } from "../GlobalStyles";
+import React, { useState, useCallback } from 'react'
+import { View, Text, StyleSheet, Pressable, Modal } from 'react-native'
+import { Image } from 'expo-image'
+import { LinearGradient } from 'expo-linear-gradient'
+import { useNavigation } from '@react-navigation/native'
+// import ENTRADACREADA8 from "./ENTRADACREADA8";
+import { Color, FontSize, FontFamily, Border, Padding } from '../GlobalStyles'
 
 const VistaPrevia = ({ onClose }) => {
-  const navigation = useNavigation();
-  const [buttonContainer2Visible, setButtonContainer2Visible] = useState(false);
+  const navigation = useNavigation()
+  const [buttonContainer2Visible, setButtonContainer2Visible] = useState(false)
 
   const openButtonContainer2 = useCallback(() => {
-    setButtonContainer2Visible(true);
-  }, []);
+    setButtonContainer2Visible(true)
+  }, [])
 
   const closeButtonContainer2 = useCallback(() => {
-    setButtonContainer2Visible(false);
-  }, []);
+    setButtonContainer2Visible(false)
+  }, [])
 
   return (
     <>
@@ -43,7 +43,7 @@ const VistaPrevia = ({ onClose }) => {
                     <View
                       style={[
                         styles.component7033Child,
-                        styles.component7033Position,
+                        styles.component7033Position
                       ]}
                     />
                     <Text
@@ -57,7 +57,7 @@ const VistaPrevia = ({ onClose }) => {
                   <View
                     style={[
                       styles.component7033Item,
-                      styles.component7033Position,
+                      styles.component7033Position
                     ]}
                   />
                   <Text
@@ -77,7 +77,7 @@ const VistaPrevia = ({ onClose }) => {
                   <Image
                     style={styles.frameItem}
                     contentFit="cover"
-                    source={require("../assets/frame-1547754875.png")}
+                    source={require('../assets/frame-1547754875.png')}
                   />
                   <Text style={[styles.brunoPham, styles.titleTypo]}>
                     Bruno Pham
@@ -91,7 +91,7 @@ const VistaPrevia = ({ onClose }) => {
                     <Image
                       style={styles.frameItem}
                       contentFit="cover"
-                      source={require("../assets/frame-1547754875.png")}
+                      source={require('../assets/frame-1547754875.png')}
                     />
                     <Text style={[styles.brunoPham, styles.titleTypo]}>
                       Bruno Pham
@@ -101,7 +101,7 @@ const VistaPrevia = ({ onClose }) => {
                     <Image
                       style={styles.frameItem}
                       contentFit="cover"
-                      source={require("../assets/frame-1547754875.png")}
+                      source={require('../assets/frame-1547754875.png')}
                     />
                     <Text style={[styles.brunoPham, styles.titleTypo]}>
                       Bruno Pham
@@ -114,14 +114,14 @@ const VistaPrevia = ({ onClose }) => {
           <View style={[styles.buttonBar, styles.buttonFlexBox]}>
             <Pressable
               style={[styles.button, styles.buttonSpaceBlock]}
-              onPress={() => navigation.navigate("MENSAJERA")}
+              onPress={() => navigation.navigate('MENSAJERA')}
             >
               <Text style={styles.signTypo}>Cancelar</Text>
             </Pressable>
             <LinearGradient
               style={[styles.button1, styles.button1FlexBox]}
               locations={[0, 1]}
-              colors={["#dee274", "#7ec18c"]}
+              colors={['#dee274', '#7ec18c']}
             >
               <Text style={[styles.signIn1, styles.signTypo]}>
                 Programar envío
@@ -131,7 +131,7 @@ const VistaPrevia = ({ onClose }) => {
           <LinearGradient
             style={styles.button2}
             locations={[0, 1]}
-            colors={["#dee274", "#7ec18c"]}
+            colors={['#dee274', '#7ec18c']}
           >
             <Pressable
               style={[styles.pressable, styles.button1FlexBox]}
@@ -143,7 +143,7 @@ const VistaPrevia = ({ onClose }) => {
         </View>
       </View>
 
-      <Modal animationType="fade" transparent visible={buttonContainer2Visible}>
+      {/* <Modal animationType="fade" transparent visible={buttonContainer2Visible}>
         <View style={styles.buttonContainer2Overlay}>
           <Pressable
             style={styles.buttonContainer2Bg}
@@ -151,89 +151,89 @@ const VistaPrevia = ({ onClose }) => {
           />
           <ENTRADACREADA8 onClose={closeButtonContainer2} />
         </View>
-      </Modal>
+      </Modal> */}
     </>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   felizCumpleaosTypo: {
     color: Color.gris,
     lineHeight: 22,
     fontSize: FontSize.size_lg,
-    fontWeight: "500",
-    textAlign: "left",
+    fontWeight: '500',
+    textAlign: 'left',
     fontFamily: FontFamily.lato,
-    letterSpacing: 0,
+    letterSpacing: 0
   },
   componentLayout: {
     height: 158,
     borderRadius: Border.br_3xs,
-    overflow: "hidden",
+    overflow: 'hidden'
   },
   component7033Position: {
     backgroundColor: Color.secundario,
     left: 0,
     top: 0,
-    position: "absolute",
-    height: 158,
+    position: 'absolute',
+    height: 158
   },
   portraitTypo: {
-    textAlign: "center",
+    textAlign: 'center',
     lineHeight: 17,
     fontSize: FontSize.size_sm,
-    left: "50%",
+    left: '50%',
     top: 68,
     color: Color.white,
-    position: "absolute",
+    position: 'absolute',
     fontFamily: FontFamily.lato,
-    fontWeight: "700",
+    fontWeight: '700'
   },
   titleTypo: {
     lineHeight: 19,
     fontSize: FontSize.size_base,
     fontFamily: FontFamily.lato,
-    letterSpacing: 0,
+    letterSpacing: 0
   },
   frameParentSpaceBlock: {
     marginTop: 10,
-    flexDirection: "row",
+    flexDirection: 'row'
   },
   buttonFlexBox: {
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
-    backgroundColor: Color.white,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    backgroundColor: Color.white
   },
   buttonSpaceBlock: {
     paddingBottom: Padding.p_5xs,
     paddingTop: Padding.p_6xs,
     paddingHorizontal: Padding.p_base,
     height: 52,
-    flex: 1,
+    flex: 1
   },
   button1FlexBox: {
     backgroundColor: Color.linearBoton,
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
-    borderRadius: Border.br_11xl,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    borderRadius: Border.br_11xl
   },
   signTypo: {
     lineHeight: 21,
-    textAlign: "center",
+    textAlign: 'center',
     fontSize: FontSize.size_sm,
     fontFamily: FontFamily.lato,
-    letterSpacing: 0,
+    letterSpacing: 0
   },
   tarjetaDigital: {
     fontSize: FontSize.size_xl,
     color: Color.primario1,
-    textAlign: "left",
+    textAlign: 'left',
     fontFamily: FontFamily.lato,
     lineHeight: 24,
     letterSpacing: 0,
-    fontWeight: "700",
+    fontWeight: '700'
   },
   frameChild: {
     borderColor: Color.secundario,
@@ -241,93 +241,93 @@ const styles = StyleSheet.create({
     width: 389,
     height: 1,
     marginTop: 20,
-    borderStyle: "solid",
+    borderStyle: 'solid'
   },
   loremIpsumDolor: {
     marginTop: 15,
-    width: 388,
+    width: 388
   },
   felizCumpleaosParent: {
     width: 388,
-    alignItems: "center",
+    alignItems: 'center'
   },
   component7033Child: {
-    width: 192,
+    width: 192
   },
   portraitPhotography: {
-    marginLeft: -25,
+    marginLeft: -25
   },
   component7033: {
-    width: 192,
+    width: 192
   },
   component7033Wrapper: {
-    width: 191,
+    width: 191
   },
   component7033Item: {
-    width: 191,
+    width: 191
   },
   portraitPhotography1: {
-    marginLeft: -24.5,
+    marginLeft: -24.5
   },
   component70331: {
     marginLeft: 6,
-    width: 191,
+    width: 191
   },
   frameContainer: {
     marginTop: 20,
-    flexDirection: "row",
+    flexDirection: 'row'
   },
   frameGroup: {
-    marginTop: 20,
+    marginTop: 20
   },
   title: {
     color: Color.textTextPrimary,
-    fontWeight: "500",
+    fontWeight: '500',
     lineHeight: 19,
     fontSize: FontSize.size_base,
-    textAlign: "left",
+    textAlign: 'left'
   },
   frameItem: {
     width: 30,
-    height: 30,
+    height: 30
   },
   brunoPham: {
     color: Color.grisDiscord,
-    textAlign: "justify",
+    textAlign: 'justify',
     marginLeft: 13,
     lineHeight: 19,
     fontSize: FontSize.size_base,
-    fontWeight: "700",
+    fontWeight: '700'
   },
   frameParent1: {
-    alignItems: "center",
+    alignItems: 'center'
   },
   frameParent3: {
-    alignItems: "center",
-    flexDirection: "row",
+    alignItems: 'center',
+    flexDirection: 'row'
   },
   frameParent4: {
     marginLeft: 20,
-    alignItems: "center",
-    flexDirection: "row",
+    alignItems: 'center',
+    flexDirection: 'row'
   },
   button: {
     borderColor: Color.colorKhaki_100,
     borderWidth: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
     backgroundColor: Color.white,
-    borderStyle: "solid",
+    borderStyle: 'solid',
     borderRadius: Border.br_11xl,
     paddingBottom: Padding.p_5xs,
     paddingTop: Padding.p_6xs,
     paddingHorizontal: Padding.p_base,
-    height: 52,
+    height: 52
   },
   signIn1: {
     color: Color.white,
-    lineHeight: 21,
+    lineHeight: 21
   },
   button1: {
     paddingBottom: Padding.p_5xs,
@@ -335,58 +335,58 @@ const styles = StyleSheet.create({
     paddingHorizontal: Padding.p_base,
     height: 52,
     flex: 1,
-    marginLeft: 20,
+    marginLeft: 20
   },
   buttonBar: {
     width: 428,
     paddingHorizontal: Padding.p_xl,
     paddingVertical: Padding.p_3xs,
-    marginTop: 15,
+    marginTop: 15
   },
   buttonContainer2Overlay: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "rgba(113, 113, 113, 0.3)",
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(113, 113, 113, 0.3)'
   },
   buttonContainer2Bg: {
-    position: "absolute",
-    width: "100%",
-    height: "100%",
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
     left: 0,
-    top: 0,
+    top: 0
   },
   signIn2: {
     letterSpacing: 1,
     flex: 1,
     fontSize: FontSize.size_base,
-    textAlign: "center",
+    textAlign: 'center',
     color: Color.white,
     fontFamily: FontFamily.lato,
-    lineHeight: 24,
+    lineHeight: 24
   },
   pressable: {
-    width: "100%",
+    width: '100%',
     paddingHorizontal: Padding.p_5xl,
-    paddingVertical: Padding.p_sm,
+    paddingVertical: Padding.p_sm
   },
   button2: {
     marginTop: 15,
-    width: 388,
+    width: 388
   },
   frameParent: {
-    alignItems: "center",
+    alignItems: 'center'
   },
   vistaPrevia: {
     paddingHorizontal: 0,
     paddingVertical: Padding.p_xl,
-    maxWidth: "100%",
-    maxHeight: "100%",
-    flexDirection: "row",
-    overflow: "hidden",
+    maxWidth: '100%',
+    maxHeight: '100%',
+    flexDirection: 'row',
+    overflow: 'hidden',
     backgroundColor: Color.white,
-    borderRadius: Border.br_11xl,
-  },
-});
+    borderRadius: Border.br_11xl
+  }
+})
 
-export default VistaPrevia;
+export default VistaPrevia

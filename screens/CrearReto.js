@@ -138,8 +138,6 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   modalOverlay: {
-    // flex: 1,
-    // top: -100,
     height: '100%',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     justifyContent: 'center',
