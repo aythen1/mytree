@@ -9,7 +9,7 @@ import Etapas from './screens/Etapas'
 import Privacidad from './screens/Privacidad'
 import Cancion from './screens/Cancion'
 import SubeTusRecuerdos from './screens/SubeTusRecuerdos'
-import Login from './screens/Login'
+import LOGIN from './screens/LOGIN'
 import Onboarding from './screens/Onboarding'
 import Onboarding1 from './screens/Onboarding1'
 import OpcionesFamiliar from './components/OpcionesFamiliar'
@@ -192,7 +192,7 @@ const App = () => {
                 route.name !== 'Onboarding' &&
                 route.name !== 'Onboarding1' &&
                 route.name !== 'Onboarding2' &&
-                route.name !== 'Login'
+                route.name !== 'LOGIN'
             )
           })}
         >
@@ -242,8 +242,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="Login"
-            component={Login}
+            name="LOGIN"
+            component={LOGIN}
             options={{ headerShown: false }}
           />
           <Stack.Screen

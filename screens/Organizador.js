@@ -19,6 +19,8 @@ import { FontSize, FontFamily, Color, Border, Padding } from '../GlobalStyles'
 import Checkbox from 'expo-checkbox'
 import ENTRADACREADA from '../components/ENTRADACREADA'
 import { setPanel } from '../redux/slices/panel.slices'
+import Etapas from './Etapas'
+import Privacidad from './Privacidad'
 
 const Organizador = () => {
   const dispatch = useDispatch()
@@ -30,6 +32,29 @@ const Organizador = () => {
   const [buttonContainer1Visible, setButtonContainer1Visible] = useState(false)
   const [frameContainer2Visible, setFrameContainer2Visible] = useState(false)
   const [frameContainer5Visible, setFrameContainer5Visible] = useState(false)
+
+  const [showEtapas, setShowEtapas] = useState(false)
+  const [showPrivacidad, setShowPrivacidad] = useState(false)
+
+  const closeSubmit = () => {
+    setSubmit(false)
+  }
+
+  const openEtapas = useCallback(() => {
+    setShowEtapas(true)
+  }, [])
+
+  const closeEtapas = useCallback(() => {
+    setShowEtapas(false)
+  }, [])
+
+  const openPrivacidad = useCallback(() => {
+    setShowPrivacidad(true)
+  }, [])
+
+  const closePrivacidad = useCallback(() => {
+    setShowPrivacidad(false)
+  }, [])
 
   const openButtonContainer1 = useCallback(() => {
     setButtonContainer1Visible(true)
@@ -212,7 +237,12 @@ const Organizador = () => {
                       source={require('../assets/line-802.png')}
                     />
                     <View style={[styles.frameContainer, styles.frameLayout]}>
-                      <View style={[styles.imageParent, styles.parentFlexBox]}>
+                      <Pressable
+                        style={[styles.imageParent, styles.parentFlexBox]}
+                        onPress={() => {
+                          openEtapas()
+                        }}
+                      >
                         <Image
                           style={styles.imageIcon}
                           contentFit="cover"
@@ -221,7 +251,8 @@ const Organizador = () => {
                         <Text style={[styles.aadirAudio, styles.etiquetarTypo]}>
                           Añadir a un álbum
                         </Text>
-                      </View>
+                      </Pressable>
+
                       <Image
                         style={[styles.arrowDown2Icon, styles.aadirPosition]}
                         contentFit="cover"
@@ -258,7 +289,10 @@ const Organizador = () => {
                       source={require('../assets/line-802.png')}
                     />
                     <View style={[styles.frameView, styles.parentFlexBox]}>
-                      <View style={styles.opcionesDePrivacidadWrapper}>
+                      <Pressable
+                        style={styles.opcionesDePrivacidadWrapper}
+                        onPress={openPrivacidad}
+                      >
                         <Text
                           style={[
                             styles.opcionesDePrivacidad,
@@ -267,7 +301,7 @@ const Organizador = () => {
                         >
                           Opciones de Privacidad
                         </Text>
-                      </View>
+                      </Pressable>
                       <Image
                         style={styles.arrowDown2Icon1}
                         contentFit="cover"
@@ -291,10 +325,29 @@ const Organizador = () => {
         </View>
       </ScrollView>
 
-      <Modal animationType="fade" transparent visible={buttonContainer1Visible}>
+      <Modal animationType="fade" transparent visible={showEtapas}>
+        <View style={styles.buttonContainer1Overlay}>
+          <Pressable style={styles.buttonContainer1Bg} onPress={closeEtapas}>
+            <Etapas onClose={closeEtapas} />
+          </Pressable>
+        </View>
+      </Modal>
+
+      <Modal animationType="fade" transparent visible={showPrivacidad}>
         <View style={styles.buttonContainer1Overlay}>
           <Pressable
             style={styles.buttonContainer1Bg}
+            onPress={closePrivacidad}
+          >
+            <Privacidad onClose={closePrivacidad} />
+          </Pressable>
+        </View>
+      </Modal>
+
+      <Modal animationType="fade" transparent visible={buttonContainer1Visible}>
+        <View style={styles.buttonContainer1Overlay}>
+          <Pressable
+            style={styles.frameContainer2Bg}
             onPress={closeButtonContainer1}
           />
           <Cancion1 onClose={closeButtonContainer1} />
@@ -322,10 +375,14 @@ const Organizador = () => {
       </Modal>
 
       <Modal animationType="fade" transparent={true} visible={submit}>
-        <TouchableWithoutFeedback onPress={() => setSubmit(false)}>
+        <TouchableWithoutFeedback onPress={closeSubmit}>
           <View style={styles.modalOverlay}>
             <View>
-              <ENTRADACREADA setPopupCreate={setSubmit} />
+              <ENTRADACREADA
+                onClose={closeSubmit}
+                message={'Creado con exito'}
+                isNavigate={'Muro'}
+              />
             </View>
           </View>
         </TouchableWithoutFeedback>

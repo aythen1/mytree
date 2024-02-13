@@ -6,15 +6,36 @@ import StoriesVideosDiarios from '../components/StoriesVideosDiarios'
 import ButtonsMensajeria from '../components/ButtonsMensajeria'
 import Search from '../components/Search'
 import Messages from '../components/Messages'
-import { LinearGradient } from 'expo-linear-gradient'
-import { Image } from 'expo-image'
+import HeaderIcons from '../components/HeaderIcons'
+import UsersSVG from '../components/svgs/UsersSVG'
+import NotificationsSVG from '../components/svgs/NotificationsSVG'
+import CalendarSVG from '../components/svgs/CalendarSVG'
+import SettingSVG from '../components/svgs/SettingSVG'
 
 const MENSAJERA = () => {
   const navigation = useNavigation()
 
   return (
     <View style={styles.mensajera}>
-      <Text style={styles.videodiarios}>Videodiarios</Text>
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          top: 35,
+          paddingHorizontal: 15
+        }}
+      >
+        <Text style={styles.videodiarios}>Videodiarios</Text>
+        <HeaderIcons
+          icons={[
+            <UsersSVG />,
+            <NotificationsSVG />,
+            <CalendarSVG />,
+            <SettingSVG />
+          ]}
+        />
+      </View>
       <View style={{ marginTop: 50, paddingHorizontal: 15 }}>
         <StoriesVideosDiarios />
         <ButtonsMensajeria />
@@ -27,7 +48,7 @@ const MENSAJERA = () => {
 
 const styles = StyleSheet.create({
   videodiarios: {
-    top: 35,
+    // top: 35,
     fontSize: FontSize.size_5xl,
     color: Color.negro,
     textAlign: 'left',

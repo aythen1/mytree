@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Text, StyleSheet, View, Pressable } from 'react-native'
+import { Text, StyleSheet, View, Pressable, ScrollView } from 'react-native'
 import { Image } from 'expo-image'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
@@ -9,112 +9,114 @@ const Success = () => {
   const navigation = useNavigation()
 
   return (
-    <View style={styles.success}>
-      <View style={styles.frameParent}>
-        <View style={styles.frameGroup}>
+    <ScrollView>
+      <View style={styles.success}>
+        <View style={styles.frameParent}>
           <View style={styles.frameGroup}>
-            <Text style={[styles.bienvenidoA, styles.invitaATusTypo]}>
-              Bienvenido a
-            </Text>
-            <View style={styles.image9Parent}>
-              <Image
-                style={styles.image9Icon}
-                contentFit="cover"
-                source={require('../assets/image-9.png')}
-              />
-              <Text style={[styles.creaTuLegado, styles.invitaATusTypo]}>
-                Crea tu legado
+            <View style={styles.frameGroup}>
+              <Text style={[styles.bienvenidoA, styles.invitaATusTypo]}>
+                Bienvenido a
               </Text>
-            </View>
-          </View>
-          <View style={styles.imageCarousel}>
-            <View style={[styles.imageCarouselSlider, styles.sliderPosition]}>
-              <View style={styles.imageCard}>
-                <View style={styles.imageFlexBox}>
-                  <LinearGradient
-                    style={[styles.img1, styles.imgPosition]}
-                    locations={[0, 1]}
-                    colors={['#7ec18c', '#dee274']}
-                  />
-                </View>
-              </View>
-              <View style={styles.imageCard1}>
-                <View style={[styles.image1, styles.imageFlexBox]}>
-                  <LinearGradient
-                    style={[styles.img1, styles.imgPosition]}
-                    locations={[0, 1]}
-                    colors={['#dee274', '#7ec18c']}
-                  />
-                </View>
-              </View>
-              <View style={styles.imageCard1}>
-                <View style={styles.imageFlexBox}>
-                  <LinearGradient
-                    style={styles.imgPosition}
-                    locations={[0, 1]}
-                    colors={['#dee274', '#7ec18c']}
-                  />
-                </View>
-              </View>
-              <View style={styles.imageCard1}>
-                <View style={styles.imageFlexBox}>
-                  <View style={styles.dotPosition} />
-                </View>
-              </View>
-              <View style={styles.imageCard1}>
-                <View style={styles.imageFlexBox}>
-                  <View style={styles.dotPosition} />
-                </View>
-              </View>
-              <View style={styles.imageCard1}>
-                <View style={styles.imageFlexBox}>
-                  <View style={styles.dotPosition} />
-                </View>
+              <View style={styles.image9Parent}>
+                <Image
+                  style={styles.image9Icon}
+                  contentFit="cover"
+                  source={require('../assets/image-9.png')}
+                />
+                <Text style={[styles.creaTuLegado, styles.invitaATusTypo]}>
+                  Crea tu legado
+                </Text>
               </View>
             </View>
-            <View style={[styles.miniSlider, styles.sliderPosition]}>
-              <View style={[styles.dot, styles.dotLayout]}>
-                <View style={[styles.dotChild, styles.dotPosition]} />
+            <View style={styles.imageCarousel}>
+              <View style={[styles.imageCarouselSlider, styles.sliderPosition]}>
+                <View style={styles.imageCard}>
+                  <View style={styles.imageFlexBox}>
+                    <LinearGradient
+                      style={[styles.img1, styles.imgPosition]}
+                      locations={[0, 1]}
+                      colors={['#7ec18c', '#dee274']}
+                    />
+                  </View>
+                </View>
+                <View style={styles.imageCard1}>
+                  <View style={[styles.image1, styles.imageFlexBox]}>
+                    <LinearGradient
+                      style={[styles.img1, styles.imgPosition]}
+                      locations={[0, 1]}
+                      colors={['#dee274', '#7ec18c']}
+                    />
+                  </View>
+                </View>
+                <View style={styles.imageCard1}>
+                  <View style={styles.imageFlexBox}>
+                    <LinearGradient
+                      style={styles.imgPosition}
+                      locations={[0, 1]}
+                      colors={['#dee274', '#7ec18c']}
+                    />
+                  </View>
+                </View>
+                <View style={styles.imageCard1}>
+                  <View style={styles.imageFlexBox}>
+                    <View style={styles.dotPosition} />
+                  </View>
+                </View>
+                <View style={styles.imageCard1}>
+                  <View style={styles.imageFlexBox}>
+                    <View style={styles.dotPosition} />
+                  </View>
+                </View>
+                <View style={styles.imageCard1}>
+                  <View style={styles.imageFlexBox}>
+                    <View style={styles.dotPosition} />
+                  </View>
+                </View>
               </View>
-              <View style={[styles.dot1, styles.dotLayout]}>
-                <View style={[styles.dotItem, styles.dotPosition]} />
+              <View style={[styles.miniSlider, styles.sliderPosition]}>
+                <View style={[styles.dot, styles.dotLayout]}>
+                  <View style={[styles.dotChild, styles.dotPosition]} />
+                </View>
+                <View style={[styles.dot1, styles.dotLayout]}>
+                  <View style={[styles.dotItem, styles.dotPosition]} />
+                </View>
+                <View style={[styles.dot1, styles.dotLayout]}>
+                  <View style={[styles.dotItem, styles.dotPosition]} />
+                </View>
+                <View style={[styles.dot1, styles.dotLayout]}>
+                  <View style={[styles.dotItem, styles.dotPosition]} />
+                </View>
+                <View style={[styles.dot1, styles.dotLayout]} />
+                <View style={[styles.dot1, styles.dotLayout]} />
               </View>
-              <View style={[styles.dot1, styles.dotLayout]}>
-                <View style={[styles.dotItem, styles.dotPosition]} />
+              <View style={[styles.gradient, styles.buttonsPosition]}>
+                <View style={[styles.gradientChild, styles.gradientLayout]} />
+                <View style={[styles.gradientItem, styles.gradientLayout]} />
               </View>
-              <View style={[styles.dot1, styles.dotLayout]}>
-                <View style={[styles.dotItem, styles.dotPosition]} />
+              <View style={[styles.buttons, styles.buttonsPosition]}>
+                <Image
+                  style={styles.arrowLeftIcon}
+                  contentFit="cover"
+                  source={require('../assets/arrow-left2.png')}
+                />
+                <Image
+                  style={styles.arrowLeftIcon}
+                  contentFit="cover"
+                  source={require('../assets/arrow-left3.png')}
+                />
               </View>
-              <View style={[styles.dot1, styles.dotLayout]} />
-              <View style={[styles.dot1, styles.dotLayout]} />
-            </View>
-            <View style={[styles.gradient, styles.buttonsPosition]}>
-              <View style={[styles.gradientChild, styles.gradientLayout]} />
-              <View style={[styles.gradientItem, styles.gradientLayout]} />
-            </View>
-            <View style={[styles.buttons, styles.buttonsPosition]}>
-              <Image
-                style={styles.arrowLeftIcon}
-                contentFit="cover"
-                source={require('../assets/arrow-left2.png')}
-              />
-              <Image
-                style={styles.arrowLeftIcon}
-                contentFit="cover"
-                source={require('../assets/arrow-left3.png')}
-              />
-            </View>
-            <Text
-              style={[styles.invitaATus, styles.sliderPosition]}
-            >{`Invita a tus 
+              <Text
+                style={[styles.invitaATus, styles.sliderPosition]}
+              >{`Invita a tus 
 familiares`}</Text>
+            </View>
           </View>
+          <Pressable onPress={() => navigation.navigate('Muro')}>
+            <Text style={styles.continuar}>{`Continuar >`}</Text>
+          </Pressable>
         </View>
-        <Pressable onPress={() => navigation.navigate('Muro')}>
-          <Text style={styles.continuar}>{`Continuar >`}</Text>
-        </Pressable>
       </View>
-    </View>
+    </ScrollView>
   )
 }
 
@@ -286,7 +288,7 @@ const styles = StyleSheet.create({
   },
   success: {
     borderRadius: Border.br_21xl,
-    height: 926,
+    // height: 926,
     paddingHorizontal: 19,
     paddingVertical: Padding.p_xl,
     flexDirection: 'row',

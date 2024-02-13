@@ -41,7 +41,9 @@ const OpcionesModal = ({ opciones, visible, onClose, onAddOption, isAdd }) => {
         <View style={styles.modalContent}>
           <FlatList
             data={opciones}
-            keyExtractor={(item, index) => index.toString()}
+            keyExtractor={(item, index) => {
+              index.toString()
+            }}
             renderItem={({ item }) => (
               <TouchableOpacity
                 onPress={() => console.log(`Seleccionado: ${item}`)}

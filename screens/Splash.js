@@ -94,7 +94,7 @@ generaciones`}</Text>
               locations={[0, 1]}
               colors={['#dee274', '#7ec18c']}
             >
-              <Pressable onPress={() => navigation.navigate('Login')}>
+              <Pressable onPress={() => navigation.navigate('LOGIN')}>
                 <Text style={styles.signTypo}>INICIAR SESIÓN</Text>
               </Pressable>
             </View>
