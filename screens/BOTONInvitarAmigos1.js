@@ -5,6 +5,7 @@ import BuscadorPersona from '../components/BuscadorPersona'
 import { Color, FontSize, FontFamily, Border, Padding } from '../GlobalStyles'
 import Checkbox from 'expo-checkbox'
 import { useNavigation } from '@react-navigation/native'
+import OpcionesModal from './../components/OpcionesModal'
 
 const BOTONInvitarAmigos1 = () => {
   const navigation = useNavigation()
@@ -81,7 +82,7 @@ const BOTONInvitarAmigos1 = () => {
             style={styles.frameContainerBg}
             onPress={closeFrameContainer}
           />
-          <BuscadorPersona onClose={closeFrameContainer} />
+          <OpcionesModal onClose={closeFrameContainer} />
         </View>
       </Modal>
     </>
