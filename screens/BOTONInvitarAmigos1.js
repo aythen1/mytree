@@ -76,11 +76,6 @@ const BOTONInvitarAmigos1 = () => {
             />
           </Pressable>
         </View>
-        <Image
-          style={[styles.navigationIcon, styles.headerLayout]}
-          contentFit="cover"
-          source={require('../assets/navigation16.png')}
-        />
       </View>
 
       <Modal

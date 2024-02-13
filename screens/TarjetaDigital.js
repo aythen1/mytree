@@ -1,6 +1,15 @@
 import React, { useState, useCallback } from 'react'
 import { Image } from 'expo-image'
-import { StyleSheet, View, Pressable, Text, Modal } from 'react-native'
+import OpcionesModal from '../components/OpcionesModal'
+import {
+  StyleSheet,
+  View,
+  Pressable,
+  Text,
+  Modal,
+  ScrollView,
+  TouchableWithoutFeedback
+} from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
 import DiseoTarjetaDigital from '../components/DiseoTarjetaDigital'
@@ -60,47 +69,110 @@ const TarjetaDigital = () => {
 
   return (
     <>
-      <View style={[styles.tarjetaDigital, styles.iconLayout]}>
-        <View style={styles.image6Wrapper}>
-          <Image
-            style={styles.image6Icon}
-            contentFit="cover"
-            source={require('../assets/image-6.png')}
-          />
-        </View>
-        <Image
-          style={[styles.navigationIcon, styles.frameParentPosition]}
-          contentFit="cover"
-          source={require('../assets/navigation11.png')}
-        />
-        <View style={[styles.frameParent, styles.frameParentPosition]}>
-          <View style={styles.frameGroup}>
-            <View style={styles.backParent}>
-              <Pressable
-                style={styles.backLayout}
-                onPress={() => navigation.navigate('MENSAJERA')}
-              >
-                <Image
-                  style={[styles.icon, styles.iconLayout]}
-                  contentFit="cover"
-                  source={require('../assets/back.png')}
-                />
-              </Pressable>
-              <Text style={styles.tarjetaDigital1}>Tarjeta digital</Text>
-            </View>
-            <View style={styles.frameContainer}>
-              <View>
+      <ScrollView>
+        <View style={[styles.tarjetaDigital, styles.iconLayout]}>
+          <View style={styles.image6Wrapper}>
+            <Image
+              style={styles.image6Icon}
+              contentFit="cover"
+              source={require('../assets/image-6.png')}
+            />
+          </View>
+
+          <View style={styles.frameParent}>
+            <View style={styles.frameGroup}>
+              <View style={styles.backParent}>
+                <Pressable
+                  style={styles.backLayout}
+                  onPress={() => navigation.navigate('MENSAJERA')}
+                >
+                  <Image
+                    style={[styles.icon, styles.iconLayout]}
+                    contentFit="cover"
+                    source={require('../assets/back.png')}
+                  />
+                </Pressable>
+                <Text style={styles.tarjetaDigital1}>Tarjeta digital</Text>
+              </View>
+              <View style={styles.frameContainer}>
                 <View>
+                  <View>
+                    <View style={styles.titleBase}>
+                      <Text style={[styles.title, styles.titleTypo]}>
+                        Diseño
+                      </Text>
+                    </View>
+                    <Pressable
+                      style={[styles.field, styles.fieldFlexBox]}
+                      onPress={openFieldContainer}
+                    >
+                      <View style={styles.placeholderInput}>
+                        <Text style={[styles.search, styles.searchLayout]}>
+                          Seleccionar diseño
+                        </Text>
+                      </View>
+                      <Image
+                        style={[styles.iconlyboldfilter2, styles.backLayout]}
+                        contentFit="cover"
+                        source={require('../assets/iconlyboldfilter21.png')}
+                      />
+                    </Pressable>
+                  </View>
+                  <View style={styles.fieldWithTitle1}>
+                    <View style={styles.titleBase}>
+                      <Text style={[styles.title, styles.titleTypo]}>
+                        Mensaje personalizado
+                      </Text>
+                    </View>
+                    <View style={[styles.field, styles.fieldFlexBox]}>
+                      <View style={styles.placeholderInput}>
+                        <Text style={[styles.search, styles.searchLayout]}>
+                          Plantillas de selección
+                        </Text>
+                      </View>
+                      <Pressable
+                        style={styles.arrowDown2}
+                        onPress={openArrowDown2Icon}
+                      >
+                        <Image
+                          style={styles.icon1}
+                          contentFit="cover"
+                          source={require('../assets/arrowdown24.png')}
+                        />
+                      </Pressable>
+                    </View>
+                  </View>
+                </View>
+                <View style={styles.fieldWithTitle1}>
                   <View style={styles.titleBase}>
-                    <Text style={[styles.title, styles.titleTypo]}>Diseño</Text>
+                    <Text style={[styles.title, styles.titleTypo]}>
+                      Adjuntar foto
+                    </Text>
+                  </View>
+                  <View style={[styles.field, styles.fieldFlexBox]}>
+                    <View style={styles.placeholderInput}>
+                      <Text style={[styles.search, styles.searchLayout]}>
+                        Subir foto
+                      </Text>
+                    </View>
+                    <Image
+                      style={styles.iconlyboldupload}
+                      contentFit="cover"
+                      source={require('../assets/iconlyboldupload.png')}
+                    />
+                  </View>
+                </View>
+                <View style={styles.fieldWithTitle1}>
+                  <View style={styles.titleBase}>
+                    <Text style={[styles.title, styles.titleTypo]}>Para</Text>
                   </View>
                   <Pressable
                     style={[styles.field, styles.fieldFlexBox]}
-                    onPress={openFieldContainer}
+                    onPress={openFieldContainer3}
                   >
                     <View style={styles.placeholderInput}>
                       <Text style={[styles.search, styles.searchLayout]}>
-                        Seleccionar diseño
+                        Seleccione destinatarios
                       </Text>
                     </View>
                     <Image
@@ -112,125 +184,62 @@ const TarjetaDigital = () => {
                 </View>
                 <View style={styles.fieldWithTitle1}>
                   <View style={styles.titleBase}>
-                    <Text style={[styles.title, styles.titleTypo]}>
-                      Mensaje personalizado
-                    </Text>
+                    <Text style={[styles.title, styles.titleTypo]}>Firmas</Text>
                   </View>
                   <View style={[styles.field, styles.fieldFlexBox]}>
                     <View style={styles.placeholderInput}>
                       <Text style={[styles.search, styles.searchLayout]}>
-                        Plantillas de selección
+                        Etiquetar...
                       </Text>
                     </View>
-                    <Pressable
-                      style={styles.arrowDown2}
-                      onPress={openArrowDown2Icon}
-                    >
-                      <Image
-                        style={styles.icon1}
-                        contentFit="cover"
-                        source={require('../assets/arrowdown24.png')}
-                      />
-                    </Pressable>
+                    <Image
+                      style={[styles.iconlyboldfilter2, styles.backLayout]}
+                      contentFit="cover"
+                      source={require('../assets/iconlyboldfilter21.png')}
+                    />
                   </View>
-                </View>
-              </View>
-              <View style={styles.fieldWithTitle1}>
-                <View style={styles.titleBase}>
-                  <Text style={[styles.title, styles.titleTypo]}>
-                    Adjuntar foto
-                  </Text>
-                </View>
-                <View style={[styles.field, styles.fieldFlexBox]}>
-                  <View style={styles.placeholderInput}>
-                    <Text style={[styles.search, styles.searchLayout]}>
-                      Subir foto
-                    </Text>
-                  </View>
-                  <Image
-                    style={styles.iconlyboldupload}
-                    contentFit="cover"
-                    source={require('../assets/iconlyboldupload.png')}
-                  />
-                </View>
-              </View>
-              <View style={styles.fieldWithTitle1}>
-                <View style={styles.titleBase}>
-                  <Text style={[styles.title, styles.titleTypo]}>Para</Text>
-                </View>
-                <Pressable
-                  style={[styles.field, styles.fieldFlexBox]}
-                  onPress={openFieldContainer3}
-                >
-                  <View style={styles.placeholderInput}>
-                    <Text style={[styles.search, styles.searchLayout]}>
-                      Seleccione destinatarios
-                    </Text>
-                  </View>
-                  <Image
-                    style={[styles.iconlyboldfilter2, styles.backLayout]}
-                    contentFit="cover"
-                    source={require('../assets/iconlyboldfilter21.png')}
-                  />
-                </Pressable>
-              </View>
-              <View style={styles.fieldWithTitle1}>
-                <View style={styles.titleBase}>
-                  <Text style={[styles.title, styles.titleTypo]}>Firmas</Text>
-                </View>
-                <View style={[styles.field, styles.fieldFlexBox]}>
-                  <View style={styles.placeholderInput}>
-                    <Text style={[styles.search, styles.searchLayout]}>
-                      Etiquetar...
-                    </Text>
-                  </View>
-                  <Image
-                    style={[styles.iconlyboldfilter2, styles.backLayout]}
-                    contentFit="cover"
-                    source={require('../assets/iconlyboldfilter21.png')}
-                  />
                 </View>
               </View>
             </View>
-          </View>
-          <View style={styles.buttonBarParent}>
-            <View style={[styles.buttonBar, styles.fieldFlexBox]}>
-              <Pressable
-                style={[styles.button, styles.buttonSpaceBlock]}
-                onPress={() => navigation.navigate('MENSAJERA')}
-              >
-                <Text style={styles.signIn}>Cancelar</Text>
-              </Pressable>
+            <View style={styles.buttonBarParent}>
+              <View style={[styles.buttonBar, styles.fieldFlexBox]}>
+                <Pressable
+                  style={[styles.button, styles.buttonSpaceBlock]}
+                  onPress={() => navigation.navigate('MENSAJERA')}
+                >
+                  <Text style={styles.signIn}>Cancelar</Text>
+                </Pressable>
+                <LinearGradient
+                  style={styles.button1}
+                  locations={[0, 1]}
+                  colors={['#dee274', '#7ec18c']}
+                >
+                  <Pressable
+                    style={[styles.pressable, styles.pressableFlexBox]}
+                    onPress={openButtonContainer1}
+                  >
+                    <Text style={[styles.signIn1, styles.signTypo]}>
+                      Vista previa
+                    </Text>
+                  </Pressable>
+                </LinearGradient>
+              </View>
               <LinearGradient
-                style={styles.button1}
+                style={styles.button2}
                 locations={[0, 1]}
                 colors={['#dee274', '#7ec18c']}
               >
                 <Pressable
-                  style={[styles.pressable, styles.pressableFlexBox]}
-                  onPress={openButtonContainer1}
+                  style={[styles.pressable1, styles.pressableFlexBox]}
+                  onPress={openButtonContainer2}
                 >
-                  <Text style={[styles.signIn1, styles.signTypo]}>
-                    Vista previa
-                  </Text>
+                  <Text style={[styles.signIn2, styles.signTypo]}>Enviar</Text>
                 </Pressable>
               </LinearGradient>
             </View>
-            <LinearGradient
-              style={styles.button2}
-              locations={[0, 1]}
-              colors={['#dee274', '#7ec18c']}
-            >
-              <Pressable
-                style={[styles.pressable1, styles.pressableFlexBox]}
-                onPress={openButtonContainer2}
-              >
-                <Text style={[styles.signIn2, styles.signTypo]}>Enviar</Text>
-              </Pressable>
-            </LinearGradient>
           </View>
         </View>
-      </View>
+      </ScrollView>
 
       <Modal animationType="fade" transparent visible={fieldContainerVisible}>
         <View style={styles.fieldContainerOverlay}>
@@ -242,14 +251,46 @@ const TarjetaDigital = () => {
         </View>
       </Modal>
 
-      <Modal animationType="fade" transparent visible={arrowDown2IconVisible}>
-        <View style={styles.arrowDown2IconOverlay}>
-          <Pressable
-            style={styles.arrowDown2IconBg}
-            onPress={closeArrowDown2Icon}
-          />
-          <MensajePerzonalizado onClose={closeArrowDown2Icon} />
-        </View>
+      {/* <Modal animationType="fade" transparent visible={arrowDown2IconVisible}>
+        <TouchableWithoutFeedback onPress={closeArrowDown2Icon}>
+          <View style={styles.modalOverlay}>
+            <Pressable
+              style={styles.arrowDown2IconBg}
+              onPress={closeArrowDown2Icon}
+            />
+            <OpcionesModal
+              opciones={[
+                'Cumpleaños',
+                'Aniversario',
+                'Graduación',
+                'Nacimiento'
+              ]}
+              onClose={closeArrowDown2Icon}
+            />
+          </View>
+        </TouchableWithoutFeedback>
+      </Modal> */}
+
+      <Modal
+        animationType="fade"
+        transparent={true}
+        visible={arrowDown2IconVisible}
+      >
+        <TouchableWithoutFeedback onPress={closeArrowDown2Icon}>
+          <View style={styles.modalOverlay}>
+            <View>
+              <OpcionesModal
+                opciones={[
+                  'Cumpleaños',
+                  'Aniversario',
+                  'Graduación',
+                  'Nacimiento'
+                ]}
+                onClose={closeArrowDown2Icon}
+              />
+            </View>
+          </View>
+        </TouchableWithoutFeedback>
       </Modal>
 
       <Modal animationType="fade" transparent visible={fieldContainer3Visible}>
@@ -290,9 +331,11 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     width: '100%'
   },
-  frameParentPosition: {
-    left: 0,
-    position: 'absolute'
+  modalOverlay: {
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   titleTypo: {
     letterSpacing: 0,
@@ -335,17 +378,13 @@ const styles = StyleSheet.create({
     height: 55
   },
   image6Wrapper: {
-    top: 3,
+    top: 15,
     left: 20,
-    alignItems: 'center',
-    flexDirection: 'row',
-    position: 'absolute'
+    // alignItems: 'center',
+    flexDirection: 'row'
+    // position: 'absolute'
   },
-  navigationIcon: {
-    top: 821,
-    height: 105,
-    width: 428
-  },
+
   icon: {
     height: '100%'
   },
@@ -358,7 +397,6 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.lato
   },
   backParent: {
-    justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row'
   },
@@ -506,7 +544,12 @@ const styles = StyleSheet.create({
   },
   button1: {
     height: 52,
-    marginLeft: 20
+    marginLeft: 20,
+    alignItems: 'center',
+    borderRadius: Border.br_11xl,
+    paddingBottom: Padding.p_5xs,
+    paddingTop: Padding.p_6xs,
+    paddingHorizontal: Padding.p_base
   },
   buttonBar: {
     paddingVertical: Padding.p_3xs,
@@ -540,18 +583,19 @@ const styles = StyleSheet.create({
   },
   button2: {
     marginTop: 10,
-    width: 388
+    width: '100%',
+    borderRadius: Border.br_11xl,
+    paddingHorizontal: Padding.p_base
   },
   buttonBarParent: {
     marginTop: 80,
     alignItems: 'center'
   },
   frameParent: {
-    top: 78,
+    marginTop: 30,
     alignItems: 'center'
   },
   tarjetaDigital: {
-    borderRadius: Border.br_31xl,
     height: 926,
     flex: 1,
     backgroundColor: Color.white
