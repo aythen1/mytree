@@ -10,7 +10,7 @@ import {
 } from 'react-native'
 import { Image } from 'expo-image'
 
-const OpcionesModal = ({ opciones, visible, onClose, onAddOption }) => {
+const OpcionesModal = ({ opciones, visible, onClose, onAddOption, isAdd }) => {
   const [nuevaOpcion, setNuevaOpcion] = useState('')
   const [modoAgregar, setModoAgregar] = useState(false)
   const inputRef = useRef(null)
@@ -77,7 +77,9 @@ const OpcionesModal = ({ opciones, visible, onClose, onAddOption }) => {
               onPress={mostrarInput}
               style={styles.agregarButton}
             >
-              <Text style={styles.agregarButtonText}>+ Añadir</Text>
+              <Text style={styles.agregarButtonText}>
+                {isAdd ? '+ Añadir' : null}
+              </Text>
             </TouchableOpacity>
           )}
         </View>

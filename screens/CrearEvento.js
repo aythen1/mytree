@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState } from 'react'
 import {
   Text,
   StyleSheet,
@@ -6,7 +6,8 @@ import {
   Pressable,
   Modal,
   ScrollView,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
+  TextInput
 } from 'react-native'
 import { Image } from 'expo-image'
 import { LinearGradient } from 'expo-linear-gradient'
@@ -19,6 +20,27 @@ const CrearEvento = () => {
   const navigation = useNavigation()
 
   const [modalCreate, setModalCreate] = useState(false)
+  const [modalOpcionesVisible, setModalOpcionesVisible] = useState(false)
+  const [currentOptionsIndex, setCurrentOptionsIndex] = useState(0)
+
+  const options = [
+    ['Opcion 1', 'Opcion 2', 'Opcion 3'],
+    ['Lugar 1', 'Lugar 2', 'Lugar 3'],
+    ['Mensajeria MyTree', 'Correo postal', 'QR'],
+    ['Invitado 1', 'Invitado 2', 'Invitado 3']
+  ]
+
+  // const [title, setTitle] = useState(['Opcion 1', 'Opcion 2', 'Opcion 3'])
+  // const [sendForm, setSendForm] = useState([
+  //   'Mensajeria MyTree',
+  //   'Correo postal',
+  //   'QR'
+  // ])
+
+  const showOptionsArray = (index) => {
+    setCurrentOptionsIndex(index)
+    setModalOpcionesVisible(true)
+  }
 
   const onCloseModalCreate = () => {
     setModalCreate(false)
@@ -59,7 +81,7 @@ const CrearEvento = () => {
           </View>
           <Pressable
             style={[styles.field, styles.fieldSpaceBlock]}
-            onPress={() => setModalOpcionesVisible(true)}
+            onPress={() => showOptionsArray(0)}
           >
             <View style={styles.placeholderInput}>
               <Image
@@ -77,7 +99,7 @@ const CrearEvento = () => {
           </View>
           <Pressable
             style={[styles.field, styles.fieldSpaceBlock]}
-            onPress={() => setModalOpcionesVisible(true)}
+            // onPress={() => showOptionsArray(1)}
           >
             <View style={styles.placeholderInput}>
               <Image
@@ -95,7 +117,7 @@ const CrearEvento = () => {
           </View>
           <Pressable
             style={[styles.field, styles.fieldSpaceBlock]}
-            onPress={() => setModalOpcionesVisible(true)}
+            onPress={() => showOptionsArray(1)}
           >
             <View style={styles.placeholderInput}>
               <Image
@@ -133,7 +155,7 @@ const CrearEvento = () => {
           </View>
           <Pressable
             style={[styles.field, styles.fieldSpaceBlock]}
-            onPress={() => setModalOpcionesVisible(true)}
+            onPress={() => showOptionsArray(2)}
           >
             <View style={styles.placeholderInput}>
               <Image
@@ -151,7 +173,7 @@ const CrearEvento = () => {
           </View>
           <Pressable
             style={[styles.field, styles.fieldSpaceBlock]}
-            onPress={() => setModalOpcionesVisible(true)}
+            onPress={() => showOptionsArray(3)}
           >
             <View style={styles.placeholderInput}>
               <Image
@@ -174,11 +196,7 @@ const CrearEvento = () => {
             onPress={() => setModalOpcionesVisible(true)}
           >
             <View style={styles.placeholderInput}>
-              <Image
-                style={[styles.arrowDown2Icon, styles.arrowDown2IconLayout]}
-                contentFit="cover"
-                source={require('../assets/arrowdown24.png')}
-              />
+              <TextInput placeholder="Añadir #Codigo" />
             </View>
           </Pressable>
         </View>
@@ -191,14 +209,10 @@ const CrearEvento = () => {
           </View>
           <Pressable
             style={[styles.field, styles.fieldSpaceBlock]}
-            onPress={() => setModalOpcionesVisible(true)}
+            // onPress={() => showOptionsArray(4)}
           >
             <View style={styles.placeholderInput}>
-              <Image
-                style={[styles.arrowDown2Icon, styles.arrowDown2IconLayout]}
-                contentFit="cover"
-                source={require('../assets/arrowdown24.png')}
-              />
+              <Text>Si / No</Text>
             </View>
           </Pressable>
         </View>
@@ -263,6 +277,33 @@ const CrearEvento = () => {
                   onClose={onCloseModalCreate}
                   message={'Enviado!'}
                   isNavigate={'CALENDARIO'}
+                />
+              </View>
+            </View>
+          </TouchableWithoutFeedback>
+        </Modal>
+      )}
+
+      {modalOpcionesVisible && (
+        <Modal
+          animationType="fade"
+          transparent={true}
+          visible={modalOpcionesVisible}
+        >
+          <TouchableWithoutFeedback
+            onPress={() => setModalOpcionesVisible(false)}
+          >
+            <View style={styles.modalOverlay}>
+              <View>
+                <OpcionesModal
+                  opciones={options[currentOptionsIndex]}
+                  visible={modalOpcionesVisible}
+                  onClose={() => setModalOpcionesVisible(false)}
+                  onAddOption={(nuevaOpcion) => {
+                    options[currentOptionsIndex].push(nuevaOpcion)
+                    onCloseModalOpciones()
+                  }}
+                  isAdd={true}
                 />
               </View>
             </View>
@@ -481,6 +522,11 @@ const styles = StyleSheet.create({
   iconLayout: {
     height: '100%',
     width: '100%'
+  },
+  modalOverlay: {
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 })
 
