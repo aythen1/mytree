@@ -20,6 +20,7 @@ import Checkbox from 'expo-checkbox'
 import ENTRADACREADA from '../components/ENTRADACREADA'
 import { setPanel } from '../redux/slices/panel.slices'
 import Etapas from './Etapas'
+import Privacidad from './Privacidad'
 
 const Organizador = () => {
   const dispatch = useDispatch()
@@ -33,6 +34,7 @@ const Organizador = () => {
   const [frameContainer5Visible, setFrameContainer5Visible] = useState(false)
 
   const [showEtapas, setShowEtapas] = useState(false)
+  const [showPrivacidad, setShowPrivacidad] = useState(false)
 
   const openEtapas = useCallback(() => {
     setShowEtapas(true)
@@ -40,6 +42,14 @@ const Organizador = () => {
 
   const closeEtapas = useCallback(() => {
     setShowEtapas(false)
+  }, [])
+
+  const openPrivacidad = useCallback(() => {
+    setShowPrivacidad(true)
+  }, [])
+
+  const closePrivacidad = useCallback(() => {
+    setShowPrivacidad(false)
   }, [])
 
   const openButtonContainer1 = useCallback(() => {
@@ -275,7 +285,10 @@ const Organizador = () => {
                       source={require('../assets/line-802.png')}
                     />
                     <View style={[styles.frameView, styles.parentFlexBox]}>
-                      <View style={styles.opcionesDePrivacidadWrapper}>
+                      <Pressable
+                        style={styles.opcionesDePrivacidadWrapper}
+                        onPress={openPrivacidad}
+                      >
                         <Text
                           style={[
                             styles.opcionesDePrivacidad,
@@ -284,7 +297,7 @@ const Organizador = () => {
                         >
                           Opciones de Privacidad
                         </Text>
-                      </View>
+                      </Pressable>
                       <Image
                         style={styles.arrowDown2Icon1}
                         contentFit="cover"
@@ -312,6 +325,17 @@ const Organizador = () => {
         <View style={styles.buttonContainer1Overlay}>
           <Pressable style={styles.buttonContainer1Bg} onPress={closeEtapas}>
             <Etapas onClose={closeEtapas} />
+          </Pressable>
+        </View>
+      </Modal>
+
+      <Modal animationType="fade" transparent visible={showPrivacidad}>
+        <View style={styles.buttonContainer1Overlay}>
+          <Pressable
+            style={styles.buttonContainer1Bg}
+            onPress={closePrivacidad}
+          >
+            <Privacidad onClose={closePrivacidad} />
           </Pressable>
         </View>
       </Modal>
