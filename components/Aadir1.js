@@ -65,7 +65,7 @@ const Aadir1 = () => {
           >
             <View style={styles.vectorWrapper}>
               <Image
-                style={[styles.vectorIcon, styles.vectorIconPosition]}
+                style={[styles.iconlylightOutline3User]}
                 contentFit="cover"
                 source={require('../assets/vector45.png')}
               />
