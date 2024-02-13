@@ -156,7 +156,8 @@ const styles = StyleSheet.create({
   pressableFlexBox: {
     // justifyContent: 'center',
     alignItems: 'center',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    marginTop: 30
   },
   iconLayout: {
     height: 35,
@@ -264,13 +265,11 @@ const styles = StyleSheet.create({
     // position: 'absolute'
   },
   aadirAadirAncestro: {
-    borderRadius: Border.br_31xl,
     backgroundColor: Color.white,
     height: 926,
     overflow: 'hidden',
     width: '100%',
-    flex: 1,
-    top: 30
+    flex: 1
   }
 })
 

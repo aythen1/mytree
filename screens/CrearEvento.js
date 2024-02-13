@@ -27,7 +27,8 @@ const CrearEvento = () => {
     ['Opcion 1', 'Opcion 2', 'Opcion 3'],
     ['Lugar 1', 'Lugar 2', 'Lugar 3'],
     ['Mensajeria MyTree', 'Correo postal', 'QR'],
-    ['Invitado 1', 'Invitado 2', 'Invitado 3']
+    ['Invitado 1', 'Invitado 2', 'Invitado 3'],
+    ['Diseño 1', 'Diseño 2', 'Diseño 3']
   ]
 
   // const [title, setTitle] = useState(['Opcion 1', 'Opcion 2', 'Opcion 3'])
@@ -137,7 +138,7 @@ const CrearEvento = () => {
           </View>
           <Pressable
             style={[styles.field, styles.fieldSpaceBlock]}
-            onPress={() => setModalOpcionesVisible(true)}
+            onPress={() => showOptionsArray(4)}
           >
             <View style={styles.placeholderInput}>
               <Image

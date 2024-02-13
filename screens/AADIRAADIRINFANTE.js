@@ -280,8 +280,7 @@ const styles = StyleSheet.create({
     borderRadius: Border.br_3xs,
     backgroundColor: Color.fAFAFA,
     paddingHorizontal: Padding.p_xl,
-    paddingVertical: Padding.p_smi,
-    width: 388
+    paddingVertical: Padding.p_smi
   },
   fieldWithTitle1: {
     marginTop: 20
@@ -335,12 +334,11 @@ const styles = StyleSheet.create({
     top: 30
   },
   aadirAadirInfante: {
-    borderRadius: Border.br_31xl,
     backgroundColor: Color.white,
-    height: 926,
     width: '100%',
     flex: 1,
-    padding: 10
+    padding: 10,
+    paddingBottom: 70
   }
 })
 
