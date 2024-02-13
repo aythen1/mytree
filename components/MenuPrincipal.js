@@ -194,7 +194,10 @@ const MenuPrincipal = () => {
               />
               <Pressable
                 style={styles.muro}
-                onPress={() => navigation.navigate('PERFILCREARIDINFANTEANCE')}
+                onPress={() => {
+                  navigation.navigate('PERFILCREARIDINFANTEANCE')
+                  dispatch(setPanel(false))
+                }}
               >
                 <Text style={styles.muro1Typo}>Crear ID Infante/Ancestro</Text>
               </Pressable>
