@@ -4,8 +4,10 @@ import { StyleSheet, Text, View, Pressable, Modal } from 'react-native'
 import BuscadorPersona from '../components/BuscadorPersona'
 import { Color, FontSize, FontFamily, Border, Padding } from '../GlobalStyles'
 import Checkbox from 'expo-checkbox'
+import { useNavigation } from '@react-navigation/native'
 
 const BOTONInvitarAmigos1 = () => {
+  const navigation = useNavigation()
   const [isChecked, setChecked] = useState(false)
   const [frameContainerVisible, setFrameContainerVisible] = useState(false)
 
@@ -33,9 +35,12 @@ const BOTONInvitarAmigos1 = () => {
         <Text style={[styles.invitaFamiliares, styles.searchFlexBox]}>
           Invita familiares
         </Text>
-        <View style={[styles.button, styles.buttonFlexBox]}>
+        <Pressable
+          style={[styles.button, styles.buttonFlexBox]}
+          onPress={() => navigation.navigate('BOTONInvitarAmigos')}
+        >
           <Text style={styles.signIn}>Crear link de invitación</Text>
-        </View>
+        </Pressable>
         <View style={[styles.header, styles.headerLayout]}>
           <View style={[styles.searchBar, styles.buttonFlexBox]}>
             {/* <Image

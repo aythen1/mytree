@@ -38,7 +38,7 @@ const Aadir1 = () => {
           style={[styles.frameContainer, styles.frameFlexBox]}
           onPress={() => {
             dispatch(setPanelAddFooter(false))
-            navigation.navigate('BOTONInvitarAmigos')
+            navigation.navigate('BOTONInvitarAmigos1')
           }}
         >
           <View

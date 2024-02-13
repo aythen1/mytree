@@ -36,6 +36,10 @@ const Organizador = () => {
   const [showEtapas, setShowEtapas] = useState(false)
   const [showPrivacidad, setShowPrivacidad] = useState(false)
 
+  const closeSubmit = () => {
+    setSubmit(false)
+  }
+
   const openEtapas = useCallback(() => {
     setShowEtapas(true)
   }, [])
@@ -371,10 +375,14 @@ const Organizador = () => {
       </Modal>
 
       <Modal animationType="fade" transparent={true} visible={submit}>
-        <TouchableWithoutFeedback onPress={() => setSubmit(false)}>
+        <TouchableWithoutFeedback onPress={closeSubmit}>
           <View style={styles.modalOverlay}>
             <View>
-              <ENTRADACREADA setPopupCreate={setSubmit} />
+              <ENTRADACREADA
+                onClose={closeSubmit}
+                message={'Creado con exito'}
+                isNavigate={'Muro'}
+              />
             </View>
           </View>
         </TouchableWithoutFeedback>

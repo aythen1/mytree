@@ -62,7 +62,6 @@ const Privacidad = () => {
             </View>
             <View style={[styles.checkParent, styles.parentFlexBox]}>
               <View style={styles.check}>
-                {/* <View style={styles.checkChild} /> */}
                 <Checkbox value={check2} onValueChange={setCheck2} />
               </View>
               <View style={[styles.userParent, styles.parentFlexBox]}>
@@ -80,7 +79,6 @@ const Privacidad = () => {
             </View>
             <View style={[styles.checkParent, styles.parentFlexBox]}>
               <View style={styles.check}>
-                {/* <View style={styles.checkChild} /> */}
                 <Checkbox value={check3} onValueChange={setCheck3} />
               </View>
               <View style={[styles.userParent, styles.parentFlexBox]}>
