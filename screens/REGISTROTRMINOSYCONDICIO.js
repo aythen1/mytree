@@ -296,11 +296,8 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   registroTrminosYCondicio: {
-    // borderRadius: Border.br_31xl,
     flex: 1,
     width: '100%',
-    // height: 926,
-    // overflow: 'hidden',
     backgroundColor: Color.white
   }
 })

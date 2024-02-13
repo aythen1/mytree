@@ -19,6 +19,7 @@ import { FontSize, FontFamily, Color, Border, Padding } from '../GlobalStyles'
 import Checkbox from 'expo-checkbox'
 import ENTRADACREADA from '../components/ENTRADACREADA'
 import { setPanel } from '../redux/slices/panel.slices'
+import Etapas from './Etapas'
 
 const Organizador = () => {
   const dispatch = useDispatch()
@@ -30,6 +31,16 @@ const Organizador = () => {
   const [buttonContainer1Visible, setButtonContainer1Visible] = useState(false)
   const [frameContainer2Visible, setFrameContainer2Visible] = useState(false)
   const [frameContainer5Visible, setFrameContainer5Visible] = useState(false)
+
+  const [showEtapas, setShowEtapas] = useState(false)
+
+  const openEtapas = useCallback(() => {
+    setShowEtapas(true)
+  }, [])
+
+  const closeEtapas = useCallback(() => {
+    setShowEtapas(false)
+  }, [])
 
   const openButtonContainer1 = useCallback(() => {
     setButtonContainer1Visible(true)
@@ -212,7 +223,12 @@ const Organizador = () => {
                       source={require('../assets/line-802.png')}
                     />
                     <View style={[styles.frameContainer, styles.frameLayout]}>
-                      <View style={[styles.imageParent, styles.parentFlexBox]}>
+                      <Pressable
+                        style={[styles.imageParent, styles.parentFlexBox]}
+                        onPress={() => {
+                          openEtapas()
+                        }}
+                      >
                         <Image
                           style={styles.imageIcon}
                           contentFit="cover"
@@ -221,7 +237,8 @@ const Organizador = () => {
                         <Text style={[styles.aadirAudio, styles.etiquetarTypo]}>
                           Añadir a un álbum
                         </Text>
-                      </View>
+                      </Pressable>
+
                       <Image
                         style={[styles.arrowDown2Icon, styles.aadirPosition]}
                         contentFit="cover"
@@ -291,10 +308,18 @@ const Organizador = () => {
         </View>
       </ScrollView>
 
+      <Modal animationType="fade" transparent visible={showEtapas}>
+        <View style={styles.buttonContainer1Overlay}>
+          <Pressable style={styles.buttonContainer1Bg} onPress={closeEtapas}>
+            <Etapas onClose={closeEtapas} />
+          </Pressable>
+        </View>
+      </Modal>
+
       <Modal animationType="fade" transparent visible={buttonContainer1Visible}>
         <View style={styles.buttonContainer1Overlay}>
           <Pressable
-            style={styles.buttonContainer1Bg}
+            style={styles.frameContainer2Bg}
             onPress={closeButtonContainer1}
           />
           <Cancion1 onClose={closeButtonContainer1} />

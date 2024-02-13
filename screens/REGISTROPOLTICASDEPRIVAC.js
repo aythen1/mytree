@@ -142,7 +142,6 @@ const styles = StyleSheet.create({
   framePosition: {
     left: 0,
     top: 0
-    // position: 'absolute'
   },
   frameChildLayout: {
     height: 243,
@@ -250,7 +249,6 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   registroPolticasDePrivac: {
-    // borderRadius: Border.br_31xl,
     backgroundColor: Color.white,
     flex: 1,
     width: '100%',
