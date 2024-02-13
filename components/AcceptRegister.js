@@ -4,8 +4,10 @@ import { StyleSheet, View, Text, Pressable } from 'react-native'
 import Checkbox from 'expo-checkbox'
 
 import { Color, FontFamily, FontSize, Border } from '../GlobalStyles'
+import { useNavigation } from '@react-navigation/native'
 
 const AcceptRegister = () => {
+  const navigation = useNavigation()
   const [isChecked, setChecked] = useState(false)
 
   return (
@@ -21,14 +23,11 @@ const AcceptRegister = () => {
           value={isChecked}
           onValueChange={setChecked}
         />
-        {/* <View style={styles.check}>
-          <View style={styles.checkChild} />
-        </View> */}
         <View
           style={[styles.aceptoLosTrminosYCondicioParent, styles.parentFlexBox]}
         >
           <Pressable
-          // onPress={() => navigation.navigate('REGISTROTRMINOSYCONDICIO')}
+            onPress={() => navigation.navigate('REGISTROTRMINOSYCONDICIO')}
           >
             <Text style={[styles.text, styles.textLayout]}>
               <Text style={[styles.aceptoLos, styles.labelledClr]}>
@@ -41,7 +40,9 @@ const AcceptRegister = () => {
 `}</Text>
             </Text>
           </Pressable>
-          <Pressable>
+          <Pressable
+            onPress={() => navigation.navigate('REGISTROPOLTICASDEPRIVAC')}
+          >
             <Text style={styles.textLayout}>
               <Text style={[styles.aceptoLos, styles.labelledClr]}>
                 {'así como también el '}

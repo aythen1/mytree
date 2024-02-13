@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Image } from 'expo-image'
-import { StyleSheet, View, Pressable, Text } from 'react-native'
+import { StyleSheet, View, Pressable, Text, ScrollView } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
 import { Color, FontFamily, FontSize, Border } from '../GlobalStyles'
@@ -9,142 +9,145 @@ const REGISTROPOLTICASDEPRIVAC = () => {
   const navigation = useNavigation()
 
   return (
-    <View style={styles.registroPolticasDePrivac}>
-      <Image
-        style={styles.vectorIcon}
-        contentFit="cover"
-        source={require('../assets/vector71.png')}
-      />
-      <View style={[styles.frameParent, styles.framePosition]}>
-        <View style={styles.frameChildLayout}>
-          <LinearGradient
-            style={[styles.frameChild, styles.frameChildLayout]}
-            locations={[0, 1]}
-            colors={['#7ec18c', '#dee274']}
-          />
-          <View style={styles.rectangleGroup}>
-            <Pressable
-              style={styles.frameItem}
-              onPress={() => navigation.navigate('REGISTROTELFONO')}
+    <ScrollView style={{ flex: 1 }}>
+      <View style={styles.registroPolticasDePrivac}>
+        <Image
+          style={styles.vectorIcon}
+          contentFit="cover"
+          source={require('../assets/vector71.png')}
+        />
+        <View style={[styles.frameParent, styles.framePosition]}>
+          <View style={styles.frameChildLayout}>
+            <LinearGradient
+              style={[styles.frameChild, styles.frameChildLayout]}
+              locations={[0, 1]}
+              colors={['#7ec18c', '#dee274']}
             />
-            <Image
-              style={styles.backButtonIcon}
-              contentFit="cover"
-              source={require('../assets/back-button1.png')}
-            />
+            <View style={styles.rectangleGroup}>
+              <Pressable
+                style={styles.frameItem}
+                onPress={() => navigation.goBack()}
+              />
+              <Image
+                style={styles.backButtonIcon}
+                contentFit="cover"
+                source={require('../assets/back-button1.png')}
+              />
+            </View>
+            <Text style={styles.registrate}>¡REGISTRATE!</Text>
           </View>
-          <Text style={styles.registrate}>¡REGISTRATE!</Text>
-        </View>
-        <View style={styles.frameGroup}>
-          <View style={styles.polticaDePrivacidadLtimaWrapper}>
-            <Text style={styles.polticaDePrivacidadContainer}>
-              <Text style={styles.polticaDePrivacidad}>{`Política de Privacidad
+          <View style={styles.frameGroup}>
+            <View style={styles.polticaDePrivacidadLtimaWrapper}>
+              <Text style={styles.polticaDePrivacidadContainer}>
+                <Text
+                  style={styles.polticaDePrivacidad}
+                >{`Política de Privacidad
 `}</Text>
-              <Text style={styles.ltimaActualizacin2310202}>
-                {`Última actualización: 23/10/2023
+                <Text style={styles.ltimaActualizacin2310202}>
+                  {`Última actualización: 23/10/2023
 Esta Política de Privacidad describe cómo MyTree ("nosotros", "nuestro", "nuestra") recopila, utiliza y comparte información personal cuando utilizas nuestros servicios o interactúas con nuestro sitio web [`}
-              </Text>
-              <Text style={styles.ltimaActualizacin2310202}>
-                <Text style={styles.wwwmytreecom1}>www.mytree.com</Text>
-              </Text>
-              <Text style={styles.ltimaActualizacin2310202}>{`] (el "Sitio").
+                </Text>
+                <Text style={styles.ltimaActualizacin2310202}>
+                  <Text style={styles.wwwmytreecom1}>www.mytree.com</Text>
+                </Text>
+                <Text style={styles.ltimaActualizacin2310202}>{`] (el "Sitio").
 `}</Text>
-              <Text
-                style={styles.polticaDePrivacidad}
-              >{`Información que Recopilamos
+                <Text
+                  style={styles.polticaDePrivacidad}
+                >{`Información que Recopilamos
 Información Personal:`}</Text>
-              <Text
-                style={styles.ltimaActualizacin2310202}
-              >{` Cuando utilizas nuestro Sitio, podemos recopilar cierta información personal como tu nombre, dirección de correo electrónico, número de teléfono, entre otros. Esta información se recopila de manera voluntaria cuando la proporcionas al registrarte, realizar compras o completar formularios en el Sitio.
+                <Text
+                  style={styles.ltimaActualizacin2310202}
+                >{` Cuando utilizas nuestro Sitio, podemos recopilar cierta información personal como tu nombre, dirección de correo electrónico, número de teléfono, entre otros. Esta información se recopila de manera voluntaria cuando la proporcionas al registrarte, realizar compras o completar formularios en el Sitio.
 `}</Text>
-              <Text style={styles.polticaDePrivacidad}>
-                Información de Uso:
-              </Text>
-              <Text
-                style={styles.ltimaActualizacin2310202}
-              >{` También recopilamos información sobre cómo interactúas con nuestro Sitio, como las páginas que visitas, la duración de tu visita y las acciones que realizas.
+                <Text style={styles.polticaDePrivacidad}>
+                  Información de Uso:
+                </Text>
+                <Text
+                  style={styles.ltimaActualizacin2310202}
+                >{` También recopilamos información sobre cómo interactúas con nuestro Sitio, como las páginas que visitas, la duración de tu visita y las acciones que realizas.
 `}</Text>
-              <Text
-                style={styles.polticaDePrivacidad}
-              >{`Cómo Utilizamos tu Información
+                <Text
+                  style={styles.polticaDePrivacidad}
+                >{`Cómo Utilizamos tu Información
 `}</Text>
-              <Text
-                style={styles.ltimaActualizacin2310202}
-              >{`Utilizamos la información recopilada para los siguientes propósitos:
+                <Text
+                  style={styles.ltimaActualizacin2310202}
+                >{`Utilizamos la información recopilada para los siguientes propósitos:
 Procesar tus pedidos y brindarte los productos o servicios solicitados.
 Personalizar y mejorar tu experiencia en el Sitio.
 Enviarte información sobre promociones, ofertas y actualizaciones sobre nuestros productos o servicios.
 Responder a tus preguntas o solicitudes de servicio al cliente.
 Cumplir con las leyes y regulaciones aplicables.
 `}</Text>
-              <Text style={styles.polticaDePrivacidad}>{`Compartir Información
+                <Text style={styles.polticaDePrivacidad}>{`Compartir Información
 `}</Text>
-              <Text
-                style={styles.ltimaActualizacin2310202}
-              >{`No compartimos tu información personal con terceros, excepto en las siguientes situaciones:
+                <Text
+                  style={styles.ltimaActualizacin2310202}
+                >{`No compartimos tu información personal con terceros, excepto en las siguientes situaciones:
 Con proveedores de servicios que nos ayudan a ofrecer nuestros productos y servicios.
 Para cumplir con la ley o responder a solicitudes legales, como una orden judicial o una citación.
 `}</Text>
-              <Text
-                style={styles.polticaDePrivacidad}
-              >{`Seguridad de la Información
+                <Text
+                  style={styles.polticaDePrivacidad}
+                >{`Seguridad de la Información
 `}</Text>
-              <Text
-                style={styles.ltimaActualizacin2310202}
-              >{`Implementamos medidas de seguridad para proteger tu información contra accesos no autorizados, alteraciones, divulgaciones o destrucciones no autorizadas.
+                <Text
+                  style={styles.ltimaActualizacin2310202}
+                >{`Implementamos medidas de seguridad para proteger tu información contra accesos no autorizados, alteraciones, divulgaciones o destrucciones no autorizadas.
 `}</Text>
-              <Text style={styles.polticaDePrivacidad}>{`Tus Derechos
+                <Text style={styles.polticaDePrivacidad}>{`Tus Derechos
 `}</Text>
-              <Text
-                style={styles.ltimaActualizacin2310202}
-              >{`Tienes derecho a acceder, corregir o eliminar tu información personal. Puedes hacerlo contactándonos a través de [correo electrónico o formulario de contacto]. También tienes el derecho de optar por no recibir comunicaciones de marketing.
+                <Text
+                  style={styles.ltimaActualizacin2310202}
+                >{`Tienes derecho a acceder, corregir o eliminar tu información personal. Puedes hacerlo contactándonos a través de [correo electrónico o formulario de contacto]. También tienes el derecho de optar por no recibir comunicaciones de marketing.
 `}</Text>
-              <Text
-                style={styles.polticaDePrivacidad}
-              >{`Cambios en esta Política de Privacidad
+                <Text
+                  style={styles.polticaDePrivacidad}
+                >{`Cambios en esta Política de Privacidad
 `}</Text>
-              <Text
-                style={styles.ltimaActualizacin2310202}
-              >{`Nos reservamos el derecho de actualizar o modificar esta Política de Privacidad en cualquier momento. Te notificaremos sobre cambios significativos a través de un aviso en nuestro Sitio o por otros medios.
+                <Text
+                  style={styles.ltimaActualizacin2310202}
+                >{`Nos reservamos el derecho de actualizar o modificar esta Política de Privacidad en cualquier momento. Te notificaremos sobre cambios significativos a través de un aviso en nuestro Sitio o por otros medios.
 `}</Text>
-              <Text style={styles.polticaDePrivacidad}>{`Contacto
+                <Text style={styles.polticaDePrivacidad}>{`Contacto
 `}</Text>
-              <Text
-                style={styles.ltimaActualizacin2310202}
-              >{`Si tienes preguntas o inquietudes sobre esta Política de Privacidad, por favor contáctanos a través de [correo electrónico o dirección física].
+                <Text
+                  style={styles.ltimaActualizacin2310202}
+                >{`Si tienes preguntas o inquietudes sobre esta Política de Privacidad, por favor contáctanos a través de [correo electrónico o dirección física].
 `}</Text>
-            </Text>
-          </View>
-          <View style={styles.labelledParent}>
-            <Pressable
-              onPress={() => navigation.navigate('REGISTROPRIVACIDAD')}
-            >
-              <Text style={[styles.volver, styles.volverTypo]}>
-                {'< Volver '}
               </Text>
-            </Pressable>
-            <Pressable
-              style={styles.labelled1}
-              onPress={() => navigation.navigate('Success')}
-            >
-              <Text style={styles.volverTypo}>{'Continuar >'}</Text>
-            </Pressable>
+            </View>
+            <View style={styles.labelledParent}>
+              <Pressable onPress={() => navigation.goBack()}>
+                <Text style={[styles.volver, styles.volverTypo]}>
+                  {'< Volver '}
+                </Text>
+              </Pressable>
+              <Pressable
+                style={styles.labelled1}
+                onPress={() => navigation.navigate('Success')}
+              >
+                <Text style={styles.volverTypo}>{'Continuar >'}</Text>
+              </Pressable>
+            </View>
           </View>
         </View>
       </View>
-    </View>
+    </ScrollView>
   )
 }
 
 const styles = StyleSheet.create({
   framePosition: {
     left: 0,
-    top: 0,
-    position: 'absolute'
+    top: 0
   },
   frameChildLayout: {
     height: 243,
-    width: 428
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   volverTypo: {
     color: Color.primario1,
@@ -174,8 +177,10 @@ const styles = StyleSheet.create({
     position: 'absolute'
   },
   frameItem: {
-    width: 29,
-    height: 28,
+    left: 15,
+    top: 15,
+    width: 35,
+    height: 35,
     zIndex: 0
   },
   backButtonIcon: {
@@ -192,8 +197,6 @@ const styles = StyleSheet.create({
     position: 'absolute'
   },
   registrate: {
-    top: 111,
-    left: 137,
     lineHeight: 24,
     color: Color.white,
     textAlign: 'center',
@@ -246,7 +249,6 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   registroPolticasDePrivac: {
-    borderRadius: Border.br_31xl,
     backgroundColor: Color.white,
     flex: 1,
     width: '100%',

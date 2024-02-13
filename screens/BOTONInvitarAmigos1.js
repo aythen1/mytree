@@ -1,13 +1,28 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import { Image } from 'expo-image'
-import { StyleSheet, Text, View, Pressable, Modal } from 'react-native'
-import BuscadorPersona from '../components/BuscadorPersona'
+import {
+  StyleSheet,
+  Text,
+  View,
+  Pressable,
+  Modal,
+  TouchableWithoutFeedback
+} from 'react-native'
 import { Color, FontSize, FontFamily, Border, Padding } from '../GlobalStyles'
 import Checkbox from 'expo-checkbox'
+import { useNavigation } from '@react-navigation/native'
+import OpcionesModal from './../components/OpcionesModal'
+import { useSelector } from 'react-redux'
 
 const BOTONInvitarAmigos1 = () => {
+  const navigation = useNavigation()
+  const { contacts } = useSelector((state) => state.contacts)
   const [isChecked, setChecked] = useState(false)
   const [frameContainerVisible, setFrameContainerVisible] = useState(false)
+
+  const pushName = []
+
+  const mapcontacts = contacts.map((contact) => pushName.concat(contact.name))
 
   const openFrameContainer = useCallback(() => {
     setFrameContainerVisible(true)
@@ -33,16 +48,14 @@ const BOTONInvitarAmigos1 = () => {
         <Text style={[styles.invitaFamiliares, styles.searchFlexBox]}>
           Invita familiares
         </Text>
-        <View style={[styles.button, styles.buttonFlexBox]}>
+        <Pressable
+          style={[styles.button, styles.buttonFlexBox]}
+          onPress={() => navigation.navigate('BOTONInvitarAmigos')}
+        >
           <Text style={styles.signIn}>Crear link de invitación</Text>
-        </View>
+        </Pressable>
         <View style={[styles.header, styles.headerLayout]}>
           <View style={[styles.searchBar, styles.buttonFlexBox]}>
-            {/* <Image
-              style={styles.iconlylightOutlinesearch}
-              contentFit="cover"
-              source={require('../assets/iconlylightoutlinesearch7.png')}
-            /> */}
             <Checkbox
               style={styles.checkbox}
               value={isChecked}
@@ -63,21 +76,24 @@ const BOTONInvitarAmigos1 = () => {
             />
           </Pressable>
         </View>
-        <Image
-          style={[styles.navigationIcon, styles.headerLayout]}
-          contentFit="cover"
-          source={require('../assets/navigation16.png')}
-        />
       </View>
 
-      <Modal animationType="fade" transparent visible={frameContainerVisible}>
-        <View style={styles.frameContainerOverlay}>
-          <Pressable
-            style={styles.frameContainerBg}
-            onPress={closeFrameContainer}
-          />
-          <BuscadorPersona onClose={closeFrameContainer} />
-        </View>
+      <Modal
+        animationType="fade"
+        transparent={true}
+        visible={frameContainerVisible}
+      >
+        <TouchableWithoutFeedback onPress={closeFrameContainer}>
+          <View style={styles.modalOverlay}>
+            <View>
+              <OpcionesModal
+                opciones={mapcontacts}
+                visible={frameContainerVisible}
+                onClose={closeFrameContainer}
+              />
+            </View>
+          </View>
+        </TouchableWithoutFeedback>
       </Modal>
     </>
   )
@@ -87,6 +103,12 @@ const styles = StyleSheet.create({
   iconPosition: {
     left: 20,
     position: 'absolute'
+  },
+  modalOverlay: {
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   searchFlexBox: {
     textAlign: 'left',

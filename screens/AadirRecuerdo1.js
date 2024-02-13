@@ -3,7 +3,6 @@ import { Image } from 'expo-image'
 import { StyleSheet, Pressable, Text, View, ScrollView } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { FontFamily, Color, Border, FontSize, Padding } from '../GlobalStyles'
-// import { recents } from './utils/memoryRecent'
 import { useSelector } from 'react-redux'
 
 const AadirRecuerdo1 = () => {
@@ -102,84 +101,9 @@ const AadirRecuerdo1 = () => {
                   source={memory.image}
                 />
               ))}
-              {/* <Image
-                style={styles.maskGroupLayout}
-                contentFit="cover"
-                source={require('../assets/mask-group.png')}
-              />
-              <Image
-                style={[styles.maskGroupIcon1, styles.maskGroupLayout]}
-                contentFit="cover"
-                source={require('../assets/mask-group1.png')}
-              />
-              <Image
-                style={[styles.maskGroupIcon1, styles.maskGroupLayout]}
-                contentFit="cover"
-                source={require('../assets/mask-group2.png')}
-              />
-              <Image
-                style={[styles.maskGroupIcon1, styles.maskGroupLayout]}
-                contentFit="cover"
-                source={require('../assets/mask-group3.png')}
-              />
-              <Image
-                style={[styles.maskGroupIcon1, styles.maskGroupLayout]}
-                contentFit="cover"
-                source={require('../assets/mask-group4.png')}
-              />
-              <Image
-                style={[styles.maskGroupIcon1, styles.maskGroupLayout]}
-                contentFit="cover"
-                source={require('../assets/mask-group5.png')}
-              />
-              <Image
-                style={[styles.maskGroupIcon1, styles.maskGroupLayout]}
-                contentFit="cover"
-                source={require('../assets/mask-group6.png')}
-              />
-              <Image
-                style={[styles.maskGroupIcon1, styles.maskGroupLayout]}
-                contentFit="cover"
-                source={require('../assets/mask-group7.png')}
-              />
-              <Image
-                style={[styles.maskGroupIcon1, styles.maskGroupLayout]}
-                contentFit="cover"
-                source={require('../assets/mask-group8.png')}
-              />
-              <Image
-                style={[styles.maskGroupIcon1, styles.maskGroupLayout]}
-                contentFit="cover"
-                source={require('../assets/mask-group9.png')}
-              />
-              <Image
-                style={[styles.maskGroupIcon1, styles.maskGroupLayout]}
-                contentFit="cover"
-                source={require('../assets/mask-group10.png')}
-              />
-              <Image
-                style={[styles.maskGroupIcon1, styles.maskGroupLayout]}
-                contentFit="cover"
-                source={require('../assets/mask-group11.png')}
-              /> */}
             </View>
-            {/* <View style={styles.selectMultiple2}>
-              <View style={[styles.rectangle2, styles.rectanglePosition]} />
-              <Text style={styles.selectMultiple3}>PUBLICAR</Text>
-              <Text style={[styles.selectMultiple4, styles.selectTypo]}>
-                HISTORIA
-              </Text>
-              <Text style={[styles.selectMultiple5, styles.selectTypo]}>
-                REEL
-              </Text>
-            </View> */}
           </View>
         </View>
-        {/* <Image
-          style={styles.navigationIcon}
-          contentFit="cover"
-          source={require('../assets/navigation4.png')}
-        /> */}
       </ScrollView>
     </View>
   )

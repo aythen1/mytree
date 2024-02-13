@@ -38,7 +38,7 @@ const Aadir1 = () => {
           style={[styles.frameContainer, styles.frameFlexBox]}
           onPress={() => {
             dispatch(setPanelAddFooter(false))
-            navigation.navigate('BOTONInvitarAmigos')
+            navigation.navigate('BOTONInvitarAmigos1')
           }}
         >
           <View
@@ -65,7 +65,7 @@ const Aadir1 = () => {
           >
             <View style={styles.vectorWrapper}>
               <Image
-                style={[styles.vectorIcon, styles.vectorIconPosition]}
+                style={[styles.iconlylightOutline3User]}
                 contentFit="cover"
                 source={require('../assets/vector45.png')}
               />
