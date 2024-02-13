@@ -75,14 +75,18 @@ const CALENDARIO = () => {
           <View style={styles.upcomingParent}>
             <Text style={[styles.upcoming, styles.textTypo]}>UPCOMING</Text>
             <View style={styles.iconlyboldfilter2Parent}>
-              <Image
-                style={[
-                  styles.iconlyboldfilter21,
-                  styles.iconlyboldfilterLayout
-                ]}
-                contentFit="cover"
-                source={require('../assets/iconlyboldfilter21.png')}
-              />
+              <Pressable
+                onPress={() => navigation.navigate('RecopilacionDeRespuestas')}
+              >
+                <Image
+                  style={[
+                    styles.iconlyboldfilter21,
+                    styles.iconlyboldfilterLayout
+                  ]}
+                  contentFit="cover"
+                  source={require('../assets/iconlyboldfilter21.png')}
+                />
+              </Pressable>
               <Pressable
                 style={styles.iconlyboldplus}
                 onPress={() => navigation.navigate('CALENDARIOCREARFECHAESPEC')}
