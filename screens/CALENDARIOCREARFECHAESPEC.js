@@ -259,6 +259,7 @@ const CALENDARIOCREARFECHAESPEC = () => {
                       ])
                       setModalOpcionesVisible(false)
                     }}
+                    isAdd={true}
                   />
                 </View>
               </View>
