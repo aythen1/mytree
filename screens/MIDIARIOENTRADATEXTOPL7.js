@@ -82,9 +82,7 @@ const MIDIARIOENTRADATEXTOPL7 = () => {
           contentFit="cover"
           source={require('../assets/image-6.png')}
         />
-        {/* <View style={styles.parentFlexBox}> */}
         <HeaderIcons icons={[<LupaSVG />, <BookSVG />, <SettingMuroSVG />]} />
-        {/* </View> */}
       </View>
 
       <NavBarDiario setIsSection={setIsSection} isSection={isSection} />
