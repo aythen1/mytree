@@ -21,6 +21,10 @@ import RisaAnecdotas from '../components/RisaAnecdotas'
 import Personalizada from '../components/Personalizada'
 import NavMedia from '../components/NavMedia'
 import ENTRADACREADA from '../components/ENTRADACREADA'
+import LupaSVG from '../components/svgs/LupaSVG'
+import BookSVG from '../components/svgs/BookSVG'
+import SettingMuroSVG from '../components/svgs/SettingMuroSVG'
+import HeaderIcons from '../components/HeaderIcons'
 
 const MIDIARIOENTRADATEXTOPL7 = () => {
   const navigation = useNavigation()
@@ -63,76 +67,30 @@ const MIDIARIOENTRADATEXTOPL7 = () => {
 
   return (
     <View style={styles.miDiarioEntradaTextoPl}>
-      <LinearGradient
-        style={[
-          styles.miDiarioEntradaTextoPlChild,
-          styles.navigationIconLayout
-        ]}
-        locations={[0, 1]}
-        colors={['rgba(221, 219, 246, 0.37)', 'rgba(245, 245, 247, 0)']}
-      />
-      <NavBarDiario setIsSection={setIsSection} isSection={isSection} />
-
-      <Pressable
-        style={[styles.frameParent, styles.image6IconPosition]}
-        onPress={() => {
-          setShowEdit(!showEdit)
-          // navigation.navigate('MIDIARIOENTRADATEXTOPL1')
+      <View
+        style={{
+          top: 10,
+          height: 80,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          paddingHorizontal: 15
         }}
       >
-        {showEdit && (
-          <View style={styles.groupParent}>
-            <Pressable
-              style={styles.wrapper}
-              onPress={() => setShowEdit(false)}
-            >
-              <Image
-                style={styles.icon}
-                contentFit="cover"
-                source={require('../assets/group-68463.png')}
-              />
-            </Pressable>
-            <View style={styles.groupFlexBox}>
-              <Pressable style={styles.wrapper} onPress={openGroupIcon1}>
-                <Image
-                  style={styles.icon}
-                  contentFit="cover"
-                  source={require('../assets/group2.png')}
-                />
-              </Pressable>
-              <LinearGradient
-                style={styles.container}
-                locations={[0, 1]}
-                colors={['#dee274', '#7ec18c']}
-              >
-                <Pressable
-                  style={[styles.pressable]}
-                  onPress={() => setModalCreate(true)}
-                >
-                  <Text style={[styles.signIn, styles.ttTypo]}>Guardar</Text>
-                </Pressable>
-              </LinearGradient>
-            </View>
-          </View>
-        )}
+        <Image
+          style={styles.image6Icon}
+          contentFit="cover"
+          source={require('../assets/image-6.png')}
+        />
+        {/* <View style={styles.parentFlexBox}> */}
+        <HeaderIcons icons={[<LupaSVG />, <BookSVG />, <SettingMuroSVG />]} />
+        {/* </View> */}
+      </View>
 
-        {modalCreate && (
-          <Modal animationType="fade" transparent={true} visible={modalCreate}>
-            <TouchableWithoutFeedback onPress={() => setModalCreate(false)}>
-              <View style={styles.modalOverlay}>
-                <View>
-                  <ENTRADACREADA
-                    onClose={onCloseModalCreate}
-                    message={'Entrada Creada'}
-                    isNavigate={'MIDIARIOPANTALLAPERSONAL'}
-                  />
-                </View>
-              </View>
-            </TouchableWithoutFeedback>
-          </Modal>
-        )}
+      <NavBarDiario setIsSection={setIsSection} isSection={isSection} />
 
-        {!showEdit && (
+      <View style={{ flex: 1, marginTop: 20, width: '100%' }}>
+        {!showEdit ? (
           <Pressable
             style={{ flexDirection: 'row', alignItems: 'center' }}
             onPress={() => setShowEdit(!showEdit)}
@@ -145,44 +103,80 @@ const MIDIARIOENTRADATEXTOPL7 = () => {
               source={require('../assets/iconlycurvedarrowdown2.png')}
             />
           </Pressable>
+        ) : (
+          <Pressable
+            style={styles.frameParent}
+            onPress={() => {
+              setShowEdit(!showEdit)
+              // navigation.navigate('MIDIARIOENTRADATEXTOPL1')
+            }}
+          >
+            {showEdit && (
+              <View style={styles.groupParent}>
+                <Pressable
+                  style={styles.wrapper}
+                  onPress={() => setShowEdit(false)}
+                >
+                  <Image
+                    style={styles.icon}
+                    contentFit="cover"
+                    source={require('../assets/group-68463.png')}
+                  />
+                </Pressable>
+                <View style={styles.groupFlexBox}>
+                  <Pressable style={styles.wrapper} onPress={openGroupIcon1}>
+                    <Image
+                      style={styles.icon}
+                      contentFit="cover"
+                      source={require('../assets/group2.png')}
+                    />
+                  </Pressable>
+                  <LinearGradient
+                    style={styles.container}
+                    locations={[0, 1]}
+                    colors={['#dee274', '#7ec18c']}
+                  >
+                    <Pressable
+                      style={[styles.pressable]}
+                      onPress={() => setModalCreate(true)}
+                    >
+                      <Text style={[styles.signIn, styles.ttTypo]}>
+                        Guardar
+                      </Text>
+                    </Pressable>
+                  </LinearGradient>
+                </View>
+              </View>
+            )}
+
+            {modalCreate && (
+              <Modal
+                animationType="fade"
+                transparent={true}
+                visible={modalCreate}
+              >
+                <TouchableWithoutFeedback onPress={() => setModalCreate(false)}>
+                  <View style={styles.modalOverlay}>
+                    <View>
+                      <ENTRADACREADA
+                        onClose={onCloseModalCreate}
+                        message={'Entrada Creada'}
+                        isNavigate={'MIDIARIOPANTALLAPERSONAL'}
+                      />
+                    </View>
+                  </View>
+                </TouchableWithoutFeedback>
+              </Modal>
+            )}
+          </Pressable>
         )}
 
         {/* renderizado de secciones */}
         {renderSection(isSection)}
         {/* -------------------- */}
-      </Pressable>
-
-      <NavMedia />
-
-      <Image
-        style={[styles.image6Icon, styles.image6IconPosition]}
-        contentFit="cover"
-        source={require('../assets/image-6.png')}
-      />
-      <View
-        style={[styles.iconlylightOutlinesearchParent, styles.parentFlexBox]}
-      >
-        <Image
-          style={styles.iconlylightOutlinesearch}
-          contentFit="cover"
-          source={require('../assets/iconlylightoutlinesearch5.png')}
-        />
-        <Image
-          style={[styles.documentIcon, styles.documentIconLayout]}
-          contentFit="cover"
-          source={require('../assets/document3.png')}
-        />
-        <Image
-          style={styles.documentIconLayout}
-          contentFit="cover"
-          source={require('../assets/iconlylightoutlinesetting1.png')}
-        />
       </View>
-      <Image
-        style={[styles.navigationIcon, styles.navigationIconLayout]}
-        contentFit="cover"
-        source={require('../assets/navigation25.png')}
-      />
+
+      {showEdit && <NavMedia />}
 
       <Modal animationType="fade" transparent visible={groupIcon1Visible}>
         <View style={styles.groupIcon1Overlay}>
@@ -195,9 +189,6 @@ const MIDIARIOENTRADATEXTOPL7 = () => {
 }
 
 const styles = StyleSheet.create({
-  navigationIconLayout: {
-    position: 'absolute'
-  },
   modalOverlay: {
     height: '100%',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
@@ -209,7 +200,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: 5,
     alignItems: 'center'
-    // backgroundColor: 'red'
   },
   groupFlexBox: {
     // width: '100%',
@@ -218,7 +208,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   pressable: {
-    borderRadius: Border.br_11xl,
+    // borderRadius: Border.br_11xl,
     paddingHorizontal: Padding.p_base,
     paddingTop: Padding.p_6xs,
     paddingBottom: Padding.p_5xs,
@@ -245,10 +235,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: FontFamily.lato,
     letterSpacing: 0
-  },
-  image6IconPosition: {
-    left: 20,
-    position: 'absolute'
   },
   parentFlexBox: {
     flexDirection: 'row',
@@ -294,10 +280,6 @@ const styles = StyleSheet.create({
     backgroundColor: Color.secundario,
     borderRadius: Border.br_8xs
   },
-  vectorIconPosition1: {
-    zIndex: 1,
-    position: 'absolute'
-  },
   vectorIconPosition: {
     left: 7,
     zIndex: 1,
@@ -309,7 +291,7 @@ const styles = StyleSheet.create({
     backgroundColor: Color.linearBoton,
     left: 0,
     top: 64,
-    width: 428
+    width: '100%'
   },
   text: {
     fontWeight: '700',
@@ -339,16 +321,16 @@ const styles = StyleSheet.create({
     fontSize: FontSize.size_lg,
     lineHeight: 27,
     display: 'flex',
-    alignItems: 'center',
-    flex: 1
+    alignItems: 'center'
+    // flex: 1
   },
   frameParent: {
-    top: 133,
-    width: 388,
-    height: 301
+    // top: 133,
+    width: '100%'
+    // height: 301
   },
   image6Icon: {
-    top: 3,
+    // top: 3,
     width: 87,
     height: 55
   },
@@ -360,12 +342,12 @@ const styles = StyleSheet.create({
     overflow: 'hidden'
   },
   iconlylightOutlinesearchParent: {
-    top: 20,
-    left: 276,
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row',
-    position: 'absolute'
+    // top: 20,
+    // left: 276,
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    // flexDirection: 'row'
+    // position: 'absolute'
   },
   navigationIcon: {
     marginLeft: -214,
@@ -424,24 +406,10 @@ const styles = StyleSheet.create({
     maxHeight: '100%',
     overflow: 'hidden'
   },
-  frameGroup: {
-    backgroundColor: Color.colorHoneydew_100,
-    height: 49,
-    paddingLeft: Padding.p_xs,
-    paddingRight: Padding.p_xl,
-    borderRadius: Border.br_8xs,
-    justifyContent: 'space-between',
-    flexDirection: 'row',
-    width: 428,
-    left: 0,
-    top: 64,
-    position: 'absolute'
-  },
   miDiarioEntradaTextoPl: {
-    borderRadius: Border.br_31xl,
+    // borderRadius: Border.br_31xl,
     backgroundColor: Color.white,
     width: '100%',
-    height: 926,
     overflow: 'hidden',
     flex: 1
   }

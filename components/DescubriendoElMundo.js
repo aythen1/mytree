@@ -53,10 +53,6 @@ const DescubriendoElMundo = () => {
 🌟 El momento más emocionante fue...
 😮 Lo que más nos impactó fue...
 🌞 El mejor momento del día fue...`}</Text>
-
-        <View
-          style={[styles.miDiarioEntradaTextoPlItem, styles.diarioLayout]}
-        />
       </View>
     </>
   )
@@ -73,7 +69,6 @@ const styles = StyleSheet.create({
   },
   hoyLoHeFlexBox: {
     textAlign: 'left',
-    alignSelf: 'stretch',
     color: Color.negro,
     marginTop: 20,
     fontFamily: FontFamily.lato,
@@ -151,7 +146,7 @@ const styles = StyleSheet.create({
     height: 662,
     backgroundColor: Color.linearBoton,
     left: 0,
-    width: 428,
+    width: '100%',
     top: 64
   },
   icon: {
@@ -256,19 +251,19 @@ const styles = StyleSheet.create({
     lineHeight: 27
   },
   frameParent: {
-    top: 133,
+    // top: 133,
     height: 357,
-    width: 388,
-    left: 20,
-    position: 'absolute'
+    width: '100%'
+    // left: 20,
+    // position: 'absolute'
   },
-  miDiarioEntradaTextoPlItem: {
-    top: 726,
-    height: 75,
-    backgroundColor: Color.secundario,
-    left: 0,
-    width: 428
-  },
+  // miDiarioEntradaTextoPlItem: {
+  //   // top: 726,
+  //   height: 75,
+  //   backgroundColor: Color.secundario,
+  //   left: 0,
+  //   width: 428
+  // },
   iconlyboldimage: {
     width: 32,
     height: 32
