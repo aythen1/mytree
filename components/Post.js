@@ -1,12 +1,12 @@
 import React from 'react'
-import { StyleSheet, View, Text } from 'react-native'
+import { StyleSheet, View, Text, Pressable } from 'react-native'
 import { Image } from 'expo-image'
 import { LinearGradient } from 'expo-linear-gradient'
 import { Border, Padding, FontFamily, FontSize, Color } from '../GlobalStyles'
-// import { useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native'
 
 const Post = () => {
-  // const navigation = useNavigation()
+  const navigation = useNavigation()
   return (
     <View style={styles.rectangleParent}>
       <LinearGradient
@@ -14,11 +14,27 @@ const Post = () => {
         locations={[0.77, 1]}
         colors={['rgba(183, 228, 192, 0.8)', 'rgba(41, 42, 43, 0.8)']}
       >
-        <Image
-          style={[styles.vectorIcon, styles.vectorIconLayout]}
-          contentFit="cover"
-          source={require('../assets/vector39.png')}
-        />
+        <Pressable
+          style={{
+            borderWidth: 1,
+            borderColor: Color.colorLavender_100,
+            height: 60,
+            width: 60,
+            borderRadius: 100,
+            justifyContent: 'center',
+            alignItems: 'center',
+            top: 15,
+            left: 15
+          }}
+          onPress={() => navigation.navigate('Perfil')}
+        >
+          <Image
+            // style={[styles.vectorIcon, styles.vectorIconLayout]}
+            style={{ width: 30, height: 30 }}
+            contentFit="cover"
+            source={require('../assets/vector39.png')}
+          />
+        </Pressable>
 
         <View style={{ padding: 15, top: 340 }}>
           <Text style={styles.camila}>Camila</Text>
@@ -71,10 +87,6 @@ const styles = StyleSheet.create({
   childLayout: {
     borderRadius: Border.br_xl,
     height: '100%'
-    // backgroundColor: 'transparent',
-
-    // width: 388,
-    // position: 'absolute'
   },
   nameState: {
     left: 25,

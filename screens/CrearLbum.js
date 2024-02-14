@@ -1,9 +1,20 @@
 import React, { useState, useCallback } from 'react'
 import { Image } from 'expo-image'
-import { StyleSheet, Pressable, View, Text, Modal } from 'react-native'
+import {
+  StyleSheet,
+  Pressable,
+  View,
+  Text,
+  Modal,
+  ScrollView
+} from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import Compartir from '../components/Compartir'
 import { Color, FontFamily, FontSize, Border } from '../GlobalStyles'
+import HeaderIcons from '../components/HeaderIcons'
+import TreeSVG from '../components/svgs/TreeSVG'
+import PlusSVG from '../components/svgs/PlusSVG'
+import SettingMuroSVG from '../components/svgs/SettingMuroSVG'
 
 const CrearLbum = () => {
   const [vectorIcon1Visible, setVectorIcon1Visible] = useState(false)
@@ -19,90 +30,78 @@ const CrearLbum = () => {
 
   return (
     <>
-      <View style={styles.crearLbum}>
-        <Image
-          style={[styles.image6Icon, styles.image6IconPosition]}
-          contentFit="cover"
-          source={require('../assets/image-6.png')}
-        />
-        <View style={[styles.vectorParent, styles.parentFlexBox]}>
-          <Image
-            style={styles.vectorIconLayout}
-            contentFit="cover"
-            source={require('../assets/vector7.png')}
-          />
-          <Image
-            style={[styles.iconlylightOutlineplus, styles.vectorIconLayout]}
-            contentFit="cover"
-            source={require('../assets/iconlylightoutlineplus.png')}
-          />
-          <Pressable
-            style={[styles.iconlylightOutlineplus, styles.vectorIconLayout]}
-            onPress={() => navigation.navigate('PerfilAjustes')}
-          >
-            <Image
-              style={styles.iconLayout}
-              contentFit="cover"
-              source={require('../assets/iconlylightoutlinesetting.png')}
-            />
-          </Pressable>
-        </View>
-        <Image
-          style={styles.navigationIcon}
-          contentFit="cover"
-          source={require('../assets/navigation.png')}
-        />
-        <View style={[styles.crearLbumChild, styles.image6IconPosition]} />
-        <Image
-          style={[styles.maskGroupIcon, styles.frameParentPosition]}
-          contentFit="cover"
-          source={require('../assets/mask-group12.png')}
-        />
-        <View style={[styles.frameParent, styles.frameParentPosition]}>
-          <View style={styles.maskGroupParent}>
-            <Image
-              style={styles.maskGroupLayout}
-              contentFit="cover"
-              source={require('../assets/mask-group13.png')}
-            />
-            <Image
-              style={[styles.maskGroupIcon2, styles.maskGroupLayout]}
-              contentFit="cover"
-              source={require('../assets/mask-group13.png')}
-            />
-          </View>
-          <Pressable style={styles.vector} onPress={openVectorIcon1}>
-            <Image
-              style={styles.iconLayout}
-              contentFit="cover"
-              source={require('../assets/vector8.png')}
-            />
-          </Pressable>
-        </View>
-        <View style={[styles.backParent, styles.image6IconPosition]}>
-          <Pressable
-            style={styles.vectorIconLayout}
-            onPress={() => navigation.navigate('MisAlbumesFamiliares')}
-          >
-            <Image
-              style={[styles.icon2, styles.iconLayout]}
-              contentFit="cover"
-              source={require('../assets/back4.png')}
-            />
-          </Pressable>
+      <ScrollView>
+        <View style={styles.crearLbum}>
           <View
-            style={[
-              styles.bienvenidosAMiLbumConNoeParent,
-              styles.parentFlexBox
-            ]}
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              marginTop: 15,
+              justifyContent: 'space-between'
+            }}
           >
-            <Text style={[styles.bienvenidosAMi, styles.textTypo]}>
-              Bienvenidos a mi álbum con Noelia
-            </Text>
-            <Text style={[styles.text, styles.textTypo]}>30/08/2022</Text>
+            <Image
+              style={styles.image6Icon}
+              contentFit="cover"
+              source={require('../assets/image-6.png')}
+            />
+            <HeaderIcons
+              icons={[<TreeSVG />, <PlusSVG />, <SettingMuroSVG />]}
+            />
+          </View>
+          <View style={styles.backParent}>
+            <Pressable
+              style={styles.vectorIconLayout}
+              onPress={() => navigation.goBack()}
+            >
+              <Image
+                style={[styles.icon2, styles.iconLayout]}
+                contentFit="cover"
+                source={require('../assets/back4.png')}
+              />
+            </Pressable>
+            <View
+              style={[
+                styles.bienvenidosAMiLbumConNoeParent,
+                styles.parentFlexBox
+              ]}
+            >
+              <Text style={[styles.bienvenidosAMi, styles.textTypo]}>
+                Bienvenidos a mi álbum con Noelia
+              </Text>
+              <Text style={[styles.text, styles.textTypo]}>30/08/2022</Text>
+            </View>
+          </View>
+
+          {/* <View style={[styles.crearLbumChild, styles.image6IconPosition]} /> */}
+          <Image
+            style={[styles.maskGroupIcon, styles.frameParentPosition]}
+            contentFit="cover"
+            source={require('../assets/mask-group12.png')}
+          />
+          <View style={[styles.frameParent, styles.frameParentPosition]}>
+            <View style={styles.maskGroupParent}>
+              <Image
+                style={styles.maskGroupLayout}
+                contentFit="cover"
+                source={require('../assets/mask-group13.png')}
+              />
+              <Image
+                style={[styles.maskGroupIcon2, styles.maskGroupLayout]}
+                contentFit="cover"
+                source={require('../assets/mask-group13.png')}
+              />
+            </View>
+            <Pressable style={styles.vector} onPress={openVectorIcon1}>
+              <Image
+                style={styles.iconLayout}
+                contentFit="cover"
+                source={require('../assets/vector8.png')}
+              />
+            </Pressable>
           </View>
         </View>
-      </View>
+      </ScrollView>
 
       <Modal animationType="fade" transparent visible={vectorIcon1Visible}>
         <View style={styles.vectorIcon1Overlay}>
@@ -116,8 +115,8 @@ const CrearLbum = () => {
 
 const styles = StyleSheet.create({
   image6IconPosition: {
-    left: 20,
-    position: 'absolute'
+    // left: 20,
+    // position: 'absolute'
   },
   parentFlexBox: {
     justifyContent: 'center',
@@ -128,9 +127,7 @@ const styles = StyleSheet.create({
     width: 24
   },
   frameParentPosition: {
-    width: 388,
-    left: 20,
-    position: 'absolute'
+    width: '100%'
   },
   maskGroupLayout: {
     height: 80,
@@ -148,7 +145,7 @@ const styles = StyleSheet.create({
     fontSize: FontSize.size_xl
   },
   image6Icon: {
-    top: 3,
+    // top: 3,
     width: 87,
     height: 55
   },
@@ -169,12 +166,13 @@ const styles = StyleSheet.create({
     position: 'absolute'
   },
   crearLbumChild: {
-    top: 101,
-    width: 408,
+    // top: 101,
+    width: '100%',
     height: 705
   },
   maskGroupIcon: {
-    top: 155,
+    // top: 155,
+    marginTop: 15,
     height: 517
   },
   maskGroupIcon2: {
@@ -201,10 +199,11 @@ const styles = StyleSheet.create({
     height: 28
   },
   frameParent: {
-    top: 692,
+    paddingHorizontal: 15,
+    marginTop: 30,
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: 388,
+    width: '100%',
     flexDirection: 'row'
   },
   icon2: {
@@ -221,16 +220,16 @@ const styles = StyleSheet.create({
     marginLeft: 17
   },
   backParent: {
-    top: 67,
+    // top: 67,
     flexDirection: 'row'
   },
   crearLbum: {
-    borderRadius: Border.br_31xl,
     backgroundColor: Color.white,
     flex: 1,
-    height: 926,
     overflow: 'hidden',
-    width: '100%'
+    width: '100%',
+    paddingBottom: 30
+    // marginBottom: 200
   }
 })
 
