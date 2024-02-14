@@ -79,7 +79,13 @@ const Muro = () => {
 
         <View style={{ minHeight: 900, paddingBottom: 100 }}>
           <View style={styles.instanceParent}>
-            <View>
+            <View
+              style={{
+                backgroundColor: !colorClick
+                  ? Color.backgroundPrimaryBackground
+                  : Color.secundario
+              }}
+            >
               <Pressable
                 style={[styles.tabs, styles.tabsFlexBox]}
                 onPress={() => {
@@ -103,28 +109,36 @@ const Muro = () => {
                 </Text>
               </Pressable>
             </View>
-            <Pressable
-              style={[styles.tabs, styles.tabsFlexBox]}
-              onPress={() => {
-                setColorClick(false)
-                handleShowRetos()
+            <View
+              style={{
+                backgroundColor: colorClick
+                  ? Color.backgroundPrimaryBackground
+                  : Color.secundario
               }}
             >
-              <Text
-                style={{
-                  fontWeight: !colorClick ? '700' : '300',
-                  width: 110,
-                  textAlign: 'center',
-                  fontFamily: FontFamily.lato,
-                  lineHeight: 19,
-                  letterSpacing: 0,
-                  fontSize: FontSize.size_base,
-                  color: colorClick ? Color.textPlaceholder : Color.black1
+              <Pressable
+                style={[styles.tabs, styles.tabsFlexBox]}
+                onPress={() => {
+                  setColorClick(false)
+                  handleShowRetos()
                 }}
               >
-                Retos
-              </Text>
-            </Pressable>
+                <Text
+                  style={{
+                    fontWeight: !colorClick ? '700' : '300',
+                    width: 110,
+                    textAlign: 'center',
+                    fontFamily: FontFamily.lato,
+                    lineHeight: 19,
+                    letterSpacing: 0,
+                    fontSize: FontSize.size_base,
+                    color: colorClick ? Color.textPlaceholder : Color.black1
+                  }}
+                >
+                  Retos
+                </Text>
+              </Pressable>
+            </View>
           </View>
 
           <Modal

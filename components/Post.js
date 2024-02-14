@@ -29,7 +29,6 @@ const Post = () => {
           onPress={() => navigation.navigate('Perfil')}
         >
           <Image
-            // style={[styles.vectorIcon, styles.vectorIconLayout]}
             style={{ width: 30, height: 30 }}
             contentFit="cover"
             source={require('../assets/vector39.png')}
@@ -142,7 +141,6 @@ const styles = StyleSheet.create({
     height: 53,
     width: 53,
     borderRadius: Border.br_4xl
-    // position: 'absolute'
   },
   vectorIconPosition: {
     left: '50%',
@@ -150,7 +148,6 @@ const styles = StyleSheet.create({
   },
   buttonPosition: {
     top: 36
-    // position: 'absolute'
   },
   messageIconLayout: {
     width: 24,
@@ -159,7 +156,6 @@ const styles = StyleSheet.create({
   textTypo: {
     textAlign: 'left',
     fontFamily: FontFamily.lato
-    // position: 'absolute'
   },
   iconlyboldchatLayout: {
     height: 40,
@@ -171,7 +167,6 @@ const styles = StyleSheet.create({
     top: 15,
     height: 500,
     marginBottom: 30
-    // position: 'relative'
   },
   vectorIcon: {
     marginTop: -29,
@@ -187,7 +182,6 @@ const styles = StyleSheet.create({
   },
   muroInformacinChild: {
     backgroundColor: Color.linearBoton,
-    // left: 20,
     top: 139,
     borderRadius: Border.br_xl
   },
