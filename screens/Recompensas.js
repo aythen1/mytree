@@ -47,7 +47,11 @@ const Recompensas = () => {
             <Text style={[styles.entradaAlDiario, styles.ptsTypo]}>
               Entrada al diario de forma pública
             </Text>
-            <ScrollView style={styles.frameParent} horizontal={true}>
+            <ScrollView
+              style={styles.frameParent}
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+            >
               {points.map((point, pointIndex) => (
                 <View style={styles.frameSquare} key={pointIndex}>
                   {point.diary.map((value, idx) => (
@@ -75,7 +79,11 @@ const Recompensas = () => {
             <Text style={[styles.entradaAlDiario, styles.ptsTypo]}>
               Interactuar con el muro
             </Text>
-            <ScrollView style={styles.frameParent} horizontal={true}>
+            <ScrollView
+              style={styles.frameParent}
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+            >
               {points.map((point, pointIndex) => (
                 <View style={styles.frameSquare} key={pointIndex}>
                   {point.wall.map((value, idx) => (
@@ -103,7 +111,11 @@ const Recompensas = () => {
             <Text style={[styles.entradaAlDiario, styles.ptsTypo]}>
               Creación de retos
             </Text>
-            <ScrollView style={styles.frameParent} horizontal={true}>
+            <ScrollView
+              style={styles.frameParent}
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+            >
               {points.map((point, pointIndex) => (
                 <View style={styles.frameSquare} key={pointIndex}>
                   {point.challenge.map((value, idx) => (
@@ -131,7 +143,11 @@ const Recompensas = () => {
             <Text style={[styles.entradaAlDiario, styles.ptsTypo]}>
               Votación de retos
             </Text>
-            <ScrollView style={styles.frameParent} horizontal={true}>
+            <ScrollView
+              style={styles.frameParent}
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+            >
               {points.map((point, pointIndex) => (
                 <View style={styles.frameSquare} key={pointIndex}>
                   {point.vote.map((value, idx) => (
