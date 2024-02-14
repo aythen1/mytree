@@ -4,9 +4,7 @@ import { StyleSheet, View } from 'react-native'
 const HeaderIcons = ({ icons }) => {
   return (
     <View style={{ flexDirection: 'row' }}>
-      {icons.map((icon, index) => (
-        <View key={index}>{icon}</View>
-      ))}
+      {icons && icons.map((icon, index) => <View key={index}>{icon}</View>)}
     </View>
   )
 }
