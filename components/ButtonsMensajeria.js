@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, View, Text } from 'react-native'
+import { StyleSheet, View, Text, ScrollView } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
 import { Color, FontFamily, FontSize, Padding, Border } from '../GlobalStyles'
@@ -9,34 +9,34 @@ const ButtonsMensajeria = () => {
   const navigation = useNavigation()
 
   return (
-    // <View style={styles.mensajera}>
-    <View style={styles.storiesLayout}>
-      <View
-        style={{
-          flexDirection: 'row',
-          width: '100%',
-          justifyContent: 'center'
-        }}
-      >
-        <LinearGradient
-          style={[styles.button, styles.buttonSpaceBlock]}
-          locations={[0, 1]}
-          colors={['#dee274', '#7ec18c']}
+    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+      <View style={styles.storiesLayout}>
+        <View
+          style={{
+            flexDirection: 'row',
+            width: '100%',
+            justifyContent: 'center'
+          }}
         >
-          <Text style={[styles.signIn, styles.signTypo]}>TODOS</Text>
-        </LinearGradient>
-        <View style={[styles.button1, styles.buttonSpaceBlock]}>
-          <Text style={[styles.signIn1, styles.signTypo]}>Grupos</Text>
-        </View>
-        <View style={[styles.button1, styles.buttonSpaceBlock]}>
-          <Text style={[styles.signIn1, styles.signTypo]}>Familia</Text>
-        </View>
-        <View style={[styles.button1, styles.buttonSpaceBlock]}>
-          <Text style={[styles.signIn1, styles.signTypo]}>Amigos</Text>
+          <LinearGradient
+            style={[styles.button, styles.buttonSpaceBlock]}
+            locations={[0, 1]}
+            colors={['#dee274', '#7ec18c']}
+          >
+            <Text style={[styles.signIn, styles.signTypo]}>TODOS</Text>
+          </LinearGradient>
+          <View style={[styles.button1, styles.buttonSpaceBlock]}>
+            <Text style={[styles.signIn1, styles.signTypo]}>Grupos</Text>
+          </View>
+          <View style={[styles.button1, styles.buttonSpaceBlock]}>
+            <Text style={[styles.signIn1, styles.signTypo]}>Familia</Text>
+          </View>
+          <View style={[styles.button1, styles.buttonSpaceBlock]}>
+            <Text style={[styles.signIn1, styles.signTypo]}>Amigos</Text>
+          </View>
         </View>
       </View>
-    </View>
-    // </View>
+    </ScrollView>
   )
 }
 
