@@ -369,7 +369,7 @@ const styles = StyleSheet.create({
     // flex: 1,
     paddingHorizontal: 0,
     backgroundColor: Color.white,
-    top: 139
+    top: 15
   }
 })
 

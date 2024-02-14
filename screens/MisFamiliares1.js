@@ -367,7 +367,6 @@ const styles = StyleSheet.create({
   misFamiliares: {
     borderRadius: Border.br_31xl,
     flex: 1,
-    height: 926,
     overflow: 'hidden',
     width: '100%',
     backgroundColor: Color.white

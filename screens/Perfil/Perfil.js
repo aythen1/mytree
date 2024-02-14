@@ -16,6 +16,10 @@ import MiLegado from './MiLegado'
 import MisAlbumes from './MisAlbumes'
 import PERFILMIINFO from './PERFILMIINFO'
 import SOLOYO from './SOLOYO'
+import HeaderIcons from '../../components/HeaderIcons'
+import TreeSVG from '../../components/svgs/TreeSVG'
+import SettingMuroSVG from '../../components/svgs/SettingMuroSVG'
+import PlusSVG from '../../components/svgs/PlusSVG'
 
 const Perfil = () => {
   const navigation = useNavigation()
@@ -48,26 +52,14 @@ const Perfil = () => {
           contentFit="cover"
           source={require('../../assets/image-6.png')}
         />
-        <Image
-          style={[styles.vectorIcon, styles.vectorIconLayout]}
-          contentFit="cover"
-          source={require('../../assets/vector9.png')}
+
+        <HeaderIcons
+          icons={[
+            <TreeSVG />,
+            <PlusSVG isNavigation={'CrearAlbum'} />,
+            <SettingMuroSVG isNavigation={'PerfilAjustes'} />
+          ]}
         />
-        <Image
-          style={[styles.iconlylightOutlineplus, styles.vectorIconLayout]}
-          contentFit="cover"
-          source={require('../../assets/iconlylightoutlineplus1.png')}
-        />
-        <Pressable
-          style={[styles.iconlylightOutlineplus, styles.vectorIconLayout]}
-          onPress={() => navigation.navigate('PerfilAjustes')}
-        >
-          <Image
-            style={styles.icon}
-            contentFit="cover"
-            source={require('../../assets/iconlylightoutlinesetting1.png')}
-          />
-        </Pressable>
       </View>
 
       <Pressable

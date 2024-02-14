@@ -24,7 +24,7 @@ const AADIRAADIRANCESTRO = () => {
   return (
     <>
       <View style={styles.aadirAadirAncestro}>
-        <View style={styles.pressableFlexBox}>
+        <View style={styles.pressableFlexBox1}>
           <Pressable
             style={styles.backLayout}
             onPress={() => navigation.navigate('PERFILCREARIDINFANTEANCE')}
@@ -157,6 +157,13 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
+    height: 60
+    // marginTop: 30
+  },
+  pressableFlexBox1: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    height: 50,
     marginTop: 30
   },
   iconLayout: {
@@ -238,8 +245,8 @@ const styles = StyleSheet.create({
   },
   pressable: {
     borderRadius: Border.br_11xl,
-    paddingHorizontal: Padding.p_5xl,
-    paddingVertical: Padding.p_sm,
+    // paddingHorizontal: Padding.p_5xl,
+    // paddingVertical: Padding.p_sm,
     backgroundColor: Color.linearBoton,
     width: '100%'
   },
@@ -247,7 +254,8 @@ const styles = StyleSheet.create({
     // top: 744,
     width: '100%',
     borderRadius: 15,
-    marginTop: 80
+    marginTop: 80,
+    alignItems: 'center'
   },
 
   aadirAncestro: {
@@ -266,7 +274,8 @@ const styles = StyleSheet.create({
   },
   aadirAadirAncestro: {
     backgroundColor: Color.white,
-    height: 926,
+
+    // height: 926,
     overflow: 'hidden',
     width: '100%',
     flex: 1

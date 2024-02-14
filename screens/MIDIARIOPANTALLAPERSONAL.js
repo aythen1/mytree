@@ -6,6 +6,10 @@ import { Border, FontFamily, Color, FontSize } from '../GlobalStyles'
 import { useSelector, useDispatch } from 'react-redux'
 import { setPanel } from '../redux/slices/panel.slices'
 import Papers from './Papers'
+import HeaderIcons from '../components/HeaderIcons'
+import LupaSVG from '../components/svgs/LupaSVG'
+import BookSVG from '../components/svgs/BookSVG'
+import SettingMuroSVG from '../components/svgs/SettingMuroSVG'
 
 const MIDIARIOPANTALLAPERSONAL = () => {
   const dispatch = useDispatch()
@@ -32,42 +36,37 @@ const MIDIARIOPANTALLAPERSONAL = () => {
     <>
       <ScrollView style={{ flex: 1 }}>
         <View style={styles.miDiarioPantallaPersonal}>
-          <View style={{ marginTop: 10 }}>
+          <View
+            style={{
+              marginTop: 30,
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              paddingHorizontal: 15
+            }}
+          >
             <Image
               style={styles.image6Icon}
               contentFit="cover"
               source={require('../assets/image-6.png')}
             />
             <View style={styles.iconlylightOutlinesearchParent}>
-              <Image
-                style={styles.iconlylightOutlinesearch}
-                contentFit="cover"
-                source={require('../assets/iconlylightoutlinesearch5.png')}
-              />
-              <Image
-                style={[styles.documentIcon, styles.documentIconLayout]}
-                contentFit="cover"
-                source={require('../assets/document3.png')}
-              />
-              <Image
-                style={styles.documentIconLayout}
-                contentFit="cover"
-                source={require('../assets/iconlylightoutlinesetting1.png')}
+              <HeaderIcons
+                icons={[<LupaSVG />, <BookSVG />, <SettingMuroSVG />]}
               />
             </View>
           </View>
 
           <View style={styles.frameParent12}>
-            <View style={styles.ionmenuParent}>
-              <Pressable onPress={() => dispatch(setPanel(!showPanel))}>
-                <Image
-                  style={[styles.ionmenuIcon, styles.ionmenuIconLayout]}
-                  contentFit="cover"
-                  source={require('../assets/ionmenu2.png')}
-                />
-              </Pressable>
-              <Text style={[styles.miDiario, styles.textTypo]}>Mi Diario</Text>
-            </View>
+            {/* <View style={styles.ionmenuParent}> */}
+            <Pressable onPress={() => dispatch(setPanel(!showPanel))}>
+              <Image
+                style={[styles.ionmenuIcon, styles.ionmenuIconLayout]}
+                contentFit="cover"
+                source={require('../assets/ionmenu2.png')}
+              />
+            </Pressable>
+            <Text style={[styles.miDiario, styles.textTypo]}>Mi Diario</Text>
+            {/* </View> */}
             <Pressable
               style={styles.iconlylightOutlineinfoSqua}
               onPress={openIconlyLightOutlineInfoSqua}
@@ -430,11 +429,8 @@ const styles = StyleSheet.create({
     backgroundColor: Color.white
   },
   image6Icon: {
-    top: 3,
     width: 87,
-    height: 55,
-    left: 20,
-    position: 'absolute'
+    height: 55
   },
   iconlylightOutlinesearch: {
     height: 24,
@@ -444,19 +440,20 @@ const styles = StyleSheet.create({
     overflow: 'hidden'
   },
   iconlylightOutlinesearchParent: {
-    top: 20,
-    left: 276,
+    // top: 20,
+    // left: 276,
     justifyContent: 'center',
     alignItems: 'center',
-    flexDirection: 'row',
-    position: 'absolute'
+    flexDirection: 'row'
+    // position: 'absolute'
   },
   ltimosDiariosFamiliares: {
     color: Color.primario2,
     fontWeight: '700',
     textAlign: 'left',
     fontFamily: FontFamily.lato,
-    fontSize: FontSize.size_xl
+    fontSize: FontSize.size_xl,
+    marginLeft: 15
   },
   icon: {
     height: '100%',
@@ -508,7 +505,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   ltimosDiariosFamiliaresPublParent: {
-    marginTop: 100
+    marginTop: 30,
+    width: '100%',
+    justifyContent: 'center'
   },
   miDiarioPantallaPersonalInner: {
     top: 580,
@@ -580,10 +579,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between'
-    // top: 600,
-    // flexDirection: 'row',
-    // left: 20,
-    // position: 'absolute'
   },
   navigationIcon: {
     top: 822,
@@ -593,11 +588,10 @@ const styles = StyleSheet.create({
     width: 26
   },
   miDiario: {
-    marginLeft: 118,
+    marginLeft: '25%',
     fontWeight: '700',
     fontSize: FontSize.size_5xl,
     color: Color.negro,
-    textAlign: 'left',
     fontFamily: FontFamily.lato
   },
   ionmenuParent: {
@@ -623,18 +617,13 @@ const styles = StyleSheet.create({
     marginLeft: 17
   },
   frameParent12: {
-    top: 78,
+    top: 10,
     flexDirection: 'row',
-    left: 20,
+    paddingHorizontal: 15,
     alignItems: 'center'
-    // position: 'absolute'
   },
   miDiarioPantallaPersonal: {
-    // borderRadius: Border.br_31xl,
-    // flex: 1,
     paddingBottom: 50,
-    height: 1200,
-    // overflow: 'hidden',
     width: '100%',
     backgroundColor: Color.white
   }

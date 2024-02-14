@@ -5,6 +5,10 @@ import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
 import { FontFamily, Color, FontSize, Border } from '../GlobalStyles'
 import { useSelector } from 'react-redux'
+import HeaderIcons from '../components/HeaderIcons'
+import LupaSVG from '../components/svgs/LupaSVG'
+import BookSVG from '../components/svgs/BookSVG'
+import SettingMuroSVG from '../components/svgs/SettingMuroSVG'
 
 const Paper = () => {
   const { paper } = useSelector((state) => state.papers)
@@ -12,29 +16,22 @@ const Paper = () => {
 
   return (
     <View style={styles.miDiarioEntradaTexto}>
-      <Image
-        style={[styles.image6Icon, styles.wrapperPosition]}
-        contentFit="cover"
-        source={require('../assets/image-6.png')}
-      />
       <View
-        style={[styles.iconlylightOutlinesearchParent, styles.parentFlexBox]}
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          top: 20
+        }}
       >
         <Image
-          style={styles.wrapperLayout}
+          style={styles.image6Icon}
           contentFit="cover"
-          source={require('../assets/iconlylightoutlinesearch5.png')}
+          source={require('../assets/image-6.png')}
         />
-        <Image
-          style={[styles.documentIcon, styles.documentIconLayout]}
-          contentFit="cover"
-          source={require('../assets/document3.png')}
-        />
-        <Image
-          style={styles.documentIconLayout}
-          contentFit="cover"
-          source={require('../assets/iconlylightoutlinesetting1.png')}
-        />
+        <View style={styles.parentFlexBox}>
+          <HeaderIcons icons={[<LupaSVG />, <BookSVG />, <SettingMuroSVG />]} />
+        </View>
       </View>
       <LinearGradient
         style={[
@@ -43,61 +40,62 @@ const Paper = () => {
         ]}
         locations={[0, 1]}
         colors={['#b7e4c0', 'rgba(245, 245, 247, 0)']}
-      />
-      <View
-        style={[styles.miDiarioEntradaTextoInner, styles.frameParentLayout]}
       >
-        <View style={[styles.frameParent, styles.frameParentLayout]}>
-          <View style={styles.frameGroup}>
-            <View style={[styles.parent, styles.parentFlexBox]}>
-              <Text style={[styles.text, styles.textTypo]}>
-                {paper.date.slice(0, 2)}
+        <Pressable
+          style={[styles.wrapper, styles.wrapperLayout]}
+          onPress={() => navigation.goBack()}
+        >
+          <Image
+            style={styles.icon}
+            contentFit="cover"
+            source={require('../assets/group-68463.png')}
+          />
+        </Pressable>
+
+        <View
+          style={[styles.miDiarioEntradaTextoInner, styles.frameParentLayout]}
+        >
+          <View style={[styles.frameParent, styles.frameParentLayout]}>
+            <View style={styles.frameGroup}>
+              <View style={[styles.parent, styles.parentFlexBox]}>
+                <Text style={[styles.text, styles.textTypo]}>
+                  {paper.date.slice(0, 2)}
+                </Text>
+                <Text style={[styles.jul2023, styles.textTypo]}>
+                  {paper.date.slice(2)}
+                </Text>
+                <Image
+                  style={styles.iconlycurvedarrowDown2}
+                  contentFit="cover"
+                  source={require('../assets/iconlycurvedarrowdown2.png')}
+                />
+              </View>
+              <Text
+                style={[
+                  styles.descubriendoElMundo,
+                  styles.hoyHemosVisitadoFlexBox
+                ]}
+              >
+                Descubriendo el mundo
               </Text>
-              <Text style={[styles.jul2023, styles.textTypo]}>
-                {paper.date.slice(2)}
+              <Text
+                style={[
+                  styles.hoyHemosVisitado,
+                  styles.hoyHemosVisitadoFlexBox
+                ]}
+              >
+                {paper.message}
               </Text>
-              <Image
-                style={styles.iconlycurvedarrowDown2}
-                contentFit="cover"
-                source={require('../assets/iconlycurvedarrowdown2.png')}
-              />
             </View>
-            <Text
-              style={[
-                styles.descubriendoElMundo,
-                styles.hoyHemosVisitadoFlexBox
-              ]}
-            >
-              Descubriendo el mundo
-            </Text>
-            <Text
-              style={[styles.hoyHemosVisitado, styles.hoyHemosVisitadoFlexBox]}
-            >
-              {paper.message}
-            </Text>
+            <Text style={styles.text1}>{`🌎  `}</Text>
           </View>
-          <Text style={styles.text1}>{`🌎  `}</Text>
         </View>
-      </View>
-      <Pressable
-        style={[styles.wrapper, styles.wrapperLayout]}
-        onPress={() => navigation.goBack()}
-      >
-        <Image
-          style={styles.icon}
-          contentFit="cover"
-          source={require('../assets/group-68463.png')}
-        />
-      </Pressable>
+      </LinearGradient>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-  wrapperPosition: {
-    position: 'absolute',
-    left: 20
-  },
   parentFlexBox: {
     alignItems: 'center',
     flexDirection: 'row'
@@ -108,9 +106,9 @@ const styles = StyleSheet.create({
     width: 24
   },
   navigationIconPosition: {
-    width: 428,
-    left: 0,
-    position: 'absolute'
+    width: '100%',
+    left: 0
+    // position: 'absolute'
   },
   frameParentLayout: {
     height: 422,
@@ -150,8 +148,8 @@ const styles = StyleSheet.create({
     position: 'absolute'
   },
   miDiarioEntradaTextoChild: {
-    top: 89,
-    height: 662,
+    top: 40,
+    height: '100%',
     backgroundColor: Color.linearBoton
   },
   text: {
@@ -209,14 +207,14 @@ const styles = StyleSheet.create({
   },
   frameParent: {
     top: 0,
-    width: 385,
+    width: '100%',
     left: 0,
     height: 422,
     flexDirection: 'row'
   },
   miDiarioEntradaTextoInner: {
-    top: 165,
-    width: 388,
+    top: 50,
+    width: '100%',
     left: 20
   },
   icon: {
@@ -224,18 +222,15 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   wrapper: {
-    top: 109,
-    left: 20,
-    position: 'absolute'
+    top: 15,
+    left: 20
   },
   navigationIcon: {
     top: 821,
     height: 105
   },
   miDiarioEntradaTexto: {
-    borderRadius: Border.br_31xl,
     backgroundColor: Color.white,
-    height: 926,
     overflow: 'hidden',
     width: '100%',
     flex: 1

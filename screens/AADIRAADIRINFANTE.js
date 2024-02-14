@@ -40,7 +40,7 @@ const AADIRAADIRINFANTE = () => {
 
   return (
     <>
-      <ScrollView>
+      <ScrollView style={{ backgroundColor: Color.white }}>
         <View style={styles.aadirAadirInfante}>
           <View style={[styles.image6Wrapper, styles.fieldFlexBox]}>
             <Image
@@ -62,12 +62,7 @@ const AADIRAADIRINFANTE = () => {
             </Pressable>
             <Text style={styles.aadirInfante}>Añadir Infante</Text>
           </View>
-          {/* <Image
-            style={styles.navigationIcon}
-            contentFit="cover"
-            source={require('../assets/navigation13.png')}
-          /> */}
-          <View style={[styles.frameParent, styles.parentPosition]}>
+          <View style={styles.frameParent}>
             <View>
               <View>
                 <View>
@@ -200,10 +195,7 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '100%'
   },
-  parentPosition: {
-    // left: 20
-    // position: 'absolute'
-  },
+
   titleFlexBox: {
     letterSpacing: 0,
     textAlign: 'left'
@@ -331,12 +323,14 @@ const styles = StyleSheet.create({
     // width: 388
   },
   frameParent: {
-    top: 30
+    top: 30,
+    backgroundColor: 'white',
+    height: '100%'
   },
   aadirAadirInfante: {
     backgroundColor: Color.white,
     width: '100%',
-    flex: 1,
+    minHeight: '100%',
     padding: 10,
     paddingBottom: 70
   }

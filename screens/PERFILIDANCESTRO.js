@@ -11,6 +11,11 @@ import { Image } from 'expo-image'
 import { useNavigation } from '@react-navigation/native'
 import { FontFamily, Padding, Border, FontSize, Color } from '../GlobalStyles'
 import BIO2Ancestro from './BIO2Ancestro'
+import HeaderIcons from '../components/HeaderIcons'
+import TreeSVG from '../components/svgs/TreeSVG'
+import NotificationsMuroSVG from '../components/svgs/NotificationsMuroSVG'
+import SettingMuroSVG from '../components/svgs/SettingMuroSVG'
+import BookSVG from '../components/svgs/BookSVG'
 
 const PERFILIDANCESTRO = () => {
   const navigation = useNavigation()
@@ -53,7 +58,17 @@ const PERFILIDANCESTRO = () => {
               />
             </View>
             <View style={[styles.vectorParent, styles.faritaFlexBox]}>
-              <Image
+              <HeaderIcons
+                icons={[
+                  <TreeSVG />,
+                  <NotificationsMuroSVG />,
+                  <SettingMuroSVG isNavigation={'PERFILANCESTROAJUSTES1'} />,
+                  <BookSVG isNavigation={'PERFILANCESTROAJUSTES'} />
+                ]}
+              />
+              {/*
+              arbolito----
+               <Image
                 style={styles.iconlyLayout}
                 contentFit="cover"
                 source={require('../assets/vector20.png')}
@@ -92,7 +107,7 @@ const PERFILIDANCESTRO = () => {
                   contentFit="cover"
                   source={require('../assets/iconlycurveddocument.png')}
                 />
-              </Pressable>
+              </Pressable> */}
             </View>
           </View>
 
@@ -623,14 +638,9 @@ const styles = StyleSheet.create({
     height: 105
   },
   perfilIdAncestro: {
-    borderRadius: Border.br_31xl,
-    // flex: 1,
-    // height: 926,
-    // overflow: 'hidden',
     width: '100%',
     backgroundColor: Color.white,
     paddingBottom: 30
-    // paddingHorizontal: 15
   }
 })
 

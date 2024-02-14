@@ -371,23 +371,17 @@ const styles = StyleSheet.create({
     height: 49,
     paddingLeft: Padding.p_xs,
     paddingRight: Padding.p_xl,
-    borderRadius: Border.br_8xs,
     justifyContent: 'space-between',
     flexDirection: 'row',
-    width: 428,
+    width: '100%',
     left: 0,
-    top: 64,
+    top: 20,
     position: 'absolute'
   },
   miDiarioEntradaTextoPl: {
-    borderRadius: Border.br_31xl,
     backgroundColor: Color.white,
     width: '100%',
-    height: 60,
-
-    overflow: 'hidden',
-    flex: 1
-    // top: 100
+    height: 60
   }
 })
 

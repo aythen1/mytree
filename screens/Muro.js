@@ -17,6 +17,14 @@ import Stories from '../components/Stories'
 import RetosModal from './RetosModal'
 import VotacionDeRetos from './VotacionDeRetos'
 import MenuPrincipal from '../components/MenuPrincipal'
+import HeaderIcons from '../components/HeaderIcons'
+import LupaSVG from '../components/svgs/LupaSVG'
+import MessageSVG from '../components/svgs/MessageSVG'
+import NotificationsMuroSVG from '../components/svgs/NotificationsMuroSVG'
+import CalendarSVG from '../components/svgs/CalendarSVG'
+import CalendarMuroSVG from '../components/svgs/CalendarMuroSVG'
+import SettingSVG from '../components/svgs/SettingSVG'
+import SettingMuroSVG from '../components/svgs/SettingMuroSVG'
 
 const Muro = () => {
   const dispatch = useDispatch()
@@ -39,9 +47,45 @@ const Muro = () => {
   return (
     <View style={{ flex: 1 }}>
       <ScrollView>
+        <View
+          style={{
+            width: '100%',
+            height: 60,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            paddingHorizontal: 15
+          }}
+        >
+          <Pressable
+            style={[styles.menuIcon, styles.menuPosition]}
+            onPress={() => dispatch(setPanel(!menuVisible))}
+          >
+            <Image
+              style={[styles.icon, styles.iconLayout]}
+              contentFit="cover"
+              source={require('../assets/ionmenu1.png')}
+            />
+          </Pressable>
+          <View style={[styles.messageParent, styles.buttonPosition]}>
+            <HeaderIcons
+              icons={
+                !showRetos
+                  ? [<LupaSVG />, <MessageSVG />, <NotificationsMuroSVG />]
+                  : [<MessageSVG />, <CalendarMuroSVG />, <SettingMuroSVG />]
+              }
+            />
+          </View>
+        </View>
+
         <View style={{ minHeight: 900, paddingBottom: 100 }}>
           <View style={styles.instanceParent}>
-            <View>
+            <View
+              style={{
+                backgroundColor: !colorClick
+                  ? Color.backgroundPrimaryBackground
+                  : Color.secundario
+              }}
+            >
               <Pressable
                 style={[styles.tabs, styles.tabsFlexBox]}
                 onPress={() => {
@@ -65,28 +109,36 @@ const Muro = () => {
                 </Text>
               </Pressable>
             </View>
-            <Pressable
-              style={[styles.tabs, styles.tabsFlexBox]}
-              onPress={() => {
-                setColorClick(false)
-                handleShowRetos()
+            <View
+              style={{
+                backgroundColor: colorClick
+                  ? Color.backgroundPrimaryBackground
+                  : Color.secundario
               }}
             >
-              <Text
-                style={{
-                  fontWeight: !colorClick ? '700' : '300',
-                  width: 110,
-                  textAlign: 'center',
-                  fontFamily: FontFamily.lato,
-                  lineHeight: 19,
-                  letterSpacing: 0,
-                  fontSize: FontSize.size_base,
-                  color: colorClick ? Color.textPlaceholder : Color.black1
+              <Pressable
+                style={[styles.tabs, styles.tabsFlexBox]}
+                onPress={() => {
+                  setColorClick(false)
+                  handleShowRetos()
                 }}
               >
-                Retos
-              </Text>
-            </Pressable>
+                <Text
+                  style={{
+                    fontWeight: !colorClick ? '700' : '300',
+                    width: 110,
+                    textAlign: 'center',
+                    fontFamily: FontFamily.lato,
+                    lineHeight: 19,
+                    letterSpacing: 0,
+                    fontSize: FontSize.size_base,
+                    color: colorClick ? Color.textPlaceholder : Color.black1
+                  }}
+                >
+                  Retos
+                </Text>
+              </Pressable>
+            </View>
           </View>
 
           <Modal
@@ -102,39 +154,11 @@ const Muro = () => {
             </View>
           </Modal>
 
-          <View style={[styles.messageParent, styles.buttonPosition]}>
-            <Image
-              style={[styles.messageIcon, styles.messageIconLayout]}
-              contentFit="cover"
-              source={require('../assets/message1.png')}
-            />
-            <Image
-              style={[styles.iconlylightOutlineplus, styles.messageIconLayout]}
-              contentFit="cover"
-              source={require('../assets/iconlylightoutlineplus2.png')}
-            />
-            <Image
-              style={[styles.iconlylightOutlineplus, styles.messageIconLayout]}
-              contentFit="cover"
-              source={require('../assets/iconlylightoutlinesetting5.png')}
-            />
-          </View>
-
           <Stories />
 
           {showRetos ? <VotacionDeRetos /> : <Post />}
         </View>
 
-        <Pressable
-          style={[styles.menuIcon, styles.menuPosition]}
-          onPress={() => dispatch(setPanel(!menuVisible))}
-        >
-          <Image
-            style={[styles.icon, styles.iconLayout]}
-            contentFit="cover"
-            source={require('../assets/ionmenu1.png')}
-          />
-        </Pressable>
         <Modal
           animationType="slide"
           transparent={true}
@@ -183,8 +207,8 @@ const styles = StyleSheet.create({
     top: '50%'
   },
   buttonPosition: {
-    top: 36,
-    position: 'absolute'
+    top: 36
+    // position: 'absolute'
   },
   messageIconLayout: {
     width: 24,
@@ -229,12 +253,10 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: Border.br_3xs
   },
   instanceParent: {
-    top: 80,
+    marginTop: 20,
     flexDirection: 'row',
     width: '100%',
     justifyContent: 'center'
-    // left: 20,
-    // position: 'absolute'
   },
   groupChild: {
     top: -2,
@@ -276,11 +298,11 @@ const styles = StyleSheet.create({
     height: 24
   },
   messageParent: {
-    left: 276,
-    justifyContent: 'center',
-    alignItems: 'center',
-    top: 36,
-    flexDirection: 'row'
+    // left: 276,
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    // top: 36
+    // flexDirection: 'row'
   },
   yendoALa: {
     top: 813,
@@ -331,9 +353,9 @@ const styles = StyleSheet.create({
     height: 20
   },
   menuPosition: {
-    top: 36,
-    position: 'absolute',
-    left: 10
+    top: 36
+    // position: 'absolute',
+    // left: 10
   }
 })
 

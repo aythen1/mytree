@@ -92,7 +92,11 @@ const Busqueda = () => {
           </View>
         </View>
 
-        <ScrollView style={styles.tabsParent} horizontal={true}>
+        <ScrollView
+          style={styles.tabsParent}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+        >
           <Pressable
             style={[
               selectedComponent === 'BusquedaRetos'
