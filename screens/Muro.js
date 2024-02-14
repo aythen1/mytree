@@ -239,12 +239,10 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: Border.br_3xs
   },
   instanceParent: {
-    top: 80,
+    marginTop: 20,
     flexDirection: 'row',
     width: '100%',
     justifyContent: 'center'
-    // left: 20,
-    // position: 'absolute'
   },
   groupChild: {
     top: -2,

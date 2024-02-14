@@ -182,11 +182,8 @@ const styles = StyleSheet.create({
   },
   rectangleParent: {
     height: '100%',
-    // width: 388,
-    // left: 20,
-    top: 139,
+    top: 15,
     marginBottom: 120
-    // position: 'absolute'
   },
   muroInformacinChild: {
     backgroundColor: Color.linearBoton,
