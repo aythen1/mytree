@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, View, Pressable, Text } from 'react-native'
+import { StyleSheet, View, Pressable, Text, ScrollView } from 'react-native'
 import { Image } from 'expo-image'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
@@ -125,257 +125,78 @@ const RETOSMSVOTADOS = () => {
           </View>
         </View>
 
-        <View>
-          <View style={[styles.frameChild, styles.childShadowBox]} />
-          <View style={styles.frameParent2}>
-            <LinearGradient
-              style={[styles.mdichessQueenParent, styles.tabsFlexBox]}
-              locations={[0, 1]}
-              colors={['#e2e57a', '#7fc08b']}
-            >
-              <Image
-                style={styles.mdichessQueenIcon}
-                contentFit="cover"
-                source={require('../assets/mdichessqueen.png')}
-              />
-              <Text style={styles.todos}>Todos</Text>
-            </LinearGradient>
-            <View style={[styles.tabs, styles.tabsFlexBox]}>
-              <Image
-                style={styles.mdichessQueenIcon}
-                contentFit="cover"
-                source={require('../assets/mdichessqueen1.png')}
-              />
-              <Text style={[styles.semanal, styles.amigosTypo]}>Semanal</Text>
-            </View>
-            <View style={[styles.tabs1, styles.tabsFlexBox]}>
-              <Image
-                style={styles.mdichessQueenIcon}
-                contentFit="cover"
-                source={require('../assets/mdichessqueen2.png')}
-              />
-              <Text style={[styles.amigos, styles.amigosTypo]}>Amigos</Text>
-            </View>
-          </View>
-        </View>
-        <View style={styles.rowParent}>
-          {remainingMostVoted.map((top, i) => (
-            <View
-              key={top.nameFamiliar}
-              style={[styles.row1, styles.rowLayout]}
-            >
-              <View style={styles.rowChildShadowBox} />
-              <Text style={[styles.sarahG, styles.sarahTypo]}>
-                {top.nameFamiliar}
-              </Text>
-              <View style={styles.rowItem} />
-              <View style={styles.star1}>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View>
+            <View style={[styles.frameChild, styles.childShadowBox]} />
+            <View style={styles.frameParent2}>
+              <LinearGradient
+                style={[styles.mdichessQueenParent, styles.tabsFlexBox]}
+                locations={[0, 1]}
+                colors={['#e2e57a', '#7fc08b']}
+              >
                 <Image
-                  style={styles.starItem}
+                  style={styles.mdichessQueenIcon}
                   contentFit="cover"
-                  source={require('../assets/star-63.png')}
+                  source={require('../assets/mdichessqueen.png')}
                 />
-                <Text style={[styles.textTypo]}>{i + 4}</Text>
-              </View>
-              <View style={styles.vectorParent1}>
+                <Text style={styles.todos}>Todos</Text>
+              </LinearGradient>
+              <View style={[styles.tabs, styles.tabsFlexBox]}>
                 <Image
-                  style={styles.vectorIcon1}
+                  style={styles.mdichessQueenIcon}
                   contentFit="cover"
-                  source={require('../assets/vector6.png')}
+                  source={require('../assets/mdichessqueen1.png')}
                 />
-                <Text style={[styles.text7, styles.textTypo1]}>{top.like}</Text>
+                <Text style={[styles.semanal, styles.amigosTypo]}>Semanal</Text>
               </View>
-              <Image
-                style={styles.vectorIcon7}
-                contentFit="cover"
-                source={require('../assets/vector2.png')}
-              />
+              <View style={[styles.tabs1, styles.tabsFlexBox]}>
+                <Image
+                  style={styles.mdichessQueenIcon}
+                  contentFit="cover"
+                  source={require('../assets/mdichessqueen2.png')}
+                />
+                <Text style={[styles.amigos, styles.amigosTypo]}>Amigos</Text>
+              </View>
             </View>
-          ))}
-
-          {/* <View style={styles.rowLayout}>
-            <View style={styles.rowChildShadowBox} />
-            <Text style={[styles.sarahG, styles.sarahTypo]}>Sarah G.</Text>
-            <View style={styles.rowItem} />
-            <View style={styles.star1}>
-              <Image
-                style={styles.starItem}
-                contentFit="cover"
-                source={require('../assets/star-63.png')}
-              />
-              <Text style={[styles.text6, styles.textTypo]}>4</Text>
-            </View>
-            <View style={styles.vectorParent1}>
-              <Image
-                style={styles.vectorIcon1}
-                contentFit="cover"
-                source={require('../assets/vector6.png')}
-              />
-              <Text style={[styles.text7, styles.textTypo1]}>10</Text>
-            </View>
-            <Image
-              style={styles.vectorIcon7}
-              contentFit="cover"
-              source={require('../assets/vector2.png')}
-            />
           </View>
-          <View style={[styles.row1, styles.rowLayout]}>
-            <View style={styles.rowChildShadowBox} />
-            <Text style={[styles.sarahG, styles.sarahTypo]}>Jason R.</Text>
-            <View style={styles.rowItem} />
-            <View style={styles.star1}>
-              <Image
-                style={styles.starItem}
-                contentFit="cover"
-                source={require('../assets/star-63.png')}
-              />
-              <Text style={[styles.text6, styles.textTypo]}>5</Text>
-            </View>
-            <View style={styles.vectorParent1}>
-              <Image
-                style={styles.vectorIcon1}
-                contentFit="cover"
-                source={require('../assets/vector6.png')}
-              />
-              <Text style={[styles.text7, styles.textTypo1]}>10</Text>
-            </View>
-            <Image
-              style={styles.vectorIcon7}
-              contentFit="cover"
-              source={require('../assets/vector2.png')}
-            />
+          <View style={styles.rowParent}>
+            {remainingMostVoted.map((top, i) => (
+              <View
+                key={top.nameFamiliar}
+                style={[styles.row1, styles.rowLayout]}
+              >
+                <View style={styles.rowChildShadowBox} />
+                <Text style={[styles.sarahG, styles.sarahTypo]}>
+                  {top.nameFamiliar}
+                </Text>
+                <View style={styles.rowItem} />
+                <View style={styles.star1}>
+                  <Image
+                    style={styles.starItem}
+                    contentFit="cover"
+                    source={require('../assets/star-63.png')}
+                  />
+                  <Text style={[styles.textTypo]}>{i + 4}</Text>
+                </View>
+                <View style={styles.vectorParent1}>
+                  <Image
+                    style={styles.vectorIcon1}
+                    contentFit="cover"
+                    source={require('../assets/vector6.png')}
+                  />
+                  <Text style={[styles.text7, styles.textTypo1]}>
+                    {top.like}
+                  </Text>
+                </View>
+                <Image
+                  style={styles.vectorIcon7}
+                  contentFit="cover"
+                  source={require('../assets/vector2.png')}
+                />
+              </View>
+            ))}
           </View>
-          <View style={[styles.row1, styles.rowLayout]}>
-            <View style={styles.rowChildShadowBox} />
-            <Text style={[styles.sarahG, styles.sarahTypo]}>Oscar W.</Text>
-            <View style={styles.rowItem} />
-            <View style={styles.star1}>
-              <Image
-                style={styles.starItem}
-                contentFit="cover"
-                source={require('../assets/star-63.png')}
-              />
-              <Text style={[styles.text6, styles.textTypo]}>6</Text>
-            </View>
-            <View style={styles.vectorParent1}>
-              <Image
-                style={styles.vectorIcon1}
-                contentFit="cover"
-                source={require('../assets/vector6.png')}
-              />
-              <Text style={[styles.text7, styles.textTypo1]}>10</Text>
-            </View>
-            <Image
-              style={styles.vectorIcon7}
-              contentFit="cover"
-              source={require('../assets/vector2.png')}
-            />
-          </View>
-          <View style={[styles.row1, styles.rowLayout]}>
-            <View style={styles.rowChildShadowBox} />
-            <Text style={styles.sarahTypo}>Melinda H.</Text>
-            <View style={styles.rowItem} />
-            <View style={styles.star1}>
-              <Image
-                style={styles.starItem}
-                contentFit="cover"
-                source={require('../assets/star-63.png')}
-              />
-              <Text style={[styles.text6, styles.textTypo]}>7</Text>
-            </View>
-            <View style={styles.vectorParent1}>
-              <Image
-                style={styles.vectorIcon1}
-                contentFit="cover"
-                source={require('../assets/vector6.png')}
-              />
-              <Text style={[styles.text7, styles.textTypo1]}>10</Text>
-            </View>
-            <Image
-              style={styles.vectorIcon7}
-              contentFit="cover"
-              source={require('../assets/vector2.png')}
-            />
-          </View>
-          <View style={[styles.row1, styles.rowLayout]}>
-            <View style={styles.rowChildShadowBox} />
-            <Text style={[styles.sarahG, styles.sarahTypo]}>Lucas S.</Text>
-            <View style={styles.rowItem} />
-            <View style={styles.star1}>
-              <Image
-                style={styles.starItem}
-                contentFit="cover"
-                source={require('../assets/star-63.png')}
-              />
-              <Text style={[styles.text6, styles.textTypo]}>8</Text>
-            </View>
-            <View style={styles.vectorParent1}>
-              <Image
-                style={styles.vectorIcon1}
-                contentFit="cover"
-                source={require('../assets/vector6.png')}
-              />
-              <Text style={[styles.text7, styles.textTypo1]}>10</Text>
-            </View>
-            <Image
-              style={styles.vectorIcon7}
-              contentFit="cover"
-              source={require('../assets/vector2.png')}
-            />
-          </View>
-          <View style={[styles.row1, styles.rowLayout]}>
-            <View style={styles.rowChildShadowBox} />
-            <Text style={styles.sarahTypo}>Ramon M.</Text>
-            <View style={styles.rowItem} />
-            <View style={styles.star1}>
-              <Image
-                style={styles.starItem}
-                contentFit="cover"
-                source={require('../assets/star-63.png')}
-              />
-              <Text style={[styles.text6, styles.textTypo]}>9</Text>
-            </View>
-            <View style={styles.vectorParent1}>
-              <Image
-                style={styles.vectorIcon1}
-                contentFit="cover"
-                source={require('../assets/vector6.png')}
-              />
-              <Text style={[styles.text7, styles.textTypo1]}>10</Text>
-            </View>
-            <Image
-              style={styles.vectorIcon7}
-              contentFit="cover"
-              source={require('../assets/vector2.png')}
-            />
-          </View>
-          <View style={[styles.row1, styles.rowLayout]}>
-            <View style={styles.rowChildShadowBox} />
-            <Text style={[styles.sarahG, styles.sarahTypo]}>Elliot K.</Text>
-            <View style={styles.rowItem} />
-            <View style={styles.star1}>
-              <Image
-                style={styles.starItem}
-                contentFit="cover"
-                source={require('../assets/star-63.png')}
-              />
-              <Text style={[styles.text18, styles.textTypo]}>10</Text>
-            </View>
-            <View style={styles.vectorParent1}>
-              <Image
-                style={styles.vectorIcon1}
-                contentFit="cover"
-                source={require('../assets/vector6.png')}
-              />
-              <Text style={[styles.text7, styles.textTypo1]}>10</Text>
-            </View>
-            <Image
-              style={styles.vectorIcon7}
-              contentFit="cover"
-              source={require('../assets/vector2.png')}
-            />
-          </View> */}
-        </View>
+        </ScrollView>
       </View>
     </LinearGradient>
   )
@@ -774,7 +595,7 @@ const styles = StyleSheet.create({
     position: 'absolute'
   },
   retosMsVotados: {
-    borderRadius: Border.br_11xl,
+    // borderRadius: Border.br_11xl,
     flex: 1,
     // height: 926,
     width: '100%',
