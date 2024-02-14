@@ -4,6 +4,7 @@ import { Path, Svg } from 'react-native-svg'
 const NotificationsMuroSVG = () => {
   return (
     <Svg
+      style={{ marginRight: 10 }}
       width="19"
       height="22"
       viewBox="0 0 19 22"

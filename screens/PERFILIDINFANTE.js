@@ -4,6 +4,10 @@ import { Image } from 'expo-image'
 import { useNavigation } from '@react-navigation/native'
 import { FontFamily, Padding, Border, FontSize, Color } from '../GlobalStyles'
 import { useSelector } from 'react-redux'
+import HeaderIcons from '../components/HeaderIcons'
+import TreeSVG from '../components/svgs/TreeSVG'
+import NotificationsMuroSVG from '../components/svgs/NotificationsMuroSVG'
+import SettingMuroSVG from '../components/svgs/SettingMuroSVG'
 
 const PERFILIDINFANTE = () => {
   const { infant } = useSelector((state) => state.infants)
@@ -12,42 +16,26 @@ const PERFILIDINFANTE = () => {
   return (
     <ScrollView style={{ flex: 1 }}>
       <View style={styles.perfilIdInfante}>
-        <View style={styles.rectangleParent}>
-          <View style={styles.rectangleView} />
+        <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            paddingHorizontal: 15
+          }}
+        >
           <Image
             style={styles.image6Icon}
             contentFit="cover"
             source={require('../assets/image-6.png')}
           />
-          <View style={styles.vectorParent}>
-            <View style={[styles.iconly, styles.iconlyLayout]}>
-              <Image
-                style={styles.notificationIcon}
-                contentFit="cover"
-                source={require('../assets/notification4.png')}
-              />
-              <View style={styles.ellipseParent}>
-                <Image
-                  style={styles.groupChild}
-                  contentFit="cover"
-                  source={require('../assets/ellipse-2263.png')}
-                />
-                <Text style={[styles.text, styles.textPosition]}>1</Text>
-              </View>
-            </View>
-            <Pressable
-              style={[styles.iconly, styles.iconlyLayout]}
-              onPress={() => navigation.navigate('PERFILINFANTEAJUSTES')}
-            >
-              <Image
-                style={styles.icon}
-                contentFit="cover"
-                source={require('../assets/iconlylightoutlinesetting.png')}
-              />
-            </Pressable>
-          </View>
+          <HeaderIcons
+            icons={[<TreeSVG />, <NotificationsMuroSVG />, <SettingMuroSVG />]}
+          />
+        </View>
+        <View style={{ marginBottom: 130 }}>
           <Image
-            style={[styles.ionmenuIcon, styles.parentPosition]}
+            style={styles.ionmenuIcon}
             contentFit="cover"
             source={require('../assets/ionmenu.png')}
           />
@@ -81,194 +69,208 @@ const PERFILIDINFANTE = () => {
             </View>
           </View>
         </View>
-        <Text
-          style={[styles.holaSoyLucas, styles.verMs1Typo]}
-        >{`Hola, soy ${infant.name}, nací el ${infant.birthdate} de mi mamá ${infant.mother} y de mi papá ${infant.father}.
+        <View style={{ paddingHorizontal: 15 }}>
+          <Text
+            style={[styles.holaSoyLucas, styles.verMs1Typo]}
+          >{`Hola, soy ${infant.name}, nací el ${infant.birthdate} de mi mamá ${infant.mother} y de mi papá ${infant.father}.
 Actualmente tengo 35 añoss y dos meses.`}</Text>
-        <Pressable
-          style={styles.verMs}
-          onPress={() => navigation.navigate('BIO2Infante')}
-        >
-          <Text style={[styles.verMs1, styles.verMs1Typo]}>Ver más...</Text>
-        </Pressable>
+          <Pressable
+            style={styles.verMs}
+            onPress={() => navigation.navigate('BIO2Infante')}
+          >
+            <Text style={[styles.verMs1, styles.verMs1Typo]}>Ver más...</Text>
+          </Pressable>
 
-        <Text style={[styles.embarazo, styles.verMs1Typo]}>Embarazo</Text>
-        <View
-          style={{
-            width: '100%',
-            borderWidth: 1,
-            borderColor: Color.secundario,
-            top: 15
-          }}
-        />
+          <Text style={[styles.embarazo, styles.verMs1Typo]}>Embarazo</Text>
+          <View
+            style={{
+              width: '100%',
+              borderWidth: 1,
+              borderColor: Color.secundario,
+              top: 15
+            }}
+          />
 
-        <View style={styles.faritaParent}>
-          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-            <Image
-              style={[styles.faritaIcon, styles.iconLayout]}
-              contentFit="cover"
-              source={require('../assets/farita1.png')}
-            />
-            <Image
-              style={[styles.marieIcon, styles.iconLayout]}
-              contentFit="cover"
-              source={require('../assets/farita1.png')}
-            />
-            <Image
-              style={[styles.marieIcon, styles.iconLayout]}
-              contentFit="cover"
-              source={require('../assets/farita2.png')}
-            />
-            <Image
-              style={[styles.marieIcon, styles.iconLayout]}
-              contentFit="cover"
-              source={require('../assets/farita2.png')}
-            />
-            <Image
-              style={styles.vectorIcon}
-              contentFit="cover"
-              source={require('../assets/vector22.png')}
-            />
-          </ScrollView>
-        </View>
+          <View style={styles.faritaParent}>
+            <ScrollView
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+            >
+              <Image
+                style={[styles.faritaIcon, styles.iconLayout]}
+                contentFit="cover"
+                source={require('../assets/farita1.png')}
+              />
+              <Image
+                style={[styles.marieIcon, styles.iconLayout]}
+                contentFit="cover"
+                source={require('../assets/farita1.png')}
+              />
+              <Image
+                style={[styles.marieIcon, styles.iconLayout]}
+                contentFit="cover"
+                source={require('../assets/farita2.png')}
+              />
+              <Image
+                style={[styles.marieIcon, styles.iconLayout]}
+                contentFit="cover"
+                source={require('../assets/farita2.png')}
+              />
+              <Image
+                style={styles.vectorIcon}
+                contentFit="cover"
+                source={require('../assets/vector22.png')}
+              />
+            </ScrollView>
+          </View>
 
-        <Text style={[styles.embarazo, styles.verMs1Typo]}>
-          Recién nacido y mis primeras semanas
-        </Text>
+          <Text style={[styles.embarazo, styles.verMs1Typo]}>
+            Recién nacido y mis primeras semanas
+          </Text>
 
-        <View
-          style={{
-            width: '100%',
-            borderWidth: 1,
-            borderColor: Color.secundario,
-            top: 15
-          }}
-        />
+          <View
+            style={{
+              width: '100%',
+              borderWidth: 1,
+              borderColor: Color.secundario,
+              top: 15
+            }}
+          />
 
-        <View style={styles.faritaParent}>
-          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-            <Image
-              style={[styles.faritaIcon, styles.iconLayout]}
-              contentFit="cover"
-              source={require('../assets/farita1.png')}
-            />
-            <Image
-              style={[styles.marieIcon, styles.iconLayout]}
-              contentFit="cover"
-              source={require('../assets/farita1.png')}
-            />
-            <Image
-              style={[styles.marieIcon, styles.iconLayout]}
-              contentFit="cover"
-              source={require('../assets/farita1.png')}
-            />
-            <Image
-              style={[styles.marieIcon, styles.iconLayout]}
-              contentFit="cover"
-              source={require('../assets/farita2.png')}
-            />
-            <Image
-              style={[styles.marieIcon, styles.iconLayout]}
-              contentFit="cover"
-              source={require('../assets/farita2.png')}
-            />
-            <Image
-              style={styles.vectorIcon}
-              contentFit="cover"
-              source={require('../assets/vector22.png')}
-            />
-          </ScrollView>
-        </View>
+          <View style={styles.faritaParent}>
+            <ScrollView
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+            >
+              <Image
+                style={[styles.faritaIcon, styles.iconLayout]}
+                contentFit="cover"
+                source={require('../assets/farita1.png')}
+              />
+              <Image
+                style={[styles.marieIcon, styles.iconLayout]}
+                contentFit="cover"
+                source={require('../assets/farita1.png')}
+              />
+              <Image
+                style={[styles.marieIcon, styles.iconLayout]}
+                contentFit="cover"
+                source={require('../assets/farita1.png')}
+              />
+              <Image
+                style={[styles.marieIcon, styles.iconLayout]}
+                contentFit="cover"
+                source={require('../assets/farita2.png')}
+              />
+              <Image
+                style={[styles.marieIcon, styles.iconLayout]}
+                contentFit="cover"
+                source={require('../assets/farita2.png')}
+              />
+              <Image
+                style={styles.vectorIcon}
+                contentFit="cover"
+                source={require('../assets/vector22.png')}
+              />
+            </ScrollView>
+          </View>
 
-        <Text style={[styles.embarazo, styles.verMs1Typo]}>
-          Sonrisas Inolvidables
-        </Text>
+          <Text style={[styles.embarazo, styles.verMs1Typo]}>
+            Sonrisas Inolvidables
+          </Text>
 
-        <View
-          style={{
-            width: '100%',
-            borderWidth: 1,
-            borderColor: Color.secundario,
-            top: 15
-          }}
-        />
+          <View
+            style={{
+              width: '100%',
+              borderWidth: 1,
+              borderColor: Color.secundario,
+              top: 15
+            }}
+          />
 
-        <View style={styles.faritaParent}>
-          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-            <Image
-              style={[styles.faritaIcon, styles.iconLayout]}
-              contentFit="cover"
-              source={require('../assets/farita1.png')}
-            />
-            <Image
-              style={[styles.marieIcon, styles.iconLayout]}
-              contentFit="cover"
-              source={require('../assets/farita1.png')}
-            />
-            <Image
-              style={[styles.marieIcon, styles.iconLayout]}
-              contentFit="cover"
-              source={require('../assets/farita1.png')}
-            />
-            <Image
-              style={[styles.marieIcon, styles.iconLayout]}
-              contentFit="cover"
-              source={require('../assets/farita2.png')}
-            />
-            <Image
-              style={[styles.marieIcon, styles.iconLayout]}
-              contentFit="cover"
-              source={require('../assets/farita2.png')}
-            />
-            <Image
-              style={styles.vectorIcon}
-              contentFit="cover"
-              source={require('../assets/vector22.png')}
-            />
-          </ScrollView>
-        </View>
+          <View style={styles.faritaParent}>
+            <ScrollView
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+            >
+              <Image
+                style={[styles.faritaIcon, styles.iconLayout]}
+                contentFit="cover"
+                source={require('../assets/farita1.png')}
+              />
+              <Image
+                style={[styles.marieIcon, styles.iconLayout]}
+                contentFit="cover"
+                source={require('../assets/farita1.png')}
+              />
+              <Image
+                style={[styles.marieIcon, styles.iconLayout]}
+                contentFit="cover"
+                source={require('../assets/farita1.png')}
+              />
+              <Image
+                style={[styles.marieIcon, styles.iconLayout]}
+                contentFit="cover"
+                source={require('../assets/farita2.png')}
+              />
+              <Image
+                style={[styles.marieIcon, styles.iconLayout]}
+                contentFit="cover"
+                source={require('../assets/farita2.png')}
+              />
+              <Image
+                style={styles.vectorIcon}
+                contentFit="cover"
+                source={require('../assets/vector22.png')}
+              />
+            </ScrollView>
+          </View>
 
-        <Text style={[styles.embarazo, styles.verMs1Typo]}>
-          Momentos con mamá y papá
-        </Text>
+          <Text style={[styles.embarazo, styles.verMs1Typo]}>
+            Momentos con mamá y papá
+          </Text>
 
-        <View
-          style={{
-            width: '100%',
-            borderWidth: 1,
-            borderColor: Color.secundario,
-            top: 15
-          }}
-        />
+          <View
+            style={{
+              width: '100%',
+              borderWidth: 1,
+              borderColor: Color.secundario,
+              top: 15
+            }}
+          />
 
-        <View style={styles.faritaParent}>
-          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-            <Image
-              style={[styles.faritaIcon, styles.iconLayout]}
-              contentFit="cover"
-              source={require('../assets/farita1.png')}
-            />
-            <Image
-              style={[styles.marieIcon, styles.iconLayout]}
-              contentFit="cover"
-              source={require('../assets/farita1.png')}
-            />
-            <Image
-              style={[styles.marieIcon, styles.iconLayout]}
-              contentFit="cover"
-              source={require('../assets/farita2.png')}
-            />
-            <Image
-              style={[styles.marieIcon, styles.iconLayout]}
-              contentFit="cover"
-              source={require('../assets/farita2.png')}
-            />
-            <Image
-              style={styles.vectorIcon}
-              contentFit="cover"
-              source={require('../assets/vector22.png')}
-            />
-          </ScrollView>
+          <View style={styles.faritaParent}>
+            <ScrollView
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+            >
+              <Image
+                style={[styles.faritaIcon, styles.iconLayout]}
+                contentFit="cover"
+                source={require('../assets/farita1.png')}
+              />
+              <Image
+                style={[styles.marieIcon, styles.iconLayout]}
+                contentFit="cover"
+                source={require('../assets/farita1.png')}
+              />
+              <Image
+                style={[styles.marieIcon, styles.iconLayout]}
+                contentFit="cover"
+                source={require('../assets/farita2.png')}
+              />
+              <Image
+                style={[styles.marieIcon, styles.iconLayout]}
+                contentFit="cover"
+                source={require('../assets/farita2.png')}
+              />
+              <Image
+                style={styles.vectorIcon}
+                contentFit="cover"
+                source={require('../assets/vector22.png')}
+              />
+            </ScrollView>
+          </View>
         </View>
       </View>
     </ScrollView>
@@ -276,10 +278,6 @@ Actualmente tengo 35 añoss y dos meses.`}</Text>
 }
 
 const styles = StyleSheet.create({
-  parentPosition: {
-    left: 20,
-    position: 'absolute'
-  },
   verMs1Typo: {
     textAlign: 'left',
     fontFamily: FontFamily.lato
@@ -306,7 +304,8 @@ const styles = StyleSheet.create({
     // marginLeft: -214,
     // left: '50%',
     width: '100%',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    justifyContent: 'center'
     // position: 'absolute'
   },
   tabsFlexBox: {
@@ -335,7 +334,7 @@ const styles = StyleSheet.create({
     letterSpacing: 0,
     fontSize: FontSize.size_lg,
     fontFamily: FontFamily.lato,
-    width: 391
+    width: '100%'
   },
   verMs1: {
     color: Color.primario2,
@@ -407,34 +406,20 @@ const styles = StyleSheet.create({
     height: 459,
     zIndex: 0,
     width: '100%',
-    backgroundColor: Color.white
+    justifyContent: 'center'
   },
   image6Icon: {
-    top: 2,
     width: 87,
     height: 55,
-    zIndex: 1,
-    left: 20,
-    position: 'absolute'
+    zIndex: 1
   },
-  notificationIcon: {
-    height: '83.33%',
-    width: '70.83%',
-    top: '8.33%',
-    right: '14.58%',
-    bottom: '8.33%',
-    left: '14.58%',
-    maxWidth: '100%',
-    maxHeight: '100%',
-    position: 'absolute',
-    overflow: 'hidden'
-  },
+
   groupChild: {
     top: 0,
     height: 16,
     width: 16,
-    left: 0,
-    position: 'absolute'
+    left: 0
+    // position: 'absolute'
   },
   text: {
     left: 5,
@@ -449,8 +434,8 @@ const styles = StyleSheet.create({
     top: -6,
     left: 13,
     height: 16,
-    width: 16,
-    position: 'absolute'
+    width: 16
+    // position: 'absolute'
   },
   iconly: {
     marginLeft: 20
@@ -460,16 +445,13 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   vectorParent: {
-    top: 20,
-    left: 296,
     zIndex: 2,
     justifyContent: 'center',
     flexDirection: 'row',
-    alignItems: 'center',
-    position: 'absolute'
+    alignItems: 'center'
   },
   ionmenuIcon: {
-    top: 86,
+    // top: 86,
     width: 26,
     height: 20,
     zIndex: 3,
@@ -489,10 +471,10 @@ const styles = StyleSheet.create({
     position: 'absolute'
   },
   maskGroupParent: {
-    top: 146,
-    zIndex: 4,
+    top: 40,
+    zIndex: 4
     // left: 20,
-    position: 'absolute'
+    // position: 'absolute'
   },
   miBiografa: {
     color: Color.white,
@@ -509,38 +491,18 @@ const styles = StyleSheet.create({
   tabs: {
     left: 214
   },
-  tabsBarChild: {
-    top: 39,
-    left: 131,
-    borderStyle: 'solid',
-    borderColor: Color.backgroundPrimaryBackground,
-    borderTopWidth: 1,
-    width: 298,
-    height: 1,
-    position: 'absolute'
-  },
   tabsBar: {
     // top: 399,
     height: 40,
     zIndex: 5,
     backgroundColor: Color.white
   },
-  rectangleParent: {
-    left: 0,
-    flexDirection: 'row'
-  },
-  navigationIcon: {
-    top: 821,
-    height: 105
-  },
+
   perfilIdInfante: {
-    borderRadius: Border.br_31xl,
-    // flex: 1,
     height: '100%',
     top: 20,
     marginBottom: 80,
-    // overflow: 'hidden',
-    paddingHorizontal: 15,
+    // paddingHorizontal: 15,
     width: '100%',
     backgroundColor: Color.white
   }

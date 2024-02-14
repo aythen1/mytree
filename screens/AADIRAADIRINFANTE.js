@@ -62,11 +62,6 @@ const AADIRAADIRINFANTE = () => {
             </Pressable>
             <Text style={styles.aadirInfante}>Añadir Infante</Text>
           </View>
-          {/* <Image
-            style={styles.navigationIcon}
-            contentFit="cover"
-            source={require('../assets/navigation13.png')}
-          /> */}
           <View style={[styles.frameParent, styles.parentPosition]}>
             <View>
               <View>

@@ -230,9 +230,7 @@ const styles = StyleSheet.create({
     height: 105
   },
   miDiarioEntradaTexto: {
-    // borderRadius: Border.br_31xl,
     backgroundColor: Color.white,
-    // height: 926,
     overflow: 'hidden',
     width: '100%',
     flex: 1

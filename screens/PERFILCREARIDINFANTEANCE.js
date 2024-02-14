@@ -1,8 +1,12 @@
-import * as React from 'react'
+import React from 'react'
 import { StyleSheet, View, Pressable, Text, ScrollView } from 'react-native'
 import { Image } from 'expo-image'
 import { useNavigation } from '@react-navigation/native'
 import { FontFamily, Color, FontSize, Border, Padding } from '../GlobalStyles'
+import HeaderIcons from '../components/HeaderIcons'
+import SettingMuroSVG from '../components/svgs/SettingMuroSVG'
+import TreeSVG from '../components/svgs/TreeSVG'
+import NotificacionsMuroSVG from '../components/svgs/NotificationsMuroSVG'
 
 const PERFILCREARIDINFANTEANCE = () => {
   const navigation = useNavigation()
@@ -17,30 +21,12 @@ const PERFILCREARIDINFANTEANCE = () => {
             source={require('../assets/image-6.png')}
           />
           <View style={styles.parentFlexBox}>
-            <Image
-              style={styles.backLayout}
-              contentFit="cover"
-              source={require('../assets/vector7.png')}
-            />
-            <View style={[styles.iconly, styles.backLayout]}>
-              <Image
-                style={styles.notificationIcon}
-                contentFit="cover"
-                source={require('../assets/notification4.png')}
-              />
-              <View style={[styles.ellipseParent, styles.groupChildLayout]}>
-                <Image
-                  style={[styles.groupChild, styles.groupChildLayout]}
-                  contentFit="cover"
-                  source={require('../assets/ellipse-2263.png')}
-                />
-                <Text style={styles.text}>1</Text>
-              </View>
-            </View>
-            <Image
-              style={[styles.iconly, styles.backLayout]}
-              contentFit="cover"
-              source={require('../assets/iconlylightoutlinesetting.png')}
+            <HeaderIcons
+              icons={[
+                <TreeSVG />,
+                <NotificacionsMuroSVG />,
+                <SettingMuroSVG />
+              ]}
             />
           </View>
         </View>
@@ -153,8 +139,8 @@ const styles = StyleSheet.create({
   parentFlexBox: {
     justifyContent: 'center',
     flexDirection: 'row',
-    alignItems: 'center',
-    left: '35%'
+    alignItems: 'center'
+    // left: '35%'
   },
   aadir1Typo: {
     textAlign: 'left',
@@ -195,10 +181,8 @@ const styles = StyleSheet.create({
     }
   },
   image6Icon: {
-    top: 3,
     width: 87,
-    height: 55,
-    left: 20
+    height: 55
   },
   icon: {
     height: '100%',
@@ -297,7 +281,8 @@ const styles = StyleSheet.create({
   },
   topContainer: {
     alignItems: 'center',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
   paddingBottom: {
     paddingBottom: 60
