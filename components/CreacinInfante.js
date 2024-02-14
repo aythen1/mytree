@@ -207,7 +207,8 @@ const styles = StyleSheet.create({
   button: {
     top: 341,
     height: 52,
-    width: '100%'
+    width: '100%',
+    borderRadius: 100
   },
   creacinInfante: {
     width: '100%',

@@ -638,14 +638,9 @@ const styles = StyleSheet.create({
     height: 105
   },
   perfilIdAncestro: {
-    borderRadius: Border.br_31xl,
-    // flex: 1,
-    // height: 926,
-    // overflow: 'hidden',
     width: '100%',
     backgroundColor: Color.white,
     paddingBottom: 30
-    // paddingHorizontal: 15
   }
 })
 
