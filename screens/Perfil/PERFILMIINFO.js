@@ -9,7 +9,10 @@ const PERFILMIINFO = ({ setSelectedComponent }) => {
   const navigation = useNavigation()
 
   return (
-    <ScrollView style={styles.perfilMiInfo}>
+    <ScrollView
+      style={styles.perfilMiInfo}
+      showsVerticalScrollIndicator={false}
+    >
       <View style={styles.frameView}>
         <View style={styles.image6Parent}>
           <Image

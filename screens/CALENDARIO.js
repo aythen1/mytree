@@ -14,7 +14,7 @@ const CALENDARIO = () => {
   const { showPanel } = useSelector((state) => state.panel)
 
   return (
-    <ScrollView>
+    <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.calendario3}>
         {/* <View style={styles.parent}>
           <Image

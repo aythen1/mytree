@@ -48,7 +48,7 @@ const CrearEvento = () => {
   }
 
   return (
-    <ScrollView style={{ flex: 1 }}>
+    <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
       <View style={[styles.crearEvento]}>
         <View>
           <View style={styles.image6Wrapper}>

@@ -506,6 +506,19 @@ const styles = StyleSheet.create({
     width: '100%',
     flex: 1,
     backgroundColor: Color.white
+  },
+  buttonContainer2Overlay: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(113, 113, 113, 0.3)'
+  },
+  buttonContainer2Bg: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    left: 0,
+    top: 0
   }
 })
 

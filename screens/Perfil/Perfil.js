@@ -45,7 +45,7 @@ const Perfil = () => {
   }
 
   return (
-    <ScrollView style={styles.perfil}>
+    <ScrollView style={styles.perfil} showsVerticalScrollIndicator={false}>
       <View style={[styles.vectorParent, styles.buttonFlexBox]}>
         <Image
           style={[styles.image6Icon, styles.ionmenu]}

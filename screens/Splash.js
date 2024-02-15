@@ -9,7 +9,7 @@ const Splash = () => {
   const navigation = useNavigation()
 
   return (
-    <ScrollView style={styles.splash}>
+    <ScrollView style={styles.splash} showsVerticalScrollIndicator={false}>
       <View>
         <View style={styles.splashChild} />
         <Image

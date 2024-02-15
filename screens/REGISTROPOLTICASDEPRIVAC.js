@@ -9,7 +9,7 @@ const REGISTROPOLTICASDEPRIVAC = () => {
   const navigation = useNavigation()
 
   return (
-    <ScrollView style={{ flex: 1 }}>
+    <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
       <View style={styles.registroPolticasDePrivac}>
         <Image
           style={styles.vectorIcon}

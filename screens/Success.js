@@ -9,7 +9,7 @@ const Success = () => {
   const navigation = useNavigation()
 
   return (
-    <ScrollView>
+    <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.success}>
         <View style={styles.frameParent}>
           <View style={styles.frameGroup}>

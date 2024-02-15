@@ -19,7 +19,7 @@ const PerfilAjustes = () => {
   const navigation = useNavigation()
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <LinearGradient
         style={[styles.perfilAjustes, styles.iconLayout1]}
         locations={[0, 1]}

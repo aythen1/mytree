@@ -82,7 +82,7 @@ const Organizador = () => {
 
   return (
     <>
-      <ScrollView style={{ flex: 1 }}>
+      <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
         <View style={styles.organizador}>
           <View style={[styles.image6Parent, styles.parentPosition]}>
             <Image

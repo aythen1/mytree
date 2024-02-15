@@ -27,7 +27,7 @@ const FiltroEdicion = () => {
   }
 
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: 'white' }}>
+    <ScrollView style={{ flex: 1, backgroundColor: 'white' }}  showsVerticalScrollIndicator={false}>
       <View style={styles.image6Parent}>
         <Image
           style={styles.image6Icon}

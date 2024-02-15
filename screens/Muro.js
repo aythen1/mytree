@@ -46,7 +46,7 @@ const Muro = () => {
 
   return (
     <View style={{ flex: 1 }}>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View
           style={{
             width: '100%',

@@ -10,7 +10,7 @@ const PERFILANCESTROAJUSTES = () => {
   const navigation = useNavigation()
 
   return (
-    <ScrollView style={{ flex: 1 }}>
+    <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
       <View style={[styles.perfilAncestroAjustes, styles.iconLayout]}>
         <Image
           style={[styles.image6Icon]}
@@ -192,10 +192,8 @@ const styles = StyleSheet.create({
     height: 60
   },
   perfilAncestroAjustes: {
-    marginTop: 30,
     paddingBottom: 20,
     paddingHorizontal: 15,
-    borderRadius: Border.br_31xl,
     // flex: 1,
     // height: 926,
     backgroundColor: Color.white,

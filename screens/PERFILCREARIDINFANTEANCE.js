@@ -12,7 +12,10 @@ const PERFILCREARIDINFANTEANCE = () => {
   const navigation = useNavigation()
 
   return (
-    <ScrollView style={[styles.perfilCrearIdInfanteance, styles.iconLayout]}>
+    <ScrollView
+      style={[styles.perfilCrearIdInfanteance, styles.iconLayout]}
+      showsVerticalScrollIndicator={false}
+    >
       <View style={styles.paddingBottom}>
         <View style={styles.topContainer}>
           <Image

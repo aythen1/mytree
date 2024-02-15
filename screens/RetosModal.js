@@ -11,7 +11,10 @@ const RetosModal = ({ setShowModalRetos, setShowRetos }) => {
   // const navigation = useNavigation()
 
   return (
-    <ScrollView style={styles.retosBienvenida}>
+    <ScrollView
+      style={styles.retosBienvenida}
+      showsVerticalScrollIndicator={false}
+    >
       <View style={styles.frameParent}>
         <View style={styles.frameGroup}></View>
         <View style={styles.parentSpaceBlock}>

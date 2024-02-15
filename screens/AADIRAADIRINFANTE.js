@@ -41,7 +41,10 @@ const AADIRAADIRINFANTE = () => {
 
   return (
     <>
-      <ScrollView style={{ backgroundColor: Color.white }}>
+      <ScrollView
+        style={{ backgroundColor: Color.white }}
+        showsVerticalScrollIndicator={false}
+      >
         <View style={styles.aadirAadirInfante}>
           <View style={[styles.image6Wrapper, styles.fieldFlexBox]}>
             <Image

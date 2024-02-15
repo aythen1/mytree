@@ -39,7 +39,10 @@ const CALENDARIOCREARFECHAESPEC = () => {
   }, [])
 
   return (
-    <ScrollView style={styles.calendarioCrearFechaEspec}>
+    <ScrollView
+      style={styles.calendarioCrearFechaEspec}
+      showsVerticalScrollIndicator={false}
+    >
       <View style={styles.paddingBottom}>
         <View>
           <View style={[styles.image6Wrapper, styles.framePosition]}>
