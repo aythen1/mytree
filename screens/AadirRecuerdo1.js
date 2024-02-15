@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
   recientesPosition: {
     left: 0,
     top: 0,
-    position: 'absolute'
+    justifyContent: 'center'
   },
   rectangleBg: {
     backgroundColor: Color.grisClaro,
@@ -178,8 +178,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   frameChild: {
-    height: 420,
-    width: 388
+    height: 420
+    // width: 388
   },
   recientes: {
     fontSize: FontSize.size_lg,
@@ -287,7 +287,7 @@ const styles = StyleSheet.create({
   recentsSection: {
     height: 195,
     flexWrap: 'wrap',
-    width: 388,
+    width: '100%',
     flexDirection: 'row'
   },
   rectangle2: {
@@ -319,28 +319,22 @@ const styles = StyleSheet.create({
   selectMultiple2: {
     top: 181,
     left: 145,
-    width: 244,
+    width: '100%',
     height: 32,
     position: 'absolute',
     overflow: 'hidden'
   },
   recentsSectionParent: {
-    width: 389,
+    width: '100%',
+
     height: 213
   },
   frameParent: {
     alignItems: 'center'
   },
-  navigationIcon: {
-    width: 428,
-    height: 105,
-    marginTop: 2
-  },
   aadirRecuerdo: {
-    borderRadius: Border.br_31xl,
     flex: 1,
     top: 20,
-    height: 926,
     overflow: 'hidden',
     width: '100%',
     backgroundColor: Color.white
