@@ -12,7 +12,10 @@ const MenuPrincipal = () => {
   const dispatch = useDispatch()
 
   return (
-    <ScrollView style={styles.menPrincipal}>
+    <ScrollView
+      style={styles.menPrincipal}
+      showsVerticalScrollIndicator={false}
+    >
       <LinearGradient
         style={styles.menPrincipalChild}
         locations={[0, 1]}

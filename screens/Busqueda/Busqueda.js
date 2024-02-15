@@ -48,7 +48,7 @@ const Busqueda = () => {
   }
 
   return (
-    <ScrollView style={styles.bsqueda}>
+    <ScrollView style={styles.bsqueda} showsVerticalScrollIndicator={false}>
       <View style={styles.bsquedaContainer}>
         <Image
           style={styles.image6Icon}

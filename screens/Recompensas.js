@@ -19,7 +19,10 @@ const Recompensas = () => {
   const colors = ['#7EC18C', '#FFC269', '#B0B0B0', '#F9E168', '#65BBCE']
 
   return (
-    <ScrollView style={[styles.recompensas, styles.iconLayout]}>
+    <ScrollView
+      style={[styles.recompensas, styles.iconLayout]}
+      showsVerticalScrollIndicator={false}
+    >
       <View style={styles.paddingBottom}>
         <Image
           style={styles.image6Icon}

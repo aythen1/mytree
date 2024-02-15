@@ -14,7 +14,10 @@ function BusquedaRetos() {
   const navigation = useNavigation()
 
   return (
-    <ScrollView style={styles.notificationParent}>
+    <ScrollView
+      style={styles.notificationParent}
+      showsVerticalScrollIndicator={false}
+    >
       <LinearGradient
         style={[styles.notification1, styles.pressableBg]}
         locations={[0, 1]}

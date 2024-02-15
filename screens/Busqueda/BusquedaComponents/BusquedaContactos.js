@@ -5,7 +5,10 @@ import { FontFamily, FontSize, Color } from '../../../GlobalStyles'
 
 const BusquedaContactos = () => {
   return (
-    <ScrollView style={[styles.bsquedaContactos, styles.iconLayout]}>
+    <ScrollView
+      style={[styles.bsquedaContactos, styles.iconLayout]}
+      showsVerticalScrollIndicator={false}
+    >
       <View style={styles.frameParent}>
         <View>
           <View>

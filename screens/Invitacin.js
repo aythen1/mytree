@@ -24,7 +24,10 @@ const Invitacin = () => {
   }
 
   return (
-    <ScrollView style={[styles.invitacin, styles.iconLayout]}>
+    <ScrollView
+      style={[styles.invitacin, styles.iconLayout]}
+      showsVerticalScrollIndicator={false}
+    >
       <View style={styles.paddingBottom}>
         <View style={[styles.image6Wrapper, styles.parentFlexBox]}>
           <Image

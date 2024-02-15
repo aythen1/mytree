@@ -34,7 +34,7 @@ const MIDIARIOPANTALLAPERSONAL = () => {
 
   return (
     <>
-      <ScrollView style={{ flex: 1 }}>
+      <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
         <View style={styles.miDiarioPantallaPersonal}>
           <View
             style={{

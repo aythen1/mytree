@@ -8,7 +8,7 @@ const BIO2Infante = () => {
   const navigation = useNavigation()
 
   return (
-    <ScrollView style={{ flex: 1 }}>
+    <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
       <View style={styles.bio2Infante}>
         <View style={[styles.nacALas1430HsParent, styles.iconPosition]}>
           <Text style={styles.containerFlexBox}>

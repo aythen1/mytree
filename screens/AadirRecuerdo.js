@@ -388,7 +388,6 @@ const styles = StyleSheet.create({
     // position: 'absolute'
   },
   aadirRecuerdo: {
-    borderRadius: Border.br_31xl,
     backgroundColor: Color.white,
     flex: 1,
     // height: 926,
