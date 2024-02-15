@@ -240,7 +240,7 @@ const CALENDARIOCREARFECHAESPEC = () => {
           </Modal>
         )}
 
-        {modalOpcionesVisible && (
+        {/* {modalOpcionesVisible && (
           <Modal
             animationType="fade"
             transparent={true}
@@ -268,7 +268,26 @@ const CALENDARIOCREARFECHAESPEC = () => {
               </View>
             </TouchableWithoutFeedback>
           </Modal>
-        )}
+        )} */}
+
+        <Modal animationType="slide" transparent visible={modalOpcionesVisible}>
+          <View style={styles.arrowDown2Icon1Overlay}>
+            <Pressable
+              style={styles.arrowDown2Icon1Bg}
+              onPress={() => setModalOpcionesVisible(false)}
+            />
+            <OpcionesModal
+              opciones={category}
+              visible={modalOpcionesVisible}
+              onClose={() => setModalOpcionesVisible(false)}
+              onAddOption={(nuevaOpcion) => {
+                setCategory((prevCategory) => [...prevCategory, nuevaOpcion])
+                setModalOpcionesVisible(false)
+              }}
+              isAdd={true}
+            />
+          </View>
+        </Modal>
       </View>
     </ScrollView>
   )
@@ -277,6 +296,19 @@ const CALENDARIOCREARFECHAESPEC = () => {
 const styles = StyleSheet.create({
   framePosition: {
     left: 20
+  },
+  arrowDown2Icon1Overlay: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(113, 113, 113, 0.3)'
+  },
+  arrowDown2Icon1Bg: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    left: 0,
+    top: 0
   },
   titleTypo: {
     textAlign: 'left',

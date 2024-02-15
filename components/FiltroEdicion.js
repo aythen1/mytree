@@ -27,7 +27,7 @@ const FiltroEdicion = () => {
   }
 
   return (
-    <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
+    <ScrollView style={{ flex: 1, backgroundColor: 'white' }}  showsVerticalScrollIndicator={false}>
       <View style={styles.image6Parent}>
         <Image
           style={styles.image6Icon}
@@ -316,7 +316,6 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     flexDirection: 'row',
     backgroundColor: 'white'
-    // width: 428
   },
   frameContainer: {
     marginTop: 20,
@@ -328,16 +327,14 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   image6Parent: {
-    top: 3,
+    marginTop: 15,
     left: 0,
+    backgroundColor: Color.white,
     height: 847
-    // position: 'absolute'
   },
   aadirRecuerdo: {
-    // borderRadius: Border.br_31xl,
     backgroundColor: Color.white,
     flex: 1,
-    // height: 926,
     overflow: 'hidden'
   }
 })

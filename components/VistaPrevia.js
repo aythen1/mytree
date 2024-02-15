@@ -142,16 +142,6 @@ const VistaPrevia = ({ onClose, setCalendario }) => {
           </LinearGradient>
         </View>
       </View>
-
-      {/* <Modal animationType="fade" transparent visible={buttonContainer2Visible}>
-        <View style={styles.buttonContainer2Overlay}>
-          <Pressable
-            style={styles.buttonContainer2Bg}
-            onPress={closeButtonContainer2}
-          />
-          <ENTRADACREADA8 onClose={closeButtonContainer2} />
-        </View>
-      </Modal> */}
     </>
   )
 }

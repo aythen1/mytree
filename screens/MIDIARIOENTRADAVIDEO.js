@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   frameChild: {
     borderRadius: Border.br_5xl,
     backgroundColor: Color.secundario,
-    width: 453,
+    width: '100%',
     height: 904,
     zIndex: 0
   },
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
   },
   rectangleParent: {
     top: 0,
-    width: 428,
+    width: '100%',
     left: 0,
     height: 926,
     flexDirection: 'row'

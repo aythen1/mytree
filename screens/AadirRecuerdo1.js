@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
   },
   frameChild: {
     height: 420
-    // width: 388
+    // maxWidth: '100%'
   },
   recientes: {
     fontSize: FontSize.size_lg,
@@ -326,7 +326,6 @@ const styles = StyleSheet.create({
   },
   recentsSectionParent: {
     width: '100%',
-
     height: 213
   },
   frameParent: {
