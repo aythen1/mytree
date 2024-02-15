@@ -4,6 +4,10 @@ import { StyleSheet, View, Pressable, Text, ScrollView } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { FontSize, FontFamily, Color, Padding } from '../../../GlobalStyles'
 import Checkbox from 'expo-checkbox'
+import HeaderIcons from '../../../components/HeaderIcons'
+import CalendarMuroSVG from '../../../components/svgs/CalendarMuroSVG'
+import BookSVG from '../../../components/svgs/BookSVG'
+import NotificationsMuroSVG from '../../../components/svgs/NotificationsMuroSVG'
 
 const PerfilVerificacion = () => {
   const navigation = useNavigation()
@@ -21,20 +25,12 @@ const PerfilVerificacion = () => {
               source={require('../../../assets/image-6.png')}
             />
             <View style={styles.iconlylightOutlinecalendarParent}>
-              <Image
-                style={styles.iconlylightOutlinecalendar}
-                contentFit="cover"
-                source={require('../../../assets/iconlylightoutlinecalendar4.png')}
-              />
-              <Image
-                style={styles.documentIconLayout}
-                contentFit="cover"
-                source={require('../../../assets/document7.png')}
-              />
-              <Image
-                style={styles.documentIconLayout}
-                contentFit="cover"
-                source={require('../../../assets/iconlylightoutlinesetting6.png')}
+              <HeaderIcons
+                icons={[
+                  <CalendarMuroSVG />,
+                  <BookSVG />,
+                  <NotificationsMuroSVG />
+                ]}
               />
             </View>
           </View>
@@ -304,7 +300,7 @@ const styles = StyleSheet.create({
   },
   iconlylightOutlinecalendarParent: {
     width: '100%',
-    left: '35%',
+    left: '45%',
     flexDirection: 'row'
   },
   image6Parent: {

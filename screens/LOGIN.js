@@ -13,7 +13,7 @@ import { useNavigation } from '@react-navigation/native'
 import { Color, FontFamily, Border, FontSize, Padding } from '../GlobalStyles'
 import Checkbox from 'expo-checkbox'
 
-const Login = () => {
+const LOGIN = () => {
   const navigation = useNavigation()
 
   const [checked, setChecked] = useState(false)
@@ -316,4 +316,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default Login
+export default LOGIN
