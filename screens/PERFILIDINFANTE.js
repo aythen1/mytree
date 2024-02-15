@@ -14,7 +14,7 @@ const PERFILIDINFANTE = () => {
   const navigation = useNavigation()
 
   return (
-    <ScrollView style={{ flex: 1 }}>
+    <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
       <View style={styles.perfilIdInfante}>
         <View
           style={{

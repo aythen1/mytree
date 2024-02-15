@@ -48,7 +48,7 @@ const CrearAlbum = () => {
 
   return (
     <>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.crearAlbum}>
           <Image
             style={styles.image6Icon}

@@ -77,7 +77,7 @@ const TarjetaDigital = () => {
 
   return (
     <>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View style={[styles.tarjetaDigital, styles.iconLayout]}>
           <View style={styles.image6Wrapper}>
             <Image

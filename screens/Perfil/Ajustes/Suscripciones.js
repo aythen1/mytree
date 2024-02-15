@@ -15,7 +15,10 @@ const Suscripciones = () => {
   const navigation = useNavigation()
 
   return (
-    <ScrollView style={[styles.suscripciones, styles.iconLayout]}>
+    <ScrollView
+      style={[styles.suscripciones, styles.iconLayout]}
+      showsVerticalScrollIndicator={false}
+    >
       <View style={[styles.frameParent, styles.frameParentPosition]}>
         <View style={styles.image6Parent}>
           <Image

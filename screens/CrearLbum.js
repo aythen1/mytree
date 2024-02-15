@@ -30,7 +30,7 @@ const CrearLbum = () => {
 
   return (
     <>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.crearLbum}>
           <View
             style={{

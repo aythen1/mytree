@@ -9,7 +9,7 @@ const REGISTROTRMINOSYCONDICIO = () => {
   const navigation = useNavigation()
 
   return (
-    <ScrollView style={{ flex: 1 }}>
+    <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
       <View style={styles.registroTrminosYCondicio}>
         <Image
           style={styles.vectorIcon}

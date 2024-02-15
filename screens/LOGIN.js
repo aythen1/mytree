@@ -22,6 +22,7 @@ const LOGIN = () => {
     <ScrollView
       style={styles.login}
       contentContainerStyle={{ paddingBottom: 70 }}
+      showsVerticalScrollIndicator={false}
     >
       <LinearGradient
         style={[styles.loginInner, styles.buttonFlexBox]}

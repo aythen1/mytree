@@ -11,7 +11,7 @@ const AadirRecuerdo1 = () => {
 
   return (
     <View style={styles.aadirRecuerdo}>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.frameParent}>
           <View style={styles.image6Parent}>
             <Image
@@ -334,10 +334,10 @@ const styles = StyleSheet.create({
   },
   aadirRecuerdo: {
     flex: 1,
-    top: 20,
     overflow: 'hidden',
     width: '100%',
-    backgroundColor: Color.white
+    backgroundColor: Color.white,
+    height: '100%'
   }
 })
 

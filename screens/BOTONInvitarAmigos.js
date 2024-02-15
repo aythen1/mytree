@@ -191,18 +191,18 @@ const BOTONInvitarAmigos = () => {
           </Pressable>
 
           {send && (
-            <Modal animationType="fade" transparent={true} visible={send}>
-              <TouchableWithoutFeedback onPress={() => setSend(false)}>
-                <View style={styles.modalOverlay}>
-                  <View>
-                    <ENTRADACREADA
-                      onClose={oncloseModalSend}
-                      message={'Añadido con éxito'}
-                      isNavigate={'BOTONInvitarAmigos1'}
-                    />
-                  </View>
-                </View>
-              </TouchableWithoutFeedback>
+            <Modal animationType="slide" transparent visible={send}>
+              <View style={styles.buttonContainer2Overlay}>
+                <Pressable
+                  style={styles.buttonContainer2Bg}
+                  onPress={() => setSend(false)}
+                />
+                <ENTRADACREADA
+                  onClose={oncloseModalSend}
+                  isNavigate={'BOTONInvitarAmigos1'}
+                  message={'Añadido con éxito'}
+                />
+              </View>
             </Modal>
           )}
 
@@ -509,6 +509,19 @@ const styles = StyleSheet.create({
     width: '100%',
     flex: 1,
     backgroundColor: Color.white
+  },
+  buttonContainer2Overlay: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(113, 113, 113, 0.3)'
+  },
+  buttonContainer2Bg: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    left: 0,
+    top: 0
   }
 })
 

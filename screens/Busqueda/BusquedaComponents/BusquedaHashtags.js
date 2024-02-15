@@ -5,7 +5,10 @@ import { FontSize, FontFamily, Color } from '../../../GlobalStyles'
 
 const BusquedaHashtags = () => {
   return (
-    <ScrollView style={styles.bsquedaPublicaciones}>
+    <ScrollView
+      style={styles.bsquedaPublicaciones}
+      showsVerticalScrollIndicator={false}
+    >
       <View style={styles.image2Parent}>
         <Image
           style={styles.image2Icon}

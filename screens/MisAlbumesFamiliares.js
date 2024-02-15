@@ -9,7 +9,10 @@ const MisAlbumesFamiliares = () => {
   const navigation = useNavigation()
 
   return (
-    <ScrollView style={styles.misAlbumesFamiliares}>
+    <ScrollView
+      style={styles.misAlbumesFamiliares}
+      showsVerticalScrollIndicator={false}
+    >
       <View style={styles.frameParent}>
         <View style={styles.parentLayout}>
           <Text style={[styles.lbumFamiliar2023, styles.nuestraTypo]}>

@@ -15,7 +15,10 @@ const PerfilVerificacion = () => {
   const [isChecked, setChecked] = useState(false)
 
   return (
-    <ScrollView style={[styles.perfilAjustesVerificacio, styles.iconLayout1]}>
+    <ScrollView
+      style={[styles.perfilAjustesVerificacio, styles.iconLayout1]}
+      showsVerticalScrollIndicator={false}
+    >
       <View style={styles.frameParent}>
         <View style={styles.frameGroup}>
           <View style={styles.parentIcons}>

@@ -24,7 +24,7 @@ const PerfilConfiguracion = () => {
   }
 
   return (
-    <ScrollView style={styles.frameParent}>
+    <ScrollView style={styles.frameParent} showsVerticalScrollIndicator={false}>
       <View style={styles.viewContainer}>
         <View>
           <View style={styles.parentIcons}>

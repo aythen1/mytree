@@ -36,7 +36,7 @@ const PERFILANCESTROAJUSTES1 = () => {
 
   return (
     <>
-      <ScrollView style={{ flex: 1 }}>
+      <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
         <View style={styles.perfilAncestroAjustes}>
           <View
             style={{
