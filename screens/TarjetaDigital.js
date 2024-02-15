@@ -18,6 +18,9 @@ import Para from '../components/Para'
 import VistaPrevia from '../components/VistaPrevia'
 // import ENTRADACREADA8 from "../components/ENTRADACREADA8";
 import { FontFamily, Padding, FontSize, Color, Border } from '../GlobalStyles'
+import Calendario from '../components/Calendario'
+import ENTRADACREADA from '../components/ENTRADACREADA'
+import PopUpCalendario from '../components/PopUpCalendario'
 
 const TarjetaDigital = () => {
   const [fieldContainerVisible, setFieldContainerVisible] = useState(false)
@@ -26,10 +29,15 @@ const TarjetaDigital = () => {
   const navigation = useNavigation()
   const [buttonContainer1Visible, setButtonContainer1Visible] = useState(false)
   const [buttonContainer2Visible, setButtonContainer2Visible] = useState(false)
+  const [calendario, setCalendario] = useState(false)
 
   const openFieldContainer = useCallback(() => {
     setFieldContainerVisible(true)
   }, [])
+
+  const closeCalendario = () => {
+    setCalendario(false)
+  }
 
   const closeFieldContainer = useCallback(() => {
     setFieldContainerVisible(false)
@@ -251,7 +259,7 @@ const TarjetaDigital = () => {
         </View>
       </Modal>
 
-      {/* <Modal animationType="fade" transparent visible={arrowDown2IconVisible}>
+      <Modal animationType="fade" transparent visible={arrowDown2IconVisible}>
         <TouchableWithoutFeedback onPress={closeArrowDown2Icon}>
           <View style={styles.modalOverlay}>
             <Pressable
@@ -269,7 +277,7 @@ const TarjetaDigital = () => {
             />
           </View>
         </TouchableWithoutFeedback>
-      </Modal> */}
+      </Modal>
 
       <Modal
         animationType="fade"
@@ -309,19 +317,40 @@ const TarjetaDigital = () => {
             style={styles.buttonContainer1Bg}
             onPress={closeButtonContainer1}
           />
-          <VistaPrevia onClose={closeButtonContainer1} />
+          <VistaPrevia
+            setCalendario={setCalendario}
+            onClose={closeButtonContainer1}
+          />
         </View>
       </Modal>
 
-      {/* <Modal animationType="fade" transparent visible={buttonContainer2Visible}>
+      <Modal animationType="fade" transparent visible={calendario}>
+        <View style={styles.buttonContainer1Overlay}>
+          <Pressable
+            style={styles.buttonContainer1Bg}
+            onPress={closeCalendario}
+          />
+          <PopUpCalendario
+            setCalendario={setCalendario}
+            onClose={closeCalendario}
+            setButtonContainer2Visible={setButtonContainer2Visible}
+          />
+        </View>
+      </Modal>
+
+      <Modal animationType="fade" transparent visible={buttonContainer2Visible}>
         <View style={styles.buttonContainer2Overlay}>
           <Pressable
             style={styles.buttonContainer2Bg}
             onPress={closeButtonContainer2}
           />
-          <ENTRADACREADA8 onClose={closeButtonContainer2} />
+          <ENTRADACREADA
+            onClose={closeButtonContainer2}
+            isNavigate={'CALENDARIO'}
+            message={'Guardado!'}
+          />
         </View>
-      </Modal> */}
+      </Modal>
     </>
   )
 }

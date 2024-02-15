@@ -257,27 +257,38 @@ const MUROALERTAS1 = () => {
                   <Text style={[styles.signIn2, styles.signTypo]}>Enviar</Text>
                 </Pressable>
               </LinearGradient>
-              {modalCreate && (
-                <Modal
-                  animationType="fade"
-                  transparent={true}
-                  visible={modalCreate}
-                >
-                  <TouchableWithoutFeedback
-                    onPress={() => onCloseModalCreate()}
-                  >
-                    <View style={styles.modalOverlay}>
-                      <View>
-                        <ENTRADACREADA
-                          onClose={onCloseModalCreate}
-                          message={'Guardado!'}
-                          isNavigate={'MENSAJERA'}
-                        />
-                      </View>
+
+              {/* <Modal
+                animationType="fade"
+                transparent={true}
+                visible={modalCreate}
+              >
+                <TouchableWithoutFeedback onPress={() => onCloseModalCreate()}>
+                  <View style={styles.modalOverlay}>
+                    <View>
+                      <ENTRADACREADA
+                        onClose={onCloseModalCreate}
+                        message={'Guardado!'}
+                        isNavigate={'MENSAJERA'}
+                      />
                     </View>
-                  </TouchableWithoutFeedback>
-                </Modal>
-              )}
+                  </View>
+                </TouchableWithoutFeedback>
+              </Modal> */}
+
+              <Modal animationType="slide" transparent visible={modalCreate}>
+                <View style={styles.buttonContainer2Overlay}>
+                  <Pressable
+                    style={styles.buttonContainer2Bg}
+                    onPress={closeButtonContainer2}
+                  />
+                  <ENTRADACREADA
+                    onClose={onCloseModalCreate}
+                    message={'Guardado!'}
+                    isNavigate={'MENSAJERA'}
+                  />
+                </View>
+              </Modal>
             </View>
           </View>
         </View>

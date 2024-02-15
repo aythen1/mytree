@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { View, StyleSheet } from 'react-native'
 import { Calendar } from 'react-native-calendars'
+import { Color } from '../GlobalStyles'
 
 const Calendario = () => {
   const [selectedDate, setSelectedDate] = useState(null)
@@ -38,13 +39,20 @@ const Calendario = () => {
           todayTextColor: 'black'
         }}
       />
+      <View
+        style={{
+          paddingHorizontal: 15,
+          backgroundColor: Color.white,
+          paddingVertical: 15
+        }}
+      ></View>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    width: '100%'
   }
 })
 
