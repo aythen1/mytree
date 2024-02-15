@@ -24,7 +24,7 @@ const Novedades = () => {
               <Image
                 style={styles.icon}
                 contentFit="cover"
-                source={require('../assets/back5.png')}
+                source={require('../assets/back.png')}
               />
             </Pressable>
             <Text style={styles.novedades1}>Novedades</Text>

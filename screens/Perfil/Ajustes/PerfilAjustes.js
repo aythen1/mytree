@@ -10,6 +10,10 @@ import {
   Padding,
   Border
 } from '../../../GlobalStyles'
+import HeaderIcons from '../../../components/HeaderIcons'
+import CalendarMuroSVG from '../../../components/svgs/CalendarMuroSVG'
+import BookSVG from '../../../components/svgs/BookSVG'
+import NotificationsMuroSVG from '../../../components/svgs/NotificationsMuroSVG'
 
 const PerfilAjustes = () => {
   const navigation = useNavigation()
@@ -31,20 +35,12 @@ const PerfilAjustes = () => {
                   source={require('../../../assets/image-6.png')}
                 />
                 <View style={styles.iconlylightOutlinecalendarParent}>
-                  <Image
-                    style={styles.iconlylightOutlinecalendar}
-                    contentFit="cover"
-                    source={require('../../../assets/iconlylightoutlinecalendar5.png')}
-                  />
-                  <Image
-                    style={styles.documentIconLayout}
-                    contentFit="cover"
-                    source={require('../../../assets/document9.png')}
-                  />
-                  <Image
-                    style={styles.documentIconLayout}
-                    contentFit="cover"
-                    source={require('../../../assets/iconlylightoutlinesetting7.png')}
+                  <HeaderIcons
+                    icons={[
+                      <CalendarMuroSVG />,
+                      <BookSVG />,
+                      <NotificationsMuroSVG />
+                    ]}
                   />
                 </View>
               </View>
@@ -309,7 +305,7 @@ const styles = StyleSheet.create({
   },
   iconlylightOutlinecalendarParent: {
     width: '100%',
-    left: '35%',
+    left: '45%',
     flexDirection: 'row'
   },
   icon: {

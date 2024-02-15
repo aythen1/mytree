@@ -1,4 +1,5 @@
-import React, { useState, useCallback, useEffect } from 'react'
+import React, { useState, useCallback } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { Image } from 'expo-image'
 import {
   StyleSheet,
@@ -12,10 +13,13 @@ import { Color, FontSize, FontFamily, Border, Padding } from '../GlobalStyles'
 import Checkbox from 'expo-checkbox'
 import { useNavigation } from '@react-navigation/native'
 import OpcionesModal from './../components/OpcionesModal'
-import { useSelector } from 'react-redux'
+import { setPanel } from '../redux/slices/panel.slices'
 
 const BOTONInvitarAmigos1 = () => {
   const navigation = useNavigation()
+  const dispatch = useDispatch()
+
+  const { showPanel } = useSelector((state) => state.panel)
   const { contacts } = useSelector((state) => state.contacts)
   const [isChecked, setChecked] = useState(false)
   const [frameContainerVisible, setFrameContainerVisible] = useState(false)
@@ -35,11 +39,13 @@ const BOTONInvitarAmigos1 = () => {
   return (
     <>
       <View style={styles.botonInvitarAmigos}>
-        <Image
-          style={[styles.ionmenuIcon, styles.iconPosition]}
-          contentFit="cover"
-          source={require('../assets/ionmenu.png')}
-        />
+        <Pressable onPress={() => dispatch(setPanel(!showPanel))}>
+          <Image
+            style={[styles.ionmenuIcon, styles.iconPosition]}
+            contentFit="cover"
+            source={require('../assets/ionmenu.png')}
+          />
+        </Pressable>
         <Image
           style={[styles.image6Icon, styles.iconPosition]}
           contentFit="cover"
@@ -119,7 +125,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   headerLayout: {
-    width: 428,
+    width: '100%',
     position: 'absolute'
   },
   ionmenuIcon: {
@@ -156,12 +162,12 @@ const styles = StyleSheet.create({
     top: 221,
     borderRadius: Border.br_11xl,
     backgroundColor: Color.grisClaro,
-    width: 388,
     justifyContent: 'center',
     paddingHorizontal: Padding.p_5xl,
     paddingVertical: Padding.p_sm,
     left: 20,
-    position: 'absolute'
+    position: 'absolute',
+    width: '90%'
   },
   iconlylightOutlinesearch: {
     width: 20,
@@ -212,13 +218,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   header: {
-    marginLeft: -214,
     top: 127,
     paddingHorizontal: Padding.p_xl,
     paddingVertical: Padding.p_xs,
     alignItems: 'center',
     flexDirection: 'row',
-    left: '50%',
     backgroundColor: Color.white
   },
   navigationIcon: {
@@ -230,9 +234,7 @@ const styles = StyleSheet.create({
     borderRadius: 10
   },
   botonInvitarAmigos: {
-    borderRadius: Border.br_31xl,
     width: '100%',
-    height: 926,
     overflow: 'hidden',
     flex: 1,
     backgroundColor: Color.white

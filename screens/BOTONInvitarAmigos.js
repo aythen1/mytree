@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { Image } from 'expo-image'
 import {
   StyleSheet,
@@ -14,10 +15,15 @@ import Parentezco from '../components/Parentezco'
 import OpcionesAmigo from '../components/OpcionesAmigo'
 // import ENTRADACREADA11 from '../components/ENTRADACREADA11'
 import { Color, Border, FontFamily, Padding, FontSize } from '../GlobalStyles'
+import { setPanel } from '../redux/slices/panel.slices'
 import QR from '../components/QR'
 import ENTRADACREADA from '../components/ENTRADACREADA'
 
 const BOTONInvitarAmigos = () => {
+  const dispatch = useDispatch()
+
+  const { showPanel } = useSelector((state) => state.panel)
+
   const [send, setSend] = useState(false)
   const [arrowDown2IconVisible, setArrowDown2IconVisible] = useState(false)
   const [arrowDown2Icon1Visible, setArrowDown2Icon1Visible] = useState(false)
@@ -56,11 +62,13 @@ const BOTONInvitarAmigos = () => {
   return (
     <>
       <View style={styles.botonInvitarAmigos}>
-        <Image
-          style={[styles.ionmenuIcon, styles.iconPosition]}
-          contentFit="cover"
-          source={require('../assets/ionmenu.png')}
-        />
+        <Pressable onPress={() => dispatch(setPanel(!showPanel))}>
+          <Image
+            style={[styles.ionmenuIcon, styles.iconPosition]}
+            contentFit="cover"
+            source={require('../assets/ionmenu.png')}
+          />
+        </Pressable>
         <Image
           style={[styles.image6Icon, styles.iconPosition]}
           contentFit="cover"
@@ -90,11 +98,6 @@ const BOTONInvitarAmigos = () => {
             />
           </View>
         </View>
-        <Image
-          style={styles.navigationIcon}
-          contentFit="cover"
-          source={require('../assets/navigation10.png')}
-        />
         <View style={[styles.invitarAJuanGutierrezParent, styles.iconPosition]}>
           <Text style={[styles.invitarAJuan, styles.searchTypo]}>
             Invitar a Juan Gutierrez
@@ -310,6 +313,7 @@ const styles = StyleSheet.create({
     top: 83,
     width: 26,
     height: 20,
+    left: '5%',
     overflow: 'hidden'
   },
   image6Icon: {
@@ -361,14 +365,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   header: {
-    marginLeft: -214,
     top: 127,
     paddingVertical: Padding.p_xs,
     paddingHorizontal: Padding.p_xl,
     alignItems: 'center',
     flexDirection: 'row',
-    width: 428,
-    left: '50%',
+    width: '100%',
     position: 'absolute',
     backgroundColor: Color.white
   },
@@ -376,7 +378,6 @@ const styles = StyleSheet.create({
     top: 821,
     left: 0,
     height: 105,
-    width: 428,
     position: 'absolute'
   },
   invitarAJuan: {
@@ -435,11 +436,12 @@ const styles = StyleSheet.create({
   },
   field: {
     paddingVertical: Padding.p_smi,
-    width: 388,
+
     paddingHorizontal: Padding.p_xl
   },
   fieldWithTitle: {
-    marginTop: 19
+    marginTop: 19,
+    width: '95%'
   },
   arrowDown2Icon1Overlay: {
     flex: 1,
@@ -471,7 +473,7 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderColor: Color.colorKhaki_100,
     borderWidth: 1,
-    // width: 388,
+    width: '95%',
     marginTop: 19
   },
   buttonContainer1Overlay: {
@@ -495,7 +497,6 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   button1: {
-    // width: 388,
     borderRadius: Border.br_11xl,
     marginTop: 19
   },
@@ -503,9 +504,8 @@ const styles = StyleSheet.create({
     top: 180
   },
   botonInvitarAmigos: {
-    borderRadius: Border.br_31xl,
     // height: 926,
-    // overflow: 'hidden',
+    paddingBottom: 50,
     width: '100%',
     flex: 1,
     backgroundColor: Color.white

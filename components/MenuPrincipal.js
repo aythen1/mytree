@@ -135,7 +135,10 @@ const MenuPrincipal = () => {
                 />
                 <Pressable
                   style={styles.muro}
-                  onPress={() => navigation.navigate('CrearLbum')}
+                  onPress={() => {
+                    navigation.navigate('CrearLbum')
+                    dispatch(setPanel(false))
+                  }}
                 >
                   <Text style={styles.muro1Typo}>Mi Álbum del Armario</Text>
                 </Pressable>
@@ -314,7 +317,10 @@ const MenuPrincipal = () => {
               />
               <Pressable
                 style={styles.muro}
-                onPress={() => navigation.navigate('PerfilAjustes')}
+                onPress={() => {
+                  navigation.navigate('PerfilAjustes')
+                  dispatch(setPanel(false))
+                }}
               >
                 <Text style={styles.muro1Typo}>Ajustes</Text>
               </Pressable>
