@@ -111,7 +111,10 @@ const styles = StyleSheet.create({
     height: 279,
     maxHeight: '100%',
     maxWidth: '100%',
-    borderRadius: Border.br_11xl
+    borderTopLeftRadius: Border.br_11xl,
+    borderTopRightRadius: Border.br_11xl,
+    position: 'absolute',
+    bottom: 0
   }
 })
 
