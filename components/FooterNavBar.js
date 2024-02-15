@@ -115,7 +115,7 @@ const FooterNavBar = () => {
                     fontSize: 25,
                     color: '#7fc08b',
                     textAlign: 'center',
-                    bottom: 5.5
+                    bottom: '20%'
                   }}
                 >
                   +
