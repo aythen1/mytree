@@ -324,7 +324,7 @@ const TarjetaDigital = () => {
         </View>
       </Modal>
 
-      <Modal animationType="fade" transparent visible={calendario}>
+      <Modal animationType="slide" transparent visible={calendario}>
         <View style={styles.buttonContainer1Overlay}>
           <Pressable
             style={styles.buttonContainer1Bg}
@@ -338,7 +338,11 @@ const TarjetaDigital = () => {
         </View>
       </Modal>
 
-      <Modal animationType="fade" transparent visible={buttonContainer2Visible}>
+      <Modal
+        animationType="slide"
+        transparent
+        visible={buttonContainer2Visible}
+      >
         <View style={styles.buttonContainer2Overlay}>
           <Pressable
             style={styles.buttonContainer2Bg}

@@ -258,24 +258,6 @@ const MUROALERTAS1 = () => {
                 </Pressable>
               </LinearGradient>
 
-              {/* <Modal
-                animationType="fade"
-                transparent={true}
-                visible={modalCreate}
-              >
-                <TouchableWithoutFeedback onPress={() => onCloseModalCreate()}>
-                  <View style={styles.modalOverlay}>
-                    <View>
-                      <ENTRADACREADA
-                        onClose={onCloseModalCreate}
-                        message={'Guardado!'}
-                        isNavigate={'MENSAJERA'}
-                      />
-                    </View>
-                  </View>
-                </TouchableWithoutFeedback>
-              </Modal> */}
-
               <Modal animationType="slide" transparent visible={modalCreate}>
                 <View style={styles.buttonContainer2Overlay}>
                   <Pressable
