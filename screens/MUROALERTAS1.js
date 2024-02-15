@@ -346,7 +346,7 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.lato
   },
   fieldFlexBox: {
-    paddingHorizontal: Padding.p_xl,
+    // paddingHorizontal: Padding.p_xl,
     alignItems: 'center',
     flexDirection: 'row'
   },
@@ -365,7 +365,7 @@ const styles = StyleSheet.create({
   buttonSpaceBlock: {
     paddingBottom: Padding.p_5xs,
     paddingTop: Padding.p_6xs,
-    paddingHorizontal: Padding.p_base,
+    // paddingHorizontal: Padding.p_base,
     flex: 1
   },
   pressableFlexBox: {
@@ -453,7 +453,7 @@ const styles = StyleSheet.create({
     borderRadius: Border.br_3xs,
     backgroundColor: Color.fAFAFA,
     paddingVertical: Padding.p_smi,
-    width: 388
+    width: '100%'
   },
   arrowDown2Icon: {
     height: 12
@@ -520,7 +520,7 @@ const styles = StyleSheet.create({
     borderRadius: Border.br_11xl,
     paddingBottom: Padding.p_5xs,
     paddingTop: Padding.p_6xs,
-    paddingHorizontal: Padding.p_base,
+    // paddingHorizontal: Padding.p_base,
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
@@ -559,7 +559,7 @@ const styles = StyleSheet.create({
   },
   buttonBar: {
     paddingVertical: Padding.p_3xs,
-    width: 428,
+    width: '100%',
     justifyContent: 'center',
     backgroundColor: Color.white
   },
@@ -597,17 +597,13 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   frameParent: {
-    top: 78,
-    alignItems: 'center'
-  },
-  navigationIcon: {
-    top: 821,
-    height: 105,
-    width: 428
+    top: 78
+    // alignItems: 'center'
   },
   muroAlertas: {
     // borderRadius: Border.br_31xl,
     // height: 926,
+    paddingHorizontal: 15,
     paddingBottom: 150,
     flex: 1,
     backgroundColor: Color.white
