@@ -4,7 +4,11 @@ import { View, StyleSheet, Text, Pressable } from 'react-native'
 import { Calendar } from 'react-native-calendars'
 import { Border, Color, FontFamily, FontSize } from '../GlobalStyles'
 
-const PopUpCalendario = ({ setButtonContainer2Visible, setCalendario }) => {
+const PopUpCalendario = ({
+  setButtonContainer2Visible,
+  setCalendario,
+  not
+}) => {
   const [selectedDate, setSelectedDate] = useState(null)
 
   const handleDayPress = (day) => {
@@ -50,8 +54,8 @@ const PopUpCalendario = ({ setButtonContainer2Visible, setCalendario }) => {
         <Pressable
           style={{ borderStartColor: 'red' }}
           onPress={() => {
-            setCalendario(false)
-            setButtonContainer2Visible(true)
+            !not && setButtonContainer2Visible(true)
+            !not && setCalendario(false)
           }}
         >
           <LinearGradient

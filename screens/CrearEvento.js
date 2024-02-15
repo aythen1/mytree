@@ -285,7 +285,7 @@ const CrearEvento = () => {
         </Modal>
       )}
 
-      {modalOpcionesVisible && (
+      {/* {modalOpcionesVisible && (
         <Modal
           animationType="fade"
           transparent={true}
@@ -310,7 +310,26 @@ const CrearEvento = () => {
             </View>
           </TouchableWithoutFeedback>
         </Modal>
-      )}
+      )} */}
+
+      <Modal animationType="slide" transparent visible={modalOpcionesVisible}>
+        <View style={styles.arrowDown2Icon1Overlay}>
+          <Pressable
+            style={styles.arrowDown2Icon1Bg}
+            onPress={() => setModalOpcionesVisible(false)}
+          />
+          <OpcionesModal
+            opciones={options[currentOptionsIndex]}
+            visible={modalOpcionesVisible}
+            onClose={() => setModalOpcionesVisible(false)}
+            onAddOption={(nuevaOpcion) => {
+              options[currentOptionsIndex].push(nuevaOpcion)
+              onCloseModalOpciones()
+            }}
+            isAdd={true}
+          />
+        </View>
+      </Modal>
     </ScrollView>
   )
 }
@@ -321,6 +340,19 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  arrowDown2Icon1Bg: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    left: 0,
+    top: 0
+  },
+  arrowDown2Icon1Overlay: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(113, 113, 113, 0.3)'
   },
   titleTypo: {
     textAlign: 'left',

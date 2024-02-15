@@ -374,18 +374,15 @@ const Organizador = () => {
         </View>
       </Modal>
 
-      <Modal animationType="fade" transparent={true} visible={submit}>
-        <TouchableWithoutFeedback onPress={closeSubmit}>
-          <View style={styles.modalOverlay}>
-            <View>
-              <ENTRADACREADA
-                onClose={closeSubmit}
-                message={'Creado con exito'}
-                isNavigate={'Muro'}
-              />
-            </View>
-          </View>
-        </TouchableWithoutFeedback>
+      <Modal animationType="slide" transparent visible={submit}>
+        <View style={styles.buttonContainer2Overlay}>
+          <Pressable style={styles.buttonContainer2Bg} onPress={closeSubmit} />
+          <ENTRADACREADA
+            onClose={closeSubmit}
+            isNavigate={'Muro'}
+            message={'Creado con exito'}
+          />
+        </View>
       </Modal>
     </>
   )
@@ -395,15 +392,27 @@ const styles = StyleSheet.create({
   parentPosition: {
     top: 0,
     left: 0
-    // position: 'absolute'
+  },
+  buttonContainer2Overlay: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(113, 113, 113, 0.3)'
+  },
+  buttonContainer2Bg: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    left: 0,
+    top: 0
   },
   modalOverlay: {
     // flex: 1,
     // top: -100,
     height: '100%',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    justifyContent: 'center',
-    alignItems: 'center'
+    justifyContent: 'center'
+    // alignItems: 'center'
   },
   eventoTypo: {
     // left: 20,

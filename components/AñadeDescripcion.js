@@ -20,7 +20,7 @@ const AñadeDescripcion = () => {
       >
         <Pressable
           style={[styles.pressable, styles.pressableFlexBox]}
-          onPress={() => navigation.navigate('MIDIARIOENTRADATEXTOPL1')}
+          onPress={() => navigation.navigate('MIDIARIOENTRADATEXTOPL7')}
         >
           <Text style={styles.signIn}>Guardar</Text>
         </Pressable>

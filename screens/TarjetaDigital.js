@@ -259,49 +259,20 @@ const TarjetaDigital = () => {
         </View>
       </Modal>
 
-      <Modal animationType="fade" transparent visible={arrowDown2IconVisible}>
-        <TouchableWithoutFeedback onPress={closeArrowDown2Icon}>
-          <View style={styles.modalOverlay}>
-            <Pressable
-              style={styles.arrowDown2IconBg}
-              onPress={closeArrowDown2Icon}
-            />
-            <OpcionesModal
-              opciones={[
-                'Cumpleaños',
-                'Aniversario',
-                'Graduación',
-                'Nacimiento'
-              ]}
-              onClose={closeArrowDown2Icon}
-            />
-          </View>
-        </TouchableWithoutFeedback>
+      <Modal animationType="slide" transparent visible={arrowDown2IconVisible}>
+        <View style={styles.arrowDown2Icon1Overlay}>
+          <Pressable
+            style={styles.arrowDown2Icon1Bg}
+            onPress={closeArrowDown2Icon}
+          />
+          <OpcionesModal
+            opciones={['Cumpleaños', 'Aniversario', 'Graduación', 'Nacimiento']}
+            onClose={closeArrowDown2Icon}
+          />
+        </View>
       </Modal>
 
-      <Modal
-        animationType="fade"
-        transparent={true}
-        visible={arrowDown2IconVisible}
-      >
-        <TouchableWithoutFeedback onPress={closeArrowDown2Icon}>
-          <View style={styles.modalOverlay}>
-            <View>
-              <OpcionesModal
-                opciones={[
-                  'Cumpleaños',
-                  'Aniversario',
-                  'Graduación',
-                  'Nacimiento'
-                ]}
-                onClose={closeArrowDown2Icon}
-              />
-            </View>
-          </View>
-        </TouchableWithoutFeedback>
-      </Modal>
-
-      <Modal animationType="fade" transparent visible={fieldContainer3Visible}>
+      <Modal animationType="slide" transparent visible={fieldContainer3Visible}>
         <View style={styles.fieldContainer3Overlay}>
           <Pressable
             style={styles.fieldContainer3Bg}
@@ -311,7 +282,11 @@ const TarjetaDigital = () => {
         </View>
       </Modal>
 
-      <Modal animationType="fade" transparent visible={buttonContainer1Visible}>
+      <Modal
+        animationType="slide"
+        transparent
+        visible={buttonContainer1Visible}
+      >
         <View style={styles.buttonContainer1Overlay}>
           <Pressable
             style={styles.buttonContainer1Bg}
@@ -363,6 +338,19 @@ const styles = StyleSheet.create({
   iconLayout: {
     overflow: 'hidden',
     width: '100%'
+  },
+  arrowDown2Icon1Overlay: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(113, 113, 113, 0.3)'
+  },
+  arrowDown2Icon1Bg: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    left: 0,
+    top: 0
   },
   modalOverlay: {
     height: '100%',

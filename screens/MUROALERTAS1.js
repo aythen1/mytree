@@ -12,9 +12,9 @@ import {
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
 import Para from '../components/Para'
-import TipoDeAlerta from '../components/TipoDeAlerta'
+import OpcionesModal from '../components/OpcionesModal'
 import Lugar2 from '../components/Lugar2'
-import FECHA6 from '../components/FECHA6'
+import PopUpCalendario from '../components/PopUpCalendario'
 // import ENTRADACREADA10 from '../components/ENTRADACREADA10'
 import { FontFamily, Padding, FontSize, Color, Border } from '../GlobalStyles'
 import ENTRADACREADA from '../components/ENTRADACREADA'
@@ -276,7 +276,7 @@ const MUROALERTAS1 = () => {
         </View>
       </ScrollView>
 
-      <Modal animationType="fade" transparent visible={fieldContainerVisible}>
+      <Modal animationType="slide" transparent visible={fieldContainerVisible}>
         <View style={styles.fieldContainerOverlay}>
           <Pressable
             style={styles.fieldContainerBg}
@@ -286,17 +286,25 @@ const MUROALERTAS1 = () => {
         </View>
       </Modal>
 
-      <Modal animationType="fade" transparent visible={arrowDown2Icon1Visible}>
+      <Modal animationType="slide" transparent visible={arrowDown2Icon1Visible}>
         <View style={styles.arrowDown2Icon1Overlay}>
           <Pressable
             style={styles.arrowDown2Icon1Bg}
             onPress={closeArrowDown2Icon1}
           />
-          <TipoDeAlerta onClose={closeArrowDown2Icon1} />
+          <OpcionesModal
+            onClose={closeArrowDown2Icon1}
+            opciones={[
+              ['Tuve un accidente!'],
+              ['Aprobe el examen!'],
+              ['El bebe esta por nacer!']
+            ]}
+            isAdd={true}
+          />
         </View>
       </Modal>
 
-      <Modal animationType="fade" transparent visible={fieldContainer3Visible}>
+      <Modal animationType="slide" transparent visible={fieldContainer3Visible}>
         <View style={styles.fieldContainer3Overlay}>
           <Pressable
             style={styles.fieldContainer3Bg}
@@ -306,25 +314,19 @@ const MUROALERTAS1 = () => {
         </View>
       </Modal>
 
-      <Modal animationType="fade" transparent visible={buttonContainer1Visible}>
+      <Modal
+        animationType="slide"
+        transparent
+        visible={buttonContainer1Visible}
+      >
         <View style={styles.buttonContainer1Overlay}>
           <Pressable
             style={styles.buttonContainer1Bg}
             onPress={closeButtonContainer1}
           />
-          <FECHA6 onClose={closeButtonContainer1} />
+          <PopUpCalendario onClose={closeButtonContainer1} />
         </View>
       </Modal>
-
-      {/* <Modal animationType="fade" transparent visible={buttonContainer2Visible}>
-        <View style={styles.buttonContainer2Overlay}>
-          <Pressable
-            style={styles.buttonContainer2Bg}
-            onPress={closeButtonContainer2}
-          />
-          <ENTRADACREADA10 onClose={closeButtonContainer2} />
-        </View>
-      </Modal> */}
     </>
   )
 }

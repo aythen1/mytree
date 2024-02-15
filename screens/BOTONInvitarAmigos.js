@@ -190,35 +190,19 @@ const BOTONInvitarAmigos = () => {
             <Text style={styles.signTypo}>Enviar invitación</Text>
           </Pressable>
 
-          {send && (
-            <Modal animationType="fade" transparent={true} visible={send}>
-              <TouchableWithoutFeedback onPress={() => setSend(false)}>
-                <View style={styles.modalOverlay}>
-                  <View>
-                    <ENTRADACREADA
-                      onClose={oncloseModalSend}
-                      message={'Añadido con éxito'}
-                      isNavigate={'BOTONInvitarAmigos1'}
-                    />
-                  </View>
-                </View>
-              </TouchableWithoutFeedback>
-            </Modal>
-          )}
-
-          {/* <Modal
-            animationType="fade"
-            transparent
-            visible={buttonContainerVisible}
-          >
-            <View style={styles.buttonContainerOverlay}>
+          <Modal animationType="slide" transparent visible={send}>
+            <View style={styles.buttonContainer2Overlay}>
               <Pressable
-                style={styles.buttonContainerBg}
-                onPress={closeButtonContainer}
+                // style={styles.buttonContainer2Bg}
+                onPress={() => setSend(false)}
               />
-              <ENTRADACREADA11 onClose={closeButtonContainer} />
+              <ENTRADACREADA
+                onClose={() => setSend(false)}
+                isNavigate={'BOTONInvitarAmigos1'}
+                message={'Añadido con éxito'}
+              />
             </View>
-          </Modal> */}
+          </Modal>
 
           <LinearGradient
             style={styles.button1}
@@ -274,6 +258,19 @@ const styles = StyleSheet.create({
   iconPosition: {
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  buttonContainer2Bg: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    left: 0,
+    top: 0
+  },
+  buttonContainer2Overlay: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(113, 113, 113, 0.3)'
   },
   modalOverlay: {
     height: '100%',

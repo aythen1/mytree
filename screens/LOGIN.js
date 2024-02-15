@@ -19,10 +19,7 @@ const LOGIN = () => {
   const [checked, setChecked] = useState(false)
 
   return (
-    <ScrollView
-      style={styles.login}
-      contentContainerStyle={{ paddingBottom: 70 }}
-    >
+    <ScrollView style={styles.login} contentContainerStyle={{ height: '100%' }}>
       <LinearGradient
         style={[styles.loginInner, styles.buttonFlexBox]}
         locations={[0, 1]}
@@ -291,7 +288,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: Padding.p_5xl,
     paddingVertical: Padding.p_sm,
     width: '100%',
-    top: 20
+    top: 20,
+    height: 52
   },
   frameContainer: {
     height: '100%',
@@ -301,7 +299,7 @@ const styles = StyleSheet.create({
     left: 0
   },
   login: {
-    height: '150%',
+    // height: '150%',
     flex: 1
   },
   input: {

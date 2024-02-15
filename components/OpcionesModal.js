@@ -9,6 +9,7 @@ import {
   StyleSheet
 } from 'react-native'
 import { Image } from 'expo-image'
+import { Border, Color } from '../GlobalStyles'
 
 const OpcionesModal = ({ opciones, visible, onClose, onAddOption, isAdd }) => {
   const [nuevaOpcion, setNuevaOpcion] = useState('')
@@ -31,70 +32,71 @@ const OpcionesModal = ({ opciones, visible, onClose, onAddOption, isAdd }) => {
   }
 
   return (
-    <Modal
-      animationType="slide"
-      transparent={true}
-      visible={visible}
-      onRequestClose={onClose}
-    >
-      <View style={styles.modalContainer}>
-        <View style={styles.modalContent}>
-          <FlatList
-            data={opciones}
-            keyExtractor={(item, index) => {
-              index.toString()
-            }}
-            renderItem={({ item }) => (
-              <TouchableOpacity
-                onPress={() => console.log(`Seleccionado: ${item}`)}
-              >
-                <Text style={styles.opcionText}>{item}</Text>
-                <Image
-                  style={styles.frameChild}
-                  contentFit="cover"
-                  source={require('../assets/line-802.png')}
-                />
-              </TouchableOpacity>
-            )}
-          />
-
-          {modoAgregar ? (
-            <View style={styles.agregarContainer}>
-              <TextInput
-                ref={inputRef}
-                style={styles.input}
-                placeholder="Nueva opción"
-                value={nuevaOpcion}
-                onChangeText={(text) => setNuevaOpcion(text)}
-              />
-              <TouchableOpacity
-                onPress={agregarOpcion}
-                style={styles.agregarButton}
-              >
-                <Text style={styles.agregarButtonText}>Aceptar</Text>
-              </TouchableOpacity>
-            </View>
-          ) : (
+    // <Modal
+    //   animationType="slide"
+    //   transparent={true}
+    //   visible={visible}
+    //   onRequestClose={onClose}
+    // >
+    <View style={styles.modalContainer}>
+      <View style={styles.modalContent}>
+        <FlatList
+          data={opciones}
+          keyExtractor={(item, index) => {
+            index.toString()
+          }}
+          renderItem={({ item }) => (
             <TouchableOpacity
-              onPress={mostrarInput}
-              style={styles.agregarButton}
+              onPress={() => console.log(`Seleccionado: ${item}`)}
             >
-              <Text style={styles.agregarButtonText}>
-                {isAdd ? '+ Añadir' : null}
-              </Text>
+              <Text style={styles.opcionText}>{item}</Text>
+              <Image
+                style={styles.frameChild}
+                contentFit="cover"
+                source={require('../assets/line-802.png')}
+              />
             </TouchableOpacity>
           )}
-        </View>
+        />
+
+        {modoAgregar ? (
+          <View style={styles.agregarContainer}>
+            <TextInput
+              ref={inputRef}
+              style={styles.input}
+              placeholder="Nueva opción"
+              value={nuevaOpcion}
+              onChangeText={(text) => setNuevaOpcion(text)}
+            />
+            <TouchableOpacity
+              onPress={agregarOpcion}
+              style={styles.agregarButton}
+            >
+              <Text style={styles.agregarButtonText}>Aceptar</Text>
+            </TouchableOpacity>
+          </View>
+        ) : (
+          <TouchableOpacity onPress={mostrarInput} style={styles.agregarButton}>
+            <Text style={styles.agregarButtonText}>
+              {isAdd ? '+ Añadir' : null}
+            </Text>
+          </TouchableOpacity>
+        )}
       </View>
-    </Modal>
+    </View>
+    // </Modal>
   )
 }
 const styles = StyleSheet.create({
   modalContainer: {
-    flex: 1,
+    borderTopLeftRadius: Border.br_xl,
+    borderTopRightRadius: Border.br_xl,
+    width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)'
+    backgroundColor: Color.white,
+    position: 'absolute',
+    bottom: 0
   },
   modalContent: {
     width: '80%',
