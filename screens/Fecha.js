@@ -1,24 +1,24 @@
-import * as React from "react";
-import { Text, StyleSheet, View } from "react-native";
-import { Image } from "expo-image";
-import { LinearGradient } from "expo-linear-gradient";
-import { Padding, Border, Color, FontFamily, FontSize } from "../GlobalStyles";
+import * as React from 'react'
+import { Text, StyleSheet, View } from 'react-native'
+import { Image } from 'expo-image'
+import { LinearGradient } from 'expo-linear-gradient'
+import { Padding, Border, Color, FontFamily, FontSize } from '../GlobalStyles'
 
 const Fecha = () => {
   return (
     <View style={[styles.fecha, styles.buttonFlexBox]}>
-      <View style={styles.aomesdaParent}>
+      {/* <View style={styles.aomesdaParent}>
         <Text style={styles.aomesda}>AÑO/MES/DÍA</Text>
         <Image
           style={styles.stroke1Icon}
           contentFit="cover"
           source={require("../assets/stroke1.png")}
         />
-      </View>
+      </View> */}
       <Image
         style={styles.fechaChild}
         contentFit="cover"
-        source={require("../assets/line-80.png")}
+        source={require('../assets/line-80.png')}
       />
       <View style={styles.calendarSelectChangeSize}>
         <View style={styles.header}>
@@ -27,7 +27,7 @@ const Fecha = () => {
               <Image
                 style={styles.icon}
                 contentFit="cover"
-                source={require("../assets/icon1.png")}
+                source={require('../assets/icon1.png')}
               />
             </View>
             <View style={[styles.month1, styles.month1FlexBox]}>
@@ -38,7 +38,7 @@ const Fecha = () => {
               <Image
                 style={styles.icon}
                 contentFit="cover"
-                source={require("../assets/icon.png")}
+                source={require('../assets/icon.png')}
               />
             </View>
           </View>
@@ -281,7 +281,7 @@ const Fecha = () => {
           </View>
         </View>
       </View>
-      <View style={styles.fieldWithTitle}>
+      {/* <View style={styles.fieldWithTitle}>
         <View style={styles.titleBase}>
           <Text style={[styles.edadAproximada, styles.aosTypo]}>
             Edad aproximada
@@ -290,118 +290,118 @@ const Fecha = () => {
         <View style={styles.field}>
           <Text style={[styles.aos, styles.aosTypo]}>8 años</Text>
         </View>
-      </View>
+      </View> */}
       <LinearGradient
         style={[styles.button, styles.buttonFlexBox]}
         locations={[0, 1]}
-        colors={["#dee274", "#7ec18c"]}
+        colors={['#dee274', '#7ec18c']}
       >
         <Text style={[styles.signIn, styles.date22Clr]}>Guardar</Text>
       </LinearGradient>
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   buttonFlexBox: {
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   arrowLayout: {
     padding: Padding.p_xs,
     height: 48,
     width: 48,
     borderRadius: Border.br_81xl,
-    overflow: "hidden",
-    backgroundColor: Color.white,
+    overflow: 'hidden',
+    backgroundColor: Color.white
   },
   month1FlexBox: {
     marginLeft: 16,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   yearClr: {
     color: Color.calendarDark,
-    fontFamily: FontFamily.lato,
+    fontFamily: FontFamily.lato
   },
   weekSpaceBlock: {
     marginTop: 16,
-    alignSelf: "stretch",
+    alignSelf: 'stretch'
   },
   monFlexBox: {
-    textAlign: "center",
-    flex: 1,
+    textAlign: 'center',
+    flex: 1
   },
   dayFlexBox: {
-    overflow: "hidden",
-    alignSelf: "stretch",
-    flex: 1,
+    overflow: 'hidden',
+    alignSelf: 'stretch',
+    flex: 1
   },
   dateTypo: {
     zIndex: 1,
     fontSize: FontSize.footnote_size,
-    textAlign: "left",
+    textAlign: 'left'
   },
   backgroundPosition: {
     zIndex: 0,
-    left: "0%",
-    bottom: "0%",
-    right: "0%",
-    top: "0%",
-    height: "100%",
-    position: "absolute",
-    width: "100%",
+    left: '0%',
+    bottom: '0%',
+    right: '0%',
+    top: '0%',
+    height: '100%',
+    position: 'absolute',
+    width: '100%'
   },
   date22Clr: {
     color: Color.white,
-    fontFamily: FontFamily.lato,
+    fontFamily: FontFamily.lato
   },
   aosTypo: {
     lineHeight: 19,
     letterSpacing: 0,
-    fontWeight: "500",
+    fontWeight: '500',
     fontSize: FontSize.size_base,
-    textAlign: "left",
-    fontFamily: FontFamily.lato,
+    textAlign: 'left',
+    fontFamily: FontFamily.lato
   },
   aomesda: {
     fontSize: FontSize.size_lg,
     color: Color.primario1,
-    textAlign: "left",
+    textAlign: 'left',
     fontFamily: FontFamily.lato,
-    fontWeight: "700",
+    fontWeight: '700'
   },
   stroke1Icon: {
     height: 13,
     marginLeft: 107,
-    width: 24,
+    width: 24
   },
   aomesdaParent: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   fechaChild: {
-    maxHeight: "100%",
+    maxHeight: '100%',
     width: 428,
-    marginTop: 20,
+    marginTop: 20
   },
   icon: {
     height: 24,
-    width: 24,
+    width: 24
   },
   arrowButton: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   month2: {
-    textAlign: "right",
+    textAlign: 'right',
     lineHeight: 21,
     letterSpacing: -0.3,
     color: Color.calendarDark,
     fontSize: FontSize.size_base,
-    fontWeight: "700",
+    fontWeight: '700'
   },
   year: {
     marginLeft: 4,
@@ -409,116 +409,116 @@ const styles = StyleSheet.create({
     letterSpacing: -0.3,
     color: Color.calendarDark,
     fontSize: FontSize.size_base,
-    textAlign: "left",
+    textAlign: 'left'
   },
   month1: {
-    flex: 1,
+    flex: 1
   },
   arrowButton1: {
     padding: Padding.p_xs,
     height: 48,
     width: 48,
     borderRadius: Border.br_81xl,
-    overflow: "hidden",
-    backgroundColor: Color.white,
+    overflow: 'hidden',
+    backgroundColor: Color.white
   },
   month: {
-    alignSelf: "stretch",
-    flexDirection: "row",
+    alignSelf: 'stretch',
+    flexDirection: 'row'
   },
   separator: {
     backgroundColor: Color.secundario,
-    height: 1,
+    height: 1
   },
   mon: {
-    fontWeight: "500",
-    textTransform: "uppercase",
+    fontWeight: '500',
+    textTransform: 'uppercase',
     fontSize: FontSize.size_3xs,
-    textAlign: "center",
+    textAlign: 'center',
     color: Color.calendarDark,
-    fontFamily: FontFamily.lato,
+    fontFamily: FontFamily.lato
   },
   tue: {
     marginLeft: 3,
-    fontWeight: "500",
-    textTransform: "uppercase",
+    fontWeight: '500',
+    textTransform: 'uppercase',
     fontSize: FontSize.size_3xs,
-    textAlign: "center",
+    textAlign: 'center',
     color: Color.calendarDark,
-    fontFamily: FontFamily.lato,
+    fontFamily: FontFamily.lato
   },
   week: {
     opacity: 0.5,
-    flexDirection: "row",
+    flexDirection: 'row'
   },
   header: {
     paddingBottom: Padding.p_base,
-    alignSelf: "stretch",
+    alignSelf: 'stretch'
   },
   day: {
     padding: Padding.p_5xs,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   dayStates: {
     borderColor: Color.secundario,
     borderRightWidth: 1,
     borderBottomWidth: 1,
-    borderStyle: "solid",
+    borderStyle: 'solid'
   },
   date: {
     opacity: 0.1,
-    fontWeight: "600",
+    fontWeight: '600',
     zIndex: 1,
     fontSize: FontSize.footnote_size,
     color: Color.calendarDark,
-    fontFamily: FontFamily.lato,
+    fontFamily: FontFamily.lato
   },
   row: {
-    alignSelf: "stretch",
-    flexDirection: "row",
-    flex: 1,
+    alignSelf: 'stretch',
+    flexDirection: 'row',
+    flex: 1
   },
   date5: {
-    fontWeight: "600",
+    fontWeight: '600',
     zIndex: 1,
     fontSize: FontSize.footnote_size,
     color: Color.calendarDark,
-    fontFamily: FontFamily.lato,
+    fontFamily: FontFamily.lato
   },
   dayStates10: {
     borderColor: Color.colorGray_600,
     borderWidth: 2,
-    borderStyle: "solid",
+    borderStyle: 'solid'
   },
   background23: {
-    backgroundColor: Color.white,
+    backgroundColor: Color.white
   },
   date18: {
     zIndex: 1,
     fontSize: FontSize.footnote_size,
-    fontWeight: "700",
+    fontWeight: '700',
     color: Color.calendarDark,
-    fontFamily: FontFamily.lato,
+    fontFamily: FontFamily.lato
   },
   background27: {
-    backgroundColor: Color.primario2,
+    backgroundColor: Color.primario2
   },
   date22: {
     zIndex: 1,
     fontSize: FontSize.footnote_size,
-    textAlign: "left",
-    fontWeight: "700",
+    textAlign: 'left',
+    fontWeight: '700'
   },
   body: {
     height: 194,
-    alignSelf: "stretch",
+    alignSelf: 'stretch'
   },
   calendarSelectChangeSize: {
-    shadowColor: "rgba(0, 0, 0, 0.06)",
+    shadowColor: 'rgba(0, 0, 0, 0.06)',
     shadowOffset: {
       width: 0,
-      height: 16,
+      height: 16
     },
     shadowRadius: 24,
     elevation: 24,
@@ -528,44 +528,44 @@ const styles = StyleSheet.create({
     width: 390,
     height: 338,
     padding: Padding.p_base,
-    borderStyle: "solid",
+    borderStyle: 'solid',
     borderRadius: Border.br_3xs,
     marginTop: 20,
-    alignItems: "center",
-    backgroundColor: Color.white,
+    alignItems: 'center',
+    backgroundColor: Color.white
   },
   edadAproximada: {
-    color: Color.textTextPrimary,
+    color: Color.textTextPrimary
   },
   titleBase: {
     width: 119,
     paddingBottom: Padding.p_7xs,
-    flexDirection: "row",
+    flexDirection: 'row'
   },
   aos: {
     top: 15,
     left: 18,
     color: Color.gris,
-    position: "absolute",
-    letterSpacing: 0,
+    position: 'absolute',
+    letterSpacing: 0
   },
   field: {
     backgroundColor: Color.fAFAFA,
     height: 49,
     width: 388,
-    borderRadius: Border.br_3xs,
+    borderRadius: Border.br_3xs
   },
   fieldWithTitle: {
     width: 388,
-    marginTop: 20,
+    marginTop: 20
   },
   signIn: {
     letterSpacing: 1,
     lineHeight: 24,
-    textAlign: "center",
+    textAlign: 'center',
     flex: 1,
     fontSize: FontSize.size_base,
-    color: Color.white,
+    color: Color.white
   },
   button: {
     paddingHorizontal: Padding.p_5xl,
@@ -573,18 +573,18 @@ const styles = StyleSheet.create({
     backgroundColor: Color.linearBoton,
     width: 388,
     marginTop: 20,
-    flexDirection: "row",
+    flexDirection: 'row',
     borderRadius: Border.br_11xl,
-    justifyContent: "center",
+    justifyContent: 'center'
   },
   fecha: {
     padding: Padding.p_xl,
-    width: "100%",
-    justifyContent: "center",
+    width: '100%',
+    justifyContent: 'center',
     flex: 1,
     backgroundColor: Color.white,
-    borderRadius: Border.br_11xl,
-  },
-});
+    borderRadius: Border.br_11xl
+  }
+})
 
-export default Fecha;
+export default Fecha
