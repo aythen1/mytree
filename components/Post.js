@@ -35,7 +35,7 @@ const Post = () => {
           />
         </Pressable>
 
-        <View style={{ padding: 15, top: 340 }}>
+        <View style={{ padding: 15, top: 300 }}>
           <Text style={styles.camila}>Camila</Text>
           <Text style={styles.yendoALa}>
             Yendo a la casa de la tía Elisa! Los esperamos allá, familia!
@@ -176,9 +176,8 @@ const styles = StyleSheet.create({
     top: '50%'
   },
   rectangleParent: {
-    height: '100%',
-    top: 15,
-    marginBottom: 120
+    height: '85%',
+    top: 15
   },
   muroInformacinChild: {
     backgroundColor: Color.linearBoton,

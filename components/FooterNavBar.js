@@ -102,20 +102,25 @@ const FooterNavBar = () => {
                 zIndex: 10
               }}
             >
-              <Text
+              <View
                 style={{
                   borderRadius: 5,
                   backgroundColor: 'white',
-                  width: 30,
-
-                  color: 'green',
-                  textAlign: 'center',
-
-                  fontSize: 20
+                  width: 25,
+                  height: 25
                 }}
               >
-                +
-              </Text>
+                <Text
+                  style={{
+                    fontSize: 25,
+                    color: '#7fc08b',
+                    textAlign: 'center',
+                    bottom: 5.5
+                  }}
+                >
+                  +
+                </Text>
+              </View>
             </View>
           </LinearGradient>
         </Pressable>
@@ -151,14 +156,15 @@ const styles = StyleSheet.create({
   },
 
   IconlyLightHomeLeft: {
-    width: 24,
-    height: 24,
+    width: 23,
+    height: 23,
     marginLeft: 25
   },
   IconlyLightHomeRight: {
-    width: 24,
+    width: 21,
     height: 24,
-    marginRight: 25
+    marginRight: 25,
+    overflow: 'hidden'
   }
 })
 
