@@ -144,9 +144,6 @@ const FiltroEdicionRecuerdo = () => {
               ) : filtros === 2 ? (
                 <Edicion />
               ) : (
-                //   filtros === 3 ? (
-                //     <Organizador />
-                //   ) :
                 <></>
               )}
             </View>
