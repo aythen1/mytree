@@ -139,21 +139,20 @@ const Invitacin = () => {
             </Pressable>
           </LinearGradient>
         </View>
-        {modalCreate && (
-          <Modal animationType="fade" transparent={true} visible={modalCreate}>
-            <TouchableWithoutFeedback onPress={() => setModalCreate(false)}>
-              <View style={styles.modalOverlay}>
-                <View>
-                  <ENTRADACREADA
-                    onClose={onCloseModalCreate}
-                    message={'Asistencia actualizada!'}
-                    isNavigate={'CALENDARIO'}
-                  />
-                </View>
-              </View>
-            </TouchableWithoutFeedback>
-          </Modal>
-        )}
+
+        <Modal animationType="slide" transparent visible={modalCreate}>
+          <View style={styles.buttonContainer2Overlay}>
+            <Pressable
+              style={styles.buttonContainer2Bg}
+              onPress={() => setModalCreate(false)}
+            />
+            <ENTRADACREADA
+              onClose={onCloseModalCreate}
+              message={'Asistencia actualizada!'}
+              isNavigate={'CALENDARIO'}
+            />
+          </View>
+        </Modal>
       </View>
     </ScrollView>
   )
@@ -382,10 +381,18 @@ const styles = StyleSheet.create({
   paddingBottom: {
     paddingBottom: 90
   },
-  modalOverlay: {
-    height: '100%',
+  buttonContainer2Overlay: {
+    flex: 1,
+    alignItems: 'center',
     justifyContent: 'center',
-    alignItems: 'center'
+    backgroundColor: 'rgba(113, 113, 113, 0.3)'
+  },
+  buttonContainer2Bg: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    left: 0,
+    top: 0
   }
 })
 

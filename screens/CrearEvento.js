@@ -6,7 +6,6 @@ import {
   Pressable,
   Modal,
   ScrollView,
-  TouchableWithoutFeedback,
   TextInput
 } from 'react-native'
 import { Image } from 'expo-image'
@@ -30,13 +29,6 @@ const CrearEvento = () => {
     ['Invitado 1', 'Invitado 2', 'Invitado 3'],
     ['Diseño 1', 'Diseño 2', 'Diseño 3']
   ]
-
-  // const [title, setTitle] = useState(['Opcion 1', 'Opcion 2', 'Opcion 3'])
-  // const [sendForm, setSendForm] = useState([
-  //   'Mensajeria MyTree',
-  //   'Correo postal',
-  //   'QR'
-  // ])
 
   const showOptionsArray = (index) => {
     setCurrentOptionsIndex(index)
@@ -245,7 +237,7 @@ const CrearEvento = () => {
           >
             <Pressable
               style={[styles.pressable, styles.pressableFlexBox]}
-              // onPress={openButtonContainer1}
+              onPress={() => setModalCreate(true)}
             >
               <Text style={[styles.signIn1, styles.signTypo]}>
                 Programar Envío
@@ -269,48 +261,19 @@ const CrearEvento = () => {
         <View style={styles.frameChild} />
       </View>
 
-      {modalCreate && (
-        <Modal animationType="fade" transparent={true} visible={modalCreate}>
-          <TouchableWithoutFeedback onPress={() => setModalCreate(false)}>
-            <View style={styles.modalOverlay}>
-              <View>
-                <ENTRADACREADA
-                  onClose={onCloseModalCreate}
-                  message={'Enviado!'}
-                  isNavigate={'CALENDARIO'}
-                />
-              </View>
-            </View>
-          </TouchableWithoutFeedback>
-        </Modal>
-      )}
-
-      {/* {modalOpcionesVisible && (
-        <Modal
-          animationType="fade"
-          transparent={true}
-          visible={modalOpcionesVisible}
-        >
-          <TouchableWithoutFeedback
-            onPress={() => setModalOpcionesVisible(false)}
-          >
-            <View style={styles.modalOverlay}>
-              <View>
-                <OpcionesModal
-                  opciones={options[currentOptionsIndex]}
-                  visible={modalOpcionesVisible}
-                  onClose={() => setModalOpcionesVisible(false)}
-                  onAddOption={(nuevaOpcion) => {
-                    options[currentOptionsIndex].push(nuevaOpcion)
-                    onCloseModalOpciones()
-                  }}
-                  isAdd={true}
-                />
-              </View>
-            </View>
-          </TouchableWithoutFeedback>
-        </Modal>
-      )} */}
+      <Modal animationType="slide" transparent visible={modalCreate}>
+        <View style={styles.buttonContainer2Overlay}>
+          <Pressable
+            style={styles.buttonContainer2Bg}
+            onPress={() => setModalCreate(false)}
+          />
+          <ENTRADACREADA
+            onClose={onCloseModalCreate}
+            message={'Enviado!'}
+            isNavigate={'CALENDARIO'}
+          />
+        </View>
+      </Modal>
 
       <Modal animationType="slide" transparent visible={modalOpcionesVisible}>
         <View style={styles.arrowDown2Icon1Overlay}>
@@ -335,12 +298,6 @@ const CrearEvento = () => {
 }
 
 const styles = StyleSheet.create({
-  modalOverlay: {
-    height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
   arrowDown2Icon1Bg: {
     position: 'absolute',
     width: '100%',
@@ -560,6 +517,19 @@ const styles = StyleSheet.create({
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  buttonContainer2Overlay: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(113, 113, 113, 0.3)'
+  },
+  buttonContainer2Bg: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    left: 0,
+    top: 0
   }
 })
 

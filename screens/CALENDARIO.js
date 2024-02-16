@@ -100,7 +100,10 @@ const CALENDARIO = () => {
             </View>
           </View>
           <View style={styles.frameGroup}>
-            <View style={styles.frameContainer}>
+            <Pressable
+              style={styles.frameContainer}
+              onPress={() => navigation.navigate('Invitacin')}
+            >
               <View style={styles.unsplashilip77sbmoeParent}>
                 <Image
                   style={styles.unsplashilip77sbmoeIcon}
@@ -119,7 +122,7 @@ const CALENDARIO = () => {
                   <Text style={styles.cumple28Aos}>cumple 28 años</Text>
                 </Text>
               </View>
-            </View>
+            </Pressable>
             <Pressable
               style={[styles.framePressable, styles.frameFlexBox]}
               onPress={() => navigation.navigate('Invitacin')}
@@ -145,7 +148,10 @@ const CALENDARIO = () => {
                 </Text>
               </View>
             </Pressable>
-            <View style={[styles.frameWrapper, styles.frameFlexBox]}>
+            <Pressable
+              style={[styles.frameWrapper, styles.frameFlexBox]}
+              onPress={() => navigation.navigate('Invitacin')}
+            >
               <View style={styles.unsplashilip77sbmoeParent}>
                 <Image
                   style={styles.unsplashilip77sbmoeIcon}
@@ -164,7 +170,7 @@ const CALENDARIO = () => {
                   <Text style={styles.cumple28Aos}>cumple 28 años</Text>
                 </Text>
               </View>
-            </View>
+            </Pressable>
             <Pressable
               style={[styles.framePressable, styles.frameFlexBox]}
               onPress={() => navigation.navigate('Invitacin')}
