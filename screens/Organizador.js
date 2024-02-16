@@ -8,8 +8,7 @@ import {
   Pressable,
   Modal,
   TextInput,
-  ScrollView,
-  TouchableWithoutFeedback
+  ScrollView
 } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import Cancion1 from '../components/Cancion1'
@@ -20,13 +19,14 @@ import Checkbox from 'expo-checkbox'
 import ENTRADACREADA from '../components/ENTRADACREADA'
 import { setPanel } from '../redux/slices/panel.slices'
 import Etapas from './Etapas'
+import SubeTusRecuerdos from './SubeTusRecuerdos'
 import Privacidad from './Privacidad'
 
 const Organizador = () => {
   const dispatch = useDispatch()
 
   const { showPanel } = useSelector((state) => state.panel)
-
+  const [uploadRecuerdo, setUploadRecuerdo] = useState(false)
   const [ischecked, setIschecked] = useState(false)
   const [submit, setSubmit] = useState(false)
   const [buttonContainer1Visible, setButtonContainer1Visible] = useState(false)
@@ -39,6 +39,14 @@ const Organizador = () => {
   const closeSubmit = () => {
     setSubmit(false)
   }
+
+  const openUploadRecuerdo = useCallback(() => {
+    setUploadRecuerdo(true)
+  }, [])
+
+  const closeUploadRecuerdo = useCallback(() => {
+    setUploadRecuerdo(false)
+  }, [])
 
   const openEtapas = useCallback(() => {
     setShowEtapas(true)
@@ -134,11 +142,12 @@ const Organizador = () => {
                       contentFit="cover"
                       source={require('../assets/line-802.png')}
                     />
-                    <View
+                    <Pressable
                       style={[
                         styles.iconlybolddocumentParent,
                         styles.parentFlexBox
                       ]}
+                      onPress={openUploadRecuerdo}
                     >
                       <Image
                         style={styles.iconlybolddocument}
@@ -148,7 +157,7 @@ const Organizador = () => {
                       <Text style={[styles.anexoArchivo, styles.etiquetarTypo]}>
                         Anexo archivo
                       </Text>
-                    </View>
+                    </Pressable>
                     <Image
                       style={styles.frameItem}
                       contentFit="cover"
@@ -365,6 +374,16 @@ const Organizador = () => {
             onPress={closeFrameContainer2}
           />
           <Etiquetar onClose={closeFrameContainer2} />
+        </View>
+      </Modal>
+
+      <Modal animationType="slide" transparent visible={uploadRecuerdo}>
+        <View style={styles.frameContainer2Overlay}>
+          <Pressable
+            style={styles.frameContainer2Bg}
+            onPress={closeUploadRecuerdo}
+          />
+          <SubeTusRecuerdos onClose={closeUploadRecuerdo} />
         </View>
       </Modal>
 
