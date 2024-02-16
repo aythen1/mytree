@@ -113,17 +113,14 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.lato
   },
   button: {
-    top: 341,
+    top: 280,
     paddingHorizontal: Padding.p_5xl,
     paddingVertical: Padding.p_sm,
     backgroundColor: Color.linearBoton,
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
-    width: 388,
-    left: '50%',
-    marginLeft: -194,
-    position: 'absolute',
+    width: '100%',
     borderRadius: Border.br_11xl
   },
   text: {
@@ -179,12 +176,13 @@ const styles = StyleSheet.create({
   },
   cancion: {
     backgroundColor: Color.white,
-    width: 428,
-    height: 413,
-    maxWidth: '100%',
-    maxHeight: '100%',
+    width: '100%',
+    height: 400,
     overflow: 'hidden',
-    borderRadius: Border.br_11xl
+    borderTopLeftRadius: Border.br_11xl,
+    borderTopRightRadius: Border.br_11xl,
+    position: 'absolute',
+    bottom: 0
   }
 })
 

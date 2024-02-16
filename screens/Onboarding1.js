@@ -76,8 +76,8 @@ const styles = StyleSheet.create({
   },
   frameLayout: {
     marginLeft: 7,
-    height: 6,
-    borderRadius: Border.br_3xs
+    height: 6
+    // borderRadius: Border.br_3xs
   },
   progressPosition: {
     // maxHeight: "100%",
@@ -90,8 +90,8 @@ const styles = StyleSheet.create({
   onboarding1Icon: {
     width: 428,
     zIndex: 0,
-    overflow: 'hidden',
-    borderRadius: Border.br_31xl
+    overflow: 'hidden'
+    // borderRadius: Border.br_31xl
     // height: 926,
   },
   huella: {
@@ -112,8 +112,8 @@ const styles = StyleSheet.create({
   frameChild: {
     height: 6,
     borderRadius: Border.br_3xs,
-    width: 8,
-    backgroundColor: Color.colorGray_400
+    width: 34,
+    backgroundColor: Color.white
   },
   frameItem: {
     width: 8,
@@ -121,8 +121,8 @@ const styles = StyleSheet.create({
     marginLeft: 7
   },
   frameInner: {
-    backgroundColor: Color.white,
-    width: 34
+    backgroundColor: Color.colorGray_400,
+    width: 8
   },
   rectangleParent: {
     flexDirection: 'row'
@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
     marginLeft: -194,
     paddingVertical: 50,
     top: 20,
-    bottom: 50,
+    bottom: 20,
     width: 388,
     // height: "92%",
 
@@ -191,8 +191,8 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     // height: 926,
-    width: '100%',
-    top: 30
+    width: '100%'
+    // top: 30
   }
 })
 

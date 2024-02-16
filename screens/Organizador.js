@@ -344,7 +344,11 @@ const Organizador = () => {
         </View>
       </Modal>
 
-      <Modal animationType="fade" transparent visible={buttonContainer1Visible}>
+      <Modal
+        animationType="slide"
+        transparent
+        visible={buttonContainer1Visible}
+      >
         <View style={styles.buttonContainer1Overlay}>
           <Pressable
             style={styles.frameContainer2Bg}
@@ -354,7 +358,7 @@ const Organizador = () => {
         </View>
       </Modal>
 
-      <Modal animationType="fade" transparent visible={frameContainer2Visible}>
+      <Modal animationType="slide" transparent visible={frameContainer2Visible}>
         <View style={styles.frameContainer2Overlay}>
           <Pressable
             style={styles.frameContainer2Bg}
@@ -581,7 +585,7 @@ const styles = StyleSheet.create({
     height: '100%'
   },
   frameContainer2Bg: {
-    position: 'absolute',
+    // position: 'absolute',
     width: '100%',
     height: '100%',
     left: 0,
