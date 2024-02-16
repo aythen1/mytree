@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "mytreev1",
+    "name": "MyTreev1",
     "slug": "my-tree",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -27,7 +27,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "8ffcd1fd-ed60-489f-b2e2-94885c42ff44"
+        "projectId": "439783a4-d65c-41bc-af06-5519c2059256"
       }
     },
     "plugins": ["expo-font"]

@@ -95,25 +95,18 @@ const CrearReto = () => {
               </View>
             </View>
           </View>
-          {popupCreate && (
-            <Modal
-              animationType="fade"
-              transparent={true}
-              visible={popupCreate}
-            >
-              <TouchableWithoutFeedback onPress={() => onCloseModalCreate()}>
-                <View style={styles.modalOverlay}>
-                  <View>
-                    <ENTRADACREADA
-                      onClose={onCloseModalCreate}
-                      message={'Creado con exito'}
-                      isNavigate={'Muro'}
-                    />
-                  </View>
-                </View>
-              </TouchableWithoutFeedback>
-            </Modal>
-          )}
+
+          <Modal animationType="slide" transparent visible={popupCreate}>
+            <View style={styles.buttonContainer2Overlay}>
+              <Pressable onPress={onCloseModalCreate} />
+              <ENTRADACREADA
+                onClose={onCloseModalCreate}
+                message={'Creado con exito'}
+                isNavigate={'Muro'}
+              />
+            </View>
+          </Modal>
+
           <LinearGradient
             style={[styles.button, styles.buttonLayout]}
             locations={[0, 1]}
@@ -136,6 +129,12 @@ const styles = StyleSheet.create({
   iconLayout: {
     overflow: 'hidden',
     width: '100%'
+  },
+  buttonContainer2Overlay: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(113, 113, 113, 0.3)'
   },
   modalOverlay: {
     height: '100%',

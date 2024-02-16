@@ -43,8 +43,8 @@ const RETOSMSVOTADOS = () => {
           <View style={styles.frameContainer}>
             {newTopThreeOrder.map((top, i) => (
               <View key={top.nameFamiliar} /* style={styles.groupContainer} */>
-                <View style={styles.groupLayout}>
-                  <View style={[styles.starGroup, styles.groupLayout]}>
+                <View>
+                  <View style={styles.starGroup}>
                     {i === 0 && (
                       <Image
                         style={styles.groupChild}
@@ -248,10 +248,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: FontFamily.lato
   },
-  groupLayout: {
-    height: 150,
-    width: 125
-  },
+
   andrewTypo: {
     lineHeight: 21,
     letterSpacing: 0.4,
@@ -400,10 +397,9 @@ const styles = StyleSheet.create({
     top: 0
   },
   starGroup: {
-    top: 0,
-    height: 150,
-    left: 0
-    // position: 'absolute'
+    // top: 0,
+    height: 150
+    // left: 20
   },
   vectorIcon2: {
     marginTop: -1,
@@ -431,10 +427,11 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   frameContainer: {
-    alignItems: 'flex-end',
+    // alignItems: 'flex-end',
+    justifyContent: 'center',
     marginTop: 20,
     flexDirection: 'row',
-    width: 388
+    width: '100%'
   },
   frameChild: {
     shadowColor: 'rgba(0, 0, 0, 0.15)',

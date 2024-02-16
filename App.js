@@ -169,6 +169,7 @@ import FooterNavBar from './components/FooterNavBar'
 import Papers from './screens/Papers'
 import Paper from './screens/Paper'
 import FiltroEdicion from './components/FiltroEdicion'
+import FiltroEdicionRecuerdo from './components/FiltroEdicionRecuerdo'
 
 const Stack = createNativeStackNavigator()
 
@@ -356,7 +357,6 @@ const App = () => {
             component={ConfirmarAsistencia}
             options={{ headerShown: false }}
           />
-
           <Stack.Screen
             name="Keyboard"
             component={Keyboard}
@@ -577,7 +577,6 @@ const App = () => {
             component={AsistenciaActualizada}
             options={{ headerShown: false }}
           />
-
           <Stack.Screen
             name="QR"
             component={QR}
@@ -926,6 +925,11 @@ const App = () => {
           <Stack.Screen
             name="CALENDARIO"
             component={CALENDARIO}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="FiltroEdicionRecuerdo"
+            component={FiltroEdicionRecuerdo}
             options={{ headerShown: false }}
           />
           <Stack.Screen

@@ -38,7 +38,7 @@ const AadirRecuerdo1 = () => {
                 </View>
                 <Pressable
                   style={styles.back}
-                  onPress={() => navigation.navigate('AadirRecuerdo')}
+                  onPress={() => navigation.navigate('FiltroEdicionRecuerdo')}
                 >
                   <Image
                     style={[styles.icon1, styles.iconLayout]}
