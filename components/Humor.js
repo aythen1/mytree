@@ -51,8 +51,6 @@ const styles = StyleSheet.create({
   textTypo: {
     marginLeft: 25,
     marginTop: 10,
-    // textAlign: 'left',
-    // lineHeight: 59,
     fontSize: 30,
     fontFamily: FontFamily.lato,
     fontWeight: '500',
@@ -88,16 +86,18 @@ const styles = StyleSheet.create({
     right: 45
   },
   parent: {
-    // width: '100%',
     marginTop: 20
   },
   humor: {
-    borderRadius: Border.br_11xl,
+    borderTopRightRadius: Border.br_11xl,
+    borderTopLeftRadius: Border.br_11xl,
     backgroundColor: Color.white,
     width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 200,
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    // height: 200,
+    position: 'absolute',
+    bottom: 0,
     padding: Padding.p_xl
   }
 })

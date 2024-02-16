@@ -14,11 +14,13 @@ import { useNavigation } from '@react-navigation/native'
 import { FontFamily, Padding, FontSize, Color, Border } from '../GlobalStyles'
 import ENTRADACREADA from '../components/ENTRADACREADA'
 import OpcionesModal from '../components/OpcionesModal'
+import PopUpCalendario from '../components/PopUpCalendario'
 
 const CrearEvento = () => {
   const navigation = useNavigation()
 
   const [modalCreate, setModalCreate] = useState(false)
+  const [programar, setProgramar] = useState(false)
   const [modalOpcionesVisible, setModalOpcionesVisible] = useState(false)
   const [currentOptionsIndex, setCurrentOptionsIndex] = useState(0)
 
@@ -237,7 +239,7 @@ const CrearEvento = () => {
           >
             <Pressable
               style={[styles.pressable, styles.pressableFlexBox]}
-              onPress={() => setModalCreate(true)}
+              onPress={() => setProgramar(true)}
             >
               <Text style={[styles.signIn1, styles.signTypo]}>
                 Programar Envío
@@ -271,6 +273,19 @@ const CrearEvento = () => {
             onClose={onCloseModalCreate}
             message={'Enviado!'}
             isNavigate={'CALENDARIO'}
+          />
+        </View>
+      </Modal>
+
+      <Modal animationType="slide" transparent visible={programar}>
+        <View style={styles.buttonContainer2Overlay}>
+          <Pressable
+            style={styles.buttonContainer2Bg}
+            onPress={() => setProgramar(false)}
+          />
+          <PopUpCalendario
+            setButtonContainer2Visible={() => {}}
+            setCalendario={setProgramar}
           />
         </View>
       </Modal>

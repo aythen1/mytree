@@ -147,25 +147,19 @@ const MIDIARIOENTRADATEXTOPL7 = () => {
               </View>
             )}
 
-            {modalCreate && (
-              <Modal
-                animationType="fade"
-                transparent={true}
-                visible={modalCreate}
-              >
-                <TouchableWithoutFeedback onPress={() => setModalCreate(false)}>
-                  <View style={styles.modalOverlay}>
-                    <View>
-                      <ENTRADACREADA
-                        onClose={onCloseModalCreate}
-                        message={'Entrada Creada'}
-                        isNavigate={'MIDIARIOPANTALLAPERSONAL'}
-                      />
-                    </View>
-                  </View>
-                </TouchableWithoutFeedback>
-              </Modal>
-            )}
+            <Modal animationType="slide" transparent visible={modalCreate}>
+              <View style={styles.arrowDown2Icon1Overlay}>
+                <Pressable
+                  style={styles.arrowDown2Icon1Bg}
+                  onPress={() => setModalCreate(false)}
+                />
+                <ENTRADACREADA
+                  onClose={() => setModalCreate(false)}
+                  message={'Entrada Creada'}
+                  isNavigate={'MIDIARIOPANTALLAPERSONAL'}
+                />
+              </View>
+            </Modal>
           </Pressable>
         )}
 
@@ -176,9 +170,12 @@ const MIDIARIOENTRADATEXTOPL7 = () => {
 
       {showEdit && <NavMedia />}
 
-      <Modal animationType="fade" transparent visible={groupIcon1Visible}>
-        <View style={styles.groupIcon1Overlay}>
-          <Pressable style={styles.groupIcon1Bg} onPress={closeGroupIcon1} />
+      <Modal animationType="slide" transparent visible={groupIcon1Visible}>
+        <View style={styles.arrowDown2Icon1Overlay}>
+          <Pressable
+            style={styles.arrowDown2Icon1Bg}
+            onPress={closeGroupIcon1}
+          />
           <Humor onClose={closeGroupIcon1} />
         </View>
       </Modal>
@@ -192,6 +189,19 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  arrowDown2Icon1Bg: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    left: 0,
+    top: 0
+  },
+  arrowDown2Icon1Overlay: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(113, 113, 113, 0.3)'
   },
   groupParent: {
     flexDirection: 'row',
@@ -339,14 +349,6 @@ const styles = StyleSheet.create({
   documentIcon: {
     overflow: 'hidden'
   },
-  iconlylightOutlinesearchParent: {
-    // top: 20,
-    // left: 276,
-    // justifyContent: 'center',
-    // alignItems: 'center',
-    // flexDirection: 'row'
-    // position: 'absolute'
-  },
   navigationIcon: {
     marginLeft: -214,
     top: 821,
@@ -408,7 +410,7 @@ const styles = StyleSheet.create({
     // borderRadius: Border.br_31xl,
     backgroundColor: Color.white,
     width: '100%',
-    overflow: 'hidden',
+    // overflow: 'hidden',
     flex: 1
   }
 })

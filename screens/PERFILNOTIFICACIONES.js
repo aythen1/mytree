@@ -7,6 +7,10 @@ import ConfirmarAsistencia from '../components/ConfirmarAsistencia'
 import CONFIRMARPARENTESCO from '../components/CONFIRMARPARENTESCO'
 import ETIQUETADO from '../components/ETIQUETADO'
 import { Color, FontFamily, FontSize, Padding, Border } from '../GlobalStyles'
+import HeaderIcons from '../components/HeaderIcons'
+import CalendarMuroSVG from '../components/svgs/CalendarMuroSVG'
+import BookSVG from '../components/svgs/BookSVG'
+import SettingMuroSVG from '../components/svgs/SettingMuroSVG'
 
 const PERFILNOTIFICACIONES = () => {
   const [frameContainer5Visible, setFrameContainer5Visible] = useState(false)
@@ -50,21 +54,29 @@ const PERFILNOTIFICACIONES = () => {
   return (
     <>
       <View style={styles.perfilNotificaciones}>
-        <View
-          style={[
-            styles.perfilNotificacionesChild,
-            styles.navigationIconLayout
-          ]}
-        />
-        <View style={[styles.frameParent, styles.frameParentPosition]}>
-          <View style={[styles.frameGroup, styles.frameGroupShadowBox]}>
-            <View style={styles.frameViewFlexBox}>
+        <View>
+          <View style={styles.frameViewFlexBox}>
+            <View
+              style={{
+                width: '100%',
+                marginTop: 15,
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'space-between'
+              }}
+            >
               <Image
                 style={styles.image6Icon}
                 contentFit="cover"
                 source={require('../assets/image-6.png')}
               />
-              <View style={styles.iconlylightOutlinecalendarParent}>
+
+              <HeaderIcons
+                icons={[<CalendarMuroSVG />, <BookSVG />, <SettingMuroSVG />]}
+              />
+            </View>
+
+            {/* <View style={styles.iconlylightOutlinecalendarParent}>
                 <Image
                   style={styles.iconlylightOutlinecalendar}
                   contentFit="cover"
@@ -85,317 +97,306 @@ const PERFILNOTIFICACIONES = () => {
                     source={require('../assets/iconlylightoutlinesetting6.png')}
                   />
                 </Pressable>
-              </View>
-            </View>
-            <View
-              style={[styles.notificacionesWrapper, styles.frameViewFlexBox]}
-            >
-              <Text style={styles.notificaciones}>Notificaciones</Text>
-            </View>
+              </View> */}
           </View>
-          <View style={styles.frameContainer}>
-            <Pressable onPress={openFrameContainer5}>
-              <View style={[styles.frameView, styles.frameViewFlexBox]}>
-                <Image
-                  style={styles.frameChild}
-                  contentFit="cover"
-                  source={require('../assets/frame-1547754875.png')}
-                />
-                <Text style={styles.hasRecibidoUnaLayout}>
-                  <Text style={styles.brunoTeHaContainer1}>
-                    <Text style={styles.bruno}>{`Bruno `}</Text>
-                    <Text style={styles.teHaInvitadoTypo}>
-                      te ha invitado a valorar su evento
-                    </Text>
-                  </Text>
-                </Text>
-                <Text style={styles.minAgo}>2 min ago</Text>
-              </View>
-              <Image
-                style={styles.frameItem}
-                contentFit="cover"
-                source={require('../assets/line-78.png')}
-              />
-            </Pressable>
-            <Pressable
-              style={styles.frameParent1}
-              onPress={openFrameContainer7}
-            >
-              <View style={[styles.frameView, styles.frameViewFlexBox]}>
-                <Image
-                  style={styles.frameChild}
-                  contentFit="cover"
-                  source={require('../assets/frame-1547754875.png')}
-                />
-                <Text style={styles.hasRecibidoUnaLayout}>
-                  <Text style={styles.brunoTeHaContainer1}>
-                    <Text style={styles.bruno}>{`Bruno `}</Text>
-                    <Text style={styles.teHaInvitadoTypo}>
-                      te ha enviado una invitación a un evento
-                    </Text>
-                  </Text>
-                </Text>
-                <Text style={styles.minAgo}>2 min ago</Text>
-              </View>
-              <Image
-                style={styles.frameItem}
-                contentFit="cover"
-                source={require('../assets/line-78.png')}
-              />
-            </Pressable>
-            <View style={styles.frameParent1}>
-              <Pressable
-                style={[styles.frameView, styles.frameViewFlexBox]}
-                onPress={() => navigation.navigate('RecopilacionDeRespuestas')}
-              >
-                <Image
-                  style={styles.frameChild}
-                  contentFit="cover"
-                  source={require('../assets/frame-1547754875.png')}
-                />
-                <Text style={styles.hasRecibidoUnaLayout}>
-                  <Text style={styles.brunoTeHaContainer1}>
-                    <Text style={styles.bruno}>{`Bruno `}</Text>
-                    <Text style={styles.teHaInvitadoTypo}>
-                      ha aceptado la invitación a tu evento
-                    </Text>
-                  </Text>
-                </Text>
-                <Text style={styles.minAgo}>2 min ago</Text>
-              </Pressable>
-              <Image
-                style={styles.frameItem}
-                contentFit="cover"
-                source={require('../assets/line-78.png')}
-              />
-            </View>
-            <Pressable
-              style={styles.frameParent1}
-              onPress={openFrameContainer11}
-            >
-              <View style={[styles.frameView, styles.frameViewFlexBox]}>
-                <Image
-                  style={styles.frameChild}
-                  contentFit="cover"
-                  source={require('../assets/frame-1547754875.png')}
-                />
-                <Text style={styles.hasRecibidoUnaLayout}>
-                  <Text style={styles.brunoTeHaContainer1}>
-                    <Text style={styles.bruno}>{`Umberto `}</Text>
-                    <Text style={styles.teHaInvitadoTypo}>
-                      te ha invitado a ser parte de su MyTree
-                    </Text>
-                  </Text>
-                </Text>
-                <Text style={styles.minAgo}>2 min ago</Text>
-              </View>
-              <Image
-                style={styles.frameItem}
-                contentFit="cover"
-                source={require('../assets/line-78.png')}
-              />
-            </Pressable>
-            <View style={styles.frameParent1}>
-              <View style={[styles.frameView, styles.frameViewFlexBox]}>
-                <Image
-                  style={styles.frameChild}
-                  contentFit="cover"
-                  source={require('../assets/frame-1547754875.png')}
-                />
-                <Text style={[styles.hasRecibidoUna, styles.teHaInvitadoTypo]}>
-                  Has recibido una Alerta Familiar del Pablo
-                </Text>
-                <Text style={styles.minAgo}>2 min ago</Text>
-              </View>
-              <Image
-                style={styles.frameItem}
-                contentFit="cover"
-                source={require('../assets/line-78.png')}
-              />
-            </View>
-            <Pressable
-              style={styles.frameParent1}
-              onPress={openFrameContainer15}
-            >
-              <View style={[styles.frameView, styles.frameViewFlexBox]}>
-                <Image
-                  style={styles.frameChild}
-                  contentFit="cover"
-                  source={require('../assets/frame-1547754875.png')}
-                />
-                <Text style={styles.hasRecibidoUnaLayout}>
-                  <Text style={styles.brunoTeHaContainer1}>
-                    <Text style={styles.bruno}>{`Bruno `}</Text>
-                    <Text style={styles.teHaInvitadoTypo}>
-                      ha añadido un recuerdo contigo
-                    </Text>
-                  </Text>
-                </Text>
-                <Text style={styles.minAgo}>2 min ago</Text>
-              </View>
-              <Image
-                style={styles.frameItem}
-                contentFit="cover"
-                source={require('../assets/line-78.png')}
-              />
-            </Pressable>
-            <View style={styles.frameParent1}>
-              <View style={[styles.frameView, styles.frameViewFlexBox]}>
-                <Image
-                  style={styles.frameChild}
-                  contentFit="cover"
-                  source={require('../assets/frame-1547754875.png')}
-                />
-                <Text style={styles.hasRecibidoUnaLayout}>
-                  <Text style={styles.brunoTeHaContainer1}>
-                    <Text style={styles.bruno}>{`Bruno `}</Text>
-                    <Text style={styles.teHaInvitadoTypo}>
-                      ha añadido un nuevo recuerdo familiar
-                    </Text>
-                  </Text>
-                </Text>
-                <Text style={styles.minAgo}>2 min ago</Text>
-              </View>
-              <Image
-                style={styles.frameItem}
-                contentFit="cover"
-                source={require('../assets/line-78.png')}
-              />
-            </View>
-            <View style={styles.frameParent1}>
-              <View style={[styles.frameView, styles.frameViewFlexBox]}>
-                <Image
-                  style={styles.frameChild}
-                  contentFit="cover"
-                  source={require('../assets/frame-1547754875.png')}
-                />
-                <Text style={[styles.hasRecibidoUna, styles.teHaInvitadoTypo]}>
-                  Has recibido una invitación a un evento familiar organizado
-                  por Noelia
-                </Text>
-                <Text style={styles.minAgo}>2 min ago</Text>
-              </View>
-              <Image
-                style={styles.frameItem}
-                contentFit="cover"
-                source={require('../assets/line-78.png')}
-              />
-            </View>
-            <View style={styles.frameParent1}>
-              <View style={[styles.frameView, styles.frameViewFlexBox]}>
-                <Image
-                  style={styles.frameChild}
-                  contentFit="cover"
-                  source={require('../assets/frame-1547754875.png')}
-                />
-                <Text style={styles.hasRecibidoUnaLayout}>
-                  <Text style={styles.brunoTeHaContainer1}>
-                    <Text
-                      style={styles.teHaInvitadoTypo}
-                    >{`¡Hoy es el cumpleaños de `}</Text>
-                    <Text style={styles.bruno}>Bruno</Text>
-                    <Text style={styles.teHaInvitadoTypo}>!</Text>
-                  </Text>
-                </Text>
-                <Text style={styles.minAgo}>2 min ago</Text>
-              </View>
-              <Image
-                style={styles.frameItem}
-                contentFit="cover"
-                source={require('../assets/line-78.png')}
-              />
-            </View>
-            <View style={styles.frameParent1}>
-              <View style={[styles.frameView, styles.frameViewFlexBox]}>
-                <Image
-                  style={styles.frameChild}
-                  contentFit="cover"
-                  source={require('../assets/frame-1547754875.png')}
-                />
-                <Text style={styles.hasRecibidoUnaLayout}>
-                  <Text style={styles.brunoTeHaContainer1}>
-                    <Text
-                      style={styles.teHaInvitadoTypo}
-                    >{`En una semana es el cumpleaños de `}</Text>
-                    <Text style={styles.bruno}>{`Bruno `}</Text>
-                  </Text>
-                </Text>
-                <Text style={styles.minAgo}>2 min ago</Text>
-              </View>
-              <Image
-                style={styles.frameItem}
-                contentFit="cover"
-                source={require('../assets/line-78.png')}
-              />
-            </View>
-            <View style={styles.frameParent1}>
-              <View style={[styles.frameView, styles.frameViewFlexBox]}>
-                <Image
-                  style={styles.frameChild}
-                  contentFit="cover"
-                  source={require('../assets/frame-1547754875.png')}
-                />
-                <Text style={styles.hasRecibidoUnaLayout}>
-                  <Text style={styles.brunoTeHaContainer1}>
-                    <Text style={styles.bruno}>Bruno</Text>
-                    <Text style={styles.teHaInvitadoTypo}>
-                      {' '}
-                      te ha invitado a colaborar en vuestro álbum familiar
-                    </Text>
-                  </Text>
-                </Text>
-                <Text style={styles.minAgo}>2 min ago</Text>
-              </View>
-              <Image
-                style={styles.frameChild17}
-                contentFit="cover"
-                source={require('../assets/line-78.png')}
-              />
-            </View>
-            <View style={styles.frameParent1}>
-              <View style={[styles.frameView, styles.frameViewFlexBox]}>
-                <Image
-                  style={styles.frameChild}
-                  contentFit="cover"
-                  source={require('../assets/frame-1547754875.png')}
-                />
-                <Text style={styles.hasRecibidoUnaLayout}>
-                  <Text style={styles.brunoTeHaContainer1}>
-                    <Text style={styles.bruno}>Bruno</Text>
-                    <Text style={styles.teHaInvitadoTypo}>
-                      {' '}
-                      te propone un reto familiar
-                    </Text>
-                  </Text>
-                </Text>
-                <Text style={styles.minAgo}>2 min ago</Text>
-              </View>
-              <Image
-                style={styles.frameChild17}
-                contentFit="cover"
-                source={require('../assets/line-78.png')}
-              />
-            </View>
-            <View style={styles.frameParent1}>
-              <View style={[styles.frameView, styles.frameViewFlexBox]}>
-                <Image
-                  style={styles.frameChild}
-                  contentFit="cover"
-                  source={require('../assets/frame-1547754875.png')}
-                />
-                <Text style={[styles.hasRecibidoUna, styles.teHaInvitadoTypo]}>
-                  ¿Cómo te ha ido el día? Cuéntaselo a tu familia
-                </Text>
-                <Text style={styles.minAgo}>2 min ago</Text>
-              </View>
-              <Image
-                style={styles.frameChild17}
-                contentFit="cover"
-                source={require('../assets/line-78.png')}
-              />
-            </View>
+          <View style={[styles.notificacionesWrapper, styles.frameViewFlexBox]}>
+            <Text style={styles.notificaciones}>Notificaciones</Text>
           </View>
         </View>
+        <View style={styles.frameContainer}>
+          <Pressable onPress={openFrameContainer5}>
+            <View style={[styles.frameView, styles.frameViewFlexBox]}>
+              <Image
+                style={styles.frameChild}
+                contentFit="cover"
+                source={require('../assets/frame-1547754875.png')}
+              />
+              <Text style={styles.hasRecibidoUnaLayout}>
+                <Text style={styles.brunoTeHaContainer1}>
+                  <Text style={styles.bruno}>{`Bruno `}</Text>
+                  <Text style={styles.teHaInvitadoTypo}>
+                    te ha invitado a valorar su evento
+                  </Text>
+                </Text>
+              </Text>
+              <Text style={styles.minAgo}>2 min ago</Text>
+            </View>
+            <Image
+              style={styles.frameItem}
+              contentFit="cover"
+              source={require('../assets/line-78.png')}
+            />
+          </Pressable>
+          <Pressable style={styles.frameParent1} onPress={openFrameContainer7}>
+            <View style={[styles.frameView, styles.frameViewFlexBox]}>
+              <Image
+                style={styles.frameChild}
+                contentFit="cover"
+                source={require('../assets/frame-1547754875.png')}
+              />
+              <Text style={styles.hasRecibidoUnaLayout}>
+                <Text style={styles.brunoTeHaContainer1}>
+                  <Text style={styles.bruno}>{`Bruno `}</Text>
+                  <Text style={styles.teHaInvitadoTypo}>
+                    te ha enviado una invitación a un evento
+                  </Text>
+                </Text>
+              </Text>
+              <Text style={styles.minAgo}>2 min ago</Text>
+            </View>
+            <Image
+              style={styles.frameItem}
+              contentFit="cover"
+              source={require('../assets/line-78.png')}
+            />
+          </Pressable>
+          <View style={styles.frameParent1}>
+            <Pressable
+              style={[styles.frameView, styles.frameViewFlexBox]}
+              onPress={() => navigation.navigate('RecopilacionDeRespuestas')}
+            >
+              <Image
+                style={styles.frameChild}
+                contentFit="cover"
+                source={require('../assets/frame-1547754875.png')}
+              />
+              <Text style={styles.hasRecibidoUnaLayout}>
+                <Text style={styles.brunoTeHaContainer1}>
+                  <Text style={styles.bruno}>{`Bruno `}</Text>
+                  <Text style={styles.teHaInvitadoTypo}>
+                    ha aceptado la invitación a tu evento
+                  </Text>
+                </Text>
+              </Text>
+              <Text style={styles.minAgo}>2 min ago</Text>
+            </Pressable>
+            <Image
+              style={styles.frameItem}
+              contentFit="cover"
+              source={require('../assets/line-78.png')}
+            />
+          </View>
+          <Pressable style={styles.frameParent1} onPress={openFrameContainer11}>
+            <View style={[styles.frameView, styles.frameViewFlexBox]}>
+              <Image
+                style={styles.frameChild}
+                contentFit="cover"
+                source={require('../assets/frame-1547754875.png')}
+              />
+              <Text style={styles.hasRecibidoUnaLayout}>
+                <Text style={styles.brunoTeHaContainer1}>
+                  <Text style={styles.bruno}>{`Umberto `}</Text>
+                  <Text style={styles.teHaInvitadoTypo}>
+                    te ha invitado a ser parte de su MyTree
+                  </Text>
+                </Text>
+              </Text>
+              <Text style={styles.minAgo}>2 min ago</Text>
+            </View>
+            <Image
+              style={styles.frameItem}
+              contentFit="cover"
+              source={require('../assets/line-78.png')}
+            />
+          </Pressable>
+          <View style={styles.frameParent1}>
+            <View style={[styles.frameView, styles.frameViewFlexBox]}>
+              <Image
+                style={styles.frameChild}
+                contentFit="cover"
+                source={require('../assets/frame-1547754875.png')}
+              />
+              <Text style={[styles.hasRecibidoUna, styles.teHaInvitadoTypo]}>
+                Has recibido una Alerta Familiar del Pablo
+              </Text>
+              <Text style={styles.minAgo}>2 min ago</Text>
+            </View>
+            <Image
+              style={styles.frameItem}
+              contentFit="cover"
+              source={require('../assets/line-78.png')}
+            />
+          </View>
+          <Pressable style={styles.frameParent1} onPress={openFrameContainer15}>
+            <View style={[styles.frameView, styles.frameViewFlexBox]}>
+              <Image
+                style={styles.frameChild}
+                contentFit="cover"
+                source={require('../assets/frame-1547754875.png')}
+              />
+              <Text style={styles.hasRecibidoUnaLayout}>
+                <Text style={styles.brunoTeHaContainer1}>
+                  <Text style={styles.bruno}>{`Bruno `}</Text>
+                  <Text style={styles.teHaInvitadoTypo}>
+                    ha añadido un recuerdo contigo
+                  </Text>
+                </Text>
+              </Text>
+              <Text style={styles.minAgo}>2 min ago</Text>
+            </View>
+            <Image
+              style={styles.frameItem}
+              contentFit="cover"
+              source={require('../assets/line-78.png')}
+            />
+          </Pressable>
+          <View style={styles.frameParent1}>
+            <View style={[styles.frameView, styles.frameViewFlexBox]}>
+              <Image
+                style={styles.frameChild}
+                contentFit="cover"
+                source={require('../assets/frame-1547754875.png')}
+              />
+              <Text style={styles.hasRecibidoUnaLayout}>
+                <Text style={styles.brunoTeHaContainer1}>
+                  <Text style={styles.bruno}>{`Bruno `}</Text>
+                  <Text style={styles.teHaInvitadoTypo}>
+                    ha añadido un nuevo recuerdo familiar
+                  </Text>
+                </Text>
+              </Text>
+              <Text style={styles.minAgo}>2 min ago</Text>
+            </View>
+            <Image
+              style={styles.frameItem}
+              contentFit="cover"
+              source={require('../assets/line-78.png')}
+            />
+          </View>
+          <View style={styles.frameParent1}>
+            <View style={[styles.frameView, styles.frameViewFlexBox]}>
+              <Image
+                style={styles.frameChild}
+                contentFit="cover"
+                source={require('../assets/frame-1547754875.png')}
+              />
+              <Text style={[styles.hasRecibidoUna, styles.teHaInvitadoTypo]}>
+                Has recibido una invitación a un evento familiar organizado por
+                Noelia
+              </Text>
+              <Text style={styles.minAgo}>2 min ago</Text>
+            </View>
+            <Image
+              style={styles.frameItem}
+              contentFit="cover"
+              source={require('../assets/line-78.png')}
+            />
+          </View>
+          <View style={styles.frameParent1}>
+            <View style={[styles.frameView, styles.frameViewFlexBox]}>
+              <Image
+                style={styles.frameChild}
+                contentFit="cover"
+                source={require('../assets/frame-1547754875.png')}
+              />
+              <Text style={styles.hasRecibidoUnaLayout}>
+                <Text style={styles.brunoTeHaContainer1}>
+                  <Text
+                    style={styles.teHaInvitadoTypo}
+                  >{`¡Hoy es el cumpleaños de `}</Text>
+                  <Text style={styles.bruno}>Bruno</Text>
+                  <Text style={styles.teHaInvitadoTypo}>!</Text>
+                </Text>
+              </Text>
+              <Text style={styles.minAgo}>2 min ago</Text>
+            </View>
+            <Image
+              style={styles.frameItem}
+              contentFit="cover"
+              source={require('../assets/line-78.png')}
+            />
+          </View>
+          <View style={styles.frameParent1}>
+            <View style={[styles.frameView, styles.frameViewFlexBox]}>
+              <Image
+                style={styles.frameChild}
+                contentFit="cover"
+                source={require('../assets/frame-1547754875.png')}
+              />
+              <Text style={styles.hasRecibidoUnaLayout}>
+                <Text style={styles.brunoTeHaContainer1}>
+                  <Text
+                    style={styles.teHaInvitadoTypo}
+                  >{`En una semana es el cumpleaños de `}</Text>
+                  <Text style={styles.bruno}>{`Bruno `}</Text>
+                </Text>
+              </Text>
+              <Text style={styles.minAgo}>2 min ago</Text>
+            </View>
+            <Image
+              style={styles.frameItem}
+              contentFit="cover"
+              source={require('../assets/line-78.png')}
+            />
+          </View>
+          <View style={styles.frameParent1}>
+            <View style={[styles.frameView, styles.frameViewFlexBox]}>
+              <Image
+                style={styles.frameChild}
+                contentFit="cover"
+                source={require('../assets/frame-1547754875.png')}
+              />
+              <Text style={styles.hasRecibidoUnaLayout}>
+                <Text style={styles.brunoTeHaContainer1}>
+                  <Text style={styles.bruno}>Bruno</Text>
+                  <Text style={styles.teHaInvitadoTypo}>
+                    {' '}
+                    te ha invitado a colaborar en vuestro álbum familiar
+                  </Text>
+                </Text>
+              </Text>
+              <Text style={styles.minAgo}>2 min ago</Text>
+            </View>
+            <Image
+              style={styles.frameChild17}
+              contentFit="cover"
+              source={require('../assets/line-78.png')}
+            />
+          </View>
+          <View style={styles.frameParent1}>
+            <View style={[styles.frameView, styles.frameViewFlexBox]}>
+              <Image
+                style={styles.frameChild}
+                contentFit="cover"
+                source={require('../assets/frame-1547754875.png')}
+              />
+              <Text style={styles.hasRecibidoUnaLayout}>
+                <Text style={styles.brunoTeHaContainer1}>
+                  <Text style={styles.bruno}>Bruno</Text>
+                  <Text style={styles.teHaInvitadoTypo}>
+                    {' '}
+                    te propone un reto familiar
+                  </Text>
+                </Text>
+              </Text>
+              <Text style={styles.minAgo}>2 min ago</Text>
+            </View>
+            <Image
+              style={styles.frameChild17}
+              contentFit="cover"
+              source={require('../assets/line-78.png')}
+            />
+          </View>
+          <View style={styles.frameParent1}>
+            <View style={[styles.frameView, styles.frameViewFlexBox]}>
+              <Image
+                style={styles.frameChild}
+                contentFit="cover"
+                source={require('../assets/frame-1547754875.png')}
+              />
+              <Text style={[styles.hasRecibidoUna, styles.teHaInvitadoTypo]}>
+                ¿Cómo te ha ido el día? Cuéntaselo a tu familia
+              </Text>
+              <Text style={styles.minAgo}>2 min ago</Text>
+            </View>
+            <Image
+              style={styles.frameChild17}
+              contentFit="cover"
+              source={require('../assets/line-78.png')}
+            />
+          </View>
+        </View>
+
         <Image
           style={[styles.navigationIcon, styles.navigationIconLayout]}
           contentFit="cover"
@@ -403,7 +404,7 @@ const PERFILNOTIFICACIONES = () => {
         />
       </View>
 
-      <Modal animationType="fade" transparent visible={frameContainer5Visible}>
+      <Modal animationType="slide" transparent visible={frameContainer5Visible}>
         <View style={styles.frameContainer5Overlay}>
           <Pressable
             style={styles.frameContainer5Bg}
@@ -413,7 +414,7 @@ const PERFILNOTIFICACIONES = () => {
         </View>
       </Modal>
 
-      <Modal animationType="fade" transparent visible={frameContainer7Visible}>
+      <Modal animationType="slide" transparent visible={frameContainer7Visible}>
         <View style={styles.frameContainer7Overlay}>
           <Pressable
             style={styles.frameContainer7Bg}
@@ -448,8 +449,7 @@ const PERFILNOTIFICACIONES = () => {
 
 const styles = StyleSheet.create({
   navigationIconLayout: {
-    width: 428,
-    position: 'absolute'
+    width: '100%'
   },
   frameParentPosition: {
     left: 0,
@@ -505,12 +505,7 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '100%'
   },
-  iconlylightOutlinecalendarParent: {
-    width: 189,
-    justifyContent: 'flex-end',
-    marginLeft: 112,
-    flexDirection: 'row'
-  },
+
   notificaciones: {
     fontSize: FontSize.size_5xl,
     color: Color.negro,
@@ -530,13 +525,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: Padding.p_xl
   },
   frameContainer5Overlay: {
-    flex: 1,
+    // flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'rgba(113, 113, 113, 0.3)'
   },
   frameContainer5Bg: {
-    position: 'absolute',
+    // position: 'absolute',
     width: '100%',
     height: '100%',
     left: 0,
@@ -554,7 +549,7 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   hasRecibidoUnaLayout: {
-    height: 38,
+    // height: 38,
     width: 273,
     display: 'flex',
     color: Color.black1,
@@ -574,12 +569,12 @@ const styles = StyleSheet.create({
   },
   frameView: {
     justifyContent: 'space-between',
-    width: 388
+    width: '100%'
   },
   frameItem: {
     maxHeight: '100%',
     marginTop: 20,
-    width: 388
+    width: '100%'
   },
   frameContainer7Overlay: {
     flex: 1,
@@ -588,7 +583,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(113, 113, 113, 0.3)'
   },
   frameContainer7Bg: {
-    position: 'absolute',
+    // position: 'absolute',
     width: '100%',
     height: '100%',
     left: 0,
@@ -604,7 +599,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(113, 113, 113, 0.3)'
   },
   frameContainer11Bg: {
-    position: 'absolute',
+    // position: 'absolute',
     width: '100%',
     height: '100%',
     left: 0,
@@ -628,7 +623,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(113, 113, 113, 0.3)'
   },
   frameContainer15Bg: {
-    position: 'absolute',
+    // position: 'absolute',
     width: '100%',
     height: '100%',
     left: 0,
@@ -637,7 +632,7 @@ const styles = StyleSheet.create({
   frameChild17: {
     height: 0,
     marginTop: 20,
-    width: 388
+    width: '100%'
   },
   frameContainer: {
     height: 604,
@@ -646,21 +641,15 @@ const styles = StyleSheet.create({
     paddingHorizontal: Padding.p_xl
   },
   frameParent: {
-    height: 923,
-    position: 'absolute',
+    // height: 923,
+    // position: 'absolute',
     top: 0
-  },
-  navigationIcon: {
-    marginLeft: -214,
-    top: 821,
-    left: '50%',
-    height: 105
   },
   perfilNotificaciones: {
     borderRadius: Border.br_31xl,
     flex: 1,
-    height: 926,
-    overflow: 'hidden',
+    // height: 926,
+    // overflow: 'hidden',
     width: '100%',
     backgroundColor: Color.white
   }

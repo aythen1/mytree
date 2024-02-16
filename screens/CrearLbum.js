@@ -103,7 +103,7 @@ const CrearLbum = () => {
         </View>
       </ScrollView>
 
-      <Modal animationType="fade" transparent visible={vectorIcon1Visible}>
+      <Modal animationType="slide" transparent visible={vectorIcon1Visible}>
         <View style={styles.vectorIcon1Overlay}>
           <Pressable style={styles.vectorIcon1Bg} onPress={closeVectorIcon1} />
           <Compartir onClose={closeVectorIcon1} />

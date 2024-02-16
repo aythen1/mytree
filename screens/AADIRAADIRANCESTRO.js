@@ -5,17 +5,24 @@ import { LinearGradient } from 'expo-linear-gradient'
 import Fecha1 from '../components/Fecha1'
 import { useNavigation } from '@react-navigation/native'
 import { FontFamily, FontSize, Color, Padding, Border } from '../GlobalStyles'
+import PopUpCalendario from '../components/PopUpCalendario'
 
 const AADIRAADIRANCESTRO = () => {
+  const [calendario, setCalendario] = useState(false)
+
   const [
     iconlyLightOutlineCalendarVisible,
     setIconlyLightOutlineCalendarVisible
   ] = useState(false)
   const navigation = useNavigation()
 
-  // const openIconlyLightOutlineCalendar = useCallback(() => {
-  //   setIconlyLightOutlineCalendarVisible(true)
-  // }, [])
+  const openCalendario = () => {
+    setCalendario(true)
+  }
+
+  const closeCalendario = () => {
+    setCalendario(false)
+  }
 
   const closeIconlyLightOutlineCalendar = useCallback(() => {
     setIconlyLightOutlineCalendarVisible(false)
@@ -64,13 +71,13 @@ const AADIRAADIRANCESTRO = () => {
             </Text>
           </View>
           <View style={[styles.field, styles.fieldFlexBox]}>
-            <View style={styles.placeholderInput}>
+            <Pressable style={styles.placeholderInput} onPress={openCalendario}>
               <Text style={[styles.search, styles.searchTypo]}>12/3/2008</Text>
               <Image
                 style={{ width: 24, height: 24 }}
                 source={require('../assets/iconlylightoutlinecalendar.png')}
               />
-            </View>
+            </Pressable>
           </View>
 
           <View style={styles.titleBase}>
@@ -114,17 +121,16 @@ const AADIRAADIRANCESTRO = () => {
         </View>
       </View>
 
-      <Modal
-        animationType="fade"
-        transparent
-        visible={iconlyLightOutlineCalendarVisible}
-      >
+      <Modal animationType="slide" transparent visible={calendario}>
         <View style={styles.iconlyLightOutlineCalendarOverlay}>
           <Pressable
             style={styles.iconlyLightOutlineCalendarBg}
-            onPress={closeIconlyLightOutlineCalendar}
+            onPress={closeCalendario}
           />
-          <Fecha1 onClose={closeIconlyLightOutlineCalendar} />
+          <PopUpCalendario
+            setButtonContainer2Visible={() => {}}
+            setCalendario={setCalendario}
+          />
         </View>
       </Modal>
     </>

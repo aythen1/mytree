@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     letterSpacing: 0
   },
   yaSeEmpieza: {
-    height: 38,
+    // height: 38,
     textAlign: 'left',
     color: Color.black1,
     fontFamily: FontFamily.lato,

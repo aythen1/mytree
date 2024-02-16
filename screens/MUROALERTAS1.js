@@ -27,6 +27,15 @@ const MUROALERTAS1 = () => {
   const [buttonContainer1Visible, setButtonContainer1Visible] = useState(false)
   const [buttonContainer2Visible, setButtonContainer2Visible] = useState(false)
   const [modalCreate, setModalCreate] = useState(false)
+  const [opcionesModal, setOpcionesModal] = useState(false)
+
+  const openOpcionesModal = () => {
+    setOpcionesModal(true)
+  }
+
+  const closeOpcionesModal = () => {
+    setOpcionesModal(false)
+  }
 
   const openFieldContainer = useCallback(() => {
     setFieldContainerVisible(true)
@@ -124,7 +133,10 @@ const MUROALERTAS1 = () => {
                     />
                   </Pressable>
                 </View>
-                <View style={styles.fieldWithTitle1}>
+                <Pressable
+                  style={styles.fieldWithTitle1}
+                  onPress={openOpcionesModal}
+                >
                   <View style={styles.titleBase}>
                     <Text style={[styles.title, styles.titleTypo]}>
                       Situación
@@ -145,7 +157,7 @@ const MUROALERTAS1 = () => {
                       source={require('../assets/arrowdown24.png')}
                     />
                   </View>
-                </View>
+                </Pressable>
                 <View style={styles.fieldWithTitle1}>
                   <View style={styles.titleBase}>
                     <Text style={[styles.title, styles.titleTypo]}>
@@ -286,6 +298,19 @@ const MUROALERTAS1 = () => {
         </View>
       </Modal>
 
+      <Modal animationType="slide" transparent visible={opcionesModal}>
+        <View style={styles.fieldContainerOverlay}>
+          <Pressable
+            style={styles.fieldContainerBg}
+            onPress={closeOpcionesModal}
+          />
+          <OpcionesModal
+            onClose={closeOpcionesModal}
+            opciones={[['Buena'], ['Mala']]}
+          />
+        </View>
+      </Modal>
+
       <Modal animationType="slide" transparent visible={arrowDown2Icon1Visible}>
         <View style={styles.arrowDown2Icon1Overlay}>
           <Pressable
@@ -324,7 +349,10 @@ const MUROALERTAS1 = () => {
             style={styles.buttonContainer1Bg}
             onPress={closeButtonContainer1}
           />
-          <PopUpCalendario onClose={closeButtonContainer1} />
+          <PopUpCalendario
+            setButtonContainer2Visible={() => {}}
+            setCalendario={setButtonContainer1Visible}
+          />
         </View>
       </Modal>
     </>
