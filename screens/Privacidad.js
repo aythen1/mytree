@@ -260,10 +260,11 @@ const styles = StyleSheet.create({
   privacidad: {
     width: '100%',
     padding: Padding.p_xl,
-    top: '25%',
-    // flex: 1,
+    position: 'absolute',
+    bottom: 0,
     backgroundColor: Color.white,
-    borderRadius: Border.br_11xl
+    borderTopRightRadius: Border.br_11xl,
+    borderTopLeftRadius: Border.br_11xl
   }
 })
 

@@ -79,7 +79,10 @@ const CreacinInfante = ({ onClose }) => {
       >
         <Pressable
           style={styles.pressable}
-          onPress={() => navigation.navigate('PERFILIDINFANTE')}
+          onPress={() => {
+            onClose()
+            navigation.navigate('PERFILIDINFANTE')
+          }}
         >
           <Text style={styles.crear}>Crear</Text>
         </Pressable>

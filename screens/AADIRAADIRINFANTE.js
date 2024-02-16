@@ -159,7 +159,7 @@ const AADIRAADIRINFANTE = () => {
       </ScrollView>
 
       <Modal
-        animationType="fade"
+        animationType="slide"
         transparent
         visible={iconlyLightOutlineCalendarVisible}
       >
@@ -175,7 +175,7 @@ const AADIRAADIRINFANTE = () => {
         </View>
       </Modal>
 
-      <Modal animationType="fade" transparent visible={buttonContainerVisible}>
+      <Modal animationType="slide" transparent visible={buttonContainerVisible}>
         <View style={styles.buttonContainerOverlay}>
           <Pressable
             style={styles.buttonContainerBg}
