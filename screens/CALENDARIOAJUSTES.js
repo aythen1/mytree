@@ -13,11 +13,33 @@ import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
 import { FontFamily, Color, FontSize, Border, Padding } from '../GlobalStyles'
 import ENTRADACREADA from '../components/ENTRADACREADA'
+import OpcionesModal from '../components/OpcionesModal'
 
 const PerfilConfiguracion = () => {
   const navigation = useNavigation()
 
   const [modalCreate, setModalCreate] = useState(false)
+  const [modalOpcionesVisible, setModalOpcionesVisible] = useState(false)
+  const [currentOptionsIndex, setCurrentOptionsIndex] = useState(0)
+
+  const options = [
+    ['Inglés', 'Español', 'Francés'],
+    ['España', 'Argentina', 'Uruguay'],
+    [
+      'MM/dd/aaaa hh:mm:ss tt',
+      'M/d/yy h:m:s tt',
+      'ddd:MMM:dd:aaaa',
+      'dddd,MMMM:dd:aaaa'
+    ],
+    ['GMT -6', 'GMT -5', 'GMT -4', 'GMT -3'],
+    ['Sábado', 'Domingo', 'Lunes'],
+    ['Anglosajona', 'Latina', 'Otra']
+  ]
+
+  const showOptionsArray = (index) => {
+    setCurrentOptionsIndex(index)
+    setModalOpcionesVisible(true)
+  }
 
   const onCloseModalCreate = () => {
     setModalCreate(false)
@@ -76,11 +98,13 @@ const PerfilConfiguracion = () => {
                 Español
               </Text>
             </View>
-            <Image
-              style={[styles.vectorIcon1, styles.vectorIconLayout]}
-              contentFit="cover"
-              source={require('../assets/vector47.png')}
-            />
+            <Pressable onPress={() => showOptionsArray(0)}>
+              <Image
+                style={[styles.vectorIcon1, styles.vectorIconLayout]}
+                contentFit="cover"
+                source={require('../assets/vector47.png')}
+              />
+            </Pressable>
           </View>
           <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
             <View style={styles.nombreCompletoParent}>
@@ -91,28 +115,32 @@ const PerfilConfiguracion = () => {
                 España
               </Text>
             </View>
-            <Image
-              style={[styles.vectorIcon1, styles.vectorIconLayout]}
-              contentFit="cover"
-              source={require('../assets/vector47.png')}
-            />
+            <Pressable onPress={() => showOptionsArray(1)}>
+              <Image
+                style={[styles.vectorIcon1, styles.vectorIconLayout]}
+                contentFit="cover"
+                source={require('../assets/vector47.png')}
+              />
+            </Pressable>
           </View>
           <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
             <View style={styles.nombreCompletoParent}>
               <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
-                Formato de fecha
+                Formato de Fecha y Hora
               </Text>
               <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>
-                MM/DD/AAAA
+                MM/DD/AAAA hh:mm:ss tt
               </Text>
             </View>
-            <Image
-              style={[styles.vectorIcon1, styles.vectorIconLayout]}
-              contentFit="cover"
-              source={require('../assets/vector47.png')}
-            />
+            <Pressable onPress={() => showOptionsArray(2)}>
+              <Image
+                style={[styles.vectorIcon1, styles.vectorIconLayout]}
+                contentFit="cover"
+                source={require('../assets/vector47.png')}
+              />
+            </Pressable>
           </View>
-          <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
+          {/* <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
             <View style={styles.nombreCompletoParent}>
               <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
                 Formato de hora
@@ -121,12 +149,14 @@ const PerfilConfiguracion = () => {
                 HH:MM:SS: TT
               </Text>
             </View>
-            <Image
-              style={[styles.vectorIcon1, styles.vectorIconLayout]}
-              contentFit="cover"
-              source={require('../assets/vector47.png')}
-            />
-          </View>
+            <Pressable onPress={() => showOptionsArray(3)}>
+              <Image
+                style={[styles.vectorIcon1, styles.vectorIconLayout]}
+                contentFit="cover"
+                source={require('../assets/vector47.png')}
+              />
+            </Pressable>
+          </View> */}
           <Image
             style={styles.frameChild}
             contentFit="cover"
@@ -138,14 +168,16 @@ const PerfilConfiguracion = () => {
                 Zona horaria
               </Text>
               <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>
-                GMT +1
+                GMT -3
               </Text>
             </View>
-            <Image
-              style={[styles.vectorIcon1, styles.vectorIconLayout]}
-              contentFit="cover"
-              source={require('../assets/vector47.png')}
-            />
+            <Pressable onPress={() => showOptionsArray(3)}>
+              <Image
+                style={[styles.vectorIcon1, styles.vectorIconLayout]}
+                contentFit="cover"
+                source={require('../assets/vector47.png')}
+              />
+            </Pressable>
           </View>
           <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
             <View style={styles.nombreCompletoParent}>
@@ -156,11 +188,13 @@ const PerfilConfiguracion = () => {
                 Domingo
               </Text>
             </View>
-            <Image
-              style={[styles.vectorIcon1, styles.vectorIconLayout]}
-              contentFit="cover"
-              source={require('../assets/vector47.png')}
-            />
+            <Pressable onPress={() => showOptionsArray(4)}>
+              <Image
+                style={[styles.vectorIcon1, styles.vectorIconLayout]}
+                contentFit="cover"
+                source={require('../assets/vector47.png')}
+              />
+            </Pressable>
           </View>
           <Image
             style={styles.frameChild}
@@ -176,11 +210,13 @@ const PerfilConfiguracion = () => {
                 Anglosajona
               </Text>
             </View>
-            <Image
-              style={[styles.vectorIcon1, styles.vectorIconLayout]}
-              contentFit="cover"
-              source={require('../assets/vector47.png')}
-            />
+            <Pressable onPress={() => showOptionsArray(5)}>
+              <Image
+                style={[styles.vectorIcon1, styles.vectorIconLayout]}
+                contentFit="cover"
+                source={require('../assets/vector47.png')}
+              />
+            </Pressable>
           </View>
           <Image
             style={styles.frameChild}
@@ -255,7 +291,7 @@ const PerfilConfiguracion = () => {
             <Text style={styles.signIn}>Guardar</Text>
           </Pressable>
         </LinearGradient>
-
+        {/* 
         {modalCreate && (
           <Modal animationType="fade" transparent={true} visible={modalCreate}>
             <TouchableWithoutFeedback onPress={() => setModalCreate(false)}>
@@ -264,12 +300,46 @@ const PerfilConfiguracion = () => {
                   <ENTRADACREADA
                     onClose={onCloseModalCreate}
                     message={'Guardado!'}
+                    isNavigate={'CALENDARIO'}
                   />
                 </View>
               </View>
             </TouchableWithoutFeedback>
           </Modal>
-        )}
+        )} */}
+
+        <Modal animationType="slide" transparent visible={modalCreate}>
+          <View style={styles.buttonContainer2Overlay}>
+            <Pressable
+              style={styles.buttonContainer2Bg}
+              onPress={() => setModalCreate(false)}
+            />
+            <ENTRADACREADA
+              onClose={onCloseModalCreate}
+              message={'Guardado!'}
+              isNavigate={'CALENDARIO'}
+            />
+          </View>
+        </Modal>
+
+        <Modal animationType="slide" transparent visible={modalOpcionesVisible}>
+          <View style={styles.arrowDown2Icon1Overlay}>
+            <Pressable
+              style={styles.arrowDown2Icon1Bg}
+              onPress={() => setModalOpcionesVisible(false)}
+            />
+            <OpcionesModal
+              opciones={options[currentOptionsIndex]}
+              visible={modalOpcionesVisible}
+              onClose={() => setModalOpcionesVisible(false)}
+              onAddOption={(nuevaOpcion) => {
+                options[currentOptionsIndex].push(nuevaOpcion)
+                onCloseModalOpciones()
+              }}
+              isAdd={false}
+            />
+          </View>
+        </Modal>
       </View>
     </ScrollView>
   )
@@ -433,6 +503,32 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  arrowDown2Icon1Bg: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    left: 0,
+    top: 0
+  },
+  arrowDown2Icon1Overlay: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(113, 113, 113, 0.3)'
+  },
+  buttonContainer2Overlay: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(113, 113, 113, 0.3)'
+  },
+  buttonContainer2Bg: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    left: 0,
+    top: 0
   }
 })
 

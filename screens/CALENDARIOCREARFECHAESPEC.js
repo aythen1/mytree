@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState } from 'react'
 import {
   StyleSheet,
   View,
@@ -6,14 +6,14 @@ import {
   Pressable,
   Modal,
   ScrollView,
-  TouchableWithoutFeedback,
   TextInput
 } from 'react-native'
 import { Image } from 'expo-image'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
 import { FontFamily, Padding, Color, Border, FontSize } from '../GlobalStyles'
-import Calendario from '../components/Calendario'
+import Checkbox from 'expo-checkbox'
+import PopUpCalendario from '../components/PopUpCalendario'
 import ENTRADACREADA from '../components/ENTRADACREADA'
 import OpcionesModal from '../components/OpcionesModal'
 
@@ -21,7 +21,7 @@ const CALENDARIOCREARFECHAESPEC = () => {
   const navigation = useNavigation()
 
   const [nuevaDescripcion, setNuevaDescripcion] = useState('')
-  const [openCalendar, setOpenCalendar] = useState(false)
+  const [calendario, setCalendario] = useState(false)
   const [modalCreate, setModalCreate] = useState(false)
   const [modalOpcionesVisible, setModalOpcionesVisible] = useState(false)
   const [category, setCategory] = useState([
@@ -29,14 +29,17 @@ const CALENDARIOCREARFECHAESPEC = () => {
     'Graduación',
     'Compra de primer coche'
   ])
+  const [isChecked, setChecked] = useState(false)
+  const [isChecked2, setChecked2] = useState(false)
+  const [isChecked3, setChecked3] = useState(false)
 
   const onCloseModalCreate = () => {
     setModalCreate(false)
   }
 
-  const handlePress = useCallback(() => {
-    setOpenCalendar((prevState) => !prevState)
-  }, [])
+  const closeCalendario = () => {
+    setCalendario(false)
+  }
 
   return (
     <ScrollView
@@ -68,10 +71,10 @@ const CALENDARIOCREARFECHAESPEC = () => {
             </Text>
           </View>
         </View>
-        <View style={styles.frameParent}>
+        <View>
           <View style={[styles.frameChild, styles.framePosition]} />
           <View style={[styles.frameItem, styles.framePosition]} />
-          <View style={[styles.fieldWithTitleParent]}>
+          <View>
             <View style={styles.innerContainer}>
               <View style={styles.titleBase}>
                 <Text style={[styles.title, styles.titleTypo]}>Categoría</Text>
@@ -115,7 +118,7 @@ const CALENDARIOCREARFECHAESPEC = () => {
               </View>
               <Pressable
                 style={[styles.field, styles.fieldSpaceBlock]}
-                onPress={handlePress}
+                onPress={() => setCalendario(true)}
               >
                 <View style={styles.placeholderInput}>
                   <Text style={[styles.search, styles.searchLayout]}>
@@ -129,11 +132,7 @@ const CALENDARIOCREARFECHAESPEC = () => {
                 />
               </Pressable>
             </View>
-            {openCalendar ? (
-              <View style={styles.modalCalendar}>
-                <Calendario />
-              </View>
-            ) : null}
+
             <View style={styles.titleBaseParent}>
               <View style={styles.titleBase}>
                 <Text style={[styles.title, styles.titleTypo]}>Ubicación</Text>
@@ -143,10 +142,7 @@ const CALENDARIOCREARFECHAESPEC = () => {
                   Ubicación
                 </Text>
                 <View style={styles.placeholderInput3} />
-                <Pressable
-                  style={styles.iconlybulklocation}
-                  // onPress={openIconlyBulkLocation}
-                >
+                <Pressable style={styles.iconlybulklocation}>
                   <Image
                     style={styles.iconLayout}
                     contentFit="cover"
@@ -190,6 +186,20 @@ const CALENDARIOCREARFECHAESPEC = () => {
                 source={require('../assets/arrowdown210.png')}
               />
             </View>
+            <View style={styles.checkboxContainer}>
+              <View style={styles.checkbox}>
+                <Checkbox value={isChecked} onValueChange={setChecked} />
+                <Text>Sólo para mí</Text>
+              </View>
+              <View style={styles.checkbox}>
+                <Checkbox value={isChecked2} onValueChange={setChecked2} />
+                <Text>Familia, excepto...</Text>
+              </View>
+              <View style={styles.checkbox}>
+                <Checkbox value={isChecked3} onValueChange={setChecked3} />
+                <Text>Amigos, excepto...</Text>
+              </View>
+            </View>
             <View style={styles.buttonBarParent}>
               <View style={[styles.buttonBar, styles.buttonBarFlexBox]}>
                 <Pressable
@@ -224,51 +234,32 @@ const CALENDARIOCREARFECHAESPEC = () => {
           </View>
         </View>
 
-        {modalCreate && (
-          <Modal animationType="fade" transparent={true} visible={modalCreate}>
-            <TouchableWithoutFeedback onPress={() => setModalCreate(false)}>
-              <View style={styles.modalOverlay}>
-                <View>
-                  <ENTRADACREADA
-                    onClose={onCloseModalCreate}
-                    message={'Enviado!'}
-                    isNavigate={'CALENDARIO'}
-                  />
-                </View>
-              </View>
-            </TouchableWithoutFeedback>
-          </Modal>
-        )}
+        <Modal animationType="slide" transparent visible={modalCreate}>
+          <View style={styles.buttonContainer2Overlay}>
+            <Pressable
+              style={styles.buttonContainer2Bg}
+              onPress={() => setModalCreate(false)}
+            />
+            <ENTRADACREADA
+              onClose={onCloseModalCreate}
+              message={'Enviado!'}
+              isNavigate={'CALENDARIO'}
+            />
+          </View>
+        </Modal>
 
-        {/* {modalOpcionesVisible && (
-          <Modal
-            animationType="fade"
-            transparent={true}
-            visible={modalOpcionesVisible}
-          >
-            <TouchableWithoutFeedback
-              onPress={() => setModalOpcionesVisible(false)}
-            >
-              <View style={styles.modalOverlay}>
-                <View>
-                  <OpcionesModal
-                    opciones={category}
-                    visible={modalOpcionesVisible}
-                    onClose={() => setModalOpcionesVisible(false)}
-                    onAddOption={(nuevaOpcion) => {
-                      setCategory((prevCategory) => [
-                        ...prevCategory,
-                        nuevaOpcion
-                      ])
-                      setModalOpcionesVisible(false)
-                    }}
-                    isAdd={true}
-                  />
-                </View>
-              </View>
-            </TouchableWithoutFeedback>
-          </Modal>
-        )} */}
+        <Modal animationType="slide" transparent visible={calendario}>
+          <View style={styles.buttonContainer1Overlay}>
+            <Pressable
+              style={styles.buttonContainer1Bg}
+              onPress={closeCalendario}
+            />
+            <PopUpCalendario
+              setCalendario={setCalendario}
+              setButtonContainer2Visible={() => {}}
+            />
+          </View>
+        </Modal>
 
         <Modal animationType="slide" transparent visible={modalOpcionesVisible}>
           <View style={styles.arrowDown2Icon1Overlay}>
@@ -492,9 +483,6 @@ const styles = StyleSheet.create({
     marginTop: 22,
     alignItems: 'center'
   },
-  fieldWithTitleParent: {
-    alignItems: 'center'
-  },
   image6Icon: {
     width: 87,
     height: 55
@@ -533,10 +521,43 @@ const styles = StyleSheet.create({
     width: '80%',
     right: '20%'
   },
-  modalOverlay: {
-    height: '100%',
+  buttonContainer2Overlay: {
+    flex: 1,
+    alignItems: 'center',
     justifyContent: 'center',
-    alignItems: 'center'
+    backgroundColor: 'rgba(113, 113, 113, 0.3)'
+  },
+  buttonContainer2Bg: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    left: 0,
+    top: 0
+  },
+  buttonContainer1Overlay: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(113, 113, 113, 0.3)'
+  },
+  buttonContainer1Bg: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    left: 0,
+    top: 0
+  },
+  checkboxContainer: {
+    alignItems: 'center',
+    gap: 20,
+    right: '23%',
+    marginTop: '7%',
+    width: '100%'
+  },
+  checkbox: {
+    flexDirection: 'row',
+    gap: 20,
+    width: '50%'
   }
 })
 
