@@ -1,20 +1,20 @@
-import * as React from "react";
-import { View, StyleSheet, Text } from "react-native";
-import { Image } from "expo-image";
-import { LinearGradient } from "expo-linear-gradient";
-import { FontFamily, FontSize, Color, Padding, Border } from "../GlobalStyles";
+import * as React from 'react'
+import { View, StyleSheet, Text, Pressable } from 'react-native'
+import { Image } from 'expo-image'
+import { LinearGradient } from 'expo-linear-gradient'
+import { FontFamily, FontSize, Color, Padding, Border } from '../GlobalStyles'
 
 const Lugar3 = ({ onClose }) => {
   return (
     <View style={styles.lugar}>
-      <View style={[styles.header, styles.headerPosition]}>
-        <View style={[styles.searchBar, styles.searchBarFlexBox]}>
+      <View style={styles.header}>
+        <View style={[styles.searchBar]}>
           <Image
             style={styles.iconlylightOutlinesearch}
             contentFit="cover"
-            source={require("../assets/iconlylightoutlinesearch3.png")}
+            source={require('../assets/iconlylightoutlinesearch3.png')}
           />
-          <View style={[styles.placeholderInput, styles.searchBarFlexBox]}>
+          <View>
             <Text style={styles.search}>{`Search `}</Text>
           </View>
         </View>
@@ -22,16 +22,16 @@ const Lugar3 = ({ onClose }) => {
           <Image
             style={styles.iconlylightsendCopy}
             contentFit="cover"
-            source={require("../assets/iconlylightsend-copy1.png")}
+            source={require('../assets/iconlylightsend-copy1.png')}
           />
         </View>
       </View>
       <Image
-        style={[styles.rectangleIcon, styles.buttonPosition]}
+        style={[styles.rectangleIcon]}
         contentFit="cover"
-        source={require("../assets/rectangle5.png")}
+        source={require('../assets/rectangle5.png')}
       />
-      <View style={[styles.fieldWithTitle, styles.headerPosition]}>
+      <View style={styles.fieldWithTitle}>
         <View style={styles.titleBase}>
           <Text style={[styles.momento, styles.signInTypo]}>Momento</Text>
         </View>
@@ -41,79 +41,74 @@ const Lugar3 = ({ onClose }) => {
           </Text>
         </View>
       </View>
-      <LinearGradient
-        style={[styles.button, styles.buttonPosition]}
-        locations={[0, 1]}
-        colors={["#dee274", "#7ec18c"]}
-      >
-        <Text style={[styles.signIn, styles.signInTypo]}>Guardar</Text>
-      </LinearGradient>
+      <Pressable onPress={onClose}>
+        <LinearGradient
+          style={styles.button}
+          locations={[0, 1]}
+          colors={['#dee274', '#7ec18c']}
+        >
+          <Text style={[styles.signIn, styles.signInTypo]}>Guardar</Text>
+        </LinearGradient>
+      </Pressable>
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
-  headerPosition: {
-    left: "50%",
-    position: "absolute",
-  },
   searchBarFlexBox: {
-    flex: 1,
-    flexDirection: "row",
-  },
-  buttonPosition: {
-    position: "absolute",
-    width: 388,
-    left: 20,
+    flexDirection: 'row'
   },
   signInTypo: {
     fontFamily: FontFamily.lato,
-    fontSize: FontSize.size_base,
+    fontSize: FontSize.size_base
   },
   iconlylightOutlinesearch: {
     width: 20,
-    height: 20,
+    height: 20
   },
   search: {
     fontSize: FontSize.size_sm,
     lineHeight: 21,
-    fontStyle: "italic",
-    fontWeight: "200",
+    fontStyle: 'italic',
+    fontWeight: '200',
     fontFamily: FontFamily.nunito,
     color: Color.textPlaceholder,
-    textAlign: "left",
-    letterSpacing: 0,
+    textAlign: 'left',
+    letterSpacing: 0
   },
   placeholderInput: {
-    marginLeft: 6,
+    marginLeft: 6
   },
   searchBar: {
     backgroundColor: Color.backgroundFieldBackground,
     paddingHorizontal: Padding.p_sm,
     paddingVertical: Padding.p_5xs,
-    alignItems: "center",
+    alignItems: 'center',
     borderRadius: Border.br_11xl,
+    flexDirection: 'row',
+    width: '90%'
+    // backgroundColor: 'red'
   },
   iconlylightsendCopy: {
     width: 24,
-    height: 24,
+    height: 24
   },
   iconlylightsendCopyWrapper: {
     borderRadius: Border.br_xl,
     backgroundColor: Color.backgroundGreyBackground,
     padding: Padding.p_7xs,
     marginLeft: 16,
-    flexDirection: "row",
+    flexDirection: 'row'
   },
   header: {
-    marginLeft: -212,
+    // marginLeft: -212,
     top: 20,
-    width: 424,
+    width: '100%',
     paddingHorizontal: Padding.p_xl,
     paddingVertical: Padding.p_xs,
-    alignItems: "center",
-    flexDirection: "row",
-    backgroundColor: Color.white,
+    alignItems: 'center',
+    flexDirection: 'row',
+    backgroundColor: Color.white
   },
   rectangleIcon: {
     top: 89,
@@ -121,78 +116,79 @@ const styles = StyleSheet.create({
     borderTopRightRadius: Border.br_9xs,
     borderBottomLeftRadius: Border.br_8xs,
     height: 182,
-    width: 388,
-    left: 20,
+    width: '100%'
+    // left: 20
   },
   momento: {
     top: -2,
     left: 0,
     color: Color.textTextPrimary,
-    fontWeight: "500",
+    fontWeight: '500',
     lineHeight: 19,
     fontFamily: FontFamily.lato,
     fontSize: FontSize.size_base,
-    textAlign: "left",
+    textAlign: 'left',
     letterSpacing: 0,
-    position: "absolute",
+    position: 'absolute'
   },
   titleBase: {
     width: 69,
-    height: 19,
+    height: 19
   },
   culEsEste: {
     marginTop: -9.5,
-    top: "50%",
+    top: '50%',
     color: Color.gris,
-    fontWeight: "500",
+    fontWeight: '500',
     lineHeight: 19,
     fontFamily: FontFamily.lato,
     fontSize: FontSize.size_base,
-    textAlign: "left",
+    textAlign: 'left',
     letterSpacing: 0,
-    position: "absolute",
-    left: 20,
+    position: 'absolute',
+    left: 20
   },
   field: {
     borderRadius: Border.br_3xs,
     backgroundColor: Color.fAFAFA,
     height: 49,
-    width: 388,
+    width: 388
   },
   fieldWithTitle: {
     marginLeft: -194,
     top: 291,
-    width: 388,
+    width: 388
   },
   signIn: {
     letterSpacing: 1,
     lineHeight: 24,
     color: Color.white,
-    textAlign: "center",
+    textAlign: 'center',
     fontFamily: FontFamily.lato,
     fontSize: FontSize.size_base,
-    flex: 1,
+    flex: 1
   },
   button: {
-    top: 379,
-    justifyContent: "center",
+    marginTop: 50,
     paddingHorizontal: Padding.p_5xl,
     paddingVertical: Padding.p_sm,
     backgroundColor: Color.linearBoton,
-    width: 388,
-    left: 20,
-    alignItems: "center",
-    flexDirection: "row",
-    borderRadius: Border.br_11xl,
+    width: '100%',
+    alignItems: 'center',
+    flexDirection: 'row',
+    borderRadius: Border.br_11xl
   },
   lugar: {
-    width: 428,
+    width: '100%',
+    position: 'absolute',
+    bottom: 0,
     height: 451,
-    maxWidth: "100%",
-    maxHeight: "100%",
+    maxWidth: '100%',
+    maxHeight: '100%',
     backgroundColor: Color.white,
-    borderRadius: Border.br_11xl,
-  },
-});
+    borderTopRightRadius: Border.br_11xl,
+    borderTopLeftRadius: Border.br_11xl
+  }
+})
 
-export default Lugar3;
+export default Lugar3

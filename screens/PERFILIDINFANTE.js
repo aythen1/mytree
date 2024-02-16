@@ -30,7 +30,11 @@ const PERFILIDINFANTE = () => {
             source={require('../assets/image-6.png')}
           />
           <HeaderIcons
-            icons={[<TreeSVG />, <NotificationsMuroSVG />, <SettingMuroSVG />]}
+            icons={[
+              <TreeSVG />,
+              <NotificationsMuroSVG />,
+              <SettingMuroSVG isNavigation={'PERFILINFANTEAJUSTES'} />
+            ]}
           />
         </View>
         <View style={{ marginBottom: 130 }}>

@@ -8,8 +8,7 @@ import {
   Pressable,
   Modal,
   TextInput,
-  ScrollView,
-  TouchableWithoutFeedback
+  ScrollView
 } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import Cancion1 from '../components/Cancion1'
@@ -20,13 +19,24 @@ import Checkbox from 'expo-checkbox'
 import ENTRADACREADA from '../components/ENTRADACREADA'
 import { setPanel } from '../redux/slices/panel.slices'
 import Etapas from './Etapas'
+import SubeTusRecuerdos from './SubeTusRecuerdos'
 import Privacidad from './Privacidad'
+import Cancion from './Cancion'
+import Album from './Album'
+import PopUpCalendario from '../components/PopUpCalendario'
 
 const Organizador = () => {
   const dispatch = useDispatch()
 
   const { showPanel } = useSelector((state) => state.panel)
-
+  const [uploadRecuerdo, setUploadRecuerdo] = useState(false)
+  const [legado, setLegado] = useState(false)
+  const [album, setAlbum] = useState(false)
+  const [selectedAlbum, setSelectedAlbum] = useState(false)
+  const [cancion, setCancion] = useState(false)
+  const [añadirAUnAlbum, setAñadirAUnAlbum] = useState(false)
+  const [calendario, setCalendario] = useState(false)
+  const [lugar, setLugar] = useState(false)
   const [ischecked, setIschecked] = useState(false)
   const [submit, setSubmit] = useState(false)
   const [buttonContainer1Visible, setButtonContainer1Visible] = useState(false)
@@ -39,6 +49,54 @@ const Organizador = () => {
   const closeSubmit = () => {
     setSubmit(false)
   }
+
+  const openSelectedAlbum = useCallback(() => {
+    setSelectedAlbum(true)
+  }, [])
+
+  const closeSelectedAlbum = useCallback(() => {
+    setSelectedAlbum(false)
+  }, [])
+
+  const openAlbum = useCallback(() => {
+    setAñadirAUnAlbum(true)
+  }, [])
+
+  const closeAlbum = useCallback(() => {
+    setAñadirAUnAlbum(false)
+  }, [])
+
+  const openLugar = useCallback(() => {
+    setLugar(true)
+  }, [])
+
+  const closeLugar = useCallback(() => {
+    setLugar(false)
+  }, [])
+
+  const openCalendario = useCallback(() => {
+    setCalendario(true)
+  }, [])
+
+  const closeCalendario = useCallback(() => {
+    setCalendario(false)
+  }, [])
+
+  const openCancion = useCallback(() => {
+    setCancion(true)
+  }, [])
+
+  const closeCancion = useCallback(() => {
+    setCancion(false)
+  }, [])
+
+  const openUploadRecuerdo = useCallback(() => {
+    setUploadRecuerdo(true)
+  }, [])
+
+  const closeUploadRecuerdo = useCallback(() => {
+    setUploadRecuerdo(false)
+  }, [])
 
   const openEtapas = useCallback(() => {
     setShowEtapas(true)
@@ -134,11 +192,12 @@ const Organizador = () => {
                       contentFit="cover"
                       source={require('../assets/line-802.png')}
                     />
-                    <View
+                    <Pressable
                       style={[
                         styles.iconlybolddocumentParent,
                         styles.parentFlexBox
                       ]}
+                      onPress={openUploadRecuerdo}
                     >
                       <Image
                         style={styles.iconlybolddocument}
@@ -148,7 +207,7 @@ const Organizador = () => {
                       <Text style={[styles.anexoArchivo, styles.etiquetarTypo]}>
                         Anexo archivo
                       </Text>
-                    </View>
+                    </Pressable>
                     <Image
                       style={styles.frameItem}
                       contentFit="cover"
@@ -175,11 +234,12 @@ const Organizador = () => {
                       contentFit="cover"
                       source={require('../assets/line-802.png')}
                     />
-                    <View
+                    <Pressable
                       style={[
                         styles.iconlybolddocumentParent,
                         styles.parentFlexBox
                       ]}
+                      onPress={openCancion}
                     >
                       <Image
                         style={styles.groupIcon}
@@ -189,27 +249,7 @@ const Organizador = () => {
                       <Text style={[styles.aadirAudio, styles.etiquetarTypo]}>
                         Añadir audio
                       </Text>
-                    </View>
-                    <Image
-                      style={styles.frameItem}
-                      contentFit="cover"
-                      source={require('../assets/line-802.png')}
-                    />
-                    <View
-                      style={[
-                        styles.iconlybolddocumentParent,
-                        styles.parentFlexBox
-                      ]}
-                    >
-                      <Image
-                        style={styles.iconlybolddocument}
-                        contentFit="cover"
-                        source={require('../assets/vector14.png')}
-                      />
-                      <Text style={[styles.anexoArchivo, styles.etiquetarTypo]}>
-                        Fecha
-                      </Text>
-                    </View>
+                    </Pressable>
                     <Image
                       style={styles.frameItem}
                       contentFit="cover"
@@ -220,7 +260,28 @@ const Organizador = () => {
                         styles.iconlybolddocumentParent,
                         styles.parentFlexBox
                       ]}
-                      onPress={openFrameContainer5}
+                      onPress={openCalendario}
+                    >
+                      <Image
+                        style={styles.iconlybolddocument}
+                        contentFit="cover"
+                        source={require('../assets/vector14.png')}
+                      />
+                      <Text style={[styles.anexoArchivo, styles.etiquetarTypo]}>
+                        Fecha
+                      </Text>
+                    </Pressable>
+                    <Image
+                      style={styles.frameItem}
+                      contentFit="cover"
+                      source={require('../assets/line-802.png')}
+                    />
+                    <Pressable
+                      style={[
+                        styles.iconlybolddocumentParent,
+                        styles.parentFlexBox
+                      ]}
+                      onPress={openLugar}
                     >
                       <Image
                         style={styles.iconlybulklocation}
@@ -240,7 +301,7 @@ const Organizador = () => {
                       <Pressable
                         style={[styles.imageParent, styles.parentFlexBox]}
                         onPress={() => {
-                          openEtapas()
+                          setAñadirAUnAlbum(!añadirAUnAlbum)
                         }}
                       >
                         <Image
@@ -258,56 +319,116 @@ const Organizador = () => {
                         contentFit="cover"
                         source={require('../assets/arrowdown22.png')}
                       />
+                      {añadirAUnAlbum && (
+                        <View style={{ top: 20 }}>
+                          <Pressable
+                            style={{ flexDirection: 'row', marginTop: 15 }}
+                          >
+                            <Checkbox
+                              value={legado}
+                              onValueChange={setLegado}
+                            />
+                            <View
+                              style={{
+                                flexDirection: 'row',
+                                width: '100%',
+                                justifyContent: 'space-between'
+                              }}
+                            >
+                              <Text style={styles.aadirTypoText}>
+                                Añadir a mi legado
+                              </Text>
+                              <Pressable onPress={openEtapas}>
+                                <Text style={styles.optionsAlbum}>
+                                  Añadir etapa
+                                </Text>
+                              </Pressable>
+                            </View>
+                          </Pressable>
+                          <Pressable
+                            style={{
+                              flexDirection: 'row',
+                              marginTop: 15
+                            }}
+                          >
+                            <Checkbox value={album} onValueChange={setAlbum} />
+                            <View
+                              style={{
+                                flexDirection: 'row',
+                                width: '100%',
+                                justifyContent: 'space-between'
+                              }}
+                            >
+                              <Text style={styles.aadirTypoText}>
+                                Añadir a mis albunes
+                              </Text>
+                              <Pressable onPress={openSelectedAlbum}>
+                                <Text style={styles.optionsAlbum}>
+                                  Elegir album
+                                </Text>
+                              </Pressable>
+                            </View>
+                          </Pressable>
+                        </View>
+                      )}
                     </View>
                     <Image
                       style={styles.frameItem}
                       contentFit="cover"
                       source={require('../assets/line-802.png')}
                     />
-                    <View style={[styles.frameWrapper, styles.frameLayout]}>
-                      <View style={[styles.checkParent, styles.button2FlexBox]}>
-                        <View style={styles.check}>
-                          <View style={styles.checkChild} />
-                          {/* <Image
+                    {!añadirAUnAlbum && (
+                      <View style={[styles.frameWrapper, styles.frameLayout]}>
+                        <View
+                          style={[styles.checkParent, styles.button2FlexBox]}
+                        >
+                          <View style={styles.check}>
+                            <View style={styles.checkChild} />
+                            {/* <Image
                             style={styles.vectorIcon1}
                             contentFit="cover"
                             source={require('../assets/vector.png')}
                           /> */}
-                          <Checkbox
-                            value={ischecked}
-                            onValueChange={setIschecked}
-                          />
+                            <Checkbox
+                              value={ischecked}
+                              onValueChange={setIschecked}
+                            />
+                          </View>
+                          <Text
+                            style={[styles.aadirAudio, styles.etiquetarTypo]}
+                          >
+                            Cumplir reto
+                          </Text>
                         </View>
-                        <Text style={[styles.aadirAudio, styles.etiquetarTypo]}>
-                          Cumplir reto
-                        </Text>
                       </View>
-                    </View>
+                    )}
                     <Image
                       style={styles.frameItem}
                       contentFit="cover"
                       source={require('../assets/line-802.png')}
                     />
-                    <View style={[styles.frameView, styles.parentFlexBox]}>
-                      <Pressable
-                        style={styles.opcionesDePrivacidadWrapper}
-                        onPress={openPrivacidad}
-                      >
-                        <Text
-                          style={[
-                            styles.opcionesDePrivacidad,
-                            styles.etiquetarTypo
-                          ]}
+                    {!añadirAUnAlbum && (
+                      <View style={[styles.frameView, styles.parentFlexBox]}>
+                        <Pressable
+                          style={styles.opcionesDePrivacidadWrapper}
+                          onPress={openPrivacidad}
                         >
-                          Opciones de Privacidad
-                        </Text>
-                      </Pressable>
-                      <Image
-                        style={styles.arrowDown2Icon1}
-                        contentFit="cover"
-                        source={require('../assets/arrowdown23.png')}
-                      />
-                    </View>
+                          <Text
+                            style={[
+                              styles.opcionesDePrivacidad,
+                              styles.etiquetarTypo
+                            ]}
+                          >
+                            Opciones de Privacidad
+                          </Text>
+                        </Pressable>
+                        <Image
+                          style={styles.arrowDown2Icon1}
+                          contentFit="cover"
+                          source={require('../assets/arrowdown23.png')}
+                        />
+                      </View>
+                    )}
                   </View>
                 </View>
               </View>
@@ -325,10 +446,21 @@ const Organizador = () => {
         </View>
       </ScrollView>
 
-      <Modal animationType="fade" transparent visible={showEtapas}>
+      <Modal animationType="slide" transparent visible={showEtapas}>
         <View style={styles.buttonContainer1Overlay}>
           <Pressable style={styles.buttonContainer1Bg} onPress={closeEtapas}>
             <Etapas onClose={closeEtapas} />
+          </Pressable>
+        </View>
+      </Modal>
+
+      <Modal animationType="slide" transparent visible={selectedAlbum}>
+        <View style={styles.buttonContainer1Overlay}>
+          <Pressable
+            style={styles.buttonContainer1Bg}
+            onPress={closeSelectedAlbum}
+          >
+            <Album onClose={closeSelectedAlbum} />
           </Pressable>
         </View>
       </Modal>
@@ -344,7 +476,7 @@ const Organizador = () => {
         </View>
       </Modal>
 
-      <Modal
+      {/* <Modal
         animationType="slide"
         transparent
         visible={buttonContainer1Visible}
@@ -356,7 +488,7 @@ const Organizador = () => {
           />
           <Cancion1 onClose={closeButtonContainer1} />
         </View>
-      </Modal>
+      </Modal> */}
 
       <Modal animationType="slide" transparent visible={frameContainer2Visible}>
         <View style={styles.frameContainer2Overlay}>
@@ -368,13 +500,42 @@ const Organizador = () => {
         </View>
       </Modal>
 
-      <Modal animationType="fade" transparent visible={frameContainer5Visible}>
-        <View style={styles.frameContainer5Overlay}>
+      <Modal animationType="slide" transparent visible={uploadRecuerdo}>
+        <View style={styles.frameContainer2Overlay}>
           <Pressable
-            style={styles.frameContainer5Bg}
-            onPress={closeFrameContainer5}
+            style={styles.frameContainer2Bg}
+            onPress={closeUploadRecuerdo}
           />
-          <Lugar3 onClose={closeFrameContainer5} />
+          <SubeTusRecuerdos onClose={closeUploadRecuerdo} />
+        </View>
+      </Modal>
+
+      <Modal animationType="slide" transparent visible={cancion}>
+        <View style={styles.frameContainer2Overlay}>
+          <Pressable style={styles.frameContainer2Bg} onPress={closeCancion} />
+          <Cancion onClose={closeCancion} />
+        </View>
+      </Modal>
+
+      <Modal animationType="slide" transparent visible={calendario}>
+        <View style={styles.frameContainer2Overlay}>
+          <Pressable
+            style={styles.frameContainer2Bg}
+            onPress={closeCalendario}
+          />
+          <PopUpCalendario
+            setButtonContainer2Visible={() => {}}
+            setCalendario={setCalendario}
+          />
+        </View>
+      </Modal>
+
+      {/* ---------------------------------------------------------- */}
+
+      <Modal animationType="slide" transparent visible={lugar}>
+        <View style={styles.frameContainer5Overlay}>
+          <Pressable style={styles.frameContainer5Bg} onPress={closeLugar} />
+          <Lugar3 onClose={closeLugar} />
         </View>
       </Modal>
 
@@ -396,6 +557,28 @@ const styles = StyleSheet.create({
   parentPosition: {
     top: 0,
     left: 0
+  },
+  optionsAlbum: {
+    marginRight: 15,
+    height: 30,
+    padding: 5,
+    backgroundColor: Color.secundario,
+    borderRadius: Border.br_11xl,
+    textAlign: 'center',
+    color: Color.primario1,
+    lineHeight: 18,
+    fontSize: FontSize.size_xs,
+    fontFamily: FontFamily.lato
+  },
+  aadirTypoText: {
+    textAlign: 'left',
+    color: Color.gris,
+    fontFamily: FontFamily.lato,
+    fontWeight: '500',
+    lineHeight: 19,
+    letterSpacing: 0,
+    fontSize: FontSize.size_base,
+    marginLeft: 10
   },
   buttonContainer2Overlay: {
     flex: 1,
@@ -721,7 +904,7 @@ const styles = StyleSheet.create({
     // paddingHorizontal: Padding.p_5xl,
     paddingVertical: Padding.p_sm,
     backgroundColor: Color.linearBoton,
-    marginTop: 60,
+    marginTop: 80,
     borderRadius: Border.br_11xl,
     justifyContent: 'center',
     width: '100%'

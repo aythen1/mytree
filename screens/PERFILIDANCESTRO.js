@@ -66,48 +66,6 @@ const PERFILIDANCESTRO = () => {
                   <BookSVG isNavigation={'PERFILANCESTROAJUSTES'} />
                 ]}
               />
-              {/*
-              arbolito----
-               <Image
-                style={styles.iconlyLayout}
-                contentFit="cover"
-                source={require('../assets/vector20.png')}
-              />
-              <View style={[styles.iconly, styles.iconlyLayout]}>
-                <Image
-                  style={styles.notificationIcon}
-                  contentFit="cover"
-                  source={require('../assets/notification3.png')}
-                />
-                <View style={styles.ellipseParent}>
-                  <Image
-                    style={styles.groupChild}
-                    contentFit="cover"
-                    source={require('../assets/ellipse-2262.png')}
-                  />
-                  <Text style={[styles.text, styles.textPosition]}>1</Text>
-                </View>
-              </View>
-              <Pressable
-                style={[styles.iconly, styles.iconlyLayout]}
-                onPress={() => navigation.navigate('PERFILANCESTROAJUSTES1')}
-              >
-                <Image
-                  style={styles.icon}
-                  contentFit="cover"
-                  source={require('../assets/iconlylightoutlinesetting3.png')}
-                />
-              </Pressable>
-              <Pressable
-                style={styles.iconlycurveddocument}
-                onPress={() => navigation.navigate('PERFILANCESTROAJUSTES')}
-              >
-                <Image
-                  style={styles.icon}
-                  contentFit="cover"
-                  source={require('../assets/iconlycurveddocument.png')}
-                />
-              </Pressable> */}
             </View>
           </View>
 

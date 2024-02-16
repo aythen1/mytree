@@ -66,7 +66,12 @@ const Etapas = ({ onClose }) => {
           contentFit="cover"
           source={require('../assets/line-78.png')}
         />
-        <Pressable style={styles.aadir} onPress={openAadirText}>
+        <Pressable
+          style={styles.aadir}
+          onPress={() => {
+            openAadirText()
+          }}
+        >
           <Text style={[styles.aadir1, styles.aadir1Typo]}>+ Añadir</Text>
         </Pressable>
       </View>
@@ -101,7 +106,7 @@ const styles = StyleSheet.create({
   },
   etapasChild: {
     maxHeight: '100%',
-    width: 388,
+    width: '100%',
     marginTop: 20
   },
   recinNacido: {
@@ -115,7 +120,7 @@ const styles = StyleSheet.create({
     fontSize: FontSize.size_base
   },
   aadirTextOverlay: {
-    flex: 1,
+    height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'rgba(113, 113, 113, 0.3)'
@@ -140,15 +145,14 @@ const styles = StyleSheet.create({
     marginTop: 20
   },
   etapas: {
-    borderRadius: Border.br_11xl,
+    borderTopLeftRadius: Border.br_11xl,
+    borderTopRightRadius: Border.br_11xl,
     backgroundColor: Color.white,
-    // flex: 1,
-    top: '25%',
     justifyContent: 'center',
-    // alignItems: 'center',
-    // height: 300,
     width: '100%',
-    padding: Padding.p_xl
+    padding: Padding.p_xl,
+    position: 'absolute',
+    bottom: 0
   }
 })
 

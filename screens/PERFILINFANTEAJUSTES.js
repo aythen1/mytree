@@ -15,6 +15,7 @@ import AadirPregunta from '../components/AadirPregunta'
 import CONDOLENCIAS from '../components/CONDOLENCIAS'
 import { useNavigation } from '@react-navigation/native'
 import { FontFamily, FontSize, Color, Border } from '../GlobalStyles'
+import PopUpCalendario from '../components/PopUpCalendario'
 
 const PERFILINFANTEAJUSTES = () => {
   const [frameContainer3Visible, setFrameContainer3Visible] = useState(false)
@@ -345,23 +346,29 @@ const PERFILINFANTEAJUSTES = () => {
         </View>
       </ScrollView>
 
-      <Modal animationType="fade" transparent visible={frameContainer3Visible}>
+      <Modal animationType="slide" transparent visible={frameContainer3Visible}>
         <View style={styles.frameContainer3Overlay}>
           <Pressable
             style={styles.frameContainer3Bg}
             onPress={closeFrameContainer3}
           />
-          <Fecha1 onClose={closeFrameContainer3} />
+          <PopUpCalendario
+            setCalendario={setFrameContainer3Visible}
+            setButtonContainer2Visible={() => {}}
+          />
         </View>
       </Modal>
 
-      <Modal animationType="fade" transparent visible={frameContainer5Visible}>
+      <Modal animationType="slide" transparent visible={frameContainer5Visible}>
         <View style={styles.frameContainer5Overlay}>
           <Pressable
             style={styles.frameContainer5Bg}
             onPress={closeFrameContainer5}
           />
-          <Fecha1 onClose={closeFrameContainer5} />
+          <PopUpCalendario
+            setCalendario={setFrameContainer3Visible}
+            setButtonContainer2Visible={() => {}}
+          />
         </View>
       </Modal>
 

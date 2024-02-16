@@ -20,6 +20,7 @@ import HeaderIcons from '../../components/HeaderIcons'
 import TreeSVG from '../../components/svgs/TreeSVG'
 import SettingMuroSVG from '../../components/svgs/SettingMuroSVG'
 import PlusSVG from '../../components/svgs/PlusSVG'
+import NotificationsMuroSVG from '../../components/svgs/NotificationsMuroSVG'
 
 const Perfil = () => {
   const navigation = useNavigation()
@@ -54,11 +55,21 @@ const Perfil = () => {
         />
 
         <HeaderIcons
-          icons={[
-            <TreeSVG />,
-            <PlusSVG isNavigation={'CrearAlbum'} />,
-            <SettingMuroSVG isNavigation={'PerfilAjustes'} />
-          ]}
+          icons={
+            selectedComponent !== 'PERFILMIINFO'
+              ? [
+                  <TreeSVG />,
+                  <PlusSVG isNavigation={'CrearAlbum'} />,
+                  <SettingMuroSVG isNavigation={'PerfilAjustes'} />
+                ]
+              : [
+                  <TreeSVG />,
+                  <NotificationsMuroSVG
+                    isNavigation={'PERFILNOTIFICACIONES'}
+                  />,
+                  <SettingMuroSVG isNavigation={'PerfilAjustes'} />
+                ]
+          }
         />
       </View>
 

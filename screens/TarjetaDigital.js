@@ -249,7 +249,7 @@ const TarjetaDigital = () => {
         </View>
       </ScrollView>
 
-      <Modal animationType="fade" transparent visible={fieldContainerVisible}>
+      <Modal animationType="slide" transparent visible={fieldContainerVisible}>
         <View style={styles.fieldContainerOverlay}>
           <Pressable
             style={styles.fieldContainerBg}

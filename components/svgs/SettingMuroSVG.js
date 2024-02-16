@@ -8,7 +8,9 @@ const SettingMuroSVG = ({ isNavigation }) => {
 
   return (
     <Pressable
-      onPress={() => isNavigation && navigation.navigate(isNavigation)}
+      onPress={() => {
+        isNavigation && navigation.navigate(isNavigation)
+      }}
     >
       <Svg
         style={{ marginRight: 10 }}
