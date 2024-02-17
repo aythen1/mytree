@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "MyTreev1",
-    "slug": "my-tree",
+    "name": "mytreev1",
+    "slug": "my-tree-v1",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/image-9.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/image-9.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -27,7 +27,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "439783a4-d65c-41bc-af06-5519c2059256"
+        "projectId": "2f0a89f4-1047-4c5e-8023-4997db837b11"
       }
     },
     "plugins": ["expo-font"]
