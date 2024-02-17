@@ -184,7 +184,7 @@ const App = () => {
     <Provider store={store}>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="PERFILNOTIFICACIONES"
+          initialRouteName="Onboarding2"
           screenOptions={({ route }) => ({
             headerShown: false,
             footerShown: setIsFooterShow(
