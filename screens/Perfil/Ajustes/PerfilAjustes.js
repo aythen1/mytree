@@ -47,7 +47,7 @@ const PerfilAjustes = () => {
               <View style={[styles.backParent, styles.parentFlexBox]}>
                 <Pressable
                   style={styles.iconlylightOutlinecalendar}
-                  onPress={() => navigation.navigate('Perfil')}
+                  onPress={() => navigation.goBack()}
                 >
                   <Image
                     style={[styles.icon, styles.iconLayout1]}

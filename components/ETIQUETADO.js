@@ -1,12 +1,12 @@
-import * as React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
-import { Padding, Border, FontSize, FontFamily, Color } from "../GlobalStyles";
+import * as React from 'react'
+import { View, Text, StyleSheet } from 'react-native'
+import { LinearGradient } from 'expo-linear-gradient'
+import { Padding, Border, FontSize, FontFamily, Color } from '../GlobalStyles'
 
 const ETIQUETADO = ({ onClose }) => {
   return (
     <View style={styles.etiquetado}>
-      <View style={styles.urielTeHaEtiquetadoEnUnRParent}>
+      <View>
         <Text style={styles.urielTeHa}>{`Uriel te ha etiquetado 
 en un recuerdo `}</Text>
         <View style={styles.buttonBar}>
@@ -16,15 +16,15 @@ en un recuerdo `}</Text>
           <LinearGradient
             style={[styles.button1, styles.buttonFlexBox]}
             locations={[0, 1]}
-            colors={["#dee274", "#7ec18c"]}
+            colors={['#dee274', '#7ec18c']}
           >
             <Text style={[styles.signIn1, styles.signTypo]}>Aceptar</Text>
           </LinearGradient>
         </View>
       </View>
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   buttonFlexBox: {
@@ -33,70 +33,64 @@ const styles = StyleSheet.create({
     paddingHorizontal: Padding.p_base,
     height: 52,
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
-    borderRadius: Border.br_11xl,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    borderRadius: Border.br_11xl
   },
   signTypo: {
     lineHeight: 21,
     letterSpacing: 0,
     fontSize: FontSize.size_sm,
-    textAlign: "center",
-    fontFamily: FontFamily.lato,
+    textAlign: 'center',
+    fontFamily: FontFamily.lato
   },
   urielTeHa: {
-    top: 40,
-    left: 40,
+    marginTop: 40,
+    // top: 40,
+    // left: 40,
     fontSize: FontSize.size_5xl,
-    fontWeight: "500",
+    fontWeight: '500',
     color: Color.negro,
-    width: 348,
-    textAlign: "center",
-    fontFamily: FontFamily.lato,
-    position: "absolute",
+    width: '100%',
+    textAlign: 'center',
+    fontFamily: FontFamily.lato
+    // position: 'absolute'
   },
   button: {
-    borderStyle: "solid",
+    borderStyle: 'solid',
     borderColor: Color.colorKhaki_100,
     borderWidth: 1,
-    backgroundColor: Color.white,
+    backgroundColor: Color.white
   },
   signIn1: {
-    color: Color.white,
+    color: Color.white
   },
   button1: {
     backgroundColor: Color.linearBoton,
-    marginLeft: 20,
+    marginLeft: 20
   },
   buttonBar: {
-    top: 146,
-    left: 1,
-    width: 427,
+    // top: 146,
+    // left: 1,
+    marginTop: 20,
+    marginBottom: 20,
     paddingHorizontal: Padding.p_xl,
     paddingVertical: Padding.p_3xs,
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
-    backgroundColor: Color.white,
-    position: "absolute",
-  },
-  urielTeHaEtiquetadoEnUnRParent: {
-    top: 0,
-    left: 0,
-    overflow: "hidden",
-    backgroundColor: Color.white,
-    borderRadius: Border.br_11xl,
-    position: "absolute",
-    height: 413,
-    width: 428,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    backgroundColor: Color.white
+    // position: 'absolute'
   },
   etiquetado: {
-    maxWidth: "100%",
-    maxHeight: "100%",
-    height: 413,
-    width: 428,
-  },
-});
+    backgroundColor: Color.white,
+    borderTopRightRadius: Border.br_11xl,
+    borderTopLeftRadius: Border.br_11xl,
+    width: '100%',
+    position: 'absolute',
+    bottom: 0
+  }
+})
 
-export default ETIQUETADO;
+export default ETIQUETADO

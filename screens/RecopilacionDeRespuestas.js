@@ -8,7 +8,7 @@ const RecopilacionDeRespuestas = () => {
   const navigation = useNavigation()
 
   return (
-    <View style={[styles.recopilacionDeRespuestas, styles.iconLayout]}>
+    <View style={[styles.recopilacionDeRespuestas]}>
       <View style={[styles.image6Wrapper, styles.frameParentPosition]}>
         <Image
           style={styles.image6Icon}
@@ -19,10 +19,7 @@ const RecopilacionDeRespuestas = () => {
       <View style={[styles.frameParent, styles.frameParentPosition]}>
         <View style={styles.frameGroupFlexBox}>
           <View style={[styles.backParent, styles.backParentPosition]}>
-            <Pressable
-              style={styles.back}
-              onPress={() => navigation.navigate('CALENDARIO')}
-            >
+            <Pressable style={styles.back} onPress={() => navigation.goBack()}>
               <Image
                 style={[styles.icon, styles.iconLayout]}
                 contentFit="cover"
@@ -155,7 +152,7 @@ const styles = StyleSheet.create({
   },
   frameGroupFlexBox: {
     alignSelf: 'stretch',
-    flex: 1,
+    // flex: 1
     marginTop: '6%'
   },
   parentPosition: {
@@ -282,7 +279,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   frameParent: {
-    height: 309
+    // height: 309
   },
   recopilacionDeRespuestas: {
     backgroundColor: Color.white,

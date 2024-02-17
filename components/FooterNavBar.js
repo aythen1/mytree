@@ -47,27 +47,35 @@ const FooterNavBar = () => {
               }}
             />
           </Pressable>
-          <Image
-            style={styles.IconlyLightHomeLeft}
-            source={{
-              uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/llu86d6qbs-I1289%3A80990%3B1289%3A80445?alt=media&token=1bcae7ea-b9a8-435b-8c95-5424f9b2cf03'
-            }}
-          />
+          <Pressable onPress={() => navigation.navigate('CALENDARIO')}>
+            <Image
+              style={styles.IconlyLightHomeLeft}
+              source={{
+                uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/llu86d6qbs-I1289%3A80990%3B1289%3A80445?alt=media&token=1bcae7ea-b9a8-435b-8c95-5424f9b2cf03'
+              }}
+            />
+          </Pressable>
         </View>
 
         <View style={{ flexDirection: 'row', marginRight: 20 }}>
-          <Image
-            style={styles.IconlyLightHomeRight}
-            source={{
-              uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/7jmh0qdt16v-I1289%3A80990%3B1289%3A80437?alt=media&token=0c904029-64d9-444f-ba9b-c193b8c023bf'
-            }}
-          />
-          <Image
-            style={styles.IconlyLightHome}
-            source={{
-              uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/81845yt57sf-I1289%3A80990%3B1289%3A80430?alt=media&token=ebf69f4a-8ef7-4bee-b97c-c4ab102ed7d4'
-            }}
-          />
+          <Pressable
+            onPress={() => navigation.navigate('PERFILNOTIFICACIONES')}
+          >
+            <Image
+              style={styles.IconlyLightHomeRight}
+              source={{
+                uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/7jmh0qdt16v-I1289%3A80990%3B1289%3A80437?alt=media&token=0c904029-64d9-444f-ba9b-c193b8c023bf'
+              }}
+            />
+          </Pressable>
+          <Pressable onPress={() => navigation.navigate('Perfil')}>
+            <Image
+              style={styles.IconlyLightHome}
+              source={{
+                uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/81845yt57sf-I1289%3A80990%3B1289%3A80430?alt=media&token=ebf69f4a-8ef7-4bee-b97c-c4ab102ed7d4'
+              }}
+            />
+          </Pressable>
         </View>
 
         {/* este sera el vector del medio */}
