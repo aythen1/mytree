@@ -27,9 +27,9 @@ const Onboarding2 = () => {
             </Text>
             <View style={styles.frameWrapper}>
               <View style={styles.rectangleParent}>
-                <View style={styles.frameChild} />
                 <View style={[styles.frameItem, styles.frameLayout]} />
                 <View style={[styles.frameInner, styles.frameLayout]} />
+                <View style={styles.frameChild} />
               </View>
             </View>
             <Pressable
@@ -114,6 +114,7 @@ const styles = StyleSheet.create({
     marginLeft: 7
   },
   frameInner: {
+    marginRight: 7,
     backgroundColor: Color.colorGray_400,
     width: 8
   },

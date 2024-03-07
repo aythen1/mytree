@@ -171,124 +171,12 @@ const PERFILMIINFO = ({ setSelectedComponent }) => {
             </View>
           </View>
         </View>
-
-        {/* <View style={styles.frameParent8}>
-          <View style={[styles.descripcinParent, styles.parentFlexBox]}>
-            <Text style={[styles.miInformacinPersonal, styles.miInfoTypo]}>
-              Descripción
-            </Text>
-            <Pressable
-              style={styles.lock1}
-              onPress={() => navigation.navigate('Descripcin')}
-            >
-              <Image
-                style={styles.icon}
-                contentFit="cover"
-                source={require('../../assets/lock2.png')}
-              />
-            </Pressable>
-          </View>
-          <View style={styles.frameWrapper3}>
-            <View style={styles.frameWrapperFlexBox}>
-              <View style={styles.nombreYApellidosParent}>
-                <Text style={[styles.quEsLo, styles.quEsLoTypo]}>
-                  ¿Qué es lo que más te apasiona en la vida?
-                </Text>
-                <Text style={[styles.compartirConMi, styles.quEsLoTypo]}>
-                  Compartir con mi familia y amigos
-                </Text>
-              </View>
-              <Image
-                style={styles.vectorIcon4}
-                contentFit="cover"
-                source={require('../../assets/vector52.png')}
-              />
-            </View>
-          </View>
-        </View>
-        <View style={styles.frameParent10}>
-          <View style={[styles.descripcinParent, styles.parentFlexBox]}>
-            <Text style={[styles.miInformacinPersonal, styles.miInfoTypo]}>
-              Mi Salud
-            </Text>
-            <Pressable
-              style={styles.lock2}
-              onPress={() => navigation.navigate('MiSalud')}
-            >
-              <Image
-                style={styles.icon}
-                contentFit="cover"
-                source={require('../../assets/lock3.png')}
-              />
-            </Pressable>
-          </View>
-          <View style={styles.frameWrapper4}>
-            <View style={styles.frameWrapperFlexBox}>
-              <View style={styles.hoyMeSientoConGripeWrapper}>
-                <Text style={[styles.hoyMeSientoContainer, styles.quEsLoTypo]}>
-                  <Text style={[styles.hoyMeSiento, styles.miInfoTypo]}>
-                    {'Hoy me siento... '}
-                  </Text>
-                  <Text style={styles.conGripe}>Con gripe</Text>
-                </Text>
-              </View>
-              <Image
-                style={styles.combinedShapeIcon}
-                contentFit="cover"
-                source={require('../../assets/combinedshape.png')}
-              />
-            </View>
-          </View>
-        </View>
-        <View style={styles.frameParent12}>
-          <View style={[styles.descripcinParent, styles.parentFlexBox]}>
-            <Text style={[styles.miInformacinPersonal, styles.miInfoTypo]}>
-              Dedicatorias
-            </Text>
-            <Image
-              style={styles.lock2}
-              contentFit="cover"
-              source={require('../../assets/lock3.png')}
-            />
-          </View>
-          <View style={styles.frameWrapper4}>
-            <View style={styles.frameWrapperFlexBox}>
-              <View style={styles.hoyMeSientoConGripeWrapper}>
-                <Text style={[styles.espacioDndeLos, styles.quEsLoTypo]}>
-                  Espacio dónde los contactos puedan dejar dedicatorias
-                  personalizables.
-                </Text>
-              </View>
-              <Image
-                style={styles.combinedShapeIcon}
-                contentFit="cover"
-                source={require('../../assets/combinedshape1.png')}
-              />
-            </View>
-          </View>
-        </View> */}
       </View>
     </ScrollView>
   )
 }
 
 const styles = StyleSheet.create({
-  // parentFlexBox: {
-  //   justifyContent: 'center',
-  //   alignItems: 'center'
-  // },
-  // quEsLoTypo: {
-  //   lineHeight: 17,
-  //   fontSize: FontSize.size_sm,
-  //   textAlign: 'left',
-  //   letterSpacing: 0,
-  //   color: Color.negro
-  // },
-  // lock1: {
-  //   height: 12,
-  //   marginLeft: 90,
-  //   width: 24
-  // },
   iconLayout: {
     width: 26,
     overflow: 'hidden'

@@ -48,15 +48,7 @@ const Register = () => {
         colors={['#7ec18c', '#dee274']}
       >
         <View style={[styles.rectangleGroup, styles.groupIconPosition]}>
-          <Pressable
-            style={{
-              height: 50,
-              width: 50,
-              justifyContent: 'center',
-              alignItems: 'center'
-            }}
-            onPress={() => previous()}
-          >
+          <Pressable style={styles.back} onPress={() => previous()}>
             <Image
               contentFit="cover"
               source={require('../assets/Back Button.png')}
@@ -89,16 +81,7 @@ const Register = () => {
               top: 10
             }}
           >
-            <View
-              style={{
-                backgroundColor: Color.secundario,
-                width: 36,
-                height: 36,
-                justifyContent: 'center',
-                alignItems: 'center',
-                borderRadius: 21
-              }}
-            >
+            <View style={styles.icons}>
               <Svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                 <Path
                   d="M12 0C13.5913 0 15.1174 0.632141 16.2426 1.75736C17.3679 2.88258 18 4.4087 18 6C18 7.5913 17.3679 9.11742 16.2426 10.2426C15.1174 11.3679 13.5913 12 12 12C10.4087 12 8.88258 11.3679 7.75736 10.2426C6.63214 9.11742 6 7.5913 6 6C6 4.4087 6.63214 2.88258 7.75736 1.75736C8.88258 0.632141 10.4087 0 12 0ZM12 15C18.63 15 24 17.685 24 21V24H0V21C0 17.685 5.37 15 12 15Z"
@@ -148,11 +131,11 @@ const Register = () => {
             style={[styles.ellipseGroup, styles.ellipseParentShadowBox]}
           ></View>
           <View
-            style={[styles.ellipseContainer, styles.ellipseParentShadowBox]}
+            style={[styles.ellipseGroup, styles.ellipseParentShadowBox]}
           ></View>
 
           <View
-            style={[styles.ellipseParent1, styles.ellipseParentShadowBox]}
+            style={[styles.ellipseGroup, styles.ellipseParentShadowBox]}
           ></View>
         </View>
 
@@ -194,7 +177,7 @@ const styles = StyleSheet.create({
   },
   frameChild: {
     width: '100%',
-    height: '35%',
+    height: '30%',
     zIndex: 0
   },
   rectangleGroup: {
@@ -241,34 +224,6 @@ const styles = StyleSheet.create({
     top: 0,
     position: 'absolute'
   },
-  ellipseContainer: {
-    left: 356,
-    flexDirection: 'row',
-    elevation: 25,
-    shadowRadius: 25,
-    shadowOpacity: 1,
-    shadowOffset: {
-      width: 0,
-      height: 0
-    },
-    shadowColor: 'rgba(244, 105, 76, 0.15)',
-    top: 0,
-    position: 'absolute'
-  },
-  ellipseParent1: {
-    left: 89,
-    flexDirection: 'row',
-    elevation: 25,
-    shadowRadius: 25,
-    shadowOpacity: 1,
-    shadowOffset: {
-      width: 0,
-      height: 0
-    },
-    shadowColor: 'rgba(244, 105, 76, 0.15)',
-    top: 0,
-    position: 'absolute'
-  },
   lineParent: {
     width: '100%',
     height: 40,
@@ -295,6 +250,20 @@ const styles = StyleSheet.create({
   scrollViewContent: {
     flexGrow: 1,
     paddingBottom: 100
+  },
+  back: {
+    height: 50,
+    width: 50,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  icons: {
+    backgroundColor: Color.secundario,
+    width: 36,
+    height: 36,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 21
   }
 })
 

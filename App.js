@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { NavigationContainer } from '@react-navigation/native'
-import CambiarFotoDePerfil from './screens/CambiarFotoDePerfil'
 import Fecha from './screens/Fecha'
 import AadirAlbum from './screens/AadirAlbum'
 import Tiempo from './screens/Tiempo'
@@ -14,7 +13,6 @@ import Onboarding from './screens/Onboarding'
 import Onboarding1 from './screens/Onboarding1'
 import OpcionesFamiliar from './components/OpcionesFamiliar'
 import MiSalud from './screens/MiSalud'
-import Descripcin from './screens/Descripcin'
 import MiInformacinPersonal from './screens/MiInformacinPersonal'
 import PopupDiario from './components/PopupDiario'
 import CreacinInfante from './components/CreacinInfante'
@@ -31,8 +29,6 @@ import MisAlbumesFamiliares from './screens/MisAlbumesFamiliares'
 import SuscritoConExito from './screens/SuscritoConExito'
 import CONFIRMARPARENTESCO from './components/CONFIRMARPARENTESCO'
 import ConfirmarAsistencia from './components/ConfirmarAsistencia'
-import Keyboard from './components/Keyboard'
-import Keyboard1 from './components/Keyboard1'
 import Lugar from './components/Lugar'
 import Lugar1 from './components/Lugar1'
 import Lugar2 from './components/Lugar2'
@@ -144,18 +140,8 @@ import CALENDARIOCREARFECHAESPEC from './screens/CALENDARIOCREARFECHAESPEC'
 import CALENDARIO from './screens/CALENDARIO'
 import Success from './screens/Success'
 import Splash from './screens/Splash'
-import Keyboard2 from './components/Keyboard2'
-import Keyboard3 from './components/Keyboard3'
-import Keyboard4 from './screens/Keyboard4'
 import REGISTROPOLTICASDEPRIVAC from './screens/REGISTROPOLTICASDEPRIVAC'
 import REGISTROTRMINOSYCONDICIO from './screens/REGISTROTRMINOSYCONDICIO'
-import REGISTROPRIVACIDAD from './screens/REGISTROPRIVACIDAD'
-import REGISTROTELFONO from './screens/REGISTROTELFONO'
-import REGISTROTELFONO1 from './screens/REGISTROTELFONO1'
-import REGISTROTELFONO2 from './screens/REGISTROTELFONO2'
-import REGISTROTELFONO3 from './screens/REGISTROTELFONO3'
-import REGISTROFECHADENACIMIENTO from './screens/REGISTROFECHADENACIMIENTO'
-import REGISTROFECHADENACIMIENTO1 from './screens/REGISTROFECHADENACIMIENTO1'
 import REGISTRONOMBRE from './screens/REGISTRONOMBRE'
 import Suscripciones from './screens/Perfil/Ajustes/Suscripciones'
 
@@ -197,11 +183,6 @@ const App = () => {
             )
           })}
         >
-          <Stack.Screen
-            name="CambiarFotoDePerfil"
-            component={CambiarFotoDePerfil}
-            options={{ headerShown: false }}
-          />
           <Stack.Screen
             name="Fecha"
             component={Fecha}
@@ -265,11 +246,6 @@ const App = () => {
           <Stack.Screen
             name="MiSalud"
             component={MiSalud}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Descripcin"
-            component={Descripcin}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -355,16 +331,6 @@ const App = () => {
           <Stack.Screen
             name="ConfirmarAsistencia"
             component={ConfirmarAsistencia}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Keyboard"
-            component={Keyboard}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Keyboard1"
-            component={Keyboard1}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -943,21 +909,6 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="Keyboard2"
-            component={Keyboard2}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Keyboard3"
-            component={Keyboard3}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Keyboard4"
-            component={Keyboard4}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="REGISTROPOLTICASDEPRIVAC"
             component={REGISTROPOLTICASDEPRIVAC}
             options={{ headerShown: false }}
@@ -965,41 +916,6 @@ const App = () => {
           <Stack.Screen
             name="REGISTROTRMINOSYCONDICIO"
             component={REGISTROTRMINOSYCONDICIO}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="REGISTROPRIVACIDAD"
-            component={REGISTROPRIVACIDAD}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="REGISTROTELFONO"
-            component={REGISTROTELFONO}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="REGISTROTELFONO1"
-            component={REGISTROTELFONO1}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="REGISTROTELFONO2"
-            component={REGISTROTELFONO2}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="REGISTROTELFONO3"
-            component={REGISTROTELFONO3}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="REGISTROFECHADENACIMIENTO"
-            component={REGISTROFECHADENACIMIENTO}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="REGISTROFECHADENACIMIENTO1"
-            component={REGISTROFECHADENACIMIENTO1}
             options={{ headerShown: false }}
           />
           <Stack.Screen

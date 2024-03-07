@@ -27,8 +27,8 @@ const Onboarding2 = () => {
             </Text>
             <View style={styles.frameWrapper}>
               <View style={styles.rectangleParent}>
+                <View style={styles.frameItem} />
                 <View style={styles.frameChild} />
-                <View style={[styles.frameItem, styles.frameLayout]} />
                 <View style={[styles.frameInner, styles.frameLayout]} />
               </View>
             </View>
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
   frameItem: {
     width: 8,
     backgroundColor: Color.colorGray_400,
-    marginLeft: 7
+    marginRight: 7
   },
   frameInner: {
     backgroundColor: Color.colorGray_400,

@@ -36,10 +36,6 @@ const Muro = () => {
   const [showRetos, setShowRetos] = useState(false)
   const [menuVisible, setMenuVisible] = useState(false)
 
-  const handleShowRetos = () => {
-    setShowModalRetos(!showModalRetos)
-  }
-
   const handleMenu = () => {
     dispatch(setPanel(false))
   }
@@ -70,14 +66,20 @@ const Muro = () => {
             <HeaderIcons
               icons={
                 !showRetos
-                  ? [<LupaSVG />, <MessageSVG />, <NotificationsMuroSVG />]
+                  ? [
+                      <LupaSVG />,
+                      <MessageSVG />,
+                      <NotificationsMuroSVG
+                        isNavigation={'PERFILNOTIFICACIONES'}
+                      />
+                    ]
                   : [<MessageSVG />, <CalendarMuroSVG />, <SettingMuroSVG />]
               }
             />
           </View>
         </View>
 
-        <View style={{ minHeight: 900, paddingBottom: 100 }}>
+        <View>
           <View style={styles.instanceParent}>
             <View
               style={{
@@ -118,25 +120,13 @@ const Muro = () => {
             >
               <Pressable
                 style={[styles.tabs, styles.tabsFlexBox]}
-                onPress={() => {
-                  setColorClick(false)
-                  handleShowRetos()
-                }}
+                // onPress={() => {
+                //   setColorClick(false)
+                //   handleShowRetos()
+                // }}
               >
-                <Text
-                  style={{
-                    fontWeight: !colorClick ? '700' : '300',
-                    width: 110,
-                    textAlign: 'center',
-                    fontFamily: FontFamily.lato,
-                    lineHeight: 19,
-                    letterSpacing: 0,
-                    fontSize: FontSize.size_base,
-                    color: colorClick ? Color.textPlaceholder : Color.black1
-                  }}
-                >
-                  Retos
-                </Text>
+                <Text style={styles.retosText}>Retos</Text>
+                <Text style={styles.soonButton}>Soon</Text>
               </Pressable>
             </View>
           </View>
@@ -165,11 +155,9 @@ const Muro = () => {
           visible={showPanel}
           onRequestClose={() => dispatch(setPanel(false))}
         >
-          <TouchableWithoutFeedback onPress={handleMenu}>
-            <View style={{ flex: 1, backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
-              <MenuPrincipal setMenuVisible={setMenuVisible} />
-            </View>
-          </TouchableWithoutFeedback>
+          <Pressable onPress={handleMenu}>
+            <MenuPrincipal setMenuVisible={setMenuVisible} />
+          </Pressable>
         </Modal>
       </ScrollView>
     </View>
@@ -217,6 +205,27 @@ const styles = StyleSheet.create({
   },
   menuPosition: {
     top: 36
+  },
+  retosText: {
+    fontWeight: '300',
+    width: 70,
+    textAlign: 'center',
+    fontFamily: FontFamily.lato,
+    lineHeight: 19,
+    letterSpacing: 0,
+    fontSize: FontSize.size_base,
+    color: Color.textPlaceholder
+  },
+  soonButton: {
+    borderRadius: Border.br_3xs,
+    backgroundColor: Color.grisClaro,
+    color: Color.white,
+    fontWeight: '300',
+    fontSize: FontSize.size_3xs,
+    width: 30,
+    height: 20,
+    lineHeight: 18,
+    textAlign: 'center'
   }
 })
 

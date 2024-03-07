@@ -265,7 +265,7 @@ const styles = StyleSheet.create({
     backgroundColor: Color.linearBoton,
     height: '100%',
     zIndex: 0,
-    paddingBottom: 50
+    paddingBottom: '60%'
   },
   muro: {
     marginLeft: 12
@@ -288,13 +288,11 @@ const styles = StyleSheet.create({
   frameParent: {
     top: 20,
     left: 20,
-    width: '100%',
-    height: '100%',
-    zIndex: 100
+    zIndex: 50
   },
   menPrincipal: {
     maxWidth: '70%',
-    height: '100%'
+    top: '8%'
   }
 })
 

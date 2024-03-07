@@ -26,18 +26,7 @@ const FooterNavBar = () => {
 
   return (
     <>
-      <View
-        style={{
-          height: 50,
-          top: 0,
-          flexDirection: 'row',
-          width: '100%',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          borderRadius: 5,
-          backgroundColor: 'white'
-        }}
-      >
+      <View style={styles.container}>
         <View style={{ flexDirection: 'row', marginLeft: 20 }}>
           <Pressable onPress={() => navigation.navigate('Muro')}>
             <Image
@@ -78,22 +67,7 @@ const FooterNavBar = () => {
           </Pressable>
         </View>
 
-        {/* este sera el vector del medio */}
-        <Pressable
-          style={{
-            width: 60,
-            height: 60,
-            backgroundColor: Color.backgroundGreyBackground,
-            position: 'absolute',
-            top: -30, // Ajusta según sea necesario para centrar verticalmente
-            left: '50%',
-            marginLeft: -30,
-            borderRadius: 30,
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}
-          onPress={showModalAdd}
-        >
+        <Pressable style={styles.pressable} onPress={showModalAdd}>
           <LinearGradient
             style={styles.frameChild}
             locations={[0, 1]}
@@ -103,7 +77,6 @@ const FooterNavBar = () => {
               style={{
                 width: 50,
                 height: 50,
-                // backgroundColor: 'green',
                 borderRadius: 25,
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -136,8 +109,6 @@ const FooterNavBar = () => {
 
       {panelAddFooter && (
         <Modal transparent={true} animationType="slide">
-          {/* </Modal> */}
-
           <TouchableWithoutFeedback onPress={showModalAdd}>
             <View style={{ height: '100%' }}>
               <Aadir1 />
@@ -150,6 +121,17 @@ const FooterNavBar = () => {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    height: 50,
+    top: 0,
+    flexDirection: 'row',
+    width: '100%',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    borderRadius: 5,
+    backgroundColor: 'white',
+    zIndex: 100
+  },
   IconlyLightHome: {
     width: 24,
     height: 24
@@ -173,6 +155,18 @@ const styles = StyleSheet.create({
     height: 24,
     marginRight: 25,
     overflow: 'hidden'
+  },
+  pressable: {
+    width: 60,
+    height: 60,
+    backgroundColor: Color.backgroundGreyBackground,
+    position: 'absolute',
+    top: -30,
+    left: '50%',
+    marginLeft: -30,
+    borderRadius: 30,
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 })
 

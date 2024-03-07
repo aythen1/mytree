@@ -126,7 +126,7 @@ Para cumplir con la ley o responder a solicitudes legales, como una orden judici
               </Pressable>
               <Pressable
                 style={styles.labelled1}
-                onPress={() => navigation.navigate('Success')}
+                onPress={() => navigation.navigate('Register')}
               >
                 <Text style={styles.volverTypo}>{'Continuar >'}</Text>
               </Pressable>
