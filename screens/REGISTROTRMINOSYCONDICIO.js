@@ -127,7 +127,7 @@ Al utilizar este servicio, aceptas cumplir con estos términos y condiciones. Si
               </Pressable>
               <Pressable
                 style={styles.labelled1}
-                onPress={() => navigation.navigate('REGISTROPRIVACIDAD')}
+                onPress={() => navigation.navigate('Register')}
               >
                 <Text style={styles.volverTypo}>{`Continuar >`}</Text>
               </Pressable>

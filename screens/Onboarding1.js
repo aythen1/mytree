@@ -1,11 +1,11 @@
-import * as React from 'react'
+import React from 'react'
 import { Image } from 'expo-image'
 import { Pressable, StyleSheet, Text, View } from 'react-native'
-import { LinearGradient } from 'expo-linear-gradient'
 import { FontFamily, Border, FontSize, Color } from '../GlobalStyles'
 import { useNavigation } from '@react-navigation/native'
+import ImageVectorSVG from '../components/svgs/ImageVectorSVG'
 
-const Onboarding1 = () => {
+const Onboarding2 = () => {
   const navigation = useNavigation()
 
   return (
@@ -15,22 +15,21 @@ const Onboarding1 = () => {
         contentFit="cover"
         source={require('../assets/onboarding-1.png')}
       />
-      <LinearGradient
-        style={[styles.huellaParent, styles.huellaParentFlexBox]}
-        locations={[0, 1]}
-        colors={['#b7e4c0', '#2c372e']}
-      >
+      <View style={[styles.huellaParent, styles.huellaParentFlexBox]}>
         <View style={styles.dejaTuHuellaEnElMundoMieParent}>
           <Text style={[styles.huella, styles.huellaTypo]}>Comparte</Text>
-          <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+          <View style={styles.imageVector}>
+            <ImageVectorSVG />
+          </View>
+          <View style={styles.secondContainer}>
             <Text style={[styles.dejaTuHuella, styles.huellaTypo]}>
               Un tesoro de recuerdos para compartir con futuras generaciones
             </Text>
             <View style={styles.frameWrapper}>
               <View style={styles.rectangleParent}>
+                <View style={styles.frameItem} />
                 <View style={styles.frameChild} />
                 <View style={[styles.frameInner, styles.frameLayout]} />
-                <View style={[styles.frameItem, styles.frameLayout]} />
               </View>
             </View>
             <Pressable
@@ -59,7 +58,7 @@ const Onboarding1 = () => {
             </Pressable>
           </View>
         </View>
-      </LinearGradient>
+      </View>
     </View>
   )
 }
@@ -77,11 +76,8 @@ const styles = StyleSheet.create({
   frameLayout: {
     marginLeft: 7,
     height: 6
-    // borderRadius: Border.br_3xs
   },
   progressPosition: {
-    // maxHeight: "100%",
-    // maxWidth: "100%",
     right: '0%',
     top: '0%',
     position: 'absolute',
@@ -91,16 +87,13 @@ const styles = StyleSheet.create({
     width: 428,
     zIndex: 0,
     overflow: 'hidden'
-    // borderRadius: Border.br_31xl
-    // height: 926,
   },
   huella: {
     fontSize: FontSize.size_13xl,
     letterSpacing: 1.3,
     fontWeight: '700',
-    color: Color.primario1,
-    textAlign: 'left',
-    top: 0
+    color: Color.white,
+    textAlign: 'left'
   },
   dejaTuHuella: {
     fontSize: FontSize.size_7xl,
@@ -118,7 +111,7 @@ const styles = StyleSheet.create({
   frameItem: {
     width: 8,
     backgroundColor: Color.colorGray_400,
-    marginLeft: 7
+    marginRight: 7
   },
   frameInner: {
     backgroundColor: Color.colorGray_400,
@@ -140,18 +133,13 @@ const styles = StyleSheet.create({
     height: '65.96%',
     width: '65.96%',
     top: '17.02%',
-    // right: "17.02%",
-    // bottom: "17.02%",
     left: '17.02%',
     borderRadius: Border.br_31xl,
     backgroundColor: Color.negro,
-    // paddingHorizontal: Padding.p_122xl,
-    // paddingVertical: Padding.p_xl,
     flexDirection: 'row',
     zIndex: 10
   },
   progressButtonChild: {
-    // height: "100%",
     bottom: '0%',
     left: '0%',
     opacity: 0.38,
@@ -169,7 +157,6 @@ const styles = StyleSheet.create({
     marginTop: 30
   },
   dejaTuHuellaEnElMundoMieParent: {
-    // marginTop: 580,
     flex: 1,
     alignItems: 'center',
     justifyContent: 'space-between'
@@ -180,8 +167,6 @@ const styles = StyleSheet.create({
     top: 20,
     bottom: 20,
     width: 388,
-    // height: "92%",
-
     backgroundColor: Color.linearBoton,
     zIndex: 1,
     left: '50%',
@@ -190,10 +175,16 @@ const styles = StyleSheet.create({
   onboarding3: {
     flex: 1,
     flexDirection: 'row',
-    // height: 926,
     width: '100%'
-    // top: 30
+  },
+  secondContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    top: '10%'
+  },
+  imageVector: {
+    marginTop: '10%'
   }
 })
 
-export default Onboarding1
+export default Onboarding2

@@ -19,7 +19,11 @@ const LOGIN = () => {
   const [checked, setChecked] = useState(false)
 
   return (
-    <ScrollView style={styles.login} contentContainerStyle={{ height: '100%' }}  showsVerticalScrollIndicator={false}>
+    <ScrollView
+      style={styles.login}
+      contentContainerStyle={{ height: '100%' }}
+      showsVerticalScrollIndicator={false}
+    >
       <LinearGradient
         style={[styles.loginInner, styles.buttonFlexBox]}
         locations={[0, 1]}
