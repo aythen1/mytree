@@ -6,31 +6,106 @@ import { Color, FontFamily, FontSize, Border } from '../GlobalStyles'
 
 const NameRegister = () => {
   const [name, setsetName] = useState('')
+  const [text, setText] = useState('')
+  const [mail, setMail] = useState('')
+
+  const handleChangeText = (input) => {
+    const filteredInput = input.replace(/[^0-9/]/g, '')
+    let formattedInput = filteredInput
+    if (filteredInput.length === 2 && filteredInput[2] !== '/') {
+      formattedInput = filteredInput.slice(0, 2) + '/' + filteredInput.slice(2)
+    }
+    if (filteredInput.length === 5 && filteredInput[5] !== '/') {
+      formattedInput = filteredInput.slice(0, 5) + '/' + filteredInput.slice(5)
+    }
+    setText(formattedInput)
+  }
 
   const handleNombreChange = (text) => {
     setsetName(text)
   }
 
+  const handleMailChange = (text) => {
+    setMail(text)
+  }
+
   return (
     <View>
-      <Text style={[styles.labelled, styles.labelledTypo]}>
-        Nombre Completo
-      </Text>
-      <View style={styles.baseBackgroundParent}>
-        {/* <View style={[styles.baseBackground, styles.ellipseParentShadowBox]} /> */}
-
-        <View style={styles.vectorParent}>
-          <Image
-            style={[styles.vectorIcon5, styles.vectorIconLayout]}
-            contentFit="cover"
-            source={require('../assets/vector81.png')}
-          />
-          <TextInput
-            style={styles.placeholder}
-            placeholder="Nombre"
-            onChangeText={handleNombreChange}
-            value={name}
-          ></TextInput>
+      <View>
+        <Text style={[styles.labelled, styles.labelledTypo]}>
+          Nombre Completo
+        </Text>
+        <View style={styles.baseBackgroundParent}>
+          <View style={styles.vectorParent}>
+            <Image
+              style={styles.vectorIconLayout}
+              contentFit="cover"
+              source={require('../assets/vector81.png')}
+            />
+            <TextInput
+              style={styles.placeholder}
+              placeholder="Nombre"
+              onChangeText={handleNombreChange}
+              value={name}
+            />
+          </View>
+        </View>
+      </View>
+      <View>
+        <Text style={[styles.labelled, styles.labelledTypo]}>
+          Fecha de Nacimiento
+        </Text>
+        <View style={styles.baseBackgroundParent}>
+          <View style={styles.vectorParent}>
+            <Image
+              style={styles.vectorIconLayout}
+              contentFit="cover"
+              source={require('../assets/vector79.png')}
+            />
+            <TextInput
+              keyboardType="numeric"
+              placeholder="20/12/1988"
+              onChangeText={handleChangeText}
+              value={text}
+              maxLength={10}
+              style={styles.placeholder}
+            />
+          </View>
+        </View>
+      </View>
+      <View>
+        <Text style={[styles.labelled, styles.labelledTypo]}>Teléfono</Text>
+        <View style={styles.baseBackgroundParent}>
+          <View style={styles.vectorParent}>
+            <Image
+              style={styles.vectorIcon}
+              contentFit="cover"
+              source={require('../assets/group4.png')}
+            />
+            <TextInput
+              keyboardType="numeric"
+              placeholder=" ( 00 ) 1234 5678"
+              style={styles.placeholder}
+            />
+          </View>
+        </View>
+      </View>
+      <View>
+        <Text style={[styles.labelled, styles.labelledTypo]}>Email</Text>
+        <View style={styles.baseBackgroundParent}>
+          <View style={styles.vectorParent}>
+            <Image
+              style={styles.vectorIcon2}
+              contentFit="cover"
+              source={require('../assets/vector83.png')}
+            />
+            <TextInput
+              style={styles.placeholder}
+              placeholder="Email"
+              onChangeText={handleMailChange}
+              value={mail}
+            />
+          </View>
         </View>
       </View>
     </View>
@@ -38,20 +113,6 @@ const NameRegister = () => {
 }
 
 const styles = StyleSheet.create({
-  groupIconPosition: {
-    // zIndex: 1
-    // justifyContent: 'center',
-    // alignSelf: 'center'
-    // position: 'absolute'
-  },
-  ellipseParentShadowBox: {
-    shadowOpacity: 1,
-    shadowOffset: {
-      width: 0,
-      height: 0
-    },
-    shadowColor: 'rgba(244, 105, 76, 0.15)'
-  },
   vectorIconLayout: {
     width: 24,
     height: 24
@@ -64,11 +125,17 @@ const styles = StyleSheet.create({
     color: Color.negro,
     textAlign: 'left',
     lineHeight: 41,
-    fontWeight: '900',
-    fontSize: FontSize.size_5xl
+    fontWeight: '400',
+    fontSize: FontSize.size_base
   },
-  vectorIcon5: {
-    height: 24
+  vectorIcon: {
+    height: 26,
+    width: 18
+  },
+  vectorIcon2: {
+    width: 24,
+    height: 18,
+    top: 3
   },
   placeholder: {
     fontSize: FontSize.size_base,
@@ -83,36 +150,18 @@ const styles = StyleSheet.create({
   },
   vectorParent: {
     flexDirection: 'row',
-    padding: 15,
+    padding: 10,
     borderStyle: 'solid',
     shadowColor: 'rgba(244, 105, 76, 0.3)',
     shadowOpacity: 1,
     shadowRadius: 2,
     elevation: 2
   },
-  frameParent1: {
-    top: 0,
-    justifyContent: 'center',
-    alignSelf: 'center'
-  },
   baseBackgroundParent: {
     borderRadius: Border.br_3xs,
     backgroundColor: Color.fAFAFA,
-    marginTop: 20
-  },
-
-  continuar: {
-    color: Color.primario1,
-    lineHeight: 41,
-    fontWeight: '900',
-    fontSize: FontSize.size_5xl
-  },
-  frameGroup: {
-    marginTop: 10,
-    height: '100%',
-    justifyContent: 'space-between',
-    width: '100%',
-    paddingHorizontal: 15
+    marginTop: 5,
+    marginBottom: 5
   }
 })
 

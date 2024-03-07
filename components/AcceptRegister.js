@@ -94,9 +94,9 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   checkParent: {
-    width: 388,
     flexDirection: 'row',
-    marginTop: 20
+    marginTop: 20,
+    left: 10
   },
   frameContainer: {
     alignItems: 'center'
