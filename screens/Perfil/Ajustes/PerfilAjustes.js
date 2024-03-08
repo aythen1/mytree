@@ -22,7 +22,7 @@ const PerfilAjustes = () => {
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <LinearGradient
         style={[styles.perfilAjustes, styles.iconLayout1]}
-        locations={[0, 1]}
+        locations={[0.1, 1]}
         colors={['#fff', '#7ec18c']}
       >
         <View style={styles.frameParent}>
@@ -113,48 +113,6 @@ const PerfilAjustes = () => {
                 </Pressable>
                 <Pressable
                   style={[styles.frameParent3, styles.parentFlexBox]}
-                  onPress={() => navigation.navigate('PerfilPrivacidad')}
-                >
-                  <View style={styles.settingParent}>
-                    <Image
-                      style={styles.iconlyboldlock}
-                      contentFit="cover"
-                      source={require('../../../assets/iconlyboldlock.png')}
-                    />
-                    <Text style={[styles.configuracin, styles.mytreeTypo]}>
-                      Privacidad
-                    </Text>
-                    <Image
-                      style={[styles.arrowDown2Icon, styles.arrowIconLayout]}
-                      contentFit="cover"
-                      source={require('../../../assets/arrowdown29.png')}
-                    />
-                  </View>
-                </Pressable>
-                <Pressable
-                  style={[styles.frameParent3, styles.parentFlexBox]}
-                  onPress={() =>
-                    navigation.navigate('PerfilVisualizacionMyTree')
-                  }
-                >
-                  <View style={styles.parentFlexBox}>
-                    <Image
-                      style={[styles.showIcon, styles.iconLayout]}
-                      contentFit="cover"
-                      source={require('../../../assets/show.png')}
-                    />
-                    <Text style={[styles.configuracin, styles.mytreeTypo]}>
-                      Visualización de MyTree
-                    </Text>
-                    <Image
-                      style={[styles.arrowDown2Icon, styles.arrowIconLayout]}
-                      contentFit="cover"
-                      source={require('../../../assets/arrowdown29.png')}
-                    />
-                  </View>
-                </Pressable>
-                <Pressable
-                  style={[styles.frameParent3, styles.parentFlexBox]}
                   onPress={() => navigation.navigate('Suscripciones')}
                 >
                   <View style={styles.parentFlexBox}>
@@ -165,26 +123,6 @@ const PerfilAjustes = () => {
                     />
                     <Text style={[styles.configuracin, styles.mytreeTypo]}>
                       Suscripciones
-                    </Text>
-                    <Image
-                      style={[styles.arrowDown2Icon, styles.arrowIconLayout]}
-                      contentFit="cover"
-                      source={require('../../../assets/arrowdown29.png')}
-                    />
-                  </View>
-                </Pressable>
-                <Pressable
-                  style={[styles.frameParent3, styles.parentFlexBox]}
-                  onPress={() => navigation.navigate('PerfilVerificacion')}
-                >
-                  <View style={styles.parentFlexBox}>
-                    <Image
-                      style={[styles.settingIcon, styles.iconLayout]}
-                      contentFit="cover"
-                      source={require('../../../assets/tick-square.png')}
-                    />
-                    <Text style={[styles.configuracin, styles.mytreeTypo]}>
-                      Verificación MyTree
                     </Text>
                     <Image
                       style={[styles.arrowDown2Icon, styles.arrowIconLayout]}

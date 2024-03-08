@@ -2,7 +2,6 @@ import React, { useState, useCallback } from 'react'
 import { Image } from 'expo-image'
 import { StyleSheet, View, Text, Pressable, Modal } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
-import Fecha1 from '../components/Fecha1'
 import { useNavigation } from '@react-navigation/native'
 import { FontFamily, FontSize, Color, Padding, Border } from '../GlobalStyles'
 import PopUpCalendario from '../components/PopUpCalendario'
@@ -234,7 +233,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(113, 113, 113, 0.3)'
   },
   iconlyLightOutlineCalendarBg: {
-    // position: 'absolute',
     width: '100%',
     height: '100%',
     left: 0,

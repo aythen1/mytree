@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { StyleSheet, View, Pressable, Text, ScrollView } from 'react-native'
 import { Image } from 'expo-image'
-import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
 import {
   Color,
@@ -21,6 +20,8 @@ import TreeSVG from '../../components/svgs/TreeSVG'
 import SettingMuroSVG from '../../components/svgs/SettingMuroSVG'
 import PlusSVG from '../../components/svgs/PlusSVG'
 import NotificationsMuroSVG from '../../components/svgs/NotificationsMuroSVG'
+import LupaSVG from '../../components/svgs/LupaSVG'
+import BarraBusqueda from '../../components/BarraBusqueda'
 
 const Perfil = () => {
   const navigation = useNavigation()
@@ -29,6 +30,7 @@ const Perfil = () => {
   const { showPanel } = useSelector((state) => state.panel)
 
   const [selectedComponent, setSelectedComponent] = useState('MiLegado')
+  const [search, setSearch] = useState(false)
 
   const renderSelectedComponent = () => {
     switch (selectedComponent) {
@@ -58,7 +60,9 @@ const Perfil = () => {
           icons={
             selectedComponent !== 'PERFILMIINFO'
               ? [
-                  <TreeSVG />,
+                  <Pressable onPress={() => setSearch(!search)}>
+                    <LupaSVG />
+                  </Pressable>,
                   <PlusSVG isNavigation={'CrearAlbum'} />,
                   <SettingMuroSVG isNavigation={'PerfilAjustes'} />
                 ]
@@ -84,21 +88,13 @@ const Perfil = () => {
         />
       </Pressable>
 
+      {search && <BarraBusqueda />}
+
       <View style={styles.imageContainer}>
-        <Image
-          style={styles.groupIconLayout}
-          contentFit="cover"
-          source={require('../../assets/group-11712766771.png')}
-        />
         <Image
           style={styles.perfilItem}
           contentFit="cover"
           source={require('../../assets/group-1171276683.png')}
-        />
-        <Image
-          style={styles.groupIconLayout}
-          contentFit="cover"
-          source={require('../../assets/group-11712766771.png')}
         />
       </View>
 
@@ -108,13 +104,6 @@ const Perfil = () => {
           <Text style={[styles.daNangVietnam, styles.miInfoTypo]}>
             Da Nang, Vietnam
           </Text>
-          <LinearGradient
-            style={styles.button}
-            locations={[0, 1]}
-            colors={['#e2e57a', '#7fc08b']}
-          >
-            <Text style={[styles.signIn, styles.signInTypo]}>Salud</Text>
-          </LinearGradient>
         </View>
       </View>
 
@@ -139,7 +128,7 @@ const Perfil = () => {
             Mi Legado
           </Text>
         </Pressable>
-        <Pressable
+        {/* <Pressable
           style={[
             styles.tabs,
             selectedComponent === 'MisAlbumes' && styles.miWrapper
@@ -154,7 +143,7 @@ const Perfil = () => {
           >
             Mis álbumes
           </Text>
-        </Pressable>
+        </Pressable> */}
         <Pressable
           style={[
             styles.tabs,
@@ -196,10 +185,10 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     alignItems: 'center',
+    justifyContent: 'center',
     flex: 1,
     flexDirection: 'row',
     top: '12%',
-    left: '1.8%',
     gap: 50
   },
   buttonFlexBox: {
@@ -244,7 +233,6 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   vectorParent: {
-    right: 10,
     top: '5%'
   },
   perfilItem: {
@@ -268,8 +256,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     top: '4%',
-    gap: 20,
-    left: '60%'
+    gap: 20
   },
   daNangVietnam: {
     fontWeight: '300',
@@ -328,7 +315,8 @@ const styles = StyleSheet.create({
     width: '90%',
     backgroundColor: Color.white,
     flexDirection: 'row',
-    top: '25%'
+    top: '25%',
+    justifyContent: 'center'
   },
   signIn: {
     fontSize: FontSize.size_xs,

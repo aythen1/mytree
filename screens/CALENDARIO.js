@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { StyleSheet, View, Text, Pressable, ScrollView } from 'react-native'
 import { Image } from 'expo-image'
 import { useNavigation } from '@react-navigation/native'
-import { Color, FontFamily, FontSize, Padding, Border } from '../GlobalStyles'
+import { Color, FontSize, Padding } from '../GlobalStyles'
 import { setPanel } from '../redux/slices/panel.slices'
 import Calendario from '../components/Calendario'
 import BarraBusqueda from '../components/BarraBusqueda'
+import Fechas from '../components/Fechas'
+import Eventos from '../components/Eventos'
 
 const CALENDARIO = () => {
   const navigation = useNavigation()
@@ -14,6 +16,20 @@ const CALENDARIO = () => {
 
   const { showPanel } = useSelector((state) => state.panel)
 
+  const [selectedItem, setSelectedItem] = useState('fechas')
+
+  const handleItemPress = (item) => {
+    setSelectedItem(item)
+  }
+
+  const getRoute = () => {
+    if (selectedItem === 'fechas') {
+      return 'CrearFechaEspecial'
+    } else if (selectedItem === 'eventos') {
+      return 'CrearEvento'
+    }
+    return null
+  }
   return (
     <ScrollView
       style={styles.calendario3}
@@ -39,144 +55,59 @@ const CALENDARIO = () => {
       </View>
 
       <View style={styles.ionmenuParent}>
-        <BarraBusqueda />
+        <BarraBusqueda navigate={navigation.navigate} route={getRoute()} />
       </View>
 
       <Calendario />
       <View style={styles.frameParent}>
         <View style={styles.upcomingParent}>
-          <View style={styles.fechasContainer}>
-            <Text style={styles.fechas}>Fechas</Text>
-          </View>
-          <View style={styles.eventosContainer}>
-            <Text style={styles.eventos}>Eventos</Text>
-          </View>
-        </View>
-        <View style={styles.frameGroup}>
           <Pressable
-            style={styles.frameContainer}
-            onPress={() => navigation.navigate('Invitacin')}
+            style={[
+              styles.fechasContainer,
+              selectedItem === 'eventos' && styles.eventosContainer
+            ]}
+            onPress={() => {
+              handleItemPress('fechas')
+            }}
           >
-            <View style={styles.unsplashilip77sbmoeParent}>
-              <Image
-                style={styles.unsplashilip77sbmoeIcon}
-                contentFit="cover"
-                source={require('../assets/unsplashilip77sbmoe.png')}
-              />
-              <Image
-                style={[styles.vectorIcon, styles.vectorIconPosition]}
-                contentFit="cover"
-                source={require('../assets/vector15.png')}
-              />
-            </View>
-            <View style={styles.TextWrapper}>
-              <Text style={[styles.marieContainerTypo]}>
-                <Text style={styles.textTypo}>{`Bruno `}</Text>
-                <Text style={styles.cumple28Aos}>cumple 28 años</Text>
-              </Text>
-            </View>
+            <Text
+              style={[
+                styles.fechas,
+                selectedItem === 'eventos' && styles.eventos
+              ]}
+            >
+              Fechas
+            </Text>
           </Pressable>
           <Pressable
-            style={[styles.framePressable, styles.frameFlexBox]}
-            onPress={() => navigation.navigate('Invitacin')}
+            style={[
+              styles.eventosContainer,
+              selectedItem === 'eventos' && styles.fechasContainer
+            ]}
+            onPress={() => {
+              handleItemPress('eventos')
+            }}
           >
-            <View style={styles.unsplashilip77sbmoeParent}>
-              <Image
-                style={styles.unsplashilip77sbmoeIcon}
-                contentFit="cover"
-                source={require('../assets/unsplashilip77sbmoe.png')}
-              />
-              <Image
-                style={[styles.vectorIcon, styles.vectorIconPosition]}
-                contentFit="cover"
-                source={require('../assets/vector15.png')}
-              />
-            </View>
-            <View style={styles.TextWrapper}>
-              <Text style={[styles.marieContainerTypo]}>
-                <Text style={styles.textTypo}>{`Bruno `}</Text>
-                <Text style={styles.cumple28Aos}>
-                  ha organizado un evento familiar
-                </Text>
-              </Text>
-            </View>
-          </Pressable>
-          <Pressable
-            style={[styles.frameWrapper, styles.frameFlexBox]}
-            onPress={() => navigation.navigate('Invitacin')}
-          >
-            <View style={styles.unsplashilip77sbmoeParent}>
-              <Image
-                style={styles.unsplashilip77sbmoeIcon}
-                contentFit="cover"
-                source={require('../assets/unsplashilip77sbmoe.png')}
-              />
-              <Image
-                style={[styles.vectorIcon, styles.vectorIconPosition]}
-                contentFit="cover"
-                source={require('../assets/vector15.png')}
-              />
-            </View>
-            <View style={styles.TextWrapper}>
-              <Text style={[styles.marieContainerTypo]}>
-                <Text style={styles.textTypo}>{`Marie `}</Text>
-                <Text style={styles.cumple28Aos}>cumple 28 años</Text>
-              </Text>
-            </View>
-          </Pressable>
-          <Pressable
-            style={[styles.framePressable, styles.frameFlexBox]}
-            onPress={() => navigation.navigate('Invitacin')}
-          >
-            <View style={styles.unsplashilip77sbmoeParent}>
-              <Image
-                style={styles.unsplashilip77sbmoeIcon}
-                contentFit="cover"
-                source={require('../assets/unsplashilip77sbmoe.png')}
-              />
-              <Image
-                style={[styles.vectorIcon, styles.vectorIconPosition]}
-                contentFit="cover"
-                source={require('../assets/vector15.png')}
-              />
-            </View>
-            <View style={styles.TextWrapper}>
-              <Text style={styles.marieContainerTypo}>
-                <Text style={styles.textTypo}>{`Marie `}</Text>
-                <Text style={styles.cumple28Aos}>
-                  ha organizado un evento familiar
-                </Text>
-              </Text>
-            </View>
+            <Text
+              style={[
+                styles.eventos,
+                selectedItem === 'eventos' && styles.fechas
+              ]}
+            >
+              Eventos
+            </Text>
           </Pressable>
         </View>
       </View>
+      {selectedItem === 'fechas' ? <Fechas /> : <Eventos />}
     </ScrollView>
   )
 }
 
 const styles = StyleSheet.create({
-  textTypo: {
-    color: Color.primario1,
-    fontFamily: FontFamily.lato,
-    fontWeight: '700'
-  },
   iconLayout: {
     height: 25,
     width: 25
-  },
-  vectorIconPosition: {
-    top: '50%'
-  },
-  marieContainerTypo: {
-    textAlign: 'justify',
-    lineHeight: 22,
-    fontSize: FontSize.size_lg
-  },
-  frameFlexBox: {
-    marginTop: 20,
-    alignItems: 'center',
-    flexDirection: 'row'
   },
   image6Icon: {
     width: 87,
@@ -199,41 +130,11 @@ const styles = StyleSheet.create({
     marginTop: '2%',
     height: 50
   },
-  unsplashilip77sbmoeIcon: {
-    width: 44,
-    height: 44,
-    zIndex: 0
-  },
-  vectorIcon: {
-    marginTop: -8,
-    zIndex: 1,
-    height: 15,
-    width: 20
-  },
-  unsplashilip77sbmoeParent: {
-    flexDirection: 'row'
-  },
-  cumple28Aos: {
-    color: Color.negro,
-    fontFamily: FontFamily.lato
-  },
   TextWrapper: {
     width: '80%'
   },
-  frameContainer: {
-    alignItems: 'center',
-    flexDirection: 'row'
-  },
   frameWrapper: {
     width: 388
-  },
-  framePressable: {
-    alignSelf: 'stretch',
-    overflow: 'hidden'
-  },
-  frameGroup: {
-    marginTop: 19,
-    alignSelf: 'stretch'
   },
   frameParent: {
     alignItems: 'flex-end'

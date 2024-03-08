@@ -17,7 +17,7 @@ import PopUpCalendario from '../components/PopUpCalendario'
 import CalendarSVG from '../components/svgs/CalendarSVG'
 import UbicacionSVG from '../components/svgs/UbicacionSVG'
 import AñadirUsuarioSVG from '../components/svgs/AñadirUsuarioSVG'
-import RegaloSVG from '../components/svgs/RegaloSVG'
+import CheckBox from 'expo-checkbox'
 
 const CrearFechaEspecial = () => {
   const navigation = useNavigation()
@@ -25,6 +25,7 @@ const CrearFechaEspecial = () => {
   const [modalCreate, setModalCreate] = useState(false)
   const [programar, setProgramar] = useState(false)
   const [calendario, setCalendario] = useState(false)
+  const [check, setCheck] = useState(false)
 
   const onCloseModalCreate = () => {
     setModalCreate(false)
@@ -61,7 +62,7 @@ const CrearFechaEspecial = () => {
               />
             </Pressable>
             <Text style={[styles.crearEventoText, styles.titleTypo]}>
-              Crear evento
+              Crear fecha especial
             </Text>
           </View>
         </View>
@@ -69,12 +70,12 @@ const CrearFechaEspecial = () => {
         <View>
           <View style={styles.titleBase}>
             <Text style={[styles.title, styles.titleTypo]}>
-              Titulo del evento
+              Titulo de la fecha
             </Text>
           </View>
           <TextInput
             style={styles.fieldSpaceBlock}
-            placeholder="Nombre del evento"
+            placeholder="Nombre de la fecha"
             multiline={true}
           />
         </View>
@@ -85,7 +86,7 @@ const CrearFechaEspecial = () => {
           </View>
           <TextInput
             style={styles.descriptionField}
-            placeholder="Descripción del evento"
+            placeholder="Descripción de la fecha especial"
           />
         </View>
 
@@ -118,7 +119,7 @@ const CrearFechaEspecial = () => {
         <View>
           <View style={styles.titleBase}>
             <Text style={[styles.title, styles.titleTypo]}>
-              Etiqueta a tus invitados
+              Etiqueta a tu compañía
             </Text>
           </View>
 
@@ -132,15 +133,11 @@ const CrearFechaEspecial = () => {
 
         <View>
           <View style={styles.titleBase}>
-            <Text style={[styles.title, styles.titleTypo]}>
-              Lista de deseos
-            </Text>
+            <Text style={[styles.title, styles.titleTypo]}>Compartir</Text>
           </View>
-          <View style={styles.fieldSpaceBlock2}>
-            <TextInput placeholder="Escribe aqui" />
-            <Pressable>
-              <RegaloSVG />
-            </Pressable>
+          <View style={styles.fieldSpaceBlock}>
+            <CheckBox value={check} onValueChange={setCheck} />
+            <TextInput placeholder="Como actividad familiar" />
           </View>
         </View>
 

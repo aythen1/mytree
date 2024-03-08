@@ -54,10 +54,7 @@ const BOTONInvitarAmigos1 = () => {
         <Text style={[styles.invitaFamiliares, styles.searchFlexBox]}>
           Invita familiares
         </Text>
-        <Pressable
-          style={[styles.button, styles.buttonFlexBox]}
-          onPress={() => navigation.navigate('BOTONInvitarAmigos')}
-        >
+        <Pressable style={[styles.button, styles.buttonFlexBox]}>
           <Text style={styles.signIn}>Crear link de invitación</Text>
         </Pressable>
         <View style={[styles.header, styles.headerLayout]}>

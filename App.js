@@ -9,7 +9,6 @@ import SubeTusRecuerdos from './screens/SubeTusRecuerdos'
 import LOGIN from './screens/LOGIN'
 import Onboarding from './screens/Onboarding'
 import Onboarding1 from './screens/Onboarding1'
-import OpcionesFamiliar from './components/OpcionesFamiliar'
 import MiSalud from './screens/MiSalud'
 import MiInformacinPersonal from './screens/MiInformacinPersonal'
 import RETOSMSVOTADOS from './screens/RETOSMSVOTADOS'
@@ -20,17 +19,13 @@ import AadirRecuerdo1 from './screens/AadirRecuerdo1'
 import CrearLbum from './screens/CrearLbum'
 import MisAlbumesFamiliares from './screens/MisAlbumesFamiliares'
 import SuscritoConExito from './screens/SuscritoConExito'
-import ConfirmarAsistencia from './components/ConfirmarAsistencia'
 import FECHA4 from './screens/FECHA4'
 import AadirAUnAlbum from './screens/AadirAUnAlbum'
 import CrearAlbum from './screens/CrearAlbum'
 import Organizador from './screens/Organizador'
 import RetosFamiliaresCumplido from './screens/RetosFamiliaresCumplido'
 import RetosFamiliaresSinCumplir from './screens/RetosFamiliaresSinCumplir'
-import AccesoAContactos from './screens/AccesoAContactos'
 import Situacin from './screens/Situacin'
-import MensajePerzonalizado from './components/MensajePerzonalizado'
-import TipoDeAlerta from './components/TipoDeAlerta'
 import Chat from './screens/Chat'
 import AADIRAADIRANCESTRO from './screens/AADIRAADIRANCESTRO'
 import AADIRAADIRINFANTE from './screens/AADIRAADIRINFANTE'
@@ -47,16 +42,8 @@ import PERFILIDINFANTE from './screens/PERFILIDINFANTE'
 import PERFILCREARIDINFANTEANCE from './screens/PERFILCREARIDINFANTEANCE'
 import Novedades from './screens/Novedades'
 import Recompensas from './screens/Recompensas'
-import DiseoDeLaInvitacion from './components/DiseoDeLaInvitacion'
-import DiseoTarjetaDigital from './components/DiseoTarjetaDigital'
-import AsistenciaActualizada from './components/AsistenciaActualizada'
-import QR from './components/QR'
-import ValorarEvento from './components/ValorarEvento'
 import RecopilacionDeRespuestas from './screens/RecopilacionDeRespuestas'
-import VistaPrevia from './components/VistaPrevia'
 import Invitacin from './screens/Invitacin'
-import Padres from './components/Padres'
-import Humor from './components/Humor'
 import MIDIARIOPANTALLAPERSONAL from './screens/MIDIARIOPANTALLAPERSONAL'
 import MIDIARIOEDICINVIDEO from './screens/MIDIARIOEDICINVIDEO'
 import MIDIARIOEDICINVIDEO1 from './screens/MIDIARIOEDICINVIDEO1'
@@ -64,21 +51,9 @@ import MIDIARIOEDICINVIDEO2 from './screens/MIDIARIOEDICINVIDEO2'
 import MIDIARIOENTRADAVIDEO from './screens/MIDIARIOENTRADAVIDEO'
 import Onboarding2 from './screens/Onboarding2'
 import Muro from './screens/Muro'
-import FechaYHora from './components/FechaYHora'
-import FormatoArbol from './components/FormatoArbol'
-import Para from './components/Para'
 import Privacidad1 from './screens/Privacidad1'
-import FormatoLista from './components/FormatoLista'
-import Etiquetar from './components/Etiquetar'
-import Invitados from './components/Invitados'
-import FormaDeEnvo from './components/FormaDeEnvo'
-import OpcionesTituloDelEvento from './components/OpcionesTituloDelEvento'
 import CrearEvento from './screens/CrearEvento'
-import OpcionesAmigo from './components/OpcionesAmigo'
-import Parentezco from './components/Parentezco'
-import BOTONInvitarAmigos from './screens/BOTONInvitarAmigos'
 import BOTONInvitarAmigos1 from './screens/BOTONInvitarAmigos1'
-import Aadir1 from './components/Aadir1'
 import PERFILNOTIFICACIONES from './screens/PERFILNOTIFICACIONES'
 import PerfilVerificacion from './screens/Perfil/Ajustes/PerfilVerificacion'
 import PERFILAJUSTESSUSCRIPCION from './screens/PERFILAJUSTESSUSCRIPCION'
@@ -86,7 +61,6 @@ import PerfilSeguridad from './screens/Perfil/Ajustes/PerfilSeguridad'
 import PerfilPrivacidad from './screens/Perfil/Ajustes/PerfilPrivacidad'
 import PerfilVisualizacionMyTree from './screens/Perfil/Ajustes/PerfilVisualizacionMyTree'
 import PERFILDELUSUARIOVISITADO from './screens/PERFILDELUSUARIOVISITADO'
-import CONDOLENCIAS from './components/CONDOLENCIAS'
 import PERFILANCESTROAJUSTES from './screens/PERFILANCESTROAJUSTES'
 import PERFILANCESTROAJUSTES1 from './screens/PERFILANCESTROAJUSTES1'
 import PERFILINFANTEAJUSTES from './screens/PERFILINFANTEAJUSTES'
@@ -107,22 +81,19 @@ import MIDIARIOENTRADATEXTOPL3 from './screens/MIDIARIOENTRADATEXTOPL3'
 import MIDIARIOENTRADATEXTOPL4 from './screens/MIDIARIOENTRADATEXTOPL4'
 import MIDIARIOENTRADATEXTOPL5 from './screens/MIDIARIOENTRADATEXTOPL5'
 import MIDIARIOENTRADATEXTOPL7 from './screens/MIDIARIOENTRADATEXTOPL7'
-import OpcionesZonaHoraria from './components/OpcionesZonaHoraria'
 import OpcionesCaategora from './components/OpcionesCaategora'
 import OpcionesFormatoFecha from './components/OpcionesFormatoFecha'
 import OpcionesCulturas from './components/OpcionesCulturas'
 import OpcionesInicioDeSemana from './components/OpcionesInicioDeSemana'
 import OpcionesIdioma from './components/OpcionesIdioma'
-import CALENDARIOAJUSTES from './screens/CALENDARIOAJUSTES'
-import CALENDARIOCREARFECHAESPEC from './screens/CALENDARIOCREARFECHAESPEC'
 import CALENDARIO from './screens/CALENDARIO'
 import Success from './screens/Success'
 import Splash from './screens/Splash'
 import REGISTROPOLTICASDEPRIVAC from './screens/REGISTROPOLTICASDEPRIVAC'
 import REGISTROTRMINOSYCONDICIO from './screens/REGISTROTRMINOSYCONDICIO'
-import REGISTRONOMBRE from './screens/REGISTRONOMBRE'
 import Suscripciones from './screens/Perfil/Ajustes/Suscripciones'
 import CrearGrupo from './screens/CrearGrupo'
+import CrearFechaEspecial from './screens/CrearFechaEspecial'
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { loadFonts } from './GlobalStyles'
@@ -208,11 +179,6 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="OpcionesFamiliar"
-            component={OpcionesFamiliar}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="MiSalud"
             component={MiSalud}
             options={{ headerShown: false }}
@@ -268,11 +234,6 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="ConfirmarAsistencia"
-            component={ConfirmarAsistencia}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="FECHA4"
             component={FECHA4}
             options={{ headerShown: false }}
@@ -303,23 +264,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="AccesoAContactos"
-            component={AccesoAContactos}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="Situacin"
             component={Situacin}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="MensajePerzonalizado"
-            component={MensajePerzonalizado}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="TipoDeAlerta"
-            component={TipoDeAlerta}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -408,53 +354,13 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="DiseoDeLaInvitacion"
-            component={DiseoDeLaInvitacion}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="DiseoTarjetaDigital"
-            component={DiseoTarjetaDigital}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="AsistenciaActualizada"
-            component={AsistenciaActualizada}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="QR"
-            component={QR}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="ValorarEvento"
-            component={ValorarEvento}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="RecopilacionDeRespuestas"
             component={RecopilacionDeRespuestas}
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="VistaPrevia"
-            component={VistaPrevia}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="Invitacin"
             component={Invitacin}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Padres"
-            component={Padres}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Humor"
-            component={Humor}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -493,48 +399,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="FechaYHora"
-            component={FechaYHora}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="FormatoArbol"
-            component={FormatoArbol}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Para"
-            component={Para}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="Privacidad1"
             component={Privacidad1}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="FormatoLista"
-            component={FormatoLista}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Etiquetar"
-            component={Etiquetar}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Invitados"
-            component={Invitados}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="FormaDeEnvo"
-            component={FormaDeEnvo}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="OpcionesTituloDelEvento"
-            component={OpcionesTituloDelEvento}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -543,28 +409,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="OpcionesAmigo"
-            component={OpcionesAmigo}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Parentezco"
-            component={Parentezco}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="BOTONInvitarAmigos"
-            component={BOTONInvitarAmigos}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="BOTONInvitarAmigos1"
             component={BOTONInvitarAmigos1}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Aadir1"
-            component={Aadir1}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -600,11 +446,6 @@ const App = () => {
           <Stack.Screen
             name="PERFILDELUSUARIOVISITADO"
             component={PERFILDELUSUARIOVISITADO}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="CONDOLENCIAS"
-            component={CONDOLENCIAS}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -718,11 +559,6 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="OpcionesZonaHoraria"
-            component={OpcionesZonaHoraria}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="OpcionesCaategora"
             component={OpcionesCaategora}
             options={{ headerShown: false }}
@@ -745,16 +581,6 @@ const App = () => {
           <Stack.Screen
             name="OpcionesIdioma"
             component={OpcionesIdioma}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="CALENDARIOAJUSTES"
-            component={CALENDARIOAJUSTES}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="CALENDARIOCREARFECHAESPEC"
-            component={CALENDARIOCREARFECHAESPEC}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -788,11 +614,6 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="REGISTRONOMBRE"
-            component={REGISTRONOMBRE}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="Register"
             component={Register}
             options={{ headerShown: false }}
@@ -805,6 +626,11 @@ const App = () => {
           <Stack.Screen
             name="CrearGrupo"
             component={CrearGrupo}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="CrearFechaEspecial"
+            component={CrearFechaEspecial}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>

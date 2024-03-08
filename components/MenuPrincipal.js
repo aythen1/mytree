@@ -257,7 +257,7 @@ const styles = StyleSheet.create({
     color: Color.white,
     fontFamily: FontFamily.lato,
     fontWeight: '900',
-    fontSize: FontSize.size_sm
+    fontSize: FontSize.size_xl
   },
   menPrincipalChild: {
     borderTopRightRadius: Border.br_3xs,
