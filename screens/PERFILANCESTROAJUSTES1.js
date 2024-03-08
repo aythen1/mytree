@@ -8,7 +8,6 @@ import {
   ScrollView
 } from 'react-native'
 import { Image } from 'expo-image'
-import Fecha1 from '../components/Fecha1'
 import AadirPregunta from '../components/AadirPregunta'
 import { useNavigation } from '@react-navigation/native'
 import { FontSize, Color, FontFamily, Border } from '../GlobalStyles'
@@ -289,7 +288,7 @@ const PERFILANCESTROAJUSTES1 = () => {
           </View>
         </View>
 
-        <Modal
+        {/* <Modal
           animationType="fade"
           transparent
           visible={frameContainer1Visible}
@@ -301,7 +300,7 @@ const PERFILANCESTROAJUSTES1 = () => {
             />
             <Fecha1 onClose={closeFrameContainer1} />
           </View>
-        </Modal>
+        </Modal> */}
 
         <Modal animationType="fade" transparent visible={vectorIcon3Visible}>
           <View style={styles.vectorIcon3Overlay}>

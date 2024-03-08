@@ -5,7 +5,6 @@ import { Image } from 'expo-image'
 import { useNavigation } from '@react-navigation/native'
 import Humor from '../components/Humor'
 // import ENTRADACREADA12 from "../components/ENTRADACREADA12";
-import Fecha5 from '../components/Fecha5'
 import { Color, FontFamily, FontSize, Padding, Border } from '../GlobalStyles'
 
 const MIDIARIOENTRADATEXTOPL2 = () => {
@@ -259,7 +258,7 @@ const MIDIARIOENTRADATEXTOPL2 = () => {
         </View>
       </Modal> */}
 
-      <Modal animationType="fade" transparent visible={frameContainer3Visible}>
+      {/* <Modal animationType="fade" transparent visible={frameContainer3Visible}>
         <View style={styles.frameContainer3Overlay}>
           <Pressable
             style={styles.frameContainer3Bg}
@@ -267,7 +266,7 @@ const MIDIARIOENTRADATEXTOPL2 = () => {
           />
           <Fecha5 onClose={closeFrameContainer3} />
         </View>
-      </Modal>
+      </Modal> */}
     </>
   )
 }

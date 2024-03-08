@@ -5,7 +5,6 @@ import { Image } from 'expo-image'
 import { useNavigation } from '@react-navigation/native'
 import Humor from '../components/Humor'
 // import ENTRADACREADA12 from '../components/ENTRADACREADA12'
-import Fecha5 from '../components/Fecha5'
 import { FontFamily, FontSize, Color, Padding, Border } from '../GlobalStyles'
 
 const ReflexionDiaria = () => {

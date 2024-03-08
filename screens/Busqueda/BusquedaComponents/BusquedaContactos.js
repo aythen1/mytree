@@ -12,45 +12,44 @@ const BusquedaContactos = () => {
       <View style={styles.frameParent}>
         <View>
           <View>
-            <View>
-              <Text style={[styles.familiares, styles.retosLayout]}>
-                Familiares
+            <Text style={[styles.familiares, styles.retosLayout]}>
+              Familiares
+            </Text>
+            <View style={[styles.frameChild, styles.frameChildLayout]} />
+          </View>
+          <View style={styles.frameView}>
+            <View style={styles.frameParent1}>
+              <Image
+                style={styles.frameItem}
+                contentFit="cover"
+                source={require('../../../assets/frame-1547754875.png')}
+              />
+              <Text style={[styles.brunoPham, styles.retosLayout]}>
+                Bruno Pham
               </Text>
-              <View style={[styles.frameChild, styles.frameChildLayout]} />
             </View>
-            <View style={styles.frameView}>
-              <View style={styles.frameParent1}>
-                <Image
-                  style={styles.frameItem}
-                  contentFit="cover"
-                  source={require('../../../assets/frame-1547754875.png')}
-                />
-                <Text style={[styles.brunoPham, styles.retosLayout]}>
-                  Bruno Pham
-                </Text>
-              </View>
-              <View style={styles.frameParent2}>
-                <Image
-                  style={styles.frameItem}
-                  contentFit="cover"
-                  source={require('../../../assets/frame-1547754875.png')}
-                />
-                <Text style={[styles.brunoPham, styles.retosLayout]}>
-                  Bruno Pham
-                </Text>
-              </View>
-              <View style={styles.frameParent2}>
-                <Image
-                  style={styles.frameItem}
-                  contentFit="cover"
-                  source={require('../../../assets/frame-1547754875.png')}
-                />
-                <Text style={[styles.brunoPham, styles.retosLayout]}>
-                  Bruno Pham
-                </Text>
-              </View>
+            <View style={styles.frameParent2}>
+              <Image
+                style={styles.frameItem}
+                contentFit="cover"
+                source={require('../../../assets/frame-1547754875.png')}
+              />
+              <Text style={[styles.brunoPham, styles.retosLayout]}>
+                Bruno Pham
+              </Text>
+            </View>
+            <View style={styles.frameParent2}>
+              <Image
+                style={styles.frameItem}
+                contentFit="cover"
+                source={require('../../../assets/frame-1547754875.png')}
+              />
+              <Text style={[styles.brunoPham, styles.retosLayout]}>
+                Bruno Pham
+              </Text>
             </View>
           </View>
+
           <View style={styles.frameParent4}>
             <View>
               <Text style={[styles.familiares, styles.retosLayout]}>
@@ -115,7 +114,7 @@ const styles = StyleSheet.create({
   },
   frameChildLayout: {
     height: 1,
-    width: 389,
+    width: 310,
     borderTopWidth: 1,
     borderColor: Color.secundario,
     borderStyle: 'solid'
@@ -178,7 +177,7 @@ const styles = StyleSheet.create({
     right: '5%'
   },
   frameParent: {
-    left: 18,
+    // left: '13%',
     alignItems: 'center'
   },
   bsquedaContactos: {

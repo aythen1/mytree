@@ -8,7 +8,6 @@ import {
   ScrollView
 } from 'react-native'
 import { Image } from 'expo-image'
-import Fecha1 from '../components/Fecha1'
 import Padres from '../components/Padres'
 import SexoInfante from '../components/SexoInfante'
 import AadirPregunta from '../components/AadirPregunta'

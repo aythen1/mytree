@@ -10,7 +10,6 @@ import {
 } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
-import Fecha1 from '../components/Fecha1'
 import CreacinInfante from '../components/CreacinInfante'
 import { FontSize, FontFamily, Color, Padding, Border } from '../GlobalStyles'
 import PopUpCalendario from '../components/PopUpCalendario'

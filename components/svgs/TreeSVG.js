@@ -24,8 +24,8 @@ const TreeSVG = () => {
           y2="23.5959"
           gradientUnits="userSpaceOnUse"
         >
-          <Stop stop-color="#E2E57A" />
-          <Stop offset="1" stop-color="#7FC08B" />
+          <Stop stopColor="#E2E57A" />
+          <Stop offset="1" stopColor="#7FC08B" />
         </LinearGradient>
       </Defs>
     </Svg>

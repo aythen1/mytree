@@ -48,7 +48,7 @@ const FooterNavBar = () => {
 
         <View style={{ flexDirection: 'row', marginRight: 20 }}>
           <Pressable
-            onPress={() => navigation.navigate('PERFILNOTIFICACIONES')}
+            onPress={() => navigation.navigate('MIDIARIOPANTALLAPERSONAL')}
           >
             <Image
               style={styles.IconlyLightHomeRight}

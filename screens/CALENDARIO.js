@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { StyleSheet, View, Text, Pressable, ScrollView } from 'react-native'
 import { Image } from 'expo-image'
 import { useNavigation } from '@react-navigation/native'
-import { Color, FontFamily, FontSize, Padding } from '../GlobalStyles'
+import { Color, FontSize, Padding } from '../GlobalStyles'
 import { setPanel } from '../redux/slices/panel.slices'
 import Calendario from '../components/Calendario'
+import BarraBusqueda from '../components/BarraBusqueda'
+import Fechas from '../components/Fechas'
+import Eventos from '../components/Eventos'
 
 const CALENDARIO = () => {
   const navigation = useNavigation()
@@ -13,6 +16,20 @@ const CALENDARIO = () => {
 
   const { showPanel } = useSelector((state) => state.panel)
 
+  const [selectedItem, setSelectedItem] = useState('fechas')
+
+  const handleItemPress = (item) => {
+    setSelectedItem(item)
+  }
+
+  const getRoute = () => {
+    if (selectedItem === 'fechas') {
+      return 'CrearFechaEspecial'
+    } else if (selectedItem === 'eventos') {
+      return 'CrearEvento'
+    }
+    return null
+  }
   return (
     <ScrollView
       style={styles.calendario3}
@@ -36,198 +53,65 @@ const CALENDARIO = () => {
           source={require('../assets/image-6.png')}
         />
       </View>
-      <View style={[styles.ionmenuParent, styles.ionmenuParentPosition]}>
-        <View style={styles.iconlylightOutlinesearchParent}>
-          <Image
-            style={styles.iconlylightOutlinesearch}
-            contentFit="cover"
-            source={require('../assets/iconlylightoutlinesearch8.png')}
-          />
-          <Pressable
-            style={[styles.iconlyboldfilter2, styles.iconlyboldfilterLayout]}
-            onPress={() => navigation.navigate('CrearEvento')}
-          >
-            <Image
-              style={styles.iconLayout}
-              contentFit="cover"
-              source={require('../assets/iconlylightoutlinecalendar6.png')}
-            />
-          </Pressable>
-        </View>
+
+      <View style={styles.ionmenuParent}>
+        <BarraBusqueda navigate={navigation.navigate} route={getRoute()} />
       </View>
+
       <Calendario />
       <View style={styles.frameParent}>
         <View style={styles.upcomingParent}>
-          <Text style={[styles.upcoming, styles.textTypo]}>UPCOMING</Text>
-          <View style={styles.iconlyboldfilter2Parent}>
-            <Pressable
-              onPress={() => navigation.navigate('RecopilacionDeRespuestas')}
+          <Pressable
+            style={[
+              styles.fechasContainer,
+              selectedItem === 'eventos' && styles.eventosContainer
+            ]}
+            onPress={() => {
+              handleItemPress('fechas')
+            }}
+          >
+            <Text
+              style={[
+                styles.fechas,
+                selectedItem === 'eventos' && styles.eventos
+              ]}
             >
-              <Image
-                style={[
-                  styles.iconlyboldfilter21,
-                  styles.iconlyboldfilterLayout
-                ]}
-                contentFit="cover"
-                source={require('../assets/iconlyboldfilter21.png')}
-              />
-            </Pressable>
-            <Pressable
-              style={styles.iconlyboldplus}
-              onPress={() => navigation.navigate('CALENDARIOCREARFECHAESPEC')}
+              Fechas
+            </Text>
+          </Pressable>
+          <Pressable
+            style={[
+              styles.eventosContainer,
+              selectedItem === 'eventos' && styles.fechasContainer
+            ]}
+            onPress={() => {
+              handleItemPress('eventos')
+            }}
+          >
+            <Text
+              style={[
+                styles.eventos,
+                selectedItem === 'eventos' && styles.fechas
+              ]}
             >
-              <Image
-                style={styles.iconLayout}
-                contentFit="cover"
-                source={require('../assets/iconlyboldplus.png')}
-              />
-            </Pressable>
-          </View>
-        </View>
-        <View style={styles.frameGroup}>
-          <Pressable
-            style={styles.frameContainer}
-            onPress={() => navigation.navigate('Invitacin')}
-          >
-            <View style={styles.unsplashilip77sbmoeParent}>
-              <Image
-                style={styles.unsplashilip77sbmoeIcon}
-                contentFit="cover"
-                source={require('../assets/unsplashilip77sbmoe.png')}
-              />
-              <Image
-                style={[styles.vectorIcon, styles.vectorIconPosition]}
-                contentFit="cover"
-                source={require('../assets/vector15.png')}
-              />
-            </View>
-            <View style={styles.TextWrapper}>
-              <Text style={[styles.marieContainerTypo]}>
-                <Text style={styles.textTypo}>{`Bruno `}</Text>
-                <Text style={styles.cumple28Aos}>cumple 28 años</Text>
-              </Text>
-            </View>
-          </Pressable>
-          <Pressable
-            style={[styles.framePressable, styles.frameFlexBox]}
-            onPress={() => navigation.navigate('Invitacin')}
-          >
-            <View style={styles.unsplashilip77sbmoeParent}>
-              <Image
-                style={styles.unsplashilip77sbmoeIcon}
-                contentFit="cover"
-                source={require('../assets/unsplashilip77sbmoe.png')}
-              />
-              <Image
-                style={[styles.vectorIcon, styles.vectorIconPosition]}
-                contentFit="cover"
-                source={require('../assets/vector15.png')}
-              />
-            </View>
-            <View style={styles.TextWrapper}>
-              <Text style={[styles.marieContainerTypo]}>
-                <Text style={styles.textTypo}>{`Bruno `}</Text>
-                <Text style={styles.cumple28Aos}>
-                  ha organizado un evento familiar
-                </Text>
-              </Text>
-            </View>
-          </Pressable>
-          <Pressable
-            style={[styles.frameWrapper, styles.frameFlexBox]}
-            onPress={() => navigation.navigate('Invitacin')}
-          >
-            <View style={styles.unsplashilip77sbmoeParent}>
-              <Image
-                style={styles.unsplashilip77sbmoeIcon}
-                contentFit="cover"
-                source={require('../assets/unsplashilip77sbmoe.png')}
-              />
-              <Image
-                style={[styles.vectorIcon, styles.vectorIconPosition]}
-                contentFit="cover"
-                source={require('../assets/vector15.png')}
-              />
-            </View>
-            <View style={styles.TextWrapper}>
-              <Text style={[styles.marieContainerTypo]}>
-                <Text style={styles.textTypo}>{`Marie `}</Text>
-                <Text style={styles.cumple28Aos}>cumple 28 años</Text>
-              </Text>
-            </View>
-          </Pressable>
-          <Pressable
-            style={[styles.framePressable, styles.frameFlexBox]}
-            onPress={() => navigation.navigate('Invitacin')}
-          >
-            <View style={styles.unsplashilip77sbmoeParent}>
-              <Image
-                style={styles.unsplashilip77sbmoeIcon}
-                contentFit="cover"
-                source={require('../assets/unsplashilip77sbmoe.png')}
-              />
-              <Image
-                style={[styles.vectorIcon, styles.vectorIconPosition]}
-                contentFit="cover"
-                source={require('../assets/vector15.png')}
-              />
-            </View>
-            <View style={styles.TextWrapper}>
-              <Text style={styles.marieContainerTypo}>
-                <Text style={styles.textTypo}>{`Marie `}</Text>
-                <Text style={styles.cumple28Aos}>
-                  ha organizado un evento familiar
-                </Text>
-              </Text>
-            </View>
+              Eventos
+            </Text>
           </Pressable>
         </View>
       </View>
+      {selectedItem === 'fechas' ? <Fechas /> : <Eventos />}
     </ScrollView>
   )
 }
 
 const styles = StyleSheet.create({
-  textTypo: {
-    color: Color.primario1,
-    fontFamily: FontFamily.lato,
-    fontWeight: '700'
-  },
-  iconlyboldfilterLayout: {
-    width: 24,
-    height: 24
-  },
   iconLayout: {
     height: 25,
     width: 25
   },
-  vectorIconPosition: {
-    top: '50%'
-  },
-  marieContainerTypo: {
-    textAlign: 'justify',
-    lineHeight: 22,
-    fontSize: FontSize.size_lg
-  },
-  frameFlexBox: {
-    marginTop: 20,
-    alignItems: 'center',
-    flexDirection: 'row'
-  },
   image6Icon: {
     width: 87,
     height: 55
-  },
-  text: {
-    fontSize: FontSize.size_13xl,
-    textAlign: 'left'
-  },
-  iconlyboldfilter2: {
-    height: 24
-  },
-  parent: {
-    alignItems: 'center',
-    flexDirection: 'row'
   },
   icon: {
     overflow: 'hidden'
@@ -236,133 +120,32 @@ const styles = StyleSheet.create({
     width: 26,
     height: 20
   },
-  iconlylightOutlinesearch: {
-    width: 20,
-    height: 20
-  },
-  iconlylightOutlinesearchParent: {
-    marginTop: '3%',
-    marginBottom: '3%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row',
-    gap: 15
-  },
   ionmenuParent: {
-    alignItems: 'center',
-    flexDirection: 'row',
-    left: 9
-  },
-  upcoming: {
-    fontSize: FontSize.size_xl
-  },
-  iconlyboldfilter21: {
-    height: 24
-  },
-  iconlyboldplus: {
-    width: 25,
-    height: 25
-  },
-  iconlyboldfilter2Parent: {
-    flexDirection: 'row',
-    gap: 15,
-    left: '18%'
+    flexDirection: 'row'
   },
   upcomingParent: {
     justifyContent: 'center',
     alignSelf: 'stretch',
     flexDirection: 'row',
-    marginTop: '2%'
-  },
-  unsplashilip77sbmoeIcon: {
-    width: 44,
-    height: 44,
-    zIndex: 0
-  },
-  vectorIcon: {
-    marginTop: -8,
-    zIndex: 1,
-    height: 15,
-    width: 20
-  },
-  unsplashilip77sbmoeParent: {
-    flexDirection: 'row'
-  },
-  cumple28Aos: {
-    color: Color.negro,
-    fontFamily: FontFamily.lato
+    marginTop: '2%',
+    height: 50
   },
   TextWrapper: {
     width: '80%'
   },
-  frameContainer: {
-    alignItems: 'center',
-    flexDirection: 'row'
-  },
-  frameView: {
-    height: 45,
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row'
-  },
   frameWrapper: {
     width: 388
-  },
-  marieHaOrganizadoContainer: {
-    width: 318
-  },
-  framePressable: {
-    alignSelf: 'stretch',
-    overflow: 'hidden'
-  },
-  frameGroup: {
-    marginTop: 19,
-    alignSelf: 'stretch'
   },
   frameParent: {
     alignItems: 'flex-end'
   },
-
-  separator: {
-    backgroundColor: Color.secundario,
-    height: 1
-  },
-  tue: {},
-  week: {
-    opacity: 0.5,
-    flexDirection: 'row'
-  },
-  header: {
-    paddingBottom: Padding.p_base,
-    alignSelf: 'stretch'
-  },
   background: {
     zIndex: 0
-  },
-  date: {
-    opacity: 0.1,
-    zIndex: 1
   },
   row: {
     alignSelf: 'stretch',
     flexDirection: 'row',
     flex: 1
-  },
-
-  eventoGraduacionIcon: {
-    width: 18,
-    zIndex: 3,
-    height: 15
-  },
-  icon5: {
-    width: 20,
-    height: 30
-  },
-  iconlylightOutlinesetting: {
-    top: '2.16%',
-    bottom: '95.25%',
-    width: '5.61%',
-    height: '2.59%'
   },
   calendario3: {
     width: '100%',
@@ -373,14 +156,38 @@ const styles = StyleSheet.create({
   topContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    width: '100%'
-  },
-  settingsPressable: {
-    left: '380%'
+    width: '100%',
+    justifyContent: 'space-between'
   },
   scrollViewContent: {
     flexGrow: 1,
     paddingBottom: 50
+  },
+  fechasContainer: {
+    backgroundColor: '#b7e4c0',
+    width: '50%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderTopLeftRadius: 15,
+    borderBottomLeftRadius: 15
+  },
+  eventosContainer: {
+    backgroundColor: Color.fAFAFA,
+    width: '50%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderTopRightRadius: 15,
+    borderBottomRightRadius: 15
+  },
+  fechas: {
+    fontSize: FontSize.size_xl,
+    color: Color.white,
+    fontWeight: '700'
+  },
+  eventos: {
+    fontSize: FontSize.size_xl,
+    color: Color.grisClaro,
+    fontWeight: '700'
   }
 })
 

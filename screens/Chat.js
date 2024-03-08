@@ -69,14 +69,12 @@ const Chat = () => {
       />
 
       <View style={[styles.rectangleParent, styles.parentFlexBox]}>
-        {/* <View  /> */}
         <TextInput style={styles.frameChild} />
         <LinearGradient
           style={[styles.button, styles.parentFlexBox]}
           locations={[0, 1]}
           colors={['#dee274', '#7ec18c']}
         >
-          {/* <TextInput /> */}
           <Image
             style={styles.sendIcon}
             contentFit="cover"
@@ -88,74 +86,6 @@ const Chat = () => {
       <Text style={[styles.hoy]}>Hoy</Text>
 
       <MessagesFromContact />
-
-      {/* <View style={[styles.chatChild, styles.chatChildPosition]} />
-      
-      <View style={styles.frameContainer}>
-        <View
-          style={[styles.holaPrimaCmoEstsSiiWrapper, styles.wrapperPosition]}
-        >
-          <Text
-            style={[styles.holaPrimaCmoContainer, styles.holaContainerTypo]}
-          >
-            Hola prima!!! Cómo estás?Sii, pero llegaremos un poco más tarde
-          </Text>
-        </View>
-        <View style={[styles.wrapper, styles.wrapperPosition]}>
-          <Text style={[styles.text, styles.holaContainerTypo]}>👍</Text>
-        </View>
-        <View style={styles.rectangleGroup}>
-          <View style={[styles.frameItem, styles.framePosition]} />
-          <View style={[styles.vectorParent, styles.frameWrapperFlexBox]}>
-            <Image
-              style={styles.vectorIcon1}
-              contentFit="cover"
-              source={require('../assets/vector16.png')}
-            />
-            <Text
-              style={[styles.holaPrimoCmoContainer, styles.holaContainerTypo]}
-            >
-              Hola primo!!! Cómo estás?Van a la casa de la abuela esta noche?
-            </Text>
-          </View>
-        </View>
-        <View style={[styles.rectangleContainer, styles.frameInnerLayout]}>
-          <View style={[styles.frameInner, styles.frameInnerLayout]} />
-          <View style={[styles.vectorParent, styles.frameWrapperFlexBox]}>
-            <Image
-              style={styles.vectorIcon1}
-              contentFit="cover"
-              source={require('../assets/vector16.png')}
-            />
-            <Text
-              style={[styles.holaPrimoCmoContainer, styles.holaContainerTypo]}
-            >
-              Perfecto, nos vemos!
-            </Text>
-          </View>
-        </View>
-        <View style={styles.frameView}>
-          <View style={[styles.rectangleView, styles.framePosition]} />
-          <View style={[styles.vectorParent, styles.frameWrapperFlexBox]}>
-            <Image
-              style={styles.vectorIcon1}
-              contentFit="cover"
-              source={require('../assets/vector16.png')}
-            />
-            <Text
-              style={[styles.holaPrimoCmoContainer, styles.holaContainerTypo]}
-            >
-              No olviden llevar bebida!!
-            </Text>
-          </View>
-        </View>
-        <Text style={[styles.hoy, styles.holaContainerTypo]}>Hoy</Text>
-      </View>
-      <Image
-        style={[styles.navigationIcon, styles.chatChildPosition]}
-        contentFit="cover"
-        source={require('../assets/navigation11.png')}
-      /> */}
     </View>
   )
 }
