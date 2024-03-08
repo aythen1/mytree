@@ -21,46 +21,46 @@ const BookSVG = ({ isNavigation }) => {
         <Path
           d="M16.6801 16.4355H8.42871"
           stroke="#7EC18C"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <Path
           d="M16.6801 11.9238H8.42871"
           stroke="#7EC18C"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <Path
           d="M11.5783 7.41309H8.42969"
           stroke="#7EC18C"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <Path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M2.98242 12.0004C2.98242 20.3248 5.38014 23.1004 12.5721 23.1004C19.7653 23.1004 22.1619 20.3248 22.1619 12.0004C22.1619 3.67599 19.7653 0.900391 12.5721 0.900391C5.38014 0.900391 2.98242 3.67599 2.98242 12.0004Z"
           stroke="#7EC18C"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <Path
           d="M1.11914 7.21973L4.88003 7.21973"
           stroke="#7EC18C"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <Path
           d="M1.11914 16.9141L4.88003 16.9141"
           stroke="#7EC18C"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </Svg>
     </Pressable>

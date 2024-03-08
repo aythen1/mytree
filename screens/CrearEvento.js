@@ -55,7 +55,7 @@ const CrearEvento = () => {
           <View style={[styles.backParent, styles.buttonBarFlexBox]}>
             <Pressable
               style={styles.backLayout}
-              onPress={() => navigation.navigate('CALENDARIO')}
+              onPress={() => navigation.goBack()}
             >
               <Image
                 style={styles.iconLayout}

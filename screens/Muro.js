@@ -6,7 +6,6 @@ import {
   Text,
   Pressable,
   Modal,
-  TouchableWithoutFeedback,
   ScrollView
 } from 'react-native'
 import { setPanel } from '../redux/slices/panel.slices'
@@ -21,13 +20,15 @@ import HeaderIcons from '../components/HeaderIcons'
 import LupaSVG from '../components/svgs/LupaSVG'
 import MessageSVG from '../components/svgs/MessageSVG'
 import NotificationsMuroSVG from '../components/svgs/NotificationsMuroSVG'
-import CalendarSVG from '../components/svgs/CalendarSVG'
 import CalendarMuroSVG from '../components/svgs/CalendarMuroSVG'
-import SettingSVG from '../components/svgs/SettingSVG'
 import SettingMuroSVG from '../components/svgs/SettingMuroSVG'
+import { useNavigation } from '@react-navigation/native'
+// import CalendarSVG from '../components/svgs/CalendarSVG'
+// import SettingSVG from '../components/svgs/SettingSVG'
 
 const Muro = () => {
   const dispatch = useDispatch()
+  const navigation = useNavigation()
 
   const { showPanel } = useSelector((state) => state.panel)
 
@@ -67,7 +68,11 @@ const Muro = () => {
               icons={
                 !showRetos
                   ? [
-                      <LupaSVG />,
+                      <Pressable
+                        onPress={() => navigation.navigate('Busqueda')}
+                      >
+                        <LupaSVG />
+                      </Pressable>,
                       <MessageSVG />,
                       <NotificationsMuroSVG
                         isNavigation={'PERFILNOTIFICACIONES'}

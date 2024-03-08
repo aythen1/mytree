@@ -22,7 +22,7 @@ const Messages = () => {
             key={message.id}
             style={styles.frameLayout}
             onPress={() => {
-              navigation.navigate('Bsqueda')
+              navigation.navigate('Chat')
               dispatch(setMessage(message))
             }}
           >
@@ -64,23 +64,6 @@ const Messages = () => {
           </Pressable>
         ))}
       </ScrollView>
-      {/* <Pressable
-        style={[styles.newMessage, styles.vectorIconPosition]}
-        onPress={() => {
-          navigation.navigate('Bsqueda')
-        }}
-      >
-        <LinearGradient
-          style={[styles.surface, styles.iconLayout]}
-          locations={[0, 1]}
-          colors={['#dee274', '#7ec18c']}
-        />
-      </Pressable>
-      <Image
-        style={styles.iconlyboldedit}
-        contentFit="cover"
-        source={require('../assets/iconlyboldedit1.png')}
-      /> */}
     </>
   )
 }

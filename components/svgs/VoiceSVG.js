@@ -23,8 +23,8 @@ const VoiceSVG = () => {
           y2="24.6296"
           gradientUnits="userSpaceOnUse"
         >
-          <Stop stop-color="#E2E57A" />
-          <Stop offset="1" stop-color="#7FC08B" />
+          <Stop stopColor="#E2E57A" />
+          <Stop offset="1" stopColor="#7FC08B" />
         </LinearGradient>
       </Defs>
     </Svg>

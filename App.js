@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { NavigationContainer } from '@react-navigation/native'
-import Fecha from './screens/Fecha'
 import AadirAlbum from './screens/AadirAlbum'
 import Tiempo from './screens/Tiempo'
 import Album from './screens/Album'
 import Etapas from './screens/Etapas'
 import Privacidad from './screens/Privacidad'
-import Cancion from './screens/Cancion'
 import SubeTusRecuerdos from './screens/SubeTusRecuerdos'
 import LOGIN from './screens/LOGIN'
 import Onboarding from './screens/Onboarding'
@@ -14,34 +12,17 @@ import Onboarding1 from './screens/Onboarding1'
 import OpcionesFamiliar from './components/OpcionesFamiliar'
 import MiSalud from './screens/MiSalud'
 import MiInformacinPersonal from './screens/MiInformacinPersonal'
-import PopupDiario from './components/PopupDiario'
-import CreacinInfante from './components/CreacinInfante'
-import AadirPregunta from './components/AadirPregunta'
-import SexoInfante from './components/SexoInfante'
 import RETOSMSVOTADOS from './screens/RETOSMSVOTADOS'
 import Valorar from './screens/Valorar'
 import ETIQUETADO from './components/ETIQUETADO'
 import AadirRecuerdo from './screens/AadirRecuerdo'
 import AadirRecuerdo1 from './screens/AadirRecuerdo1'
-import Compartir from './components/Compartir'
 import CrearLbum from './screens/CrearLbum'
 import MisAlbumesFamiliares from './screens/MisAlbumesFamiliares'
 import SuscritoConExito from './screens/SuscritoConExito'
-import CONFIRMARPARENTESCO from './components/CONFIRMARPARENTESCO'
 import ConfirmarAsistencia from './components/ConfirmarAsistencia'
-import Lugar from './components/Lugar'
-import Lugar1 from './components/Lugar1'
-import Lugar2 from './components/Lugar2'
-import Lugar3 from './components/Lugar3'
-import Fecha1 from './components/Fecha1'
-import FECHA2 from './components/FECHA2'
-import FECHA3 from './components/FECHA3'
 import FECHA4 from './screens/FECHA4'
-import Fecha5 from './components/Fecha5'
-import FECHA6 from './components/FECHA6'
-import AadirEtapa from './components/AadirEtapa'
 import AadirAUnAlbum from './screens/AadirAUnAlbum'
-import Cancion1 from './components/Cancion1'
 import CrearAlbum from './screens/CrearAlbum'
 import Organizador from './screens/Organizador'
 import RetosFamiliaresCumplido from './screens/RetosFamiliaresCumplido'
@@ -56,7 +37,6 @@ import AADIRAADIRINFANTE from './screens/AADIRAADIRINFANTE'
 import TarjetaDigital from './screens/TarjetaDigital'
 import MUROALERTAS1 from './screens/MUROALERTAS1'
 import MENSAJERA from './screens/MENSAJERA'
-import Bsqueda from './screens/Bsqueda'
 import MisFamiliares from './screens/MisFamiliares'
 import MisFamiliares1 from './screens/MisFamiliares1'
 import Busqueda from './screens/Busqueda/Busqueda'
@@ -95,11 +75,9 @@ import FormaDeEnvo from './components/FormaDeEnvo'
 import OpcionesTituloDelEvento from './components/OpcionesTituloDelEvento'
 import CrearEvento from './screens/CrearEvento'
 import OpcionesAmigo from './components/OpcionesAmigo'
-import BuscadorPersona from './components/BuscadorPersona'
 import Parentezco from './components/Parentezco'
 import BOTONInvitarAmigos from './screens/BOTONInvitarAmigos'
 import BOTONInvitarAmigos1 from './screens/BOTONInvitarAmigos1'
-import Aadir from './components/Aadir'
 import Aadir1 from './components/Aadir1'
 import PERFILNOTIFICACIONES from './screens/PERFILNOTIFICACIONES'
 import PerfilVerificacion from './screens/Perfil/Ajustes/PerfilVerificacion'
@@ -144,6 +122,7 @@ import REGISTROPOLTICASDEPRIVAC from './screens/REGISTROPOLTICASDEPRIVAC'
 import REGISTROTRMINOSYCONDICIO from './screens/REGISTROTRMINOSYCONDICIO'
 import REGISTRONOMBRE from './screens/REGISTRONOMBRE'
 import Suscripciones from './screens/Perfil/Ajustes/Suscripciones'
+import CrearGrupo from './screens/CrearGrupo'
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { loadFonts } from './GlobalStyles'
@@ -184,11 +163,6 @@ const App = () => {
           })}
         >
           <Stack.Screen
-            name="Fecha"
-            component={Fecha}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="AadirAlbum"
             component={AadirAlbum}
             options={{ headerShown: false }}
@@ -211,11 +185,6 @@ const App = () => {
           <Stack.Screen
             name="Privacidad"
             component={Privacidad}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Cancion"
-            component={Cancion}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -254,26 +223,6 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="PopupDiario"
-            component={PopupDiario}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="CreacinInfante"
-            component={CreacinInfante}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="AadirPregunta"
-            component={AadirPregunta}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="SexoInfante"
-            component={SexoInfante}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="RETOSMSVOTADOS"
             component={RETOSMSVOTADOS}
             options={{ headerShown: false }}
@@ -304,11 +253,6 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="Compartir"
-            component={Compartir}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="CrearLbum"
             component={CrearLbum}
             options={{ headerShown: false }}
@@ -324,48 +268,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="CONFIRMARPARENTESCO"
-            component={CONFIRMARPARENTESCO}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="ConfirmarAsistencia"
             component={ConfirmarAsistencia}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Lugar"
-            component={Lugar}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Lugar1"
-            component={Lugar1}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Lugar2"
-            component={Lugar2}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Lugar3"
-            component={Lugar3}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Fecha1"
-            component={Fecha1}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="FECHA2"
-            component={FECHA2}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="FECHA3"
-            component={FECHA3}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -374,28 +278,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="Fecha5"
-            component={Fecha5}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="FECHA6"
-            component={FECHA6}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="AadirEtapa"
-            component={AadirEtapa}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="AadirAUnAlbum"
             component={AadirAUnAlbum}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Cancion1"
-            component={Cancion1}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -471,11 +355,6 @@ const App = () => {
           <Stack.Screen
             name="MENSAJERA"
             component={MENSAJERA}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Bsqueda"
-            component={Bsqueda}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -669,11 +548,6 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="BuscadorPersona"
-            component={BuscadorPersona}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="Parentezco"
             component={Parentezco}
             options={{ headerShown: false }}
@@ -686,11 +560,6 @@ const App = () => {
           <Stack.Screen
             name="BOTONInvitarAmigos1"
             component={BOTONInvitarAmigos1}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Aadir"
-            component={Aadir}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -931,6 +800,11 @@ const App = () => {
           <Stack.Screen
             name="Suscripciones"
             component={Suscripciones}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="CrearGrupo"
+            component={CrearGrupo}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>

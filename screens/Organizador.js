@@ -21,7 +21,6 @@ import { setPanel } from '../redux/slices/panel.slices'
 import Etapas from './Etapas'
 import SubeTusRecuerdos from './SubeTusRecuerdos'
 import Privacidad from './Privacidad'
-import Cancion from './Cancion'
 import Album from './Album'
 import PopUpCalendario from '../components/PopUpCalendario'
 
@@ -29,22 +28,22 @@ const Organizador = () => {
   const dispatch = useDispatch()
 
   const { showPanel } = useSelector((state) => state.panel)
-  const [uploadRecuerdo, setUploadRecuerdo] = useState(false)
+
   const [legado, setLegado] = useState(false)
   const [album, setAlbum] = useState(false)
   const [selectedAlbum, setSelectedAlbum] = useState(false)
-  const [cancion, setCancion] = useState(false)
   const [añadirAUnAlbum, setAñadirAUnAlbum] = useState(false)
   const [calendario, setCalendario] = useState(false)
   const [lugar, setLugar] = useState(false)
-  const [ischecked, setIschecked] = useState(false)
-  const [submit, setSubmit] = useState(false)
-  const [buttonContainer1Visible, setButtonContainer1Visible] = useState(false)
   const [frameContainer2Visible, setFrameContainer2Visible] = useState(false)
-  const [frameContainer5Visible, setFrameContainer5Visible] = useState(false)
-
+  const [submit, setSubmit] = useState(false)
   const [showEtapas, setShowEtapas] = useState(false)
-  const [showPrivacidad, setShowPrivacidad] = useState(false)
+  // const [uploadRecuerdo, setUploadRecuerdo] = useState(false)
+  // const [cancion, setCancion] = useState(false)
+  // const [ischecked, setIschecked] = useState(false)
+  // const [buttonContainer1Visible, setButtonContainer1Visible] = useState(false)
+  // const [frameContainer5Visible, setFrameContainer5Visible] = useState(false)
+  // const [showPrivacidad, setShowPrivacidad] = useState(false)
 
   const closeSubmit = () => {
     setSubmit(false)
@@ -58,13 +57,13 @@ const Organizador = () => {
     setSelectedAlbum(false)
   }, [])
 
-  const openAlbum = useCallback(() => {
-    setAñadirAUnAlbum(true)
-  }, [])
+  // const openAlbum = useCallback(() => {
+  //   setAñadirAUnAlbum(true)
+  // }, [])
 
-  const closeAlbum = useCallback(() => {
-    setAñadirAUnAlbum(false)
-  }, [])
+  // const closeAlbum = useCallback(() => {
+  //   setAñadirAUnAlbum(false)
+  // }, [])
 
   const openLugar = useCallback(() => {
     setLugar(true)
@@ -82,21 +81,21 @@ const Organizador = () => {
     setCalendario(false)
   }, [])
 
-  const openCancion = useCallback(() => {
-    setCancion(true)
-  }, [])
+  // const openCancion = useCallback(() => {
+  //   setCancion(true)
+  // }, [])
 
-  const closeCancion = useCallback(() => {
-    setCancion(false)
-  }, [])
+  // const closeCancion = useCallback(() => {
+  //   setCancion(false)
+  // }, [])
 
-  const openUploadRecuerdo = useCallback(() => {
-    setUploadRecuerdo(true)
-  }, [])
+  // const openUploadRecuerdo = useCallback(() => {
+  //   setUploadRecuerdo(true)
+  // }, [])
 
-  const closeUploadRecuerdo = useCallback(() => {
-    setUploadRecuerdo(false)
-  }, [])
+  // const closeUploadRecuerdo = useCallback(() => {
+  //   setUploadRecuerdo(false)
+  // }, [])
 
   const openEtapas = useCallback(() => {
     setShowEtapas(true)
@@ -106,21 +105,21 @@ const Organizador = () => {
     setShowEtapas(false)
   }, [])
 
-  const openPrivacidad = useCallback(() => {
-    setShowPrivacidad(true)
-  }, [])
+  // const openPrivacidad = useCallback(() => {
+  //   setShowPrivacidad(true)
+  // }, [])
 
-  const closePrivacidad = useCallback(() => {
-    setShowPrivacidad(false)
-  }, [])
+  // const closePrivacidad = useCallback(() => {
+  //   setShowPrivacidad(false)
+  // }, [])
 
-  const openButtonContainer1 = useCallback(() => {
-    setButtonContainer1Visible(true)
-  }, [])
+  // const openButtonContainer1 = useCallback(() => {
+  //   setButtonContainer1Visible(true)
+  // }, [])
 
-  const closeButtonContainer1 = useCallback(() => {
-    setButtonContainer1Visible(false)
-  }, [])
+  // const closeButtonContainer1 = useCallback(() => {
+  //   setButtonContainer1Visible(false)
+  // }, [])
 
   const openFrameContainer2 = useCallback(() => {
     setFrameContainer2Visible(true)
@@ -130,13 +129,13 @@ const Organizador = () => {
     setFrameContainer2Visible(false)
   }, [])
 
-  const openFrameContainer5 = useCallback(() => {
-    setFrameContainer5Visible(true)
-  }, [])
+  // const openFrameContainer5 = useCallback(() => {
+  //   setFrameContainer5Visible(true)
+  // }, [])
 
-  const closeFrameContainer5 = useCallback(() => {
-    setFrameContainer5Visible(false)
-  }, [])
+  // const closeFrameContainer5 = useCallback(() => {
+  //   setFrameContainer5Visible(false)
+  // }, [])
 
   return (
     <>
@@ -178,7 +177,7 @@ const Organizador = () => {
                       </View>
                       <Pressable
                         style={[styles.button1, styles.buttonPosition]}
-                        onPress={openButtonContainer1}
+                        // onPress={openButtonContainer1}
                       >
                         <Text style={[styles.aadir, styles.aadirPosition]}>
                           Añadir #
@@ -187,7 +186,7 @@ const Organizador = () => {
                     </View>
                   </View>
                   <View style={styles.fieldParent}>
-                    <Image
+                    {/* <Image
                       style={styles.frameChild}
                       contentFit="cover"
                       source={require('../assets/line-802.png')}
@@ -207,12 +206,8 @@ const Organizador = () => {
                       <Text style={[styles.anexoArchivo, styles.etiquetarTypo]}>
                         Anexo archivo
                       </Text>
-                    </Pressable>
-                    <Image
-                      style={styles.frameItem}
-                      contentFit="cover"
-                      source={require('../assets/line-802.png')}
-                    />
+                    </Pressable> */}
+
                     <Pressable
                       style={[
                         styles.iconlybolddocumentParent,
@@ -229,7 +224,7 @@ const Organizador = () => {
                         Etiquetar
                       </Text>
                     </Pressable>
-                    <Image
+                    {/* <Image
                       style={styles.frameItem}
                       contentFit="cover"
                       source={require('../assets/line-802.png')}
@@ -249,7 +244,7 @@ const Organizador = () => {
                       <Text style={[styles.aadirAudio, styles.etiquetarTypo]}>
                         Añadir audio
                       </Text>
-                    </Pressable>
+                    </Pressable> */}
                     <Image
                       style={styles.frameItem}
                       contentFit="cover"
@@ -377,7 +372,7 @@ const Organizador = () => {
                       contentFit="cover"
                       source={require('../assets/line-802.png')}
                     />
-                    {!añadirAUnAlbum && (
+                    {/* {!añadirAUnAlbum && (
                       <View style={[styles.frameWrapper, styles.frameLayout]}>
                         <View
                           style={[styles.checkParent, styles.button2FlexBox]}
@@ -388,7 +383,7 @@ const Organizador = () => {
                             style={styles.vectorIcon1}
                             contentFit="cover"
                             source={require('../assets/vector.png')}
-                          /> */}
+                          /> 
                             <Checkbox
                               value={ischecked}
                               onValueChange={setIschecked}
@@ -401,13 +396,8 @@ const Organizador = () => {
                           </Text>
                         </View>
                       </View>
-                    )}
-                    <Image
-                      style={styles.frameItem}
-                      contentFit="cover"
-                      source={require('../assets/line-802.png')}
-                    />
-                    {!añadirAUnAlbum && (
+                    )} */}
+                    {/* {!añadirAUnAlbum && (
                       <View style={[styles.frameView, styles.parentFlexBox]}>
                         <Pressable
                           style={styles.opcionesDePrivacidadWrapper}
@@ -428,7 +418,7 @@ const Organizador = () => {
                           source={require('../assets/arrowdown23.png')}
                         />
                       </View>
-                    )}
+                    )} */}
                   </View>
                 </View>
               </View>
@@ -465,7 +455,7 @@ const Organizador = () => {
         </View>
       </Modal>
 
-      <Modal animationType="fade" transparent visible={showPrivacidad}>
+      {/* <Modal animationType="fade" transparent visible={showPrivacidad}>
         <View style={styles.buttonContainer1Overlay}>
           <Pressable
             style={styles.buttonContainer1Bg}
@@ -473,20 +463,6 @@ const Organizador = () => {
           >
             <Privacidad onClose={closePrivacidad} />
           </Pressable>
-        </View>
-      </Modal>
-
-      {/* <Modal
-        animationType="slide"
-        transparent
-        visible={buttonContainer1Visible}
-      >
-        <View style={styles.buttonContainer1Overlay}>
-          <Pressable
-            style={styles.frameContainer2Bg}
-            onPress={closeButtonContainer1}
-          />
-          <Cancion1 onClose={closeButtonContainer1} />
         </View>
       </Modal> */}
 
@@ -500,7 +476,7 @@ const Organizador = () => {
         </View>
       </Modal>
 
-      <Modal animationType="slide" transparent visible={uploadRecuerdo}>
+      {/* <Modal animationType="slide" transparent visible={uploadRecuerdo}>
         <View style={styles.frameContainer2Overlay}>
           <Pressable
             style={styles.frameContainer2Bg}
@@ -508,14 +484,7 @@ const Organizador = () => {
           />
           <SubeTusRecuerdos onClose={closeUploadRecuerdo} />
         </View>
-      </Modal>
-
-      <Modal animationType="slide" transparent visible={cancion}>
-        <View style={styles.frameContainer2Overlay}>
-          <Pressable style={styles.frameContainer2Bg} onPress={closeCancion} />
-          <Cancion onClose={closeCancion} />
-        </View>
-      </Modal>
+      </Modal> */}
 
       <Modal animationType="slide" transparent visible={calendario}>
         <View style={styles.frameContainer2Overlay}>

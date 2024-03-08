@@ -16,22 +16,22 @@ import {
   FontFamily,
   Color
 } from '../../GlobalStyles'
-import BusquedaRetos from './BusquedaComponents/BusquedaRetos'
 import BusquedaContactos from './BusquedaComponents/BusquedaContactos'
 import BusquedaPublicaciones from './BusquedaComponents/BusquedaPublicaciones'
 import BusquedaDiarios from './BusquedaComponents/BusquedaDiarios'
 import BusquedaHashtags from './BusquedaComponents/BusquedaHashtags'
 import BusquedaEventos from './BusquedaComponents/BusquedaEventos'
+import MasBusquedaSVG from '../../components/svgs/MasBusquedaSVG'
+import BarraBusqueda from '../../components/BarraBusqueda'
 
 const Busqueda = () => {
   const navigation = useNavigation()
 
-  const [selectedComponent, setSelectedComponent] = useState('BusquedaRetos')
+  const [selectedComponent, setSelectedComponent] =
+    useState('BusquedaContactos')
 
   const renderSelectedComponent = () => {
     switch (selectedComponent) {
-      case 'BusquedaRetos':
-        return <BusquedaRetos />
       case 'BusquedaContactos':
         return <BusquedaContactos />
       case 'BusquedaPublicaciones':
@@ -68,55 +68,14 @@ const Busqueda = () => {
           </Pressable>
           <Text style={[styles.bsqueda1, styles.bsqueda1Typo]}>Búsqueda</Text>
         </View>
-        <View style={styles.header}>
-          <View style={styles.searchBar}>
-            <Image
-              style={styles.iconlylightOutlinesearch}
-              contentFit="cover"
-              source={require('../../assets/iconlylightoutlinesearch4.png')}
-            />
-            <View style={styles.placeholderInput}>
-              <TextInput
-                style={styles.search}
-                placeholder="Search"
-                placeholderTextColor={Color.textPlaceholder}
-              />
-            </View>
-          </View>
-          <View style={styles.iconlylightsendCopyWrapper}>
-            <Image
-              style={styles.back}
-              contentFit="cover"
-              source={require('../../assets/iconlylightsend-copy1.png')}
-            />
-          </View>
-        </View>
+
+        <BarraBusqueda />
 
         <ScrollView
           style={styles.tabsParent}
           horizontal={true}
           showsHorizontalScrollIndicator={false}
         >
-          <Pressable
-            style={[
-              selectedComponent === 'BusquedaRetos'
-                ? styles.tabs
-                : styles.contactosWrapper,
-              styles.tabsFlexBox
-            ]}
-            onPress={() => setSelectedComponent('BusquedaRetos')}
-          >
-            <Text
-              style={[
-                selectedComponent === 'BusquedaRetos'
-                  ? styles.retos
-                  : styles.contactos,
-                styles.retosTypo
-              ]}
-            >
-              Retos
-            </Text>
-          </Pressable>
           <Pressable
             style={[
               selectedComponent === 'BusquedaContactos'
@@ -290,46 +249,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     top: '5%'
   },
-  iconlylightOutlinesearch: {
-    width: 20,
-    height: 20
-  },
-  search: {
-    fontSize: FontSize.size_sm,
-    lineHeight: 21,
-    fontStyle: 'italic',
-    fontWeight: '200',
-    fontFamily: FontFamily.nunito,
-    color: Color.textPlaceholder,
-    letterSpacing: 0,
-    textAlign: 'left'
-  },
-  placeholderInput: {
-    marginLeft: 6,
-    flexDirection: 'row',
-    flex: 1
-  },
-  searchBar: {
-    backgroundColor: Color.fAFAFA,
-    paddingHorizontal: Padding.p_sm,
-    paddingVertical: Padding.p_5xs,
-    borderRadius: Border.br_3xs,
-    width: '100%',
-    flexDirection: 'row'
-  },
   iconlylightsendCopyWrapper: {
     borderRadius: Border.br_xl,
     backgroundColor: Color.backgroundGreyBackground,
     padding: Padding.p_7xs,
     marginLeft: 16,
     flexDirection: 'row'
-  },
-  header: {
-    alignItems: 'center',
-    flexDirection: 'row',
-    width: '80%',
-    backgroundColor: Color.white,
-    top: '15%'
   },
   retos: {
     color: Color.primario1,

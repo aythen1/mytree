@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { StyleSheet, View, Text, Pressable, ScrollView } from 'react-native'
 import { Image } from 'expo-image'
 import { useNavigation } from '@react-navigation/native'
-import { Color, FontFamily, FontSize, Padding } from '../GlobalStyles'
+import { Color, FontFamily, FontSize, Padding, Border } from '../GlobalStyles'
 import { setPanel } from '../redux/slices/panel.slices'
 import Calendario from '../components/Calendario'
+import BarraBusqueda from '../components/BarraBusqueda'
 
 const CALENDARIO = () => {
   const navigation = useNavigation()
@@ -36,52 +37,19 @@ const CALENDARIO = () => {
           source={require('../assets/image-6.png')}
         />
       </View>
-      <View style={[styles.ionmenuParent, styles.ionmenuParentPosition]}>
-        <View style={styles.iconlylightOutlinesearchParent}>
-          <Image
-            style={styles.iconlylightOutlinesearch}
-            contentFit="cover"
-            source={require('../assets/iconlylightoutlinesearch8.png')}
-          />
-          <Pressable
-            style={[styles.iconlyboldfilter2, styles.iconlyboldfilterLayout]}
-            onPress={() => navigation.navigate('CrearEvento')}
-          >
-            <Image
-              style={styles.iconLayout}
-              contentFit="cover"
-              source={require('../assets/iconlylightoutlinecalendar6.png')}
-            />
-          </Pressable>
-        </View>
+
+      <View style={styles.ionmenuParent}>
+        <BarraBusqueda />
       </View>
+
       <Calendario />
       <View style={styles.frameParent}>
         <View style={styles.upcomingParent}>
-          <Text style={[styles.upcoming, styles.textTypo]}>UPCOMING</Text>
-          <View style={styles.iconlyboldfilter2Parent}>
-            <Pressable
-              onPress={() => navigation.navigate('RecopilacionDeRespuestas')}
-            >
-              <Image
-                style={[
-                  styles.iconlyboldfilter21,
-                  styles.iconlyboldfilterLayout
-                ]}
-                contentFit="cover"
-                source={require('../assets/iconlyboldfilter21.png')}
-              />
-            </Pressable>
-            <Pressable
-              style={styles.iconlyboldplus}
-              onPress={() => navigation.navigate('CALENDARIOCREARFECHAESPEC')}
-            >
-              <Image
-                style={styles.iconLayout}
-                contentFit="cover"
-                source={require('../assets/iconlyboldplus.png')}
-              />
-            </Pressable>
+          <View style={styles.fechasContainer}>
+            <Text style={styles.fechas}>Fechas</Text>
+          </View>
+          <View style={styles.eventosContainer}>
+            <Text style={styles.eventos}>Eventos</Text>
           </View>
         </View>
         <View style={styles.frameGroup}>
@@ -193,10 +161,6 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.lato,
     fontWeight: '700'
   },
-  iconlyboldfilterLayout: {
-    width: 24,
-    height: 24
-  },
   iconLayout: {
     height: 25,
     width: 25
@@ -218,17 +182,6 @@ const styles = StyleSheet.create({
     width: 87,
     height: 55
   },
-  text: {
-    fontSize: FontSize.size_13xl,
-    textAlign: 'left'
-  },
-  iconlyboldfilter2: {
-    height: 24
-  },
-  parent: {
-    alignItems: 'center',
-    flexDirection: 'row'
-  },
   icon: {
     overflow: 'hidden'
   },
@@ -236,43 +189,15 @@ const styles = StyleSheet.create({
     width: 26,
     height: 20
   },
-  iconlylightOutlinesearch: {
-    width: 20,
-    height: 20
-  },
-  iconlylightOutlinesearchParent: {
-    marginTop: '3%',
-    marginBottom: '3%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row',
-    gap: 15
-  },
   ionmenuParent: {
-    alignItems: 'center',
-    flexDirection: 'row',
-    left: 9
-  },
-  upcoming: {
-    fontSize: FontSize.size_xl
-  },
-  iconlyboldfilter21: {
-    height: 24
-  },
-  iconlyboldplus: {
-    width: 25,
-    height: 25
-  },
-  iconlyboldfilter2Parent: {
-    flexDirection: 'row',
-    gap: 15,
-    left: '18%'
+    flexDirection: 'row'
   },
   upcomingParent: {
     justifyContent: 'center',
     alignSelf: 'stretch',
     flexDirection: 'row',
-    marginTop: '2%'
+    marginTop: '2%',
+    height: 50
   },
   unsplashilip77sbmoeIcon: {
     width: 44,
@@ -299,17 +224,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row'
   },
-  frameView: {
-    height: 45,
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row'
-  },
   frameWrapper: {
     width: 388
-  },
-  marieHaOrganizadoContainer: {
-    width: 318
   },
   framePressable: {
     alignSelf: 'stretch',
@@ -322,47 +238,13 @@ const styles = StyleSheet.create({
   frameParent: {
     alignItems: 'flex-end'
   },
-
-  separator: {
-    backgroundColor: Color.secundario,
-    height: 1
-  },
-  tue: {},
-  week: {
-    opacity: 0.5,
-    flexDirection: 'row'
-  },
-  header: {
-    paddingBottom: Padding.p_base,
-    alignSelf: 'stretch'
-  },
   background: {
     zIndex: 0
-  },
-  date: {
-    opacity: 0.1,
-    zIndex: 1
   },
   row: {
     alignSelf: 'stretch',
     flexDirection: 'row',
     flex: 1
-  },
-
-  eventoGraduacionIcon: {
-    width: 18,
-    zIndex: 3,
-    height: 15
-  },
-  icon5: {
-    width: 20,
-    height: 30
-  },
-  iconlylightOutlinesetting: {
-    top: '2.16%',
-    bottom: '95.25%',
-    width: '5.61%',
-    height: '2.59%'
   },
   calendario3: {
     width: '100%',
@@ -373,14 +255,38 @@ const styles = StyleSheet.create({
   topContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    width: '100%'
-  },
-  settingsPressable: {
-    left: '380%'
+    width: '100%',
+    justifyContent: 'space-between'
   },
   scrollViewContent: {
     flexGrow: 1,
     paddingBottom: 50
+  },
+  fechasContainer: {
+    backgroundColor: '#b7e4c0',
+    width: '50%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderTopLeftRadius: 15,
+    borderBottomLeftRadius: 15
+  },
+  eventosContainer: {
+    backgroundColor: Color.fAFAFA,
+    width: '50%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderTopRightRadius: 15,
+    borderBottomRightRadius: 15
+  },
+  fechas: {
+    fontSize: FontSize.size_xl,
+    color: Color.white,
+    fontWeight: '700'
+  },
+  eventos: {
+    fontSize: FontSize.size_xl,
+    color: Color.grisClaro,
+    fontWeight: '700'
   }
 })
 

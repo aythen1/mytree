@@ -21,7 +21,6 @@ import { setPanel } from '../redux/slices/panel.slices'
 import Etapas from './Etapas'
 import SubeTusRecuerdos from './SubeTusRecuerdos'
 import Privacidad from './Privacidad'
-import Cancion from './Cancion'
 import Album from './Album'
 import PopUpCalendario from '../components/PopUpCalendario'
 
@@ -483,13 +482,6 @@ const CrearAlbum = () => {
             onPress={closeUploadRecuerdo}
           />
           <SubeTusRecuerdos onClose={closeUploadRecuerdo} />
-        </View>
-      </Modal>
-
-      <Modal animationType="slide" transparent visible={cancion}>
-        <View style={styles.frameContainer2Overlay}>
-          <Pressable style={styles.frameContainer2Bg} onPress={closeCancion} />
-          <Cancion onClose={closeCancion} />
         </View>
       </Modal>
 
