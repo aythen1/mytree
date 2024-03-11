@@ -17,6 +17,7 @@ import {
   Padding
 } from '../../GlobalStyles'
 import { LinearGradient } from 'expo-linear-gradient'
+import { useNavigation } from '@react-navigation/native'
 import BarraBusqueda from '../../components/BarraBusqueda'
 import CalendarCheckSVG from '../../components/svgs/CalendarCheckSVG'
 import RegaloSVG from '../../components/svgs/RegaloSVG'
@@ -26,6 +27,8 @@ import UbicacionSVG from '../../components/svgs/UbicacionSVG'
 import PopUpCalendario from '../../components/PopUpCalendario'
 
 const MasDetallesEventos = () => {
+  const navigation = useNavigation()
+
   const [calendar, setCalendar] = useState(null)
 
   const openCalendar = () => {
