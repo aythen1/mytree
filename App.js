@@ -13,7 +13,6 @@ import MiSalud from './screens/MiSalud'
 import MiInformacinPersonal from './screens/MiInformacinPersonal'
 import RETOSMSVOTADOS from './screens/RETOSMSVOTADOS'
 import Valorar from './screens/Valorar'
-import ETIQUETADO from './components/ETIQUETADO'
 import AadirRecuerdo from './screens/AadirRecuerdo'
 import AadirRecuerdo1 from './screens/AadirRecuerdo1'
 import CrearLbum from './screens/CrearLbum'
@@ -81,11 +80,6 @@ import MIDIARIOENTRADATEXTOPL3 from './screens/MIDIARIOENTRADATEXTOPL3'
 import MIDIARIOENTRADATEXTOPL4 from './screens/MIDIARIOENTRADATEXTOPL4'
 import MIDIARIOENTRADATEXTOPL5 from './screens/MIDIARIOENTRADATEXTOPL5'
 import MIDIARIOENTRADATEXTOPL7 from './screens/MIDIARIOENTRADATEXTOPL7'
-import OpcionesCaategora from './components/OpcionesCaategora'
-import OpcionesFormatoFecha from './components/OpcionesFormatoFecha'
-import OpcionesCulturas from './components/OpcionesCulturas'
-import OpcionesInicioDeSemana from './components/OpcionesInicioDeSemana'
-import OpcionesIdioma from './components/OpcionesIdioma'
 import CALENDARIO from './screens/CALENDARIO'
 import Success from './screens/Success'
 import Splash from './screens/Splash'
@@ -201,11 +195,6 @@ const App = () => {
           <Stack.Screen
             name="FiltroEdicion"
             component={FiltroEdicion}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="ETIQUETADO"
-            component={ETIQUETADO}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -556,31 +545,6 @@ const App = () => {
           <Stack.Screen
             name="Paper"
             component={Paper}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="OpcionesCaategora"
-            component={OpcionesCaategora}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="OpcionesFormatoFecha"
-            component={OpcionesFormatoFecha}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="OpcionesCulturas"
-            component={OpcionesCulturas}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="OpcionesInicioDeSemana"
-            component={OpcionesInicioDeSemana}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="OpcionesIdioma"
-            component={OpcionesIdioma}
             options={{ headerShown: false }}
           />
           <Stack.Screen
