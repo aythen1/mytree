@@ -2,18 +2,18 @@ import * as Font from 'expo-font'
 
 export const loadFonts = async () => {
   await Font.loadAsync({
-    'Lato-Regular': require('./assets/fonts/Lato-Regular.ttf')
+    Lato: require('./assets/fonts/Lato-Regular.ttf')
   })
 }
 
 /* fonts */
 export const FontFamily = {
-  nunito: 'Lato-Regular',
-  nunitoSans: 'Lato-Regular',
-  lato: 'Lato-Regular',
-  inter: 'Lato-Regular',
-  footnote: 'Lato-Regular',
-  title2Regular: 'Lato-Regular'
+  nunito: 'Lato',
+  nunitoSans: 'Lato',
+  lato: 'Lato',
+  inter: 'Lato',
+  footnote: 'Lato',
+  title2Regular: 'Lato'
 }
 /* font sizes */
 export const FontSize = {

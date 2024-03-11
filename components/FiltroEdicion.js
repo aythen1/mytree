@@ -27,7 +27,10 @@ const FiltroEdicion = () => {
   }
 
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: 'white' }}  showsVerticalScrollIndicator={false}>
+    <ScrollView
+      style={{ flex: 1, backgroundColor: 'white' }}
+      showsVerticalScrollIndicator={false}
+    >
       <View style={styles.image6Parent}>
         <Image
           style={styles.image6Icon}
@@ -39,7 +42,6 @@ const FiltroEdicion = () => {
             style={styles.back}
             onPress={() => {
               retroceder()
-              // navigation.navigate('AadirRecuerdo1')
             }}
           >
             <Image

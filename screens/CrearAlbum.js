@@ -18,8 +18,6 @@ import { FontSize, FontFamily, Color, Border, Padding } from '../GlobalStyles'
 import Checkbox from 'expo-checkbox'
 import ENTRADACREADA from '../components/ENTRADACREADA'
 import { setPanel } from '../redux/slices/panel.slices'
-import Etapas from './Etapas'
-import SubeTusRecuerdos from './SubeTusRecuerdos'
 import Privacidad from './Privacidad'
 import Album from './Album'
 import PopUpCalendario from '../components/PopUpCalendario'
@@ -421,13 +419,13 @@ const CrearAlbum = () => {
         </View>
       </ScrollView>
 
-      <Modal animationType="slide" transparent visible={showEtapas}>
+      {/* <Modal animationType="slide" transparent visible={showEtapas}>
         <View style={styles.buttonContainer1Overlay}>
           <Pressable style={styles.buttonContainer1Bg} onPress={closeEtapas}>
             <Etapas onClose={closeEtapas} />
           </Pressable>
         </View>
-      </Modal>
+      </Modal> */}
 
       <Modal animationType="slide" transparent visible={selectedAlbum}>
         <View style={styles.buttonContainer1Overlay}>
@@ -472,16 +470,6 @@ const CrearAlbum = () => {
             onPress={closeFrameContainer2}
           />
           <Etiquetar onClose={closeFrameContainer2} />
-        </View>
-      </Modal>
-
-      <Modal animationType="slide" transparent visible={uploadRecuerdo}>
-        <View style={styles.frameContainer2Overlay}>
-          <Pressable
-            style={styles.frameContainer2Bg}
-            onPress={closeUploadRecuerdo}
-          />
-          <SubeTusRecuerdos onClose={closeUploadRecuerdo} />
         </View>
       </Modal>
 

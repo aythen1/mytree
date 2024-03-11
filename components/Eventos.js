@@ -1,28 +1,37 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Pressable } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 import { Color, FontFamily, Border } from '../GlobalStyles'
 import CalendarCheckSVG from './svgs/CalendarCheckSVG'
 
 const Eventos = () => {
+  const navigation = useNavigation()
+
   return (
     <View style={styles.frameGroup}>
       <Text style={styles.title}>Eventos</Text>
 
-      <View style={styles.boxContainer}>
+      <Pressable
+        style={styles.boxContainer}
+        onPress={() => navigation.navigate('Eventos')}
+      >
         <View style={styles.textContainer}>
           <Text style={styles.subTitle}>Fecha especial</Text>
           <Text style={styles.name}>Barbacoa</Text>
         </View>
         <CalendarCheckSVG />
-      </View>
+      </Pressable>
 
-      <View style={styles.boxContainer}>
+      <Pressable
+        style={styles.boxContainer}
+        onPress={() => navigation.navigate('Eventos')}
+      >
         <View style={styles.textContainer}>
           <Text style={styles.subTitle}>Fecha especial</Text>
           <Text style={styles.name}>Pachanga</Text>
         </View>
         <CalendarCheckSVG />
-      </View>
+      </Pressable>
     </View>
   )
 }

@@ -11,16 +11,12 @@ import {
   ScrollView
 } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
-import Cancion1 from '../components/Cancion1'
 import Etiquetar from '../components/Etiquetar'
 import Lugar3 from '../components/Lugar3'
 import { FontSize, FontFamily, Color, Border, Padding } from '../GlobalStyles'
 import Checkbox from 'expo-checkbox'
 import ENTRADACREADA from '../components/ENTRADACREADA'
 import { setPanel } from '../redux/slices/panel.slices'
-import Etapas from './Etapas'
-import SubeTusRecuerdos from './SubeTusRecuerdos'
-import Privacidad from './Privacidad'
 import Album from './Album'
 import PopUpCalendario from '../components/PopUpCalendario'
 
@@ -436,13 +432,13 @@ const Organizador = () => {
         </View>
       </ScrollView>
 
-      <Modal animationType="slide" transparent visible={showEtapas}>
+      {/* <Modal animationType="slide" transparent visible={showEtapas}>
         <View style={styles.buttonContainer1Overlay}>
           <Pressable style={styles.buttonContainer1Bg} onPress={closeEtapas}>
             <Etapas onClose={closeEtapas} />
           </Pressable>
         </View>
-      </Modal>
+      </Modal> */}
 
       <Modal animationType="slide" transparent visible={selectedAlbum}>
         <View style={styles.buttonContainer1Overlay}>
@@ -475,16 +471,6 @@ const Organizador = () => {
           <Etiquetar onClose={closeFrameContainer2} />
         </View>
       </Modal>
-
-      {/* <Modal animationType="slide" transparent visible={uploadRecuerdo}>
-        <View style={styles.frameContainer2Overlay}>
-          <Pressable
-            style={styles.frameContainer2Bg}
-            onPress={closeUploadRecuerdo}
-          />
-          <SubeTusRecuerdos onClose={closeUploadRecuerdo} />
-        </View>
-      </Modal> */}
 
       <Modal animationType="slide" transparent visible={calendario}>
         <View style={styles.frameContainer2Overlay}>

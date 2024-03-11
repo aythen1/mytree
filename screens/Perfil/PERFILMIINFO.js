@@ -63,7 +63,7 @@ const PERFILMIINFO = ({ setSelectedComponent }) => {
           </Pressable>
           <Pressable
             style={styles.amigosParent}
-            onPress={() => navigation.navigate('MISAMIGOS')}
+            // onPress={() => navigation.navigate('MISAMIGOS')}
           >
             <Text style={[styles.familiares, styles.text1Typo]}>Amigos</Text>
             <View style={styles.parent}>

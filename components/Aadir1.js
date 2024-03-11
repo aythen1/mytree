@@ -25,7 +25,6 @@ const Aadir1 = () => {
           style={[styles.frameWrapper, styles.frameWrapperFlexBox]}
           onPress={() => {
             dispatch(setPanelAddFooter(false))
-            // navigation.navigate('AadirRecuerdo1')
             navigation.navigate('Organizador')
           }}
         >
