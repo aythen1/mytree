@@ -1,36 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import AadirAlbum from './screens/AadirAlbum'
-import Tiempo from './screens/Tiempo'
 import Album from './screens/Album'
-import Etapas from './screens/Etapas'
 import Privacidad from './screens/Privacidad'
-import SubeTusRecuerdos from './screens/SubeTusRecuerdos'
-import LOGIN from './screens/LOGIN'
-import Onboarding from './screens/Onboarding'
-import Onboarding1 from './screens/Onboarding1'
+import LOGIN from './screens/Inicio/LOGIN'
+import Onboarding from './screens/Inicio/Onboarding'
+import Onboarding1 from './screens/Inicio/Onboarding1'
 import MiSalud from './screens/MiSalud'
-import MiInformacinPersonal from './screens/MiInformacinPersonal'
 import RETOSMSVOTADOS from './screens/RETOSMSVOTADOS'
-import Valorar from './screens/Valorar'
-import AadirRecuerdo from './screens/AadirRecuerdo'
-import AadirRecuerdo1 from './screens/AadirRecuerdo1'
 import CrearLbum from './screens/CrearLbum'
-import MisAlbumesFamiliares from './screens/MisAlbumesFamiliares'
-import SuscritoConExito from './screens/SuscritoConExito'
-import FECHA4 from './screens/FECHA4'
 import AadirAUnAlbum from './screens/AadirAUnAlbum'
 import CrearAlbum from './screens/CrearAlbum'
 import Organizador from './screens/Organizador'
-import RetosFamiliaresCumplido from './screens/RetosFamiliaresCumplido'
-import RetosFamiliaresSinCumplir from './screens/RetosFamiliaresSinCumplir'
-import Situacin from './screens/Situacin'
-import Chat from './screens/Chat'
+import RetosFamiliaresCumplido from './screens/Retos/RetosFamiliaresCumplido'
+import RetosFamiliaresSinCumplir from './screens/Retos/RetosFamiliaresSinCumplir'
+import Chat from './screens/Mensajes/Chat'
 import AADIRAADIRANCESTRO from './screens/AADIRAADIRANCESTRO'
 import AADIRAADIRINFANTE from './screens/AADIRAADIRINFANTE'
 import TarjetaDigital from './screens/TarjetaDigital'
 import MUROALERTAS1 from './screens/MUROALERTAS1'
-import MENSAJERA from './screens/MENSAJERA'
+import MENSAJERA from './screens/Mensajes/MENSAJERA'
 import MisFamiliares from './screens/MisFamiliares'
 import MisFamiliares1 from './screens/MisFamiliares1'
 import Busqueda from './screens/Busqueda/Busqueda'
@@ -41,21 +30,16 @@ import PERFILIDINFANTE from './screens/PERFILIDINFANTE'
 import PERFILCREARIDINFANTEANCE from './screens/PERFILCREARIDINFANTEANCE'
 import Novedades from './screens/Novedades'
 import Recompensas from './screens/Recompensas'
-import RecopilacionDeRespuestas from './screens/RecopilacionDeRespuestas'
 import Invitacin from './screens/Invitacin'
-import MIDIARIOPANTALLAPERSONAL from './screens/MIDIARIOPANTALLAPERSONAL'
+import MIDIARIOPANTALLAPERSONAL from './screens/Diario/MIDIARIOPANTALLAPERSONAL'
 import MIDIARIOEDICINVIDEO from './screens/MIDIARIOEDICINVIDEO'
-import MIDIARIOEDICINVIDEO1 from './screens/MIDIARIOEDICINVIDEO1'
-import MIDIARIOEDICINVIDEO2 from './screens/MIDIARIOEDICINVIDEO2'
 import MIDIARIOENTRADAVIDEO from './screens/MIDIARIOENTRADAVIDEO'
-import Onboarding2 from './screens/Onboarding2'
-import Muro from './screens/Muro'
-import Privacidad1 from './screens/Privacidad1'
-import CrearEvento from './screens/CrearEvento'
+import Onboarding2 from './screens/Inicio/Onboarding2'
+import Muro from './screens/Muro/Muro'
+import CrearEvento from './screens/Calendario/CrearEvento'
 import BOTONInvitarAmigos1 from './screens/BOTONInvitarAmigos1'
-import PERFILNOTIFICACIONES from './screens/PERFILNOTIFICACIONES'
+import PERFILNOTIFICACIONES from './screens/Muro/PERFILNOTIFICACIONES'
 import PerfilVerificacion from './screens/Perfil/Ajustes/PerfilVerificacion'
-import PERFILAJUSTESSUSCRIPCION from './screens/PERFILAJUSTESSUSCRIPCION'
 import PerfilSeguridad from './screens/Perfil/Ajustes/PerfilSeguridad'
 import PerfilPrivacidad from './screens/Perfil/Ajustes/PerfilPrivacidad'
 import PerfilVisualizacionMyTree from './screens/Perfil/Ajustes/PerfilVisualizacionMyTree'
@@ -65,49 +49,46 @@ import PERFILANCESTROAJUSTES1 from './screens/PERFILANCESTROAJUSTES1'
 import PERFILINFANTEAJUSTES from './screens/PERFILINFANTEAJUSTES'
 import PERFILDELUSUARIOVISITADO1 from './screens/PERFILDELUSUARIOVISITADO1'
 import PerfilConfiguracion from './screens/Perfil/Ajustes/PerfilConfiguracion'
-import MISAMIGOS from './screens/MISAMIGOS'
 import PerfilAjustes from './screens/Perfil/Ajustes/PerfilAjustes'
 import PERFILDELUSUARIOVISITADO2 from './screens/PERFILDELUSUARIOVISITADO2'
 import PERFILMIINFO from './screens/Perfil/PERFILMIINFO'
-import RetosBienvenida from './screens/RetosBienvenida'
+import RetosBienvenida from './screens/Retos/RetosBienvenida'
 import MisAlbumes from './screens/Perfil/MisAlbumes'
 import SOLOYO from './screens/Perfil/SOLOYO'
 import Perfil from './screens/Perfil/Perfil'
-import MIDIARIOENTRADATEXTOPL from './screens/MIDIARIOENTRADATEXTOPL'
-import MIDIARIOENTRADATEXTOPL1 from './screens/MIDIARIOENTRADATEXTOPL1'
-import MIDIARIOENTRADATEXTOPL2 from './screens/MIDIARIOENTRADATEXTOPL2'
-import MIDIARIOENTRADATEXTOPL3 from './screens/MIDIARIOENTRADATEXTOPL3'
-import MIDIARIOENTRADATEXTOPL4 from './screens/MIDIARIOENTRADATEXTOPL4'
-import MIDIARIOENTRADATEXTOPL5 from './screens/MIDIARIOENTRADATEXTOPL5'
-import MIDIARIOENTRADATEXTOPL7 from './screens/MIDIARIOENTRADATEXTOPL7'
-import CALENDARIO from './screens/CALENDARIO'
-import Success from './screens/Success'
-import Splash from './screens/Splash'
-import REGISTROPOLTICASDEPRIVAC from './screens/REGISTROPOLTICASDEPRIVAC'
-import REGISTROTRMINOSYCONDICIO from './screens/REGISTROTRMINOSYCONDICIO'
+import MIDIARIOENTRADATEXTOPL7 from './screens/Diario/MIDIARIOENTRADATEXTOPL7'
+import CALENDARIO from './screens/Calendario/CALENDARIO'
+import Splash from './screens/Inicio/Splash'
+import REGISTROPOLTICASDEPRIVAC from './screens/Inicio/REGISTROPOLTICASDEPRIVAC'
+import REGISTROTRMINOSYCONDICIO from './screens/Inicio/REGISTROTRMINOSYCONDICIO'
 import Suscripciones from './screens/Perfil/Ajustes/Suscripciones'
-import CrearGrupo from './screens/CrearGrupo'
-import CrearFechaEspecial from './screens/CrearFechaEspecial'
-
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { loadFonts } from './GlobalStyles'
-import Register from './screens/Register'
-import { Provider } from 'react-redux'
-import { store } from './redux/store'
-import CrearReto from './screens/CrearReto'
+import CrearGrupo from './screens/Mensajes/CrearGrupo'
+import CrearFechaEspecial from './screens/Calendario/CrearFechaEspecial'
+import CrearReto from './screens/Retos/CrearReto'
 import FooterNavBar from './components/FooterNavBar'
-import Papers from './screens/Papers'
-import Paper from './screens/Paper'
+import Papers from './screens/Diario/Papers'
 import FiltroEdicion from './components/FiltroEdicion'
 import FiltroEdicionRecuerdo from './components/FiltroEdicionRecuerdo'
+import Register from './screens/Inicio/Register'
+import Eventos from './screens/Calendario/Eventos'
+import MasDetallesEventos from './screens/Calendario/MasDetallesEventos'
+
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { Provider } from 'react-redux'
+import { store } from './redux/store'
+import { loadFonts } from './GlobalStyles'
 
 const Stack = createNativeStackNavigator()
 
 const App = () => {
   const [isFooterShow, setIsFooterShow] = useState(null)
 
+  const loadApp = async () => {
+    await loadFonts()
+  }
+
   useEffect(() => {
-    loadFonts()
+    loadApp()
   }, [])
 
   return (
@@ -133,28 +114,13 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="Tiempo"
-            component={Tiempo}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="Album"
             component={Album}
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="Etapas"
-            component={Etapas}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="Privacidad"
             component={Privacidad}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="SubeTusRecuerdos"
-            component={SubeTusRecuerdos}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -178,18 +144,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="MiInformacinPersonal"
-            component={MiInformacinPersonal}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="RETOSMSVOTADOS"
             component={RETOSMSVOTADOS}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Valorar"
-            component={Valorar}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -198,33 +154,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="AadirRecuerdo"
-            component={AadirRecuerdo}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="AadirRecuerdo1"
-            component={AadirRecuerdo1}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="CrearLbum"
             component={CrearLbum}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="MisAlbumesFamiliares"
-            component={MisAlbumesFamiliares}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="SuscritoConExito"
-            component={SuscritoConExito}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="FECHA4"
-            component={FECHA4}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -250,11 +181,6 @@ const App = () => {
           <Stack.Screen
             name="RetosFamiliaresSinCumplir"
             component={RetosFamiliaresSinCumplir}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Situacin"
-            component={Situacin}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -343,11 +269,6 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="RecopilacionDeRespuestas"
-            component={RecopilacionDeRespuestas}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="Invitacin"
             component={Invitacin}
             options={{ headerShown: false }}
@@ -363,16 +284,6 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="MIDIARIOEDICINVIDEO1"
-            component={MIDIARIOEDICINVIDEO1}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="MIDIARIOEDICINVIDEO2"
-            component={MIDIARIOEDICINVIDEO2}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="MIDIARIOENTRADAVIDEO"
             component={MIDIARIOENTRADAVIDEO}
             options={{ headerShown: false }}
@@ -385,11 +296,6 @@ const App = () => {
           <Stack.Screen
             name="Muro"
             component={Muro}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Privacidad1"
-            component={Privacidad1}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -410,11 +316,6 @@ const App = () => {
           <Stack.Screen
             name="PerfilVerificacion"
             component={PerfilVerificacion}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="PERFILAJUSTESSUSCRIPCION"
-            component={PERFILAJUSTESSUSCRIPCION}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -463,11 +364,6 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="MISAMIGOS"
-            component={MISAMIGOS}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="PerfilAjustes"
             component={PerfilAjustes}
             options={{ headerShown: false }}
@@ -503,36 +399,6 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="MIDIARIOENTRADATEXTOPL"
-            component={MIDIARIOENTRADATEXTOPL}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="MIDIARIOENTRADATEXTOPL1"
-            component={MIDIARIOENTRADATEXTOPL1}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="MIDIARIOENTRADATEXTOPL2"
-            component={MIDIARIOENTRADATEXTOPL2}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="MIDIARIOENTRADATEXTOPL3"
-            component={MIDIARIOENTRADATEXTOPL3}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="MIDIARIOENTRADATEXTOPL4"
-            component={MIDIARIOENTRADATEXTOPL4}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="MIDIARIOENTRADATEXTOPL5"
-            component={MIDIARIOENTRADATEXTOPL5}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="Papers"
             component={Papers}
             options={{ headerShown: false }}
@@ -543,23 +409,23 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="Paper"
-            component={Paper}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="CALENDARIO"
             component={CALENDARIO}
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="FiltroEdicionRecuerdo"
-            component={FiltroEdicionRecuerdo}
+            name="Eventos"
+            component={Eventos}
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="Success"
-            component={Success}
+            name="MasDetallesEventos"
+            component={MasDetallesEventos}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="FiltroEdicionRecuerdo"
+            component={FiltroEdicionRecuerdo}
             options={{ headerShown: false }}
           />
           <Stack.Screen

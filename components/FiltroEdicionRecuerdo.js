@@ -44,7 +44,6 @@ const FiltroEdicionRecuerdo = () => {
                 style={styles.back}
                 onPress={() => {
                   retroceder()
-                  // navigation.navigate('AadirRecuerdo1')
                 }}
               >
                 <Image
