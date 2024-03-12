@@ -1,5 +1,12 @@
 import React, { useCallback, useState } from 'react'
-import { StyleSheet, View, Text, Pressable, Modal } from 'react-native'
+import {
+  StyleSheet,
+  View,
+  Text,
+  Pressable,
+  Modal,
+  ScrollView
+} from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import { Image } from 'expo-image'
 import { useNavigation } from '@react-navigation/native'
@@ -15,7 +22,6 @@ import Personalizada from '../../components/Personalizada'
 import NavMedia from '../../components/NavMedia'
 import ENTRADACREADA from '../../components/ENTRADACREADA'
 import LupaSVG from '../../components/svgs/LupaSVG'
-import BookSVG from '../../components/svgs/BookSVG'
 import SettingMuroSVG from '../../components/svgs/SettingMuroSVG'
 import HeaderIcons from '../../components/HeaderIcons'
 import Editar2SVG from '../../components/svgs/Editar2SVG'
@@ -39,7 +45,7 @@ const MIDIARIOENTRADATEXTOPL7 = () => {
   function renderSection(isSection) {
     switch (isSection) {
       case 'mundo':
-        return <DescubriendoElMundo />
+        return <DescubriendoElMundo showEdit={showEdit} />
       case 'reflexion':
         return <ReflexionDiaria />
       case 'logros':
@@ -60,14 +66,25 @@ const MIDIARIOENTRADATEXTOPL7 = () => {
   }
 
   return (
-    <View style={styles.miDiarioEntradaTextoPl}>
+    <ScrollView style={styles.miDiarioEntradaTextoPl}>
       <View style={styles.topContainer}>
-        <Image
-          style={styles.image6Icon}
-          contentFit="cover"
-          source={require('../../assets/image-6.png')}
+        <Pressable onPress={() => navigation.navigate('Muro')}>
+          <Image
+            style={styles.image6Icon}
+            contentFit="cover"
+            source={require('../../assets/image-6.png')}
+          />
+        </Pressable>
+        <HeaderIcons
+          icons={[
+            <Pressable onPress={() => navigation.navigate('Busqueda')}>
+              <LupaSVG />
+            </Pressable>,
+            <SettingMuroSVG
+              isNavigation={() => navigation.navigate('PerfilAjustes')}
+            />
+          ]}
         />
-        <HeaderIcons icons={[<LupaSVG />, <BookSVG />, <SettingMuroSVG />]} />
       </View>
 
       <NavBarDiario setIsSection={setIsSection} isSection={isSection} />
@@ -86,9 +103,7 @@ const MIDIARIOENTRADATEXTOPL7 = () => {
                 contentFit="cover"
                 source={require('../../assets/iconlycurvedarrowdown2.png')}
               />
-            </Pressable>
-            <Pressable>
-              <Editar2SVG />
+              <Editar2SVG style={{ marginLeft: '45%' }} />
             </Pressable>
           </View>
         ) : (
@@ -169,7 +184,7 @@ const MIDIARIOENTRADATEXTOPL7 = () => {
           <Humor onClose={closeGroupIcon1} />
         </View>
       </Modal>
-    </View>
+    </ScrollView>
   )
 }
 

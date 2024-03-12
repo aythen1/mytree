@@ -509,7 +509,8 @@ const styles = StyleSheet.create({
   },
   frameChild: {
     width: 30,
-    height: 30
+    height: 30,
+    marginRight: 10
   },
   bruno: {
     fontFamily: FontFamily.lato,
@@ -519,7 +520,6 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   hasRecibidoUnaLayout: {
-    // height: 38,
     width: 273,
     display: 'flex',
     color: Color.black1,
@@ -535,7 +535,9 @@ const styles = StyleSheet.create({
     color: Color.gris,
     textAlign: 'justify',
     letterSpacing: 0,
-    fontFamily: FontFamily.lato
+    fontFamily: FontFamily.lato,
+    right: 30,
+    top: 30
   },
   frameView: {
     justifyContent: 'space-between',
@@ -545,19 +547,6 @@ const styles = StyleSheet.create({
     maxHeight: '100%',
     marginTop: 20,
     width: '100%'
-  },
-  frameContainer7Overlay: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'rgba(113, 113, 113, 0.3)'
-  },
-  frameContainer7Bg: {
-    // position: 'absolute',
-    width: '100%',
-    height: '100%',
-    left: 0,
-    top: 0
   },
   frameParent1: {
     marginTop: 20
@@ -569,14 +558,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(113, 113, 113, 0.3)'
   },
   frameContainer11Bg: {
-    // position: 'absolute',
     width: '100%',
     height: '100%',
     left: 0,
     top: 0
   },
   hasRecibidoUna: {
-    height: 38,
     width: 273,
     display: 'flex',
     color: Color.black1,
@@ -593,7 +580,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(113, 113, 113, 0.3)'
   },
   frameContainer15Bg: {
-    // position: 'absolute',
     width: '100%',
     height: '100%',
     left: 0,
@@ -611,8 +597,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: Padding.p_xl
   },
   frameParent: {
-    // height: 923,
-    // position: 'absolute',
     top: 0
   },
   perfilNotificaciones: {

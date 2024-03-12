@@ -50,11 +50,13 @@ const Perfil = () => {
   return (
     <ScrollView style={styles.perfil} showsVerticalScrollIndicator={false}>
       <View style={[styles.vectorParent, styles.buttonFlexBox]}>
-        <Image
-          style={[styles.image6Icon, styles.ionmenu]}
-          contentFit="cover"
-          source={require('../../assets/image-6.png')}
-        />
+        <Pressable onPress={() => navigation.navigate('Muro')}>
+          <Image
+            style={[styles.image6Icon, styles.ionmenu]}
+            contentFit="cover"
+            source={require('../../assets/image-6.png')}
+          />
+        </Pressable>
 
         <HeaderIcons
           icons={
@@ -128,22 +130,6 @@ const Perfil = () => {
             Mi Legado
           </Text>
         </Pressable>
-        {/* <Pressable
-          style={[
-            styles.tabs,
-            selectedComponent === 'MisAlbumes' && styles.miWrapper
-          ]}
-          onPress={() => setSelectedComponent('MisAlbumes')}
-        >
-          <Text
-            style={
-              (styles.miInfo,
-              selectedComponent === 'MisAlbumes' && styles.selectedText)
-            }
-          >
-            Mis álbumes
-          </Text>
-        </Pressable> */}
         <Pressable
           style={[
             styles.tabs,

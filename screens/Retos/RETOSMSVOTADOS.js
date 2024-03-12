@@ -3,7 +3,13 @@ import { StyleSheet, View, Pressable, Text, ScrollView } from 'react-native'
 import { Image } from 'expo-image'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
-import { Color, Border, FontSize, FontFamily, Padding } from '../GlobalStyles'
+import {
+  Color,
+  Border,
+  FontSize,
+  FontFamily,
+  Padding
+} from '../../GlobalStyles'
 import { useSelector } from 'react-redux'
 
 const RETOSMSVOTADOS = () => {
@@ -19,8 +25,6 @@ const RETOSMSVOTADOS = () => {
   const [one, two, three] = topThreeMostVoted
   const newTopThreeOrder = [two, one, three]
 
-  // console.log(remainingMostVoted)
-
   return (
     <LinearGradient
       style={[styles.retosMsVotados, styles.retosMsVotadosBg]}
@@ -35,7 +39,7 @@ const RETOSMSVOTADOS = () => {
               <Image
                 style={styles.icon}
                 contentFit="cover"
-                source={require('../assets/back1.png')}
+                source={require('../../assets/back1.png')}
               />
             </Pressable>
             <Text style={styles.retosMsVotados1}>Retos más votados</Text>
@@ -49,21 +53,21 @@ const RETOSMSVOTADOS = () => {
                       <Image
                         style={styles.groupChild}
                         contentFit="cover"
-                        source={require('../assets/star-8.png')}
+                        source={require('../../assets/star-8.png')}
                       />
                     )}
                     {i === 1 && (
                       <Image
                         style={styles.groupInner}
                         contentFit="cover"
-                        source={require('../assets/star-5.png')}
+                        source={require('../../assets/star-5.png')}
                       />
                     )}
                     {i === 2 && (
                       <Image
                         style={styles.groupChild}
                         contentFit="cover"
-                        source={require('../assets/star-8.png')}
+                        source={require('../../assets/star-8.png')}
                       />
                     )}
 
@@ -72,7 +76,7 @@ const RETOSMSVOTADOS = () => {
                         <Image
                           style={[styles.starLayout]}
                           contentFit="cover"
-                          source={require('../assets/star-61.png')}
+                          source={require('../../assets/star-61.png')}
                         />
                         <Text style={[styles.text2, styles.textTypo2]}>
                           {i === 1 ? '1' : i === 0 ? '2' : i === 2 ? '3' : ''}
@@ -84,7 +88,7 @@ const RETOSMSVOTADOS = () => {
                         <Image
                           style={[styles.starLayout]}
                           contentFit="cover"
-                          source={require('../assets/star-62.png')}
+                          source={require('../../assets/star-62.png')}
                         />
                         <Text style={[styles.text2, styles.textTypo2]}>
                           {i === 1 ? '1' : i === 0 ? '2' : i === 2 ? '3' : ''}
@@ -96,7 +100,7 @@ const RETOSMSVOTADOS = () => {
                         <Image
                           style={[styles.starLayout]}
                           contentFit="cover"
-                          source={require('../assets/star-6.png')}
+                          source={require('../../assets/star-6.png')}
                         />
                         <Text style={[styles.text2, styles.textTypo2]}>
                           {i === 1 ? '1' : i === 0 ? '2' : i === 2 ? '3' : ''}
@@ -113,7 +117,7 @@ const RETOSMSVOTADOS = () => {
                     <Image
                       style={styles.vectorIcon1}
                       contentFit="cover"
-                      source={require('../assets/vector5.png')}
+                      source={require('../../assets/vector5.png')}
                     />
                     <Text style={[styles.text1, styles.textTypo1]}>
                       {top.like}
@@ -137,7 +141,7 @@ const RETOSMSVOTADOS = () => {
                 <Image
                   style={styles.mdichessQueenIcon}
                   contentFit="cover"
-                  source={require('../assets/mdichessqueen.png')}
+                  source={require('../../assets/mdichessqueen.png')}
                 />
                 <Text style={styles.todos}>Todos</Text>
               </LinearGradient>
@@ -145,7 +149,7 @@ const RETOSMSVOTADOS = () => {
                 <Image
                   style={styles.mdichessQueenIcon}
                   contentFit="cover"
-                  source={require('../assets/mdichessqueen1.png')}
+                  source={require('../../assets/mdichessqueen1.png')}
                 />
                 <Text style={[styles.semanal, styles.amigosTypo]}>Semanal</Text>
               </View>
@@ -153,7 +157,7 @@ const RETOSMSVOTADOS = () => {
                 <Image
                   style={styles.mdichessQueenIcon}
                   contentFit="cover"
-                  source={require('../assets/mdichessqueen2.png')}
+                  source={require('../../assets/mdichessqueen2.png')}
                 />
                 <Text style={[styles.amigos, styles.amigosTypo]}>Amigos</Text>
               </View>
@@ -174,7 +178,7 @@ const RETOSMSVOTADOS = () => {
                   <Image
                     style={styles.starItem}
                     contentFit="cover"
-                    source={require('../assets/star-63.png')}
+                    source={require('../../assets/star-63.png')}
                   />
                   <Text style={[styles.textTypo]}>{i + 4}</Text>
                 </View>
@@ -182,7 +186,7 @@ const RETOSMSVOTADOS = () => {
                   <Image
                     style={styles.vectorIcon1}
                     contentFit="cover"
-                    source={require('../assets/vector6.png')}
+                    source={require('../../assets/vector6.png')}
                   />
                   <Text style={[styles.text7, styles.textTypo1]}>
                     {top.like}
@@ -191,7 +195,7 @@ const RETOSMSVOTADOS = () => {
                 <Image
                   style={styles.vectorIcon7}
                   contentFit="cover"
-                  source={require('../assets/vector2.png')}
+                  source={require('../../assets/vector2.png')}
                 />
               </View>
             ))}

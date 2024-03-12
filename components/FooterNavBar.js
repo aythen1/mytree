@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
-  Image,
   Modal,
   Pressable,
   StyleSheet,
@@ -14,11 +13,18 @@ import { setPanelAddFooter } from '../redux/slices/panel.slices'
 import { Color } from '../GlobalStyles'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
+import CalendarSVG from './svgs/CalendarSVG'
+import FooterBookSVG from './svgs/FooterBookSVG'
+import UsuarioSVG from './svgs/UsuarioSVG'
+import HomeSVG from './svgs/HomeSVG'
 
 const FooterNavBar = () => {
   const navigation = useNavigation()
-  const { panelAddFooter } = useSelector((state) => state.panel)
   const dispatch = useDispatch()
+
+  const { panelAddFooter } = useSelector((state) => state.panel)
+
+  const [selected, setSelected] = useState(null)
 
   const showModalAdd = () => {
     dispatch(setPanelAddFooter(!panelAddFooter))
@@ -28,41 +34,55 @@ const FooterNavBar = () => {
     <>
       <View style={styles.container}>
         <View style={{ flexDirection: 'row', marginLeft: 20 }}>
-          <Pressable onPress={() => navigation.navigate('Muro')}>
-            <Image
-              style={styles.IconlyLightHome}
-              source={{
-                uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/f4476xb8sqq-I1289%3A80990%3B1289%3A80434?alt=media&token=f316ebaa-468b-4b0f-9864-55db36fab398'
-              }}
+          <Pressable
+            onPress={() => {
+              navigation.navigate('Muro')
+              setSelected('Muro')
+            }}
+          >
+            <HomeSVG
+              color={selected === 'Muro' ? Color.primario1 : Color.grisClaro}
             />
           </Pressable>
-          <Pressable onPress={() => navigation.navigate('CALENDARIO')}>
-            <Image
-              style={styles.IconlyLightHomeLeft}
-              source={{
-                uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/llu86d6qbs-I1289%3A80990%3B1289%3A80445?alt=media&token=1bcae7ea-b9a8-435b-8c95-5424f9b2cf03'
-              }}
+          <Pressable
+            onPress={() => {
+              navigation.navigate('CALENDARIO')
+              setSelected('Calendario')
+            }}
+            style={{ marginLeft: 30 }}
+          >
+            <CalendarSVG
+              color={
+                selected === 'Calendario' ? Color.primario1 : Color.grisClaro
+              }
             />
           </Pressable>
         </View>
 
         <View style={{ flexDirection: 'row', marginRight: 20 }}>
           <Pressable
-            onPress={() => navigation.navigate('MIDIARIOPANTALLAPERSONAL')}
+            onPress={() => {
+              navigation.navigate('MIDIARIOPANTALLAPERSONAL')
+              setSelected('MiDiario')
+            }}
+            style={{ marginRight: 20 }}
           >
-            <Image
-              style={styles.IconlyLightHomeRight}
-              source={{
-                uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/7jmh0qdt16v-I1289%3A80990%3B1289%3A80437?alt=media&token=0c904029-64d9-444f-ba9b-c193b8c023bf'
-              }}
+            <FooterBookSVG
+              color={
+                selected === 'MiDiario'
+                  ? Color.primario1
+                  : Color.grisClaroisClaro
+              }
             />
           </Pressable>
-          <Pressable onPress={() => navigation.navigate('Perfil')}>
-            <Image
-              style={styles.IconlyLightHome}
-              source={{
-                uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/81845yt57sf-I1289%3A80990%3B1289%3A80430?alt=media&token=ebf69f4a-8ef7-4bee-b97c-c4ab102ed7d4'
-              }}
+          <Pressable
+            onPress={() => {
+              navigation.navigate('Perfil')
+              setSelected('Perfil')
+            }}
+          >
+            <UsuarioSVG
+              color={selected === 'Perfil' ? Color.primario1 : Color.grisClaro}
             />
           </Pressable>
         </View>
@@ -75,33 +95,15 @@ const FooterNavBar = () => {
           >
             <View
               style={{
-                width: 50,
-                height: 50,
+                width: 60,
+                height: 60,
                 borderRadius: 25,
                 justifyContent: 'center',
                 alignItems: 'center',
-                zIndex: 10
+                zIndex: 100
               }}
             >
-              <View
-                style={{
-                  borderRadius: 5,
-                  backgroundColor: 'white',
-                  width: 25,
-                  height: 25
-                }}
-              >
-                <Text
-                  style={{
-                    fontSize: 25,
-                    color: '#7fc08b',
-                    textAlign: 'center',
-                    bottom: '20%'
-                  }}
-                >
-                  +
-                </Text>
-              </View>
+              <Text style={styles.masText}>+</Text>
             </View>
           </LinearGradient>
         </Pressable>
@@ -123,14 +125,15 @@ const FooterNavBar = () => {
 const styles = StyleSheet.create({
   container: {
     height: 50,
-    top: 0,
     flexDirection: 'row',
     width: '100%',
     justifyContent: 'space-between',
     alignItems: 'center',
     borderRadius: 5,
     backgroundColor: 'white',
-    zIndex: 100
+    zIndex: 100,
+    position: 'absolute',
+    bottom: 0
   },
   IconlyLightHome: {
     width: 24,
@@ -167,6 +170,13 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  masText: {
+    fontSize: 35,
+    color: Color.white,
+    textAlign: 'center',
+    justifyContent: 'center',
+    bottom: 1
   }
 })
 

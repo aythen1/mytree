@@ -3,7 +3,13 @@ import { Image } from 'expo-image'
 import { StyleSheet, Pressable, Text, View } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
-import { FontSize, FontFamily, Color, Border, Padding } from '../GlobalStyles'
+import {
+  FontSize,
+  FontFamily,
+  Color,
+  Border,
+  Padding
+} from '../../GlobalStyles'
 
 const MIDIARIOEDICINVIDEO = () => {
   const navigation = useNavigation()
@@ -19,7 +25,7 @@ const MIDIARIOEDICINVIDEO = () => {
             <Image
               style={styles.icon}
               contentFit="cover"
-              source={require('../assets/back6.png')}
+              source={require('../../assets/back6.png')}
             />
           </Pressable>
           <Text style={[styles.editarVideo, styles.editarVideoTypo]}>
@@ -29,20 +35,20 @@ const MIDIARIOEDICINVIDEO = () => {
         <Image
           style={[styles.backIcon, styles.backLayout]}
           contentFit="cover"
-          source={require('../assets/back7.png')}
+          source={require('../../assets/back7.png')}
         />
       </View>
       <Image
         style={[styles.clarityresizeUpLineIcon, styles.buttonPosition]}
         contentFit="cover"
-        source={require('../assets/clarityresizeupline.png')}
+        source={require('../../assets/clarityresizeupline.png')}
       />
       <View style={[styles.rectangleParent, styles.parentFlexBox]}>
         <View style={styles.frameChild} />
         <Image
           style={[styles.vectorIcon, styles.iconPosition]}
           contentFit="cover"
-          source={require('../assets/vector39.png')}
+          source={require('../../assets/vector39.png')}
         />
       </View>
       <Text style={[styles.aadeUnaDescripcin, styles.editarVideoTypo]}>
@@ -51,7 +57,7 @@ const MIDIARIOEDICINVIDEO = () => {
       <Image
         style={[styles.navigationIcon, styles.iconPosition]}
         contentFit="cover"
-        source={require('../assets/navigation23.png')}
+        source={require('../../assets/navigation23.png')}
       />
       <LinearGradient
         style={[styles.button, styles.buttonPosition]}
@@ -60,7 +66,7 @@ const MIDIARIOEDICINVIDEO = () => {
       >
         <Pressable
           style={[styles.pressable, styles.pressableFlexBox]}
-          onPress={() => navigation.navigate('MIDIARIOENTRADATEXTOPL1')}
+          onPress={() => navigation.navigate('MIDIARIOENTRADATEXTOPL7')}
         >
           <Text style={styles.signIn}>Guardar</Text>
         </Pressable>

@@ -38,10 +38,7 @@ const PERFILMIINFO = ({ setSelectedComponent }) => {
         </View>
 
         <View style={styles.frameParent5}>
-          <Pressable
-            style={styles.frameContainer}
-            onPress={() => navigation.navigate('MisFamiliares1')}
-          >
+          <Pressable style={styles.frameContainer}>
             <Text style={[styles.familiares, styles.text1Typo]}>
               Familiares
             </Text>

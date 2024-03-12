@@ -6,8 +6,7 @@ import Privacidad from './screens/Privacidad'
 import LOGIN from './screens/Inicio/LOGIN'
 import Onboarding from './screens/Inicio/Onboarding'
 import Onboarding1 from './screens/Inicio/Onboarding1'
-import MiSalud from './screens/MiSalud'
-import RETOSMSVOTADOS from './screens/RETOSMSVOTADOS'
+import RETOSMSVOTADOS from './screens/Retos/RETOSMSVOTADOS'
 import CrearLbum from './screens/CrearLbum'
 import AadirAUnAlbum from './screens/AadirAUnAlbum'
 import CrearAlbum from './screens/CrearAlbum'
@@ -20,8 +19,6 @@ import AADIRAADIRINFANTE from './screens/AADIRAADIRINFANTE'
 import TarjetaDigital from './screens/TarjetaDigital'
 import MUROALERTAS1 from './screens/MUROALERTAS1'
 import MENSAJERA from './screens/Mensajes/MENSAJERA'
-import MisFamiliares from './screens/MisFamiliares'
-import MisFamiliares1 from './screens/MisFamiliares1'
 import Busqueda from './screens/Busqueda/Busqueda'
 import BIO2Ancestro from './screens/BIO2Ancestro'
 import BIO2Infante from './screens/BIO2Infante'
@@ -32,25 +29,21 @@ import Novedades from './screens/Novedades'
 import Recompensas from './screens/Recompensas'
 import Invitacin from './screens/Invitacin'
 import MIDIARIOPANTALLAPERSONAL from './screens/Diario/MIDIARIOPANTALLAPERSONAL'
-import MIDIARIOEDICINVIDEO from './screens/MIDIARIOEDICINVIDEO'
+import MIDIARIOEDICINVIDEO from './screens/Diario/MIDIARIOEDICINVIDEO'
 import MIDIARIOENTRADAVIDEO from './screens/MIDIARIOENTRADAVIDEO'
 import Onboarding2 from './screens/Inicio/Onboarding2'
 import Muro from './screens/Muro/Muro'
 import CrearEvento from './screens/Calendario/CrearEvento'
 import BOTONInvitarAmigos1 from './screens/BOTONInvitarAmigos1'
 import PERFILNOTIFICACIONES from './screens/Muro/PERFILNOTIFICACIONES'
-import PerfilVerificacion from './screens/Perfil/Ajustes/PerfilVerificacion'
 import PerfilSeguridad from './screens/Perfil/Ajustes/PerfilSeguridad'
 import PerfilPrivacidad from './screens/Perfil/Ajustes/PerfilPrivacidad'
 import PerfilVisualizacionMyTree from './screens/Perfil/Ajustes/PerfilVisualizacionMyTree'
-import PERFILDELUSUARIOVISITADO from './screens/PERFILDELUSUARIOVISITADO'
 import PERFILANCESTROAJUSTES from './screens/PERFILANCESTROAJUSTES'
 import PERFILANCESTROAJUSTES1 from './screens/PERFILANCESTROAJUSTES1'
 import PERFILINFANTEAJUSTES from './screens/PERFILINFANTEAJUSTES'
-import PERFILDELUSUARIOVISITADO1 from './screens/PERFILDELUSUARIOVISITADO1'
 import PerfilConfiguracion from './screens/Perfil/Ajustes/PerfilConfiguracion'
 import PerfilAjustes from './screens/Perfil/Ajustes/PerfilAjustes'
-import PERFILDELUSUARIOVISITADO2 from './screens/PERFILDELUSUARIOVISITADO2'
 import PERFILMIINFO from './screens/Perfil/PERFILMIINFO'
 import RetosBienvenida from './screens/Retos/RetosBienvenida'
 import MisAlbumes from './screens/Perfil/MisAlbumes'
@@ -139,11 +132,6 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="MiSalud"
-            component={MiSalud}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="RETOSMSVOTADOS"
             component={RETOSMSVOTADOS}
             options={{ headerShown: false }}
@@ -216,16 +204,6 @@ const App = () => {
           <Stack.Screen
             name="MENSAJERA"
             component={MENSAJERA}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="MisFamiliares"
-            component={MisFamiliares}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="MisFamiliares1"
-            component={MisFamiliares1}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -314,11 +292,6 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="PerfilVerificacion"
-            component={PerfilVerificacion}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="PerfilSeguridad"
             component={PerfilSeguridad}
             options={{ headerShown: false }}
@@ -331,11 +304,6 @@ const App = () => {
           <Stack.Screen
             name="PerfilVisualizacionMyTree"
             component={PerfilVisualizacionMyTree}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="PERFILDELUSUARIOVISITADO"
-            component={PERFILDELUSUARIOVISITADO}
             options={{ headerShown: false }}
           />
           <Stack.Screen
@@ -354,11 +322,6 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="PERFILDELUSUARIOVISITADO1"
-            component={PERFILDELUSUARIOVISITADO1}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name="PerfilConfiguracion"
             component={PerfilConfiguracion}
             options={{ headerShown: false }}
@@ -366,11 +329,6 @@ const App = () => {
           <Stack.Screen
             name="PerfilAjustes"
             component={PerfilAjustes}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="PERFILDELUSUARIOVISITADO2"
-            component={PERFILDELUSUARIOVISITADO2}
             options={{ headerShown: false }}
           />
           <Stack.Screen

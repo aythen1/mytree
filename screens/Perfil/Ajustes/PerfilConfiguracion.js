@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import {
   Text,
   StyleSheet,
@@ -6,7 +6,8 @@ import {
   Pressable,
   ScrollView,
   Modal,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
+  TextInput
 } from 'react-native'
 import { Image } from 'expo-image'
 import { LinearGradient } from 'expo-linear-gradient'
@@ -26,8 +27,16 @@ import NotificationsMuroSVG from '../../../components/svgs/NotificationsMuroSVG'
 
 const PerfilConfiguracion = () => {
   const navigation = useNavigation()
+  const nombreInputRef = useRef(null)
 
   const [modalCreate, setModalCreate] = useState(false)
+  const [input, setInput] = useState(null)
+
+  const handleInputFocus = () => {
+    if (nombreInputRef.current) {
+      nombreInputRef.current.focus()
+    }
+  }
 
   const onCloseModalCreate = () => {
     setModalCreate(false)
@@ -38,11 +47,13 @@ const PerfilConfiguracion = () => {
       <View style={styles.viewContainer}>
         <View>
           <View style={styles.parentIcons}>
-            <Image
-              style={styles.image6Icon}
-              contentFit="cover"
-              source={require('../../../assets/image-6.png')}
-            />
+            <Pressable onPress={() => navigation.navigate('Muro')}>
+              <Image
+                style={styles.image6Icon}
+                contentFit="cover"
+                source={require('../../../assets/image-6.png')}
+              />
+            </Pressable>
             <View style={styles.iconlylightOutlinecalendarParent}>
               <HeaderIcons
                 icons={[
@@ -86,45 +97,75 @@ const PerfilConfiguracion = () => {
               <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
                 Nombre completo
               </Text>
-              <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>
-                Bruno Pham
-              </Text>
+              <TextInput
+                style={[styles.brunoPham, styles.brunoPhamTypo]}
+                ref={nombreInputRef}
+                placeholder="Bruno Pham"
+                editable={input === 'Nombre' ? true : false}
+              />
             </View>
-            <Image
-              style={[styles.vectorIcon1, styles.vectorIconLayout]}
-              contentFit="cover"
-              source={require('../../../assets/vector47.png')}
-            />
+            <Pressable
+              onPress={() => {
+                handleInputFocus()
+                setInput('Nombre')
+              }}
+            >
+              <Image
+                style={[styles.vectorIcon1, styles.vectorIconLayout]}
+                contentFit="cover"
+                source={require('../../../assets/vector47.png')}
+              />
+            </Pressable>
           </View>
           <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
             <View style={styles.nombreCompletoParent}>
               <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
                 Fecha de nacimiento
               </Text>
-              <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>
-                02/12/1997
-              </Text>
+              <TextInput
+                style={[styles.brunoPham, styles.brunoPhamTypo]}
+                ref={nombreInputRef}
+                placeholder="02/12/1997"
+                editable={input === 'Fecha' ? true : false}
+              />
             </View>
-            <Image
-              style={[styles.vectorIcon1, styles.vectorIconLayout]}
-              contentFit="cover"
-              source={require('../../../assets/vector47.png')}
-            />
+            <Pressable
+              onPress={() => {
+                handleInputFocus()
+                setInput('Fecha')
+              }}
+            >
+              <Image
+                style={[styles.vectorIcon1, styles.vectorIconLayout]}
+                contentFit="cover"
+                source={require('../../../assets/vector47.png')}
+              />
+            </Pressable>
           </View>
           <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
             <View style={styles.nombreCompletoParent}>
               <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
                 Ubicación
               </Text>
-              <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>
-                Da Nang, Vietnam
-              </Text>
+              <TextInput
+                style={[styles.brunoPham, styles.brunoPhamTypo]}
+                ref={nombreInputRef}
+                placeholder="Da Nang, Vietnam"
+                editable={input === 'Ubicacion' ? true : false}
+              />
             </View>
-            <Image
-              style={[styles.vectorIcon1, styles.vectorIconLayout]}
-              contentFit="cover"
-              source={require('../../../assets/vector47.png')}
-            />
+            <Pressable
+              onPress={() => {
+                handleInputFocus()
+                setInput('Ubicacion')
+              }}
+            >
+              <Image
+                style={[styles.vectorIcon1, styles.vectorIconLayout]}
+                contentFit="cover"
+                source={require('../../../assets/vector47.png')}
+              />
+            </Pressable>
           </View>
           <Image
             style={styles.frameChild}
@@ -136,50 +177,82 @@ const PerfilConfiguracion = () => {
               <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
                 Madre
               </Text>
-              <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>
-                Mary Jane
-              </Text>
+              <TextInput
+                style={[styles.brunoPham, styles.brunoPhamTypo]}
+                ref={nombreInputRef}
+                placeholder="Mary Jane"
+                editable={input === 'Madre' ? true : false}
+              />
             </View>
-            <Image
-              style={[styles.vectorIcon1, styles.vectorIconLayout]}
-              contentFit="cover"
-              source={require('../../../assets/vector47.png')}
-            />
+            <Pressable
+              onPress={() => {
+                handleInputFocus()
+                setInput('Madre')
+              }}
+            >
+              <Image
+                style={[styles.vectorIcon1, styles.vectorIconLayout]}
+                contentFit="cover"
+                source={require('../../../assets/vector47.png')}
+              />
+            </Pressable>
           </View>
           <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
             <View style={styles.nombreCompletoParent}>
               <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
                 Padre
               </Text>
-              <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>
-                Peter Parker
-              </Text>
+              <TextInput
+                style={[styles.brunoPham, styles.brunoPhamTypo]}
+                ref={nombreInputRef}
+                placeholder="Peter Parker"
+                editable={input === 'Padre' ? true : false}
+              />
             </View>
-            <Image
-              style={[styles.vectorIcon1, styles.vectorIconLayout]}
-              contentFit="cover"
-              source={require('../../../assets/vector47.png')}
-            />
+            <Pressable
+              onPress={() => {
+                handleInputFocus()
+                setInput('Padre')
+              }}
+            >
+              <Image
+                style={[styles.vectorIcon1, styles.vectorIconLayout]}
+                contentFit="cover"
+                source={require('../../../assets/vector47.png')}
+              />
+            </Pressable>
           </View>
+
           <Image
             style={styles.frameChild}
             contentFit="cover"
             source={require('../../../assets/line-802.png')}
           />
+
           <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
             <View style={styles.nombreCompletoParent}>
               <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
                 Hermanos
               </Text>
-              <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>
-                Ninguno
-              </Text>
+              <TextInput
+                style={[styles.brunoPham, styles.brunoPhamTypo]}
+                ref={nombreInputRef}
+                placeholder="Ninguno"
+                editable={input === 'Hermanos' ? true : false}
+              />
             </View>
-            <Image
-              style={[styles.vectorIcon1, styles.vectorIconLayout]}
-              contentFit="cover"
-              source={require('../../../assets/vector47.png')}
-            />
+            <Pressable
+              onPress={() => {
+                handleInputFocus()
+                setInput('Hermanos')
+              }}
+            >
+              <Image
+                style={[styles.vectorIcon1, styles.vectorIconLayout]}
+                contentFit="cover"
+                source={require('../../../assets/vector47.png')}
+              />
+            </Pressable>
           </View>
           <Image
             style={styles.frameChild}
@@ -191,22 +264,32 @@ const PerfilConfiguracion = () => {
               <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
                 Estado Civíl
               </Text>
-              <Text style={[styles.brunoPham, styles.brunoPhamTypo]}>
-                Casado con Pirita García
-              </Text>
+              <TextInput
+                style={[styles.brunoPham, styles.brunoPhamTypo]}
+                ref={nombreInputRef}
+                placeholder="Casado con Pirita Garcia"
+                editable={input === 'EstadoCivil' ? true : false}
+              />
             </View>
-            <Image
-              style={[styles.vectorIcon1, styles.vectorIconLayout]}
-              contentFit="cover"
-              source={require('../../../assets/vector47.png')}
-            />
+            <Pressable
+              onPress={() => {
+                handleInputFocus()
+                setInput('EstadoCivil')
+              }}
+            >
+              <Image
+                style={[styles.vectorIcon1, styles.vectorIconLayout]}
+                contentFit="cover"
+                source={require('../../../assets/vector47.png')}
+              />
+            </Pressable>
           </View>
           <Image
             style={styles.frameChild}
             contentFit="cover"
             source={require('../../../assets/line-802.png')}
           />
-          <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
+          {/* <View style={[styles.frameContainer, styles.frameContainerFlexBox]}>
             <View style={styles.nombreCompletoParent}>
               <Text style={[styles.cambiarFotoDe, styles.brunoPhamTypo]}>
                 Añadir al perfil la familia de la pareja
@@ -220,7 +303,7 @@ const PerfilConfiguracion = () => {
               contentFit="cover"
               source={require('../../../assets/vector47.png')}
             />
-          </View>
+          </View> */}
           <View style={[styles.deleteParent, styles.parentFlexBox]}>
             <Image
               style={styles.deleteIcon}

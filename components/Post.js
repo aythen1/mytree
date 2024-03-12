@@ -16,13 +16,18 @@ import CompartirSVG from '../components/svgs/CompartirSVG'
 
 const Post = () => {
   const [showTagged, setShowTagged] = useState(false)
+  const [showIcons, setShowIcons] = useState(false)
 
   const toggleModal = () => {
     setShowTagged(!showTagged)
   }
 
+  const toggleIcons = () => {
+    setShowIcons((prevShowIcons) => !prevShowIcons)
+  }
+
   return (
-    <View style={styles.rectangleParent}>
+    <Pressable style={styles.rectangleParent} onPress={toggleIcons}>
       <LinearGradient
         style={styles.frameChild}
         locations={[0.77, 1]}
@@ -36,10 +41,14 @@ const Post = () => {
           />
         </TouchableOpacity>
 
-        <View style={styles.iconsContainer}>
-          <EnviarMensajeSVG />
-          <CompartirSVG />
-        </View>
+        {showIcons ? (
+          <View style={styles.iconsContainer}>
+            <EnviarMensajeSVG />
+            <CompartirSVG />
+          </View>
+        ) : (
+          <View style={styles.iconsContainerEmpty}></View>
+        )}
 
         <View style={styles.textContainer}>
           <Text style={styles.camila}>Camila</Text>
@@ -59,10 +68,14 @@ const Post = () => {
           source={require('../assets/vector39.png')}
         />
 
-        <View style={styles.iconsContainer}>
-          <EnviarMensajeSVG />
-          <CompartirSVG />
-        </View>
+        {showIcons ? (
+          <View style={styles.iconsContainer}>
+            <EnviarMensajeSVG />
+            <CompartirSVG />
+          </View>
+        ) : (
+          <View style={styles.iconsContainerEmpty}></View>
+        )}
 
         <View style={styles.textContainer}>
           <Text style={styles.camila}>Camila</Text>
@@ -82,10 +95,14 @@ const Post = () => {
           source={require('../assets/vector39.png')}
         />
 
-        <View style={styles.iconsContainer}>
-          <EnviarMensajeSVG />
-          <CompartirSVG />
-        </View>
+        {showIcons ? (
+          <View style={styles.iconsContainer}>
+            <EnviarMensajeSVG />
+            <CompartirSVG />
+          </View>
+        ) : (
+          <View style={styles.iconsContainerEmpty}></View>
+        )}
 
         <View style={styles.textContainer}>
           <Text style={styles.camila}>Camila</Text>
@@ -104,7 +121,7 @@ const Post = () => {
           <Etiquetados setShowTagged={setShowTagged} />
         </Modal>
       )}
-    </View>
+    </Pressable>
   )
 }
 
@@ -161,9 +178,12 @@ const styles = StyleSheet.create({
     left: 15
   },
   iconsContainer: {
-    left: '75%',
+    left: '5%',
     gap: 50,
-    top: '35%'
+    top: '30%'
+  },
+  iconsContainerEmpty: {
+    height: 124
   }
 })
 

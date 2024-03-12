@@ -113,9 +113,7 @@ generaciones`}</Text>
                 style={[styles.pressable, styles.buttonSpaceBlock]}
                 onPress={() => navigation.navigate('Register')}
               >
-                <Text style={[styles.signIn1, styles.signTypo]}>
-                  REGISTRARSE
-                </Text>
+                <Text style={styles.signIn1}>REGISTRARSE</Text>
               </Pressable>
             </LinearGradient>
           </View>
@@ -302,7 +300,13 @@ const styles = StyleSheet.create({
     marginTop: 20
   },
   signIn1: {
-    color: Color.white
+    color: Color.white,
+    fontWeight: '600',
+    lineHeight: 21,
+    letterSpacing: 0,
+    fontSize: FontSize.size_sm,
+    textAlign: 'center',
+    fontFamily: FontFamily.lato
   },
   pressable: {
     height: '100%',

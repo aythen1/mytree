@@ -8,7 +8,6 @@ import { setPanel } from '../../redux/slices/panel.slices'
 import Papers from './Papers'
 import HeaderIcons from '../../components/HeaderIcons'
 import LupaSVG from '../../components/svgs/LupaSVG'
-import BookSVG from '../../components/svgs/BookSVG'
 import SettingMuroSVG from '../../components/svgs/SettingMuroSVG'
 import CamaraSVG from '../../components/svgs/CamaraSVG'
 
@@ -21,21 +20,6 @@ const MIDIARIOPANTALLAPERSONAL = () => {
   const navigateTo = () => {
     navigation.navigate('MIDIARIOEDICINVIDEO')
   }
-  // const { diaries } = useSelector((state) => state.family)
-
-  // const [paper, setPaper] = useState(false)
-  // const [
-  //   iconlyLightOutlineInfoSquaVisible,
-  //   setIconlyLightOutlineInfoSquaVisible
-  // ] = useState(false)
-
-  // const openIconlyLightOutlineInfoSqua = useCallback(() => {
-  //   setIconlyLightOutlineInfoSquaVisible(true)
-  // }, [])
-
-  // const closeIconlyLightOutlineInfoSqua = useCallback(() => {
-  //   setIconlyLightOutlineInfoSquaVisible(false)
-  // }, [])
 
   return (
     <>
@@ -49,14 +33,21 @@ const MIDIARIOPANTALLAPERSONAL = () => {
               paddingHorizontal: 15
             }}
           >
-            <Image
-              style={styles.image6Icon}
-              contentFit="cover"
-              source={require('../../assets/image-6.png')}
-            />
+            <Pressable onPress={() => navigation.navigate('Muro')}>
+              <Image
+                style={styles.image6Icon}
+                contentFit="cover"
+                source={require('../../assets/image-6.png')}
+              />
+            </Pressable>
             <View style={styles.iconlylightOutlinesearchParent}>
               <HeaderIcons
-                icons={[<LupaSVG />, <BookSVG />, <SettingMuroSVG />]}
+                icons={[
+                  <Pressable onPress={() => navigation.navigate('Busqueda')}>
+                    <LupaSVG />
+                  </Pressable>,
+                  <SettingMuroSVG isNavigation={'PerfilAjustes'} />
+                ]}
               />
             </View>
           </View>
@@ -75,7 +66,10 @@ const MIDIARIOPANTALLAPERSONAL = () => {
           </View>
 
           <View>
-            <View style={styles.rectangleGroup}>
+            <Pressable
+              style={styles.rectangleGroup}
+              onPress={() => navigation.navigate('MIDIARIOENTRADATEXTOPL7')}
+            >
               <View style={[styles.frameContainer]}>
                 <View>
                   <View>
@@ -95,9 +89,12 @@ const MIDIARIOPANTALLAPERSONAL = () => {
                   />
                 </View>
               </View>
-            </View>
+            </Pressable>
 
-            <View style={styles.rectangleGroup2}>
+            <Pressable
+              style={styles.rectangleGroup2}
+              onPress={() => navigation.navigate('MIDIARIOENTRADATEXTOPL7')}
+            >
               <View style={[styles.frameContainer]}>
                 <View>
                   <View>
@@ -117,9 +114,12 @@ const MIDIARIOPANTALLAPERSONAL = () => {
                   />
                 </View>
               </View>
-            </View>
+            </Pressable>
 
-            <View style={styles.rectangleGroup3}>
+            <Pressable
+              style={styles.rectangleGroup3}
+              onPress={() => navigation.navigate('MIDIARIOENTRADATEXTOPL7')}
+            >
               <View style={[styles.frameContainer]}>
                 <View>
                   <View>
@@ -139,9 +139,12 @@ const MIDIARIOPANTALLAPERSONAL = () => {
                   />
                 </View>
               </View>
-            </View>
+            </Pressable>
 
-            <View style={styles.rectangleGroup4}>
+            <Pressable
+              style={styles.rectangleGroup4}
+              onPress={() => navigation.navigate('MIDIARIOENTRADATEXTOPL7')}
+            >
               <View style={[styles.frameContainer]}>
                 <View>
                   <View>
@@ -161,7 +164,7 @@ const MIDIARIOPANTALLAPERSONAL = () => {
                   />
                 </View>
               </View>
-            </View>
+            </Pressable>
 
             <Pressable
               style={styles.rectangleGroup5}
@@ -189,25 +192,9 @@ const MIDIARIOPANTALLAPERSONAL = () => {
             </Pressable>
           </View>
 
-          {/* <Pressable onPress={() => setPaper(!paper)}> */}
           <Papers />
-          {/* </Pressable> */}
         </View>
       </ScrollView>
-
-      {/* <Modal
-        animationType="fade"
-        transparent
-        visible={iconlyLightOutlineInfoSquaVisible}
-      >
-        <View style={styles.iconlyLightOutlineInfoSquaOverlay}>
-          <Pressable
-            style={styles.iconlyLightOutlineInfoSquaBg}
-            onPress={closeIconlyLightOutlineInfoSqua}
-          />
-          <PopupDiario onClose={closeIconlyLightOutlineInfoSqua} />
-        </View>
-      </Modal> */}
     </>
   )
 }

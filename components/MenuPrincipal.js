@@ -15,10 +15,12 @@ const MenuPrincipal = () => {
     <ScrollView
       style={styles.menPrincipal}
       showsVerticalScrollIndicator={false}
+      contentContainerStyle={{ paddingBottom: 100 }}
     >
       <LinearGradient
         style={styles.menPrincipalChild}
-        locations={[0, 1]}
+        start={{ x: 0.9, y: 0.6 }}
+        end={{ x: 0, y: 0.6 }}
         colors={['#e2e57a', '#7fc08b']}
       >
         <View style={styles.frameParent}>
@@ -52,7 +54,7 @@ const MenuPrincipal = () => {
               <Image
                 style={styles.frameChildLayout}
                 contentFit="cover"
-                source={require('../assets/iconlylightoutlinebookmark1.png')}
+                source={require('../assets/iconlybolddocument.png')}
               />
               <Pressable
                 style={styles.muro}
@@ -245,7 +247,7 @@ const MenuPrincipal = () => {
 
 const styles = StyleSheet.create({
   frameChildLayout: {
-    height: 15,
+    height: 17,
     width: 15
   },
   parentFlexBox: {
@@ -257,15 +259,12 @@ const styles = StyleSheet.create({
     color: Color.white,
     fontFamily: FontFamily.lato,
     fontWeight: '900',
-    fontSize: FontSize.size_xl
+    fontSize: 17
   },
   menPrincipalChild: {
     borderTopRightRadius: Border.br_3xs,
-    width: '100%',
     backgroundColor: Color.linearBoton,
-    height: '100%',
-    zIndex: 0,
-    paddingBottom: '60%'
+    height: '115.8%'
   },
   muro: {
     marginLeft: 12
@@ -292,7 +291,8 @@ const styles = StyleSheet.create({
   },
   menPrincipal: {
     maxWidth: '70%',
-    top: '8%'
+    top: 20,
+    zIndex: 0
   }
 })
 

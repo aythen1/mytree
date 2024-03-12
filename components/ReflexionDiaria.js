@@ -1,42 +1,8 @@
 import React, { useState, useCallback } from 'react'
 import { StyleSheet, View, Pressable, Text, Modal } from 'react-native'
-import { LinearGradient } from 'expo-linear-gradient'
-import { Image } from 'expo-image'
-import { useNavigation } from '@react-navigation/native'
-import Humor from '../components/Humor'
-// import ENTRADACREADA12 from '../components/ENTRADACREADA12'
 import { FontFamily, FontSize, Color, Padding, Border } from '../GlobalStyles'
 
 const ReflexionDiaria = () => {
-  const [groupIcon1Visible, setGroupIcon1Visible] = useState(false)
-  const [frameContainerVisible, setFrameContainerVisible] = useState(false)
-  const [frameContainer3Visible, setFrameContainer3Visible] = useState(false)
-  const navigation = useNavigation()
-
-  const openGroupIcon1 = useCallback(() => {
-    setGroupIcon1Visible(true)
-  }, [])
-
-  const closeGroupIcon1 = useCallback(() => {
-    setGroupIcon1Visible(false)
-  }, [])
-
-  const openFrameContainer = useCallback(() => {
-    setFrameContainerVisible(true)
-  }, [])
-
-  const closeFrameContainer = useCallback(() => {
-    setFrameContainerVisible(false)
-  }, [])
-
-  const openFrameContainer3 = useCallback(() => {
-    setFrameContainer3Visible(true)
-  }, [])
-
-  const closeFrameContainer3 = useCallback(() => {
-    setFrameContainer3Visible(false)
-  }, [])
-
   return (
     <>
       <View style={styles.miDiarioEntradaTextoPl}>

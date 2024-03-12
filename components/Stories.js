@@ -6,8 +6,6 @@ import { useSelector } from 'react-redux'
 const Stories = () => {
   const { stories } = useSelector((state) => state.stories)
 
-  // console.log(stories)
-
   return (
     <View style={{ top: 15, width: '100%', justifyContent: 'center' }}>
       <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>

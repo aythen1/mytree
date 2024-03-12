@@ -46,9 +46,7 @@ const OpcionesModal = ({ opciones, visible, onClose, onAddOption, isAdd }) => {
             index.toString()
           }}
           renderItem={({ item }) => (
-            <TouchableOpacity
-              onPress={() => console.log(`Seleccionado: ${item}`)}
-            >
+            <TouchableOpacity>
               <Text style={styles.opcionText}>{item}</Text>
               <Image
                 style={styles.frameChild}

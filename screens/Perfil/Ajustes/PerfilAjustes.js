@@ -29,20 +29,23 @@ const PerfilAjustes = () => {
           <View style={styles.frameGroup}>
             <View>
               <View style={styles.parentIcons}>
-                <Image
-                  style={styles.image6Icon}
-                  contentFit="cover"
-                  source={require('../../../assets/image-6.png')}
-                />
-                <View style={styles.iconlylightOutlinecalendarParent}>
+                <Pressable onPress={() => navigation.navigate('Muro')}>
+                  <Image
+                    style={styles.image6Icon}
+                    contentFit="cover"
+                    source={require('../../../assets/image-6.png')}
+                  />
+                </Pressable>
+                {/* <View style={styles.iconlylightOutlinecalendarParent}>
                   <HeaderIcons
+                    style={styles.header}
                     icons={[
-                      <CalendarMuroSVG />,
+                      // <CalendarMuroSVG />,
                       <BookSVG />,
                       <NotificationsMuroSVG />
                     ]}
                   />
-                </View>
+                </View> */}
               </View>
               <View style={[styles.backParent, styles.parentFlexBox]}>
                 <Pressable
@@ -243,7 +246,7 @@ const styles = StyleSheet.create({
   },
   iconlylightOutlinecalendarParent: {
     width: '100%',
-    left: '45%',
+    left: '55%',
     flexDirection: 'row'
   },
   icon: {

@@ -29,8 +29,6 @@ import NotificationsMuroSVG from '../../components/svgs/NotificationsMuroSVG'
 import CalendarMuroSVG from '../../components/svgs/CalendarMuroSVG'
 import SettingMuroSVG from '../../components/svgs/SettingMuroSVG'
 import { useNavigation } from '@react-navigation/native'
-// import CalendarSVG from '../components/svgs/CalendarSVG'
-// import SettingSVG from '../components/svgs/SettingSVG'
 
 const Muro = () => {
   const dispatch = useDispatch()
@@ -165,10 +163,13 @@ const Muro = () => {
           transparent={true}
           visible={showPanel}
           onRequestClose={() => dispatch(setPanel(false))}
+          propagateSwipe={true}
         >
-          <Pressable onPress={handleMenu}>
-            <MenuPrincipal setMenuVisible={setMenuVisible} />
-          </Pressable>
+          <View style={{ zIndex: 0 }}>
+            <Pressable onPress={handleMenu}>
+              <MenuPrincipal setMenuVisible={setMenuVisible} />
+            </Pressable>
+          </View>
         </Modal>
       </ScrollView>
     </View>

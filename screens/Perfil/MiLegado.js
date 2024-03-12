@@ -1,9 +1,12 @@
 import React from 'react'
-import { Text, StyleSheet, View } from 'react-native'
+import { Text, StyleSheet, View, Pressable } from 'react-native'
 import { Image } from 'expo-image'
 import { Color, FontSize, FontFamily } from '../../GlobalStyles'
+import { useNavigation } from '@react-navigation/native'
 
 const MiLegado = () => {
+  const navigation = useNavigation()
+
   return (
     <View style={styles.frameParent}>
       <View style={styles.frameContainer}>
@@ -12,11 +15,13 @@ const MiLegado = () => {
         >
           <Text style={styles.miBiografaActual}>Mi biografía actual</Text>
           <View style={[styles.vectorGroup, styles.groupParentFlexBox]}>
-            <Image
-              style={styles.vectorIcon1}
-              contentFit="cover"
-              source={require('../../assets/vector53.png')}
-            />
+            <Pressable onPress={() => navigation.navigate('CrearAlbum')}>
+              <Image
+                style={styles.vectorIcon1}
+                contentFit="cover"
+                source={require('../../assets/vector53.png')}
+              />
+            </Pressable>
             <Image
               style={styles.vectorIcon1}
               contentFit="cover"
@@ -50,11 +55,13 @@ const MiLegado = () => {
             contentFit="cover"
             source={require('../../assets/mask-group21.png')}
           />
-          <Image
-            style={styles.vectorIcon2}
-            contentFit="cover"
-            source={require('../../assets/vector54.png')}
-          />
+          <Pressable onPress={() => navigation.navigate('CrearLbum')}>
+            <Image
+              style={styles.vectorIcon2}
+              contentFit="cover"
+              source={require('../../assets/vector54.png')}
+            />
+          </Pressable>
         </View>
       </View>
 
